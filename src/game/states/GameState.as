@@ -101,6 +101,7 @@
    import game.sound.ArmySoundManager;
    import game.utils.TimeUtils;
    import game.utils.WebUtils;
+   import game.utils.OfflineSave;
    
    public class GameState extends FSMState
    {
@@ -3137,6 +3138,7 @@
             {
                this.mPlayerProfile.mInventory.addItems(_loc5_,1);
             }
+			(ItemManager.getItem(_loc4_.ID,_loc4_.Type) as AreaItem).mAreaLockedIcon = null;
          }
          this.mScene.initTileMap();
          this.mScene.updateBorderTiles();
@@ -3743,6 +3745,7 @@
       
       public function executeSwitchMap(param1:String, param2:Friend = null, param3:Boolean = false) : void
       {
+		 OfflineSave.saveOldMap();
          var _loc4_:Object = null;
          if((this.mVisitingFriend == param2 || this.mVisitingFriend == null && param2 == null) && param1 == this.mCurrentMapId)
          {
@@ -3778,7 +3781,7 @@
                {
                   this.startLoading();
                   this.mScene.reCalculateCameraMargins();
-                  this.initMap(null);
+                  this.initMap(null,param1);
                   this.initObjects(null);
                   this.updateGrid();
                   this.addNeighborAvatars();
@@ -3816,6 +3819,7 @@
             }
          }
          this.mVisitingFriend = param2;
+	 	 OfflineSave.switchMap();
       }
       
       public function executeReturnHome() : void

@@ -107,6 +107,7 @@
    import game.sound.ArmySoundManager;
    import game.states.GameState;
    import game.utils.TimeUtils;
+   import game.utils.OfflineSave;
    
    public class GameHUD extends MovieClip implements HUDInterface
    {
@@ -572,7 +573,7 @@
          this.mResourceFrame = this.mIngameHUDClip.getChildAt(5) as MovieClip;
          this.mHudButtonShop = Utils.createBasicButton(this.mIngameHUDClip,"Button_shop",this.buttonShopPressed);
          this.mHudButtonSave = Utils.createBasicButton(this.mIngameHUDClip,"Button_save",this.buttonSavePressed);
-         trace("this.mButtonMap = Utils.createBasicButton(this.mIngameHUDClip,\'Button_Map\',this.buttonMapPressed);");
+         this.mButtonMap = Utils.createBasicButton(this.mIngameHUDClip,'Button_Map',this.buttonMapPressed);
          this.mRightPlaceButtonClip = this.mIngameHUDClip.getChildByName("right_button") as MovieClip;
          this.mCancelPlaceButtonClip = this.mIngameHUDClip.getChildByName("cancel_button") as MovieClip;
          this.mRightPlaceButtonClip.mouseEnabled = true;
@@ -1135,212 +1136,7 @@
       
       public function generateSaveJson() : *
       {
-         var i:int = 0;
-         var cell:GridCell = null;
-         var tile:* = {};
-         var unit:* = {};
-         var gameobj:* = {};
-         var player_tiles:* = [];
-         var gamefield_items:* = [];
-         var known_objects:* = [];
-         var objectives:Array = undefined;
-         var j:* = 0;
-         var k:* = 0;
-         var missionobj:* = {};
-         var objective:* = {};
-         var production:Production = undefined;
-         var all_missions:Array = [];
-         var mapgrid:* = GameState.mInstance.mMapData.mGrid;
-         var savedata:* = {};
-         i = 0;
-         while(i < mapgrid.length)
-         {
-            if(mapgrid[i]["mOwner"] == 1)
-            {
-               tile = {};
-               tile["coord_x"] = mapgrid[i]["mPosI"];
-               tile["coord_y"] = mapgrid[i]["mPosJ"];
-               player_tiles.push(tile);
-            }
-            if(mapgrid[i]["mCharacter"])
-            {
-               unit = {};
-               unit["coord_x"] = mapgrid[i]["mPosI"];
-               unit["coord_y"] = mapgrid[i]["mPosJ"];
-               if(mapgrid[i]["mCharacter"]["mItem"])
-               {
-                  unit["item_id"] = mapgrid[i]["mCharacter"]["mItem"]["mId"];
-                  unit["item_type"] = ItemManager.getTableNameForItem(mapgrid[i]["mCharacter"]["mItem"]);
-                  unit["activation_time"] = 0;
-                  unit["item_hit_points"] = mapgrid[i]["mCharacter"]["mHealth"];
-                  gamefield_items.push(unit);
-               }
-            }
-            if(mapgrid[i]["mObject"])
-            {
-               gameobj = {};
-               if(mapgrid[i]["mObject"]["mItem"])
-               {
-                  gameobj["item_id"] = mapgrid[i]["mObject"]["mItem"]["mId"];
-                  gameobj["item_type"] = ItemManager.getTableNameForItem(mapgrid[i]["mObject"]["mItem"]);
-                  if(gameobj["item_type"] == "HomeFrontEffort")
-                  {
-                     if(mapgrid[i]["mObject"]["mState"] == 3)
-                     {
-                        gameobj["crop_state"] = "growing";
-                        production = mapgrid[i]["mObject"].getProduction();
-                        gameobj["next_action_at"] = Math.round(production.getProducingTimeLeft() / 1000);
-                     }
-                     else if(mapgrid[i]["mObject"]["mState"] == 4)
-                     {
-                        gameobj["crop_state"] = "ready";
-                        gameobj["next_action_at"] = 0;
-                     }
-                  }
-                  else if(gameobj["item_type"] == "Building")
-                  {
-                     if(mapgrid[i]["mObject"]["mState"] == 3)
-                     {
-                        production = mapgrid[i]["mObject"].getProduction();
-                        gameobj["produces"] = "HFEDrives." + production.getProductionID();
-                        gameobj["next_action_at"] = Math.round(production.getProducingTimeLeft() / 1000);
-                     }
-                     else if(mapgrid[i]["mObject"]["mState"] == 4)
-                     {
-                        production = mapgrid[i]["mObject"].getProduction();
-                        gameobj["produces"] = "HFEDrives." + production.getProductionID();
-                        gameobj["next_action_at"] = 0;
-                     }
-                     else if(mapgrid[i]["mObject"]["mState"] >= 9 && mapgrid[i]["mObject"]["mState"] <= 12)
-                     {
-                        gameobj["status"] = "SETUP";
-                        gameobj["clicks"] = mapgrid[i]["mObject"].getBuildingStepsDone();
-                     }
-                  }
-                  else if(gameobj["item_type"] == "PermanentHFE")
-                  {
-                     if(mapgrid[i]["mObject"]["mState"] == 3)
-                     {
-                        production = mapgrid[i]["mObject"].getProduction();
-                        gameobj["produces"] = "HFEDrives." + production.getProductionID();
-                        gameobj["next_action_at"] = Math.round(production.getProducingTimeLeft() / 1000);
-                     }
-                     else if(mapgrid[i]["mObject"]["mState"] == 4)
-                     {
-                        production = mapgrid[i]["mObject"].getProduction();
-                        gameobj["produces"] = "HFEDrives." + production.getProductionID();
-                        gameobj["next_action_at"] = 0;
-                     }
-                  }
-                  gameobj["activation_time"] = 0;
-                  gameobj["item_hit_points"] = mapgrid[i]["mObject"].getHealth();
-                  cell = mapgrid[i]["mObject"].getCell();
-                  gameobj["coord_x"] = cell["mPosI"];
-                  gameobj["coord_y"] = cell["mPosJ"];
-                  if(known_objects.indexOf(String(gameobj["coord_x"]) + String(gameobj["coord_y"])) == -1)
-                  {
-                     known_objects.push(String(gameobj["coord_x"]) + String(gameobj["coord_y"]));
-                     gamefield_items.push(gameobj);
-                  }
-               }
-            }
-            savedata["player_tiles"] = player_tiles;
-            savedata["gamefield_items"] = gamefield_items;
-            i++;
-         }
-         var profile:* = GameState.mInstance.mPlayerProfile;
-         savedata["profile"] = {};
-         savedata["profile"]["gained_free_units"] = 0;
-         savedata["profile"]["recently_gifted_energy_to"] = "";
-         savedata["profile"]["recently_gifted_supplies_to"] = "";
-         savedata["profile"]["wishlist"] = [];
-         savedata["profile"]["resource_experience"] = profile["mXp"];
-         savedata["profile"]["resource_money"] = profile["mMoney"];
-         savedata["profile"]["resource_premium"] = profile["mPremium"];
-         savedata["profile"]["resource_energy"] = profile["mEnergy"];
-         savedata["profile"]["resource_supplies"] = profile["mSupplies"];
-         savedata["profile"]["resource_material"] = profile["mMaterial"];
-         savedata["profile"]["resource_socialxp"] = profile["mSocialXp"];
-         savedata["profile"]["resource_water"] = profile["mWater"];
-         savedata["profile"]["supply_cap"] = profile["mSuppliesCap"];
-         savedata["profile"]["secs_to_energy_gain"] = profile["mSecondsToRechargeEnergy"];
-         savedata["profile"]["reward_drop_seed_term"] = profile["mRewardDropSeedTerm"];
-         savedata["profile"]["reward_drops_counter"] = profile["mRewardDropsCounter"];
-         savedata["profile"]["energy_cap"] = profile["mMaxEnergy"];
-         savedata["profile"]["energy_recharge_time"] = profile["mTimeBetweenEnergyRecharges"];
-         savedata["profile"]["resource_energy_percentiles"] = profile.getEnergyRewardCounter();
-         savedata["profile"]["secs_since_last_enemy_spawn"] = Math.round(Number(GameState.mInstance.getSpawnEnemyTimer()) / 1000);
-         k = 0;
-         var l:int = 0;
-         var invtype:Array = [];
-         var inventory:* = GameState.mInstance.mPlayerProfile.mInventory.getInventory();
-         var inventoryobj:Array = [];
-         var item:* = {};
-         var amount:int = 0;
-         for(k in inventory)
-         {
-            trace(k);
-            invtype = inventory[k];
-            trace(invtype);
-            l = 0;
-            while(l < invtype.length)
-            {
-               item = {};
-               if(invtype[l]["mType"] == "Area")
-               {
-                  invtype[l]["mType"] = "MapArea";
-               }
-               item["item_id"] = invtype[l]["mId"];
-               item["item_type"] = invtype[l]["mType"];
-               l++;
-               amount = int(invtype[l]);
-               item["item_count"] = amount;
-               inventoryobj.push(item);
-               l++;
-            }
-         }
-         savedata["profile"]["inventory_items"] = inventoryobj;
-         savedata["missions_incomplete"] = [];
-         savedata["missions_all_complete"] = [];
-         savedata["missions_finished"] = [];
-         all_missions = MissionManager.getMissions();
-         for(j in all_missions)
-         {
-            missionobj = {};
-            if(all_missions[j]["mState"] == 1)
-            {
-               missionobj["mission_id"] = all_missions[j]["mId"];
-               objectives = all_missions[j].getObjectives();
-               missionobj["objectives"] = [];
-               k = 0;
-               for(k in objectives)
-               {
-                  objective = {};
-                  objective["objectiveId"] = objectives[k]["mId"];
-                  objective["startValue"] = 0;
-                  objective["goal"] = objectives[k]["mGoal"];
-                  objective["counterValue"] = objectives[k]["mCounter"];
-                  objective["purchased"] = objectives[k]["mPurchased"];
-                  missionobj["objectives"].push(objective);
-               }
-               savedata["missions_incomplete"].push(missionobj);
-            }
-            else if(all_missions[j]["mState"] == 2)
-            {
-               missionobj["mission_id"] = all_missions[j]["mId"];
-               savedata["missions_all_complete"].push(missionobj);
-            }
-            else if(all_missions[j]["mState"] == 3)
-            {
-               missionobj["mission_id"] = all_missions[j]["mId"];
-               savedata["missions_finished"].push(missionobj);
-            }
-         }
-         savedata["isFogOfWarOff"] = GameState.mInstance.isFogOfWarOn();
-         var now:Date = new Date();
-         savedata["time_of_last_save"] = now.valueOf();
-         savedata["saveversion"] = 3;
-         return savedata;
+         return OfflineSave.generateSaveJson();
       }
       
       public function buttonSavePressed(param1:MouseEvent) : void
@@ -2335,7 +2131,7 @@
             this.mButtonInventory.setEnabled(false);
             this.mHudButtonShop.setEnabled(false);
             this.mHudButtonSave.setEnabled(false);
-            trace("this.mButtonMap.setEnabled(false);");
+            this.mButtonMap.setEnabled(false);
             this.mButtonPowerup.setEnabled(false);
             trace("this.mNeighborName.text = this.mGame.mVisitingFriend.getFirstName();");
          }
@@ -2484,8 +2280,8 @@
       public function updateMapButtonEnablation() : void
       {
          var _loc1_:Boolean = MissionManager.isMapButtonEnabled();
-         trace("this.mButtonMap.setEnabled(_loc1_);");
-         trace("smTooltipTIDLinkage[\'Button_Map\'] = _loc1_ ? GameState.getText(\'HUD_MAP_TOOLTIP\') : GameState.getText(\'HUD_MAP_LOCKED_TOOLTIP\');");
+         this.mButtonMap.setEnabled(_loc1_);
+         smTooltipTIDLinkage['Button_Map'] = _loc1_ ? GameState.getText('HUD_MAP_TOOLTIP') : GameState.getText('HUD_MAP_LOCKED_TOOLTIP');
       }
       
       public function openMap() : void

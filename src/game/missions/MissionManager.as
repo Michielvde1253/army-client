@@ -93,6 +93,7 @@
          {
             for each(_loc2_ in mMissions)
             {
+			   trace(_loc2_.mId);
                if(_loc2_.mId == "SelectUnit" || _loc2_.mId == "MoveUnit" || _loc2_.mId == "DestroyEnemy" || _loc2_.mId == "SelectRepair" || _loc2_.mId == "Repair" || _loc2_.mId == "GetSupplies" || _loc2_.mId == "CollectSupplies" || _loc2_.mId == "CollectSupplies2" || _loc2_.mId == "MissionsInfo" || _loc2_.mId == "FirstScroll")
                {
                   _loc2_.mState = Mission.STATE_REWARDS_COLLECTED;
@@ -240,23 +241,46 @@
       
       public static function getMission(param1:String) : Mission
       {
-         return mMissions[getMissionIndexFromID(param1)] as Mission;
+		 var index:int = getMissionIndexFromID(param1);
+		 if(index == -1) {
+			return null 
+		 } else {
+			return mMissions[index] as Mission;
+		 }
       }
       
       public static function getMissionIndexFromID(param1:String) : int
       {
-         var _loc4_:* = null;
-         var _loc2_:* = GameState.mConfig.Mission;
-         var _loc3_:int = 0;
-         for(_loc4_ in _loc2_)
-         {
-            if(param1 == _loc4_)
-            {
-               return _loc3_;
-            }
-            _loc3_++;
-         }
-         return 0;
+         //var _loc4_:* = null;
+         //var _loc2_:* = GameState.mConfig.Mission;
+         //var _loc3_:int = 0;
+         //for(_loc4_ in _loc2_)
+         //{
+         //   if(param1 == _loc4_)
+         //   {
+		 //	   trace("---Returned: " + _loc3_);
+         //      return _loc3_;
+         //   }
+         //   _loc3_++;
+         //}
+	     //trace("---Returned: 0");
+         //return 0;
+		  
+		 // FIXED TO SUPPORT MISSIONS FROM MULTIPLE MAPS
+		  
+		 var _loc1_:*;
+		 var _loc2_:Mission;
+		 for (_loc1_ in mMissions)
+	     {
+			 _loc2_ = mMissions[_loc1_] as Mission;
+			 if (_loc2_.mId == param1)
+			 {
+				 trace("---Returned: " + _loc1_);
+				 return _loc1_;
+			 }
+		 }
+	     trace("---Returned: 0");
+	     return -1;
       }
       
       private static function isCollected(param1:*) : Boolean
@@ -265,7 +289,16 @@
          if(param1)
          {
             _loc2_ = getMission(param1.ID);
-            return _loc2_.mState == Mission.STATE_REWARDS_COLLECTED;
+			trace("prayin'")
+			trace(getMissionIndexFromID("SaveMission"))
+			if (_loc2_)
+		    {
+				trace(param1.ID)
+				return _loc2_.mState == Mission.STATE_REWARDS_COLLECTED;
+			} else {
+				trace("FAILED:             " + param1.ID)
+				return false // ducktape fix
+			}
          }
          return true;
       }

@@ -44,6 +44,12 @@
     
     
     
+    <image192x192>AppIconsForPublish/icon192.png</image192x192>
+    <image144x144>AppIconsForPublish/icon144.png</image144x144>
+    <image96x96>AppIconsForPublish/icon96.png</image96x96>
+    <image72x72>AppIconsForPublish/icon72.png</image72x72>
+    <image48x48>AppIconsForPublish/icon48.png</image48x48>
+    <image36x36>AppIconsForPublish/icon36.png</image36x36>
   </icon>
   <customUpdateUI>false</customUpdateUI>
   <allowBrowserInvocation>false</allowBrowserInvocation>

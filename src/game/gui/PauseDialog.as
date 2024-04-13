@@ -16,6 +16,7 @@
    import game.net.ServerCall;
    import game.sound.ArmySoundManager;
    import game.states.GameState;
+   import game.utils.OfflineSave;
    
    public class PauseDialog extends PopUpWindow
    {
@@ -78,18 +79,15 @@
       
       public function startSelectingFile() : void
       {
-		 trace("yes.");
 		 var file:File = new File();
 		 file.addEventListener(PermissionEvent.PERMISSION_STATUS, onPermission);
 		 file.requestPermission();
       }
   
   	public function onPermission(e:PermissionEvent):void {
-		trace("yesnt.");
 		var file:File = e.target as File;
 		file.removeEventListener(PermissionEvent.PERMISSION_STATUS, onPermission);
 		if (e.status == PermissionStatus.GRANTED) {
-			trace("yesntnt.");
 			file.addEventListener(Event.SELECT, onFileSelected);
 			file.browseForOpen("Select a file");							
 		}
@@ -97,12 +95,10 @@
       
       public function onFileSelected(evt:Event) : void
       {
-		 trace("yesntntnt.");
 		 var file:File = evt.target as File;
 		 var stream:FileStream = new FileStream();
 		 stream.open(file, FileMode.READ);
          var savedata:* = JSON.parse(stream.readUTFBytes(stream.bytesAvailable));
-		 trace(savedata);
          loadProgress(savedata);
       }
       
@@ -117,94 +113,7 @@
       
       public function loadProgress(savedata:*) : void
       {
-         var saveversion:int = int(savedata["saveversion"]);
-         savedata = fixOldSave(savedata,saveversion);
-         var minus_rechargetime:int = 0;
-         var energy_to_give:int = 0;
-         var time_needed_for_energy:int = 0;
-         var item:* = undefined;
-         var cell:* = undefined;
-         var dateobj:Date = new Date();
-         var now:int = Math.round(dateobj.valueOf() / 1000);
-         var then:int = Math.round(Number(savedata["time_of_last_save"]) / 1000);
-         var time_diff:* = now - then;
-         if(savedata["profile"]["resource_energy"] < savedata["profile"]["energy_cap"])
-         {
-            if(time_diff >= savedata["profile"]["secs_to_energy_gain"])
-            {
-               savedata["profile"]["resource_energy"]++;
-               if(savedata["profile"]["resource_energy"] >= savedata["profile"]["energy_cap"])
-               {
-                  savedata["profile"]["resource_energy"] = savedata["profile"]["energy_cap"];
-                  savedata["profile"]["secs_to_energy_gain"] = savedata["profile"]["energy_recharge_time"];
-               }
-               else
-               {
-                  minus_rechargetime = time_diff - Number(savedata["profile"]["secs_to_energy_gain"]);
-                  energy_to_give = Math.floor(minus_rechargetime / Number(savedata["profile"]["energy_recharge_time"]));
-                  savedata["profile"]["resource_energy"] += energy_to_give;
-                  if(savedata["profile"]["resource_energy"] >= savedata["profile"]["energy_cap"])
-                  {
-                     savedata["profile"]["resource_energy"] = savedata["profile"]["energy_cap"];
-                     savedata["profile"]["secs_to_energy_gain"] = savedata["profile"]["energy_recharge_time"];
-                  }
-                  else
-                  {
-                     time_needed_for_energy = energy_to_give * Number(savedata["profile"]["energy_recharge_time"]);
-                     savedata["profile"]["secs_to_energy_gain"] = minus_rechargetime - time_needed_for_energy;
-                  }
-               }
-            }
-            else
-            {
-               savedata["profile"]["secs_to_energy_gain"] -= time_diff;
-            }
-         }
-         else
-         {
-            savedata["profile"]["secs_to_energy_gain"] = savedata["profile"]["energy_recharge_time"];
-         }
-         var i:* = 0;
-         for(i in savedata["gamefield_items"])
-         {
-            if(savedata["gamefield_items"][i]["next_action_at"] != null)
-            {
-               savedata["gamefield_items"][i]["next_action_at"] -= time_diff;
-               if(savedata["gamefield_items"][i]["next_action_at"] < 0)
-               {
-                  savedata["gamefield_items"][i]["next_action_at"] = 0;
-               }
-            }
-            if(savedata["gamefield_items"][i]["activation_time"] != 0)
-            {
-               savedata["gamefield_items"][i]["activation_time"] -= time_diff;
-               if(savedata["gamefield_items"][i]["activation_time"] < 0)
-               {
-                  savedata["gamefield_items"][i]["activation_time"] = 0;
-               }
-            }
-         }
-         var fakeservercall:* = new ServerCall("GetMapData",null,null,null);
-         var fakeservercall2:* = new ServerCall("GetUserData",null,null,null);
-         fakeservercall["mData"] = savedata;
-         fakeservercall2["mData"] = savedata["profile"];
-         fakeservercall["mData"]["secs_since_last_enemy_spawn"] = savedata["profile"]["secs_since_last_enemy_spawn"];
-         GameState.mInstance.restoreFogOfWar(savedata["isFogOfWarOff"]);
-         GameState.mInstance.mLoadingStatesOver = false;
-         GameState.mInstance.mCurrentMapId = "Home";
-         GameState.mInstance.mCurrentMapGraphicsId = Math.max(GameState.GRAPHICS_MAP_ID_LIST.indexOf(GameState.mInstance.mCurrentMapId),0);
-         GameState.mInstance.loadingFirstFinished();
-         GameState.mInstance.initPlayerProfile(fakeservercall2);
-         GameState.mInstance.mPlayerProfile.mInventory.getAreas();
-         GameState.mInstance.changeState(0);
-         GameState.mInstance.mMapData.destroy();
-         GameState.mInstance.initMap(fakeservercall);
-         GameState.mInstance.initObjects(fakeservercall);
-         GameState.mInstance.updateGrid();
-         GameState.mInstance.mScene.mFog.init();
-         MissionManager.setupFromServer(fakeservercall);
-         MissionManager.findNewActiveMissions();
-         GameState.mInstance.mLoadingStatesOver = true;
+		  OfflineSave.loadProgress(savedata);
       }
       
       private function tabPressed(param1:MouseEvent) : void

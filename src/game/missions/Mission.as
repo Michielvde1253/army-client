@@ -590,6 +590,7 @@
       
       public function createGameObjects() : void
       {
+		 trace("creating game objects");
          var _loc2_:Object = null;
          var _loc3_:int = 0;
          var _loc4_:int = 0;

@@ -1,5 +1,6 @@
 {
   "TID": {
+    "MOUSEOVER_ENEMY_BILLBOARD": { "ID":"MOUSEOVER_ENEMY_BILLBOARD", "en":"Easter Egg :D" },
     "TUTORIAL_1_DESCRIPTION": { "ID":"TUTORIAL_1_DESCRIPTION", "en":"We're about to lose the beachhead!\\nIt's up to you now, soldier!\\nClick on the Infantry unit to select it." },
     "TUTORIAL_1_NAME": { "ID":"TUTORIAL_1_NAME", "en":"Time to fight back!" },
     "TUTORIAL_2_DESCRIPTION": { "ID":"TUTORIAL_2_DESCRIPTION", "en":"Move your infantry north next to the Enemy Unit!" },
