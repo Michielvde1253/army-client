@@ -1,4 +1,4 @@
-package game.isometric
+﻿package game.isometric
 {
    import com.dchoc.graphics.DCResourceManager;
    import flash.display.DisplayObject;

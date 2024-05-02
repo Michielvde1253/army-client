@@ -1,4 +1,4 @@
-package
+﻿package
 {
    import com.dchoc.graphics.DCResourceManager;
    import flash.display.Sprite;
@@ -14,6 +14,7 @@ package
    import game.states.GameLoadingSecond;
    import game.states.GameState;
    import game.states.StateMachine;
+   import fi.joniaromaa.adobeair.discordrpc.*;
    
    public class GameMain extends Sprite
    {
@@ -30,6 +31,8 @@ package
       private var secondLoading:FSMState;
       
       private var initialLoading:FSMState;
+	   
+	  private var discordRpc:DiscordRpc;
       
       public function GameMain()
       {
@@ -41,6 +44,8 @@ package
          addEventListener(Event.ENTER_FRAME,this.onEnterFrame,false,0,true);
          stage.addEventListener(KeyboardEvent.KEY_DOWN,this.keyDown,false,0,true);
          stage.addEventListener(KeyboardEvent.KEY_UP,this.keyUp,false,0,true);
+		 this.discordRpc = new DiscordRpc();
+		 this.setDiscordStatus({});
       }
       
       private function keyDown(param1:KeyboardEvent) : void
@@ -204,6 +209,30 @@ package
       
       public function runUnitTests() : void
       {
+      }
+  
+	  private function setDiscordStatus(param1:Object) : void
+      {
+         var now:Date = null;
+         var epoch:Number = NaN;
+         var RPC:* = undefined;
+         now = new Date();
+         epoch = Math.round(now.valueOf() / 1000);
+         this.discordRpc.init("1232767781611634760");
+         RPC = {};
+         RPC.StartTime = epoch;
+         RPC.State = "On Desert Map";
+         RPC.Details = "Destroying the Crimson Empire"
+	     RPC.LargeImage = "big_logo"
+         RPC.LargeImageDescription = "Army Attack"
+         RPC.SmallImage = null;
+         RPC.SmallImageDescription = null;
+         RPC.PartyId = null;
+         RPC.PartySize = 0;
+         RPC.PartyCape = 0;
+         RPC.JoinSecret = null;
+         RPC.SpectatorSecret = null;
+         this.discordRpc.updatePresence(RPC.State,RPC.Details,RPC.StartTime,RPC.EndTime,RPC.LargeImage,RPC.LargeImageDescription,RPC.SmallImage,RPC.SmallImageDescription,RPC.PartyId,RPC.PartySize,RPC.PartyCape,RPC.JoinSecret,RPC.SpectatorSecret);
       }
    }
 }

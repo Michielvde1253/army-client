@@ -57,7 +57,12 @@
       "SpawnBeaconTriggerMission": "#Mission.AREA_D_M_DIALOG1",
       "UnitCapInfantry": "2",
       "UnitCapArmor": "2",
-      "UnitCapArtillery": "2"
+      "UnitCapArtillery": "2",
+      "Resource": "Water",
+      "OutOfResourceHeader": "#TID.POP_UP_WATER_TITLE",
+      "OutOfResourceText": "#TID.POP_UP_WATER_DESC",
+      "OutOfResourceFeed": "#FeedObjects.RequestWater",
+      "OutOfResourcePopupClassName": "popup_ask_water"
     }
   },
   "MapArea": {
@@ -792,7 +797,7 @@
       "GraphicsFriendly": "swf/new_backgroud_01/Bg_GoodTile_01_desert",
       "GraphicsEnemy": "swf/new_backgroud_01/Bg_BadTile_01_desert",
       "OverlaysFriendly": "swf/new_backgroud_01/Bg_GoodTile_Deco_33",
-      "OverlaysEnemy": "swf/new_backgroud_01/Bg_BadTile_Deco_05"
+      "OverlaysEnemy": "swf/new_backgroud_01/Bg_BadTile_Deco_33"
     },
     "106": {
       "ID": "106",
@@ -802,7 +807,7 @@
       "GraphicsFriendly": "swf/new_backgroud_01/Bg_GoodTile_01_desert",
       "GraphicsEnemy": "swf/new_backgroud_01/Bg_BadTile_01_desert",
       "OverlaysFriendly": "swf/new_backgroud_01/Bg_GoodTile_Deco_32",
-      "OverlaysEnemy": "swf/new_backgroud_01/Bg_BadTile_Deco_06"
+      "OverlaysEnemy": "swf/new_backgroud_01/Bg_BadTile_Deco_32"
     },
     "107": {
       "ID": "107",
@@ -872,7 +877,7 @@
       "GraphicsFriendly": "swf/new_backgroud_01/Bg_GoodTile_01_desert",
       "GraphicsEnemy": "swf/new_backgroud_01/Bg_BadTile_01_desert",
       "OverlaysFriendly": "swf/new_backgroud_01/Bg_GoodTile_Deco_34",
-      "OverlaysEnemy": "swf/new_backgroud_01/Bg_BadTile_Deco_13"
+      "OverlaysEnemy": "swf/new_backgroud_01/Bg_BadTile_Deco_34"
     },
     "114": {
       "ID": "114",
@@ -881,8 +886,8 @@
       "MapType": "#MapType.Desert",
       "GraphicsFriendly": "swf/new_backgroud_01/Bg_GoodTile_01_desert",
       "GraphicsEnemy": "swf/new_backgroud_01/Bg_BadTile_01_desert",
-      "OverlaysFriendly": "swf/new_backgroud_01/Bg_GoodTile_Deco_14",
-      "OverlaysEnemy": "swf/new_backgroud_01/Bg_BadTile_Deco_14"
+      "OverlaysFriendly": "swf/new_backgroud_01/Bg_GoodTile_Deco_47",
+      "OverlaysEnemy": "swf/new_backgroud_01/Bg_BadTile_Deco_47"
     },
     "115": {
       "ID": "115",
@@ -891,8 +896,8 @@
       "MapType": "#MapType.Desert",
       "GraphicsFriendly": "swf/new_backgroud_01/Bg_GoodTile_01_desert",
       "GraphicsEnemy": "swf/new_backgroud_01/Bg_BadTile_01_desert",
-      "OverlaysFriendly": "swf/new_backgroud_01/Bg_GoodTile_Deco_15",
-      "OverlaysEnemy": "swf/new_backgroud_01/Bg_BadTile_Deco_15"
+      "OverlaysFriendly": "swf/new_backgroud_01/Bg_GoodTile_Deco_35",
+      "OverlaysEnemy": "swf/new_backgroud_01/Bg_BadTile_Deco_35"
     },
     "116": {
       "ID": "116",
@@ -1116,7 +1121,7 @@
       "GraphicsFriendly": "swf/new_backgroud_01/Bg_GoodTile_01_desert",
       "GraphicsEnemy": "swf/new_backgroud_01/Bg_BadTile_01_desert",
       "OverlaysFriendly": "swf/new_backgroud_01/Bg_GoodTile_Deco_38",
-      "OverlaysEnemy": "swf/new_backgroud_01/Bg_GoodTile_Deco_38"
+      "OverlaysEnemy": "swf/new_backgroud_01/Bg_BadTile_Deco_38"
     },
     "141": {
       "ID": "141",
@@ -1126,7 +1131,7 @@
       "GraphicsFriendly": "swf/new_backgroud_01/Bg_GoodTile_01_desert",
       "GraphicsEnemy": "swf/new_backgroud_01/Bg_BadTile_01_desert",
       "OverlaysFriendly": "swf/new_backgroud_01/Bg_GoodTile_Deco_37",
-      "OverlaysEnemy": "swf/new_backgroud_01/Bg_GoodTile_Deco_37"
+      "OverlaysEnemy": "swf/new_backgroud_01/Bg_BadTile_Deco_37"
     },
     "142": {
       "ID": "142",
@@ -1136,7 +1141,7 @@
       "GraphicsFriendly": "swf/new_backgroud_01/Bg_GoodTile_01_desert",
       "GraphicsEnemy": "swf/new_backgroud_01/Bg_BadTile_01_desert",
       "OverlaysFriendly": "swf/new_backgroud_01/Bg_GoodTile_Deco_39",
-      "OverlaysEnemy": "swf/new_backgroud_01/Bg_GoodTile_Deco_39"
+      "OverlaysEnemy": "swf/new_backgroud_01/Bg_BadTile_Deco_39"
     },
     "143": {
       "ID": "143",
@@ -1146,7 +1151,7 @@
       "GraphicsFriendly": "swf/new_backgroud_01/Bg_GoodTile_01_desert",
       "GraphicsEnemy": "swf/new_backgroud_01/Bg_BadTile_01_desert",
       "OverlaysFriendly": "swf/new_backgroud_01/Bg_GoodTile_Deco_40",
-      "OverlaysEnemy": "swf/new_backgroud_01/Bg_GoodTile_Deco_40"
+      "OverlaysEnemy": "swf/new_backgroud_01/Bg_BadTile_Deco_40"
     },
     "144": {
       "ID": "144",
@@ -1155,8 +1160,8 @@
       "MapType": "#MapType.Desert",
       "GraphicsFriendly": "swf/new_backgroud_01/Bg_GoodTile_01_desert",
       "GraphicsEnemy": "swf/new_backgroud_01/Bg_BadTile_01_desert",
-      "OverlaysFriendly": "swf/new_backgroud_01/Bg_GoodTile_Deco_19",
-      "OverlaysEnemy": "swf/new_backgroud_01/Bg_BadTile_Deco_26"
+      "OverlaysFriendly": "swf/new_backgroud_01/Bg_GoodTile_Deco_48",
+      "OverlaysEnemy": "swf/new_backgroud_01/Bg_BadTile_Deco_48"
     },
     "145": {
       "ID": "145",
@@ -1166,7 +1171,7 @@
       "GraphicsFriendly": "swf/new_backgroud_01/Bg_GoodTile_01_desert",
       "GraphicsEnemy": "swf/new_backgroud_01/Bg_BadTile_01_desert",
       "OverlaysFriendly": "swf/new_backgroud_01/Bg_GoodTile_Deco_43",
-      "OverlaysEnemy": "swf/new_backgroud_01/Bg_GoodTile_Deco_43"
+      "OverlaysEnemy": "swf/new_backgroud_01/Bg_BadTile_Deco_43"
     },
     "146": {
       "ID": "146",
@@ -1176,7 +1181,7 @@
       "GraphicsFriendly": "swf/new_backgroud_01/Bg_GoodTile_01_desert",
       "GraphicsEnemy": "swf/new_backgroud_01/Bg_BadTile_01_desert",
       "OverlaysFriendly": "swf/new_backgroud_01/Bg_GoodTile_Deco_42",
-      "OverlaysEnemy": "swf/new_backgroud_01/Bg_GoodTile_Deco_42"
+      "OverlaysEnemy": "swf/new_backgroud_01/Bg_BadTile_Deco_42"
     },
     "147": {
       "ID": "147",
@@ -1186,7 +1191,7 @@
       "GraphicsFriendly": "swf/new_backgroud_01/Bg_GoodTile_01_desert",
       "GraphicsEnemy": "swf/new_backgroud_01/Bg_BadTile_01_desert",
       "OverlaysFriendly": "swf/new_backgroud_01/Bg_GoodTile_Deco_44",
-      "OverlaysEnemy": "swf/new_backgroud_01/Bg_GoodTile_Deco_44"
+      "OverlaysEnemy": "swf/new_backgroud_01/Bg_BadTile_Deco_44"
     },
     "148": {
       "ID": "148",
@@ -1196,7 +1201,7 @@
       "GraphicsFriendly": "swf/new_backgroud_01/Bg_GoodTile_01_desert",
       "GraphicsEnemy": "swf/new_backgroud_01/Bg_BadTile_01_desert",
       "OverlaysFriendly": "swf/new_backgroud_01/Bg_GoodTile_Deco_45",
-      "OverlaysEnemy": "swf/new_backgroud_01/Bg_GoodTile_Deco_45"
+      "OverlaysEnemy": "swf/new_backgroud_01/Bg_BadTile_Deco_45"
     },
     "149": {
       "ID": "149",
@@ -1205,8 +1210,8 @@
       "MapType": "#MapType.Desert",
       "GraphicsFriendly": "swf/new_backgroud_01/Bg_GoodTile_01_desert",
       "GraphicsEnemy": "swf/new_backgroud_01/Bg_BadTile_01_desert",
-      "OverlaysFriendly": "swf/new_backgroud_01/Bg_GoodTile_Deco_35",
-      "OverlaysEnemy": "swf/new_backgroud_01/Bg_DeadTrees_01"
+      "OverlaysFriendly": "swf/new_backgroud_01/Bg_GoodTile_Deco_46",
+      "OverlaysEnemy": "swf/new_backgroud_01/Bg_BadTile_Deco_46"
     }
   },
   "Passability": {
@@ -4896,7 +4901,7 @@
       "Name": "#TID.HFE_PLOT",
       "Description": "#TID.HFE_PLOT_DESC",
       "IconGraphics": "icons/shop_icons/icon_drop_zone.png",
-      "Graphics": "swf/buildings_player_supplies_low/resources_civilian_zone, swf/buildings_player_supplies_low/resources_civilian_zone_desert",
+      "Graphics": "swf/buildings_player_supplies_low/resources_civilian_zone, swf/buildings_player_supplies_low/resources_civilian_zone",
       "GraphicsLoader": "InnerMovieClip",
       "ObjectClass": "game.gameElements.HFEPlotObject",
       "RequiredLevel": "0",
@@ -4992,7 +4997,7 @@
       "Name": "#TID.HFE_RANCH",
       "Description": "#TID.HFE_RANCH_DESC",
       "IconGraphics": "icons/shop_icons/icon_supplies_gasoline_drop.png",
-      "Graphics": "swf/buildings_player_supplies_low/resources_ranch, swf/buildings_player_supplies_low/resources_ranch_desert",
+      "Graphics": "swf/buildings_player_supplies_low/resources_ranch, swf/buildings_player_supplies_low/resources_ranch",
       "GraphicsLoader": "InnerMovieClip",
       "ObjectClass": "game.gameElements.HFEObject",
       "RequiredLevel": "2",
@@ -5056,7 +5061,7 @@
       "Name": "#TID.HFE_QUARRY",
       "Description": "#TID.HFE_QUARRY_DESC",
       "IconGraphics": "icons/shop_icons/icon_supplies_military_crate.png",
-      "Graphics": "swf/buildings_player_supplies_low/resources_quarry, swf/buildings_player_supplies_low/resources_quarry_desert",
+      "Graphics": "swf/buildings_player_supplies_low/resources_quarry, swf/buildings_player_supplies_low/resources_quarry",
       "GraphicsLoader": "InnerMovieClip",
       "ObjectClass": "game.gameElements.HFEObject",
       "RequiredLevel": "2",
@@ -5088,7 +5093,7 @@
       "Name": "#TID.HFE_SAWMILL",
       "Description": "#TID.HFE_SAWMILL_DESC",
       "IconGraphics": "icons/shop_icons/icon_supplies_big_container.png",
-      "Graphics": "swf/buildings_player_supplies_low/resources_sawmill, swf/buildings_player_supplies_low/resources_sawmill_desert",
+      "Graphics": "swf/buildings_player_supplies_low/resources_sawmill, swf/buildings_player_supplies_low/resources_sawmill",
       "GraphicsLoader": "InnerMovieClip",
       "ObjectClass": "game.gameElements.HFEObject",
       "RequiredLevel": "2",
@@ -5120,7 +5125,7 @@
       "Name": "#TID.HFE_OILWELL",
       "Description": "#TID.HFE_OILWELL_DESC",
       "IconGraphics": "icons/shop_icons/icon_supplies_premium_container.png",
-      "Graphics": "swf/buildings_player_supplies_low/resources_oil_well, swf/buildings_player_supplies_low/resources_oil_well_desert",
+      "Graphics": "swf/buildings_player_supplies_low/resources_oil_well, swf/buildings_player_supplies_low/resources_oil_well",
       "GraphicsLoader": "InnerMovieClip",
       "ObjectClass": "game.gameElements.HFEObject",
       "RequiredLevel": "12",
@@ -5546,7 +5551,7 @@
       "Name": "#TID.DECO_SUPPLY_YARD",
       "Description": "#TID.DECO_SUPPLY_YARD_DESC",
       "IconGraphics": "icons/shop_icons/icon_storage_supply_yard.png",
-      "Graphics": "swf/buildings_player_supplies_low/building_storage_supplydump, swf/buildings_player_supplies_low/building_storage_supplydump_desert",
+      "Graphics": "swf/buildings_player_supplies_low/building_storage_supplydump, swf/buildings_player_supplies_low/building_storage_supplydump",
       "GraphicsLoader": "InnerMovieClip",
       "ObjectClass": "game.gameElements.DecorationObject",
       "RequiredLevel": "0",
@@ -5616,7 +5621,7 @@
       "Name": "#TID.DECO_VAULT",
       "Description": "#TID.DECO_VAULT_DESC",
       "IconGraphics": "icons/shop_icons/icon_storage_underground_vault.png",
-      "Graphics": "swf/buildings_player_supplies_low/building_storage_undercovervault, swf/buildings_player_supplies_low/building_storage_undercovervault_desert",
+      "Graphics": "swf/buildings_player_supplies_low/building_storage_undercovervault, swf/buildings_player_supplies_low/building_storage_undercovervault",
       "GraphicsLoader": "InnerMovieClip",
       "ObjectClass": "game.gameElements.DecorationObject",
       "RequiredLevel": "0",
@@ -5686,7 +5691,7 @@
       "Name": "#TID.INSTALLATION_BARBWIRE",
       "Description": "#TID.INSTALLATION_BARBWIRE_DESC",
       "IconGraphics": "icons/shop_icons/icon_defenses_barricades.png",
-      "Graphics": "swf/buildings_player_defences_low/building_barricades, swf/buildings_player_defences_low/building_barricades_desert",
+      "Graphics": "swf/buildings_player_defences_low/building_barricades, swf/buildings_player_defences_low/building_barricades",
       "GraphicsLoader": "InnerMovieClip",
       "ObjectClass": "game.gameElements.DecorationObject",
       "RequiredLevel": "0",
@@ -5721,7 +5726,7 @@
       "Name": "#TID.INSTALLATION_MINES",
       "Description": "#TID.INSTALLATION_MINES_DESC",
       "IconGraphics": "icons/shop_icons/icon_defenses_mines.png",
-      "Graphics": "swf/buildings_player_defences_low/building_mines, swf/buildings_player_defences_low/building_mines_desert",
+      "Graphics": "swf/buildings_player_defences_low/building_mines, swf/buildings_player_defences_low/building_mines",
       "GraphicsLoader": "InnerMovieClip",
       "ObjectClass": "game.gameElements.DecorationObject",
       "RequiredLevel": "0",
@@ -5795,12 +5800,12 @@
       "Name": "#TID.INSTALLATION_SNIPERNEST",
       "Description": "#TID.INSTALLATION_SNIPERNEST_DESC",
       "IconGraphics": "icons/shop_icons/icon_defenses_sniper_nest.png",
-      "Graphics": "swf/buildings_player_defences_low/building_sniper_nest, swf/buildings_player_defences_low/building_sniper_nest_desert",
+      "Graphics": "swf/buildings_player_defences_low/building_sniper_nest, swf/buildings_player_defences_low/building_sniper_nest",
       "GraphicsLoader": "InnerMovieClip",
-      "Graphic_idle": "swf/buildings_player_defences_low/building_sniper_nest, swf/buildings_player_defences_low/building_sniper_nest_desert",
-      "Graphic_aim": "swf/buildings_player_defences_low/building_sniper_nest, swf/buildings_player_defences_low/building_sniper_nest_desert",
-      "Graphic_shoot": "swf/buildings_player_defences_low/building_sniper_nest, swf/buildings_player_defences_low/building_sniper_nest_desert",
-      "Graphic_hit": "swf/buildings_player_defences_low/building_sniper_nest, swf/buildings_player_defences_low/building_sniper_nest_desert",
+      "Graphic_idle": "swf/buildings_player_defences_low/building_sniper_nest, swf/buildings_player_defences_low/building_sniper_nest",
+      "Graphic_aim": "swf/buildings_player_defences_low/building_sniper_nest, swf/buildings_player_defences_low/building_sniper_nest",
+      "Graphic_shoot": "swf/buildings_player_defences_low/building_sniper_nest, swf/buildings_player_defences_low/building_sniper_nest",
+      "Graphic_hit": "swf/buildings_player_defences_low/building_sniper_nest, swf/buildings_player_defences_low/building_sniper_nest",
       "Graphic_die": "swf/buildings_player_low/building_destroyed_1x1",
       "ObjectClass": "game.gameElements.PlayerInstallationObject",
       "RequiredLevel": "0",
@@ -5906,12 +5911,12 @@
       "Name": "#TID.INSTALLATION_GUARD_TOWER",
       "Description": "#TID.INSTALLATION_GUARD_TOWER_DESC",
       "IconGraphics": "icons/shop_icons/icon_defenses_guard_tower.png",
-      "Graphics": "swf/buildings_player_defences_low/building_guard_post, swf/buildings_player_defences_low/building_guard_post_desert",
+      "Graphics": "swf/buildings_player_defences_low/building_guard_post, swf/buildings_player_defences_low/building_guard_post",
       "GraphicsLoader": "InnerMovieClip",
-      "Graphic_idle": "swf/buildings_player_defences_low/building_guard_post, swf/buildings_player_defences_low/building_guard_post_desert",
-      "Graphic_aim": "swf/buildings_player_defences_low/building_guard_post, swf/buildings_player_defences_low/building_guard_post_desert",
-      "Graphic_shoot": "swf/buildings_player_defences_low/building_guard_post, swf/buildings_player_defences_low/building_guard_post_desert",
-      "Graphic_hit": "swf/buildings_player_defences_low/building_guard_post, swf/buildings_player_defences_low/building_guard_post_desert",
+      "Graphic_idle": "swf/buildings_player_defences_low/building_guard_post, swf/buildings_player_defences_low/building_guard_post",
+      "Graphic_aim": "swf/buildings_player_defences_low/building_guard_post, swf/buildings_player_defences_low/building_guard_post",
+      "Graphic_shoot": "swf/buildings_player_defences_low/building_guard_post, swf/buildings_player_defences_low/building_guard_post",
+      "Graphic_hit": "swf/buildings_player_defences_low/building_guard_post, swf/buildings_player_defences_low/building_guard_post",
       "Graphic_die": "swf/buildings_player_low/building_destroyed_1x1",
       "ObjectClass": "game.gameElements.PlayerInstallationObject",
       "RequiredLevel": "0",
@@ -6629,7 +6634,7 @@
       "Name": "#TID.BUILDING_BOOTCAMP",
       "Description": "#TID.BUILDING_BOOTCAMP_DESC",
       "IconGraphics": "icons/shop_icons/icon_buildings_boot_camp.png",
-      "Graphics": "swf/buildings_player_start_low/boot_camp, swf/buildings_player_start_low/building_boot_camp_desert",
+      "Graphics": "swf/buildings_player_start_low/boot_camp, swf/buildings_player_start_low/building_boot_camp",
       "ConstructionSiteGraphics": "construction_site_boot_camp",
       "GraphicsLoader": "InnerMovieClip",
       "ObjectClass": "game.gameElements.ConstructionObject",
@@ -6674,7 +6679,7 @@
       "Name": "#TID.BUILDING_MOTORPOOL",
       "Description": "#TID.BUILDING_MOTORPOOL_DESC",
       "IconGraphics": "icons/shop_icons/icon_buildings_motor_pool.png",
-      "Graphics": "swf/buildings_player_low/motor_pool, swf/buildings_player_low/building_motor_pool_desert",
+      "Graphics": "swf/buildings_player_low/motor_pool, swf/buildings_player_low/building_motor_pool",
       "ConstructionSiteGraphics": "construction_site_motor_pool",
       "GraphicsLoader": "InnerMovieClip",
       "ObjectClass": "game.gameElements.ConstructionObject",
@@ -6719,7 +6724,7 @@
       "Name": "#TID.BUILDING_ARSENAL",
       "Description": "#TID.BUILDING_ARSENAL_DESC",
       "IconGraphics": "icons/shop_icons/icon_buildings_arsenal.png",
-      "Graphics": "swf/buildings_player_low/arsenal, swf/buildings_player_low/building_arsenal_desert",
+      "Graphics": "swf/buildings_player_low/arsenal, swf/buildings_player_low/building_arsenal",
       "ConstructionSiteGraphics": "construction_site_arsenal",
       "GraphicsLoader": "InnerMovieClip",
       "ObjectClass": "game.gameElements.ConstructionObject",
@@ -6764,7 +6769,7 @@
       "Name": "#TID.BUILDING_COMMANDO",
       "Description": "#TID.BUILDING_COMMANDO_DESC",
       "IconGraphics": "icons/shop_icons/icon_buildings_commando_school.png",
-      "Graphics": "swf/buildings_player_low/commando_school, swf/buildings_player_low/building_commando_school_desert",
+      "Graphics": "swf/buildings_player_low/commando_school, swf/buildings_player_low/building_commando_school",
       "ConstructionSiteGraphics": "construction_site_commando_school",
       "GraphicsLoader": "InnerMovieClip",
       "ObjectClass": "game.gameElements.ConstructionObject",
@@ -6809,7 +6814,7 @@
       "Name": "#TID.BUILDING_FACTORY",
       "Description": "#TID.BUILDING_FACTORY_DESC",
       "IconGraphics": "icons/shop_icons/icon_buildings_factory.png",
-      "Graphics": "swf/buildings_player_low/factory, swf/buildings_player_low/building_factory_desert",
+      "Graphics": "swf/buildings_player_low/factory, swf/buildings_player_low/building_factory",
       "ConstructionSiteGraphics": "construction_site_factory",
       "GraphicsLoader": "InnerMovieClip",
       "ObjectClass": "game.gameElements.ConstructionObject",
@@ -6854,7 +6859,7 @@
       "Name": "#TID.BUILDING_TESTSITE",
       "Description": "#TID.BUILDING_TESTSITE_DESC",
       "IconGraphics": "icons/shop_icons/icon_buildings_test_site.png",
-      "Graphics": "swf/buildings_player_low/rocket_site, swf/buildings_player_low/building_rocket_site_desert",
+      "Graphics": "swf/buildings_player_low/rocket_site, swf/buildings_player_low/building_rocket_site",
       "ConstructionSiteGraphics": "construction_site_rocket_site",
       "GraphicsLoader": "InnerMovieClip",
       "ObjectClass": "game.gameElements.ConstructionObject",
@@ -6899,7 +6904,7 @@
       "Name": "#TID.BUILDING_HQ",
       "Description": "#TID.BUILDING_HQ_DESC",
       "IconGraphics": "icons/shop_icons/icon_buildings_hq.png",
-      "Graphics": "swf/buildings_player_start_low/building_hq, swf/buildings_player_start_low/building_hq_desert",
+      "Graphics": "swf/buildings_player_start_low/building_hq, swf/buildings_player_start_low/building_hq",
       "ConstructionSiteGraphics": "construction_site_hq",
       "GraphicsLoader": "InnerMovieClip",
       "ObjectClass": "game.gameElements.ConstructionObject",
@@ -7456,9 +7461,9 @@
       "ID": "Mines",
       "Type": "EnemyInstallation",
       "Name": "#TID.MOUSEOVER_ENEMY_MINEFIELD",
-      "Graphic_idle": "swf/buildings_enemy_start_low/building_enemy_mines, swf/buildings_enemy_start_low/building_enemy_mines",
-      "Graphic_shoot": "swf/buildings_enemy_start_low/building_enemy_mines, swf/buildings_enemy_start_low/building_enemy_mines",
-      "Graphic_hit": "swf/buildings_enemy_start_low/building_enemy_mines, swf/buildings_enemy_start_low/building_enemy_mines",
+      "Graphic_idle": "swf/buildings_enemy_start_low/building_enemy_mines, swf/buildings_enemy_start_low/building_enemy_mines_desert",
+      "Graphic_shoot": "swf/buildings_enemy_start_low/building_enemy_mines, swf/buildings_enemy_start_low/building_enemy_mines_desert",
+      "Graphic_hit": "swf/buildings_enemy_start_low/building_enemy_mines, swf/buildings_enemy_start_low/building_enemy_mines_desert",
       "Graphic_destroy": "swf/effects_low/effect_explosion",
       "ObjectClass": "game.gameElements.EnemyInstallationObject",
       "Health": "1",
@@ -7501,9 +7506,9 @@
       "ID": "Propaganda",
       "Type": "EnemyInstallation",
       "Name": "#TID.MOUSEOVER_ENEMY_PROPAGANDA_TOWER",
-      "Graphic_idle": "swf/buildings_enemy_start_low/building_enemy_propaganda_tower, swf/buildings_enemy_start_low/building_enemy_propaganda_tower",
-      "Graphic_shoot": "swf/buildings_enemy_start_low/building_enemy_propaganda_tower, swf/buildings_enemy_start_low/building_enemy_propaganda_tower",
-      "Graphic_hit": "swf/buildings_enemy_start_low/building_enemy_propaganda_tower, swf/buildings_enemy_start_low/building_enemy_propaganda_tower",
+      "Graphic_idle": "swf/buildings_enemy_start_low/building_enemy_propaganda_tower, swf/buildings_enemy_start_low/building_enemy_propaganda_tower_desert",
+      "Graphic_shoot": "swf/buildings_enemy_start_low/building_enemy_propaganda_tower, swf/buildings_enemy_start_low/building_enemy_propaganda_tower_desert",
+      "Graphic_hit": "swf/buildings_enemy_start_low/building_enemy_propaganda_tower, swf/buildings_enemy_start_low/building_enemy_propaganda_tower_desert",
       "Graphic_destroy": "swf/effects_low/effect_explosion",
       "ObjectClass": "game.gameElements.EnemyInstallationObject",
       "Health": "10",
@@ -7635,9 +7640,9 @@
       "ID": "FuelDump",
       "Type": "EnemyInstallation",
       "Name": "#TID.MOUSEOVER_ENEMY_FUEL_DUMP",
-      "Graphic_idle": "swf/buildings_enemy_start_low/building_enemy_fuel_dump, swf/buildings_enemy_start_low/building_enemy_fuel_dump",
-      "Graphic_shoot": "swf/buildings_enemy_start_low/building_enemy_fuel_dump, swf/buildings_enemy_start_low/building_enemy_fuel_dump",
-      "Graphic_hit": "swf/buildings_enemy_start_low/building_enemy_fuel_dump, swf/buildings_enemy_start_low/building_enemy_fuel_dump",
+      "Graphic_idle": "swf/buildings_enemy_start_low/building_enemy_fuel_dump, swf/buildings_enemy_start_low/building_enemy_fuel_dump_desert",
+      "Graphic_shoot": "swf/buildings_enemy_start_low/building_enemy_fuel_dump, swf/buildings_enemy_start_low/building_enemy_fuel_dump_desert",
+      "Graphic_hit": "swf/buildings_enemy_start_low/building_enemy_fuel_dump, swf/buildings_enemy_start_low/building_enemy_fuel_dump_desert",
       "Graphic_destroy": "swf/effects_low/effect_explosion",
       "ObjectClass": "game.gameElements.EnemyInstallationObject",
       "Health": "1",
@@ -8302,9 +8307,9 @@
       "ID": "Billboard",
       "Type": "EnemyInstallation",
       "Name": "#TID.MOUSEOVER_ENEMY_BILLBOARD",
-      "Graphic_idle": "swf/buildings_enemy_start_low/building_enemy_billboard, swf/buildings_enemy_start_low/building_enemy_barricades_desert",
-      "Graphic_shoot": "swf/buildings_enemy_start_low/building_enemy_billboard, swf/buildings_enemy_start_low/building_enemy_barricades_desert",
-      "Graphic_hit": "swf/buildings_enemy_start_low/building_enemy_billboard, swf/buildings_enemy_start_low/building_enemy_barricades_desert",
+      "Graphic_idle": "swf/buildings_enemy_start_low/building_enemy_billboard, swf/buildings_enemy_start_low/building_enemy_barricades",
+      "Graphic_shoot": "swf/buildings_enemy_start_low/building_enemy_billboard, swf/buildings_enemy_start_low/building_enemy_barricades",
+      "Graphic_hit": "swf/buildings_enemy_start_low/building_enemy_billboard, swf/buildings_enemy_start_low/building_enemy_barricades",
       "Graphic_destroy": "swf/effects_low/effect_explosion",
       "ObjectClass": "game.gameElements.EnemyInstallationObject",
       "Health": "4",
@@ -9850,6 +9855,13 @@
       "Description": "#TID.SUPPLIES",
       "IconGraphics": "icons/resources/resource_icon_supplies.png"
     },
+    "Water": {
+      "ID": "Water",
+      "Type": "Resource",
+      "Name": "#TID.RESOURCE_WATER",
+      "Description": "#TID.RESOURCE_WATER",
+      "IconGraphics": "icons/resources/resource_icon_water.png"
+    },
     "Time": {
       "ID": "Time",
       "Type": "Resource",
@@ -10171,7 +10183,38 @@
       "ImageUrl": "cash_icon.png"
     }
   },
-  "WaterPack": {},
+  "WaterPack": {
+    "Large": {
+      "ID": "Large",
+      "Type": "WaterPack",
+      "Name": "#TID.WATER_LARGE_TITLE",
+      "Description": "#TID.WATER_LARGE_DESC",
+      "IconGraphics": "icons/shop_icons/icon_water_pack_03.png",
+      "CostPremium": "25",
+      "WaterGain": "30",
+      "ImageUrl": "cash_icon.png"
+    },
+    "Medium": {
+      "ID": "Medium",
+      "Type": "WaterPack",
+      "Name": "#TID.WATER_MEDIUM_TITLE",
+      "Description": "#TID.WATER_MEDIUM_DESC",
+      "IconGraphics": "icons/shop_icons/icon_water_pack_02.png",
+      "CostPremium": "14",
+      "WaterGain": "15",
+      "ImageUrl": "cash_icon.png"
+    },
+    "Small": {
+      "ID": "Small",
+      "Type": "WaterPack",
+      "Name": "#TID.WATER_SMALL_TITLE",
+      "Description": "#TID.WATER_SMALL_DESC",
+      "IconGraphics": "icons/shop_icons/icon_water_pack_01.png",
+      "CostPremium": "5",
+      "WaterGain": "5",
+      "ImageUrl": "cash_icon.png"
+    }
+  },
   "ItemDrop": {
     "HardHat": {
       "ID": "HardHat",
@@ -12080,6 +12123,58 @@
       "OrderInGiftsTab": "0",
       "GiveRandomItem": "0"
     },
+    "WaterPackSmall": {
+      "ID": "WaterPackSmall",
+      "Item": "#WaterPack.Small",
+      "RequiredLevel": "1",
+      "Graphics": "icons/shop_icons/icon_water_pack_01.png",
+      "Name": "#TID.WATER_SMALL_TITLE",
+      "Tooltip": "#TID.WATERPACK_SMALL_DESC",
+      "Free": "1",
+      "Wishlistable": "1",
+      "ShowInGiftsTab": "1",
+      "OrderInGiftsTab": "40",
+      "GiveRandomItem": "0"
+    },
+    "WaterPack": {
+      "ID": "WaterPackSmall",
+      "Item": "#WaterPack.Small",
+      "RequiredLevel": "1",
+      "Graphics": "icons/shop_icons/icon_water_pack_01.png",
+      "Name": "#TID.WATER_SMALL_TITLE",
+      "Tooltip": "#TID.WATERPACK_SMALL_DESC",
+      "Free": "1",
+      "Wishlistable": "1",
+      "ShowInGiftsTab": "1",
+      "OrderInGiftsTab": "40",
+      "GiveRandomItem": "0"
+    },
+    "WaterPackMedium": {
+      "ID": "WaterPackMedium",
+      "Item": "#WaterPack.Medium",
+      "RequiredLevel": "1",
+      "Graphics": "icons/shop_icons/icon_water_pack_02.png",
+      "Name": "#TID.WATER_MEDIUM_TITLE",
+      "Tooltip": "#TID.WATERPACK_MEDIUM_DESC",
+      "Free": "1",
+      "Wishlistable": "1",
+      "ShowInGiftsTab": "0",
+      "OrderInGiftsTab": "0",
+      "GiveRandomItem": "0"
+    },
+    "WaterPackSmallLarge": {
+      "ID": "WaterPackSmallLarge",
+      "Item": "#WaterPack.Large",
+      "RequiredLevel": "1",
+      "Graphics": "icons/shop_icons/icon_water_pack_03.png",
+      "Name": "#TID.WATER_LARGE_TITLE",
+      "Tooltip": "#TID.WATERPACK_LARGE_DESC",
+      "Free": "1",
+      "Wishlistable": "1",
+      "ShowInGiftsTab": "0",
+      "OrderInGiftsTab": "0",
+      "GiveRandomItem": "0"
+    },
     "NavySeal": {
       "ID": "NavySeal",
       "Item": "#PlayerUnit.Infantry",
@@ -12641,6 +12736,23 @@
       "RewardCap": "3",
       "ExpiresHours": "24",
       "Ref": "Rsupplies"
+    },
+    "RequestWater": {
+      "ID": "RequestWater",
+      "Type": "RequestItem",
+      "Title": "#TID.FEED_WATER_REQUEST_TITLE",
+      "Caption": "#TID.FEED_WATER_REQUEST_TEXT",
+      "LandingPageTitle": "#TID.LANDING_WATER_TITLE",
+      "LandingPageText": "#TID.LANDING_WATER_DESC",
+      "ActionLinkText": "#TID.FEED_WATER_REQUEST_ACTION",
+      "Image": "icons/feed_icons/icon_feed_water_needed.png",
+      "ClickerRewardItem": "#WaterPack.Small",
+      "ClickerRewardAmount": "1",
+      "RequestRewardItem": "#Gift.WaterPackSmall",
+      "RequestRewardAmount": "1",
+      "RewardCap": "3",
+      "ExpiresHours": "24",
+      "Ref": "Rwater"
     },
     "WishList": {
       "ID": "WishList",
@@ -13620,6 +13732,18 @@
     "5": {
       "ID": "5",
       "Item": "#SupplyPack.Small"
+    },
+    "6": {
+      "ID": "6",
+      "Item": "#WaterPack.Large"
+    },
+    "7": {
+      "ID": "7",
+      "Item": "#WaterPack.Medium"
+    },
+    "8": {
+      "ID": "8",
+      "Item": "#WaterPack.Small"
     }
   },
   "ShopBuygold": {

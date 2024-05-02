@@ -1,4 +1,4 @@
-package game.items
+﻿package game.items
 {
    import game.states.GameState;
    
@@ -51,6 +51,7 @@ package game.items
          addItems("FireMission",createFireMissionItem);
          addItems("PowerUp",createPowerUpItem);
          addItems("Timers",createTimerItem);
+		 addItems("WaterPack",createWaterPackItem);
       }
       
       private static function addItems(param1:String, param2:Function) : void
