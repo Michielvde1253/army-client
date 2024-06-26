@@ -138,6 +138,8 @@
       public var mCollectionCard:CollectionCard;
       
       public var mIngameHUDClip:MovieClip;
+	  
+      public var mIngameHUDClip_BOTTOM:MovieClip;
       
       private var mRightPlaceButtonClip:MovieClip;
       
@@ -376,6 +378,7 @@
          var _loc17_:Item = null;
          var _loc18_:int = 0;
          this.mIngameHUDClip.visible = true;
+		 this.mIngameHUDClip_BOTTOM.visible = true;
          if(this.mFirstUpdate)
          {
             this.mGame.mServer.serverCallServiceWithParameters(ServiceIDs.GET_GOLD_AND_CASH,{"ver":1},false);
@@ -561,16 +564,21 @@
       public function createHUD() : void
       {
          DCButton.TRIGGER_AT_MOUSE_UP = true;
-         var _loc1_:Class = DCResourceManager.getInstance().getSWFClass(Config.SWF_INTERFACE_NAME,"hud");
+         var _loc1_:Class = DCResourceManager.getInstance().getSWFClass(Config.SWF_INTERFACE_NAME,"hud_new_top");
+         var _loc2_:Class = DCResourceManager.getInstance().getSWFClass(Config.SWF_INTERFACE_NAME,"hud_new_bottom");
          this.mIngameHUDClip = new _loc1_();
+		 this.mIngameHUDClip_BOTTOM = new _loc2_();
          if(FeatureTuner.USE_COLLECTION_CARD)
          {
             this.mCollectionCard = new CollectionCard(this.mIngameHUDClip);
          }
          addChild(this.mIngameHUDClip);
+	     addChild(this.mIngameHUDClip_BOTTOM);
          this.mIngameHUDClip.visible = false;
+	     this.mIngameHUDClip_BOTTOM.visible = false;
          Utils.CallForAllChildren(this,Utils.disableMouse,null);
-         this.mResourceFrame = this.mIngameHUDClip.getChildAt(5) as MovieClip;
+	 
+         this.mResourceFrame = this.mIngameHUDClip.getChildByName("Resources") as MovieClip;
          this.mHudButtonShop = Utils.createBasicButton(this.mIngameHUDClip,"Button_shop",this.buttonShopPressed);
          this.mHudButtonSave = Utils.createBasicButton(this.mIngameHUDClip,"Button_save",this.buttonSavePressed);
          this.mButtonMap = Utils.createBasicButton(this.mIngameHUDClip,'Button_Map',this.buttonMapPressed);
@@ -604,7 +612,9 @@
          this.mButtonTextPremium = this.mButtonFramePremium.getChildAt(3) as TextField;
          this.mButtonAddCash = Utils.createBasicButton(this.mButtonFrameCash,"button_add_cash",this.cashPressed);
          this.mButtonAddPremium = Utils.createBasicButton(this.mButtonFramePremium,"button_add_gold",this.premiumPressed);
-         this.mToolBox = this.mIngameHUDClip.getChildAt(0) as MovieClip;
+		 
+		 
+         this.mToolBox = this.mIngameHUDClip_BOTTOM.getChildByName("Toolbox") as MovieClip;
          this.mToolBoxButtonsDisabled = new Array(TOOLBOX_BUTTONS_COUNT,false);
          this.mToolBoxButtonsEnabled = new Array(TOOLBOX_BUTTONS_COUNT,false);
          this.mButtonToolBoxSell = this.addButton(this.mToolBox,"Button_Sell",this.buttonToolboxSellPressed);
@@ -623,9 +633,10 @@
          this.hideToolboxButtons();
          this.mCurrentZoomStep = 0;
          LocalizationUtils.replaceFont(this.mEnergyTimerText.getTextField());
-         this.mButtonPullOutFrame = this.mIngameHUDClip.getChildAt(4) as MovieClip;
+		 
+         this.mButtonPullOutFrame = this.mIngameHUDClip_BOTTOM.getChildByName("Pullout_holder") as MovieClip;
          this.mButtonPullOut = Utils.createBasicButton(this.mButtonPullOutFrame,"button_pullout_tools",this.buttonPullOutMenuPressed);
-         this.mPullOutMenuFrame = this.mIngameHUDClip.getChildAt(1) as MovieClip;
+         this.mPullOutMenuFrame = this.mIngameHUDClip_BOTTOM.getChildByName("pullout_tools_frame") as MovieClip;
          this.mPullOutMenuFrame.gotoAndStop(1);
          this.mPullOutMenuState = this.STATE_MENU_CLOSED;
          this.mPullOutMenu = this.mPullOutMenuFrame.getChildAt(0) as MovieClip;
@@ -641,7 +652,8 @@
          this.TOOLBOX_TOP_X = this.mButtonPullOutFrame.x;
          this.mToolBox.x = this.TOOLBOX_BOTTOM_X;
          this.mToolBox.y = this.mButtonPullOutFrame.y - (this.mToolBox.height >> 1);
-         this.mButtonPullOutMissionFrame = this.mIngameHUDClip.getChildAt(3) as MovieClip;
+		 
+         this.mButtonPullOutMissionFrame = this.mIngameHUDClip_BOTTOM.getChildByName("pullout_holder_mission") as MovieClip;
          this.mButtonPullOutMission = Utils.createBasicButton(this.mButtonPullOutMissionFrame,"button_pullout_mission",this.buttonPullOutMissionPressed);
          this.newMissionNotificationButton = this.mButtonPullOutMissionFrame.getChildAt(2) as MovieClip;
          this.newMissionNotificationPogressButton = this.mButtonPullOutMissionFrame.getChildAt(3) as MovieClip;
@@ -649,7 +661,8 @@
          this.newMissionNotificationPogressButton.buttonMode = true;
          this.newMissionNotificationButton.visible = false;
          this.newMissionNotificationPogressButton.visible = false;
-         this.mPullOutMissionFrame = this.mIngameHUDClip.getChildAt(2) as MovieClip;
+		 
+         this.mPullOutMissionFrame = this.mIngameHUDClip_BOTTOM.getChildByName("pullout_mission_frame") as MovieClip;
          this.mPullOutMissionFrame.gotoAndStop(1);
          this.mPullOutMissionMenuState = this.STATE_MISSIONS_MENU_CLOSED;
          this.resize(GameState.mInstance.getStageWidth(),GameState.mInstance.getStageHeight());
@@ -841,6 +854,7 @@
          this.mIngameHUDClip.removeChild(_loc2_);
       }
       
+  /*
       public function resize(param1:int, param2:int) : void
       {
          var _loc7_:PopUpWindow = null;
@@ -862,6 +876,9 @@
          this.mButtonPullOutMissionFrame.x -= _loc3_ / 2;
          this.mButtonPullOutFrame.x += _loc3_ / 2;
          this.mPullOutMenuFrame.x += _loc3_ / 2;
+		 trace("very useful tracking (always):")
+		 trace(this.mButtonPullOutMissionFrame.y)
+		 trace(this.mPullOutMissionFrame.y)
          if(param2 < 750)
          {
             this.mButtonPullOutMissionFrame.y -= this.mButtonPullOutMissionFrame.height / 2 - (_loc6_ >> 5);
@@ -901,7 +918,74 @@
             _loc10_++;
          }
       }
-      
+      */
+	  public function resize(param1:int, param2:int) : void
+{
+    var _loc7_:PopUpWindow = null;
+    var _loc3_:int = Math.max(param1 - this.GAME_HUD_WIDTH, 0);
+    var _loc4_:int = Math.max(param2 - 750, 0);
+    var _loc5_:Number = 0;
+    var _loc6_:int = this.mResourceFrame.width + 2;
+
+    if (param1 > 1200) {
+        _loc5_ = _loc6_ >> 3;
+    } else {
+        _loc5_ = (_loc6_ >> 4) + 6 * (_loc6_ >> 8);
+    }
+
+    // Ensure mIngameHUDClip stays within bounds
+    this.mIngameHUDClip.x = _loc3_ / 2;
+    this.mIngameHUDClip.y = _loc4_;
+
+    // Ensure mPullOutMissionFrame and other frames stay within bounds
+    this.mPullOutMissionFrame.x = Math.max(0, Math.min(param1 - this.mPullOutMissionFrame.width, this.mPullOutMissionFrame.x - _loc3_ / 2));
+    this.mButtonPullOutMissionFrame.x = Math.max(0, Math.min(param1 - this.mButtonPullOutMissionFrame.width, this.mButtonPullOutMissionFrame.x - _loc3_ / 2));
+    this.mButtonPullOutFrame.x = Math.max(0, Math.min(param1 - this.mButtonPullOutFrame.width, this.mButtonPullOutFrame.x + _loc3_ / 2));
+    this.mPullOutMenuFrame.x = Math.max(0, Math.min(param1 - this.mPullOutMenuFrame.width, this.mPullOutMenuFrame.x + _loc3_ / 2));
+
+
+    this.mButtonPullOutMissionFrame.y = Math.max(0, Math.min(param2 - this.mButtonPullOutMissionFrame.height));
+    this.mPullOutMissionFrame.y = Math.max(0, Math.min(param2));
+    this.mButtonPullOutFrame.y = Math.max(0, Math.min(param2 - this.mButtonPullOutFrame.height));
+    this.mPullOutMenuFrame.y = Math.max(0, Math.min(param2 - this.mPullOutMenuFrame.height));
+
+
+    if (!this.keyCoordinates) {
+        this.keyCoordinates = new Array();
+        this.keyCoordinates.push(new Point(this.mResourceFrame.x, this.mResourceFrame.y));
+        this.keyCoordinates.push(new Point(this.mEnergyFrame.x, this.mEnergyFrame.y));
+        this.keyCoordinates.push(new Point(this.mXpFrame.x, this.mXpFrame.y));
+        this.keyCoordinates.push(new Point(this.mSupplyFrame.x, this.mSupplyFrame.y));
+    }
+
+    // Ensure key frames stay within bounds
+    this.mResourceFrame.y = -_loc4_ + (this.keyCoordinates[0] as Point).y;
+    this.mEnergyFrame.y = -_loc4_ + (this.keyCoordinates[1] as Point).y;
+    this.mXpFrame.y = -_loc4_ + (this.keyCoordinates[2] as Point).y;
+    this.mSupplyFrame.y = -_loc4_ + (this.keyCoordinates[3] as Point).y;
+    //this.mNeighborActionsFrame.y = -_loc4_ + (this.keyCoordinates[1] as Point).y;
+
+    // Ensure mToolBox stays within bounds
+    this.TOOLBOX_BOTTOM_X = Math.max(0, Math.min(param1 - this.mToolBox.width, this.mButtonPullOutFrame.x + (this.mToolBox.width << 1)));
+    this.TOOLBOX_TOP_X = Math.max(0, Math.min(param1 - this.mToolBox.width, this.mButtonPullOutFrame.x));
+    this.mToolBox.x = this.TOOLBOX_BOTTOM_X;
+    this.mToolBox.y = Math.max(0, Math.min(param2 - this.mToolBox.height, this.mButtonPullOutFrame.y - (this.mToolBox.height >> 1)));
+
+    var _loc8_:Array = null;
+    var _loc9_:* = (_loc8_ = PopUpManager.getPopups()).length;
+    var _loc10_:int = 0;
+
+    while (_loc10_ < _loc9_) {
+        if (_loc7_ = _loc8_[_loc10_] as PopUpWindow) {
+            if (_loc7_.parent) {
+                _loc7_.alignToScreen();
+            }
+        }
+        _loc10_++;
+    }
+}
+
+	  
       public function showCancelButton(param1:Boolean) : void
       {
          this.mButtonCancel.setVisible(param1);
@@ -2145,6 +2229,11 @@
       public function getHUDClip() : MovieClip
       {
          return this.mIngameHUDClip;
+      }
+  
+	  public function getHUDClipBottom() : MovieClip
+      {
+         return this.mIngameHUDClip_BOTTOM;
       }
       
       public function setRepairButtonHighlight() : void

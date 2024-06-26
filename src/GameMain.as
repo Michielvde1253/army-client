@@ -4,6 +4,7 @@
    import flash.display.Sprite;
    import flash.events.Event;
    import flash.events.KeyboardEvent;
+   import flash.events.FullScreenEvent;
    import flash.utils.getTimer;
    import game.gui.popups.PopUpManager;
    import game.isometric.elements.Element;
@@ -44,6 +45,8 @@
          addEventListener(Event.ENTER_FRAME,this.onEnterFrame,false,0,true);
          stage.addEventListener(KeyboardEvent.KEY_DOWN,this.keyDown,false,0,true);
          stage.addEventListener(KeyboardEvent.KEY_UP,this.keyUp,false,0,true);
+		 stage.addEventListener(Event.RESIZE, this.windowResized);
+		 stage.addEventListener(FullScreenEvent.FULL_SCREEN, this.windowResized);
 		 this.discordRpc = new DiscordRpc();
 		 this.setDiscordStatus({});
       }
@@ -51,12 +54,16 @@
       private function keyDown(param1:KeyboardEvent) : void
       {
          this.gameState.keyDown(param1);
-         trace("keydown");
       }
       
       private function keyUp(param1:KeyboardEvent) : void
       {
          this.gameState.keyUp(param1);
+      }
+  
+      private function windowResized(param1:Event) : void
+      {
+         this.gameState.reactToFullscreen();
       }
       
       private function onEnterFrame(param1:Event) : void

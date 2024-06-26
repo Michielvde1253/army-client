@@ -1,4 +1,4 @@
-package game.gui.missions
+﻿package game.gui.missions
 {
    import flash.display.DisplayObjectContainer;
    import flash.display.MovieClip;
@@ -26,7 +26,7 @@ package game.gui.missions
       
       public function addToParent() : void
       {
-         var _loc1_:DisplayObjectContainer = GameState.mInstance.mHUD.getHUDClip();
+         var _loc1_:DisplayObjectContainer = GameState.mInstance.mHUD.getHUDClipBottom();
          var _loc2_:DisplayObjectContainer = _loc1_.getChildByName("pullout_mission_frame") as DisplayObjectContainer;
          var _loc3_:DisplayObjectContainer = _loc2_.getChildByName("pullout_mission") as DisplayObjectContainer;
          _loc3_.addChildAt(this.mFrame,1);

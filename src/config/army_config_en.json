@@ -2427,6 +2427,8 @@
     "RATEAPP_TITLE": { "ID":"RATEAPP_TITLE", "en":"Rate Army Attack" },
     "RATEAPP_DESC": { "ID":"RATEAPP_DESC", "en":"Please rate Army Attack if you enjoy playing this game." },
     "RATEAPP_BUTTON_RATE": { "ID":"RATEAPP_BUTTON_RATE", "en":"Rate Us" },
-    "RATEAPP_BUTTON_REMIND": { "ID":"RATEAPP_BUTTON_REMIND", "en":"Not now" }
+    "RATEAPP_BUTTON_REMIND": { "ID":"RATEAPP_BUTTON_REMIND", "en":"Not now" },
+    "UNIT_ELITE_COMMANDO": { "ID":"UNIT_ELITE_COMMANDO", "en":"Elite Crimson Rocketeer" },
+    "UNIT_ELITE_COMMANDO_DESC": { "ID":"UNIT_ELITE_COMMANDO_DESC", "en":"Rain death from above!" }
   }
 }

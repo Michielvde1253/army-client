@@ -1,6 +1,7 @@
 ﻿package game.utils {
 	import game.player.GamePlayerProfile;
 	import game.player.Inventory;
+	import game.sound.ArmySoundManager;
 	import game.states.GameState;
 	import game.isometric.GridCell;
 	import game.isometric.characters.IsometricCharacter;
@@ -229,6 +230,8 @@
 
 			all_missions = MissionManager.getMissions();
 			for (j in all_missions) {
+				trace(all_missions[j]["mId"]);
+				trace(all_missions[j]["mState"]);
 				missionobj = {};
 				if (all_missions[j]["mState"] == 1) {
 					missionobj["mission_id"] = all_missions[j]["mId"];
@@ -251,13 +254,29 @@
 					missionsave["missions_incomplete"].push(missionobj);
 				} else if (all_missions[j]["mState"] == 2) {
 					missionobj["mission_id"] = all_missions[j]["mId"];
+					var index_in_save:int = getIndexByName(missionsave["missions_incomplete"],all_missions[j]["mId"])
+					if (index_in_save != -1) {
+						missionsave["missions_incomplete"].splice(index_in_save, 1)
+					}
 					var index_in_save:int = getIndexByName(missionsave["missions_all_complete"],all_missions[j]["mId"])
 					if (index_in_save != -1) {
 						missionsave.splice["missions_all_complete"](index_in_save, 1)
 					}
+					var index_in_save:int = getIndexByName(missionsave["missions_finished"],all_missions[j]["mId"])
+					if (index_in_save != -1) {
+						missionsave["missions_finished"].splice(index_in_save, 1)
+					}
 					missionsave["missions_all_complete"].push(missionobj);
 				} else if (all_missions[j]["mState"] == 3) {
 					missionobj["mission_id"] = all_missions[j]["mId"];
+					var index_in_save:int = getIndexByName(missionsave["missions_incomplete"],all_missions[j]["mId"])
+					if (index_in_save != -1) {
+						missionsave["missions_incomplete"].splice(index_in_save, 1)
+					}
+					var index_in_save:int = getIndexByName(missionsave["missions_all_complete"],all_missions[j]["mId"])
+					if (index_in_save != -1) {
+						missionsave.splice["missions_all_complete"](index_in_save, 1)
+					}
 					var index_in_save:int = getIndexByName(missionsave["missions_finished"],all_missions[j]["mId"])
 					if (index_in_save != -1) {
 						missionsave["missions_finished"].splice(index_in_save, 1)
@@ -287,17 +306,19 @@
 			var fakeservercall: * = new ServerCall("GetMapData", null, null, null);
 			fakeservercall["mData"] = mMissions;
 			if (mMaps[map_id]) {
-				MissionManager.setupFromServer(fakeservercall);
+				fakeservercall["mData"]["missions_incomplete"] = mMissions["missions_incomplete"];
 				GameState.mInstance.initObjects(null);
 				loadMap(mMaps[map_id]);
 			} else {
 				GameState.mInstance.initMap(null, map_id);
-				MissionManager.setupFromServer(fakeservercall);
-				MissionManager.findNewActiveMissions();
 			}
 			GameState.mInstance.updateGrid();
 			GameState.mInstance.mScene.mFog.init();
 			GameState.mInstance.mLoadingStatesOver = true;
+			MissionManager.initialize()
+			GameState.mInstance.mMissionIconsManager.reset()
+			MissionManager.setupFromServer(fakeservercall);
+			MissionManager.findNewActiveMissions();
 		}
 
 		public static function generateSaveJson(): * {
@@ -322,6 +343,23 @@
 			if (version < 3) {
 				savedata["isFogOfWarOff"] = true;
 			}
+			if (version < 4) {
+				savedata["maps"] = [];
+				var homeland = {};
+				homeland["map_name"] = "Home";
+				homeland["secs_since_last_enemy_spawn"] = savedata["profile"]["secs_since_last_enemy_spawn"];
+				var mapdata = {};
+				mapdata["player_tiles"] = savedata["player_tiles"];
+				mapdata["gamefield_items"] = savedata["gamefield_items"];
+				mapdata["map_id"] = "Home";
+				homeland["map_data"] = mapdata;
+				savedata["maps"].push(homeland)
+			
+			
+				delete savedata["profile"]["player_tiles"];
+				delete savedata["profile"]["gamefield_items"];
+				delete savedata["secs_since_last_enemy_spawn"];
+			}
 			return savedata;
 		}
 	
@@ -342,6 +380,23 @@
 				}
 			}
 			return mapdata
+		}
+	
+		public static function selectMissionsByMap(all_missions: *, map_id:String): Array {
+			var i: * = 0;
+			var selectedMissions: Array = [];
+			for (i in all_missions) {
+				var mission:* = MissionManager.getMission(all_missions[i]["mission_id"]);
+				if (mission){
+					trace(mission.mMapId);
+					if (mission.mMapId == map_id){
+						trace(all_missions[i]["mission_id"]);
+						selectedMissions.push(all_missions[i]);
+					}
+				}
+			}
+		
+		return selectedMissions;
 		}
 	
 		public static function loadMap(mapdata: *): void {
@@ -387,6 +442,7 @@
 			} else {
 				savedata["profile"]["secs_to_energy_gain"] = savedata["profile"]["energy_recharge_time"];
 			}
+			GameState.mInstance.mCurrentMapId = "Home"; // Always go back to the Homeland, loading progress on other maps is broken.
 			var fakeservercall: * = new ServerCall("GetMapData", null, null, null); // Not used for map, just for missions
 			fakeservercall["mData"] = savedata;
 			var fakeservercall2: * = new ServerCall("GetUserData", null, null, null);
@@ -399,22 +455,27 @@
 			GameState.mInstance.mPlayerProfile.mInventory.getAreas();
 			GameState.mInstance.changeState(0);
 			GameState.mInstance.mMapData.destroy();
+			mMaps = {};
 			var i: * = 0;
 				for (i in savedata["maps"]) {
 					mMaps[savedata["maps"][i]["map_name"]] = updateMapTimers(savedata["maps"][i], time_diff);
 				}
-			GameState.mInstance.mCurrentMapId = "Home"; // Always go back to the Homeland, loading progress on other maps is broken.
 			GameState.mInstance.initObjects(null); // Remove existing units
 			loadMap(mMaps["Home"]);
 			GameState.mInstance.updateGrid();
 			GameState.mInstance.mScene.mFog.init();
+			mMissions = {};
 			mMissions["missions_incomplete"] = savedata["missions_incomplete"];
 			mMissions["missions_all_complete"] = savedata["missions_all_complete"];
 			mMissions["missions_finished"] = savedata["missions_finished"];
+			MissionManager.initialize()
 			MissionManager.setupFromServer(fakeservercall);
 			MissionManager.findNewActiveMissions();
 			GameState.mInstance.mLoadingStatesOver = true;
-
+			// Start homeland music
+			GameState.mInstance.mCurrentMusic = GameState.mInstance.getMapMusic()
+			ArmySoundManager.loadMusic(GameState.mInstance.mCurrentMusic);
+			GameState.mInstance.startMusic();
 		}
 	}
 }

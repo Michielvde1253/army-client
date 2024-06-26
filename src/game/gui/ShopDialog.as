@@ -1,4 +1,4 @@
-package game.gui
+﻿package game.gui
 {
    import com.dchoc.GUI.DCButton;
    import com.dchoc.graphics.DCResourceManager;
@@ -320,7 +320,7 @@ package game.gui
             _loc4_ = 0;
             while(_loc4_ < _loc2_.length)
             {
-               if(_loc3_.getNumberOfItems(_loc2_[_loc4_]) == 0 && this.mGame.mScene.isAreaReachable(_loc2_[_loc4_]))
+               if(_loc3_.getNumberOfItems(_loc2_[_loc4_]) == 0 && this.mGame.mScene.isAreaReachable(_loc2_[_loc4_]) && _loc2_[_loc4_].mMapId == GameState.mInstance.mCurrentMapId)
                {
                   this.mItemsForSell.push(_loc2_[_loc4_]);
                }

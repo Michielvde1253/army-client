@@ -35,7 +35,7 @@
       
       public static const USE_PVP_MATCH:Boolean = !DROP_ALL_OPTIONAL_FEATURES;
       
-      public static const USE_ROCKET_EFFECT:Boolean = !DROP_ALL_OPTIONAL_FEATURES;
+      public static const USE_ROCKET_EFFECT:Boolean = false; // TEMPORARILY
       
       public static const USE_SOUNDS:Boolean = true;
       

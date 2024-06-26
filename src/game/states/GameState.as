@@ -629,15 +629,24 @@
       public function reactToFullscreen(param1:Event = null) : void
       {
          this.windowSizeChanged();
+		 try {
          this.mMapData.mUpdateRequired = true;
          this.mScene.mFog.mUpdateRequired = true;
+	     }
+		 catch(error:Error){}
       }
       
       public function windowSizeChanged(param1:Event = null) : void
       {
-         this.mScene.mTilemapGraphic.generateLayers();
-         var _loc2_:int = Math.max(Config.SCREEN_HEIGHT,this.getStageHeight());
-         var _loc3_:int = Math.max(Config.SCREEN_WIDTH,this.getStageWidth());
+         //this.mScene.mTilemapGraphic.generateLayers();
+         //var _loc2_:int = Math.max(Config.SCREEN_HEIGHT,this.getStageHeight());
+         //var _loc3_:int = Math.max(Config.SCREEN_WIDTH,this.getStageWidth());
+		  
+		 try {
+         var _loc2_:int = this.getStageHeight();
+         var _loc3_:int = this.getStageWidth();
+		 trace(_loc2_);
+		 trace(_loc3_)
          this.getHud().resize(_loc3_,_loc2_);
          if(this.mMissionIconsManager)
          {
@@ -657,6 +666,8 @@
             this.mScene.updateCamera(0);
          }
          this.mScene.mTilemapGraphic.updateTilemap();
+		 }
+	     catch(error:Error){}
       }
       
       public function checkMissionProgress() : void
@@ -3447,7 +3458,7 @@
       public function startMusic() : void
       {
          ArmySoundManager.getInstance().stopAll();
-         ArmySoundManager.getInstance().playSound(ArmySoundManager.MUSIC_HOME,1,0,-1);
+         ArmySoundManager.getInstance().playSound(this.mCurrentMusic,1,0,-1);
       }
       
       public function keyDown(param1:KeyboardEvent) : void
@@ -3581,11 +3592,18 @@
             case 88:
                this.unFreezeFrame();
                break;
-            case 33:
+            case 35:
                if(Config.CHEAT_ALLOWED)
                {
                   this.startPvP();
                }
+			   break;
+		    case 33:
+				this.setZoomIndex(0);
+				break;
+			case 34:
+				this.setZoomIndex(1);
+				break;
          }
       }
       
@@ -3878,7 +3896,8 @@
          this.mLoadingClip.x = this.getStageWidth() / 2;
          this.mLoadingClip.y = this.getStageHeight() / 2;
          this.mRootNode.addChild(this.mLoadingClip);
-         ArmySoundManager.loadMusic(this.getMapMusic());
+	     this.mCurrentMusic = this.getMapMusic()
+         ArmySoundManager.loadMusic(this.mCurrentMusic);
          this.startMusic();
          var _loc1_:Object = (mConfig.MapSetup[this.mCurrentMapId] as Object).SWFFile;
          if(_loc1_ is Array)

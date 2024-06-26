@@ -115,7 +115,7 @@
       
       public static function isTilePassable(param1:int) : Boolean
       {
-         return TILES_PASSABILITY[param1] == TILE_LAND || TILE_SEA || TILE_SHORE || TILE_MOUNTAIN;
+         return TILES_PASSABILITY[param1] == TILE_LAND;
       }
       
       public function initFromServer(param1:ServerCall) : void

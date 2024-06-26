@@ -53,7 +53,7 @@
       "ParatroopersTriggerMission": "#Mission.AREA_D_M_C1",
       "Paratrooper": "#EnemyAppearanceSetup.Paratroop",
       "ParatrooperEnemyLimit": "6",
-      "MusicFile": "music/expansion_music_NOTFINAL.mp3",
+      "MusicFile": "music/army_mus_desert.mp3",
       "SpawnBeaconTriggerMission": "#Mission.AREA_D_M_DIALOG1",
       "UnitCapInfantry": "2",
       "UnitCapArmor": "2",
@@ -199,8 +199,8 @@
       "RequiredLevel": "0",
       "RequiredAllies": "0",
       "CostMoney": "30000",
-      "CostIntel": "30",
-      "CostUnlock": "30",
+      "CostIntel": "25",
+      "CostUnlock": "25",
       "ImageUrl": "cash_icon.png",
       "DescriptionSecondary": "#TID.AREA_NW_DESC_SECONDARY"
     },
@@ -219,8 +219,8 @@
       "RequiredLevel": "0",
       "RequiredAllies": "0",
       "CostMoney": "50000",
-      "CostIntel": "50",
-      "CostUnlock": "50",
+      "CostIntel": "30",
+      "CostUnlock": "30",
       "ImageUrl": "cash_icon.png",
       "DescriptionSecondary": "#TID.AREA_N_DESC_SECONDARY"
     },
@@ -239,8 +239,8 @@
       "RequiredLevel": "0",
       "RequiredAllies": "0",
       "CostMoney": "100000",
-      "CostIntel": "70",
-      "CostUnlock": "70",
+      "CostIntel": "40",
+      "CostUnlock": "40",
       "ImageUrl": "cash_icon.png",
       "DescriptionSecondary": "#TID.AREA_NE_DESC_SECONDARY"
     },
@@ -5656,7 +5656,7 @@
       "Name": "#TID.DECO_WAREHOUSE",
       "Description": "#TID.DECO_WAREHOUSE_DESC",
       "IconGraphics": "icons/shop_icons/icon_storage_warehouse.png",
-      "Graphics": "swf/buildings_player_supplies_low/building_storage_warehouse, swf/buildings_player_supplies_low/building_storage_warehouse_desert",
+      "Graphics": "swf/buildings_player_supplies_low/building_storage_warehouse, swf/buildings_player_supplies_low/building_storage_warehouse",
       "GraphicsLoader": "InnerMovieClip",
       "ObjectClass": "game.gameElements.DecorationObject",
       "RequiredLevel": "0",
@@ -6202,7 +6202,7 @@
       "CostSupplies": "0",
       "CostPremium": "0",
       "Health": "10",
-      "Damage": "3",
+      "Damage": "2",
       "AttackRange": "1",
       "SightRange": "5",
       "MovementRange": "5",
@@ -6571,7 +6571,7 @@
       "MovementRewardEnergy": "10",
       "CostUnlock": "1",
       "ImageUrl": "cash_icon.png",
-      "ProjectileClass": "Missile",
+      "ProjectileClass": "bullet",
       "PickupCostSupplies": "1600",
       "WeaponType": "explosion",
       "MovementType": "normal",
@@ -6634,7 +6634,7 @@
       "Name": "#TID.BUILDING_BOOTCAMP",
       "Description": "#TID.BUILDING_BOOTCAMP_DESC",
       "IconGraphics": "icons/shop_icons/icon_buildings_boot_camp.png",
-      "Graphics": "swf/buildings_player_start_low/boot_camp, swf/buildings_player_start_low/building_boot_camp",
+      "Graphics": "swf/buildings_player_start_low/boot_camp, swf/buildings_player_start_low/boot_camp",
       "ConstructionSiteGraphics": "construction_site_boot_camp",
       "GraphicsLoader": "InnerMovieClip",
       "ObjectClass": "game.gameElements.ConstructionObject",
@@ -6679,7 +6679,7 @@
       "Name": "#TID.BUILDING_MOTORPOOL",
       "Description": "#TID.BUILDING_MOTORPOOL_DESC",
       "IconGraphics": "icons/shop_icons/icon_buildings_motor_pool.png",
-      "Graphics": "swf/buildings_player_low/motor_pool, swf/buildings_player_low/building_motor_pool",
+      "Graphics": "swf/buildings_player_low/motor_pool, swf/buildings_player_low/motor_pool",
       "ConstructionSiteGraphics": "construction_site_motor_pool",
       "GraphicsLoader": "InnerMovieClip",
       "ObjectClass": "game.gameElements.ConstructionObject",
@@ -6724,7 +6724,7 @@
       "Name": "#TID.BUILDING_ARSENAL",
       "Description": "#TID.BUILDING_ARSENAL_DESC",
       "IconGraphics": "icons/shop_icons/icon_buildings_arsenal.png",
-      "Graphics": "swf/buildings_player_low/arsenal, swf/buildings_player_low/building_arsenal",
+      "Graphics": "swf/buildings_player_low/arsenal, swf/buildings_player_low/arsenal",
       "ConstructionSiteGraphics": "construction_site_arsenal",
       "GraphicsLoader": "InnerMovieClip",
       "ObjectClass": "game.gameElements.ConstructionObject",
@@ -6769,7 +6769,7 @@
       "Name": "#TID.BUILDING_COMMANDO",
       "Description": "#TID.BUILDING_COMMANDO_DESC",
       "IconGraphics": "icons/shop_icons/icon_buildings_commando_school.png",
-      "Graphics": "swf/buildings_player_low/commando_school, swf/buildings_player_low/building_commando_school",
+      "Graphics": "swf/buildings_player_low/commando_school, swf/buildings_player_low/commando_school",
       "ConstructionSiteGraphics": "construction_site_commando_school",
       "GraphicsLoader": "InnerMovieClip",
       "ObjectClass": "game.gameElements.ConstructionObject",
@@ -6814,7 +6814,7 @@
       "Name": "#TID.BUILDING_FACTORY",
       "Description": "#TID.BUILDING_FACTORY_DESC",
       "IconGraphics": "icons/shop_icons/icon_buildings_factory.png",
-      "Graphics": "swf/buildings_player_low/factory, swf/buildings_player_low/building_factory",
+      "Graphics": "swf/buildings_player_low/factory, swf/buildings_player_low/factory",
       "ConstructionSiteGraphics": "construction_site_factory",
       "GraphicsLoader": "InnerMovieClip",
       "ObjectClass": "game.gameElements.ConstructionObject",
@@ -6859,7 +6859,7 @@
       "Name": "#TID.BUILDING_TESTSITE",
       "Description": "#TID.BUILDING_TESTSITE_DESC",
       "IconGraphics": "icons/shop_icons/icon_buildings_test_site.png",
-      "Graphics": "swf/buildings_player_low/rocket_site, swf/buildings_player_low/building_rocket_site",
+      "Graphics": "swf/buildings_player_low/rocket_site, swf/buildings_player_low/rocket_site",
       "ConstructionSiteGraphics": "construction_site_rocket_site",
       "GraphicsLoader": "InnerMovieClip",
       "ObjectClass": "game.gameElements.ConstructionObject",
@@ -6910,7 +6910,7 @@
       "ObjectClass": "game.gameElements.ConstructionObject",
       "RequiredLevel": "0",
       "RequiredAllies": "0",
-      "RequiredMission": "",
+      "RequiredMission": "#Mission.AREA_S_C1",
       "CostMoney": "2000",
       "CostSupplies": "0",
       "CostPremium": "0",
@@ -7037,142 +7037,142 @@
     "BootCamp1": {
       "ID": "BootCamp1",
       "Type": "#Ingredient.HardHat",
-      "Amount": "3"
+      "Amount": "2"
     },
     "BootCamp3": {
       "ID": "BootCamp3",
       "Type": "#Ingredient.Lumber",
-      "Amount": "3"
+      "Amount": "2"
     },
     "BootCamp4": {
       "ID": "BootCamp4",
       "Type": "#Ingredient.Rebars",
-      "Amount": "3"
+      "Amount": "2"
     },
     "MotorPool1": {
       "ID": "MotorPool1",
       "Type": "#Ingredient.HardHat",
-      "Amount": "5"
+      "Amount": "3"
     },
     "MotorPool2": {
       "ID": "MotorPool2",
       "Type": "#Ingredient.CinderBlock",
-      "Amount": "5"
+      "Amount": "3"
     },
     "MotorPool5": {
       "ID": "MotorPool5",
       "Type": "#Ingredient.Wiring",
-      "Amount": "5"
+      "Amount": "3"
     },
     "Arsenal1": {
       "ID": "Arsenal1",
       "Type": "#Ingredient.HardHat",
-      "Amount": "6"
+      "Amount": "4"
     },
     "Arsenal2": {
       "ID": "Arsenal2",
       "Type": "#Ingredient.CinderBlock",
-      "Amount": "6"
+      "Amount": "4"
     },
     "Arsenal3": {
       "ID": "Arsenal3",
       "Type": "#Ingredient.Lumber",
-      "Amount": "6"
+      "Amount": "4"
     },
     "Arsenal4": {
       "ID": "Arsenal4",
       "Type": "#Ingredient.ArtilleryTubes",
-      "Amount": "6"
+      "Amount": "4"
     },
     "Commando1": {
       "ID": "Commando1",
       "Type": "#Ingredient.HardHat",
-      "Amount": "10"
+      "Amount": "5"
     },
     "Commando2": {
       "ID": "Commando2",
       "Type": "#Ingredient.CinderBlock",
-      "Amount": "10"
+      "Amount": "5"
     },
     "Commando3": {
       "ID": "Commando3",
       "Type": "#Ingredient.Lumber",
-      "Amount": "10"
+      "Amount": "5"
     },
     "Commando4": {
       "ID": "Commando4",
       "Type": "#Ingredient.Rebars",
-      "Amount": "12"
+      "Amount": "6"
     },
     "Commando6": {
       "ID": "Commando6",
       "Type": "#Ingredient.CommandoKnife",
-      "Amount": "12"
+      "Amount": "6"
     },
     "Factory1": {
       "ID": "Factory1",
       "Type": "#Ingredient.HardHat",
-      "Amount": "8"
+      "Amount": "4"
     },
     "Factory2": {
       "ID": "Factory2",
       "Type": "#Ingredient.CinderBlock",
-      "Amount": "8"
+      "Amount": "4"
     },
     "Factory3": {
       "ID": "Factory3",
       "Type": "#Ingredient.Lumber",
-      "Amount": "8"
+      "Amount": "4"
     },
     "Factory4": {
       "ID": "Factory4",
       "Type": "#Ingredient.SteelPlates",
-      "Amount": "10"
+      "Amount": "5"
     },
     "Factory5": {
       "ID": "Factory5",
       "Type": "#Ingredient.Wiring",
-      "Amount": "10"
+      "Amount": "5"
     },
     "TestSite1": {
       "ID": "TestSite1",
       "Type": "#Ingredient.HardHat",
-      "Amount": "12"
+      "Amount": "6"
     },
     "TestSite2": {
       "ID": "TestSite2",
       "Type": "#Ingredient.CinderBlock",
-      "Amount": "12"
+      "Amount": "6"
     },
     "TestSite3": {
       "ID": "TestSite3",
       "Type": "#Ingredient.Lumber",
-      "Amount": "12"
+      "Amount": "6"
     },
     "TestSite4": {
       "ID": "TestSite4",
       "Type": "#Ingredient.ArtilleryTubes",
-      "Amount": "15"
+      "Amount": "7"
     },
     "TestSite5": {
       "ID": "TestSite5",
       "Type": "#Ingredient.BlackBox",
-      "Amount": "15"
+      "Amount": "7"
     },
     "HQ1": {
       "ID": "HQ1",
       "Type": "#Ingredient.HardHat",
-      "Amount": "2"
+      "Amount": "1"
     },
     "HQ2": {
       "ID": "HQ2",
       "Type": "#Ingredient.CinderBlock",
-      "Amount": "2"
+      "Amount": "1"
     },
     "HQ3": {
       "ID": "HQ3",
       "Type": "#Ingredient.Lumber",
-      "Amount": "2"
+      "Amount": "1"
     },
     "Airport1": {
       "ID": "Airport1",
@@ -7202,7 +7202,7 @@
       "Name": "#TID.BUILDING_DRIVE_WATER_1",
       "Description": "#TID.BUILDING_DRIVE_WATER_1_DESC",
       "Graphics": "icons/shop_icons/icon_water_pack_01.png",
-      "RewardWater": "10",
+      "RewardWater": "30",
       "RewardXp": "2",
       "RewardMoney": "0",
       "RewardSupplies": "0",
@@ -7221,7 +7221,7 @@
       "Name": "#TID.BUILDING_DRIVE_WATER_2",
       "Description": "#TID.BUILDING_DRIVE_WATER_2_DESC",
       "Graphics": "icons/shop_icons/icon_water_pack_02.png",
-      "RewardWater": "15",
+      "RewardWater": "45",
       "RewardXp": "2",
       "RewardMoney": "0",
       "RewardSupplies": "0",
@@ -7240,7 +7240,7 @@
       "Name": "#TID.BUILDING_DRIVE_WATER_3",
       "Description": "#TID.BUILDING_DRIVE_WATER_3_DESC",
       "Graphics": "icons/shop_icons/icon_water_pack_03.png",
-      "RewardWater": "20",
+      "RewardWater": "60",
       "RewardXp": "2",
       "RewardMoney": "0",
       "RewardSupplies": "0",
@@ -10351,10 +10351,10 @@
       "Energy": "30",
       "Money": "7000",
       "Material": "0",
-      "Supplies": "2000",
+      "Supplies": "400",
       "Premium": "0",
       "SocialXP": "0",
-      "SuppliesCap": "2500",
+      "SuppliesCap": "600",
       "UnitCapInfantry": "2",
       "UnitCapArmor": "2",
       "UnitCapArtillery": "2",
@@ -10362,7 +10362,8 @@
       "RelocateSupplyCost": "10",
       "NumberOfTutorMaps": "1",
       "InviteFriendsPopupXPLimit": "50",
-      "TutorialEndMission": "#Mission.SETUP_AREA_S",
+      "TutorialEndMission": "#Mission.SaveMission",
+      "ShowTutorMission": "#Mission.BRAGG_FRIEND_TALK",
       "StartOnGiftPageAfterLevel": "6",
       "Water": "0",
       "PvPCostEnergy": "5"
@@ -10372,7 +10373,7 @@
     "Default": {
       "ID": "Default",
       "Energy": "5",
-      "Health": "60"
+      "Health": "30"
     }
   },
   "PlayerCorpseMarkerExpiryTime": {
@@ -10419,1207 +10420,1207 @@
       "ID": "0",
       "XPLimit": "0",
       "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "RewardPremium": "10"
     },
     "1": {
       "ID": "1",
       "XPLimit": "0",
       "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "RewardPremium": "10"
     },
     "2": {
       "ID": "2",
       "XPLimit": "55",
       "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "RewardPremium": "10"
     },
     "3": {
       "ID": "3",
       "XPLimit": "85",
       "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "RewardPremium": "10"
     },
     "4": {
       "ID": "4",
       "XPLimit": "140",
       "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "RewardPremium": "10"
     },
     "5": {
       "ID": "5",
       "XPLimit": "200",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "31",
+      "RewardPremium": "10"
     },
     "6": {
       "ID": "6",
       "XPLimit": "285",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "31",
+      "RewardPremium": "10"
     },
     "7": {
       "ID": "7",
       "XPLimit": "500",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "31",
+      "RewardPremium": "10"
     },
     "8": {
       "ID": "8",
       "XPLimit": "800",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "31",
+      "RewardPremium": "10"
     },
     "9": {
       "ID": "9",
       "XPLimit": "1150",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "31",
+      "RewardPremium": "10"
     },
     "10": {
       "ID": "10",
       "XPLimit": "1550",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "32",
+      "RewardPremium": "10"
     },
     "11": {
       "ID": "11",
       "XPLimit": "2000",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "32",
+      "RewardPremium": "10"
     },
     "12": {
       "ID": "12",
       "XPLimit": "2500",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "32",
+      "RewardPremium": "10"
     },
     "13": {
       "ID": "13",
       "XPLimit": "3050",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "32",
+      "RewardPremium": "10"
     },
     "14": {
       "ID": "14",
       "XPLimit": "3650",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "32",
+      "RewardPremium": "10"
     },
     "15": {
       "ID": "15",
       "XPLimit": "4350",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "33",
+      "RewardPremium": "10"
     },
     "16": {
       "ID": "16",
       "XPLimit": "5100",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "33",
+      "RewardPremium": "10"
     },
     "17": {
       "ID": "17",
       "XPLimit": "5900",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "33",
+      "RewardPremium": "10"
     },
     "18": {
       "ID": "18",
       "XPLimit": "6750",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "33",
+      "RewardPremium": "10"
     },
     "19": {
       "ID": "19",
       "XPLimit": "7650",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "33",
+      "RewardPremium": "10"
     },
     "20": {
       "ID": "20",
       "XPLimit": "8650",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "34",
+      "RewardPremium": "10"
     },
     "21": {
       "ID": "21",
       "XPLimit": "9660",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "34",
+      "RewardPremium": "10"
     },
     "22": {
       "ID": "22",
       "XPLimit": "10680",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "34",
+      "RewardPremium": "10"
     },
     "23": {
       "ID": "23",
       "XPLimit": "11710",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "34",
+      "RewardPremium": "10"
     },
     "24": {
       "ID": "24",
       "XPLimit": "12750",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "34",
+      "RewardPremium": "10"
     },
     "25": {
       "ID": "25",
       "XPLimit": "13800",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "35",
+      "RewardPremium": "10"
     },
     "26": {
       "ID": "26",
       "XPLimit": "14860",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "35",
+      "RewardPremium": "10"
     },
     "27": {
       "ID": "27",
       "XPLimit": "15930",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "35",
+      "RewardPremium": "10"
     },
     "28": {
       "ID": "28",
       "XPLimit": "17010",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "35",
+      "RewardPremium": "10"
     },
     "29": {
       "ID": "29",
       "XPLimit": "18100",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "36",
+      "RewardPremium": "10"
     },
     "30": {
       "ID": "30",
       "XPLimit": "19190",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "36",
+      "RewardPremium": "10"
     },
     "31": {
       "ID": "31",
       "XPLimit": "20290",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "36",
+      "RewardPremium": "10"
     },
     "32": {
       "ID": "32",
       "XPLimit": "21400",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "36",
+      "RewardPremium": "10"
     },
     "33": {
       "ID": "33",
       "XPLimit": "22520",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "36",
+      "RewardPremium": "10"
     },
     "34": {
       "ID": "34",
       "XPLimit": "23650",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "36",
+      "RewardPremium": "10"
     },
     "35": {
       "ID": "35",
       "XPLimit": "24790",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "37",
+      "RewardPremium": "10"
     },
     "36": {
       "ID": "36",
       "XPLimit": "25940",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "37",
+      "RewardPremium": "10"
     },
     "37": {
       "ID": "37",
       "XPLimit": "27100",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "37",
+      "RewardPremium": "10"
     },
     "38": {
       "ID": "38",
       "XPLimit": "28200",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "37",
+      "RewardPremium": "10"
     },
     "39": {
       "ID": "39",
       "XPLimit": "29370",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "37",
+      "RewardPremium": "10"
     },
     "40": {
       "ID": "40",
       "XPLimit": "30550",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "38",
+      "RewardPremium": "10"
     },
     "41": {
       "ID": "41",
       "XPLimit": "31740",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "38",
+      "RewardPremium": "10"
     },
     "42": {
       "ID": "42",
       "XPLimit": "32940",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "38",
+      "RewardPremium": "10"
     },
     "43": {
       "ID": "43",
       "XPLimit": "35370",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "38",
+      "RewardPremium": "10"
     },
     "44": {
       "ID": "44",
       "XPLimit": "36600",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "38",
+      "RewardPremium": "10"
     },
     "45": {
       "ID": "45",
       "XPLimit": "37840",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "39",
+      "RewardPremium": "10"
     },
     "46": {
       "ID": "46",
       "XPLimit": "39090",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "39",
+      "RewardPremium": "10"
     },
     "47": {
       "ID": "47",
       "XPLimit": "40350",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "39",
+      "RewardPremium": "10"
     },
     "48": {
       "ID": "48",
       "XPLimit": "41620",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "39",
+      "RewardPremium": "10"
     },
     "49": {
       "ID": "49",
       "XPLimit": "42900",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "39",
+      "RewardPremium": "10"
     },
     "50": {
       "ID": "50",
       "XPLimit": "44190",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "40",
+      "RewardPremium": "10"
     },
     "51": {
       "ID": "51",
       "XPLimit": "45490",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "40",
+      "RewardPremium": "10"
     },
     "52": {
       "ID": "52",
       "XPLimit": "46790",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "40",
+      "RewardPremium": "10"
     },
     "53": {
       "ID": "53",
       "XPLimit": "48091",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "40",
+      "RewardPremium": "10"
     },
     "54": {
       "ID": "54",
       "XPLimit": "49393",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "40",
+      "RewardPremium": "10"
     },
     "55": {
       "ID": "55",
       "XPLimit": "50696",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "41",
+      "RewardPremium": "10"
     },
     "56": {
       "ID": "56",
       "XPLimit": "52000",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "41",
+      "RewardPremium": "10"
     },
     "57": {
       "ID": "57",
       "XPLimit": "53305",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "41",
+      "RewardPremium": "10"
     },
     "58": {
       "ID": "58",
       "XPLimit": "54611",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "41",
+      "RewardPremium": "10"
     },
     "59": {
       "ID": "59",
       "XPLimit": "55918",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "41",
+      "RewardPremium": "10"
     },
     "60": {
       "ID": "60",
       "XPLimit": "57226",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "42",
+      "RewardPremium": "10"
     },
     "61": {
       "ID": "61",
       "XPLimit": "58535",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "42",
+      "RewardPremium": "10"
     },
     "62": {
       "ID": "62",
       "XPLimit": "59845",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "42",
+      "RewardPremium": "10"
     },
     "63": {
       "ID": "63",
       "XPLimit": "61640",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "42",
+      "RewardPremium": "10"
     },
     "64": {
       "ID": "64",
       "XPLimit": "63490",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "42",
+      "RewardPremium": "10"
     },
     "65": {
       "ID": "65",
       "XPLimit": "65394",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "43",
+      "RewardPremium": "10"
     },
     "66": {
       "ID": "66",
       "XPLimit": "67356",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "43",
+      "RewardPremium": "10"
     },
     "67": {
       "ID": "67",
       "XPLimit": "69377",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "43",
+      "RewardPremium": "10"
     },
     "68": {
       "ID": "68",
       "XPLimit": "71458",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "43",
+      "RewardPremium": "10"
     },
     "69": {
       "ID": "69",
       "XPLimit": "73602",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "43",
+      "RewardPremium": "10"
     },
     "70": {
       "ID": "70",
       "XPLimit": "75810",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "44",
+      "RewardPremium": "10"
     },
     "71": {
       "ID": "71",
       "XPLimit": "78084",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "44",
+      "RewardPremium": "10"
     },
     "72": {
       "ID": "72",
       "XPLimit": "80427",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "44",
+      "RewardPremium": "10"
     },
     "73": {
       "ID": "73",
       "XPLimit": "82839",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "44",
+      "RewardPremium": "10"
     },
     "74": {
       "ID": "74",
       "XPLimit": "85325",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "44",
+      "RewardPremium": "10"
     },
     "75": {
       "ID": "75",
       "XPLimit": "87884",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "45",
+      "RewardPremium": "10"
     },
     "76": {
       "ID": "76",
       "XPLimit": "90521",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "45",
+      "RewardPremium": "10"
     },
     "77": {
       "ID": "77",
       "XPLimit": "93237",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "45",
+      "RewardPremium": "10"
     },
     "78": {
       "ID": "78",
       "XPLimit": "96034",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "45",
+      "RewardPremium": "10"
     },
     "79": {
       "ID": "79",
       "XPLimit": "98915",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "45",
+      "RewardPremium": "10"
     },
     "80": {
       "ID": "80",
       "XPLimit": "101882",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "46",
+      "RewardPremium": "10"
     },
     "81": {
       "ID": "81",
       "XPLimit": "104939",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "46",
+      "RewardPremium": "10"
     },
     "82": {
       "ID": "82",
       "XPLimit": "108087",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "46",
+      "RewardPremium": "10"
     },
     "83": {
       "ID": "83",
       "XPLimit": "111329",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "46",
+      "RewardPremium": "10"
     },
     "84": {
       "ID": "84",
       "XPLimit": "114669",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "46",
+      "RewardPremium": "10"
     },
     "85": {
       "ID": "85",
       "XPLimit": "118109",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "47",
+      "RewardPremium": "10"
     },
     "86": {
       "ID": "86",
       "XPLimit": "121653",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "47",
+      "RewardPremium": "10"
     },
     "87": {
       "ID": "87",
       "XPLimit": "125302",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "47",
+      "RewardPremium": "10"
     },
     "88": {
       "ID": "88",
       "XPLimit": "129061",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "47",
+      "RewardPremium": "10"
     },
     "89": {
       "ID": "89",
       "XPLimit": "132933",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "47",
+      "RewardPremium": "10"
     },
     "90": {
       "ID": "90",
       "XPLimit": "136921",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "48",
+      "RewardPremium": "10"
     },
     "91": {
       "ID": "91",
       "XPLimit": "141029",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "48",
+      "RewardPremium": "10"
     },
     "92": {
       "ID": "92",
       "XPLimit": "145260",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "48",
+      "RewardPremium": "10"
     },
     "93": {
       "ID": "93",
       "XPLimit": "149617",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "48",
+      "RewardPremium": "10"
     },
     "94": {
       "ID": "94",
       "XPLimit": "154106",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "48",
+      "RewardPremium": "10"
     },
     "95": {
       "ID": "95",
       "XPLimit": "158729",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "49",
+      "RewardPremium": "10"
     },
     "96": {
       "ID": "96",
       "XPLimit": "163491",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "49",
+      "RewardPremium": "10"
     },
     "97": {
       "ID": "97",
       "XPLimit": "168396",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "49",
+      "RewardPremium": "10"
     },
     "98": {
       "ID": "98",
       "XPLimit": "173447",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "49",
+      "RewardPremium": "10"
     },
     "99": {
       "ID": "99",
       "XPLimit": "178651",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "49",
+      "RewardPremium": "10"
     },
     "100": {
       "ID": "100",
       "XPLimit": "185797",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "50",
+      "RewardPremium": "10"
     },
     "101": {
       "ID": "101",
       "XPLimit": "193229",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "50",
+      "RewardPremium": "10"
     },
     "102": {
       "ID": "102",
       "XPLimit": "200958",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "50",
+      "RewardPremium": "10"
     },
     "103": {
       "ID": "103",
       "XPLimit": "208996",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "50",
+      "RewardPremium": "10"
     },
     "104": {
       "ID": "104",
       "XPLimit": "217356",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "50",
+      "RewardPremium": "10"
     },
     "105": {
       "ID": "105",
       "XPLimit": "226050",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "51",
+      "RewardPremium": "10"
     },
     "106": {
       "ID": "106",
       "XPLimit": "235092",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "51",
+      "RewardPremium": "10"
     },
     "107": {
       "ID": "107",
       "XPLimit": "244496",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "51",
+      "RewardPremium": "10"
     },
     "108": {
       "ID": "108",
       "XPLimit": "254276",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "51",
+      "RewardPremium": "10"
     },
     "109": {
       "ID": "109",
       "XPLimit": "264447",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "51",
+      "RewardPremium": "10"
     },
     "110": {
       "ID": "110",
       "XPLimit": "277669",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "52",
+      "RewardPremium": "10"
     },
     "111": {
       "ID": "111",
       "XPLimit": "291553",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "52",
+      "RewardPremium": "10"
     },
     "112": {
       "ID": "112",
       "XPLimit": "306130",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "52",
+      "RewardPremium": "10"
     },
     "113": {
       "ID": "113",
       "XPLimit": "321437",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "52",
+      "RewardPremium": "10"
     },
     "114": {
       "ID": "114",
       "XPLimit": "337509",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "52",
+      "RewardPremium": "10"
     },
     "115": {
       "ID": "115",
       "XPLimit": "354384",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "53",
+      "RewardPremium": "10"
     },
     "116": {
       "ID": "116",
       "XPLimit": "372103",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "53",
+      "RewardPremium": "10"
     },
     "117": {
       "ID": "117",
       "XPLimit": "390709",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "53",
+      "RewardPremium": "10"
     },
     "118": {
       "ID": "118",
       "XPLimit": "410244",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "53",
+      "RewardPremium": "10"
     },
     "119": {
       "ID": "119",
       "XPLimit": "430756",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "53",
+      "RewardPremium": "10"
     },
     "120": {
       "ID": "120",
       "XPLimit": "456602",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "54",
+      "RewardPremium": "10"
     },
     "121": {
       "ID": "121",
       "XPLimit": "483998",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "54",
+      "RewardPremium": "10"
     },
     "122": {
       "ID": "122",
       "XPLimit": "513038",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "54",
+      "RewardPremium": "10"
     },
     "123": {
       "ID": "123",
       "XPLimit": "543820",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "54",
+      "RewardPremium": "10"
     },
     "124": {
       "ID": "124",
       "XPLimit": "576449",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "54",
+      "RewardPremium": "10"
     },
     "125": {
       "ID": "125",
       "XPLimit": "611036",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "55",
+      "RewardPremium": "10"
     },
     "126": {
       "ID": "126",
       "XPLimit": "647698",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "55",
+      "RewardPremium": "10"
     },
     "127": {
       "ID": "127",
       "XPLimit": "686560",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "55",
+      "RewardPremium": "10"
     },
     "128": {
       "ID": "128",
       "XPLimit": "727754",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "55",
+      "RewardPremium": "10"
     },
     "129": {
       "ID": "129",
       "XPLimit": "771419",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "55",
+      "RewardPremium": "10"
     },
     "130": {
       "ID": "130",
       "XPLimit": "817704",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "56",
+      "RewardPremium": "10"
     },
     "131": {
       "ID": "131",
       "XPLimit": "866766",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "56",
+      "RewardPremium": "10"
     },
     "132": {
       "ID": "132",
       "XPLimit": "918772",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "56",
+      "RewardPremium": "10"
     },
     "133": {
       "ID": "133",
       "XPLimit": "973898",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "56",
+      "RewardPremium": "10"
     },
     "134": {
       "ID": "134",
       "XPLimit": "1042071",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "56",
+      "RewardPremium": "10"
     },
     "135": {
       "ID": "135",
       "XPLimit": "1115016",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "57",
+      "RewardPremium": "10"
     },
     "136": {
       "ID": "136",
       "XPLimit": "1193068",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "57",
+      "RewardPremium": "10"
     },
     "137": {
       "ID": "137",
       "XPLimit": "1276582",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "57",
+      "RewardPremium": "10"
     },
     "138": {
       "ID": "138",
       "XPLimit": "1365943",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "57",
+      "RewardPremium": "10"
     },
     "139": {
       "ID": "139",
       "XPLimit": "1461559",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "57",
+      "RewardPremium": "10"
     },
     "140": {
       "ID": "140",
       "XPLimit": "1563868",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "58",
+      "RewardPremium": "10"
     },
     "141": {
       "ID": "141",
       "XPLimit": "1673339",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "58",
+      "RewardPremium": "10"
     },
     "142": {
       "ID": "142",
       "XPLimit": "1790473",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "58",
+      "RewardPremium": "10"
     },
     "143": {
       "ID": "143",
       "XPLimit": "1915806",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "58",
+      "RewardPremium": "10"
     },
     "144": {
       "ID": "144",
       "XPLimit": "2049912",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "58",
+      "RewardPremium": "10"
     },
     "145": {
       "ID": "145",
       "XPLimit": "2193406",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "59",
+      "RewardPremium": "10"
     },
     "146": {
       "ID": "146",
       "XPLimit": "2346944",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "59",
+      "RewardPremium": "10"
     },
     "147": {
       "ID": "147",
       "XPLimit": "2511230",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "59",
+      "RewardPremium": "10"
     },
     "148": {
       "ID": "148",
       "XPLimit": "2687017",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "59",
+      "RewardPremium": "10"
     },
     "149": {
       "ID": "149",
       "XPLimit": "2875108",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "59",
+      "RewardPremium": "10"
     },
     "150": {
       "ID": "150",
       "XPLimit": "3076365",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "60",
+      "RewardPremium": "10"
     },
     "151": {
       "ID": "151",
       "XPLimit": "3291711",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "60",
+      "RewardPremium": "10"
     },
     "152": {
       "ID": "152",
       "XPLimit": "3522131",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "60",
+      "RewardPremium": "10"
     },
     "153": {
       "ID": "153",
       "XPLimit": "3768680",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "60",
+      "RewardPremium": "10"
     },
     "154": {
       "ID": "154",
       "XPLimit": "4032487",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "60",
+      "RewardPremium": "10"
     },
     "155": {
       "ID": "155",
       "XPLimit": "4314761",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "61",
+      "RewardPremium": "10"
     },
     "156": {
       "ID": "156",
       "XPLimit": "4616795",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "61",
+      "RewardPremium": "10"
     },
     "157": {
       "ID": "157",
       "XPLimit": "4939970",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "61",
+      "RewardPremium": "10"
     },
     "158": {
       "ID": "158",
       "XPLimit": "5285768",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "61",
+      "RewardPremium": "10"
     },
     "159": {
       "ID": "159",
       "XPLimit": "5708630",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "61",
+      "RewardPremium": "10"
     },
     "160": {
       "ID": "160",
       "XPLimit": "6165320",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "62",
+      "RewardPremium": "10"
     },
     "161": {
       "ID": "161",
       "XPLimit": "6658546",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "62",
+      "RewardPremium": "10"
     },
     "162": {
       "ID": "162",
       "XPLimit": "7191229",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "62",
+      "RewardPremium": "10"
     },
     "163": {
       "ID": "163",
       "XPLimit": "7766528",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "62",
+      "RewardPremium": "10"
     },
     "164": {
       "ID": "164",
       "XPLimit": "8387850",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "62",
+      "RewardPremium": "10"
     },
     "165": {
       "ID": "165",
       "XPLimit": "9058878",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "63",
+      "RewardPremium": "10"
     },
     "166": {
       "ID": "166",
       "XPLimit": "9783588",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "63",
+      "RewardPremium": "10"
     },
     "167": {
       "ID": "167",
       "XPLimit": "10566275",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "63",
+      "RewardPremium": "10"
     },
     "168": {
       "ID": "168",
       "XPLimit": "11411577",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "63",
+      "RewardPremium": "10"
     },
     "169": {
       "ID": "169",
       "XPLimit": "12324504",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "63",
+      "RewardPremium": "10"
     },
     "170": {
       "ID": "170",
       "XPLimit": "13310464",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "64",
+      "RewardPremium": "10"
     },
     "171": {
       "ID": "171",
       "XPLimit": "14375301",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "64",
+      "RewardPremium": "10"
     },
     "172": {
       "ID": "172",
       "XPLimit": "15525325",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "64",
+      "RewardPremium": "10"
     },
     "173": {
       "ID": "173",
       "XPLimit": "16767351",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "64",
+      "RewardPremium": "10"
     },
     "174": {
       "ID": "174",
       "XPLimit": "18108739",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "64",
+      "RewardPremium": "10"
     },
     "175": {
       "ID": "175",
       "XPLimit": "19557438",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "65",
+      "RewardPremium": "10"
     },
     "176": {
       "ID": "176",
       "XPLimit": "21122033",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "65",
+      "RewardPremium": "10"
     },
     "177": {
       "ID": "177",
       "XPLimit": "22811796",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "65",
+      "RewardPremium": "10"
     },
     "178": {
       "ID": "178",
       "XPLimit": "24636740",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "65",
+      "RewardPremium": "10"
     },
     "179": {
       "ID": "179",
       "XPLimit": "26607679",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "65",
+      "RewardPremium": "10"
     },
     "180": {
       "ID": "180",
       "XPLimit": "29002370",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "66",
+      "RewardPremium": "10"
     },
     "181": {
       "ID": "181",
       "XPLimit": "31612583",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "66",
+      "RewardPremium": "10"
     },
     "182": {
       "ID": "182",
       "XPLimit": "34457716",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "66",
+      "RewardPremium": "10"
     },
     "183": {
       "ID": "183",
       "XPLimit": "37558910",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "66",
+      "RewardPremium": "10"
     },
     "184": {
       "ID": "184",
       "XPLimit": "40939212",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "66",
+      "RewardPremium": "10"
     },
     "185": {
       "ID": "185",
       "XPLimit": "44623741",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "67",
+      "RewardPremium": "10"
     },
     "186": {
       "ID": "186",
       "XPLimit": "48639878",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "67",
+      "RewardPremium": "10"
     },
     "187": {
       "ID": "187",
       "XPLimit": "53017467",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "67",
+      "RewardPremium": "10"
     },
     "188": {
       "ID": "188",
       "XPLimit": "57789039",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "67",
+      "RewardPremium": "10"
     },
     "189": {
       "ID": "189",
       "XPLimit": "62990052",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "67",
+      "RewardPremium": "10"
     },
     "190": {
       "ID": "190",
       "XPLimit": "68659157",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "68",
+      "RewardPremium": "10"
     },
     "191": {
       "ID": "191",
       "XPLimit": "74838481",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "68",
+      "RewardPremium": "10"
     },
     "192": {
       "ID": "192",
       "XPLimit": "81573945",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "68",
+      "RewardPremium": "10"
     },
     "193": {
       "ID": "193",
       "XPLimit": "88915600",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "68",
+      "RewardPremium": "10"
     },
     "194": {
       "ID": "194",
       "XPLimit": "96918004",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "68",
+      "RewardPremium": "10"
     },
     "195": {
       "ID": "195",
       "XPLimit": "105640624",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "69",
+      "RewardPremium": "10"
     },
     "196": {
       "ID": "196",
       "XPLimit": "115148280",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "69",
+      "RewardPremium": "10"
     },
     "197": {
       "ID": "197",
       "XPLimit": "125511625",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "69",
+      "RewardPremium": "10"
     },
     "198": {
       "ID": "198",
       "XPLimit": "136807671",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "69",
+      "RewardPremium": "10"
     },
     "199": {
       "ID": "199",
       "XPLimit": "149120362",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "69",
+      "RewardPremium": "10"
     },
     "200": {
       "ID": "200",
       "XPLimit": "162541194",
-      "MaxEnergy": "30",
-      "RewardPremium": "0"
+      "MaxEnergy": "70",
+      "RewardPremium": "10"
     }
   },
   "BadassLevels": {},
@@ -13706,6 +13707,10 @@
     "7": {
       "ID": "7",
       "Item": "#ResourceBuilding.WaterPlant"
+    },
+    "8": {
+      "ID": "8",
+      "Item": "#Building.Airport"
     }
   },
   "ShopPacks": {
@@ -14365,28 +14370,6 @@
       "RewardMoney": "0",
       "RewardXP": "0"
     },
-    "FirstZoom": {
-      "ID": "FirstZoom",
-      "Type": "#MissionType.ToasterMessage",
-      "MapId": "Home",
-      "Name": "#TID.MISSION_ZOOM_TITLE",
-      "Description": "#TID.MISSION_ZOOM_DESC",
-      "RequiredMissions": "#Mission.COMBAT_S_3B",
-      "Objectives": "#Objective.Zoom",
-      "RewardMoney": "0",
-      "RewardXP": "0"
-    },
-    "FirstFullScreen": {
-      "ID": "FirstFullScreen",
-      "Type": "#MissionType.ToasterMessage",
-      "MapId": "Home",
-      "Name": "#TID.MISSION_FULL_SCREEN_TITLE",
-      "Description": "#TID.MISSION_FULL_SCREEN_DESC",
-      "RequiredMissions": "#Mission.EXPAND_TIP",
-      "Objectives": "#Objective.FullScreen",
-      "RewardMoney": "0",
-      "RewardXP": "0"
-    },
     "DealtWithAll": {
       "ID": "DealtWithAll",
       "Type": "#MissionType.Hidden",
@@ -14494,19 +14477,6 @@
       "RewardMoney": "0",
       "RewardXP": "0",
       "Narrator": "#Character.President"
-    },
-    "AREA_S_4": {
-      "ID": "AREA_S_4",
-      "Type": "#MissionType.Normal",
-      "MapId": "Home",
-      "Name": "#TID.MISSION_AREA_S_4_TITLE",
-      "Description": "#TID.MISSION_AREA_S_4_DESC",
-      "CompletionText": "#TID.MISSION_AREA_S_4_COMPLETION",
-      "Icon": "icons/mission_icons/icon_mission_allied_contact.png",
-      "RequiredMissions": "#Mission.BRAGG_FRIEND_TALK",
-      "Objectives": "#Objective.SA4_Train, #Objective.SA4_Suppress",
-      "RewardMoney": "500",
-      "RewardXP": "5"
     },
     "AREA_S_RECONSTRUCTION_INTRO": {
       "ID": "AREA_S_RECONSTRUCTION_INTRO",
@@ -15598,19 +15568,6 @@
       "RewardMoney": "0",
       "RewardXP": "0",
       "Narrator": "#Character.BlackFox"
-    },
-    "AREA_SE_4": {
-      "ID": "AREA_SE_4",
-      "Type": "#MissionType.Normal",
-      "MapId": "Home",
-      "Name": "#TID.MISSION_AREA_SE_4_TITLE",
-      "Description": "#TID.MISSION_AREA_SE_4_DESC",
-      "CompletionText": "#TID.MISSION_AREA_SE_4_COMPLETION",
-      "Icon": "icons/mission_icons/icon_mission_allied_contact.png",
-      "RequiredMissions": "#Mission.AREA_SE_3_OUTRO2",
-      "Objectives": "#Objective.SEA4_Allyrevive, #Objective.SEA4_Allyhelp",
-      "RewardMoney": "300",
-      "RewardXP": "10"
     },
     "AREA_SE_5_INTRO": {
       "ID": "AREA_SE_5_INTRO",
@@ -19205,7 +19162,7 @@
       "ID": "SAC1_EnemyUnits",
       "Type": "#ObjectiveType.Destroy",
       "Parameter": "#EnemyUnit",
-      "Goal": "5",
+      "Goal": "3",
       "Title": "#TID.MISSION_CAMPAIGN_S_1_OBJECTIVE_2",
       "Description": "#TID.MISSION_CAMPAIGN_S_1_OBJECTIVE_2",
       "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy.png",
@@ -19214,7 +19171,7 @@
     "SAC1_Town": {
       "ID": "SAC1_Town",
       "Type": "#ObjectiveType.Recapture",
-      "Parameter": "#PermanentHFE.Dvillage",
+      "Parameter": "#PermanentHFE.Pipoca",
       "Goal": "1",
       "Title": "#TID.MISSION_CAMPAIGN_S_1_OBJECTIVE_3",
       "Description": "#TID.MISSION_CAMPAIGN_S_1_OBJECTIVE_3",
@@ -19283,7 +19240,7 @@
     "SA_RECONS_Startproducing": {
       "ID": "SA_RECONS_Startproducing",
       "Type": "#ObjectiveType.StartProducing",
-      "Parameter": "#PermanentHFE.Dvillage",
+      "Parameter": "#PermanentHFE.Pipoca",
       "Goal": "1",
       "Title": "#TID.MISSION_AREA_S_RECONSTRUCTION",
       "Description": "#TID.MISSION_AREA_S_RECONSTRUCTION_DESC",
@@ -19432,7 +19389,7 @@
       "ID": "SWAC1_Fortress",
       "Type": "#ObjectiveType.DestroyTarget",
       "Coordinates": "38_60",
-      "Parameter": "#EnemyInstallation.BaseD2",
+      "Parameter": "#EnemyInstallation.BaseSW",
       "Goal": "1",
       "Title": "#TID.MISSION_CAMPAIGN_SW_1_OBJECTIVE_4",
       "Description": "#TID.MISSION_CAMPAIGN_SW_1_OBJECTIVE_4",
@@ -19671,7 +19628,7 @@
     "SEAC1_Town": {
       "ID": "SEAC1_Town",
       "Type": "#ObjectiveType.Recapture",
-      "Parameter": "#PermanentHFE.Dtown",
+      "Parameter": "#PermanentHFE.SETown",
       "Goal": "1",
       "Title": "#TID.MISSION_CAMPAIGN_SE_1_OBJECTIVE_3",
       "Description": "#TID.MISSION_CAMPAIGN_SE_1_OBJECTIVE_3",
@@ -19953,7 +19910,7 @@
     "WAC1_Town": {
       "ID": "WAC1_Town",
       "Type": "#ObjectiveType.Recapture",
-      "Parameter": "#PermanentHFE.Dcity1",
+      "Parameter": "#PermanentHFE.Wtown",
       "Goal": "1",
       "Title": "#TID.MISSION_CAMPAIGN_W_1_OBJECTIVE_4",
       "Description": "#TID.MISSION_CAMPAIGN_W_1_OBJECTIVE_4",
@@ -20004,7 +19961,7 @@
     "WA3_Drive": {
       "ID": "WA3_Drive",
       "Type": "#ObjectiveType.StartProducing",
-      "Parameter": "#PermanentHFE.Dcity1",
+      "Parameter": "#PermanentHFE.Wtown",
       "Goal": "1",
       "Title": "#TID.MISSION_AREA_W3_OBJ1_TITLE",
       "Description": "#TID.MISSION_AREA_W3_OBJ1_DESC",
@@ -20103,7 +20060,7 @@
     "CAC1_Town": {
       "ID": "CAC1_Town",
       "Type": "#ObjectiveType.Recapture",
-      "Parameter": "#PermanentHFE.Dcity2",
+      "Parameter": "#PermanentHFE.Ccity",
       "Goal": "1",
       "Title": "#TID.MISSION_CAMPAIGN_C_1_OBJECTIVE_3",
       "Description": "#TID.MISSION_CAMPAIGN_C_1_OBJECTIVE_3",
@@ -20114,7 +20071,7 @@
       "ID": "CAC1_Fortress1",
       "Type": "#ObjectiveType.DestroyTarget",
       "Coordinates": "51_46",
-      "Parameter": "#EnemyInstallation.BfortM",
+      "Parameter": "#EnemyInstallation.BaseC1",
       "Goal": "1",
       "Title": "#TID.MISSION_CAMPAIGN_C_1_OBJECTIVE_4",
       "Description": "#TID.MISSION_CAMPAIGN_C_1_OBJECTIVE_4",
@@ -20125,7 +20082,7 @@
       "ID": "CAC1_Fortress2",
       "Type": "#ObjectiveType.DestroyTarget",
       "Coordinates": "51_50",
-      "Parameter": "#EnemyInstallation.BfortN",
+      "Parameter": "#EnemyInstallation.BaseC2",
       "Goal": "1",
       "Title": "#TID.MISSION_CAMPAIGN_C_1_OBJECTIVE_5",
       "Description": "#TID.MISSION_CAMPAIGN_C_1_OBJECTIVE_5",
@@ -20306,11 +20263,11 @@
     "EC1_Minefield": {
       "ID": "EC1_Minefield",
       "Type": "#ObjectiveType.Destroy",
-      "Parameter": "#EnemyUnit.RocketBattery",
+      "Parameter": "#EnemyInstallation.Mines",
       "Goal": "4",
       "Title": "#TID.MISSION_COMBAT_E1_OBJ1_TITLE",
       "Description": "#TID.MISSION_COMBAT_E1_OBJ1_DESC",
-      "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_rocket_battery.png",
+      "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_minefield.png",
       "CostFinish": "9"
     },
     "EC2_APC": {
@@ -20386,7 +20343,7 @@
       "ID": "NE_C1_ENEMY",
       "Type": "#ObjectiveType.Destroy",
       "Parameter": "#EnemyUnit",
-      "Goal": "40",
+      "Goal": "30",
       "Title": "#TID.NW_C1_OBJC_3_TITLE",
       "Description": "#TID.NW_C1_OBJC_3_DESC",
       "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy.png",
@@ -23164,7 +23121,14 @@
       "ID": "C_E02",
       "Group": "AreaC",
       "Item": "#EnemyUnit.Armor",
-      "AreaX": "56",
+      "AreaX": "55",
+      "AreaY": "46"
+    },
+    "C_P01": {
+      "ID": "C_P01",
+      "Group": "AreaC",
+      "Item": "#EnemyUnit.Armor",
+      "AreaX": "57",
       "AreaY": "46"
     },
     "C_E03": {
@@ -23300,6 +23264,20 @@
       "AreaX": "57",
       "AreaY": "49"
     },
+    "C_P02": {
+      "ID": "C_P02",
+      "Group": "AreaC",
+      "Item": "#EnemyInstallation.Barricade",
+      "AreaX": "47",
+      "AreaY": "50"
+    },
+    "C_P03": {
+      "ID": "C_P03",
+      "Group": "AreaC",
+      "Item": "#EnemyUnit.Armor",
+      "AreaX": "48",
+      "AreaY": "50"
+    },
     "C_E22": {
       "ID": "C_E22",
       "Group": "AreaC",
@@ -23333,6 +23311,13 @@
       "Group": "AreaC",
       "Item": "#EnemyUnit.RocketBattery",
       "AreaX": "55",
+      "AreaY": "50"
+    },
+    "C_P04": {
+      "ID": "C_P04",
+      "Group": "AreaC",
+      "Item": "#EnemyUnit.Armor",
+      "AreaX": "56",
       "AreaY": "50"
     },
     "C_E27": {
@@ -23832,6 +23817,13 @@
       "AreaX": "41",
       "AreaY": "49"
     },
+    "E_E00": {
+      "ID": "E_00",
+      "Group": "AreaE",
+      "Item": "#EnemyInstallation.GuardStation",
+      "AreaX": "58",
+      "AreaY": "53"
+    },
     "E_E01": {
       "ID": "E_E01",
       "Group": "AreaE",
@@ -24038,21 +24030,21 @@
     "E_E34": {
       "ID": "E_E34",
       "Group": "AreaE",
-      "Item": "#EnemyInstallation.Mines",
+      "Item": "#EnemyUnit.Armor",
       "AreaX": "63",
       "AreaY": "50"
     },
     "E_E35": {
       "ID": "E_E35",
       "Group": "AreaE",
-      "Item": "#EnemyUnit.Armor",
+      "Item": "#EnemyInstallation.Mines",
       "AreaX": "63",
       "AreaY": "51"
     },
     "E_E36": {
       "ID": "E_E36",
       "Group": "AreaE",
-      "Item": "#EnemyUnit.Armor",
+      "Item": "#EnemyInstallation.Mines",
       "AreaX": "64",
       "AreaY": "51"
     },
@@ -24080,7 +24072,7 @@
     "E_E41": {
       "ID": "E_E41",
       "Group": "AreaE",
-      "Item": "#EnemyInstallation.Mines",
+      "Item": "#EnemyUnit.Armor",
       "AreaX": "64",
       "AreaY": "49"
     },
@@ -24426,6 +24418,13 @@
       "Item": "#EnemyUnit.Infantry",
       "AreaX": "44",
       "AreaY": "39"
+    },
+    "N_W_96": {
+      "ID": "N_W_96",
+      "Group": "AreaNW",
+      "Item": "#EnemyUnit.RocketBattery",
+      "AreaX": "44",
+      "AreaY": "40"
     },
     "N_W_97": {
       "ID": "N_W_97",
