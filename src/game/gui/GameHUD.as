@@ -119,6 +119,8 @@
       private static const TOOLBOX_INDEX_SELL:int = 0;
       
       private static const TOOLBOX_INDEX_RELOCATE:int = 1;
+	   
+      private static const TOOLBOX_INDEX_REDEPLOY:int = 2;
       
       private static const TOOLBOX_BUTTONS_COUNT:int = 2;
       
@@ -178,6 +180,10 @@
       private var mButtonToolBoxMove:ArmyButton;
       
       private var mButtonToolBoxMoveEnabled:ArmyButton;
+	  
+      private var mButtonToolBoxRedeploy:ArmyButton;
+      
+      private var mButtonToolBoxRedeployEnabled:ArmyButton;
       
       public var mPlaceButton:ArmyButton;
       
@@ -579,9 +585,12 @@
          Utils.CallForAllChildren(this,Utils.disableMouse,null);
 	 
          this.mResourceFrame = this.mIngameHUDClip.getChildByName("Resources") as MovieClip;
-         this.mHudButtonShop = Utils.createBasicButton(this.mIngameHUDClip,"Button_shop",this.buttonShopPressed);
-         this.mHudButtonSave = Utils.createBasicButton(this.mIngameHUDClip,"Button_save",this.buttonSavePressed);
-         this.mButtonMap = Utils.createBasicButton(this.mIngameHUDClip,'Button_Map',this.buttonMapPressed);
+	 
+         this.mHudButtonShop = Utils.createBasicButton(this.mIngameHUDClip_BOTTOM,"Button_shop",this.buttonShopPressed);
+         this.mHudButtonSave = Utils.createBasicButton(this.mIngameHUDClip_BOTTOM,"Button_save",this.buttonSavePressed);
+         this.mButtonMap = Utils.createBasicButton(this.mIngameHUDClip_BOTTOM,'Button_Map',this.buttonMapPressed);
+	 
+	 
          this.mRightPlaceButtonClip = this.mIngameHUDClip.getChildByName("right_button") as MovieClip;
          this.mCancelPlaceButtonClip = this.mIngameHUDClip.getChildByName("cancel_button") as MovieClip;
          this.mRightPlaceButtonClip.mouseEnabled = true;
@@ -621,15 +630,21 @@
          this.mButtonToolBoxSell.setText(GameState.getText("BUTTON_SELL_TOOL"),"Text_Title");
          this.mButtonToolBoxMove = this.addButton(this.mToolBox,"Button_Relocate",this.buttonToolboxRelocatePressed);
          this.mButtonToolBoxMove.setText(GameState.getText("BUTTON_MOVE_TOOL"),"Text_Title");
-         this.mButtonToolBoxSellEnabled = this.addButton(this.mToolBox,"Button_Sell_Enabled",this.buttonToolboxSellCanceled);
+         this.mButtonToolBoxRedeploy = this.addButton(this.mToolBox,"Button_Redeploy",this.buttonToolboxPickupPressed);
+         this.mButtonToolBoxRedeploy.setText(GameState.getText("BUTTON_REDEPLOY_TOOL"),"Text_Title");
+		 this.mButtonToolBoxSellEnabled = this.addButton(this.mToolBox,"Button_Sell_Enabled",this.buttonToolboxSellCanceled);
          this.mButtonToolBoxSellEnabled.setText(GameState.getText("BUTTON_SELL_TOOL"),"Text_Title");
          this.mButtonToolBoxMoveEnabled = this.addButton(this.mToolBox,"Button_Relocate_Enabled",this.buttonToolboxRelocateCanceled);
          this.mButtonToolBoxMoveEnabled.setText(GameState.getText("BUTTON_MOVE_TOOL"),"Text_Title");
+         this.mButtonToolBoxRedeployEnabled = this.addButton(this.mToolBox,"Button_Redeploy_Enabled",this.buttonToolboxPickupCanceled);
+         this.mButtonToolBoxRedeployEnabled.setText(GameState.getText("BUTTON_REDEPLOY_TOOL"),"Text_Title");
          this.mButtonToolClose = this.addButton(this.mToolBox,"Button_close",this.toggleToolbox);
          this.mToolBoxButtonsDisabled[TOOLBOX_INDEX_SELL] = this.mButtonToolBoxSell;
          this.mToolBoxButtonsDisabled[TOOLBOX_INDEX_RELOCATE] = this.mButtonToolBoxMove;
+         this.mToolBoxButtonsDisabled[TOOLBOX_INDEX_REDEPLOY] = this.mButtonToolBoxRedeploy;
          this.mToolBoxButtonsEnabled[TOOLBOX_INDEX_SELL] = this.mButtonToolBoxSellEnabled;
          this.mToolBoxButtonsEnabled[TOOLBOX_INDEX_RELOCATE] = this.mButtonToolBoxMoveEnabled;
+         this.mToolBoxButtonsEnabled[TOOLBOX_INDEX_REDEPLOY] = this.mButtonToolBoxRedeployEnabled;
          this.hideToolboxButtons();
          this.mCurrentZoomStep = 0;
          LocalizationUtils.replaceFont(this.mEnergyTimerText.getTextField());
@@ -664,6 +679,7 @@
 		 
          this.mPullOutMissionFrame = this.mIngameHUDClip_BOTTOM.getChildByName("pullout_mission_frame") as MovieClip;
          this.mPullOutMissionFrame.gotoAndStop(1);
+		 this.mPullOutMissionFrame.visible = false;
          this.mPullOutMissionMenuState = this.STATE_MISSIONS_MENU_CLOSED;
          this.resize(GameState.mInstance.getStageWidth(),GameState.mInstance.getStageHeight());
       }
@@ -926,28 +942,27 @@
     var _loc4_:int = Math.max(param2 - 750, 0);
     var _loc5_:Number = 0;
     var _loc6_:int = this.mResourceFrame.width + 2;
-
-    if (param1 > 1200) {
-        _loc5_ = _loc6_ >> 3;
-    } else {
-        _loc5_ = (_loc6_ >> 4) + 6 * (_loc6_ >> 8);
-    }
+	
+	_loc5_ = _loc6_ >> 3;
 
     // Ensure mIngameHUDClip stays within bounds
     this.mIngameHUDClip.x = _loc3_ / 2;
     this.mIngameHUDClip.y = _loc4_;
 
     // Ensure mPullOutMissionFrame and other frames stay within bounds
-    this.mPullOutMissionFrame.x = Math.max(0, Math.min(param1 - this.mPullOutMissionFrame.width, this.mPullOutMissionFrame.x - _loc3_ / 2));
+    this.mPullOutMissionFrame.x = 0;
     this.mButtonPullOutMissionFrame.x = Math.max(0, Math.min(param1 - this.mButtonPullOutMissionFrame.width, this.mButtonPullOutMissionFrame.x - _loc3_ / 2));
-    this.mButtonPullOutFrame.x = Math.max(0, Math.min(param1 - this.mButtonPullOutFrame.width, this.mButtonPullOutFrame.x + _loc3_ / 2));
-    this.mPullOutMenuFrame.x = Math.max(0, Math.min(param1 - this.mPullOutMenuFrame.width, this.mPullOutMenuFrame.x + _loc3_ / 2));
-
+    this.mButtonPullOutFrame.x = Math.max(0, param1 - this.mButtonPullOutFrame.width);
+    this.mPullOutMenuFrame.x = param1;
 
     this.mButtonPullOutMissionFrame.y = Math.max(0, Math.min(param2 - this.mButtonPullOutMissionFrame.height));
-    this.mPullOutMissionFrame.y = Math.max(0, Math.min(param2));
+    this.mPullOutMissionFrame.y = Math.max(0, Math.min(param2 - this.mPullOutMenuFrame.height/2 + this.mButtonPullOutMissionFrame.height));
     this.mButtonPullOutFrame.y = Math.max(0, Math.min(param2 - this.mButtonPullOutFrame.height));
     this.mPullOutMenuFrame.y = Math.max(0, Math.min(param2 - this.mPullOutMenuFrame.height));
+
+    this.mHudButtonShop.setY(Math.max(0, Math.min(param2 - this.mHudButtonShop.getHeight())) + 3);
+    this.mHudButtonSave.setY(Math.max(0, Math.min(param2 - this.mHudButtonSave.getHeight())) + 3);
+    this.mButtonMap.setY(Math.max(0, Math.min(param2 - this.mButtonMap.getHeight())) + 3);
 
 
     if (!this.keyCoordinates) {
@@ -966,10 +981,10 @@
     //this.mNeighborActionsFrame.y = -_loc4_ + (this.keyCoordinates[1] as Point).y;
 
     // Ensure mToolBox stays within bounds
-    this.TOOLBOX_BOTTOM_X = Math.max(0, Math.min(param1 - this.mToolBox.width, this.mButtonPullOutFrame.x + (this.mToolBox.width << 1)));
-    this.TOOLBOX_TOP_X = Math.max(0, Math.min(param1 - this.mToolBox.width, this.mButtonPullOutFrame.x));
+    this.TOOLBOX_BOTTOM_X = this.mButtonPullOutFrame.x + (this.mToolBox.width << 1);
+    this.TOOLBOX_TOP_X = this.mButtonPullOutFrame.x;
     this.mToolBox.x = this.TOOLBOX_BOTTOM_X;
-    this.mToolBox.y = Math.max(0, Math.min(param2 - this.mToolBox.height, this.mButtonPullOutFrame.y - (this.mToolBox.height >> 1)));
+    this.mToolBox.y = this.mButtonPullOutFrame.y - (this.mToolBox.height >> 1);
 
     var _loc8_:Array = null;
     var _loc9_:* = (_loc8_ = PopUpManager.getPopups()).length;
@@ -1049,10 +1064,26 @@
       
       private function buttonToolboxPickupPressed(param1:MouseEvent) : void
       {
+		 this.mGame.cancelTools();
+         this.mGame.cancelDecoPurchase();
+         CursorManager.getInstance().hideCursorImages();
+         this.mGame.cancelAllPlayerActions();
+         this.mGame.changeState(GameState.STATE_PICKUP_UNIT);
+         this.enableToolboxButton(TOOLBOX_INDEX_REDEPLOY);
+         this.showCancelButton(true);
+         param1.stopPropagation();
       }
       
       private function buttonToolboxPickupCanceled(param1:MouseEvent) : void
       {
+         this.mGame.cancelTools();
+         this.mGame.cancelDecoPurchase();
+         CursorManager.getInstance().hideCursorImages();
+         this.mGame.mScene.mMapGUIEffectsLayer.clearHighlights();
+         this.mGame.changeState(GameState.STATE_PLAY);
+         this.disableToolboxButtons();
+         this.showCancelButton(false);
+         param1.stopPropagation();
       }
       
       private function buttonToolboxRelocatePressed(param1:MouseEvent) : void
@@ -2135,7 +2166,7 @@
             }
             else
             {
-               this.mBuildingTooltip.setRenderable(param1);
+               this.mBuildingTooltip.setRenderable(param1, param2);
                if(!this.mBuildingTooltip.visible)
                {
                   this.mIngameHUDClip.addChild(this.mBuildingTooltip);
@@ -2280,16 +2311,15 @@
       
       public function setMapButtonHighlight() : void
       {
-         var _loc1_:Number = this.mButtonMap.getGlobalX();
-         var _loc2_:Number = this.mButtonMap.getGlobalY();
-         var _loc3_:Class = DCResourceManager.getInstance().getSWFClass(Config.SWF_INTERFACE_NAME,"tutorial_repair_01");
+         var _loc1_:* = this.mButtonMap.getGlobalX() - 90;
+         var _loc2_:* = this.mButtonMap.getGlobalY() + 30;
+         var _loc3_:Class = DCResourceManager.getInstance().getSWFClass(Config.SWF_INTERFACE_NAME,"tutorial_circle_01");
          this.mTutorialHighlight = new _loc3_();
          this.mTutorialHighlight.mouseEnabled = false;
          this.mTutorialHighlight.mouseChildren = false;
-         var _loc4_:Point = this.mButtonPullOutFrame.globalToLocal(new Point(_loc1_,_loc2_));
-         this.mTutorialHighlight.x = _loc4_.x;
-         this.mTutorialHighlight.y = _loc4_.y;
-         this.mButtonPullOutFrame.addChild(this.mTutorialHighlight);
+         this.mTutorialHighlight.x = _loc1_;
+         this.mTutorialHighlight.y = _loc2_;
+         this.mIngameHUDClip.addChild(this.mTutorialHighlight);
       }
       
       public function setZoomButtonHighlight() : void

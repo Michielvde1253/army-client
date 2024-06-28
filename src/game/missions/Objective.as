@@ -1,4 +1,4 @@
-package game.missions
+﻿package game.missions
 {
    import com.dchoc.graphics.DCResourceManager;
    import flash.display.MovieClip;
@@ -177,9 +177,11 @@ package game.missions
          }
          if(this.mParameter == null || param1 == null || param1 == this.mParameter)
          {
-            this.mCounter += param2;
-            this.mCounter = Math.min(this.mCounter,this.mGoal);
-            return true;
+			if(GameState.mInstance.mLoadingStatesOver){
+               this.mCounter += param2;
+               this.mCounter = Math.min(this.mCounter,this.mGoal);
+               return true;
+			}
          }
          return false;
       }

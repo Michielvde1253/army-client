@@ -49,7 +49,6 @@
       "CenterCamOnArrowDelay": "1000",
       "TilemapFileName": "tile_map_desert.csv",
       "SWFFile": "swf/new_backgroud_01",
-      "UnlockMission": "#Mission.AREA_SE_WP_outro8",
       "ParatroopersTriggerMission": "#Mission.AREA_D_M_C1",
       "Paratrooper": "#EnemyAppearanceSetup.Paratroop",
       "ParatrooperEnemyLimit": "6",
@@ -62,7 +61,8 @@
       "OutOfResourceHeader": "#TID.POP_UP_WATER_TITLE",
       "OutOfResourceText": "#TID.POP_UP_WATER_DESC",
       "OutOfResourceFeed": "#FeedObjects.RequestWater",
-      "OutOfResourcePopupClassName": "popup_ask_water"
+      "OutOfResourcePopupClassName": "popup_ask_water",
+      "UnlockMission": "#Mission.AREA_SE_WP_outro8"
     }
   },
   "MapArea": {
@@ -82,7 +82,8 @@
       "CostIntel": "0",
       "CostUnlock": "0",
       "ImageUrl": "cash_icon.png",
-      "DescriptionSecondary": "#TID.AREA_S_DESC_SECONDARY"
+      "DescriptionSecondary": "#TID.AREA_S_DESC_SECONDARY",
+      "IconGraphics": "icons/shop_icons/icon_expansion_01.png"
     },
     "AreaSW": {
       "ID": "AreaSW",
@@ -317,7 +318,8 @@
       "CostIntel": "0",
       "CostUnlock": "0",
       "ImageUrl": "cash_icon.png",
-      "DescriptionSecondary": "#TID.AREA_S_DESC_SECONDARY"
+      "DescriptionSecondary": "#TID.AREA_S_DESC_SECONDARY",
+      "IconGraphics": "icons/shop_icons/icon_expansion_01.png"
     },
     "DesertM": {
       "ID": "DesertM",

@@ -51,11 +51,11 @@
          var _loc3_:int = 0;
          for(_loc4_ in _loc1_)
          {
-			trace(GameState.mInstance.mCurrentMapId)
+			//trace(GameState.mInstance.mCurrentMapId)
             //if((_loc1_[_loc4_] as Object).MapId == GameState.mInstance.mCurrentMapId)
             //{
-			   trace((_loc1_[_loc4_] as Object).ID)
-			   trace((_loc1_[_loc4_] as Object).MapId)
+			   //trace((_loc1_[_loc4_] as Object).ID)
+			   //trace((_loc1_[_loc4_] as Object).MapId)
                mMissions[_loc3_] = new Mission(_loc1_[_loc4_]);
                mOrderedMissions[_loc7_ = _loc2_++] = mMissions[_loc3_];
                _loc3_++;
@@ -165,10 +165,13 @@
          var _loc4_:Mission = null;
          for each(_loc4_ in mMissions)
          {
-            if(_loc4_.mState == Mission.STATE_ACTIVE)
+            if(_loc4_.mState == Mission.STATE_ACTIVE && GameState.mInstance.mLoadingStatesOver)
             {
                if(_loc4_.increaseCounter(param1,param2,param3))
                {
+				  trace("Current map id:");
+		          trace(GameState.mInstance.mCurrentMapId);
+			      trace(_loc4_.mId)
                   GameState.mInstance.checkMissionProgress();
                   checkCompletedMissions();
                }

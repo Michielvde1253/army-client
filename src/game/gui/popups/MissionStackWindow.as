@@ -1,4 +1,4 @@
-package game.gui.popups
+﻿package game.gui.popups
 {
    import com.dchoc.graphics.DCResourceManager;
    import flash.display.MovieClip;
@@ -283,7 +283,7 @@ package game.gui.popups
          while(_loc1_ < MissionManager.getNumMissions())
          {
             _loc2_ = MissionManager.getMissionByIndex(_loc1_);
-            if(_loc2_.mState == Mission.STATE_ACTIVE && (_loc2_.mType == Mission.TYPE_TIP || _loc2_.mType == Mission.TYPE_NORMAL || _loc2_.mType == Mission.TYPE_STORY || _loc2_.mType == Mission.TYPE_CAMPAIGN) && !_loc2_.allObjectivesDone())
+            if(_loc2_.mState == Mission.STATE_ACTIVE && (_loc2_.mType == Mission.TYPE_TIP || _loc2_.mType == Mission.TYPE_NORMAL || _loc2_.mType == Mission.TYPE_STORY || _loc2_.mType == Mission.TYPE_CAMPAIGN) && !_loc2_.allObjectivesDone() && _loc2_.mMapId == GameState.mInstance.mCurrentMapId)
             {
                this.mMissionList.push(MissionManager.getMissionByIndex(_loc1_));
             }

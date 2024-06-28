@@ -1,4 +1,4 @@
-package game.missions
+﻿package game.missions
 {
    import game.battlefield.MapData;
    import game.isometric.GridCell;
@@ -27,13 +27,13 @@ package game.missions
             {
                for each(_loc5_ in mParameter)
                {
-                  if((_loc4_ = _loc3_.getCellAt(_loc5_[0],_loc5_[1])).mOwner == MapData.TILE_OWNER_FRIENDLY)
+                  if((_loc4_ = _loc3_.getCellAt(_loc5_[0],_loc5_[1])).mOwner == MapData.TILE_OWNER_FRIENDLY && this.mMapId == GameState.mInstance.mCurrentMapId)
                   {
                      ++mCounter;
                   }
                }
             }
-            else if((_loc4_ = _loc3_.getCellAt(mParameter[0],mParameter[1])).mOwner == MapData.TILE_OWNER_FRIENDLY)
+            else if((_loc4_ = _loc3_.getCellAt(mParameter[0],mParameter[1])).mOwner == MapData.TILE_OWNER_FRIENDLY && this.mMapId == GameState.mInstance.mCurrentMapId)
             {
                mCounter = mGoal;
             }

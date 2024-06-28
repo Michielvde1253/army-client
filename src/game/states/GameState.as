@@ -3764,6 +3764,7 @@
       public function executeSwitchMap(param1:String, param2:Friend = null, param3:Boolean = false) : void
       {
 		 OfflineSave.saveOldMap();
+		 trace("volgende lijn")
          var _loc4_:Object = null;
          if((this.mVisitingFriend == param2 || this.mVisitingFriend == null && param2 == null) && param1 == this.mCurrentMapId)
          {
@@ -3778,6 +3779,7 @@
          }
          this.mCurrentMapId = param1;
          this.mCurrentMapGraphicsId = Math.max(GRAPHICS_MAP_ID_LIST.indexOf(param1),0);
+	 
          if(Boolean(param2) && !param3)
          {
             this.mPlayerProfile.setNeighborActions(0);

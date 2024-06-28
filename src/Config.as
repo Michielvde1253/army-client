@@ -95,6 +95,8 @@
       public static const BUTTON_USE_HAND_CURSOR:Boolean = true;
       
       public static const CHECK_FOR_MISPLACED_DEBRIS:Boolean = true;
+	  
+      public static const MOBILE_MODE:Boolean = false;
       
       public static const COOKIE_SETTINGS_NAME:String = "Settings";
       

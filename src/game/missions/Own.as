@@ -1,4 +1,4 @@
-package game.missions
+﻿package game.missions
 {
    import game.items.Item;
    import game.items.ItemManager;
@@ -21,22 +21,24 @@ package game.missions
          var _loc5_:int = 0;
          var _loc6_:Object = null;
          super.initialize(param1,param2);
-         _loc3_ = GameState.mInstance.mPlayerProfile;
-         if(!mParameter.ID)
-         {
-            _loc5_ = 0;
-            for each(_loc6_ in mParameter)
-            {
-               _loc4_ = ItemManager.getItem(_loc6_.ID,_loc6_.Type);
-               _loc5_ += _loc3_.getItemCount(_loc4_);
-            }
-            mCounter = Math.min(_loc5_,mGoal);
-         }
-         else
-         {
-            _loc4_ = ItemManager.getItem(mParameter.ID,mParameter.Type);
-            mCounter = Math.min(_loc3_.getItemCount(_loc4_),mGoal);
-         }
+		 if(this.mMapId == GameState.mInstance.mCurrentMapId){
+			_loc3_ = GameState.mInstance.mPlayerProfile;
+			if(!mParameter.ID)
+			{
+				_loc5_ = 0;
+				for each(_loc6_ in mParameter)
+				{
+				_loc4_ = ItemManager.getItem(_loc6_.ID,_loc6_.Type);
+				_loc5_ += _loc3_.getItemCount(_loc4_);
+				}
+				mCounter = Math.min(_loc5_,mGoal);
+			}
+			else
+			{
+				_loc4_ = ItemManager.getItem(mParameter.ID,mParameter.Type);
+				mCounter = Math.min(_loc3_.getItemCount(_loc4_),mGoal);
+			}
+		 }
       }
       
       override public function increase(param1:Object, param2:int) : Boolean

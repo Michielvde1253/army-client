@@ -25,6 +25,8 @@
 	
 		public static var mMissions: * = {};
 	
+		public var mSwitchingMap:Boolean = false;
+	
 		mMissions["missions_incomplete"] = [];
 		mMissions["missions_all_complete"] = [];
 		mMissions["missions_finished"] = [];
@@ -217,7 +219,7 @@
 			}
 			return -1;
 		}	
-	
+	/*
 		public static function generateMissionJson(): * {
 			var objectives: Array = undefined;
 			var j: * = 0;
@@ -233,6 +235,7 @@
 				trace(all_missions[j]["mId"]);
 				trace(all_missions[j]["mState"]);
 				missionobj = {};
+			    trace(JSON.stringify(missionsave))
 				if (all_missions[j]["mState"] == 1) {
 					missionobj["mission_id"] = all_missions[j]["mId"];
 					objectives = all_missions[j].getObjectives();
@@ -287,6 +290,53 @@
 
 			return missionsave;
 		}
+		*/
+		
+		public static function generateMissionJson(): * {
+			var objectives: Array = undefined;
+			var j: * = 0;
+			var k: * = 0;
+			var missionobj: * = {};
+			var objective: * = {};
+			var all_missions: Array = [];
+
+			var missionsave: * = {};
+			missionsave["missions_incomplete"] = []
+		    missionsave["missions_all_complete"] = []
+		    missionsave["missions_finished"] = []
+
+			all_missions = MissionManager.getMissions();
+			for (j in all_missions) {
+				trace(all_missions[j]["mId"]);
+				trace(all_missions[j]["mState"]);
+				missionobj = {};
+			    trace(JSON.stringify(missionsave))
+				if (all_missions[j]["mState"] == 1) {
+					missionobj["mission_id"] = all_missions[j]["mId"];
+					objectives = all_missions[j].getObjectives();
+					missionobj["objectives"] = [];
+					k = 0;
+					for (k in objectives) {
+						objective = {};
+						objective["objectiveId"] = objectives[k]["mId"];
+						objective["startValue"] = 0;
+						objective["goal"] = objectives[k]["mGoal"];
+						objective["counterValue"] = objectives[k]["mCounter"];
+						objective["purchased"] = objectives[k]["mPurchased"];
+						missionobj["objectives"].push(objective);
+					}
+					missionsave["missions_incomplete"].push(missionobj);
+				} else if (all_missions[j]["mState"] == 2) {
+					missionobj["mission_id"] = all_missions[j]["mId"];
+					missionsave["missions_all_complete"].push(missionobj);
+				} else if (all_missions[j]["mState"] == 3) {
+					missionobj["mission_id"] = all_missions[j]["mId"];
+					missionsave["missions_finished"].push(missionobj);
+				}
+			}
+
+			return missionsave;
+		}
 
 		public static function saveOldMap(): void {
 			var old_map_id: String = GameState.mInstance.mCurrentMapId;
@@ -296,10 +346,11 @@
 		}
 	
 		public static function switchMap(): void {
+			trace("start switching map")
 			var map_id: String = GameState.mInstance.mCurrentMapId;
 			GameState.mInstance.mLoadingStatesOver = false;
 			GameState.mInstance.mCurrentMapGraphicsId = Math.max(GameState.GRAPHICS_MAP_ID_LIST.indexOf(map_id), 0);
-			GameState.mInstance.loadingFirstFinished();
+			//GameState.mInstance.loadingFirstFinished();
 			GameState.mInstance.mPlayerProfile.mInventory.getAreas();
 			GameState.mInstance.changeState(0);
 			GameState.mInstance.mMapData.destroy();
@@ -310,15 +361,16 @@
 				GameState.mInstance.initObjects(null);
 				loadMap(mMaps[map_id]);
 			} else {
+				GameState.mInstance.initObjects(null);
 				GameState.mInstance.initMap(null, map_id);
 			}
 			GameState.mInstance.updateGrid();
 			GameState.mInstance.mScene.mFog.init();
-			GameState.mInstance.mLoadingStatesOver = true;
 			MissionManager.initialize()
 			GameState.mInstance.mMissionIconsManager.reset()
 			MissionManager.setupFromServer(fakeservercall);
 			MissionManager.findNewActiveMissions();
+			GameState.mInstance.mLoadingStatesOver = true;
 		}
 
 		public static function generateSaveJson(): * {

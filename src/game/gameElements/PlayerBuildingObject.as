@@ -1,4 +1,4 @@
-package game.gameElements
+﻿package game.gameElements
 {
    import com.dchoc.graphics.DCResourceManager;
    import flash.display.DisplayObject;
@@ -516,6 +516,9 @@ package game.gameElements
          {
             if(this.isFullHealth())
             {
+			   trace("object id:")
+			   trace(this.mItem)
+			   trace(this.mItem.mType)
                if(_loc2_.mState == GameState.STATE_VISITING_NEIGHBOUR)
                {
                   if(mNeighborActionAvailable && this is HFEObject)
@@ -537,7 +540,7 @@ package game.gameElements
                      }
                   }
                }
-               else if(this.mState == STATE_PRODUCTION_READY || this.mState == STATE_WITHERED)
+               else if(this.mState == STATE_PRODUCTION_READY || this.mState == STATE_WITHERED || (this.mState == STATE_PRODUCING && this.mItem.mType == "HomeFrontEffort"))
                {
                   _loc3_ = _loc2_.mPlayerProfile;
                   if(this.mProduction.getRewardSupplies() > 0 && this.mProduction.getRewardSupplies() + _loc3_.mSupplies > _loc3_.mSuppliesCap)
@@ -548,6 +551,17 @@ package game.gameElements
                   {
                      _loc2_.mHUD.openAskReviveTextBox();
                   }
+			      else if(this.mState == STATE_PRODUCING)
+				  {
+					 gc = this.scene.getTileUnderMouse();
+					 GameState.mInstance.mHUD.openImmediateSuppliesTextBox(mItem,this.getStateText(),this.mProduction.getProducingTimeLeft());
+                      var _loc4_:HUDInterface = null;
+					  _loc4_ = GameState.mInstance.getHud();
+                     if(_loc4_ != null)
+					 {
+                     _loc4_.hideObjectTooltip();
+                     }
+				  }
                   else
                   {
                      this.mInQueueForAction = true;
@@ -647,18 +661,18 @@ package game.gameElements
                param2.setDetailsText(GameState.getText("BUILDING_STATUS_DAMAGED"));
             }
          }
-         else if(this.mState == STATE_PRODUCING && !IsometricScene.mouseDownAction && (mItem.mName == "Ammo Crates" || mItem.mName == "M.R.E Containers" || mItem.mName == "Gasoline Drop" || mItem.mName == "Oil Containers" || mItem.mName == "Military Crate" || mItem.mName == "Big Container" || mItem.mName == "Premium Container"))
+         else if(this.mState == STATE_PRODUCING && param2.getOpenAsPopup() == 1 && (mItem.mName == "Ammo Crates" || mItem.mName == "M.R.E Containers" || mItem.mName == "Gasoline Drop" || mItem.mName == "Oil Containers" || mItem.mName == "Military Crate" || mItem.mName == "Big Container" || mItem.mName == "Premium Container"))
          {
-            gc = this.scene.getTileUnderMouse();
-            if(Config.DEBUG_MODE)
-            {
-            }
-            GameState.mInstance.mHUD.openImmediateSuppliesTextBox(mItem,this.getStateText(),this.mProduction.getProducingTimeLeft());
-            _loc3_ = GameState.mInstance.getHud();
-            if(_loc3_ != null)
-            {
-               _loc3_.hideObjectTooltip();
-            }
+            //gc = this.scene.getTileUnderMouse();
+            //if(Config.DEBUG_MODE)
+            //{
+            //}
+            //GameState.mInstance.mHUD.openImmediateSuppliesTextBox(mItem,this.getStateText(),this.mProduction.getProducingTimeLeft());
+            //_loc3_ = GameState.mInstance.getHud();
+            //if(_loc3_ != null)
+            //{
+            //   _loc3_.hideObjectTooltip();
+            //}
          }
          else
          {

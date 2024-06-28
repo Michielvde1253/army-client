@@ -534,7 +534,7 @@
          var _loc4_:Boolean = false;
          for each(_loc5_ in this.mObjectives)
          {
-            if(_loc5_.mType == param1 && (_loc5_.mCounter < _loc5_.mGoal || _loc5_ is Stockpile || _loc5_ is Own || _loc5_ is StockpileItems || _loc5_ is OwnItems))
+            if(_loc5_.mType == param1 && (_loc5_.mCounter < _loc5_.mGoal || _loc5_ is Stockpile || _loc5_ is Own || _loc5_ is StockpileItems || _loc5_ is OwnItems) &&  this.mMapId == GameState.mInstance.mCurrentMapId)
             {
                _loc4_ = _loc5_.increase(param2,param3) || _loc4_;
                if(Config.DEBUG_MISSIONS)

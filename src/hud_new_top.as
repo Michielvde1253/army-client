@@ -12,12 +12,6 @@
       
       public var Supplies:MovieClip;
       
-      public var Button_shop:MovieClip;
-      
-      public var Button_save:MovieClip;
-      
-      public var Button_Map:MovieClip;
-      
       public var right_button:right_place;
       
       public var cancel_button:cancel_place;

@@ -15,6 +15,12 @@
       
       public var pullout_mission_frame:MovieClip;
 
+      public var Button_shop:MovieClip;
+      
+      public var Button_save:MovieClip;
+      
+      public var Button_Map:MovieClip;
+
       public function hud_new_bottom()
       {
          super();
