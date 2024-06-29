@@ -370,6 +370,14 @@
 			GameState.mInstance.mMissionIconsManager.reset()
 			MissionManager.setupFromServer(fakeservercall);
 			MissionManager.findNewActiveMissions();
+		    // Show water amount in HUD
+		    if(map_id == "Desert"){
+				(GameState.mInstance.getMainClip() as GameMain).changeDiscordMap("Desert");
+				GameState.mInstance.mHUD.changeWaterVisibility(true)
+			} else if(map_id == "Home"){
+				(GameState.mInstance.getMainClip() as GameMain).changeDiscordMap("Homeland");
+				GameState.mInstance.mHUD.changeWaterVisibility(false)
+			}
 			GameState.mInstance.mLoadingStatesOver = true;
 		}
 
@@ -528,6 +536,8 @@
 			GameState.mInstance.mCurrentMusic = GameState.mInstance.getMapMusic()
 			ArmySoundManager.loadMusic(GameState.mInstance.mCurrentMusic);
 			GameState.mInstance.startMusic();
+			(GameState.mInstance.getMainClip() as GameMain).changeDiscordMap("Homeland");
+			GameState.mInstance.mHUD.changeWaterVisibility(false)
 		}
 	}
 }

@@ -35,11 +35,11 @@
       
       public static const USE_PVP_MATCH:Boolean = !DROP_ALL_OPTIONAL_FEATURES;
       
-      public static const USE_ROCKET_EFFECT:Boolean = false; // TEMPORARILY
+      public static const USE_ROCKET_EFFECT:Boolean = true; // TEMPORARILY
       
       public static const USE_SOUNDS:Boolean = true;
       
-      public static const USE_LOW_SWF:Boolean = false;
+      public static const USE_LOW_SWF:Boolean = true;
       
       public static const USE_HARVEST_ANIMATION:Boolean = !DROP_ALL_OPTIONAL_FEATURES && !USE_LOW_SWF;
       

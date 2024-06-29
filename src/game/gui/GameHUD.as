@@ -156,8 +156,12 @@
       private var mButtonFrameCash:MovieClip;
       
       private var mButtonFramePremium:MovieClip;
+	  
+      private var mButtonFrameWater:MovieClip;
       
       private var mButtonTextCash:AutoTextField;
+	  
+      private var mButtonTextWater:AutoTextField;
       
       private var mButtonTextPremium:TextField;
       
@@ -409,6 +413,10 @@
          {
             this.mButtonTextCash.setText(_loc2_.mMoney.toString());
          }
+         if(this.mButtonTextWater.getText() != _loc2_.mWater.toString())
+         {
+            this.mButtonTextWater.setText(_loc2_.mWater.toString());
+         }
          if(this.mVisitingNeighbor)
          {
             _loc4_ = _loc2_.getSocialXpForThisLevel();
@@ -617,8 +625,11 @@
          this.mLevelText = new AutoTextField(this.mXpIcon.getChildByName("Text_Amount") as TextField);
          this.mButtonFrameCash = this.mResourceFrame.getChildAt(2) as MovieClip;
          this.mButtonFramePremium = this.mResourceFrame.getChildAt(1) as MovieClip;
+         this.mButtonFrameWater = this.mResourceFrame.getChildByName("Button_Water") as MovieClip;
+		 this.mButtonFrameWater.visible = false;
          this.mButtonTextCash = new AutoTextField(this.mButtonFrameCash.getChildAt(2) as TextField);
          this.mButtonTextPremium = this.mButtonFramePremium.getChildAt(3) as TextField;
+         this.mButtonTextWater = new AutoTextField(this.mButtonFrameWater.getChildByName("Text_Amount") as TextField);
          this.mButtonAddCash = Utils.createBasicButton(this.mButtonFrameCash,"button_add_cash",this.cashPressed);
          this.mButtonAddPremium = Utils.createBasicButton(this.mButtonFramePremium,"button_add_gold",this.premiumPressed);
 		 
@@ -655,7 +666,7 @@
          this.mPullOutMenuFrame.gotoAndStop(1);
          this.mPullOutMenuState = this.STATE_MENU_CLOSED;
          this.mPullOutMenu = this.mPullOutMenuFrame.getChildAt(0) as MovieClip;
-         this.mButtonSocial = this.addButton(this.mPullOutMenu,"Button_social",this.buttonSavePressed);
+         this.mButtonSocial = this.addButton(this.mPullOutMenu,"Button_social",this.doAbsolutelyNothingJustLikeDCDevs);
          this.mButtonInventory = this.addButton(this.mPullOutMenu,"Button_inventory",this.buttonInventoryPressed);
          this.mButtonHome = this.addButton(this.mPullOutMenu,"Button_home",this.mainMenuClicked);
          this.mButtonPowerup = this.addButton(this.mPullOutMenu,"Button_airstrike",this.buttonFireMissionActivePressed);
@@ -1036,6 +1047,11 @@
          this.showCancelButton(true);
          param1.stopPropagation();
          MissionManager.increaseCounter("ActivateRepair",null,1);
+      }
+  
+      private function doAbsolutelyNothingJustLikeDCDevs(param1:MouseEvent) : void
+      {
+		  this.openComingSoonDialog()
       }
       
       private function buttonToolboxSellPressed(param1:MouseEvent) : void
@@ -2256,6 +2272,11 @@
          }
          this.mVisitingNeighbor = param1;
       }
+  
+	  public function changeWaterVisibility(param1:Boolean) : void
+      {
+		  this.mButtonFrameWater.visible = param1;
+	  }
       
       public function getHUDClip() : MovieClip
       {

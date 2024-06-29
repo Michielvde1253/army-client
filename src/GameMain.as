@@ -34,6 +34,12 @@
       private var initialLoading:FSMState;
 	   
 	  private var discordRpc:DiscordRpc;
+	   
+	  private var RPC:* = {};
+  
+      private var messages:Array = [];
+  
+      private var messages_big:Array = [];
       
       public function GameMain()
       {
@@ -218,6 +224,12 @@
       {
       }
   
+      public function getRandomElementOf(array:Array):String
+      {
+			var idx:int = Math.floor(Math.random() * array.length);
+			return array[idx];
+	  }
+  
 	  private function setDiscordStatus(param1:Object) : void
       {
          var now:Date = null;
@@ -225,21 +237,46 @@
          var RPC:* = undefined;
          now = new Date();
          epoch = Math.round(now.valueOf() / 1000);
+		  
+		 this.messages.push("Chilling on ")
+		 this.messages.push("Sleeping on ")
+		 this.messages.push("Fighting on ")
+		 this.messages.push("Sitting on ")
+		 this.messages.push("Attacking on ")
+		 this.messages.push("Driving on ")
+		 this.messages.push("Killing tanks on ")
+		 this.messages.push("Shooting rockets on ")
+		 this.messages.push("Bullying Tubmann on ");
+		  
+		 this.messages_big.push("Destroying the Crimson Empire")
+		 this.messages_big.push("AYO THEY ADDED DESERT (hype)")
+		 this.messages_big.push("Has 10.000.000 Gold")
+		 this.messages_big.push("'Where did my water pack go????'")
+		 this.messages_big.push("Playing the game in portrait mode")
+		 this.messages_big.push("NOOOO I forgot to save the game :(")
+		 this.messages_big.push("Playing a silly Facebook game")
+		 this.messages_big.push("Almost out of energy :(")
+		  
          this.discordRpc.init("1232767781611634760");
-         RPC = {};
-         RPC.StartTime = epoch;
-         RPC.State = "On Desert Map";
-         RPC.Details = "Destroying the Crimson Empire"
-	     RPC.LargeImage = "big_logo"
-         RPC.LargeImageDescription = "Army Attack"
-         RPC.SmallImage = null;
-         RPC.SmallImageDescription = null;
-         RPC.PartyId = null;
-         RPC.PartySize = 0;
-         RPC.PartyCape = 0;
-         RPC.JoinSecret = null;
-         RPC.SpectatorSecret = null;
-         this.discordRpc.updatePresence(RPC.State,RPC.Details,RPC.StartTime,RPC.EndTime,RPC.LargeImage,RPC.LargeImageDescription,RPC.SmallImage,RPC.SmallImageDescription,RPC.PartyId,RPC.PartySize,RPC.PartyCape,RPC.JoinSecret,RPC.SpectatorSecret);
+         this.RPC.StartTime = epoch;
+         this.RPC.State = this.getRandomElementOf(this.messages) + "Homeland";
+         this.RPC.Details = this.getRandomElementOf(this.messages_big)
+	     this.RPC.LargeImage = "big_logo"
+         this.RPC.LargeImageDescription = "Army Attack"
+         this.RPC.SmallImage = null;
+         this.RPC.SmallImageDescription = null;
+         this.RPC.PartyId = null;
+         this.RPC.PartySize = 0;
+         this.RPC.PartyCape = 0;
+         this.RPC.JoinSecret = null;
+         this.RPC.SpectatorSecret = null;
+         this.discordRpc.updatePresence(this.RPC.State,this.RPC.Details,this.RPC.StartTime,this.RPC.EndTime,this.RPC.LargeImage,this.RPC.LargeImageDescription,this.RPC.SmallImage,this.RPC.SmallImageDescription,this.RPC.PartyId,this.RPC.PartySize,this.RPC.PartyCape,this.RPC.JoinSecret,this.RPC.SpectatorSecret);
+      }
+	  public function changeDiscordMap(param1:String) : void
+      {
+         this.RPC.State = this.getRandomElementOf(this.messages) + param1;
+		 this.RPC.Details = this.getRandomElementOf(this.messages_big)
+         this.discordRpc.updatePresence(this.RPC.State,this.RPC.Details,this.RPC.StartTime,this.RPC.EndTime,this.RPC.LargeImage,this.RPC.LargeImageDescription,this.RPC.SmallImage,this.RPC.SmallImageDescription,this.RPC.PartyId,this.RPC.PartySize,this.RPC.PartyCape,this.RPC.JoinSecret,this.RPC.SpectatorSecret);
       }
    }
 }
