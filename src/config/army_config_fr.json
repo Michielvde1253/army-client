@@ -1,5 +1,6 @@
 {
   "TID": {
+    "MOUSEOVER_ENEMY_BILLBOARD": { "ID":"MOUSEOVER_ENEMY_BILLBOARD", "fr":"Easter Egg :D" },
     "TUTORIAL_1_DESCRIPTION": { "ID":"TUTORIAL_1_DESCRIPTION", "fr":"On va perdre la tête de pont ! À toi de jouer, \\nsoldat ! Clique sur l'unité d'Infanterie pour la sélectionner." },
     "TUTORIAL_1_NAME": { "ID":"TUTORIAL_1_NAME", "fr":"Il est temps de riposter !" },
     "TUTORIAL_2_DESCRIPTION": { "ID":"TUTORIAL_2_DESCRIPTION", "fr":"Déplace ton infanterie au nord, près de l'ennemi !" },
@@ -586,6 +587,11 @@
     "MOUSEOVER_ENEMY_APC": { "ID":"MOUSEOVER_ENEMY_APC", "fr":"Blindé" },
     "MOUSEOVER_ENEMY_ARTILLERY": { "ID":"MOUSEOVER_ENEMY_ARTILLERY", "fr":"Artillerie" },
     "MOUSEOVER_ENEMY_ROCKET_BATTERY": { "ID":"MOUSEOVER_ENEMY_ROCKET_BATTERY", "fr":"Batterie de roquettes" },
+    "MOUSEOVER_ENEMY_BULLDOZER": { "ID":"MOUSEOVER_ENEMY_BULLDOZER", "fr":"Bulldozer écarlate" },
+    "MOUSEOVER_PLAYER_SNIPER": { "ID":"MOUSEOVER_PLAYER_SNIPER", "fr":"Sniper d'élite" },
+    "UNIT_SNIPER_DESC": { "ID":"UNIT_SNIPER_DESC", "fr":"Extrême portée" },
+    "UNIT_PREMIUM_ELITELANDKREUZER": { "ID":"UNIT_PREMIUM_ELITELANDKREUZER", "fr":"Landkreuzer d'élite" },
+    "UNIT_PREMIUM_ELITELANDKREUZER_DESC": { "ID":"UNIT_PREMIUM_ELITELANDKREUZER_DESC", "fr":"Landkreuzer d'élite" },
     "CAMPAIGN_WINDOW_TITLE": { "ID":"CAMPAIGN_WINDOW_TITLE", "fr":"Objectif stratégique" },
     "CAMPAIGN_WINDOW_PROGRESS_BAR_TITLE": { "ID":"CAMPAIGN_WINDOW_PROGRESS_BAR_TITLE", "fr":"Progression vers objectif" },
     "CAMPAIGN_WINDOW_INVITE_TIP": { "ID":"CAMPAIGN_WINDOW_INVITE_TIP", "fr":"Invite des alliés ! Reçois de l'énergie et des vivres en aidant les unités bleues et en attaquant l'ennemi sur le champ de bataille de tes alliés." },
@@ -2369,6 +2375,7 @@
     "PVP_TUTORIAL_RULES": { "ID":"PVP_TUTORIAL_RULES", "fr":"The rules of the battlen\\n\\You play in turns and you have 3 actions per each turn. Possible actions are move, shoot or use a booster. Who kills all enemy units wins." },
     "PVP_TUTORIAL_POWERUPS_BOOSTERS": { "ID":"PVP_TUTORIAL_POWERUPS_BOOSTERS", "fr":"Power-ups and Boostersn\\n\\You can improve your tactics by picking up power-ups found sometimes from the battle field.n\\n\\The other option is to use boosters which you can buy in advance from the shop." },
     "PLAY_BUTTON_TEXT": { "ID":"PLAY_BUTTON_TEXT", "fr":"Jouer" },
+    "LOAD_BUTTON_TEXT": { "ID":"LOAD_BUTTON_TEXT", "fr":"LOAD PROGRESS" },
     "RESUME_BUTTON_TEXT": { "ID":"RESUME_BUTTON_TEXT", "fr":"Reprendre" },
     "SETTINGS_BUTTON_TEXT": { "ID":"SETTINGS_BUTTON_TEXT", "fr":"Paramètres" },
     "HELP_BUTTON_TEXT": { "ID":"HELP_BUTTON_TEXT", "fr":"Comment jouer" },
@@ -2425,6 +2432,8 @@
     "RATEAPP_TITLE": { "ID":"RATEAPP_TITLE", "fr":"Noter Army Attack" },
     "RATEAPP_DESC": { "ID":"RATEAPP_DESC", "fr":"Merci de noter Army Attack si tu aimes jouer à ce jeu." },
     "RATEAPP_BUTTON_RATE": { "ID":"RATEAPP_BUTTON_RATE", "fr":"Note-nous" },
-    "RATEAPP_BUTTON_REMIND": { "ID":"RATEAPP_BUTTON_REMIND", "fr":"pas maintenant" }
+    "RATEAPP_BUTTON_REMIND": { "ID":"RATEAPP_BUTTON_REMIND", "fr":"pas maintenant" },
+    "UNIT_ELITE_COMMANDO": { "ID":"UNIT_ELITE_COMMANDO", "fr":"Rocketeer écarlate d'élite" },
+    "UNIT_ELITE_COMMANDO_DESC": { "ID":"UNIT_ELITE_COMMANDO_DESC", "fr":"Faites pleuvoir la mort d'en haut !" }
   }
 }

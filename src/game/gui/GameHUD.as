@@ -5,10 +5,13 @@
    import flash.display.DisplayObject;
    import flash.display.MovieClip;
    import flash.display.Sprite;
-   import flash.events.Event;
-   import flash.events.MouseEvent;
+   import flash.events.*;
    import flash.geom.Point;
    import flash.net.FileReference;
+   import flash.filesystem.File;
+   import flash.filesystem.FileMode;
+   import flash.filesystem.FileStream;
+   import flash.permissions.PermissionStatus
    import flash.system.System;
    import flash.text.TextField;
    import flash.text.TextFormat;
@@ -1272,11 +1275,38 @@
       
       public function buttonSavePressed(param1:MouseEvent) : void
       {
+		/*
          var savedata:* = {};
          savedata = generateSaveJson();
          var fileRef:FileReference = new FileReference();
          fileRef.save(JSON.stringify(savedata));
+		*/
+		 var file:File = new File();
+		 file.addEventListener(PermissionEvent.PERMISSION_STATUS, onPermission);
+		 file.requestPermission();
       }
+  
+  	public function onPermission(e:PermissionEvent):void {
+		var file:File = e.target as File;
+		file.removeEventListener(PermissionEvent.PERMISSION_STATUS, onPermission);
+		if (e.status == PermissionStatus.GRANTED) {
+			file.addEventListener(Event.SELECT, onFileSelected);
+			file.browseForSave("Select a location");							
+		}
+	}
+      
+	public function onFileSelected(evt:Event) : void
+    {
+		var savedata:* = {};
+		savedata = generateSaveJson();
+		var bytearray:ByteArray = new ByteArray();
+		bytearray.writeUTF(savedata);
+		var file:File = evt.target as File;
+		var stream:FileStream = new FileStream();
+		stream.open(file, FileMode.WRITE);
+		stream.writeUTFBytes(JSON.stringify(savedata));
+	    stream.close()
+    }
       
       private function placeButtonPressed(param1:MouseEvent) : void
       {

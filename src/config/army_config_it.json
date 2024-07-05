@@ -1,5 +1,6 @@
 {
   "TID": {
+    "MOUSEOVER_ENEMY_BILLBOARD": { "ID":"MOUSEOVER_ENEMY_BILLBOARD", "it":"Easter Egg :D" },
     "TUTORIAL_1_DESCRIPTION": { "ID":"TUTORIAL_1_DESCRIPTION", "it":"Stiamo per perdere la testa di ponte!\\nOra è tutto nelle tue mani, soldato!\\nClicca sull'unità di fanteria per selezionarla." },
     "TUTORIAL_1_NAME": { "ID":"TUTORIAL_1_NAME", "it":"É ora di rispondere all'attacco!" },
     "TUTORIAL_2_DESCRIPTION": { "ID":"TUTORIAL_2_DESCRIPTION", "it":"Muovi la fanteria a nord vicino all'unità nemica!" },
@@ -586,6 +587,11 @@
     "MOUSEOVER_ENEMY_APC": { "ID":"MOUSEOVER_ENEMY_APC", "it":"VTT" },
     "MOUSEOVER_ENEMY_ARTILLERY": { "ID":"MOUSEOVER_ENEMY_ARTILLERY", "it":"Artiglieria" },
     "MOUSEOVER_ENEMY_ROCKET_BATTERY": { "ID":"MOUSEOVER_ENEMY_ROCKET_BATTERY", "it":"Batteria di missili" },
+    "MOUSEOVER_ENEMY_BULLDOZER": { "ID":"MOUSEOVER_ENEMY_BULLDOZER", "it":"Bulldozer cremisi" },
+    "MOUSEOVER_PLAYER_SNIPER": { "ID":"MOUSEOVER_PLAYER_SNIPER", "it":"Cecchino d'élite" },
+    "UNIT_SNIPER_DESC": { "ID":"UNIT_SNIPER_DESC", "it":"Estrema portata" },
+    "UNIT_PREMIUM_ELITELANDKREUZER": { "ID":"UNIT_PREMIUM_ELITELANDKREUZER", "it":"Landkreuzer d'élite" },
+    "UNIT_PREMIUM_ELITELANDKREUZER_DESC": { "ID":"UNIT_PREMIUM_ELITELANDKREUZER_DESC", "it":"Landkreuzer d'élite" },
     "CAMPAIGN_WINDOW_TITLE": { "ID":"CAMPAIGN_WINDOW_TITLE", "it":"Obiettivo strategico" },
     "CAMPAIGN_WINDOW_PROGRESS_BAR_TITLE": { "ID":"CAMPAIGN_WINDOW_PROGRESS_BAR_TITLE", "it":"Progressi obiettivo" },
     "CAMPAIGN_WINDOW_INVITE_TIP": { "ID":"CAMPAIGN_WINDOW_INVITE_TIP", "it":"Invita degli alleati! Ottieni energia e rifornimenti aiutando le unità blu e affrontando il nemico sul campo di battaglia dei tuoi alleati." },
@@ -2369,6 +2375,7 @@
     "PVP_TUTORIAL_RULES": { "ID":"PVP_TUTORIAL_RULES", "it":"The rules of the battlen\\n\\You play in turns and you have 3 actions per each turn. Possible actions are move, shoot or use a booster. Who kills all enemy units wins." },
     "PVP_TUTORIAL_POWERUPS_BOOSTERS": { "ID":"PVP_TUTORIAL_POWERUPS_BOOSTERS", "it":"Power-ups and Boostersn\\n\\You can improve your tactics by picking up power-ups found sometimes from the battle field.n\\n\\The other option is to use boosters which you can buy in advance from the shop." },
     "PLAY_BUTTON_TEXT": { "ID":"PLAY_BUTTON_TEXT", "it":"Gioca" },
+    "LOAD_BUTTON_TEXT": { "ID":"LOAD_BUTTON_TEXT", "it":"LOAD PROGRESS" },
     "RESUME_BUTTON_TEXT": { "ID":"RESUME_BUTTON_TEXT", "it":"Continua" },
     "SETTINGS_BUTTON_TEXT": { "ID":"SETTINGS_BUTTON_TEXT", "it":"Impostazioni" },
     "HELP_BUTTON_TEXT": { "ID":"HELP_BUTTON_TEXT", "it":"Come si gioca" },
@@ -2425,6 +2432,8 @@
     "RATEAPP_TITLE": { "ID":"RATEAPP_TITLE", "it":"Vota Army Attack" },
     "RATEAPP_DESC": { "ID":"RATEAPP_DESC", "it":"Vota Army Attack se ti è piaciuto giocare a questo gioco." },
     "RATEAPP_BUTTON_RATE": { "ID":"RATEAPP_BUTTON_RATE", "it":"Votaci" },
-    "RATEAPP_BUTTON_REMIND": { "ID":"RATEAPP_BUTTON_REMIND", "it":"Non ora" }
+    "RATEAPP_BUTTON_REMIND": { "ID":"RATEAPP_BUTTON_REMIND", "it":"Non ora" },
+    "UNIT_ELITE_COMMANDO": { "ID":"UNIT_ELITE_COMMANDO", "it":"Sparaproiettili cremisi elite" },
+    "UNIT_ELITE_COMMANDO_DESC": { "ID":"UNIT_ELITE_COMMANDO_DESC", "it":"Fate piovere morte dall'alto!" }
   }
 }

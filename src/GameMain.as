@@ -271,12 +271,12 @@
          this.RPC.JoinSecret = null;
          this.RPC.SpectatorSecret = null;
          this.discordRpc.updatePresence(this.RPC.State,this.RPC.Details,this.RPC.StartTime,this.RPC.EndTime,this.RPC.LargeImage,this.RPC.LargeImageDescription,this.RPC.SmallImage,this.RPC.SmallImageDescription,this.RPC.PartyId,this.RPC.PartySize,this.RPC.PartyCape,this.RPC.JoinSecret,this.RPC.SpectatorSecret);
-      }
+	  }
 	  public function changeDiscordMap(param1:String) : void
       {
          this.RPC.State = this.getRandomElementOf(this.messages) + param1;
 		 this.RPC.Details = this.getRandomElementOf(this.messages_big)
          this.discordRpc.updatePresence(this.RPC.State,this.RPC.Details,this.RPC.StartTime,this.RPC.EndTime,this.RPC.LargeImage,this.RPC.LargeImageDescription,this.RPC.SmallImage,this.RPC.SmallImageDescription,this.RPC.PartyId,this.RPC.PartySize,this.RPC.PartyCape,this.RPC.JoinSecret,this.RPC.SpectatorSecret);
-      }
+		  }
    }
 }

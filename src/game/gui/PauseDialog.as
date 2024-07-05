@@ -99,6 +99,7 @@
 		 var stream:FileStream = new FileStream();
 		 stream.open(file, FileMode.READ);
          var savedata:* = JSON.parse(stream.readUTFBytes(stream.bytesAvailable));
+		 stream.close()
          loadProgress(savedata);
       }
       

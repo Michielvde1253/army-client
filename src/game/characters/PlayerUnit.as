@@ -46,6 +46,8 @@
       public static const TYPE_ELITE_INFANTRY:String = "EliteInfantry";
       
       public static const TYPE_WARFLY:String = "Warfly";
+	  
+      public static const TYPE_SNIPER:String = "Sniper";
       
       public static const UNIT_LEVEL_RECRUIT:int = 0;
       
@@ -137,7 +139,7 @@
          this.mSelectLongSounds = ArmySoundManager.SC_EMPTY;
          mAttackSoundsSecondary = ArmySoundManager.SC_ENM_ATTACK_SECONDARY;
          var _loc1_:String = mItem.mId;
-         if(_loc1_ == PlayerUnit.TYPE_INFANTRY || _loc1_ == PlayerUnit.TYPE_ELITE_INFANTRY)
+         if(_loc1_ == PlayerUnit.TYPE_INFANTRY || _loc1_ == PlayerUnit.TYPE_ELITE_INFANTRY || _loc1_ == PlayerUnit.TYPE_SNIPER)
          {
             mMoveSounds = ArmySoundManager.SC_GENERAL_INFANTRY_MOVING;
             this.mSelectSounds = ArmySoundManager.SC_FRN_INF_SELECT_SHORT;

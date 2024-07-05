@@ -1,5 +1,6 @@
 {
   "TID": {
+    "MOUSEOVER_ENEMY_BILLBOARD": { "ID":"MOUSEOVER_ENEMY_BILLBOARD", "es":"Easter Egg :D" },
     "TUTORIAL_1_DESCRIPTION": { "ID":"TUTORIAL_1_DESCRIPTION", "es":"Estamos a punto de perder la cabeza de playa.\\n¡Todo depende de ti, soldado!\\nHaz clic en la unidad de infantería para seleccionarla." },
     "TUTORIAL_1_NAME": { "ID":"TUTORIAL_1_NAME", "es":"¡Ha llegado la hora de contraatacar!" },
     "TUTORIAL_2_DESCRIPTION": { "ID":"TUTORIAL_2_DESCRIPTION", "es":"Mueve a tu infantería al norte, al lado de la unidad enemiga." },
@@ -586,6 +587,11 @@
     "MOUSEOVER_ENEMY_APC": { "ID":"MOUSEOVER_ENEMY_APC", "es":"APC" },
     "MOUSEOVER_ENEMY_ARTILLERY": { "ID":"MOUSEOVER_ENEMY_ARTILLERY", "es":"Artillería" },
     "MOUSEOVER_ENEMY_ROCKET_BATTERY": { "ID":"MOUSEOVER_ENEMY_ROCKET_BATTERY", "es":"Batería de misiles" },
+    "MOUSEOVER_ENEMY_BULLDOZER": { "ID":"MOUSEOVER_ENEMY_BULLDOZER", "es":"Bulldozer Carmesí" },
+    "MOUSEOVER_PLAYER_SNIPER": { "ID":"MOUSEOVER_PLAYER_SNIPER", "es":"Francotirador de élite" },
+    "UNIT_SNIPER_DESC": { "ID":"UNIT_SNIPER_DESC", "es":"Alcance extremo" },
+    "UNIT_PREMIUM_ELITELANDKREUZER": { "ID":"UNIT_PREMIUM_ELITELANDKREUZER", "es":"Landkreuzer de élite" },
+    "UNIT_PREMIUM_ELITELANDKREUZER_DESC": { "ID":"UNIT_PREMIUM_ELITELANDKREUZER_DESC", "es":"Landkreuzer de élite" },
     "CAMPAIGN_WINDOW_TITLE": { "ID":"CAMPAIGN_WINDOW_TITLE", "es":"Objetivo estratégico" },
     "CAMPAIGN_WINDOW_PROGRESS_BAR_TITLE": { "ID":"CAMPAIGN_WINDOW_PROGRESS_BAR_TITLE", "es":"Progreso de objetivos" },
     "CAMPAIGN_WINDOW_INVITE_TIP": { "ID":"CAMPAIGN_WINDOW_INVITE_TIP", "es":"¡Invita a aliados! Ayuda a las unidades azules y enfréntate al enemigo en el campo de batalla de tus aliados para conseguir energía y suministros." },
@@ -2369,6 +2375,7 @@
     "PVP_TUTORIAL_RULES": { "ID":"PVP_TUTORIAL_RULES", "es":"The rules of the battlen\\n\\You play in turns and you have 3 actions per each turn. Possible actions are move, shoot or use a booster. Who kills all enemy units wins." },
     "PVP_TUTORIAL_POWERUPS_BOOSTERS": { "ID":"PVP_TUTORIAL_POWERUPS_BOOSTERS", "es":"Power-ups and Boostersn\\n\\You can improve your tactics by picking up power-ups found sometimes from the battle field.n\\n\\The other option is to use boosters which you can buy in advance from the shop." },
     "PLAY_BUTTON_TEXT": { "ID":"PLAY_BUTTON_TEXT", "es":"Jugar" },
+    "LOAD_BUTTON_TEXT": { "ID":"LOAD_BUTTON_TEXT", "es":"LOAD PROGRESS" },
     "RESUME_BUTTON_TEXT": { "ID":"RESUME_BUTTON_TEXT", "es":"Reanudar" },
     "SETTINGS_BUTTON_TEXT": { "ID":"SETTINGS_BUTTON_TEXT", "es":"Configuración" },
     "HELP_BUTTON_TEXT": { "ID":"HELP_BUTTON_TEXT", "es":"Cómo jugar" },
@@ -2425,6 +2432,8 @@
     "RATEAPP_TITLE": { "ID":"RATEAPP_TITLE", "es":"Puntúa a Army Attack" },
     "RATEAPP_DESC": { "ID":"RATEAPP_DESC", "es":"Puntúa a Army Attack si disfrutas jugándolo." },
     "RATEAPP_BUTTON_RATE": { "ID":"RATEAPP_BUTTON_RATE", "es":"Puntúanos" },
-    "RATEAPP_BUTTON_REMIND": { "ID":"RATEAPP_BUTTON_REMIND", "es":"No ahora" }
+    "RATEAPP_BUTTON_REMIND": { "ID":"RATEAPP_BUTTON_REMIND", "es":"No ahora" },
+    "UNIT_ELITE_COMMANDO": { "ID":"UNIT_ELITE_COMMANDO", "es":"Rocketeer Carmesí de élite" },
+    "UNIT_ELITE_COMMANDO_DESC": { "ID":"UNIT_ELITE_COMMANDO_DESC", "es":"¡Que llueva muerte desde arriba!" }
   }
 }
