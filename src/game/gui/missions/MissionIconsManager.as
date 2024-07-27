@@ -1,4 +1,4 @@
-package game.gui.missions
+﻿package game.gui.missions
 {
    import com.dchoc.GUI.DCButton;
    import flash.display.MovieClip;
@@ -42,7 +42,7 @@ package game.gui.missions
          var _loc6_:MissionIconFrame = null;
          super();
          this.mHUD = param1;
-         this.mParentClip = param1.getHUDClip();
+         this.mParentClip = param1.getHUDClipBottom();
          var _loc2_:MovieClip = this.mParentClip.getChildByName("pullout_mission_frame") as MovieClip;
          var _loc3_:MovieClip = _loc2_.getChildByName("pullout_mission") as MovieClip;
          this.mMissionStackFrame = _loc3_.getChildByName("Frame_Mission_Stack") as MovieClip;
@@ -119,7 +119,7 @@ package game.gui.missions
          this.mMissionList.length = 0;
          for each(_loc1_ in this.mMissionFrames)
          {
-            _loc1_.setY(this.getNewMissionSlideStartY(_loc1_));
+            _loc1_.removeFromParent();
          }
          this.mUnstable = true;
       }
@@ -136,6 +136,7 @@ package game.gui.missions
          var _loc1_:int = MissionManager.getNumMissions();
          var _loc2_:int = NUMBER_OF_MISSION_BUTTONS;
          var _loc4_:int = 0;
+		 var map_id:String = GameState.mInstance.mCurrentMapId;
          while(_loc4_ < _loc1_)
          {
             _loc6_ = MissionManager.getMissionByIndex(_loc4_);
@@ -144,7 +145,13 @@ package game.gui.missions
             {
                if(_loc7_ == -1 && (_loc6_.mType == Mission.TYPE_NORMAL || _loc6_.mType == Mission.TYPE_STORY || _loc6_.mType == Mission.TYPE_TIP || _loc6_.mType == Mission.TYPE_CAMPAIGN))
                {
-                  this.mMissionList.push(_loc6_);
+				  if (_loc6_.mMapId == map_id){
+					trace("Hi, this is Michiel attempting to fix an annoying issue.");
+					trace("First of all, the map id we're on is " + map_id);
+					trace("Secondly, the map id the mission should appear on is " + _loc6_.mMapId);
+					trace("The mission's ID actually is ")
+					this.mMissionList.push(_loc6_);
+				  }
                }
                else if(_loc6_.mType == Mission.TYPE_RANK)
                {

@@ -18,6 +18,7 @@
    import game.items.PlayerUnitItem;
    import game.items.ShopItem;
    import game.items.SupplyPackItem;
+   import game.items.WaterPackItem;
    import game.magicBox.FlurryEvents;
    import game.magicBox.MagicBoxTracker;
    import game.missions.Mission;
@@ -396,6 +397,10 @@
          else if(param1 is SupplyPackItem)
          {
             this.addSupplies(SupplyPackItem(param1).mSuppliesGain);
+         }
+		 else if(param1 is WaterPackItem)
+         {
+            this.addWater(WaterPackItem(param1).mWaterGain);
          }
       }
       

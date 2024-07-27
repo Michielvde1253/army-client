@@ -1,4 +1,4 @@
-package game.isometric
+﻿package game.isometric
 {
    import com.dchoc.graphics.DCResourceManager;
    import flash.display.DisplayObject;
@@ -47,6 +47,7 @@ package game.isometric
    import game.items.AreaItem;
    import game.items.DebrisItem;
    import game.items.EnemyInstallationItem;
+   import game.items.FireMissionItem;
    import game.items.Item;
    import game.items.ItemManager;
    import game.items.MapItem;
@@ -131,6 +132,8 @@ package game.isometric
       public var mVisibleObjectCnt:int = 0;
       
       public var mObjectBeingMoved:Renderable;
+	  
+      public var mFireMissionBeingUsed:FireMissionItem;
       
       public var mObjectBeingMovedStartX:Number;
       
@@ -435,6 +438,11 @@ package game.isometric
          this.mMouseX = param1.stageX;
          this.mMouseY = param1.stageY;
       }
+  
+	  public function setMouseScrolling(param1:Boolean) : void
+      {
+		  this.mMouseScrolling = param1;
+	  }
       
       private function mouseDown(param1:MouseEvent) : void
       {
@@ -499,6 +507,7 @@ package game.isometric
                         _loc2_ = false;
                         this.mPlacePressed = false;
                      }
+				 
                      if(_loc2_ && (this.mPlacePressed || FeatureTuner.USE_MOUSE_FOR_PLACE_ITEMS))
                      {
                         this.mGame.objectPlaced(this.mObjectBeingMoved,this.mObjectBeingMovedStartX,this.mObjectBeingMovedStartY);
@@ -535,6 +544,14 @@ package game.isometric
                   }
                }
             }
+			else if(this.mGame.mState == GameState.STATE_PLACE_FIRE_MISSION){
+				trace("not editing lmao")
+				//this.mFireMissionBeingUsed = this.mGame.mState.mFireMisssionToBePlaced;
+				if(FeatureTuner.USE_MOUSE_FOR_PLACE_ITEMS){
+					this.fireActive(param1)
+				}
+			}
+		
          }
          this.mGame.getHud().enableMouse(true);
          this.mMouseScrolling = false;
@@ -2276,7 +2293,7 @@ package game.isometric
          if(param1 && param1.mObject && param1.mObject is DebrisObject && !this.mGame.mActivatedPlayerUnit && param1.mCharacter == null)
          {
             this.mHighlightedDebris = DebrisObject(param1.mObject);
-            if(mouseDownAction)
+            if(!Config.MOBILE_MODE || (Config.MOBILE_MODE && mouseDownAction))
             {
                this.showObjectTooltip(this.mHighlightedDebris);
                this.startToolTipTimer();
@@ -2375,13 +2392,13 @@ package game.isometric
                            _loc10_++;
                         }
                      }
-                     if(mouseDownAction)
+                     if(!Config.MOBILE_MODE || (Config.MOBILE_MODE && mouseDownAction))
                      {
                         this.showObjectTooltip(param1.mCharacter,_loc7_);
                         this.startToolTipTimer();
                      }
                   }
-                  else if(mouseDownAction)
+                  else if(!Config.MOBILE_MODE || (Config.MOBILE_MODE && mouseDownAction))
                   {
                      this.showObjectTooltip(param1.mCharacter);
                      this.startToolTipTimer();
@@ -2463,7 +2480,7 @@ package game.isometric
                   {
                      if((param1.mObject as EnemyInstallationObject).isAlive())
                      {
-                        if(mouseDownAction)
+                        if(!Config.MOBILE_MODE || (Config.MOBILE_MODE && mouseDownAction))
                         {
                            this.showObjectTooltip(param1.mObject);
                            this.startToolTipTimer();
@@ -2590,10 +2607,14 @@ package game.isometric
                      }
                      if(!param1.mCharacter)
                      {
-                        if(mouseDownAction)
+                        if(!Config.MOBILE_MODE || (Config.MOBILE_MODE && mouseDownAction))
                         {
-                           this.showObjectTooltip(param1.mObject);
-                           this.startToolTipTimer();
+						   if(mouseDownAction){
+							   this.showObjectTooltip(param1.mObject, 1);
+						   } else {
+							   this.showObjectTooltip(param1.mObject, 0);
+						   }
+						   this.startToolTipTimer();
                         }
                      }
                      if(param1.mObject is PermanentHFEObject)
@@ -2631,7 +2652,7 @@ package game.isometric
                   }
                   else if(param1.mObject is PlayerInstallationObject)
                   {
-                     if(mouseDownAction)
+                     if(!Config.MOBILE_MODE || (Config.MOBILE_MODE && mouseDownAction))
                      {
                         this.showObjectTooltip(param1.mObject);
                         this.startToolTipTimer();
@@ -2639,7 +2660,7 @@ package game.isometric
                   }
                   else if(param1.mObject is SignalObject)
                   {
-                     if(mouseDownAction)
+                     if(!Config.MOBILE_MODE || (Config.MOBILE_MODE && mouseDownAction))
                      {
                         this.showObjectTooltip(param1.mObject);
                         this.startToolTipTimer();
@@ -3223,7 +3244,7 @@ package game.isometric
             {
                if(_loc4_.mPowerUp)
                {
-                  if(mouseDownAction)
+                  if(!Config.MOBILE_MODE || (Config.MOBILE_MODE && mouseDownAction))
                   {
                      this.showObjectTooltip(_loc4_.mPowerUp);
                      this.startToolTipTimer();
@@ -4249,14 +4270,11 @@ package game.isometric
          var _loc2_:int = 0;
          var _loc3_:int = 0;
          var _loc4_:GridCell = null;
-         if(this.mPlacePressed)
-         {
-            _loc2_ = this.mGridDimX * this.mFireItemX;
-            _loc3_ = this.mGridDimY * this.mFireItemY;
-            _loc4_ = this.getCellAtLocation(_loc2_,_loc3_);
-            this.mGame.useFireMission(_loc4_,this.mFireItemX,this.mFireItemY,this.mGame.mFireMisssionToBePlaced);
-            this.mPlacePressed = false;
-         }
+		 _loc2_ = this.mGridDimX * this.mFireItemX;
+		 _loc3_ = this.mGridDimY * this.mFireItemY;
+		 _loc4_ = this.getCellAtLocation(_loc2_,_loc3_);
+		 this.mGame.useFireMission(_loc4_,this.mFireItemX,this.mFireItemY,this.mGame.mFireMisssionToBePlaced);
+		 this.mPlacePressed = false;
       }
       
       public function FloorClicked(param1:MouseEvent) : void

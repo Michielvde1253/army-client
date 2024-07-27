@@ -1,4 +1,4 @@
-package game.missions
+﻿package game.missions
 {
    import game.isometric.GridCell;
    import game.isometric.IsometricScene;
@@ -29,7 +29,9 @@ package game.missions
          }
          if(!_loc5_ || this.mTarget.Type != _loc5_.mItem.mType || this.mTarget.ID != _loc5_.mItem.mId)
          {
-            mCounter = 1;
+			if(this.mMapId == GameState.mInstance.mCurrentMapId){
+				mCounter = 1;
+			}
          }
       }
       
@@ -51,7 +53,7 @@ package game.missions
             _loc7_ = _loc5_.findGridLocationY(_loc4_.mY);
             _loc3_ = mParameter[0] == _loc6_ && mParameter[1] == _loc7_ && this.mTarget.Type == _loc4_.mItem.mType && this.mTarget.ID == _loc4_.mItem.mId;
          }
-         if(_loc3_)
+         if(_loc3_ && this.mMapId == GameState.mInstance.mCurrentMapId)
          {
             mCounter += param2;
             return true;

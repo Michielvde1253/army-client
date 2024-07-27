@@ -1,4 +1,4 @@
-package game.isometric
+﻿package game.isometric
 {
    import flash.geom.Vector3D;
    import game.battlefield.MapData;

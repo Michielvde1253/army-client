@@ -1,4 +1,4 @@
-package game.battlefield
+﻿package game.battlefield
 {
    import com.dchoc.graphics.DCResourceManager;
    import game.isometric.GridCell;
@@ -115,7 +115,7 @@ package game.battlefield
       
       public static function isTilePassable(param1:int) : Boolean
       {
-         return TILES_PASSABILITY[param1] == TILE_LAND || TILE_SEA || TILE_SHORE || TILE_MOUNTAIN;
+         return TILES_PASSABILITY[param1] == TILE_LAND;
       }
       
       public function initFromServer(param1:ServerCall) : void
@@ -226,6 +226,7 @@ package game.battlefield
             }
          }
          _loc6_ = _loc5_.get(_loc8_);
+		 trace("wtf is this: " + _loc6_);
          this.mGridWidth = _loc7_.Width;
          this.mGridHeight = _loc7_.Height;
          if(FeatureTuner.LOAD_TILE_MAP_CSV)
@@ -243,7 +244,7 @@ package game.battlefield
                _loc12_.mType = _loc10_[_loc11_];
                if(isTilePassable(_loc10_[_loc11_]))
                {
-                  _loc12_.mOwner = param2 ? TILE_OWNER_FRIENDLY : TILE_OWNER_ENEMY;
+                  _loc12_.mOwner = TILE_OWNER_ENEMY; // Modified to load desert as enemy: needs to be updated if we add friends.
                }
                else
                {
@@ -259,12 +260,10 @@ package game.battlefield
          }
          if(this.mGrid.length > 4814)
          {
-            if(!param2)
+            if(param1 == "Home")
             {
-               (this.mGrid[4600] as GridCell).mOwner = 1;
                (this.mGrid[4601] as GridCell).mOwner = 1;
                (this.mGrid[4602] as GridCell).mOwner = 1;
-               (this.mGrid[4604] as GridCell).mOwner = 1;
                (this.mGrid[4670] as GridCell).mOwner = 1;
                (this.mGrid[4671] as GridCell).mOwner = 1;
                (this.mGrid[4673] as GridCell).mOwner = 1;
@@ -279,7 +278,12 @@ package game.battlefield
                (this.mGrid[4812] as GridCell).mOwner = 1;
                (this.mGrid[4813] as GridCell).mOwner = 1;
                (this.mGrid[4814] as GridCell).mOwner = 1;
-            }
+            } else if(param1 == "Desert") {
+               (this.mGrid[4881] as GridCell).mOwner = 1;
+               (this.mGrid[4882] as GridCell).mOwner = 1;
+               (this.mGrid[4883] as GridCell).mOwner = 1;
+               (this.mGrid[4884] as GridCell).mOwner = 1;
+			}
          }
          this.countFriendlyTiles();
       }

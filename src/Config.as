@@ -66,7 +66,7 @@
       
       public static const DEBUG_SERVER_DATA:Boolean = false;
       
-      public static const CHEAT_ALLOWED:Boolean = true;
+      public static const CHEAT_ALLOWED:Boolean = false;
       
       public static const CHEAT_DISABLE_FOG:Boolean = false;
       
@@ -95,6 +95,12 @@
       public static const BUTTON_USE_HAND_CURSOR:Boolean = true;
       
       public static const CHECK_FOR_MISPLACED_DEBRIS:Boolean = true;
+	  
+      public static const MOBILE_MODE:Boolean = false;
+	  
+      public static const USE_DISCORD_RPC:Boolean = false;
+	  
+      public static const BUILD_WITH_AIR:Boolean = false;
       
       public static const COOKIE_SETTINGS_NAME:String = "Settings";
       

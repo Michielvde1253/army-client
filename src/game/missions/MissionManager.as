@@ -51,15 +51,27 @@
          var _loc3_:int = 0;
          for(_loc4_ in _loc1_)
          {
-            if((_loc1_[_loc4_] as Object).MapId == GameState.mInstance.mCurrentMapId)
-            {
+			//trace(GameState.mInstance.mCurrentMapId)
+            //if((_loc1_[_loc4_] as Object).MapId == GameState.mInstance.mCurrentMapId)
+            //{
+			   //trace((_loc1_[_loc4_] as Object).ID)
+			   //trace((_loc1_[_loc4_] as Object).MapId)
                mMissions[_loc3_] = new Mission(_loc1_[_loc4_]);
                mOrderedMissions[_loc7_ = _loc2_++] = mMissions[_loc3_];
                _loc3_++;
-            }
+            //}
          }
          mOrderedMissions.sort(sortMissions);
       }
+  
+	  public static function clearAllMissions(): void {
+		mMissions = new Array();
+		mOrderedMissions = new Array();
+		mCompletedMissions = new Array();
+		mCompletedCOsWithMissions = new Array();
+		mCompletedMissionsGlobal = new Array();
+		smNodes = new Array;
+	  }
       
       private static function sortMissions(param1:Mission, param2:Mission) : int
       {
@@ -101,6 +113,7 @@
          }
          for each(_loc1_ in mMissions)
          {
+			if (_loc1_.mMapId == GameState.mInstance.mCurrentMapId){
             if(modalMissionActive())
             {
                smFindNewMissionsPending = true;
@@ -141,6 +154,7 @@
                   MagicBoxTracker.generateEvent(MagicBoxTracker.GROUP_LEVEL,MagicBoxTracker.TYPE_MISSION_ACCEPTED,_loc1_.mId);
                }
             }
+	}
          }
          smFindNewMissionsPending = false;
          checkCompletedMissions();
@@ -151,10 +165,13 @@
          var _loc4_:Mission = null;
          for each(_loc4_ in mMissions)
          {
-            if(_loc4_.mState == Mission.STATE_ACTIVE)
+            if(_loc4_.mState == Mission.STATE_ACTIVE && GameState.mInstance.mLoadingStatesOver)
             {
                if(_loc4_.increaseCounter(param1,param2,param3))
                {
+				  trace("Current map id:");
+		          trace(GameState.mInstance.mCurrentMapId);
+			      trace(_loc4_.mId)
                   GameState.mInstance.checkMissionProgress();
                   checkCompletedMissions();
                }
@@ -240,23 +257,45 @@
       
       public static function getMission(param1:String) : Mission
       {
-         return mMissions[getMissionIndexFromID(param1)] as Mission;
+		 var index:int = getMissionIndexFromID(param1);
+		 if(index == -1) {
+			return null 
+		 } else {
+			return mMissions[index] as Mission;
+		 }
       }
       
       public static function getMissionIndexFromID(param1:String) : int
       {
-         var _loc4_:* = null;
-         var _loc2_:* = GameState.mConfig.Mission;
-         var _loc3_:int = 0;
-         for(_loc4_ in _loc2_)
-         {
-            if(param1 == _loc4_)
-            {
-               return _loc3_;
-            }
-            _loc3_++;
-         }
-         return 0;
+         //var _loc4_:* = null;
+         //var _loc2_:* = GameState.mConfig.Mission;
+         //var _loc3_:int = 0;
+         //for(_loc4_ in _loc2_)
+         //{
+         //   if(param1 == _loc4_)
+         //   {
+		 //	   trace("---Returned: " + _loc3_);
+         //      return _loc3_;
+         //   }
+         //   _loc3_++;
+         //}
+	     //trace("---Returned: 0");
+         //return 0;
+		  
+		 // FIXED TO SUPPORT MISSIONS FROM MULTIPLE MAPS
+		  
+		 var _loc1_:*;
+		 var _loc2_:Mission;
+		 var map_id:String = GameState.mInstance.mCurrentMapId;
+		 for (_loc1_ in mMissions)
+	     {
+			 _loc2_ = mMissions[_loc1_] as Mission;
+			 if (_loc2_.mId == param1) // && _loc2_.mMapId == map_id
+			 {
+				 return _loc1_;
+			 }
+		 }
+	     return -1;
       }
       
       private static function isCollected(param1:*) : Boolean
@@ -265,7 +304,12 @@
          if(param1)
          {
             _loc2_ = getMission(param1.ID);
-            return _loc2_.mState == Mission.STATE_REWARDS_COLLECTED;
+			if (_loc2_)
+		    {
+				return _loc2_.mState == Mission.STATE_REWARDS_COLLECTED;
+			} else {
+				return false // ducktape fix
+			}
          }
          return true;
       }
@@ -460,7 +504,7 @@
             {
                if(_loc4_ = getMission(_loc9_.mission_id))
                {
-                  _loc4_.setup(_loc9_);
+					 _loc4_.setup(_loc9_);
                }
                else
                {

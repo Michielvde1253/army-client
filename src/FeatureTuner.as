@@ -35,7 +35,7 @@
       
       public static const USE_PVP_MATCH:Boolean = !DROP_ALL_OPTIONAL_FEATURES;
       
-      public static const USE_ROCKET_EFFECT:Boolean = !DROP_ALL_OPTIONAL_FEATURES;
+      public static const USE_ROCKET_EFFECT:Boolean = true;
       
       public static const USE_SOUNDS:Boolean = true;
       
@@ -73,7 +73,7 @@
       
       public static const USE_ZOOM_IN_OUT:Boolean = true;
       
-      public static const USE_MOUSE_FOR_PLACE_ITEMS:Boolean = Config.DEBUG_MODE;
+      public static const USE_MOUSE_FOR_PLACE_ITEMS:Boolean = true;
        
       
       public function FeatureTuner()

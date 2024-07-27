@@ -1,4 +1,4 @@
-package game.battlefield
+﻿package game.battlefield
 {
    import com.dchoc.graphics.DCResourceManager;
    import flash.display.Bitmap;
@@ -315,10 +315,25 @@ package game.battlefield
          var _loc5_:Number = _loc2_.getCameraX();
          var _loc6_:Number = _loc2_.getCameraY();
          var _loc7_:Number = _loc1_.mContainer.scaleX;
+		 trace(_loc7_)
          var _loc8_:int = Math.max(0,_loc5_ - _loc3_ / 2 / _loc7_) / _loc1_.mGridDimX;
          var _loc9_:int = Math.max(0,_loc6_ - _loc4_ / 2 / _loc7_) / _loc1_.mGridDimY;
          var _loc10_:int = Math.min(_loc1_.mSizeX * _loc1_.mGridDimX,_loc5_ + _loc3_ / 2 / _loc7_ + _loc1_.mGridDimX) / _loc1_.mGridDimX;
+         //var _loc10_:int = (_loc5_ + _loc3_ / 2 / _loc7_ + _loc1_.mGridDimX) / _loc1_.mGridDimX;
          var _loc11_:int = Math.min(_loc1_.mSizeY * _loc1_.mGridDimY,_loc6_ + _loc4_ / 2 / _loc7_ + _loc1_.mGridDimY) / _loc1_.mGridDimY;
+         //var _loc11_:int = (_loc6_ + _loc4_ / 2 / _loc7_ + _loc1_.mGridDimY) / _loc1_.mGridDimY;
+		 trace("loc8:")
+		 trace(_loc8_)
+		 trace("loc9:")
+		 trace(_loc9_)
+		 trace("loc10 MIN:")
+		 trace((_loc1_.mSizeX * _loc1_.mGridDimX) / _loc1_.mGridDimX)
+		 trace("loc10 MAX:")
+		 trace(_loc10_)
+		 trace("loc11 MIN:")
+		 trace((_loc1_.mSizeY * _loc1_.mGridDimY) / _loc1_.mGridDimY)
+		 trace("loc11 MAX:")
+		 trace(_loc11_)
          return new Rectangle(_loc8_,_loc9_,_loc10_ - _loc8_,_loc11_ - _loc9_);
       }
       
@@ -389,7 +404,7 @@ package game.battlefield
          TILES_BORDER[0] = ["swf/tiles_common/Bg_BorderTile_14","swf/tiles_common/Bg_BorderTile_09","swf/tiles_common/Bg_BorderTile_16","swf/tiles_common/Bg_BorderTile_07","swf/tiles_common/Bg_BorderTile_20","swf/tiles_common/Bg_BorderTile_03","swf/tiles_common/Bg_BorderTile_22","swf/tiles_common/Bg_BorderTile_01","swf/tiles_common/Bg_BorderTile_23","swf/tiles_common/Bg_BorderTile_15","swf/tiles_common/Bg_BorderTile_39","swf/tiles_common/Bg_BorderTile_35","swf/tiles_common/Bg_BorderTile_26","swf/tiles_common/Bg_BorderTile_21","swf/tiles_common/Bg_BorderTile_38","swf/tiles_common/Bg_BorderTile_42","swf/tiles_common/Bg_BorderTile_24","swf/tiles_common/Bg_BorderTile_17","swf/tiles_common/Bg_BorderTile_36","swf/tiles_common/Bg_BorderTile_40","swf/tiles_common/Bg_BorderTile_25","swf/tiles_common/Bg_BorderTile_19","swf/tiles_common/Bg_BorderTile_41","swf/tiles_common/Bg_BorderTile_37"];
          TILES_CLOUD[0] = ["swf/tiles_common/Bg_CloudTile_01","swf/tiles_common/Bg_CloudTile_02","swf/tiles_common/Bg_CloudTile_03","swf/tiles_common/Bg_CloudTile_04","swf/tiles_common/Bg_CloudTile_05","swf/tiles_common/Bg_CloudTile_06","swf/tiles_common/Bg_CloudTile_07","swf/tiles_common/Bg_CloudTile_08","swf/tiles_common/Bg_CloudTile_09","swf/tiles_common/Bg_CloudTile_10","swf/tiles_common/Bg_CloudTile_12","swf/tiles_common/Bg_CloudTile_15","swf/tiles_common/Bg_CloudTile_17"];
          TILES_TRANSITION[MapData.TILE_MAP_TYPE_GRASSLANDS] = ["swf/new_backgroud_01/Bg_TransitionTile_02","swf/new_backgroud_01/Bg_TransitionTile_04","swf/new_backgroud_01/Bg_TransitionTile_07","swf/new_backgroud_01/Bg_TransitionTile_09","swf/new_backgroud_01/Bg_TransitionTile_08","swf/new_backgroud_01/Bg_TransitionTile_03","swf/new_backgroud_01/Bg_TransitionTile_06","swf/new_backgroud_01/Bg_TransitionTile_05"];
-         TILES_TRANSITION[MapData.TILE_MAP_TYPE_DESERT] = ["swf/desert_backgroud_01/Bg_TransitionTile_02","swf/desert_backgroud_01/Bg_TransitionTile_04","swf/desert_backgroud_01/Bg_TransitionTile_07","swf/desert_backgroud_01/Bg_TransitionTile_09","swf/desert_backgroud_01/Bg_TransitionTile_08","swf/desert_backgroud_01/Bg_TransitionTile_03","swf/desert_backgroud_01/Bg_TransitionTile_06","swf/desert_backgroud_01/Bg_TransitionTile_05"];
+         TILES_TRANSITION[MapData.TILE_MAP_TYPE_DESERT] = ["swf/desert_backgroud_01/Bg_TransitionTile_desert_02","swf/desert_backgroud_01/Bg_TransitionTile_desert_04","swf/desert_backgroud_01/Bg_TransitionTile_desert_07","swf/desert_backgroud_01/Bg_TransitionTile_desert_09","swf/desert_backgroud_01/Bg_TransitionTile_desert_08","swf/desert_backgroud_01/Bg_TransitionTile_desert_03","swf/desert_backgroud_01/Bg_TransitionTile_desert_06","swf/desert_backgroud_01/Bg_TransitionTile_desert_05"];
       }
       
       private function initSingleTileMapDataStructures() : void
@@ -1334,7 +1349,292 @@ package game.battlefield
          }
          return TILES_CATEGORIES_ENEMY[param1][_loc12_];
       }
-      
+	  /*
+      private function getSeaShoreTileName(param1:int, param2:int, param3:int) : String
+      {
+         var _loc13_:* = 0;
+         var _loc4_:Boolean = this.mMapData.isFriendly(param2,param3 - 1);
+         var _loc5_:Boolean = this.mMapData.isFriendly(param2,param3 + 1);
+         var _loc6_:Boolean = this.mMapData.isFriendly(param2 - 1,param3);
+         var _loc7_:Boolean = this.mMapData.isFriendly(param2 + 1,param3);
+         var _loc8_:Boolean = this.mMapData.isFriendly(param2 - 1,param3 - 1);
+         var _loc9_:Boolean = this.mMapData.isFriendly(param2 + 1,param3 - 1);
+         var _loc10_:Boolean = this.mMapData.isFriendly(param2 - 1,param3 + 1);
+         var _loc11_:Boolean = this.mMapData.isFriendly(param2 + 1,param3 + 1);
+         var _loc12_:int = 0;
+         switch(param1)
+         {
+            case MapData.TILE_TYPE_SHORE_S_1:
+            case MapData.TILE_TYPE_DESERT_DECO_31:
+            case MapData.TILE_TYPE_SHORE_S_2:
+            case MapData.TILE_TYPE_DESERT_SHORE_S:
+               _loc12_ = COAST_S_ENEMY_UP;
+               if(!_loc4_)
+               {
+                  if(_loc8_ && _loc9_)
+                  {
+                     _loc12_ = COAST_S_FRIENDLY_UP;
+                  }
+                  else if(_loc8_)
+                  {
+                     _loc12_ = COAST_S_FRIENDLY_UP;
+                  }
+                  else if(_loc9_)
+                  {
+                     _loc12_ = COAST_S_FRIENDLY_UP;
+                  }
+                  else
+                  {
+                     _loc12_ = COAST_S_FRIENDLY_UP;
+                  }
+               }
+               break;
+            case MapData.TILE_TYPE_DESERT_SHORE_N:
+               _loc12_ = COAST_N_ENEMY_DOWN;
+               if(!_loc5_)
+               {
+                  if(_loc10_ && _loc11_)
+                  {
+                     _loc12_ = COAST_N_FRIENDLY_DOWN;
+                  }
+                  else if(_loc10_)
+                  {
+                     _loc12_ = COAST_N_FRIENDLY_DOWN;
+                  }
+                  else if(_loc11_)
+                  {
+                     _loc12_ = COAST_N_FRIENDLY_DOWN;
+                  }
+                  else
+                  {
+                     _loc12_ = COAST_N_FRIENDLY_DOWN;
+                  }
+               }
+               break;
+            case MapData.TILE_TYPE_DESERT_SHORE_W:
+               _loc12_ = COAST_W_ENEMY_RIGHT;
+               if(!_loc7_)
+               {
+                  if(_loc9_ && _loc11_)
+                  {
+                     _loc12_ = COAST_W_FRIENDLY_RIGHT;
+                  }
+                  else if(_loc9_)
+                  {
+                     _loc12_ = COAST_W_FRIENDLY_RIGHT;
+                  }
+                  else if(_loc11_)
+                  {
+                     _loc12_ = COAST_W_FRIENDLY_RIGHT;
+                  }
+                  else
+                  {
+                     _loc12_ = COAST_W_FRIENDLY_RIGHT;
+                  }
+               }
+               break;
+            case MapData.TILE_TYPE_DESERT_SHORE_E:
+               _loc12_ = COAST_E_ENEMY_LEFT;
+               if(!_loc6_)
+               {
+                  if(_loc8_ && _loc10_)
+                  {
+                     _loc12_ = COAST_E_FRIENDLY_LEFT;
+                  }
+                  else if(_loc8_)
+                  {
+                     _loc12_ = COAST_E_FRIENDLY_LEFT;
+                  }
+                  else if(_loc10_)
+                  {
+                     _loc12_ = COAST_E_FRIENDLY_LEFT;
+                  }
+                  else
+                  {
+                     _loc12_ = COAST_E_FRIENDLY_LEFT;
+                  }
+               }
+               break;
+            case MapData.TILE_TYPE_DESERT_SHORE_NW:
+               _loc12_ = COAST_CORNER_ENEMY;
+               if(!_loc11_)
+               {
+                  _loc12_ = COAST_CORNER_FRIENDLY;
+               }
+               break;
+            case MapData.TILE_TYPE_DESERT_SHORE_NE:
+               _loc12_ = COAST_CORNER_ENEMY;
+               if(!_loc10_)
+               {
+                  _loc12_ = COAST_CORNER_FRIENDLY;
+               }
+               break;
+            case MapData.TILE_TYPE_DESERT_SHORE_SW:
+               _loc12_ = COAST_CORNER_ENEMY;
+               if(!_loc9_)
+               {
+                  _loc12_ = COAST_CORNER_FRIENDLY;
+               }
+               break;
+            case MapData.TILE_TYPE_DESERT_SHORE_SE:
+               _loc12_ = COAST_CORNER_ENEMY;
+               if(!_loc8_)
+               {
+                  _loc12_ = COAST_CORNER_FRIENDLY;
+               }
+               break;
+            case MapData.TILE_TYPE_DESERT_SHORE_NW_INSIDE:
+            case MapData.TILE_TYPE_DESERT_SHORE_NE_INSIDE:
+            case MapData.TILE_TYPE_DESERT_SHORE_SE_INSIDE:
+            case MapData.TILE_TYPE_DESERT_SHORE_SW_INSIDE:
+               _loc12_ = COAST_CORNER_INSIDE_2;
+               _loc13_ = 0;
+               if(param1 == MapData.TILE_TYPE_DESERT_SHORE_NW_INSIDE)
+               {
+                  if(_loc10_)
+                  {
+                     _loc13_ |= 1 << 0;
+                  }
+                  if(_loc6_)
+                  {
+                     _loc13_ |= 1 << 1;
+                  }
+                  if(_loc8_)
+                  {
+                     _loc13_ |= 1 << 2;
+                  }
+                  if(_loc4_)
+                  {
+                     _loc13_ |= 1 << 3;
+                  }
+                  if(_loc9_)
+                  {
+                     _loc13_ |= 1 << 4;
+                  }
+               }
+               else if(param1 == MapData.TILE_TYPE_DESERT_SHORE_NE_INSIDE)
+               {
+                  if(_loc11_)
+                  {
+                     _loc13_ |= 1 << 0;
+                  }
+                  if(_loc7_)
+                  {
+                     _loc13_ |= 1 << 1;
+                  }
+                  if(_loc9_)
+                  {
+                     _loc13_ |= 1 << 2;
+                  }
+                  if(_loc4_)
+                  {
+                     _loc13_ |= 1 << 3;
+                  }
+                  if(_loc8_)
+                  {
+                     _loc13_ |= 1 << 4;
+                  }
+               }
+               else if(param1 == MapData.TILE_TYPE_DESERT_SHORE_SE_INSIDE)
+               {
+                  if(_loc9_)
+                  {
+                     _loc13_ |= 1 << 0;
+                  }
+                  if(_loc7_)
+                  {
+                     _loc13_ |= 1 << 1;
+                  }
+                  if(_loc11_)
+                  {
+                     _loc13_ |= 1 << 2;
+                  }
+                  if(_loc5_)
+                  {
+                     _loc13_ |= 1 << 3;
+                  }
+                  if(_loc10_)
+                  {
+                     _loc13_ |= 1 << 4;
+                  }
+               }
+               else
+               {
+                  if(_loc8_)
+                  {
+                     _loc13_ |= 1 << 0;
+                  }
+                  if(_loc6_)
+                  {
+                     _loc13_ |= 1 << 1;
+                  }
+                  if(_loc10_)
+                  {
+                     _loc13_ |= 1 << 2;
+                  }
+                  if(_loc5_)
+                  {
+                     _loc13_ |= 1 << 3;
+                  }
+                  if(_loc11_)
+                  {
+                     _loc13_ |= 1 << 4;
+                  }
+               }
+               switch(_loc13_)
+               {
+                  case 0:
+                     _loc12_ = COAST_CORNER_INSIDE_1;
+                     break;
+                  case 1:
+                     _loc12_ = COAST_CORNER_INSIDE_1;
+                     break;
+                  case 2:
+                  case 3:
+                  case 6:
+                  case 7:
+                     _loc12_ = COAST_CORNER_INSIDE_10;
+                     break;
+                  case 4:
+                     _loc12_ = COAST_CORNER_INSIDE_1;
+                     break;
+                  case 5:
+                     _loc12_ = COAST_CORNER_INSIDE_1;
+                     break;
+                  case 8:
+                  case 12:
+                  case 24:
+                  case 28:
+                     _loc12_ = COAST_CORNER_INSIDE_9;
+                     break;
+                  case 9:
+                  case 13:
+                  case 25:
+                  case 29:
+                     _loc12_ = COAST_CORNER_INSIDE_2;
+                     break;
+                  case 16:
+                     _loc12_ = COAST_CORNER_INSIDE_1;
+                     break;
+                  case 17:
+                     _loc12_ = COAST_CORNER_INSIDE_1;
+                     break;
+                  case 18:
+                  case 19:
+                  case 22:
+                  case 23:
+                     _loc12_ = COAST_CORNER_INSIDE_2;
+                     break;
+                  case 20:
+                     _loc12_ = COAST_CORNER_INSIDE_1;
+                     break;
+                  case 21:
+                     _loc12_ = COAST_CORNER_INSIDE_1;
+               }
+         }
+         return TILES_CATEGORIES_ENEMY[param1][_loc12_];
+      }
+  */
       private function getTileBmp(param1:int, param2:int) : Bitmap
       {
          if(this.mTargetBitmapArray[param1] as Array == null)

@@ -1,5 +1,6 @@
 {
   "TID": {
+    "MOUSEOVER_ENEMY_BILLBOARD": { "ID":"MOUSEOVER_ENEMY_BILLBOARD", "de":"Easter Egg :D" },
     "TUTORIAL_1_DESCRIPTION": { "ID":"TUTORIAL_1_DESCRIPTION", "de":"Wir verlieren den Brückenkopf!\\nJetzt kommt es auf dich an, Soldat!\\nWähl die Infanterie-Einheit mit einem Klick aus." },
     "TUTORIAL_1_NAME": { "ID":"TUTORIAL_1_NAME", "de":"Jetzt wird zurückgeschlagen!" },
     "TUTORIAL_2_DESCRIPTION": { "ID":"TUTORIAL_2_DESCRIPTION", "de":"Bewege deine Infanterie nach Norden neben die feindliche Einheit!" },
@@ -586,6 +587,11 @@
     "MOUSEOVER_ENEMY_APC": { "ID":"MOUSEOVER_ENEMY_APC", "de":"Transportpanzer" },
     "MOUSEOVER_ENEMY_ARTILLERY": { "ID":"MOUSEOVER_ENEMY_ARTILLERY", "de":"Artillerie" },
     "MOUSEOVER_ENEMY_ROCKET_BATTERY": { "ID":"MOUSEOVER_ENEMY_ROCKET_BATTERY", "de":"Raketenbatterie" },
+    "MOUSEOVER_ENEMY_BULLDOZER": { "ID":"MOUSEOVER_ENEMY_BULLDOZER", "de":"Purpurner Bulldozer" },
+    "MOUSEOVER_PLAYER_SNIPER": { "ID":"MOUSEOVER_PLAYER_SNIPER", "de":"Elite-Scharfschütze" },
+    "UNIT_SNIPER_DESC": { "ID":"UNIT_SNIPER_DESC", "de":"Extreme Angriffsreichweite" },
+    "UNIT_PREMIUM_ELITELANDKREUZER": { "ID":"UNIT_PREMIUM_ELITELANDKREUZER", "de":"Elite-Landkreuzer" },
+    "UNIT_PREMIUM_ELITELANDKREUZER_DESC": { "ID":"UNIT_PREMIUM_ELITELANDKREUZER_DESC", "de":"Elite-Landkreuzer" },
     "CAMPAIGN_WINDOW_TITLE": { "ID":"CAMPAIGN_WINDOW_TITLE", "de":"Strategisches Ziel" },
     "CAMPAIGN_WINDOW_PROGRESS_BAR_TITLE": { "ID":"CAMPAIGN_WINDOW_PROGRESS_BAR_TITLE", "de":"Zielfortschritt" },
     "CAMPAIGN_WINDOW_INVITE_TIP": { "ID":"CAMPAIGN_WINDOW_INVITE_TIP", "de":"Lade Verbündete ein! Energie und Wehrmaterial erhältst du, wenn du den blauen Einheiten hilfst und den Feind auf den Schlachtfeldern deiner Verbündeten angreifst." },
@@ -1863,7 +1869,7 @@
     "POP_UP_WATER_TITLE": { "ID":"POP_UP_WATER_TITLE", "de":"Kein Wasser mehr!" },
     "POP_UP_WATER_DESC": { "ID":"POP_UP_WATER_DESC", "de":"Du kannst Wasser von deinen Verbündeten erhalten, es im Wasserwerk produzieren oder im Laden kaufen" },
     "POP_UP_PLANT_BUTTON": { "ID":"POP_UP_PLANT_BUTTON", "de":"ZUM WERK" },
-    "BUTTON_REDEPLOY_TOOL": { "ID":"BUTTON_REDEPLOY_TOOL", "de":"Neu einsetzen" },
+    "BUTTON_REDEPLOY_TOOL": { "ID":"BUTTON_REDEPLOY_TOOL", "de":"Redeploy" },
     "BUTTON_REDEPLOY_TOOL_TOOLTIP": { "ID":"BUTTON_REDEPLOY_TOOL_TOOLTIP", "de":"Platziere Einheiten im Inventar, um sie neu einzusetzen" },
     "BUTTON_REDEPLOY_TOOL_CANCEL_TOOLTIP": { "ID":"BUTTON_REDEPLOY_TOOL_CANCEL_TOOLTIP", "de":"Neueinsatz abbrechen" },
     "POP_UP_REDEPLOY": { "ID":"POP_UP_REDEPLOY", "de":"Möchtest du diese Einheit im Inventar platzieren? Du kannst die Einheit später aus dem Inventar neu einsetzen.\\n\\nEinsatzkosten: %U Wehrmaterial." },
@@ -2369,6 +2375,7 @@
     "PVP_TUTORIAL_RULES": { "ID":"PVP_TUTORIAL_RULES", "de":"The rules of the battlen\\n\\You play in turns and you have 3 actions per each turn. Possible actions are move, shoot or use a booster. Who kills all enemy units wins." },
     "PVP_TUTORIAL_POWERUPS_BOOSTERS": { "ID":"PVP_TUTORIAL_POWERUPS_BOOSTERS", "de":"Power-ups and Boostersn\\n\\You can improve your tactics by picking up power-ups found sometimes from the battle field.n\\n\\The other option is to use boosters which you can buy in advance from the shop." },
     "PLAY_BUTTON_TEXT": { "ID":"PLAY_BUTTON_TEXT", "de":"Spielen" },
+    "LOAD_BUTTON_TEXT": { "ID":"LOAD_BUTTON_TEXT", "de":"LOAD PROGRESS" },
     "RESUME_BUTTON_TEXT": { "ID":"RESUME_BUTTON_TEXT", "de":"Fortsetzen" },
     "SETTINGS_BUTTON_TEXT": { "ID":"SETTINGS_BUTTON_TEXT", "de":"Einstellungen" },
     "HELP_BUTTON_TEXT": { "ID":"HELP_BUTTON_TEXT", "de":"Wie man spielt" },
@@ -2425,6 +2432,8 @@
     "RATEAPP_TITLE": { "ID":"RATEAPP_TITLE", "de":"Bewerte Army Attack" },
     "RATEAPP_DESC": { "ID":"RATEAPP_DESC", "de":"Bitte bewerte Army Attack, wenn dir das Spiel gefällt." },
     "RATEAPP_BUTTON_RATE": { "ID":"RATEAPP_BUTTON_RATE", "de":"Bewerte uns" },
-    "RATEAPP_BUTTON_REMIND": { "ID":"RATEAPP_BUTTON_REMIND", "de":"Später erinnern" }
+    "RATEAPP_BUTTON_REMIND": { "ID":"RATEAPP_BUTTON_REMIND", "de":"Später erinnern" },
+    "UNIT_ELITE_COMMANDO": { "ID":"UNIT_ELITE_COMMANDO", "de":"Purpurner Elite-Raketenwerfer" },
+    "UNIT_ELITE_COMMANDO_DESC": { "ID":"UNIT_ELITE_COMMANDO_DESC", "de":"Lasst den Tod von oben regnen!" }
   }
 }

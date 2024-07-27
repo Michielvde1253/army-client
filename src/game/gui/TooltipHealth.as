@@ -1,4 +1,4 @@
-package game.gui
+﻿package game.gui
 {
    import com.dchoc.graphics.DCResourceManager;
    import flash.display.MovieClip;
@@ -34,6 +34,8 @@ package game.gui
       public static const TYPE_BUILDING_WATERPLANT:int = 6;
       
       public static const TYPE_INFO:int = 7;
+	   
+      public var open_as_popup:int = 0; // see IsometricScene
       
       private static const MARGIN:Number = 4;
        
@@ -339,9 +341,10 @@ package game.gui
          }
       }
       
-      public function setRenderable(param1:Renderable) : void
+      public function setRenderable(param1:Renderable, open_as_popup:int=0) : void
       {
          this.mRenderable = param1;
+		 this.open_as_popup = open_as_popup
          if(this.mRenderable is IsometricCharacter)
          {
             if(this.mFireRangeTextValue)
@@ -376,6 +379,11 @@ package game.gui
             }
          }
       }
+  
+	  public function getOpenAsPopup(): int
+	  {
+		  return this.open_as_popup;
+	  }
       
       public function moveTooltip(param1:Event) : void
       {
@@ -391,8 +399,8 @@ package game.gui
             this.mLastMouseY = parent.mouseY;
             _loc2_ = GameState.mInstance.getMainClip().stage;
             _loc3_ = parent.getBounds(_loc2_).topLeft;
-            this.x = parent.mouseX + (this.mBody.width >> 1);
-            this.y = parent.mouseY + (this.mBody.height >> 1) + 20;
+            this.x = parent.mouseX + (this.mBody.width >> 1) - 14;
+            this.y = parent.mouseY + (this.mBody.height >> 1) + 4;
             if(_loc2_.mouseX > GameState.mInstance.getStageWidth() - this.mBody.width + this.mOffsetX)
             {
                x -= this.mBody.width - this.mOffsetX + 10;

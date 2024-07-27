@@ -1,5 +1,6 @@
 {
   "TID": {
+    "MOUSEOVER_ENEMY_BILLBOARD": { "ID":"MOUSEOVER_ENEMY_BILLBOARD", "en":"Easter Egg :D" },
     "TUTORIAL_1_DESCRIPTION": { "ID":"TUTORIAL_1_DESCRIPTION", "en":"We're about to lose the beachhead!\\nIt's up to you now, soldier!\\nClick on the Infantry unit to select it." },
     "TUTORIAL_1_NAME": { "ID":"TUTORIAL_1_NAME", "en":"Time to fight back!" },
     "TUTORIAL_2_DESCRIPTION": { "ID":"TUTORIAL_2_DESCRIPTION", "en":"Move your infantry north next to the Enemy Unit!" },
@@ -306,6 +307,8 @@
     "UNIT_ELITE_INFANTRY_DESC": { "ID":"UNIT_ELITE_INFANTRY_DESC", "en":"Special Force operators" },
     "UNIT_ELITE_MAIN_BATTLE_TANK": { "ID":"UNIT_ELITE_MAIN_BATTLE_TANK", "en":"Elite Tank" },
     "UNIT_ELITE_MAIN_BATTLE_TANK_DESC": { "ID":"UNIT_ELITE_MAIN_BATTLE_TANK_DESC", "en":"Elite Tank" },
+    "UNIT_PREMIUM_ELITELANDKREUZER": { "ID":"UNIT_PREMIUM_ELITELANDKREUZER", "en":"Elite Landkreuzer" },
+    "UNIT_PREMIUM_ELITELANDKREUZER_DESC": { "ID":"UNIT_PREMIUM_ELITELANDKREUZER_DESC", "en":"Elite Landkreuzer" },
     "ENERGYREFILL_LARGE": { "ID":"ENERGYREFILL_LARGE", "en":"Large energy pack" },
     "ENERGYREFILL_LARGE_DESC": { "ID":"ENERGYREFILL_LARGE_DESC", "en":"+%U Energy" },
     "ENERGYREFILL_SMALL": { "ID":"ENERGYREFILL_SMALL", "en":"Small energy pack" },
@@ -586,6 +589,9 @@
     "MOUSEOVER_ENEMY_APC": { "ID":"MOUSEOVER_ENEMY_APC", "en":"APC" },
     "MOUSEOVER_ENEMY_ARTILLERY": { "ID":"MOUSEOVER_ENEMY_ARTILLERY", "en":"Artillery" },
     "MOUSEOVER_ENEMY_ROCKET_BATTERY": { "ID":"MOUSEOVER_ENEMY_ROCKET_BATTERY", "en":"Rocket Battery" },
+    "MOUSEOVER_ENEMY_BULLDOZER": { "ID":"MOUSEOVER_ENEMY_BULLDOZER", "en":"Crimson Bulldozer" },
+    "MOUSEOVER_PLAYER_SNIPER": { "ID":"MOUSEOVER_PLAYER_SNIPER", "en":"Elite Sniper" },
+    "UNIT_SNIPER_DESC": { "ID":"UNIT_SNIPER_DESC", "en":"Extreme range" },
     "CAMPAIGN_WINDOW_TITLE": { "ID":"CAMPAIGN_WINDOW_TITLE", "en":"Strategic Goal" },
     "CAMPAIGN_WINDOW_PROGRESS_BAR_TITLE": { "ID":"CAMPAIGN_WINDOW_PROGRESS_BAR_TITLE", "en":"Goal progress" },
     "CAMPAIGN_WINDOW_INVITE_TIP": { "ID":"CAMPAIGN_WINDOW_INVITE_TIP", "en":"Invite Allies! Receive Energy and Supplies by helping the Blue Units and engaging the Enemy on your Ally's battlefield." },
@@ -2426,6 +2432,8 @@
     "RATEAPP_TITLE": { "ID":"RATEAPP_TITLE", "en":"Rate Army Attack" },
     "RATEAPP_DESC": { "ID":"RATEAPP_DESC", "en":"Please rate Army Attack if you enjoy playing this game." },
     "RATEAPP_BUTTON_RATE": { "ID":"RATEAPP_BUTTON_RATE", "en":"Rate Us" },
-    "RATEAPP_BUTTON_REMIND": { "ID":"RATEAPP_BUTTON_REMIND", "en":"Not now" }
+    "RATEAPP_BUTTON_REMIND": { "ID":"RATEAPP_BUTTON_REMIND", "en":"Not now" },
+    "UNIT_ELITE_COMMANDO": { "ID":"UNIT_ELITE_COMMANDO", "en":"Elite Crimson Rocketeer" },
+    "UNIT_ELITE_COMMANDO_DESC": { "ID":"UNIT_ELITE_COMMANDO_DESC", "en":"Rain death from above!" }
   }
 }

@@ -1,5 +1,8 @@
 *.air
 *.html
 *.swf
-HERSTEL_*
 *.apk
+*.exe
+*.zip
+AA21_release/
+AA21_1_release/

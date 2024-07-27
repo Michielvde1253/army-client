@@ -1,4 +1,4 @@
-package game.missions
+﻿package game.missions
 {
    import game.states.GameState;
    
@@ -14,7 +14,9 @@ package game.missions
       override public function initialize(param1:String, param2:Object) : void
       {
          super.initialize(param1,param2);
-         mCounter = Math.min(GameState.mInstance.mMapData.mNumberOfFriendlyTiles,mGoal);
+		 if(this.mMapId == GameState.mInstance.mCurrentMapId){
+            mCounter = Math.min(GameState.mInstance.mMapData.mNumberOfFriendlyTiles,mGoal);
+		 }
       }
       
       override public function increase(param1:Object, param2:int) : Boolean

@@ -243,6 +243,8 @@
          var _loc8_:int = this.getRewardSupplies();
          var _loc9_:int = this.getRewardEnergy();
          var _loc10_:int = this.getRewardWater();
+		 trace("Reward water:");
+		 trace(_loc10_);
          if(this.mProducerBuilding)
          {
             _loc10_ += _loc10_ * this.mProducerBuilding.getHelpingFriends().length;

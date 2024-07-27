@@ -172,6 +172,12 @@
          var _loc6_:String = "";
          var _loc8_:int = int(this.mTargets.length);
          var _loc9_:int = 0;
+         if(!GameState.mInstance.mPlayerProfile.hasEnoughMapResource(1))
+         {
+            GameState.mInstance.mHUD.openOutOfMapResourceWindow();
+            skip();
+            return;
+         } else {
          for(; _loc9_ < _loc8_; _loc9_++)
          {
             if((_loc7_ = this.mTargets[_loc9_] as Renderable).mScene)
@@ -340,6 +346,7 @@
          {
             this.mItem.mlaunchWithGold = false;
          }
+	   }
       }
       
       protected function damageOwnBuilding(param1:PlayerBuildingObject) : void

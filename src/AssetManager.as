@@ -1,4 +1,4 @@
-package
+﻿package
 {
    import com.dchoc.graphics.DCResourceManager;
    import flash.display.DisplayObject;
@@ -37,7 +37,7 @@ package
       
       public static const JSON_FILES_TO_LOAD:Array = ["army_config_base"];
       
-      public static const CVS_FILES_TO_LOAD:Array = ["tile_map","map_2"];
+      public static const CVS_FILES_TO_LOAD:Array = ["tile_map","map_2", "tile_map_desert"];
       
       private static var instance:AssetManager;
        
