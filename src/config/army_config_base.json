@@ -5,6 +5,7 @@
       "Width": "70",
       "Height": "70",
       "ZoomLevels": "70, 100",
+      "ZoomLevelsMobile": "100, 160",
       "MarginX": "186",
       "MarginY": "93",
       "DefaultCellX": "52",
@@ -24,6 +25,7 @@
       "Width": "20",
       "Height": "20",
       "ZoomLevels": "70, 100",
+      "ZoomLevelsMobile": "100, 160",
       "MarginX": "186",
       "MarginY": "93",
       "DefaultCellX": "10",
@@ -40,6 +42,7 @@
       "Width": "71",
       "Height": "73",
       "ZoomLevels": "70, 100",
+      "ZoomLevelsMobile": "100, 160",
       "MarginX": "186",
       "MarginY": "93",
       "DefaultCellX": "55",
@@ -26050,13 +26053,6 @@
       "Group": "DesertN",
       "Item": "#EnemyUnit.Scout",
       "AreaX": "62",
-      "AreaY": "29"
-    },
-    "DN_223": {
-      "ID": "DN_223",
-      "Group": "DesertN",
-      "Item": "#EnemyInstallation.FuelDump",
-      "AreaX": "64",
       "AreaY": "29"
     },
     "DN_228": {

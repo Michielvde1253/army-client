@@ -1869,7 +1869,7 @@
     "POP_UP_WATER_TITLE": { "ID":"POP_UP_WATER_TITLE", "de":"Kein Wasser mehr!" },
     "POP_UP_WATER_DESC": { "ID":"POP_UP_WATER_DESC", "de":"Du kannst Wasser von deinen Verbündeten erhalten, es im Wasserwerk produzieren oder im Laden kaufen" },
     "POP_UP_PLANT_BUTTON": { "ID":"POP_UP_PLANT_BUTTON", "de":"ZUM WERK" },
-    "BUTTON_REDEPLOY_TOOL": { "ID":"BUTTON_REDEPLOY_TOOL", "de":"Neu einsetzen" },
+    "BUTTON_REDEPLOY_TOOL": { "ID":"BUTTON_REDEPLOY_TOOL", "de":"Redeploy" },
     "BUTTON_REDEPLOY_TOOL_TOOLTIP": { "ID":"BUTTON_REDEPLOY_TOOL_TOOLTIP", "de":"Platziere Einheiten im Inventar, um sie neu einzusetzen" },
     "BUTTON_REDEPLOY_TOOL_CANCEL_TOOLTIP": { "ID":"BUTTON_REDEPLOY_TOOL_CANCEL_TOOLTIP", "de":"Neueinsatz abbrechen" },
     "POP_UP_REDEPLOY": { "ID":"POP_UP_REDEPLOY", "de":"Möchtest du diese Einheit im Inventar platzieren? Du kannst die Einheit später aus dem Inventar neu einsetzen.\\n\\nEinsatzkosten: %U Wehrmaterial." },

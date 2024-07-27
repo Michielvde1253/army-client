@@ -22,11 +22,11 @@
 	public class OfflineSave {
 
 		public static var mMaps: * = {};
-	
+
 		public static var mMissions: * = {};
-	
-		public var mSwitchingMap:Boolean = false;
-	
+
+		public var mSwitchingMap: Boolean = false;
+
 		mMissions["missions_incomplete"] = [];
 		mMissions["missions_all_complete"] = [];
 		mMissions["missions_finished"] = [];
@@ -98,7 +98,7 @@
 							} else if (mapgrid[i]["mObject"]["mState"] >= 9 && mapgrid[i]["mObject"]["mState"] <= 12) {
 								gameobj["status"] = "SETUP";
 								gameobj["clicks"] = mapgrid[i]["mObject"].getBuildingStepsDone();
-							} 
+							}
 						} else if (gameobj["item_type"] == "ResourceBuilding") {
 							if (mapgrid[i]["mObject"]["mState"] == 3) {
 								production = mapgrid[i]["mObject"].getProduction();
@@ -110,8 +110,8 @@
 								for (k in friends) {
 									friendstring = friendstring + friends[k] + ","
 								}
-								gameobj["helping_friend_ids"] = friendstring.slice(0,-1);
-								
+								gameobj["helping_friend_ids"] = friendstring.slice(0, -1);
+
 							} else if (mapgrid[i]["mObject"]["mState"] == 4) {
 								production = mapgrid[i]["mObject"].getProduction();
 								gameobj["produces"] = "HFEDrives." + production.getProductionID();
@@ -122,7 +122,7 @@
 								for (k in friends) {
 									friendstring = friendstring + friends[k] + ","
 								}
-								gameobj["helping_friend_ids"] = friendstring.slice(0,-1);
+								gameobj["helping_friend_ids"] = friendstring.slice(0, -1);
 							} else if (mapgrid[i]["mObject"]["mState"] >= 9 && mapgrid[i]["mObject"]["mState"] <= 12) {
 								gameobj["status"] = "SETUP";
 								gameobj["clicks"] = mapgrid[i]["mObject"].getBuildingStepsDone();
@@ -210,16 +210,16 @@
 			return profilesave;
 		}
 
-		static function getIndexByName(array:Array, search:String):int {
+		static function getIndexByName(array: Array, search: String): int {
 			// returns the index of an array where it finds an object with the given search value for it's name property (movieclips, sprites, or custom objects)
-			for (var i:int = 0; i < array.length; i++) {
+			for (var i: int = 0; i < array.length; i++) {
 				if (array[i].mission_id == search) {
 					return i;
 				}
 			}
 			return -1;
-		}	
-	/*
+		}
+		/*
 		public static function generateMissionJson(): * {
 			var objectives: Array = undefined;
 			var j: * = 0;
@@ -291,7 +291,7 @@
 			return missionsave;
 		}
 		*/
-		
+
 		public static function generateMissionJson(): * {
 			var objectives: Array = undefined;
 			var j: * = 0;
@@ -302,15 +302,15 @@
 
 			var missionsave: * = {};
 			missionsave["missions_incomplete"] = []
-		    missionsave["missions_all_complete"] = []
-		    missionsave["missions_finished"] = []
+			missionsave["missions_all_complete"] = []
+			missionsave["missions_finished"] = []
 
 			all_missions = MissionManager.getMissions();
 			for (j in all_missions) {
 				trace(all_missions[j]["mId"]);
 				trace(all_missions[j]["mState"]);
 				missionobj = {};
-			    trace(JSON.stringify(missionsave))
+				trace(JSON.stringify(missionsave))
 				if (all_missions[j]["mState"] == 1) {
 					missionobj["mission_id"] = all_missions[j]["mId"];
 					objectives = all_missions[j].getObjectives();
@@ -340,11 +340,15 @@
 
 		public static function saveOldMap(): void {
 			var old_map_id: String = GameState.mInstance.mCurrentMapId;
-			var secs_since_last_enemy_spawn:Number = Math.round(Number(GameState.mInstance.getSpawnEnemyTimer()) / 1000);
-			mMaps[old_map_id] = {"map_name":old_map_id,"secs_since_last_enemy_spawn":secs_since_last_enemy_spawn,"map_data":generateGamefieldJson()};
+			var secs_since_last_enemy_spawn: Number = Math.round(Number(GameState.mInstance.getSpawnEnemyTimer()) / 1000);
+			mMaps[old_map_id] = {
+				"map_name": old_map_id,
+				"secs_since_last_enemy_spawn": secs_since_last_enemy_spawn,
+				"map_data": generateGamefieldJson()
+			};
 			mMissions = generateMissionJson();
 		}
-	
+
 		public static function switchMap(): void {
 			trace("start switching map")
 			var map_id: String = GameState.mInstance.mCurrentMapId;
@@ -370,11 +374,11 @@
 			GameState.mInstance.mMissionIconsManager.reset()
 			MissionManager.setupFromServer(fakeservercall);
 			MissionManager.findNewActiveMissions();
-		    // Show water amount in HUD
-		    if(map_id == "Desert"){
+			// Show water amount in HUD
+			if (map_id == "Desert") {
 				(GameState.mInstance.getMainClip() as GameMain).changeDiscordMap("Desert");
 				GameState.mInstance.mHUD.changeWaterVisibility(true)
-			} else if(map_id == "Home"){
+			} else if (map_id == "Home") {
 				(GameState.mInstance.getMainClip() as GameMain).changeDiscordMap("Homeland");
 				GameState.mInstance.mHUD.changeWaterVisibility(false)
 			}
@@ -383,13 +387,17 @@
 
 		public static function generateSaveJson(): * {
 			var map_id: String = GameState.mInstance.mCurrentMapId;
-			var secs_since_last_enemy_spawn:Number = Math.round(Number(GameState.mInstance.getSpawnEnemyTimer()) / 1000);
-			mMaps[map_id] = {"map_name":map_id,"secs_since_last_enemy_spawn":secs_since_last_enemy_spawn,"map_data":generateGamefieldJson()};
+			var secs_since_last_enemy_spawn: Number = Math.round(Number(GameState.mInstance.getSpawnEnemyTimer()) / 1000);
+			mMaps[map_id] = {
+				"map_name": map_id,
+				"secs_since_last_enemy_spawn": secs_since_last_enemy_spawn,
+				"map_data": generateGamefieldJson()
+			};
 			var savedata: * = {};
 			savedata = generateMissionJson()
 			savedata["profile"] = generateProfileJson()
 			savedata["maps"] = [];
-			for (var i:String in mMaps) {
+			for (var i: String in mMaps) {
 				savedata["maps"].push(mMaps[i])
 			}
 			savedata["isFogOfWarOff"] = GameState.mInstance.isFogOfWarOn();
@@ -414,16 +422,16 @@
 				mapdata["map_id"] = "Home";
 				homeland["map_data"] = mapdata;
 				savedata["maps"].push(homeland)
-			
-			
+
+
 				delete savedata["profile"]["player_tiles"];
 				delete savedata["profile"]["gamefield_items"];
 				delete savedata["secs_since_last_enemy_spawn"];
 			}
 			return savedata;
 		}
-	
-		public static function updateMapTimers(mapdata: *, time_diff): * {
+
+		public static function updateMapTimers(mapdata: * , time_diff): * {
 			var i: * = 0;
 			for (i in mapdata["map_data"]["gamefield_items"]) {
 				if (mapdata["map_data"]["gamefield_items"][i]["next_action_at"] != null) {
@@ -441,25 +449,25 @@
 			}
 			return mapdata
 		}
-	
-		public static function selectMissionsByMap(all_missions: *, map_id:String): Array {
+
+		public static function selectMissionsByMap(all_missions: * , map_id: String): Array {
 			var i: * = 0;
 			var selectedMissions: Array = [];
 			for (i in all_missions) {
-				var mission:* = MissionManager.getMission(all_missions[i]["mission_id"]);
-				if (mission){
+				var mission: * = MissionManager.getMission(all_missions[i]["mission_id"]);
+				if (mission) {
 					trace(mission.mMapId);
-					if (mission.mMapId == map_id){
+					if (mission.mMapId == map_id) {
 						trace(all_missions[i]["mission_id"]);
 						selectedMissions.push(all_missions[i]);
 					}
 				}
 			}
-		
-		return selectedMissions;
+
+			return selectedMissions;
 		}
-	
-		public static function loadMap(mapdata: *): void {
+
+		public static function loadMap(mapdata: * ): void {
 			var fakeservercall3: * = new ServerCall("GetMapData", null, null, null);
 			fakeservercall3["mData"] = mapdata["map_data"];
 			GameState.mInstance.initMap(fakeservercall3, GameState.mInstance.mCurrentMapId);
@@ -517,9 +525,9 @@
 			GameState.mInstance.mMapData.destroy();
 			mMaps = {};
 			var i: * = 0;
-				for (i in savedata["maps"]) {
-					mMaps[savedata["maps"][i]["map_name"]] = updateMapTimers(savedata["maps"][i], time_diff);
-				}
+			for (i in savedata["maps"]) {
+				mMaps[savedata["maps"][i]["map_name"]] = updateMapTimers(savedata["maps"][i], time_diff);
+			}
 			GameState.mInstance.initObjects(null); // Remove existing units
 			loadMap(mMaps["Home"]);
 			GameState.mInstance.updateGrid();
@@ -539,5 +547,6 @@
 			(GameState.mInstance.getMainClip() as GameMain).changeDiscordMap("Homeland");
 			GameState.mInstance.mHUD.changeWaterVisibility(false)
 		}
+	
 	}
 }

@@ -48,6 +48,8 @@
       public static const TYPE_WARFLY:String = "Warfly";
 	  
       public static const TYPE_SNIPER:String = "Sniper";
+	  
+      public static const TYPE_ELITE_LANDKREUZER:String = "EliteLandKreuzer";
       
       public static const UNIT_LEVEL_RECRUIT:int = 0;
       
@@ -162,7 +164,7 @@
             mAttackSounds = ArmySoundManager.SC_FRN_APC_ATTACK;
             mMoveSounds = ArmySoundManager.SC_APC_MOVING;
          }
-         else if(_loc1_ == PlayerUnit.TYPE_BATTLETANK || _loc1_ == PlayerUnit.TYPE_ELITE_TANK)
+         else if(_loc1_ == PlayerUnit.TYPE_BATTLETANK || _loc1_ == PlayerUnit.TYPE_ELITE_TANK || _loc1_ == PlayerUnit.TYPE_ELITE_LANDKREUZER)
          {
             this.mSelectSounds = ArmySoundManager.SC_FRN_TANK_SELECT_SHORT;
             this.mSelectLongSounds = ArmySoundManager.SC_FRN_TANK_SELECT_LONG;
