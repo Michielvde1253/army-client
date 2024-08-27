@@ -550,8 +550,8 @@
 		public function createHUD(): void {
 			DCButton.TRIGGER_AT_MOUSE_UP = true;
 			CONFIG::BUILD_FOR_MOBILE_AIR {
-				var _loc1_: Class = DCResourceManager.getInstance().getSWFClass(Config.SWF_INTERFACE_NAME, "hud_new_top_mobile");
-				var _loc2_: Class = DCResourceManager.getInstance().getSWFClass(Config.SWF_INTERFACE_NAME, "hud_new_bottom_mobile");
+				var _loc1_: Class = DCResourceManager.getInstance().getSWFClass(Config.SWF_INTERFACE_NAME, "hud_new_top");
+				var _loc2_: Class = DCResourceManager.getInstance().getSWFClass(Config.SWF_INTERFACE_NAME, "hud_new_bottom");
 			}
 					CONFIG::BUILD_FOR_AIR {
 				var _loc1_: Class = DCResourceManager.getInstance().getSWFClass(Config.SWF_INTERFACE_NAME, "hud_new_top");

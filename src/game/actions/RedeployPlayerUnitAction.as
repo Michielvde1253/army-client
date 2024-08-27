@@ -1,4 +1,4 @@
-package game.actions
+﻿package game.actions
 {
    import com.dchoc.graphics.DCResourceManager;
    import flash.display.MovieClip;
@@ -93,7 +93,7 @@ package game.actions
       private function checkHarvestFrame(param1:Event) : void
       {
          var _loc2_:MovieClip = param1.target as MovieClip;
-         if(_loc2_.currentFrame == _loc2_.currentFrame)
+         if(_loc2_.currentFrame == 360)
          {
             this.removeHarvestClip();
          }

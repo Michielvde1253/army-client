@@ -41,7 +41,7 @@
       
       public static const USE_LOW_SWF:Boolean = true;
       
-      public static const USE_HARVEST_ANIMATION:Boolean = !DROP_ALL_OPTIONAL_FEATURES && !USE_LOW_SWF;
+      public static const USE_HARVEST_ANIMATION:Boolean = true;
       
       public static const USE_FIRE_CALL_EFFECTS:Boolean = !DROP_ALL_OPTIONAL_FEATURES && !USE_LOW_SWF;
       

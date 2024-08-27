@@ -17,7 +17,7 @@
 	</name>
 -->
 <application xmlns="http://ns.adobe.com/air/application/51.0">
-  <id>army.attack</id>
+  <id>ArmyAttack</id>
   <versionNumber>21</versionNumber>
   <versionLabel/>
   <filename>Army Attack</filename>
@@ -50,7 +50,7 @@
     
     
     
-    <image48x48>AppIconsForPublish/icon48.png</image48x48></icon>
+    <image180x180>AppIconsForPublish/icon180.png</image180x180></icon>
   <customUpdateUI>false</customUpdateUI>
   <allowBrowserInvocation>false</allowBrowserInvocation>
   <android>
@@ -554,4 +554,57 @@
   
   
   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <iPhone>
+    <InfoAdditions><![CDATA[
+  <key>UIDeviceFamily</key>
+  <array>
+    <string>1</string>
+    <string>2</string>
+  </array>
+]]></InfoAdditions>
+    <requestedDisplayResolution>standard</requestedDisplayResolution>
+  </iPhone>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <extensions>
+    <extensionID>fi.joniaromaa.adobeair.discordrpc</extensionID>
+  </extensions>
 </application>

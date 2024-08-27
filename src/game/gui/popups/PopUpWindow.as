@@ -24,10 +24,10 @@
 		public function PopUpWindow(param1: MovieClip, param2: Boolean = true, param3: Boolean = true) {
 			super(param1);
 			this.mClip = param1;
-			CONFIG::BUILD_FOR_MOBILE_AIR {
-				this.mClip.scaleX = 1.3;
-				this.mClip.scaleY = 1.3;
-			}
+			//CONFIG::BUILD_FOR_MOBILE_AIR {
+			//	this.mClip.scaleX = 1.3;
+			//	this.mClip.scaleY = 1.3;
+			//}
 			LocalizationUtils.replaceFonts(this.mClip);
 			if (param2) {
 				x = GameState.mInstance.getStageWidth() / 2;

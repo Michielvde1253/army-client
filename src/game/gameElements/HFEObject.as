@@ -1,4 +1,4 @@
-package game.gameElements
+﻿package game.gameElements
 {
    import com.dchoc.graphics.DCResourceManager;
    import flash.display.DisplayObject;
@@ -182,6 +182,12 @@ package game.gameElements
          {
             mState = STATE_PRODUCTION_READY;
             mProduction.setRemainingWitheringTime(param1.next_action_at);
+			 
+			// If withering started while offline
+			// time_into_wither is customly added in OfflineSave, shouldn't be sent by server
+			if (param1.time_into_wither != -1){
+				mProduction.setRemainingWitheringTime(mProduction.getTotalTimeToWither() - param1.time_into_wither)
+			}
          }
          else
          {

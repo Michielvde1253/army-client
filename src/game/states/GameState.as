@@ -2347,7 +2347,7 @@
 			}
 			this.mScene = SceneLoader.loadFromLevelFactor(this, param1);
 			CONFIG::BUILD_FOR_MOBILE_AIR {
-				this.mZoomLevels = this.mMapData.mMapSetupData.ZoomLevelsMobile;
+				this.mZoomLevels = this.mMapData.mMapSetupData.ZoomLevels;
 			}
 			CONFIG::BUILD_FOR_AIR {
 				this.mZoomLevels = this.mMapData.mMapSetupData.ZoomLevels;

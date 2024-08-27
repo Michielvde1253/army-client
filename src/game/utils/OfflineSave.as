@@ -84,7 +84,8 @@
 								gameobj["next_action_at"] = Math.round(production.getProducingTimeLeft() / 1000);
 							} else if (mapgrid[i]["mObject"]["mState"] == 4) {
 								gameobj["crop_state"] = "ready";
-								gameobj["next_action_at"] = 0;
+								production = mapgrid[i]["mObject"].getProduction();
+								gameobj["next_action_at"] = Math.round(production.getTimeToWither() / 1000);
 							}
 						} else if (gameobj["item_type"] == "Building") {
 							if (mapgrid[i]["mObject"]["mState"] == 3) {
@@ -436,7 +437,9 @@
 			for (i in mapdata["map_data"]["gamefield_items"]) {
 				if (mapdata["map_data"]["gamefield_items"][i]["next_action_at"] != null) {
 					mapdata["map_data"]["gamefield_items"][i]["next_action_at"] -= time_diff;
+					mapdata["map_data"]["gamefield_items"][i]["time_into_wither"] = -1
 					if (mapdata["map_data"]["gamefield_items"][i]["next_action_at"] < 0) {
+						mapdata["map_data"]["gamefield_items"][i]["time_into_wither"] = Math.abs(mapdata["map_data"]["gamefield_items"][i]["next_action_at"]);
 						mapdata["map_data"]["gamefield_items"][i]["next_action_at"] = 0;
 					}
 				}
