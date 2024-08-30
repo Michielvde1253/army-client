@@ -2760,8 +2760,12 @@
          {
             this.mTickCrossActive = true;
          }
-         this.mGame.mHUD.mPlaceButton.setVisible(param1);
-         this.mGame.mHUD.mPlaceCancelButton.setVisible(param1);
+		 if(this.mGame.mHUD){
+			this.mGame.mHUD.mPlaceButton.setVisible(param1);
+		 }
+		 if(this.mGame.mHUD){
+			this.mGame.mHUD.mPlaceCancelButton.setVisible(param1);
+		 }
       }
       
       private function moveButton(param1:GridCell) : void
@@ -5086,7 +5090,7 @@
          var _loc4_:GamePlayerProfile;
          var _loc5_:int = (_loc4_ = this.mGame.mPlayerProfile).getNextId();
          var _loc6_:Class;
-         if((_loc6_ = param1.mObjectClass) == PlayerUnit || _loc6_ == EnemyUnit || _loc6_ == EnemyInstallationObject || _loc6_ == PlayerInstallationObject)
+         if((_loc6_ = param1.mObjectClass) == PlayerUnit || _loc6_ == EnemyUnit || _loc6_ == PvPEnemyUnit || _loc6_ == EnemyInstallationObject || _loc6_ == PlayerInstallationObject)
          {
             _loc3_ = new _loc6_(_loc5_,this,param1);
          }

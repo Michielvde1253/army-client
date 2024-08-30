@@ -1,4 +1,4 @@
-package game.net
+﻿package game.net
 {
    import com.dchoc.graphics.DCResourceManager;
    import flash.geom.Point;
@@ -151,7 +151,8 @@ package game.net
                _loc2_.push(_loc1_);
             }
          }
-         _loc1_ = String(_loc2_[Math.random() * _loc2_.length as int]);
+         //_loc1_ = String(_loc2_[Math.random() * _loc2_.length as int]);
+	     _loc1_ = String(_loc2_["0"]);
          _loc4_ = (_loc4_ = GameState.mConfig.MapSetup[_loc1_].TilemapFileName as String).substring(0,_loc4_.lastIndexOf("."));
          if(!(_loc5_ = DCResourceManager.getInstance()).isAddedToLoadingList(_loc4_))
          {
@@ -162,6 +163,7 @@ package game.net
       
       public function getAttackUnitsString() : String
       {
+		 if(this.mPlayerUnits){
          var _loc3_:PlayerUnitItem = null;
          var _loc1_:* = "";
          var _loc2_:int = 0;
@@ -176,10 +178,14 @@ package game.net
             _loc2_++;
          }
          return _loc1_;
+		 } else {
+			 return null;
+		 }
       }
       
       public function getDefensiveUnitsString() : String
       {
+		 if(this.mOpponentUnits){
          var _loc3_:EnemyUnitItem = null;
          var _loc1_:* = "";
          var _loc2_:int = 0;
@@ -194,6 +200,9 @@ package game.net
             _loc2_++;
          }
          return _loc1_;
+		 } else {
+			 return null;
+		 }
       }
       
       public function getIngameCollectiblesString() : String
@@ -275,7 +284,7 @@ package game.net
          }
       }
       
-      private function initObjects() : void
+      public function initObjects() : void
       {
          var _loc2_:Renderable = null;
          var _loc3_:Object = null;
@@ -331,7 +340,8 @@ package game.net
                               _loc15_ = _loc8_[_loc11_] as Object;
                               if(_loc3_.SpawningAreaType == "ObstacleSpawning")
                               {
-                                 if(!(_loc4_ = ItemManager.getItem(_loc15_.ID,_loc15_.Type) as MapItem))
+								 _loc4_ = ItemManager.getItem(_loc15_.ID,_loc15_.Type) as MapItem
+                                 if(!_loc4_)
                                  {
                                     break;
                                  }

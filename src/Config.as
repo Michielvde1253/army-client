@@ -66,7 +66,7 @@
       
       public static const DEBUG_SERVER_DATA:Boolean = false;
       
-      public static const CHEAT_ALLOWED:Boolean = false;
+      public static const CHEAT_ALLOWED:Boolean = true;
       
       public static const CHEAT_DISABLE_FOG:Boolean = false;
       

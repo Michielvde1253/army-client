@@ -1017,10 +1017,13 @@
             {
                if(_loc3_ is PlayerUnit)
                {
-                  ++this.mUnitCounts[Number(_loc3_.mItem.mType)];
+                  this.mUnitCounts[_loc3_.mItem.mType] += 1;
                }
             }
          }
+	    trace("unit caps:")
+		trace(JSON.stringify(this.mUnitCaps));
+	    trace(JSON.stringify(this.mUnitCounts));
       }
       
       public function increaseSuppliesCap(param1:Renderable) : void

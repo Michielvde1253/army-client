@@ -1,4 +1,4 @@
-package game.gui.pvp
+﻿package game.gui.pvp
 {
    import flash.display.MovieClip;
    import flash.display.Sprite;
@@ -84,14 +84,16 @@ package game.gui.pvp
          }
          this.mButtonRemove.setVisible(false);
       }
+  
+	  private function attackClicked(param1:MouseEvent) : void
+      {
+		  trace("but does this work???");
+         (this.mDialog as PvPMatchUpDialog).attackPlayer(this.mOpponent);
+      }
       
       private function removeClicked(param1:MouseEvent) : void
       {
       }
       
-      private function attackClicked(param1:MouseEvent) : void
-      {
-         (this.mDialog as PvPMatchUpDialog).attackPlayer(this.mOpponent);
-      }
    }
 }

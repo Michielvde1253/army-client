@@ -1,4 +1,4 @@
-package game.gui.pvp
+﻿package game.gui.pvp
 {
    import flash.display.MovieClip;
    import flash.display.Sprite;
@@ -28,12 +28,17 @@ package game.gui.pvp
       
       public function PvPSelectedUnitPanel(param1:MovieClip, param2:MovieClip, param3:PopUpWindow)
       {
+		 trace("praying 1");
          super();
+		 trace("praying 2");
          this.mBasePanel = param1;
          this.mParentClip = param2;
          this.mDialog = param3;
+		 trace("praying 3");
          this.mButtonRemove = Utils.createBasicButton(this.mBasePanel,"Button_Remove",this.removeClicked);
+		 trace("praying 4");
          this.mIconBase = this.mBasePanel.getChildByName("Icon") as MovieClip;
+		 trace("praying 5");
       }
       
       public function hide() : void

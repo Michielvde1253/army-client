@@ -58,6 +58,8 @@
 	import game.gui.popups.HiddenErrorWindow;
 	import game.gui.popups.ImmediateSuppliesWindow;
 	import game.gui.popups.InfantryCapFullWindow;
+	import game.gui.popups.ArmorCapFullWindow;
+	import game.gui.popups.ArtilleryCapFullWindow;
 	import game.gui.popups.IntroWindow;
 	import game.gui.popups.InviteFriendsWindow;
 	import game.gui.popups.LevelUpWindow;
@@ -1355,6 +1357,7 @@
 		}
 
 		public function openPvPCombatSetupDialog(): void {
+			trace("sure")
 			this.openDialogIfResourceLoaded("swf/popups_pvp", PvPCombatSetupDialog, [this.closeDialog, this.openPvPMatchUpDialog, this.mGame.startPvP]);
 		}
 
@@ -1443,6 +1446,16 @@
 
 		public function openInfantryCapTextBox(): void {
 			this.openDialogIfResourceLoaded(Config.SWF_POPUPS_WARNINGS_NAME, InfantryCapFullWindow, [this.closeDialog]);
+			this.mGame.cancelAllPlayerActions();
+		}
+	
+		public function openArmorCapTextBox(): void {
+			this.openDialogIfResourceLoaded(Config.SWF_POPUPS_WARNINGS_NAME, ArmorCapFullWindow, [this.closeDialog]);
+			this.mGame.cancelAllPlayerActions();
+		}
+	
+		public function openArtilleryCapTextBox(): void {
+			this.openDialogIfResourceLoaded(Config.SWF_POPUPS_WARNINGS_NAME, ArtilleryCapFullWindow, [this.closeDialog]);
 			this.mGame.cancelAllPlayerActions();
 		}
 

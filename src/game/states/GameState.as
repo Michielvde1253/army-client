@@ -1232,12 +1232,45 @@
 			if (FeatureTuner.USE_PVP_MATCH) {
 				if (this.mPlayerProfile.mGlobalUnitCounts == null) {
 					this.startLoading();
-					this.mServer.serverCallService(ServiceIDs.GET_PVP_DATA, true);
-					if (Config.DEBUG_MODE) {}
+					//this.mServer.serverCallService(ServiceIDs.GET_PVP_DATA, true);
+					var fakedata:* = {};
+				
+					var pvp_data:* = {};
+					pvp_data["score"] = 0;
+					pvp_data["wins"] = 0;
+					fakedata["pvp_data"] = pvp_data;
+
+					fakedata["allies"] = new Array();
+				
+				
+					var possible_opponents:Array = [];
+				    var test_opponent:* = {};
+					test_opponent["facebook_id"] = 1;
+					test_opponent["score"] = 0;
+					test_opponent["level"] = 1;
+					test_opponent["wins"] = 0;
+					possible_opponents.push(test_opponent)
+					fakedata["possible_opponents"] = possible_opponents
+				
+					fakedata["recent_attacks"] = new Array();
+				
+					var player_unit_count:Array = [];
+				    var player_unit:* = {};
+					player_unit["item_id"] = "Infantry";
+					player_unit["item_count"] = 4;
+					player_unit_count.push(player_unit)
+					fakedata["player_unit_count"] = player_unit_count;
+				
+					this.mPlayerProfile.setupPvPData(fakedata);
+					this.mPlayerProfile.setupGlobalUnitCounts(fakedata);
+				
+					this.openPvPMatchUpDialog();
 				} else if (this.getHud()) {
 					if (this.mPvPMatch.mOpponent) {
+						trace("works1")
 						this.openPvPCombatSetupDialog();
 					} else {
+						trace("works")
 						this.getHud().openPvPMatchUpDialog();
 					}
 				}
@@ -1269,10 +1302,14 @@
 		}
 
 		public function openPvPCombatSetupDialog(): void {
+			trace("LET'S GO I HOPE")
 			if (FeatureTuner.USE_PVP_MATCH) {
 				this.mPvPMatch.randomizeOpponentUnits();
+				trace("DOOOOOOO IIIIIIIIIIIIIT!!!!!!!!")
 				if (this.getHud()) {
+					trace("yeah???")
 					this.getHud().openPvPCombatSetupDialog();
+					trace("thanks")
 				}
 			}
 		}
@@ -2778,10 +2815,13 @@
 						"attack_units": _loc2_,
 						"defensive_units": _loc3_
 					};
-					this.mServer.serverCallServiceWithParameters(ServiceIDs.START_PVP_MATCH, _loc4_, true);
+				    // Modified for offline game
+					//this.mServer.serverCallServiceWithParameters(ServiceIDs.START_PVP_MATCH, _loc4_, true);
+					var fakeservercall: * = new ServerCall(ServiceIDs.START_PVP_MATCH, null, null, null);
+					fakeservercall["mData"] = {"timestamp":0} as Object;
 					this.mPlayerProfile.addEnergy(-this.mPvPMatch.mEnergyCost, false);
 					this.mPlayerProfile.addSupplies(-this.mPvPMatch.mSupplyCost);
-					if (Config.DEBUG_MODE) {}
+					this.handleStartPvPMatch(fakeservercall);
 				}
 			}
 		}
@@ -2954,7 +2994,9 @@
 					break;
 				case 35:
 					if (Config.CHEAT_ALLOWED) {
-						this.startPvP();
+						//this.startPvP();
+						// don't forget to disable cheat lol
+						this.openPvPMatchUpDialog();
 					}
 					break;
 				case 33:
