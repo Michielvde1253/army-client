@@ -1021,9 +1021,6 @@
                }
             }
          }
-	    trace("unit caps:")
-		trace(JSON.stringify(this.mUnitCaps));
-	    trace(JSON.stringify(this.mUnitCounts));
       }
       
       public function increaseSuppliesCap(param1:Renderable) : void

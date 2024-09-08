@@ -322,6 +322,7 @@
                PvPOpponentCollection.smCollection.removeRecentAttack(_loc5_.mOpponent.mFacebookID);
                this.closeDialog();
 			   EnvEffectManager.destroy();
+			   GameState.mInstance.mScene.mFog.destroy();
                this.mStartPvPCallback();
             }
          }

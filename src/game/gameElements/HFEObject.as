@@ -237,8 +237,9 @@
       
       override protected function initSounds() : void
       {
-         this.mHarvestSound = ArmySoundManager.SC_HELI;
-         this.mHarvestSound.load();
+         //this.mHarvestSound = ArmySoundManager.SC_HELI;
+		 this.mHarvestSound = ArmySoundManager[(mItem as HFEItem).mHarvestSound]
+		 this.mHarvestSound.load();
       }
       
       protected function harvestAnimationLoaded(param1:Event) : void

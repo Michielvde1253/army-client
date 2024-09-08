@@ -516,8 +516,8 @@
                   _loc8_ += this.mScene.mGridDimX * 2;
                   _loc9_++;
                }
-               this.mWaveContainer.x = this.mScene.mGridDimY * this.mScene.mSizeY;
-               this.mWaveContainer.y = _loc4_.left * this.mScene.mGridDimX;
+               this.mWaveContainer.y = this.mScene.mGridDimY * this.mScene.mSizeY;
+               this.mWaveContainer.x = _loc4_.left * this.mScene.mGridDimX;
             }
          }
       }

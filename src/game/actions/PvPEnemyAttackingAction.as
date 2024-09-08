@@ -1,4 +1,4 @@
-package game.actions
+﻿package game.actions
 {
    import game.characters.AnimationController;
    import game.characters.PlayerUnit;
@@ -243,7 +243,7 @@ package game.actions
             mNewState = STATE_OVER;
             return;
          }
-         (mTarget as EnemyInstallationObject).reduceHealth(_loc1_);
+         (mTarget as IsometricCharacter).reduceHealth(_loc1_);
          if(!(mTarget as PlayerUnit).isAlive())
          {
             (mTarget as PlayerUnit).destroyPermanently();
