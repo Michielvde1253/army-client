@@ -1,4 +1,4 @@
-package game.utils
+﻿package game.utils
 {
    import com.dchoc.graphics.DCResourceManager;
    
@@ -47,7 +47,7 @@ package game.utils
          }
          else if(mType == EffectController.EFFECT_TYPE_POWER_UP_AIR_SUPPORT)
          {
-            _loc2_ = "power_up_air_support_effect";
+            _loc2_ = "power_up_air_support_1_effect";
          }
          if(_loc2_ != "")
          {

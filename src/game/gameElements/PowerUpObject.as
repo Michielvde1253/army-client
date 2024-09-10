@@ -1,4 +1,4 @@
-package game.gameElements
+﻿package game.gameElements
 {
    import flash.display.DisplayObject;
    import flash.geom.Point;
@@ -77,7 +77,7 @@ package game.gameElements
                   }
                   GameState.mInstance.queueAction(new PvPFireMissionAction(_loc3_,_loc2_.mPowerUpFireMissionItem),true);
                }
-               if(_loc2_.mId == "AirSupport")
+               if(_loc2_.mId == "AirSupport_1")
                {
                   GameState.mInstance.mScene.addEffect(null,EffectController.EFFECT_TYPE_POWER_UP_AIR_SUPPORT,param1.mX,param1.mY);
                }

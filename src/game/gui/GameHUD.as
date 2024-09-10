@@ -244,6 +244,8 @@
 		private var mButtonPowerup: ArmyButton;
 
 		private var mButtonMap: ArmyButton;
+		
+		private var mButtonPvp: ArmyButton;
 
 		private var mBackHomeY: int;
 
@@ -579,6 +581,7 @@
 			this.mHudButtonShop = Utils.createBasicButton(this.mIngameHUDClip_BOTTOM, "Button_shop", this.buttonShopPressed);
 			this.mHudButtonSave = Utils.createBasicButton(this.mIngameHUDClip_BOTTOM, "Button_save", this.buttonSavePressed);
 			this.mButtonMap = Utils.createBasicButton(this.mIngameHUDClip_BOTTOM, 'Button_Map', this.buttonMapPressed);
+		    this.mButtonPvp = Utils.createBasicButton(this.mIngameHUDClip_BOTTOM, 'Button_Pvp', this.buttonPvpPressed);
 
 
 			this.mRightPlaceButtonClip = this.mIngameHUDClip.getChildByName("right_button") as MovieClip;
@@ -914,6 +917,7 @@
 			this.mHudButtonShop.setY(Math.max(0, Math.min(param2 - this.mHudButtonShop.getHeight())) + 3);
 			this.mHudButtonSave.setY(Math.max(0, Math.min(param2 - this.mHudButtonSave.getHeight())) + 3);
 			this.mButtonMap.setY(Math.max(0, Math.min(param2 - this.mButtonMap.getHeight())) + 3);
+			this.mButtonPvp.setY(Math.max(0, Math.min(param2 - this.mButtonPvp.getHeight())) + 3);
 
 
 			if (!this.keyCoordinates) {
@@ -1137,11 +1141,6 @@
 			this.openInventoryDialog();
 		}
 
-		private function buttonPvPPressed(param1: MouseEvent): void {
-			if (!MissionManager.isTutorialCompleted()) {
-				return;
-			}
-		}
 
 		public function triggerShopOpening(param1: String, param2: String = "normal"): void {
 			if (MissionManager.mBuildingNeedtoOpen) {
@@ -1823,6 +1822,7 @@
 				smTooltipTIDLinkage["Button_Toggle"] = GameState.getText("TOOLTIP_HUD_TOOLBOX_OPEN_CLOSE_BUTTON");
 				smTooltipTIDLinkage["Button_Powerup"] = GameState.getText("HUD_FIRECALL_TOOLTIP");
 				smTooltipTIDLinkage["Button_Map"] = GameState.getText("HUD_MAP_TOOLTIP");
+				smTooltipTIDLinkage["Button_Pvp"] = GameState.getText("TOOLTIP_HUD_PVP");
 				smTooltipTIDLinkage["Button_Tool"] = GameState.getText("TOOLTIP_HUD_REPAIR_TOOL_BUTTON");
 				smTooltipTIDLinkage["Button_Shop"] = GameState.getText("TOOLTIP_HUD_SHOP_BUTTON");
 				smTooltipTIDLinkage["Button_Save"] = GameState.getText("TOOLTIP_HUD_SHOP_BUTTON");
@@ -1862,6 +1862,7 @@
 			_loc1_.push(this.mPullOutMenu.getChildByName("Button_save"));
 			_loc1_.push(this.mPullOutMenu.getChildByName("Button_social"));
 			_loc1_.push(this.mPullOutMenu.getChildByName("Button_Map"));
+		    _loc1_.push(this.mPullOutMenu.getChildByName("Button_Pvp"));
 			_loc1_.push(this.mPullOutMenu.getChildByName("Button_settings"));
 			_loc1_.push(this.mButtonPullOutFrame.getChildByName("button_heal"));
 			_loc1_.push(this.mButtonPullOutFrame.getChildByName("button_pullout_tools"));
@@ -2037,8 +2038,9 @@
 				this.mHudButtonShop.setEnabled(false);
 				this.mHudButtonSave.setEnabled(false);
 				this.mButtonMap.setEnabled(false);
+				this.mButtonPvp.setEnabled(false);
 				this.mButtonPowerup.setEnabled(false);
-				trace("this.mNeighborName.text = this.mGame.mVisitingFriend.getFirstName();");
+				// this.mNeighborName.text = this.mGame.mVisitingFriend.getFirstName();
 			} else {
 				this.mButtonPowerup.setEnabled(true);
 			}
@@ -2165,6 +2167,13 @@
 
 		private function buttonMapPressed(param1: MouseEvent): void {
 			this.openDialogIfResourceLoaded("swf/map", WorldMapWindow, [this.closeDialog]);
+		}
+	
+		private function buttonPvpPressed(param1: MouseEvent): void {
+			if (!MissionManager.isTutorialCompleted()) {
+				return;
+			}
+		    GameState.mInstance.openPvPMatchUpDialog();
 		}
 
 		public function updateMapButtonEnablation(): void {

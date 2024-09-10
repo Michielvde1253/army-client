@@ -1246,9 +1246,11 @@
 					var possible_opponents:Array = [];
 				    var test_opponent:* = {};
 					test_opponent["facebook_id"] = 1;
+				    test_opponent["player_name"] = "Scary Chris";
 					test_opponent["score"] = 0;
 					test_opponent["level"] = 1;
 					test_opponent["wins"] = 0;
+				    test_opponent["avatar"] = "scary_chris.png"; // Loads from the data/avatars folder, empty string = default avatar
 					possible_opponents.push(test_opponent)
 					fakedata["possible_opponents"] = possible_opponents
 				
@@ -1267,10 +1269,8 @@
 					this.openPvPMatchUpDialog();
 				} else if (this.getHud()) {
 					if (this.mPvPMatch.mOpponent) {
-						trace("works1")
 						this.openPvPCombatSetupDialog();
 					} else {
-						trace("works")
 						this.getHud().openPvPMatchUpDialog();
 					}
 				}
