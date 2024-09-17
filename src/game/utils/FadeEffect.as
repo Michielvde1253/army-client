@@ -1,4 +1,4 @@
-package game.utils
+﻿package game.utils
 {
    public class FadeEffect extends Effect
    {

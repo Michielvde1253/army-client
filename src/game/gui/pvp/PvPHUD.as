@@ -49,6 +49,8 @@
 	import game.missions.MissionManager;
 	import game.net.ErrorObject;
 	import game.net.FriendsCollection;
+	import game.net.PvPOpponent;
+	import game.net.PvPOpponentCollection;
 	import game.player.GamePlayerProfile;
 	import game.sound.ArmySoundManager;
 	import game.states.GameState;
@@ -235,8 +237,12 @@
 			this.mButtonRetreat = this.addButton(this.mStatusFrame, "Button_Quit", this.buttonRetreatPressed);
 			this.updateStatusTexts();
 			this.mBoosterBar = new PvPBoosterBar(this.mBottomFrame);
-			this.mPlayerPanel = new PvPFighterPanel(this.mIngameHUDClip.getChildByName("Player_Card") as Sprite, FriendsCollection.smFriends.GetThePlayer(), GameState.getText("PVP_PLAYER_TURN"));
-			this.mEnemyPanel = new PvPFighterPanel(this.mIngameHUDClip.getChildByName("Opponent_Card") as Sprite, FriendsCollection.smFriends.GetThePlayer(), GameState.getText("PVPV_ENEMY_TURN"));
+			
+			var player_profile: GamePlayerProfile = GameState.mInstance.mPlayerProfile;
+			var meAsPvpOpponent:PvPOpponent = new PvPOpponent("random_facebook_id",player_profile.mBadassXp,player_profile.mBadassLevel,player_profile.mBadassWins,"Me","")
+			
+			this.mPlayerPanel = new PvPFighterPanel(this.mIngameHUDClip.getChildByName("Player_Card") as Sprite, meAsPvpOpponent, GameState.getText("PVP_PLAYER_TURN"));
+			this.mEnemyPanel = new PvPFighterPanel(this.mIngameHUDClip.getChildByName("Opponent_Card") as Sprite, PvPOpponentCollection.smCollection.getOpponent("1"), GameState.getText("PVPV_ENEMY_TURN"));
 			this.mButtonToggleMusic = this.addButton(this.mSettingsButtonsBar, "Button_Music", this.ToggleMusicClicked);
 			this.mButtonToggleMusicDisabled = this.addButton(this.mSettingsButtonsBar, "Button_Music_Disabled", this.ToggleMusicClicked);
 			this.mButtonToggleSound = this.addButton(this.mSettingsButtonsBar, "Button_Sounds", this.ToggleSndFxClicked);

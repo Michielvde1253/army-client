@@ -1,0 +1,12 @@
+{
+  "pvp_opponents": [
+    {
+      "facebook_id": "1",
+      "player_name": "Scary Chris",
+      "score": 0,
+      "level": 1,
+      "wins": 0,
+      "avatar": "scary_chris.png"
+    }
+  ]
+}

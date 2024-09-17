@@ -641,6 +641,10 @@
       
       private function drawBorderEdges(param1:int, param2:int) : void
       {
+         if(GameState.mInstance.mState == GameState.STATE_PVP) // No border edges in pvp
+         {
+            return;
+         }		  
          var _loc5_:* = false;
          var _loc6_:* = false;
          var _loc3_:int = this.mScene.getCellAt(param1,param2).mBorderEdgeBits;

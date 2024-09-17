@@ -39,6 +39,10 @@
 			_loc3_ = "army_config_" + Config.smLanguageCode;
 			_loc1_.load(Config.DIR_CONFIG + _loc3_ + ".json", _loc3_);
 			mResourcesToLoad.push(_loc3_);
+
+			_loc1_.load(Config.DIR_CONFIG + "army_config_pvp_opponents.json", "army_config_pvp_opponents");
+			mResourcesToLoad.push("army_config_pvp_opponents");		
+		
 			if (FeatureTuner.LOAD_TILE_MAP_CSV) {
 				for each(_loc6_ in AssetManager.CVS_FILES_TO_LOAD) {
 					_loc1_.load(Config.DIR_CONFIG + _loc6_ + ".csv", _loc6_);

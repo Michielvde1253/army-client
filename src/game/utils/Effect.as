@@ -1,4 +1,4 @@
-package game.utils
+﻿package game.utils
 {
    import flash.display.MovieClip;
    
@@ -21,7 +21,7 @@ package game.utils
          this.mMaxTime = 100;
       }
       
-      public function start(param1:MovieClip, param2:int) : void
+      public function start(param1:MovieClip, param2:int, effectClipName:String = "") : void
       {
          this.mTimer = 0;
          this.mMC = param1;

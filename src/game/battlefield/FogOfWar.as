@@ -1,4 +1,4 @@
-package game.battlefield
+﻿package game.battlefield
 {
    import flash.geom.Point;
    import game.characters.EnemyUnit;
@@ -106,6 +106,10 @@ package game.battlefield
       
       public function recalculateFogEdges() : void
       {
+         if(GameState.mInstance.mState == GameState.STATE_PVP) // No fog of war in pvp
+         {
+            return;
+         }
          var _loc3_:GridCell = null;
          var _loc5_:int = 0;
          var _loc6_:* = 0;
@@ -151,6 +155,10 @@ package game.battlefield
       
       public function incrementUnitSightArea(param1:PlayerUnit, param2:Boolean = false) : void
       {
+         if(GameState.mInstance.mState == GameState.STATE_PVP) // No fog of war in pvp
+         {
+            return;
+         }
          var _loc5_:GridCell = null;
          var _loc8_:int = 0;
          var _loc9_:int = 0;
@@ -213,6 +221,10 @@ package game.battlefield
       
       public function decrementUnitSightArea(param1:PlayerUnit, param2:GridCell = null, param3:Boolean = false) : void
       {
+         if(GameState.mInstance.mState == GameState.STATE_PVP) // No fog of war in pvp
+         {
+            return;
+         }
          var _loc7_:GridCell = null;
          var _loc10_:Boolean = false;
          var _loc11_:Array = null;

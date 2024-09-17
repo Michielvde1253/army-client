@@ -190,6 +190,8 @@
       private var mEffectPendingX:int;
       
       private var mEffectPendingY:int;
+	  
+      private var mEffectPendingClipName:String;
       
       private var mAppearTimer:Timer;
       
@@ -2671,15 +2673,16 @@
          }
       }
       
-      public function addEffect(param1:MovieClip, param2:int, param3:int, param4:int) : void
+      public function addEffect(param1:MovieClip, param2:int, param3:int, param4:int, effectClipName:String = "") : void
       {
-         this.mEffectPending = !this.mEffectController.startEffect(this,param1,param2,param3,param4);
+         this.mEffectPending = !this.mEffectController.startEffect(this,param1,param2,param3,param4, effectClipName);
          if(this.mEffectPending)
          {
             this.mEffectPendingMC = param1;
             this.mEffectPendingType = param2;
             this.mEffectPendingX = param3;
             this.mEffectPendingY = param4;
+		    this.mEffectPendingClipName = effectClipName;
          }
       }
       
@@ -3343,7 +3346,7 @@
          this.mEffectController.update(param1);
          if(this.mEffectPending)
          {
-            this.mEffectPending = !this.mEffectController.startEffect(this,this.mEffectPendingMC,this.mEffectPendingType,this.mEffectPendingX,this.mEffectPendingY);
+            this.mEffectPending = !this.mEffectController.startEffect(this,this.mEffectPendingMC,this.mEffectPendingType,this.mEffectPendingX,this.mEffectPendingY,this.mEffectPendingClipName);
          }
          this.mSwitch = ++this.mSwitch % _loc2_;
       }
