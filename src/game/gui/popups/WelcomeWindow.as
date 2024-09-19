@@ -13,7 +13,6 @@ package game.gui.popups
    
    public class WelcomeWindow extends PopUpWindow
    {
-       
       
       private var mCharacter:MovieClip;
       
@@ -28,6 +27,23 @@ package game.gui.popups
       
       public function Activate(param1:Function, param2:int, param3:int, param4:int, param5:int) : void
       {
+         // Calculate scale based on the screen size
+         var stageWidth:Number = GameState.mInstance.getStageWidth();
+         var stageHeight:Number = GameState.mInstance.getStageHeight();
+
+         // Define a target size you want the window to be relative to the screen
+         var targetWidth:Number = stageWidth * 0.3;  // Scale to 30% of screen width
+         var targetHeight:Number = stageHeight * 0.3; // Scale to 30% of screen height
+
+         // Calculate the scaling factor based on the target size
+         var scaleXFactor:Number = targetWidth / mClip.width;
+         var scaleYFactor:Number = targetHeight / mClip.height;
+
+         // Apply the scale, keeping the smaller of the two factors to maintain aspect ratio
+         var scaleFactor:Number = Math.min(scaleXFactor, scaleYFactor);
+         mClip.scaleX = scaleFactor;
+         mClip.scaleY = scaleFactor;
+
          var _loc10_:String = null;
          var _loc6_:TextField;
          (_loc6_ = mClip.getChildByName("Text_Title") as TextField).text = GameState.getText("SITREP_TITLE");
@@ -92,7 +108,7 @@ package game.gui.popups
       override public function alignToScreen() : void
       {
          x = GameState.mInstance.getStageWidth() / 2;
-         y = GameState.mInstance.getStageHeight() - Config.SCREEN_HEIGHT / 2;
+         y = GameState.mInstance.getStageHeight() - (Config.SCREEN_HEIGHT);
       }
       
       private function installCharacter() : void
@@ -102,6 +118,10 @@ package game.gui.popups
             this.mCharacter.parent.removeChild(this.mCharacter);
          }
          var _loc1_:MovieClip = mClip.getChildByName("Icon_Character") as MovieClip;
+
+         _loc1_.x = _loc1_.x - 160;
+         _loc1_.y = _loc1_.y - 40;
+
          var _loc2_:Array = (GameState.mConfig.Character.Mutton.Graphic as String).split("/");
          IconLoader.addIcon(_loc1_,new IconAdapter(_loc2_[2],_loc2_[0] + "/" + _loc2_[1]));
       }
