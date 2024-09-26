@@ -1268,7 +1268,7 @@
 					player_unit_count.push(player_unit)
 					fakedata["player_unit_count"] = player_unit_count;
 					*/
-					OfflineSave.startEmptyPvPProgress();
+					
 					//this.mPlayerProfile.setupPvPData(fakedata);
 					//this.mPlayerProfile.setupGlobalUnitCounts(fakedata);
 				
@@ -2566,6 +2566,9 @@
 				FriendsCollection.smFriends.GetFriend(this.mServer.getUid()).mPicID = "http://profile.ak.fbcdn.net/hprofile-ak-snc4/hs475.snc4/49862_708382760_1095_q.jpg";
 				this.addGeneralBragg();
 				FriendsCollection.smFriends.AddToScreen();
+			
+			
+				OfflineSave.startEmptyPvPProgress();
 			}
 			this.logicUpdate(0);
 			this.getHud().setZoomIndicator(this.mZoomIndex);

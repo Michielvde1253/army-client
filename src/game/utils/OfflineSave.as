@@ -182,7 +182,7 @@
 			profilesave["energy_cap"] = profile["mMaxEnergy"];
 			profilesave["energy_recharge_time"] = profile["mTimeBetweenEnergyRecharges"];
 			profilesave["resource_energy_percentiles"] = profile.getEnergyRewardCounter();
-		    profilesave["resource_energy_percentiles"] = profile.getEnergyRewardCounter();
+			profilesave["resource_energy_percentiles"] = profile.getEnergyRewardCounter();
 			k = 0;
 			var l: int = 0;
 			var invtype: Array = [];
@@ -208,8 +208,8 @@
 				}
 			}
 			profilesave["inventory_items"] = inventoryobj;
-		
-			var pvp_data:* = {};
+
+			var pvp_data: * = {};
 			pvp_data["score"] = profile["mBadassXp"];
 			pvp_data["wins"] = profile["mBadassWins"];
 			profilesave["pvp_data"] = pvp_data;
@@ -347,12 +347,14 @@
 
 		public static function saveOldMap(): void {
 			var old_map_id: String = GameState.mInstance.mCurrentMapId;
-			var secs_since_last_enemy_spawn: Number = Math.round(Number(GameState.mInstance.getSpawnEnemyTimer()) / 1000);
-			mMaps[old_map_id] = {
-				"map_name": old_map_id,
-				"secs_since_last_enemy_spawn": secs_since_last_enemy_spawn,
-				"map_data": generateGamefieldJson()
-			};
+			if (old_map_id.indexOf("pvp_") == -1) {
+				var secs_since_last_enemy_spawn: Number = Math.round(Number(GameState.mInstance.getSpawnEnemyTimer()) / 1000);
+				mMaps[old_map_id] = {
+					"map_name": old_map_id,
+					"secs_since_last_enemy_spawn": secs_since_last_enemy_spawn,
+					"map_data": generateGamefieldJson()
+				};
+			}
 			mMissions = generateMissionJson();
 		}
 
@@ -395,11 +397,13 @@
 		public static function generateSaveJson(): * {
 			var map_id: String = GameState.mInstance.mCurrentMapId;
 			var secs_since_last_enemy_spawn: Number = Math.round(Number(GameState.mInstance.getSpawnEnemyTimer()) / 1000);
-			mMaps[map_id] = {
-				"map_name": map_id,
-				"secs_since_last_enemy_spawn": secs_since_last_enemy_spawn,
-				"map_data": generateGamefieldJson()
-			};
+			if (map_id.indexOf("pvp_") == -1) {
+				mMaps[map_id] = {
+					"map_name": map_id,
+					"secs_since_last_enemy_spawn": secs_since_last_enemy_spawn,
+					"map_data": generateGamefieldJson()
+				};
+			}
 			var savedata: * = {};
 			savedata = generateMissionJson()
 			savedata["profile"] = generateProfileJson()
@@ -410,7 +414,7 @@
 			savedata["isFogOfWarOff"] = GameState.mInstance.isFogOfWarOn();
 			var now: Date = new Date();
 			savedata["time_of_last_save"] = now.valueOf();
-			savedata["saveversion"] = 4;
+			savedata["saveversion"] = 5;
 			return savedata;
 		}
 
@@ -434,6 +438,11 @@
 				delete savedata["profile"]["player_tiles"];
 				delete savedata["profile"]["gamefield_items"];
 				delete savedata["secs_since_last_enemy_spawn"];
+			}
+			if (version < 5) {
+				savedata["profile"]["pvp_data"] = {};
+				savedata["profile"]["pvp_data"]["wins"] = 0;
+				savedata["profile"]["pvp_data"]["score"] = 0;
 			}
 			return savedata;
 		}
@@ -476,26 +485,26 @@
 			return selectedMissions;
 		}
 
-		public static function calculateGlobalUnits(savedata_maps:*): Array{
-			var temp_counter:Array = [];
-			var temp_seen_units:Array = [];
-			var item_id:String
-			var player_unit_count:Array = [];
-			var player_unit:* = {};
+		public static function calculateGlobalUnits(savedata_maps: * ): Array {
+			var temp_counter: Array = [];
+			var temp_seen_units: Array = [];
+			var item_id: String
+			var player_unit_count: Array = [];
+			var player_unit: * = {};
 			var i: * = 0;
 			for (i in savedata_maps) {
 				var j: * = 0;
 				for (j in savedata_maps[i]["map_data"]["gamefield_items"]) {
-					if(savedata_maps[i]["map_data"]["gamefield_items"][j]["item_type"] == "PlayerUnit"){
+					if (savedata_maps[i]["map_data"]["gamefield_items"][j]["item_type"] == "PlayerUnit") {
 						item_id = savedata_maps[i]["map_data"]["gamefield_items"][j]["item_id"];
-						var index:int = temp_seen_units.indexOf(item_id);
-						if (index == -1){
+						var index: int = temp_seen_units.indexOf(item_id);
+						if (index == -1) {
 							temp_seen_units.push(item_id);
 							temp_counter.push(1);
 						} else {
 							temp_counter[index] += 1
 						}
-						
+
 					}
 				}
 			}
@@ -506,34 +515,34 @@
 				player_unit["item_count"] = temp_counter[i]
 				player_unit_count.push(player_unit)
 			}
-		
+
 			return player_unit_count
 		}
-	
+
 		public static function startEmptyPvPProgress(): void {
-			var fakedata:* = {};
-		
-			var pvp_data:* = {};
+			var fakedata: * = {};
+
+			var pvp_data: * = {};
 			pvp_data["score"] = 0;
 			pvp_data["wins"] = 0;
-		
+
 			fakedata["pvp_data"] = pvp_data;
-		
+
 			fakedata["allies"] = new Array(); // Unused
-		
+
 			trace(JSON.stringify(GameState.mPvPOpponentsConfig))
-			var possible_opponents:Array = GameState.mPvPOpponentsConfig["pvp_opponents"];
+			var possible_opponents: Array = GameState.mPvPOpponentsConfig["pvp_opponents"];
 			fakedata["possible_opponents"] = possible_opponents;
-		
+
 			fakedata["recent_attacks"] = new Array(); // Unused
-		
+
 			saveOldMap()
 			fakedata["player_unit_count"] = calculateGlobalUnits(mMaps);
-		
+
 			GameState.mInstance.mPlayerProfile.setupPvPData(fakedata);
 			GameState.mInstance.mPlayerProfile.setupGlobalUnitCounts(fakedata);
 		}
-	
+
 		public static function loadMap(mapdata: * ): void {
 			var fakeservercall3: * = new ServerCall("GetMapData", null, null, null);
 			fakeservercall3["mData"] = mapdata["map_data"];
@@ -545,7 +554,7 @@
 			// Convert old saves
 			var saveversion: int = int(savedata["saveversion"]);
 			savedata = fixOldSave(savedata, saveversion);
-			
+
 			// Decrease timers
 			var minus_rechargetime: int = 0;
 			var energy_to_give: int = 0;
@@ -580,8 +589,8 @@
 			} else {
 				savedata["profile"]["secs_to_energy_gain"] = savedata["profile"]["energy_recharge_time"];
 			}
-		
-		
+
+
 			// Init profile
 			GameState.mInstance.mCurrentMapId = "Home"; // Always go back to the Homeland, loading progress on other maps is broken.
 			var fakeservercall: * = new ServerCall("GetMapData", null, null, null); // Not used for map, just for missions
@@ -602,27 +611,28 @@
 				mMaps[savedata["maps"][i]["map_name"]] = updateMapTimers(savedata["maps"][i], time_diff);
 			}
 			GameState.mInstance.initObjects(null); // Remove existing units
-		
+
 			// Init pvp
-			var fakedata:* = {};
+			var fakedata: * = {};
 			fakedata["pvp_data"] = savedata["profile"]["pvp_data"];
 			fakedata["allies"] = new Array(); // Unused
-		
-			var possible_opponents:Array = GameState.mPvPOpponentsConfig.possible_opponents["pvp_opponents"];
+
+			trace(JSON.stringify(GameState.mPvPOpponentsConfig))
+			var possible_opponents: Array = GameState.mPvPOpponentsConfig["pvp_opponents"];
 			fakedata["possible_opponents"] = possible_opponents;
-		
+
 			fakedata["recent_attacks"] = new Array(); // Unused
-		
+
 			fakedata["player_unit_count"] = calculateGlobalUnits(savedata["maps"]);
-		
+
 			GameState.mInstance.mPlayerProfile.setupPvPData(fakedata);
 			GameState.mInstance.mPlayerProfile.setupGlobalUnitCounts(fakedata);
-		
+
 			// Init map
 			loadMap(mMaps["Home"]);
 			GameState.mInstance.updateGrid();
 			GameState.mInstance.mScene.mFog.init();
-		
+
 			// Init missions
 			mMissions = {};
 			mMissions["missions_incomplete"] = savedata["missions_incomplete"];
@@ -631,8 +641,8 @@
 			MissionManager.initialize()
 			MissionManager.setupFromServer(fakeservercall);
 			MissionManager.findNewActiveMissions();
-		
-		
+
+
 			GameState.mInstance.mLoadingStatesOver = true;
 			// Start homeland music
 			GameState.mInstance.mCurrentMusic = GameState.mInstance.getMapMusic()
@@ -641,6 +651,6 @@
 			(GameState.mInstance.getMainClip() as GameMain).changeDiscordMap("Homeland");
 			GameState.mInstance.mHUD.changeWaterVisibility(false)
 		}
-	
+
 	}
 }
