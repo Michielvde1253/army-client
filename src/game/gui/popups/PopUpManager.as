@@ -38,11 +38,13 @@ package game.gui.popups
             if(param2 == null)
             {
                (_loc4_ = new param1()).alignToScreen();
+               _loc4_.scaleToScreen();
                mPopups[_loc3_] = _loc4_;
             }
             else
             {
                (_loc5_ = new param1(param2)).alignToScreen();
+               _loc5_.scaleToScreen();
                mPopups[_loc3_] = _loc5_;
             }
          }

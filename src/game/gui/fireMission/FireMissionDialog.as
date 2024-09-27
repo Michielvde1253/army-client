@@ -105,6 +105,25 @@ package game.gui.fireMission
          this.setFireTab(0);
          doOpeningTransition();
       }
+
+      override public function scaleToScreen(): void {
+			// Get the current stage width and height
+			var stageWidth:Number = GameState.mInstance.getStageWidth();
+			var stageHeight:Number = GameState.mInstance.getStageHeight();
+
+			// Define the target size relative to the provided percentages
+			var targetWidth:Number = stageWidth * 0.8;
+			var targetHeight:Number = stageHeight * 0.8;
+
+			// Calculate the scaling factors based on the clip's dimensions
+			var scaleXFactor:Number = targetWidth / mClip.width;
+			var scaleYFactor:Number = targetHeight / mClip.height;
+
+			// Apply the smaller scaling factor to maintain aspect ratio
+			var scaleFactor:Number = Math.min(scaleXFactor, scaleYFactor);
+			mClip.scaleX = scaleFactor;
+			mClip.scaleY = scaleFactor;
+		}
       
       public function initFireSlot() : void
       {

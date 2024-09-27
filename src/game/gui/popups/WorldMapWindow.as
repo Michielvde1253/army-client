@@ -91,6 +91,25 @@ package game.gui.popups
          _loc2_ = new StylizedHeaderClip(mClip.getChildByName("Header") as MovieClip,GameState.getText("HUD_MAP_TOOLTIP"));
          MissionManager.increaseCounter("OpenMap",null,1);
       }
+
+      override public function scaleToScreen(): void {
+			// Get the current stage width and height
+			var stageWidth:Number = GameState.mInstance.getStageWidth();
+			var stageHeight:Number = GameState.mInstance.getStageHeight();
+
+			// Define the target size relative to the provided percentages
+			var targetWidth:Number = stageWidth * 0.8;
+			var targetHeight:Number = stageHeight * 0.8;
+
+			// Calculate the scaling factors based on the clip's dimensions
+			var scaleXFactor:Number = targetWidth / mClip.width;
+			var scaleYFactor:Number = targetHeight / mClip.height;
+
+			// Apply the smaller scaling factor to maintain aspect ratio
+			var scaleFactor:Number = Math.min(scaleXFactor, scaleYFactor);
+			mClip.scaleX = scaleFactor;
+			mClip.scaleY = scaleFactor;
+		}
       
       private function setupIcon(param1:MovieClip) : void
       {

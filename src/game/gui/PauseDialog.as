@@ -93,6 +93,22 @@
 			doOpeningTransition();
 		}
 
+		override public function scaleToScreen(): void {
+			// Calculate the scaling factors based on the clip's dimensions
+			var scaleXFactor:Number = GameState.mInstance.getStageWidth() / mClip.width;
+			var scaleYFactor:Number = GameState.mInstance.getStageHeight() / mClip.height;
+
+			// Apply the smaller scaling factor to maintain aspect ratio
+			var scaleFactor:Number = Math.max(scaleXFactor, scaleYFactor);
+			mClip.scaleX = scaleFactor;
+			mClip.scaleY = scaleFactor;
+		}
+
+		override public function alignToScreen(): void {
+			x = GameState.mInstance.getStageWidth() / 2;
+			y = GameState.mInstance.getStageHeight() / 1.6;
+		}
+
 		public function startSelectingFile(): void {
 			CONFIG::BUILD_FOR_AIR {
 				var file: File = new File();

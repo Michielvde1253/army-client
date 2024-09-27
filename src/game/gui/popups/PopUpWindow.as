@@ -24,10 +24,6 @@
 		public function PopUpWindow(param1: MovieClip, param2: Boolean = true, param3: Boolean = true) {
 			super(param1);
 			this.mClip = param1;
-			//CONFIG::BUILD_FOR_MOBILE_AIR {
-			//	this.mClip.scaleX = 1.3;
-			//	this.mClip.scaleY = 1.3;
-			//}
 			LocalizationUtils.replaceFonts(this.mClip);
 			if (param2) {
 				x = GameState.mInstance.getStageWidth() / 2;
@@ -41,17 +37,36 @@
 			}
 		}
 
+		public function scaleToScreen(): void {
+			// Get the current stage width and height
+			var stageWidth:Number = GameState.mInstance.getStageWidth();
+			var stageHeight:Number = GameState.mInstance.getStageHeight();
+
+			// Define the target size relative to the provided percentages
+			var targetWidth:Number = stageWidth * 0.8;
+			var targetHeight:Number = stageHeight * 0.8;
+
+			// Calculate the scaling factors based on the clip's dimensions
+			var scaleXFactor:Number = targetWidth / mClip.width;
+			var scaleYFactor:Number = targetHeight / mClip.height;
+
+			// Apply the smaller scaling factor to maintain aspect ratio
+			var scaleFactor:Number = Math.min(scaleXFactor, scaleYFactor);
+			mClip.scaleX = scaleFactor;
+			mClip.scaleY = scaleFactor;
+		}
+
+		public function alignToScreen(): void {
+			x = GameState.mInstance.getStageWidth() / 2;
+			y = GameState.mInstance.getStageHeight() / 1.9;
+		}
+
 		public function getOpenAnimation(): String {
 			return this.mOpenTransitionName;
 		}
 
 		public function getCloseAnimation(): String {
 			return this.mCloseTransitionName;
-		}
-
-		public function alignToScreen(): void {
-			x = GameState.mInstance.getStageWidth() / 2;
-			y = GameState.mInstance.getStageHeight() / 2;
 		}
 
 		override public function enterFrame(param1: Event): void {
