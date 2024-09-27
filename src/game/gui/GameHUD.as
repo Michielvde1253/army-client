@@ -1310,6 +1310,17 @@
 			this.cancelTools();
 			this.mFileBeingLoaded = null;
 		}
+	
+		public function openFirstTimeChooseScreen(): void {
+			if (ArmySoundManager.getInstance().isMusicOn()) {
+				if (Config.RESTART_STATUS == -1 && PauseDialog.mPauseScreenPreviousState == PauseDialog.STATE_UNDEFINED) {
+					ArmySoundManager.getInstance().playSound(ArmySoundManager.MUSIC_HOME, 1, 0, -1);
+				}
+			}
+			this.openDialogIfResourceLoaded(Config.SWF_MAIN_MENU_NAME, FirstTimeChooseDialog, [this.closeDialog]);
+			this.cancelTools();
+			this.mFileBeingLoaded = null;
+		}
 
 		public function openHelpScreen(): void {
 			PauseDialog.mPauseScreenState = PauseDialog.STATE_HELP_CLICK;

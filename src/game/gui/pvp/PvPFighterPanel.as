@@ -1,4 +1,4 @@
-package game.gui.pvp
+﻿package game.gui.pvp
 {
    import flash.display.MovieClip;
    import flash.display.Sprite;
@@ -6,7 +6,7 @@ package game.gui.pvp
    import flash.text.TextField;
    import game.gui.AutoTextField;
    import game.gui.IconLoader;
-   import game.net.Friend;
+   import game.net.PvPOpponent;
    
    public class PvPFighterPanel
    {
@@ -24,7 +24,7 @@ package game.gui.pvp
       
       private var mYourTurnClip:MovieClip;
       
-      public function PvPFighterPanel(param1:Sprite, param2:Friend = null, param3:String = "Turn Changed")
+      public function PvPFighterPanel(param1:Sprite, param2:PvPOpponent = null, param3:String = "Turn Changed")
       {
          var _loc6_:TextField = null;
          super();
@@ -42,15 +42,15 @@ package game.gui.pvp
          this.setData(param2);
       }
       
-      public function setData(param1:Friend) : void
+      public function setData(param1:PvPOpponent) : void
       {
          if(!param1)
          {
             return;
          }
          this.mName.text = param1.mName;
-         this.mRankName.text = "Developer";
-         this.mBadAssLevel.setText("" + param1.mLevel);
+         this.mRankName.text = param1.getBadassName();
+         this.mBadAssLevel.setText(param1.mBadassLevel.toString());
          if(param1.mPicID != null && param1.mPicID != "")
          {
             IconLoader.addIconPicture(this.mThumbnail,param1.mPicID,this.centerImage);

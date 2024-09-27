@@ -1,4 +1,4 @@
-package game.items
+﻿package game.items
 {
    public class PowerUpItem extends MapItem
    {
@@ -13,6 +13,8 @@ package game.items
       public var mIncreasedHealth:int = 0;
       
       public var mIncreasedActions:int = 0;
+	   
+	  public var mEffectGraphics:String;
       
       public function PowerUpItem(param1:Object)
       {
@@ -28,6 +30,7 @@ package game.items
          }
          this.mIncreasedHealth = param1.IncreasedHealth;
          this.mIncreasedActions = param1.IncreasedActions;
+		 this.mEffectGraphics = param1.EffectGraphics;
          mWalkable = true;
       }
    }

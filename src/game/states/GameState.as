@@ -108,6 +108,8 @@
 	public class GameState extends FSMState {
 
 		public static var mObjectCounter: int = 0;
+		
+		public static var mOnlineSaving:Boolean = false;
 
 		private static const CHEAT_CODE: String = "HAXXOR";
 
@@ -122,6 +124,8 @@
 		private static var smDebugCodeString: String = "";
 
 		public static var mConfig: Object;
+		
+		public static var mPvPOpponentsConfig: Object;
 
 		public static var mFreezeFrameOn: Boolean;
 
@@ -1233,6 +1237,7 @@
 				if (this.mPlayerProfile.mGlobalUnitCounts == null) {
 					this.startLoading();
 					//this.mServer.serverCallService(ServiceIDs.GET_PVP_DATA, true);
+					/*
 					var fakedata:* = {};
 				
 					var pvp_data:* = {};
@@ -1245,7 +1250,7 @@
 				
 					var possible_opponents:Array = [];
 				    var test_opponent:* = {};
-					test_opponent["facebook_id"] = 1;
+					test_opponent["facebook_id"] = "1";
 				    test_opponent["player_name"] = "Scary Chris";
 					test_opponent["score"] = 0;
 					test_opponent["level"] = 1;
@@ -1262,9 +1267,10 @@
 					player_unit["item_count"] = 4;
 					player_unit_count.push(player_unit)
 					fakedata["player_unit_count"] = player_unit_count;
-				
-					this.mPlayerProfile.setupPvPData(fakedata);
-					this.mPlayerProfile.setupGlobalUnitCounts(fakedata);
+					*/
+					
+					//this.mPlayerProfile.setupPvPData(fakedata);
+					//this.mPlayerProfile.setupGlobalUnitCounts(fakedata);
 				
 					this.openPvPMatchUpDialog();
 				} else if (this.getHud()) {
@@ -1302,14 +1308,10 @@
 		}
 
 		public function openPvPCombatSetupDialog(): void {
-			trace("LET'S GO I HOPE")
 			if (FeatureTuner.USE_PVP_MATCH) {
 				this.mPvPMatch.randomizeOpponentUnits();
-				trace("DOOOOOOO IIIIIIIIIIIIIT!!!!!!!!")
 				if (this.getHud()) {
-					trace("yeah???")
 					this.getHud().openPvPCombatSetupDialog();
-					trace("thanks")
 				}
 			}
 		}
@@ -2366,6 +2368,7 @@
 			var _loc2_: String = null;
 			var _loc1_: DCResourceManager = DCResourceManager.getInstance();
 			mConfig = new Object();
+			mPvPOpponentsConfig = new Object();
 			var _loc3_: int = int(AssetManager.JSON_FILES_TO_LOAD.length);
 			var _loc4_: int = 0;
 			while (_loc4_ < _loc3_) {
@@ -2375,6 +2378,7 @@
 			}
 			var _loc5_: String = "army_config_" + Config.smLanguageCode;
 			JsonParser.parseFile(mConfig, _loc1_.get(_loc5_));
+			mPvPOpponentsConfig = JSON.parse(_loc1_.get("army_config_pvp_opponents"));
 			JsonParser.link(mConfig, Config.smLanguageCode);
 		}
 
@@ -2520,7 +2524,7 @@
 						this.mHUD.mPullOutMissionMenuState = this.mHUD.STATE_MISSIONS_MENU_OPEN;
 						this.mHUD.mPullOutMissionFrame.addEventListener(Event.ENTER_FRAME, this.enterFrameMissionInitial);
 					}
-					this.mHUD.openPauseScreen();
+					this.mHUD.openFirstTimeChooseScreen();
 				}
 			}
 			if (Config.OFFLINE_MODE) {
@@ -2562,6 +2566,9 @@
 				FriendsCollection.smFriends.GetFriend(this.mServer.getUid()).mPicID = "http://profile.ak.fbcdn.net/hprofile-ak-snc4/hs475.snc4/49862_708382760_1095_q.jpg";
 				this.addGeneralBragg();
 				FriendsCollection.smFriends.AddToScreen();
+			
+			
+				OfflineSave.startEmptyPvPProgress();
 			}
 			this.logicUpdate(0);
 			this.getHud().setZoomIndicator(this.mZoomIndex);
