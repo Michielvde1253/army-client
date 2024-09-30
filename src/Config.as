@@ -107,6 +107,8 @@
       public static const COOKIE_SETTINGS_NAME_MUSIC:String = "Music";
       
       public static const COOKIE_SETTINGS_NAME_SFX:String = "Sfx";
+	  
+      public static const COOKIE_SETTINGS_NAME_ANIMATION:String = "Animation";
       
       public static const COOKIE_SETTINGS_NAME_NOTIFICATION:String = "Notification";
       

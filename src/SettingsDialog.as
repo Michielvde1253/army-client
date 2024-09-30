@@ -1,4 +1,4 @@
-package
+﻿package
 {
    import flash.display.MovieClip;
    import flash.text.TextField;
@@ -40,6 +40,14 @@ package
       public var Button_notification_on:MovieClip;
       
       public var Text_Background_02:TextField;
+	  
+      public var Button_animation_on:MovieClip;
+	  
+      public var Button_animation_off:MovieClip;
+	  
+      public var Animations:MovieClip;
+	  
+      public var Button_tutorial:MovieClip;
       
       public function SettingsDialog()
       {

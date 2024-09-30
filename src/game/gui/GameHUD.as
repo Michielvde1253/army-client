@@ -48,6 +48,7 @@
 	import game.gui.popups.CharacterDialoqueWindow;
 	import game.gui.popups.CollectionTradedWindow;
 	import game.gui.popups.ConfirmRedeploymentWindow;
+	import game.gui.popups.ConfirmRestartTutorialWindow;
 	import game.gui.popups.ConfirmSellingWindow;
 	import game.gui.popups.CorpseMarkerWindow;
 	import game.gui.popups.DailyRewardWindow;
@@ -1396,6 +1397,11 @@
 
 		public function openRedeployHealWarningTextBox(param1: Array): void {
 			this.openDialog(RedeployHealWarningWindow, [this.closeDialog], null, true);
+			this.mGame.cancelAllPlayerActions();
+		}
+	
+		public function openRestartTutorialConfirmationTextBox(): void {
+			this.openDialog(ConfirmRestartTutorialWindow, [this.closeDialog], null, true);
 			this.mGame.cancelAllPlayerActions();
 		}
 

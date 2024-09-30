@@ -108,8 +108,8 @@
 	public class GameState extends FSMState {
 
 		public static var mObjectCounter: int = 0;
-		
-		public static var mOnlineSaving:Boolean = false;
+
+		public static var mOnlineSaving: Boolean = false;
 
 		private static const CHEAT_CODE: String = "HAXXOR";
 
@@ -124,7 +124,7 @@
 		private static var smDebugCodeString: String = "";
 
 		public static var mConfig: Object;
-		
+
 		public static var mPvPOpponentsConfig: Object;
 
 		public static var mFreezeFrameOn: Boolean;
@@ -347,6 +347,8 @@
 		private var mNotificationOn: Boolean;
 
 		private var mFogOfWarOn: Boolean = true;
+
+		private var mAnimationsOn: Boolean = true;
 
 		private const TOTAL_NOTIFICATIONS: int = 2;
 
@@ -1268,10 +1270,10 @@
 					player_unit_count.push(player_unit)
 					fakedata["player_unit_count"] = player_unit_count;
 					*/
-					
+
 					//this.mPlayerProfile.setupPvPData(fakedata);
 					//this.mPlayerProfile.setupGlobalUnitCounts(fakedata);
-				
+
 					this.openPvPMatchUpDialog();
 				} else if (this.getHud()) {
 					if (this.mPvPMatch.mOpponent) {
@@ -2527,6 +2529,13 @@
 					this.mHUD.openFirstTimeChooseScreen();
 				}
 			}
+			// Restore animation settings
+			var animationsOn:String = Cookie.readCookieVariable(Config.COOKIE_SETTINGS_NAME, Config.COOKIE_SETTINGS_NAME_ANIMATION);
+			if (animationsOn == "false") {
+				this.mAnimationsOn = false;
+			} else {
+				this.mAnimationsOn = true;
+			}
 			if (Config.OFFLINE_MODE) {
 				i = 0;
 				while (i < 13) {
@@ -2566,8 +2575,8 @@
 				FriendsCollection.smFriends.GetFriend(this.mServer.getUid()).mPicID = "http://profile.ak.fbcdn.net/hprofile-ak-snc4/hs475.snc4/49862_708382760_1095_q.jpg";
 				this.addGeneralBragg();
 				FriendsCollection.smFriends.AddToScreen();
-			
-			
+
+
 				OfflineSave.startEmptyPvPProgress();
 			}
 			this.logicUpdate(0);
@@ -2822,10 +2831,13 @@
 						"attack_units": _loc2_,
 						"defensive_units": _loc3_
 					};
-				    // Modified for offline game
+					// Modified for offline game
 					//this.mServer.serverCallServiceWithParameters(ServiceIDs.START_PVP_MATCH, _loc4_, true);
 					var fakeservercall: * = new ServerCall(ServiceIDs.START_PVP_MATCH, null, null, null);
-					fakeservercall["mData"] = {"timestamp":0} as Object;
+					fakeservercall["mData"] = {
+						"timestamp": 0
+					}
+					as Object;
 					this.mPlayerProfile.addEnergy(-this.mPvPMatch.mEnergyCost, false);
 					this.mPlayerProfile.addSupplies(-this.mPvPMatch.mSupplyCost);
 					this.handleStartPvPMatch(fakeservercall);
@@ -4293,7 +4305,18 @@
 
 		public function setFogOfWarOn(param1: Boolean): void {
 			this.mFogOfWarOn = param1;
-			trace("Doin- a little challenge: most inefficient way to reload the game lmao");
+			// Doin- a little challenge: most inefficient way to reload the game lmao
+		}
+
+		public function isFogOfWarOn(): Boolean {
+			return this.mFogOfWarOn;
+		}
+
+		public function setAnimations(param1: Boolean): void {
+			this.mAnimationsOn = param1;
+			Cookie.saveCookieVariable(Config.COOKIE_SETTINGS_NAME, Config.COOKIE_SETTINGS_NAME_ANIMATION, param1);
+			// We're doing the same challenge as above xD
+			// Need to look for a better way
 			var savedata: * = this.mHUD.generateSaveJson();
 			(PopUpManager.getPopUp(PauseDialog) as PauseDialog).loadProgress(savedata);
 			(PopUpManager.getPopUp(SettingsDialogClass) as SettingsDialogClass).closeSettingsAuto();
@@ -4301,8 +4324,8 @@
 			this.mScene.mCamera.moveTo(this.mScene.mCamera.getCameraX() + 1, this.mScene.mCamera.getCameraY() + 1);
 		}
 
-		public function isFogOfWarOn(): Boolean {
-			return this.mFogOfWarOn;
+		public function isAnimationsOn(): Boolean {
+			return this.mAnimationsOn;
 		}
 	}
 }
