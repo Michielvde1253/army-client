@@ -833,9 +833,12 @@
 			}
 			this.mScene.update(smGlobalDeltaTime);
 			if (this.mFirstUpdate) {
-				// MOBILE: load save file
+				// MOBILE: load save file, only if not first time opening the app
 				CONFIG::BUILD_FOR_MOBILE_AIR {
-					this.startSelectingFile();
+					var first_time:String = Cookie.readCookieVariable(Config.COOKIE_PERMISSION_NAME, Config.COOKIE_PERMISSION_NAME_OK);
+					if(first_time != ""){
+						this.startSelectingFile();
+					}
 				}
 			}
 			if (!this.mFirstUpdate) {
@@ -2483,7 +2486,16 @@
 						this.mHUD.mPullOutMissionMenuState = this.mHUD.STATE_MISSIONS_MENU_OPEN;
 						this.mHUD.mPullOutMissionFrame.addEventListener(Event.ENTER_FRAME, this.enterFrameMissionInitial);
 					}
+<<<<<<< Updated upstream
 					this.mHUD.openPauseScreen();
+=======
+					var first_time:String = Cookie.readCookieVariable(Config.COOKIE_PERMISSION_NAME, Config.COOKIE_PERMISSION_NAME_OK);
+					if(first_time == ""){
+						this.mHUD.openFirstTimeChooseScreen();
+					} else {
+						this.mHUD.openPauseScreen();
+					}
+>>>>>>> Stashed changes
 				}
 			}
 			if (Config.OFFLINE_MODE) {

@@ -529,6 +529,26 @@
 				mMaps[savedata["maps"][i]["map_name"]] = updateMapTimers(savedata["maps"][i], time_diff);
 			}
 			GameState.mInstance.initObjects(null); // Remove existing units
+<<<<<<< Updated upstream
+=======
+		
+			// Init pvp
+			//var fakedata:* = {};
+			//fakedata["pvp_data"] = savedata["profile"]["pvp_data"];
+			//fakedata["allies"] = new Array(); // Unused
+		
+			//var possible_opponents:Array = GameState.mPvPOpponentsConfig.possible_opponents["pvp_opponents"];
+			//fakedata["possible_opponents"] = possible_opponents;
+		
+			//fakedata["recent_attacks"] = new Array(); // Unused
+		
+			//fakedata["player_unit_count"] = calculateGlobalUnits(savedata["maps"]);
+		
+			//GameState.mInstance.mPlayerProfile.setupPvPData(fakedata);
+			//GameState.mInstance.mPlayerProfile.setupGlobalUnitCounts(fakedata);
+		
+			// Init map
+>>>>>>> Stashed changes
 			loadMap(mMaps["Home"]);
 			GameState.mInstance.updateGrid();
 			GameState.mInstance.mScene.mFog.init();

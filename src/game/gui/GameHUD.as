@@ -19,6 +19,9 @@
 		import flash.filesystem.FileStream;
 		import flash.permissions.PermissionStatus
 		import flash.utils.Timer;
+		import flash.net.URLRequest;
+		import flash.net.navigateToURL;
+		import mx.utils.Base64Encoder
 	}
 	import flash.system.System;
 	import flash.text.TextField;
@@ -242,6 +245,11 @@
 		private var mButtonPowerup: ArmyButton;
 
 		private var mButtonMap: ArmyButton;
+<<<<<<< Updated upstream
+=======
+
+		private var mButtonPvp: ArmyButton;
+>>>>>>> Stashed changes
 
 		private var mBackHomeY: int;
 
@@ -553,11 +561,11 @@
 				var _loc1_: Class = DCResourceManager.getInstance().getSWFClass(Config.SWF_INTERFACE_NAME, "hud_new_top_mobile");
 				var _loc2_: Class = DCResourceManager.getInstance().getSWFClass(Config.SWF_INTERFACE_NAME, "hud_new_bottom_mobile");
 			}
-					CONFIG::BUILD_FOR_AIR {
+			CONFIG::BUILD_FOR_AIR {
 				var _loc1_: Class = DCResourceManager.getInstance().getSWFClass(Config.SWF_INTERFACE_NAME, "hud_new_top");
 				var _loc2_: Class = DCResourceManager.getInstance().getSWFClass(Config.SWF_INTERFACE_NAME, "hud_new_bottom");
 			}
-					CONFIG::NOT_BUILD_FOR_AIR {
+			CONFIG::NOT_BUILD_FOR_AIR {
 				var _loc1_: Class = DCResourceManager.getInstance().getSWFClass(Config.SWF_INTERFACE_NAME, "hud_new_top");
 				var _loc2_: Class = DCResourceManager.getInstance().getSWFClass(Config.SWF_INTERFACE_NAME, "hud_new_bottom");
 			}
@@ -577,6 +585,10 @@
 			this.mHudButtonShop = Utils.createBasicButton(this.mIngameHUDClip_BOTTOM, "Button_shop", this.buttonShopPressed);
 			this.mHudButtonSave = Utils.createBasicButton(this.mIngameHUDClip_BOTTOM, "Button_save", this.buttonSavePressed);
 			this.mButtonMap = Utils.createBasicButton(this.mIngameHUDClip_BOTTOM, 'Button_Map', this.buttonMapPressed);
+<<<<<<< Updated upstream
+=======
+			this.mButtonPvp = Utils.createBasicButton(this.mIngameHUDClip_BOTTOM, 'Button_Pvp', this.buttonPvpPressed);
+>>>>>>> Stashed changes
 
 
 			this.mRightPlaceButtonClip = this.mIngameHUDClip.getChildByName("right_button") as MovieClip;
@@ -1176,7 +1188,7 @@
 			}
 			CONFIG::BUILD_FOR_MOBILE_AIR {
 				// Resolve the file path
-				var file: File = File.applicationStorageDirectory.resolvePath("savefile.txt");
+				var file: File = File.documentsDirectory.resolvePath("savefile.txt");
 				file.addEventListener(PermissionEvent.PERMISSION_STATUS, onPermission);
 				file.requestPermission();
 			}
@@ -1185,7 +1197,7 @@
 		CONFIG::BUILD_FOR_MOBILE_AIR {
 			public function autoSaveGame(param1: TimerEvent): void {
 				// Resolve the file path
-				var file: File = File.applicationStorageDirectory.resolvePath("savefile.txt");
+				var file: File = File.documentsDirectory.resolvePath("savefile.txt");
 				file.addEventListener(PermissionEvent.PERMISSION_STATUS, onPermission);
 				file.requestPermission();
 			}
@@ -1309,6 +1321,20 @@
 			this.cancelTools();
 			this.mFileBeingLoaded = null;
 		}
+<<<<<<< Updated upstream
+=======
+
+		public function openFirstTimeChooseScreen(): void {
+			if (ArmySoundManager.getInstance().isMusicOn()) {
+				if (Config.RESTART_STATUS == -1 && PauseDialog.mPauseScreenPreviousState == PauseDialog.STATE_UNDEFINED) {
+					ArmySoundManager.getInstance().playSound(ArmySoundManager.MUSIC_HOME, 1, 0, -1);
+				}
+			}
+			this.openDialogIfResourceLoaded(Config.SWF_MAIN_MENU_NAME, FirstTimeChooseDialog, [this.closeDialog]);
+			this.cancelTools();
+			this.mFileBeingLoaded = null;
+		}
+>>>>>>> Stashed changes
 
 		public function openHelpScreen(): void {
 			PauseDialog.mPauseScreenState = PauseDialog.STATE_HELP_CLICK;
@@ -1445,6 +1471,19 @@
 			this.openDialogIfResourceLoaded(Config.SWF_POPUPS_WARNINGS_NAME, InfantryCapFullWindow, [this.closeDialog]);
 			this.mGame.cancelAllPlayerActions();
 		}
+<<<<<<< Updated upstream
+=======
+
+		public function openArmorCapTextBox(): void {
+			this.openDialogIfResourceLoaded(Config.SWF_POPUPS_WARNINGS_NAME, ArmorCapFullWindow, [this.closeDialog]);
+			this.mGame.cancelAllPlayerActions();
+		}
+
+		public function openArtilleryCapTextBox(): void {
+			this.openDialogIfResourceLoaded(Config.SWF_POPUPS_WARNINGS_NAME, ArtilleryCapFullWindow, [this.closeDialog]);
+			this.mGame.cancelAllPlayerActions();
+		}
+>>>>>>> Stashed changes
 
 		public function openUnitDiedTextBox(): void {
 			this.openDialogIfResourceLoaded(Config.SWF_POPUPS_WARNINGS_NAME, UnitDiedWindow, [this.closeDialog, this.triggerShopOpening]);
@@ -1849,6 +1888,10 @@
 			_loc1_.push(this.mPullOutMenu.getChildByName("Button_save"));
 			_loc1_.push(this.mPullOutMenu.getChildByName("Button_social"));
 			_loc1_.push(this.mPullOutMenu.getChildByName("Button_Map"));
+<<<<<<< Updated upstream
+=======
+			_loc1_.push(this.mPullOutMenu.getChildByName("Button_Pvp"));
+>>>>>>> Stashed changes
 			_loc1_.push(this.mPullOutMenu.getChildByName("Button_settings"));
 			_loc1_.push(this.mButtonPullOutFrame.getChildByName("button_heal"));
 			_loc1_.push(this.mButtonPullOutFrame.getChildByName("button_pullout_tools"));
@@ -2153,6 +2196,16 @@
 		private function buttonMapPressed(param1: MouseEvent): void {
 			this.openDialogIfResourceLoaded("swf/map", WorldMapWindow, [this.closeDialog]);
 		}
+<<<<<<< Updated upstream
+=======
+
+		private function buttonPvpPressed(param1: MouseEvent): void {
+			if (!MissionManager.isTutorialCompleted()) {
+				return;
+			}
+			GameState.mInstance.openPvPMatchUpDialog();
+		}
+>>>>>>> Stashed changes
 
 		public function updateMapButtonEnablation(): void {
 			var _loc1_: Boolean = MissionManager.isMapButtonEnabled();

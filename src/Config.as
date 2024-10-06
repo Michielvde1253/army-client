@@ -103,6 +103,10 @@
       public static const BUILD_WITH_AIR:Boolean = false;
       
       public static const COOKIE_SETTINGS_NAME:String = "Settings";
+	  
+      public static const COOKIE_PERMISSION_NAME:String = "Permission";
+	  
+      public static const COOKIE_PERMISSION_NAME_OK:String = "PermissionOk";
       
       public static const COOKIE_SETTINGS_NAME_MUSIC:String = "Music";
       
