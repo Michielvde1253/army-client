@@ -32,6 +32,8 @@
 		private var mButtonBack: ArmyButton;
 
 		private var mButtonTutorial: ArmyButton;
+		
+		private var mButtonStorage: ArmyButton;
 
 		private var settingsHeader: TextField;
 
@@ -86,6 +88,9 @@
 
 				this.mButtonTutorial = addButton(mClip, "Button_tutorial", this.tabPressed);
 				this.mButtonTutorial.setVisible(true);
+				
+				this.mButtonStorage = addButton(mClip, "Button_storage", this.tabPressed);
+				this.mButtonStorage.setVisible(true);
 
 				this.mButtonSettingMusicOn.setText(GameState.getText("BUTTON_ON_TEXT"), "Text_Title");
 				this.mButtonSettingMusicOff.setText(GameState.getText("BUTTON_OFF_TEXT"), "Text_Title");
@@ -157,6 +162,9 @@
 				GameState.mInstance.mHUD.openPauseScreen();
 			} else if (param1.target == this.mButtonTutorial.getMovieClip()) {
 				GameState.mInstance.mHUD.openRestartTutorialConfirmationTextBox();
+			} else if (param1.target == this.mButtonStorage.getMovieClip()) {
+				mDoneCallback((this as Object).constructor);
+				GameState.mInstance.mHUD.openGiveFilePermissionScreen();
 			} else if (param1.target == this.mButtonSettingMusicOn.getMovieClip() || param1.target == this.mButtonSettingMusicOff.getMovieClip()) {
 				_loc2_.setMusicOn(!_loc2_.isMusicOn());
 				if (_loc2_.isMusicOn()) {

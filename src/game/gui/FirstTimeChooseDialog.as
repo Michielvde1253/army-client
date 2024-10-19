@@ -66,7 +66,7 @@
 					break;
 				case this.mButtonOffline.getMovieClip():
 					mDoneCallback((this as Object).constructor);
-					GameState.mInstance.mHUD.openPauseScreen()
+					GameState.mInstance.mHUD.openPauseScreen();
 					break;
 			}
 		}

@@ -122,6 +122,7 @@
 	import game.states.GameState;
 	import game.utils.TimeUtils;
 	import game.utils.OfflineSave;
+	import com.dchoc.utils.Cookie;
 
 	public class GameHUD extends MovieClip implements HUDInterface {
 
@@ -245,7 +246,7 @@
 		private var mButtonPowerup: ArmyButton;
 
 		private var mButtonMap: ArmyButton;
-		
+
 		private var mButtonPvp: ArmyButton;
 
 		private var mBackHomeY: int;
@@ -558,11 +559,11 @@
 				var _loc1_: Class = DCResourceManager.getInstance().getSWFClass(Config.SWF_INTERFACE_NAME, "hud_new_top");
 				var _loc2_: Class = DCResourceManager.getInstance().getSWFClass(Config.SWF_INTERFACE_NAME, "hud_new_bottom");
 			}
-					CONFIG::BUILD_FOR_AIR {
+			CONFIG::BUILD_FOR_AIR {
 				var _loc1_: Class = DCResourceManager.getInstance().getSWFClass(Config.SWF_INTERFACE_NAME, "hud_new_top");
 				var _loc2_: Class = DCResourceManager.getInstance().getSWFClass(Config.SWF_INTERFACE_NAME, "hud_new_bottom");
 			}
-					CONFIG::NOT_BUILD_FOR_AIR {
+			CONFIG::NOT_BUILD_FOR_AIR {
 				var _loc1_: Class = DCResourceManager.getInstance().getSWFClass(Config.SWF_INTERFACE_NAME, "hud_new_top");
 				var _loc2_: Class = DCResourceManager.getInstance().getSWFClass(Config.SWF_INTERFACE_NAME, "hud_new_bottom");
 			}
@@ -582,7 +583,7 @@
 			this.mHudButtonShop = Utils.createBasicButton(this.mIngameHUDClip_BOTTOM, "Button_shop", this.buttonShopPressed);
 			this.mHudButtonSave = Utils.createBasicButton(this.mIngameHUDClip_BOTTOM, "Button_save", this.buttonSavePressed);
 			this.mButtonMap = Utils.createBasicButton(this.mIngameHUDClip_BOTTOM, 'Button_Map', this.buttonMapPressed);
-		    this.mButtonPvp = Utils.createBasicButton(this.mIngameHUDClip_BOTTOM, 'Button_Pvp', this.buttonPvpPressed);
+			this.mButtonPvp = Utils.createBasicButton(this.mIngameHUDClip_BOTTOM, 'Button_Pvp', this.buttonPvpPressed);
 
 
 			this.mRightPlaceButtonClip = this.mIngameHUDClip.getChildByName("right_button") as MovieClip;
@@ -1165,6 +1166,7 @@
 		}
 
 		public function buttonSavePressed(param1: MouseEvent): void {
+			trace("saved game")
 			CONFIG::BUILD_FOR_AIR {
 				var file: File = new File();
 				file.addEventListener(PermissionEvent.PERMISSION_STATUS, onPermission);
@@ -1178,7 +1180,11 @@
 			}
 			CONFIG::BUILD_FOR_MOBILE_AIR {
 				// Resolve the file path
-				var file: File = File.applicationStorageDirectory.resolvePath("savefile.txt");
+				if (Cookie.readCookieVariable(Config.COOKIE_SETTINGS_NAME, Config.COOKIE_SETTINGS_NAME_SAVELOCATION) == "documents") {
+					var file: File = File.documentsDirectory.resolvePath("ArmyAttack/savefile.txt");
+				} else {
+					var file: File = File.applicationStorageDirectory.resolvePath("savefile.txt");
+				}
 				file.addEventListener(PermissionEvent.PERMISSION_STATUS, onPermission);
 				file.requestPermission();
 			}
@@ -1186,8 +1192,13 @@
 
 		CONFIG::BUILD_FOR_MOBILE_AIR {
 			public function autoSaveGame(param1: TimerEvent): void {
+				trace("auto saved game")
 				// Resolve the file path
-				var file: File = File.applicationStorageDirectory.resolvePath("savefile.txt");
+				if (Cookie.readCookieVariable(Config.COOKIE_SETTINGS_NAME, Config.COOKIE_SETTINGS_NAME_SAVELOCATION) == "documents") {
+					var file: File = File.documentsDirectory.resolvePath("ArmyAttack/savefile.txt");
+				} else {
+					var file: File = File.applicationStorageDirectory.resolvePath("savefile.txt");
+				}
 				file.addEventListener(PermissionEvent.PERMISSION_STATUS, onPermission);
 				file.requestPermission();
 			}
@@ -1311,7 +1322,7 @@
 			this.cancelTools();
 			this.mFileBeingLoaded = null;
 		}
-	
+
 		public function openFirstTimeChooseScreen(): void {
 			if (ArmySoundManager.getInstance().isMusicOn()) {
 				if (Config.RESTART_STATUS == -1 && PauseDialog.mPauseScreenPreviousState == PauseDialog.STATE_UNDEFINED) {
@@ -1319,6 +1330,12 @@
 				}
 			}
 			this.openDialogIfResourceLoaded(Config.SWF_MAIN_MENU_NAME, FirstTimeChooseDialog, [this.closeDialog]);
+			this.cancelTools();
+			this.mFileBeingLoaded = null;
+		}
+
+		public function openGiveFilePermissionScreen(): void {
+			this.openDialogIfResourceLoaded(Config.SWF_MAIN_MENU_NAME, GiveFilePermissionDialog, [this.closeDialog]);
 			this.cancelTools();
 			this.mFileBeingLoaded = null;
 		}
@@ -1399,7 +1416,7 @@
 			this.openDialog(RedeployHealWarningWindow, [this.closeDialog], null, true);
 			this.mGame.cancelAllPlayerActions();
 		}
-	
+
 		public function openRestartTutorialConfirmationTextBox(): void {
 			this.openDialog(ConfirmRestartTutorialWindow, [this.closeDialog], null, true);
 			this.mGame.cancelAllPlayerActions();
@@ -1464,12 +1481,12 @@
 			this.openDialogIfResourceLoaded(Config.SWF_POPUPS_WARNINGS_NAME, InfantryCapFullWindow, [this.closeDialog]);
 			this.mGame.cancelAllPlayerActions();
 		}
-	
+
 		public function openArmorCapTextBox(): void {
 			this.openDialogIfResourceLoaded(Config.SWF_POPUPS_WARNINGS_NAME, ArmorCapFullWindow, [this.closeDialog]);
 			this.mGame.cancelAllPlayerActions();
 		}
-	
+
 		public function openArtilleryCapTextBox(): void {
 			this.openDialogIfResourceLoaded(Config.SWF_POPUPS_WARNINGS_NAME, ArtilleryCapFullWindow, [this.closeDialog]);
 			this.mGame.cancelAllPlayerActions();
@@ -1879,7 +1896,7 @@
 			_loc1_.push(this.mPullOutMenu.getChildByName("Button_save"));
 			_loc1_.push(this.mPullOutMenu.getChildByName("Button_social"));
 			_loc1_.push(this.mPullOutMenu.getChildByName("Button_Map"));
-		    _loc1_.push(this.mPullOutMenu.getChildByName("Button_Pvp"));
+			_loc1_.push(this.mPullOutMenu.getChildByName("Button_Pvp"));
 			_loc1_.push(this.mPullOutMenu.getChildByName("Button_settings"));
 			_loc1_.push(this.mButtonPullOutFrame.getChildByName("button_heal"));
 			_loc1_.push(this.mButtonPullOutFrame.getChildByName("button_pullout_tools"));
@@ -2185,12 +2202,12 @@
 		private function buttonMapPressed(param1: MouseEvent): void {
 			this.openDialogIfResourceLoaded("swf/map", WorldMapWindow, [this.closeDialog]);
 		}
-	
+
 		private function buttonPvpPressed(param1: MouseEvent): void {
 			if (!MissionManager.isTutorialCompleted()) {
 				return;
 			}
-		    GameState.mInstance.openPvPMatchUpDialog();
+			GameState.mInstance.openPvPMatchUpDialog();
 		}
 
 		public function updateMapButtonEnablation(): void {

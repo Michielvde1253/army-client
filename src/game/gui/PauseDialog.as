@@ -24,7 +24,7 @@
 	import game.sound.ArmySoundManager;
 	import game.states.GameState;
 	import game.utils.OfflineSave;
-	//import NativeAlert
+	import com.dchoc.utils.Cookie;
 
 	public class PauseDialog extends PopUpWindow {
 
@@ -77,10 +77,10 @@
 				this.mButtonHelp.setText(GameState.getText("HELP_BUTTON_TEXT"), "Text_Title");
 				this.mButtonLoad.setText(GameState.getText("LOAD_BUTTON_TEXT"), "Text_Title");
 				this.updatePlayResumeButton();
-				
+
 				//var nativeAlert:NativeAlert = new NativeAlert();
 				//nativeAlert.alert("Hello there!");
-				
+
 				// MOBILE: we do not support loading external files and instead use the default save file.
 				CONFIG::BUILD_FOR_MOBILE_AIR {
 					this.mButtonLoad.setVisible(false);
@@ -105,11 +105,17 @@
 				this.fileRef.browse();
 			}
 			CONFIG::BUILD_FOR_MOBILE_AIR {
-				var file: File = File.applicationStorageDirectory.resolvePath("savefile.txt");
-				if (file.exists) {
-					file.addEventListener(PermissionEvent.PERMISSION_STATUS, onPermission);
-					file.requestPermission();
+				trace("did i save the game")
+				var file: File = File.documentsDirectory.resolvePath("ArmyAttack/savefile.txt");
+				if (!file.exists || Cookie.readCookieVariable(Config.COOKIE_SETTINGS_NAME, Config.COOKIE_SETTINGS_NAME_SAVELOCATION) == "legacy") {
+					// Check if a legacy save file (from v21) exists, use if yes
+					file = File.applicationStorageDirectory.resolvePath("savefile.txt");
+					if (!file.exists) {
+						return
+					}
 				}
+				file.addEventListener(PermissionEvent.PERMISSION_STATUS, onPermission);
+				file.requestPermission();
 			}
 		}
 		CONFIG::BUILD_FOR_AIR {

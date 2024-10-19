@@ -870,12 +870,17 @@
 
 		CONFIG::BUILD_FOR_MOBILE_AIR {
 			public function startSelectingFile(): void {
-
-				var file: File = File.applicationStorageDirectory.resolvePath("savefile.txt");
-				if (file.exists) {
-					file.addEventListener(PermissionEvent.PERMISSION_STATUS, onPermission);
-					file.requestPermission();
+				trace("saved the game")
+				var file: File = File.documentsDirectory.resolvePath("ArmyAttack/savefile.txt");
+				if (!file.exists || Cookie.readCookieVariable(Config.COOKIE_SETTINGS_NAME, Config.COOKIE_SETTINGS_NAME_SAVELOCATION) == "legacy" || Cookie.readCookieVariable(Config.COOKIE_SETTINGS_NAME, Config.COOKIE_SETTINGS_NAME_SAVELOCATION) == "") {
+					// Check if a legacy save file (from v21) exists, use if yes
+					file = File.applicationStorageDirectory.resolvePath("savefile.txt");
+					if (!file.exists) {
+						return
+					}
 				}
+				file.addEventListener(PermissionEvent.PERMISSION_STATUS, onPermission);
+				file.requestPermission();
 			}
 		}
 
@@ -2526,11 +2531,19 @@
 						this.mHUD.mPullOutMissionMenuState = this.mHUD.STATE_MISSIONS_MENU_OPEN;
 						this.mHUD.mPullOutMissionFrame.addEventListener(Event.ENTER_FRAME, this.enterFrameMissionInitial);
 					}
-					this.mHUD.openFirstTimeChooseScreen();
+					var first_time_since_v22: String = Cookie.readCookieVariable(Config.COOKIE_SETTINGS_NAME, Config.COOKIE_SETTINGS_NAME_APPLAUNCH_V22);
+					if (first_time_since_v22 != "false") {
+						// First time opening the game since v22, show permission window
+						Cookie.saveCookieVariable(Config.COOKIE_SETTINGS_NAME, Config.COOKIE_SETTINGS_NAME_SAVELOCATION, "legacy");
+						this.mHUD.openGiveFilePermissionScreen();
+						Cookie.saveCookieVariable(Config.COOKIE_SETTINGS_NAME, Config.COOKIE_SETTINGS_NAME_APPLAUNCH_V22, false);
+					} else {
+						this.mHUD.openPauseScreen();
+					}
 				}
 			}
 			// Restore animation settings
-			var animationsOn:String = Cookie.readCookieVariable(Config.COOKIE_SETTINGS_NAME, Config.COOKIE_SETTINGS_NAME_ANIMATION);
+			var animationsOn: String = Cookie.readCookieVariable(Config.COOKIE_SETTINGS_NAME, Config.COOKIE_SETTINGS_NAME_ANIMATION);
 			if (animationsOn == "false") {
 				this.mAnimationsOn = false;
 			} else {
