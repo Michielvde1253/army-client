@@ -2531,13 +2531,21 @@
 						this.mHUD.mPullOutMissionMenuState = this.mHUD.STATE_MISSIONS_MENU_OPEN;
 						this.mHUD.mPullOutMissionFrame.addEventListener(Event.ENTER_FRAME, this.enterFrameMissionInitial);
 					}
-					var first_time_since_v22: String = Cookie.readCookieVariable(Config.COOKIE_SETTINGS_NAME, Config.COOKIE_SETTINGS_NAME_APPLAUNCH_V22);
-					if (first_time_since_v22 != "false") {
-						// First time opening the game since v22, show permission window
-						Cookie.saveCookieVariable(Config.COOKIE_SETTINGS_NAME, Config.COOKIE_SETTINGS_NAME_SAVELOCATION, "legacy");
-						this.mHUD.openGiveFilePermissionScreen();
-						Cookie.saveCookieVariable(Config.COOKIE_SETTINGS_NAME, Config.COOKIE_SETTINGS_NAME_APPLAUNCH_V22, false);
-					} else {
+					CONFIG::BUILD_FOR_MOBILE_AIR {
+						var first_time_since_v22: String = Cookie.readCookieVariable(Config.COOKIE_SETTINGS_NAME, Config.COOKIE_SETTINGS_NAME_APPLAUNCH_V22);
+						if (first_time_since_v22 != "false") {
+							// First time opening the game since v22, show permission window
+							Cookie.saveCookieVariable(Config.COOKIE_SETTINGS_NAME, Config.COOKIE_SETTINGS_NAME_SAVELOCATION, "legacy");
+							this.mHUD.openGiveFilePermissionScreen();
+							Cookie.saveCookieVariable(Config.COOKIE_SETTINGS_NAME, Config.COOKIE_SETTINGS_NAME_APPLAUNCH_V22, false);
+						} else {
+							this.mHUD.openPauseScreen();
+						}
+					}
+					CONFIG::BUILD_FOR_AIR {
+						this.mHUD.openPauseScreen();
+					}
+					CONFIG::NOT_BUILD_FOR_AIR {
 						this.mHUD.openPauseScreen();
 					}
 				}

@@ -90,7 +90,15 @@
 				this.mButtonTutorial.setVisible(true);
 				
 				this.mButtonStorage = addButton(mClip, "Button_storage", this.tabPressed);
+				CONFIG::BUILD_FOR_MOBILE_AIR {
 				this.mButtonStorage.setVisible(true);
+				}
+				CONFIG::BUILD_FOR_AIR {
+				this.mButtonStorage.setVisible(false);
+				}
+				CONFIG::NOT_BUILD_FOR_AIR {
+				this.mButtonStorage.setVisible(false);
+				}
 
 				this.mButtonSettingMusicOn.setText(GameState.getText("BUTTON_ON_TEXT"), "Text_Title");
 				this.mButtonSettingMusicOff.setText(GameState.getText("BUTTON_OFF_TEXT"), "Text_Title");

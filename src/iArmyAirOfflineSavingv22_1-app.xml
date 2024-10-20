@@ -16,13 +16,13 @@
 	<text xml:lang="ja">Japanese App name goes here</text>
 	</name>
 -->
-<application xmlns="http://ns.adobe.com/air/application/50.2">
+<application xmlns="http://ns.adobe.com/air/application/51.0">
   <id>ArmyAttack</id>
   <versionNumber>22</versionNumber>
   <versionLabel/>
-  <filename>iArmyAirOfflineSavingv22_1</filename>
+  <filename>Army Attack</filename>
   <description/>
-  <name>iArmyAirOfflineSavingv22_1</name>
+  <name>Army Attack</name>
   <copyright/>
   <initialWindow>
     <content>iArmyAirOfflineSavingv22_1.swf</content>
@@ -50,7 +50,7 @@
     
     
     
-    </icon>
+    <image48x48>AppIconsForPublish/icon48.png</image48x48></icon>
   <customUpdateUI>false</customUpdateUI>
   <allowBrowserInvocation>false</allowBrowserInvocation>
   <android>
@@ -740,4 +740,11 @@
   
   
   
+  
+  
+  
+  
+  <extensions>
+    <extensionID>fi.joniaromaa.adobeair.discordrpc</extensionID>
+  </extensions>
 </application>
