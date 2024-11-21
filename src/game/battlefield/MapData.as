@@ -164,8 +164,8 @@
 				this.mGrid[_loc11_] = _loc14_;
 				_loc11_++;
 			}
-			GameState.mInstance.mPlayerProfile.mSecsSinceLastEnemySpawn = param1.mData.secs_since_last_enemy_spawn;
-			GameState.mInstance.setSpawnTimer();
+			//GameState.mInstance.mPlayerProfile.mSecsSinceLastEnemySpawn = param1.mData.secs_since_last_enemy_spawn;
+			//GameState.mInstance.setSpawnTimer();
 			var _loc12_: Array = param1.mData.player_tiles;
 			var _loc13_: int = 0;
 			while (_loc13_ < _loc12_.length) {

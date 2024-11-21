@@ -79,6 +79,10 @@
 		public function getRewardMoney(): int {
 			return this.mProducerItem is HFEItem && this.isWithered() ? 0 : int(this.mProduction.RewardMoney);
 		}
+	
+		public function getRewardPremium(): int { // Gold factory
+			return this.mProducerItem is HFEItem && this.isWithered() ? 0 : int(this.mProduction.RewardPremium);
+		}
 
 		public function getRewardXp(): int {
 			return this.mProducerItem is HFEItem && this.isWithered() ? 0 : int(this.mProduction.RewardXp);
@@ -226,10 +230,9 @@
 			var _loc6_: int = this.getRewardMoney();
 			var _loc7_: int = this.getRewardXp();
 			var _loc8_: int = this.getRewardSupplies();
+			var _loc12_: int = this.getRewardPremium();
 			var _loc9_: int = this.getRewardEnergy();
 			var _loc10_: int = this.getRewardWater();
-			trace("Reward water:");
-			trace(_loc10_);
 			if (this.mProducerBuilding) {
 				_loc10_ += _loc10_ * this.mProducerBuilding.getHelpingFriends().length;
 				this.mProducerBuilding.resetHelpingFriends();
@@ -239,11 +242,13 @@
 			_loc4_.addLootReward(ItemManager.getItem("Money", "Resource"), _loc6_, param1);
 			_loc4_.addLootReward(ItemManager.getItem("XP", "Resource"), _loc7_, param1);
 			_loc4_.addLootReward(ItemManager.getItem("Supplies", "Resource"), _loc8_, param1);
+			_loc4_.addLootReward(ItemManager.getItem("Premium", "Resource"), _loc12_, param1);
 			_loc4_.addLootReward(ItemManager.getItem("Energy", "Resource"), _loc11_, param1);
 			_loc4_.addLootReward(ItemManager.getItem("Water", "Resource"), _loc10_, param1);
 			param2.reward_money = _loc6_;
 			param2.reward_xp = _loc7_;
 			param2.reward_water = _loc10_;
+			param2.reward_premium = _loc12_;
 			param2.reward_supplies = _loc8_;
 			param2.reward_energy = _loc9_;
 		}

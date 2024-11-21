@@ -11,6 +11,7 @@
 	import game.net.ServerCall;
 	import game.net.ServiceIDs;
 	import game.sound.ArmySoundManager;
+	import com.dchoc.utils.Cookie;
 
 	public class GameLoadingFirst extends LoadingFirst {
 
@@ -61,6 +62,9 @@
 				mLoadingClip.mouseEnabled = true;
 				mLoadingClip.mouseChildren = true;
 			}
+		
+			// Start camera at default position until save file is loaded
+			Cookie.saveCookieVariable(Config.COOKIE_SESSION_NAME,Config.COOKIE_SESSION_NAME_CAM_POS + "_Home","");
 		}
 
 		override public function logicUpdate(param1: int): void {

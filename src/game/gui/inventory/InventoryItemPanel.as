@@ -28,6 +28,8 @@
 
 		private var mItemButton: DCButton;
 
+		private var is_item_being_pressed: Boolean = false;
+
 		public function InventoryItemPanel(param1: MovieClip, param2: InventoryDialog) {
 			super();
 			this.mBasePanel = param1;
@@ -87,12 +89,16 @@
 		}
 
 		private function usePressed(param1: MouseEvent): void {
+			trace("usePressed")
+			if (this.mItem is ResourceItem || this.mItem is CollectibleItem) {
+				InventoryDialog(this.mDialog).refresh()
+			}
 			if (this.mItem is ShopItem) {
 				if ((this.mItem as ShopItem).capAvailable()) {
-					param1.stopPropagation();
+					param1.stopImmediatePropagation();
 					InventoryDialog(this.mDialog).useItem(this.mItem);
 				} else {
-					param1.stopPropagation();
+					param1.stopImmediatePropagation();
 					if (this.mItem.mType == "Infantry") {
 						GameState.mInstance.mHUD.openInfantryCapTextBox();
 					} else if (this.mItem.mType == "Armor") {
@@ -105,7 +111,7 @@
 					InventoryDialog(this.mDialog).closeDialog();
 				}
 			} else {
-				param1.stopPropagation();
+				param1.stopImmediatePropagation();
 				InventoryDialog(this.mDialog).useItem(this.mItem);
 			}
 		}

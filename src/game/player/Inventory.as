@@ -1,4 +1,4 @@
-package game.player
+﻿package game.player
 {
    import game.battlefield.MapData;
    import game.gameElements.EnemyInstallationObject;
@@ -46,6 +46,7 @@ package game.player
       
       public function initializeFromServer(param1:*) : void
       {
+		 trace("initializing from server")
          var _loc3_:* = null;
          var _loc6_:Item = null;
          this.mInventoryChangedForGetAreas = true;

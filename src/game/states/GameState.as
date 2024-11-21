@@ -727,6 +727,7 @@
 						this.mIntroScrollTime += param1;
 						_loc8_ = _loc6_;
 						this.mScene.mCamera.moveTo(_loc5_, _loc7_);
+						trace("just here")
 						++this.mIntroStep;
 					} else if (this.mIntroStep == 1) {
 						_loc9_ = int(mConfig.Tutorial.PlayerUnit.Unit.AreaX);
@@ -1423,6 +1424,7 @@
 		}
 
 		private function setCameraToActivatedCharacter(param1: Boolean = false): void {
+			trace("no here")
 			if (!this.mActivatedPlayerUnit) {
 				return;
 			}

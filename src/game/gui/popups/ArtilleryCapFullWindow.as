@@ -33,7 +33,7 @@
          mDoneCallback = param1;
          _loc2_ = new StylizedHeaderClip(mClip.getChildByName("Header") as MovieClip,GameState.getText("MENU_HEADER_UNIT_CAP"));
          _loc3_ = mClip.getChildByName("Text_Description") as TextField;
-         _loc3_.text = GameState.getText("MENU_DESC_UNIT_CAP");
+         _loc3_.text = GameState.getText("MENU_DESC_UNIT_ARTILLERY");
       }
       
       private function closeClicked(param1:MouseEvent) : void

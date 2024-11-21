@@ -3430,6 +3430,7 @@
             this.mSceneHud.y = _loc3_;
             this.mTilemapGraphic.updateTilemap();
          }
+		 this.mCamera.update();
       }
       
       public function areaDamage(param1:Number, param2:Number, param3:int, param4:Number) : void

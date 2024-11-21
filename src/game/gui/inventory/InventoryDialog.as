@@ -1,4 +1,4 @@
-package game.gui.inventory
+﻿package game.gui.inventory
 {
    import com.dchoc.graphics.DCResourceManager;
    import flash.display.MovieClip;

@@ -18,6 +18,9 @@
 	import game.missions.MissionManager;
 	import game.gameElements.Production;
 	import game.net.ServerCall;
+	import com.dchoc.utils.Cookie;
+	import game.characters.EnemyUnit;
+	import game.characters.PlayerUnit;
 
 	public class OfflineSave {
 
@@ -67,7 +70,15 @@
 					if (mapgrid[i]["mCharacter"]["mItem"]) {
 						unit["item_id"] = mapgrid[i]["mCharacter"]["mItem"]["mId"];
 						unit["item_type"] = ItemManager.getTableNameForItem(mapgrid[i]["mCharacter"]["mItem"]);
-						unit["activation_time"] = 0;
+						if (mapgrid[i]["mCharacter"] is EnemyUnit) {
+							unit["next_action_at"] = Math.round(mapgrid[i]["mCharacter"]["mReactionStateCounter"] / 1000); // Time until next move
+							unit["activation_time"] = mapgrid[i]["mCharacter"].getActivationTimeInMinutes(); // Probably unused
+						} else if (mapgrid[i]["mCharacter"] is PlayerUnit) {
+							unit["next_action_at"] = Math.round(mapgrid[i]["mCharacter"].getDyingTimer() / 1000); // Time to dying (for not-premium units)
+							unit["activation_time"] = 0;
+						} else { // PlayerUnit + Buildings
+							unit["activation_time"] = 0;
+						}
 						unit["item_hit_points"] = mapgrid[i]["mCharacter"]["mHealth"];
 						gamefield_items.push(unit);
 					}
@@ -183,6 +194,7 @@
 			profilesave["energy_recharge_time"] = profile["mTimeBetweenEnergyRecharges"];
 			profilesave["resource_energy_percentiles"] = profile.getEnergyRewardCounter();
 			profilesave["resource_energy_percentiles"] = profile.getEnergyRewardCounter();
+			profilesave["secs_since_last_enemy_spawn"] = Math.round(Number(GameState.mInstance.getSpawnEnemyTimer()) / 1000);
 			k = 0;
 			var l: int = 0;
 			var invtype: Array = [];
@@ -195,11 +207,14 @@
 				l = 0;
 				while (l < invtype.length) {
 					item = {};
-					if (invtype[l]["mType"] == "Area") {
-						invtype[l]["mType"] = "MapArea";
-					}
 					item["item_id"] = invtype[l]["mId"];
-					item["item_type"] = invtype[l]["mType"];
+					if (invtype[l]["mType"] == "Area") {
+						item["item_type"] = "MapArea";
+					} else if (invtype[l]["mType"] == "Infantry" || invtype[l]["mType"] == "Armor" || invtype[l]["mType"] == "Artillery") {
+						item["item_type"] = "PlayerUnit";
+					} else {
+						item["item_type"] = invtype[l]["mType"];
+					}
 					l++;
 					amount = int(invtype[l]);
 					item["item_count"] = amount;
@@ -348,10 +363,8 @@
 		public static function saveOldMap(): void {
 			var old_map_id: String = GameState.mInstance.mCurrentMapId;
 			if (old_map_id.indexOf("pvp_") == -1) {
-				var secs_since_last_enemy_spawn: Number = Math.round(Number(GameState.mInstance.getSpawnEnemyTimer()) / 1000);
 				mMaps[old_map_id] = {
 					"map_name": old_map_id,
-					"secs_since_last_enemy_spawn": secs_since_last_enemy_spawn,
 					"map_data": generateGamefieldJson()
 				};
 			}
@@ -396,12 +409,11 @@
 
 		public static function generateSaveJson(): * {
 			var map_id: String = GameState.mInstance.mCurrentMapId;
-			var secs_since_last_enemy_spawn: Number = Math.round(Number(GameState.mInstance.getSpawnEnemyTimer()) / 1000);
 			if (map_id.indexOf("pvp_") == -1) {
 				mMaps[map_id] = {
 					"map_name": map_id,
-					"secs_since_last_enemy_spawn": secs_since_last_enemy_spawn,
-					"map_data": generateGamefieldJson()
+					"map_data": generateGamefieldJson(),
+					"last_camera_position": Cookie.readCookieVariable(Config.COOKIE_SESSION_NAME, Config.COOKIE_SESSION_NAME_CAM_POS + "_" + map_id)
 				};
 			}
 			var savedata: * = {};
@@ -443,6 +455,10 @@
 				savedata["profile"]["pvp_data"] = {};
 				savedata["profile"]["pvp_data"]["wins"] = 0;
 				savedata["profile"]["pvp_data"]["score"] = 0;
+				var i: * = 0;
+				for (i in savedata["maps"]) {
+					savedata["maps"][i]["last_camera_position"] = ""
+				}
 			}
 			return savedata;
 		}
@@ -565,6 +581,7 @@
 			var now: int = Math.round(dateobj.valueOf() / 1000);
 			var then: int = Math.round(Number(savedata["time_of_last_save"]) / 1000);
 			var time_diff: * = now - then;
+			savedata["profile"]["secs_since_last_enemy_spawn"] += time_diff
 			if (savedata["profile"]["resource_energy"] < savedata["profile"]["energy_cap"]) {
 				if (time_diff >= savedata["profile"]["secs_to_energy_gain"]) {
 					savedata["profile"]["resource_energy"]++;
@@ -609,6 +626,7 @@
 			var i: * = 0;
 			for (i in savedata["maps"]) {
 				mMaps[savedata["maps"][i]["map_name"]] = updateMapTimers(savedata["maps"][i], time_diff);
+				Cookie.saveCookieVariable(Config.COOKIE_SESSION_NAME, Config.COOKIE_SESSION_NAME_CAM_POS + "_" + savedata["maps"][i]["map_name"], savedata["maps"][i]["last_camera_position"]);
 			}
 			GameState.mInstance.initObjects(null); // Remove existing units
 

@@ -62,7 +62,7 @@
       "OutOfResourceText": "#TID.POP_UP_WATER_DESC",
       "OutOfResourceFeed": "#FeedObjects.RequestWater",
       "OutOfResourcePopupClassName": "popup_ask_water",
-      "UnlockMission": "#Mission.AREA_SE_WP_outro8"
+      "UnlockMission": "#Mission.AREA_SE_AIRPORT_C1_outro5"
     },
     "pvp_map_1_4valleys_11x11": {
       "ID": "pvp_map_1_4valleys_11x11",
@@ -9409,6 +9409,55 @@
       "WeaponType": "explosion",
       "MovementType": "normal",
       "PvPCostSupplies": "190"
+    },
+    "EliteRocketeer": {
+      "ID": "EliteRocketeer",
+      "Type": "Infantry",
+      "Name": "#TID.UNIT_ROCKETEER_TITLE",
+      "Description": "#TID.UNIT_ROCKETEER_DESC",
+      "IconGraphics": "icons/shop_icons/icon_units_rocketeer.png",
+      "Graphic_idle": "swf/units_player_late/elite_rocketeer_idle",
+      "Graphic_move": "swf/units_player_late/elite_rocketeer_moving",
+      "Graphic_aim": "swf/units_player_late/elite_rocketeer_aim",
+      "Graphic_shoot": "swf/units_player_late/elite_rocketeer_fire",
+      "Graphic_hit": "swf/units_player_late/elite_rocketeer_hit",
+      "Graphic_die": "swf/units_player_late/elite_rocketeer_dead",
+      "Graphic_aim_up": "swf/units_player_late/elite_rocketeer_aim_ne",
+      "Graphic_shoot_up": "swf/units_player_late/elite_rocketeer_fire_ne",
+      "Graphic_move_up": "swf/units_player_late/elite_rocketeer_moving_ne",
+      "Graphic_explosion": "swf/effects_low/effect_explosion",
+      "ObjectClass": "game.characters.PlayerUnit",
+      "RequiredLevel": "1",
+      "RequiredAllies": "0",
+      "CostMoney": "0",
+      "CostSupplies": "0",
+      "CostPremium": "99",
+      "Health": "6",
+      "Damage": "6",
+      "AttackRange": "1",
+      "SightRange": "4",
+      "MovementRange": "5",
+      "PvpMovementRange": "2",
+      "MaxHealTime": "0",
+      "HealCostEnergy": "0",
+      "HealCostSupplies": "900",
+      "ReviveCostSupplies": "0",
+      "HealRewardMoney": "0",
+      "HealRewardXP": "5",
+      "HealRewardEnergy": "20",
+      "DimX": "1",
+      "DimY": "1",
+      "DimZ": "1",
+      "DisbandRewardMoney": "3500",
+      "MovementRewardXP": "1",
+      "MovementRewardEnergy": "20",
+      "CostUnlock": "1",
+      "ImageUrl": "cash_icon.png",
+      "PassableGroups": "#Passability.Land",
+      "PickupCostSupplies": "2000",
+      "WeaponType": "explosion",
+      "MovementType": "stealth",
+      "PvPCostSupplies": "190"
     }
   },
   "Building": {
@@ -9772,6 +9821,51 @@
       "CostUnlock": "12",
       "ImageUrl": "cash_icon.png",
       "AvailableInMaps": "Home,Desert"
+    },
+    "GoldFactory": {
+      "ID": "GoldFactory",
+      "Type": "Building",
+      "Name": "#TID.BUILDING_GOLD_FACTORY",
+      "Description": "#TID.BUILDING_GOLD_FACTORY_DESC",
+      "IconGraphics": "icons/shop_icons/icon_buildings_gold_factory.png",
+      "Graphics": "swf/buildings_player_start_low/gold_factory",
+      "ConstructionSiteGraphics": "construction_site_hq",
+      "GraphicsLoader": "InnerMovieClip",
+      "ObjectClass": "game.gameElements.ConstructionObject",
+      "RequiredLevel": "0",
+      "RequiredAllies": "0",
+      "CostMoney": "2000",
+      "CostSupplies": "0",
+      "CostPremium": "0",
+      "BuildSteps": "0",
+      "MaterialPerStep": "0",
+      "XPPerStep": "3",
+      "Ingredients": "",
+      "DimX": "3",
+      "DimY": "3",
+      "DimZ": "1",
+      "RewardMoney": "50",
+      "RewardXp": "0",
+      "RewardSupplies": "0",
+      "RewardPremium": "3",
+      "RewardMaterial": "0",
+      "RewardEnergy": "100",
+      "Time": "1",
+      "SpoilTime": "0",
+      "Health": "10",
+      "SightRange": "2",
+      "DisbandRewardMoney": "200",
+      "UnitCapIncrementInfantry": "0",
+      "UnitCapIncrementArmor": "0",
+      "UnitCapIncrementArtillery": "0",
+      "HealCostEnergy": "0",
+      "HealCostSupplies": "100",
+      "ReviveCostSupplies": "0",
+      "HealRewardMoney": "0",
+      "HealRewardXP": "1",
+      "HealRewardEnergy": "110",
+      "CostUnlock": "1",
+      "ImageUrl": "cash_icon.png"
     }
   },
   "ResourceBuilding": {
@@ -9814,7 +9908,8 @@
       "RewardEnergy": "0",
       "Time": "0",
       "AvailableInMaps": "Home",
-      "RequiredFriends": "6"
+      "RequiredFriends": "6",
+      "RequiredMission": "#Mission.AREA_SE_WP_HIDDEN"
     }
   },
   "BuildingIngredient": {
@@ -10034,6 +10129,26 @@
       "CostSupplies": "0",
       "CostPremium": "0",
       "Time": "960",
+      "SpoilTime": "0",
+      "HireCostPremium": "5"
+    },
+    "Gold": {
+      "ID": "Gold",
+      "Type": "BuildingDrive",
+      "Name": "#TID.BUILDING_DRIVE_WATER_1",
+      "Description": "#TID.BUILDING_DRIVE_WATER_1_DESC",
+      "Graphics": "icons/shop_icons/icon_water_pack_01.png",
+      "RewardWater": "0",
+      "RewardXp": "0",
+      "RewardMoney": "0",
+      "RewardPremium": "3",
+      "RewardSupplies": "0",
+      "RewardEnergy": "0",
+      "PlantRewardXP": "0",
+      "CostMoney": "75",
+      "CostSupplies": "0",
+      "CostPremium": "0",
+      "Time": "4320",
       "SpoilTime": "0",
       "HireCostPremium": "5"
     }
@@ -14754,7 +14869,7 @@
       "Type": "Resource",
       "Name": "#TID.PREMIUM",
       "Description": "#TID.PREMIUM",
-      "IconGraphics": "icons/resources/resource_icon_credits.png"
+      "IconGraphics": "icons/resources/newresource_icon_credits.png"
     },
     "Money": {
       "ID": "Money",
@@ -14980,8 +15095,8 @@
       "Type": "BuyGold",
       "Name": "#TID.GOLD_XS",
       "Description": "#TID.GOLD_XS_DESC",
-      "IconGraphics": "icons/shop_icons/icon_gold.png",
-      "CostPremium": "1.99",
+      "IconGraphics": "icons/shop_icons/icon_gold1.png",
+      "CostPremium": "0.01",
       "GoldGain": "20",
       "ImageUrl": "icon_dollar.png",
       "DescriptionSecondary": "#TID.GOLD_XS_DESC_SECONDARY"
@@ -14991,8 +15106,8 @@
       "Type": "BuyGold",
       "Name": "#TID.GOLD_SMALL",
       "Description": "#TID.GOLD_SMALL_DESC",
-      "IconGraphics": "icons/shop_icons/icon_gold.png",
-      "CostPremium": "4.99",
+      "IconGraphics": "icons/shop_icons/icon_gold2.png",
+      "CostPremium": "0.01",
       "GoldGain": "55",
       "ImageUrl": "icon_dollar.png",
       "DescriptionSecondary": "#TID.GOLD_SMALL_DESC_SECONDARY"
@@ -15002,8 +15117,8 @@
       "Type": "BuyGold",
       "Name": "#TID.GOLD_MEDIUM",
       "Description": "#TID.GOLD_MEDIUM_DESC",
-      "IconGraphics": "icons/shop_icons/icon_goldbag.png",
-      "CostPremium": "9.99",
+      "IconGraphics": "icons/shop_icons/icon_gold3.png",
+      "CostPremium": "0.01",
       "GoldGain": "115",
       "ImageUrl": "icon_dollar.png",
       "DescriptionSecondary": "#TID.GOLD_MEDIUM_DESC_SECONDARY"
@@ -15013,8 +15128,8 @@
       "Type": "BuyGold",
       "Name": "#TID.GOLD_LARGE",
       "Description": "#TID.GOLD_LARGE_DESC",
-      "IconGraphics": "icons/shop_icons/icon_goldbag.png",
-      "CostPremium": "24.99",
+      "IconGraphics": "icons/shop_icons/icon_gold4.png",
+      "CostPremium": "0.01",
       "GoldGain": "300",
       "ImageUrl": "icon_dollar.png",
       "DescriptionSecondary": "#TID.GOLD_LARGE_DESC_SECONDARY"
@@ -15024,8 +15139,8 @@
       "Type": "BuyGold",
       "Name": "#TID.GOLD_XL",
       "Description": "#TID.GOLD_XL_DESC",
-      "IconGraphics": "icons/shop_icons/icon_stackofgold.png",
-      "CostPremium": "49.99",
+      "IconGraphics": "icons/shop_icons/icon_gold5.png",
+      "CostPremium": "0.01",
       "GoldGain": "650",
       "ImageUrl": "icon_dollar.png",
       "DescriptionSecondary": "#TID.GOLD_XL_DESC_SECONDARY"
@@ -15035,8 +15150,8 @@
       "Type": "BuyGold",
       "Name": "#TID.GOLD_XXL",
       "Description": "#TID.GOLD_XXL_DESC",
-      "IconGraphics": "icons/shop_icons/icon_stackofgold.png",
-      "CostPremium": "99.99",
+      "IconGraphics": "icons/shop_icons/icon_gold6.png",
+      "CostPremium": "0.01",
       "GoldGain": "1500",
       "ImageUrl": "icon_dollar.png",
       "DescriptionSecondary": "#TID.GOLD_XXL_DESC_SECONDARY"
@@ -15049,7 +15164,7 @@
       "Name": "#TID.CASH_XS",
       "Description": "#TID.CASH_XS_DESC",
       "IconGraphics": "icons/shop_icons/icon_cash.png",
-      "CostPremium": "1.99",
+      "CostPremium": "0.01",
       "CashGain": "3900",
       "ImageUrl": "icon_dollar.png",
       "DescriptionSecondary": "#TID.CASH_XS_DESC_SECONDARY"
@@ -15060,7 +15175,7 @@
       "Name": "#TID.CASH_SMALL",
       "Description": "#TID.CASH_SMALL_DESC",
       "IconGraphics": "icons/shop_icons/icon_cash.png",
-      "CostPremium": "4.99",
+      "CostPremium": "0.01",
       "CashGain": "10000",
       "ImageUrl": "icon_dollar.png",
       "DescriptionSecondary": "#TID.CASH_SMALL_DESC_SECONDARY"
@@ -15071,7 +15186,7 @@
       "Name": "#TID.CASH_MEDIUM",
       "Description": "#TID.CASH_MEDIUM_DESC",
       "IconGraphics": "icons/shop_icons/icon_cashbag.png",
-      "CostPremium": "9.99",
+      "CostPremium": "0.01",
       "CashGain": "21000",
       "ImageUrl": "icon_dollar.png",
       "DescriptionSecondary": "#TID.CASH_MEDIUM_DESC_SECONDARY"
@@ -15082,7 +15197,7 @@
       "Name": "#TID.CASH_LARGE",
       "Description": "#TID.CASH_LARGE_DESC",
       "IconGraphics": "icons/shop_icons/icon_cashbag.png",
-      "CostPremium": "24.99",
+      "CostPremium": "0.01",
       "CashGain": "55000",
       "ImageUrl": "icon_dollar.png",
       "DescriptionSecondary": "#TID.CASH_LARGE_DESC_SECONDARY"
@@ -15093,7 +15208,7 @@
       "Name": "#TID.CASH_XL",
       "Description": "#TID.CASH_XL_DESC",
       "IconGraphics": "icons/shop_icons/icon_pileofcash.png",
-      "CostPremium": "49.99",
+      "CostPremium": "0.01",
       "CashGain": "120000",
       "ImageUrl": "icon_dollar.png",
       "DescriptionSecondary": "#TID.CASH_XL_DESC_SECONDARY"
@@ -15104,7 +15219,7 @@
       "Name": "#TID.CASH_XXL",
       "Description": "#TID.CASH_XXL_DESC",
       "IconGraphics": "icons/shop_icons/icon_pileofcash.png",
-      "CostPremium": "99.99",
+      "CostPremium": "0.01",
       "CashGain": "270000",
       "ImageUrl": "icon_dollar.png",
       "DescriptionSecondary": "#TID.CASH_XXL_DESC_SECONDARY"
@@ -20297,6 +20412,10 @@
     "11": {
       "ID": "11",
       "Item": "#PlayerUnit.EliteLandKreuzer"
+    },
+    "12": {
+      "ID": "12",
+      "Item": "#PlayerUnit.EliteRocketeer"
     }
   },
   "ShopBuilding": {
@@ -20335,6 +20454,10 @@
     "8": {
       "ID": "8",
       "Item": "#Building.Airport"
+    },
+    "9": {
+      "ID": "9",
+      "Item": "#Building.GoldFactory"
     }
   },
   "ShopPacks": {
@@ -26260,7 +26383,7 @@
       "Goal": "1",
       "Title": "#TID.MISSION_CAMPAIGN_SE_1_OBJECTIVE_4",
       "Description": "#TID.MISSION_CAMPAIGN_SE_1_OBJECTIVE_4",
-      "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_battle_fortress.png",
+      "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_comm_bunker.png",
       "CostFinish": "0"
     },
     "SEAPC_BUY_airport": {
