@@ -1,4 +1,4 @@
-package game.characters
+﻿package game.characters
 {
    import com.dchoc.graphics.DCResourceManager;
    import flash.display.MovieClip;
@@ -69,6 +69,8 @@ package game.characters
       public static const UNIT_ID_BULLDOZER:String = "Bulldozer";
       
       public static const UNIT_ID_SNIPER:String = "Sniper";
+	  
+      public static const UNIT_ID_PREMIUM_TANK:String = "PremiumTank";
       
       public static const REACT_STATE_WAIT_FOR_TIMER:int = 0;
       
@@ -212,6 +214,7 @@ package game.characters
                mAttackSounds = ArmySoundManager.SC_ENM_APC_ATTACK;
                break;
             case UNIT_ID_TANK:
+			case UNIT_ID_PREMIUM_TANK:
                mMoveSounds = ArmySoundManager.SC_TANK_MOVING;
                mDieSounds = ArmySoundManager.SC_ENM_TANK_DEATH;
                mAttackSounds = ArmySoundManager.SC_ENM_TANK_ATTACK;
