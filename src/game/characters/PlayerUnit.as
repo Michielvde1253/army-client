@@ -502,6 +502,13 @@
          var _loc3_:int = 0;
          while(_loc3_ < _loc2_.numChildren)
          {
+            if(_loc5_ = (_loc4_ = _loc2_.getChildAt(_loc3_) as MovieClip).getChildByName("Hint_Health_Friendly") as MovieClip)
+            {
+               if(param1 == _loc5_.visible)
+               {
+                  _loc5_.visible = !param1;
+               }
+            }
             if(_loc5_ = (_loc4_ = _loc2_.getChildAt(_loc3_) as MovieClip).getChildByName("Hint_Health_Friendly_Attention") as MovieClip)
             {
                if(param1 != _loc5_.visible)

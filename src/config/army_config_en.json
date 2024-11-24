@@ -8018,7 +8018,7 @@
         },
         "SHOP_BUILDING_ALREADY_ADDED": {
             "ID": "SHOP_BUILDING_ALREADY_ADDED",
-            "en": "You can only have 1 and you can only build it in your homeland"
+            "en": "You can only have %U of these"
         },
         "BUILDING_DRIVE_WATER_1": {
             "ID": "BUILDING_DRIVE_WATER_1",
@@ -12819,6 +12819,10 @@
         "BUILDING_GOLD_FACTORY_DESC": {
             "ID": "BUILDING_GOLD_FACTORY_DESC",
             "en": "Generates 3 Gold every 72 hours"
+        },
+        "SHOP_BUILDING_NOT_ON_THIS_MAP": {
+            "ID": "SHOP_BUILDING_NOT_ON_THIS_MAP",
+            "en": "You cannot buy this building on this map"
         }
     }
 }

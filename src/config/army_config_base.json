@@ -9445,7 +9445,9 @@
       "PickupCostSupplies": "2000",
       "WeaponType": "explosion",
       "MovementType": "normal",
-      "PvPCostSupplies": "190"
+      "PvPCostSupplies": "190",
+      "MaxAmount": "2",
+      "AvailableInMaps": "Home"
     },
     "EliteJuggernaut": {
       "ID": "EliteJuggernaut",
