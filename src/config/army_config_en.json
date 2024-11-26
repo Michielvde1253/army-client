@@ -12823,6 +12823,14 @@
         "SHOP_BUILDING_NOT_ON_THIS_MAP": {
             "ID": "SHOP_BUILDING_NOT_ON_THIS_MAP",
             "en": "You cannot buy this building on this map"
+        },
+        "BUILDING_HOSPITAL_READY": {
+            "ID": "BUILDING_HOSPITAL_READY",
+            "en": "Ready to heal!\\nMove a damaged unit nearby to heal"
+        },
+        "BUILDING_HOSPITAL_NOT_READY": {
+            "ID": "BUILDING_HOSPITAL_NOT_READY",
+            "en": "The healers are having a teambuilding today. Try again later!"
         }
     }
 }

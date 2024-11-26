@@ -10003,6 +10003,51 @@
       "HealRewardEnergy": "110",
       "CostUnlock": "1",
       "ImageUrl": "cash_icon.png"
+    },
+    "Hospital": {
+      "ID": "Hospital",
+      "Type": "ResourceBuilding",
+      "Name": "#TID.BUILDING_GOLD_FACTORY",
+      "Description": "#TID.BUILDING_GOLD_FACTORY_DESC",
+      "IconGraphics": "icons/shop_icons/icon_buildings_gold_factory.png",
+      "Graphics": "swf/buildings_player_start_low/hospital",
+      "ConstructionSiteGraphics": "construction_site_hq",
+      "GraphicsLoader": "InnerMovieClip",
+      "ObjectClass": "game.gameElements.HospitalBuilding",
+      "RequiredLevel": "0",
+      "RequiredAllies": "0",
+      "CostMoney": "2000",
+      "CostSupplies": "0",
+      "CostPremium": "0",
+      "BuildSteps": "0",
+      "MaterialPerStep": "0",
+      "XPPerStep": "3",
+      "Ingredients": "",
+      "DimX": "2",
+      "DimY": "2",
+      "DimZ": "1",
+      "RewardMoney": "50",
+      "RewardXp": "0",
+      "RewardSupplies": "0",
+      "RewardPremium": "3",
+      "RewardMaterial": "0",
+      "RewardEnergy": "100",
+      "Time": "1",
+      "SpoilTime": "0",
+      "Health": "10",
+      "SightRange": "2",
+      "DisbandRewardMoney": "200",
+      "UnitCapIncrementInfantry": "0",
+      "UnitCapIncrementArmor": "0",
+      "UnitCapIncrementArtillery": "0",
+      "HealCostEnergy": "0",
+      "HealCostSupplies": "100",
+      "ReviveCostSupplies": "0",
+      "HealRewardMoney": "0",
+      "HealRewardXP": "1",
+      "HealRewardEnergy": "110",
+      "CostUnlock": "1",
+      "ImageUrl": "cash_icon.png"
     }
   },
   "ResourceBuilding": {
@@ -20928,6 +20973,10 @@
     "9": {
       "ID": "9",
       "Item": "#Building.GoldFactory"
+    },
+    "10": {
+      "ID": "10",
+      "Item": "#Building.Hospital"
     }
   },
   "ShopPacks": {

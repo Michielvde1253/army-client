@@ -49,6 +49,7 @@
 	import game.gameElements.PermanentHFEObject;
 	import game.gameElements.PlayerBuildingObject;
 	import game.gameElements.PlayerInstallationObject;
+	import game.gameElements.HospitalBuilding;
 	import game.gameElements.Production;
 	import game.gameElements.ResourceBuildingObject;
 	import game.gameElements.SignalObject;
@@ -1217,6 +1218,10 @@
 							}
 						}
 					}
+				} else if(_loc2_ is HospitalBuilding){
+					if (HospitalBuilding(_loc2_).readyToHeal()) {
+						HospitalBuilding(_loc2_).checkNeighbours();
+					}
 				}
 			}
 			if (this.mState != STATE_PVP) {
@@ -1767,6 +1772,19 @@
 			}
 			return _loc2_;
 		}
+	
+	/*
+	thanks chatgpt!
+	
+	
+	public function searchNearbyUnits(
+    centerCell: GridCell,
+    range: int,
+    heightExtension: int = 1,
+    widthExtension: int = 1,
+    includeEnemies: Boolean = true
+	): Array
+	*/
 
 		public function searchNearbyUnits(param1: GridCell, param2: int, param3: int = 1, param4: int = 1, param5: Boolean = true): Array {
 			var _loc8_: int = 0;
