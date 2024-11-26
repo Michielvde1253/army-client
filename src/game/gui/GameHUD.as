@@ -825,11 +825,12 @@
 			this.mIngameHUDClip.removeChild(_loc2_);
 		}
 
-		/*
+	  // This is the alignment test code for the resize function.
+	  /*
       public function resize(param1:int, param2:int) : void
       {
          var _loc7_:PopUpWindow = null;
-         var _loc3_:int = Math.max(param1 - this.GAME_HUD_WIDTH,0);
+         var _loc3_:int = Math.max(param1 - this.GAME_HUD_ WIDTH,0);
          var _loc4_:int = Math.max(param2 - 750,0);
          var _loc5_:Number = 0;
          var _loc6_:int = this.mResourceFrame.width + 2;
@@ -890,6 +891,8 @@
          }
       }
       */
+
+		// This is the scaling code for the resize function.
 		public function resize(param1: int, param2: int): void {
 			var _loc7_: PopUpWindow = null;
 			var _loc3_: int = Math.max(param1 - this.GAME_HUD_WIDTH, 0);
@@ -900,14 +903,39 @@
 			_loc5_ = _loc6_ >> 3;
 
 			// Ensure mIngameHUDClip stays within bounds
-			this.mIngameHUDClip.x = _loc3_ / 2;
-			this.mIngameHUDClip.y = _loc4_;
+			this.mIngameHUDClip.x = 0;
+			this.mIngameHUDClip.y = 0;  // Keep the top bar at the top of the screen.
 
-			// Ensure mPullOutMissionFrame and other frames stay within bounds
+			// Scale only the top bar elements based on the stage width (param1)
+			var scaleFactorWidth: Number = (param1 + 10) / this.GAME_HUD_WIDTH;
+			// Scale the height based on the percentage increase from the original height
+			var scaleFactorHeight: Number = (param2 + 150) / 680;  // Assuming 680 is the original height
+
+			// Scale top bar elements based on the percentage increase from the original width and height
+			this.mIngameHUDClip.scaleX = scaleFactorWidth;
+			this.mIngameHUDClip.scaleY = scaleFactorHeight;
+
+			// Keep track of the original height of the bottom bar
+			var originalHeight: Number = this.mIngameHUDClip_BOTTOM.height;
+
+			// Scale the bottom bar elements based on the percentage increase from the original width and height
+			this.mIngameHUDClip_BOTTOM.scaleX = scaleFactorWidth * 0.7;
+			this.mIngameHUDClip_BOTTOM.scaleY = scaleFactorHeight * 0.8;
+
+			// Ensure mIngameHUDClip_BOTTOM stays within bounds
+			this.mIngameHUDClip_BOTTOM.x = 0;
+			// Keep the bottom bar at the bottom of the screen by setting the y position to the new height - the old height
+			this.mIngameHUDClip_BOTTOM.y = 0 - (1.5 * (this.mIngameHUDClip_BOTTOM.height - originalHeight));			
+
 			this.mPullOutMissionFrame.x = 0;
 			this.mButtonPullOutMissionFrame.x = Math.max(0, Math.min(param1 - this.mButtonPullOutMissionFrame.width, this.mButtonPullOutMissionFrame.x - _loc3_ / 2));
-			this.mButtonPullOutFrame.x = Math.max(0, param1 - this.mButtonPullOutFrame.width);
-			this.mPullOutMenuFrame.x = param1;
+			//this.mButtonPullOutFrame.x = Math.max(0, param1 - this.mButtonPullOutFrame.width);
+			//this.mPullOutMenuFrame.x = param1;
+
+			// Move the mButtonPullOutFrame and mPullOutMenuFrame to the right side of the screen
+			// Try moving the menu frame itself distance to the right of the pullout frame
+			this.mButtonPullOutFrame.x += scaleFactorWidth * this.mButtonPullOutFrame.width;
+			this.mPullOutMenuFrame.x += scaleFactorWidth * this.mButtonPullOutFrame.width;
 
 			this.mButtonPullOutMissionFrame.y = Math.max(0, Math.min(param2 - this.mButtonPullOutMissionFrame.height));
 			this.mPullOutMissionFrame.y = Math.max(0, Math.min(param2 - this.mPullOutMenuFrame.height / 2 + this.mButtonPullOutMissionFrame.height));
@@ -919,7 +947,6 @@
 			this.mButtonMap.setY(Math.max(0, Math.min(param2 - this.mButtonMap.getHeight())) + 3);
 			this.mButtonPvp.setY(Math.max(0, Math.min(param2 - this.mButtonPvp.getHeight())) + 3);
 
-
 			if (!this.keyCoordinates) {
 				this.keyCoordinates = new Array();
 				this.keyCoordinates.push(new Point(this.mResourceFrame.x, this.mResourceFrame.y));
@@ -928,18 +955,19 @@
 				this.keyCoordinates.push(new Point(this.mSupplyFrame.x, this.mSupplyFrame.y));
 			}
 
-			// Ensure key frames stay within bounds
-			this.mResourceFrame.y = -_loc4_ + (this.keyCoordinates[0] as Point).y;
-			this.mEnergyFrame.y = -_loc4_ + (this.keyCoordinates[1] as Point).y;
-			this.mXpFrame.y = -_loc4_ + (this.keyCoordinates[2] as Point).y;
-			this.mSupplyFrame.y = -_loc4_ + (this.keyCoordinates[3] as Point).y;
-			//this.mNeighborActionsFrame.y = -_loc4_ + (this.keyCoordinates[1] as Point).y;
-
-			// Ensure mToolBox stays within bounds
 			this.TOOLBOX_BOTTOM_X = this.mButtonPullOutFrame.x + (this.mToolBox.width << 1);
 			this.TOOLBOX_TOP_X = this.mButtonPullOutFrame.x;
 			this.mToolBox.x = this.TOOLBOX_BOTTOM_X;
 			this.mToolBox.y = this.mButtonPullOutFrame.y - (this.mToolBox.height >> 1);
+			
+			/*
+			// THE TOOLBOX IS JUST THE BOX NOT THE GEAR AND STUFF INSIDE
+			// Position the toolbox on the right side of the screen
+			this.TOOLBOX_BOTTOM_X = param1 - this.mToolBox.width;
+			this.TOOLBOX_TOP_X = param1 - this.mButtonPullOutFrame.width;
+			this.mToolBox.x = param1 - (4 * this.mToolBox.width);
+			this.mToolBox.y = this.mButtonPullOutFrame.y - (this.mToolBox.height >> 1) - 200;
+			*/
 
 			var _loc8_: Array = null;
 			var _loc9_: * = (_loc8_ = PopUpManager.getPopups()).length;
@@ -1888,6 +1916,7 @@
 				}
 				_loc4_++;
 			}
+			
 			this.mHudTooltip = new TooltipHUD(100, 500, true);
 			this.mIngameHUDClip.addChild(this.mHudTooltip);
 			this.mFriendlyTooltip = new TooltipHealth(TooltipHealth.TYPE_DEFAULT, 120, 200, true);
@@ -1898,6 +1927,34 @@
 			this.mEnemyBuildingTooltip = new TooltipHealth(TooltipHealth.TYPE_ENEMY_BUILDING, 120, 200, true);
 			this.mBuildingWaterPlantTooltip = new TooltipHealth(TooltipHealth.TYPE_BUILDING_WATERPLANT, 120, 200, true);
 			this.mInfoTooltip = new TooltipHealth(TooltipHealth.TYPE_INFO, 120, 200, true);
+
+			// Get the current stage width and height
+			var stageWidth:Number = GameState.mInstance.getStageWidth();
+
+			// Define the target size relative to the provided percentages
+			var targetWidth:Number = stageWidth * 0.07;
+			var targetHeight:Number = (targetWidth/120) * 0.9;
+
+			// Scale all the tooltips to the target width
+			this.mFriendlyTooltip.scaleX = targetWidth / 120;
+			this.mDetailsTooltip.scaleX = targetWidth / 120;
+			this.mEnemyTooltip.scaleX = targetWidth / 120;
+			this.mBuildingTooltip.scaleX = targetWidth / 120;
+			this.mAttackTooltip.scaleX = targetWidth / 120;
+			this.mEnemyBuildingTooltip.scaleX = targetWidth / 120;
+			this.mBuildingWaterPlantTooltip.scaleX = targetWidth / 120;
+			this.mInfoTooltip.scaleX = targetWidth / 120;
+
+			// Scale all the tooltips to the target height
+			this.mFriendlyTooltip.scaleY = targetHeight;
+			this.mDetailsTooltip.scaleY = targetHeight;
+			this.mEnemyTooltip.scaleY = targetHeight;
+			this.mBuildingTooltip.scaleY = targetHeight;
+			this.mAttackTooltip.scaleY = targetHeight;
+			this.mEnemyBuildingTooltip.scaleY = targetHeight;
+			this.mBuildingWaterPlantTooltip.scaleY = targetHeight;
+			this.mInfoTooltip.scaleY = targetHeight;
+
 		}
 
 		public function showObjectTooltip(param1: Renderable, param2: int = 0): void {

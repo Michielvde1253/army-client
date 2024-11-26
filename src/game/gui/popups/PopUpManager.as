@@ -33,23 +33,36 @@ package game.gui.popups
          var _loc5_:PopUpWindow = null;
          GameState.mInstance.mScene.hideObjectTooltip();
          var _loc3_:Class = getBaseType(param1);
+         
+         // Log which popup (by class name) is being handled
+         trace("[PopUpManager] Handling popup: " + param1);
+         
          if(mPopups[_loc3_] == null)
          {
             if(param2 == null)
             {
-               (_loc4_ = new param1()).alignToScreen();
-               _loc4_.scaleToScreen();
-               mPopups[_loc3_] = _loc4_;
+                  _loc4_ = new param1();
+                  _loc4_.alignToScreen();
+                  _loc4_.scaleToScreen();
+                  mPopups[_loc3_] = _loc4_;
+                  trace("[PopUpManager] Created new popup: " + param1);
             }
             else
             {
-               (_loc5_ = new param1(param2)).alignToScreen();
-               _loc5_.scaleToScreen();
-               mPopups[_loc3_] = _loc5_;
+                  _loc5_ = new param1(param2);
+                  _loc5_.alignToScreen();
+                  _loc5_.scaleToScreen();
+                  mPopups[_loc3_] = _loc5_;
+                  trace("[PopUpManager] Created new popup with parameters: " + param1);
             }
+         }
+         else
+         {
+            trace("[PopUpManager] Retrieved existing popup: " + param1);
          }
          return mPopups[_loc3_];
       }
+
       
       public static function isPopUpCreated(param1:Class) : Boolean
       {

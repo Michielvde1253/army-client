@@ -65,12 +65,6 @@ package game.gui.popups
          doOpeningTransition();
       }
       
-      override public function alignToScreen() : void
-      {
-         x = GameState.mInstance.getStageWidth() / 2;
-         y = GameState.mInstance.getStageHeight() - Config.SCREEN_HEIGHT / 2;
-      }
-
       override public function scaleToScreen(): void {
 			// Get the current stage width and height
 			var stageWidth:Number = GameState.mInstance.getStageWidth();

@@ -54,12 +54,6 @@ package game.gui.popups
          this.mButtonSubmit = Utils.createResizingButton(mClip,"Button_Submit",this.okClicked);
          this.mButtonSubmit.setText(GameState.getText("BUTTON_CONTINUE"));
       }
-      
-      override public function alignToScreen() : void
-      {
-         x = GameState.mInstance.getStageWidth() / 2;
-         y = GameState.mInstance.getStageHeight() - Config.SCREEN_HEIGHT / 2;
-      }
 
       override public function scaleToScreen(): void {
 			// Get the current stage width and height

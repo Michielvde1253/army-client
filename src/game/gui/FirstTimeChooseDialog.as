@@ -54,6 +54,21 @@
 			doOpeningTransition();
 		}
 
+		override public function scaleToScreen(): void {
+			// Calculate the scaling factors based on the clip's dimensions
+			var scaleXFactor:Number = GameState.mInstance.getStageWidth() / mClip.width;
+			var scaleYFactor:Number = GameState.mInstance.getStageHeight() / mClip.height;
+
+			// Add a small buffer to prevent rounding issues (adjust value if necessary)
+			scaleXFactor += 0.1;
+			scaleYFactor += 0.1;
+
+			// Apply the scaling factors to stretch across both axes
+			mClip.scaleX = scaleXFactor;
+			mClip.scaleY = scaleYFactor;
+		}
+
+
 		private function tabPressed(param1: MouseEvent): void {
 			var fileRef: * = undefined;
 			if (ArmySoundManager.getInstance().isSfxOn()) {

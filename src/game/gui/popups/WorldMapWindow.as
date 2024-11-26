@@ -98,8 +98,8 @@ package game.gui.popups
 			var stageHeight:Number = GameState.mInstance.getStageHeight();
 
 			// Define the target size relative to the provided percentages
-			var targetWidth:Number = stageWidth * 0.8;
-			var targetHeight:Number = stageHeight * 0.8;
+			var targetWidth:Number = stageWidth * 1.5;
+			var targetHeight:Number = stageHeight * 1.5;
 
 			// Calculate the scaling factors based on the clip's dimensions
 			var scaleXFactor:Number = targetWidth / mClip.width;

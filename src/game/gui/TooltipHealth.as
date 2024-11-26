@@ -492,6 +492,7 @@
       {
          var _loc1_:Number = NaN;
          var _loc2_:int = 0;
+
          if(Math.max(this.mTitle.width,!!this.mHealthBar ? this.mHealthBar.width : 0) > this.mLockedWidth - 2 * MARGIN)
          {
             this.mBody.width = Math.max(this.mTitle.width,!!this.mHealthBar ? this.mHealthBar.width : 0) + 2 * MARGIN;

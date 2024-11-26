@@ -31,16 +31,7 @@ package game.gui.popups
          var _loc3_:StylizedHeaderClip = null;
          mDoneCallback = param1;
          this.mMission = param2;
-         if(Config.FOR_IPHONE_PLATFORM)
-         {
-            x = GameState.mInstance.getStageWidth() / 3;
-            y = 2 * GameState.mInstance.getStageHeight() / 3;
-         }
-         else
-         {
-            x = GameState.mInstance.getStageWidth() / 2;
-            y = GameState.mInstance.getStageHeight();
-         }
+
          _loc3_ = new StylizedHeaderClip(mClip.getChildByName("Header") as MovieClip,param2.mTitle);
          var _loc4_:AutoTextField;
          (_loc4_ = new AutoTextField(mClip.getChildByName("Text_Description") as TextField)).setText(param2.mDescription);
