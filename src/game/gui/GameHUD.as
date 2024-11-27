@@ -915,9 +915,7 @@
 			this.mIngameHUDClip.scaleX = scaleFactorWidth;
 			this.mIngameHUDClip.scaleY = scaleFactorHeight;
 
-			// Keep track of the original height of the bottom bar
-			var originalHeight: Number = this.mIngameHUDClip_BOTTOM.height;
-
+			/* WIP
 			// Scale the bottom bar elements based on the percentage increase from the original width and height
 			this.mIngameHUDClip_BOTTOM.scaleX = scaleFactorWidth * 0.7;
 			this.mIngameHUDClip_BOTTOM.scaleY = scaleFactorHeight * 0.8;
@@ -925,17 +923,18 @@
 			// Ensure mIngameHUDClip_BOTTOM stays within bounds
 			this.mIngameHUDClip_BOTTOM.x = 0;
 			// Keep the bottom bar at the bottom of the screen by setting the y position to the new height - the old height
-			this.mIngameHUDClip_BOTTOM.y = 0 - (1.5 * (this.mIngameHUDClip_BOTTOM.height - originalHeight));			
-
+			//this.mIngameHUDClip_BOTTOM.y = 0 - this.mIngameHUDClip_BOTTOM.height; // NEED TO FIX			
+			*/
+			
 			this.mPullOutMissionFrame.x = 0;
 			this.mButtonPullOutMissionFrame.x = Math.max(0, Math.min(param1 - this.mButtonPullOutMissionFrame.width, this.mButtonPullOutMissionFrame.x - _loc3_ / 2));
-			//this.mButtonPullOutFrame.x = Math.max(0, param1 - this.mButtonPullOutFrame.width);
-			//this.mPullOutMenuFrame.x = param1;
+			this.mButtonPullOutFrame.x = Math.max(0, param1 - this.mButtonPullOutFrame.width);
+			this.mPullOutMenuFrame.x = param1;
 
 			// Move the mButtonPullOutFrame and mPullOutMenuFrame to the right side of the screen
 			// Try moving the menu frame itself distance to the right of the pullout frame
-			this.mButtonPullOutFrame.x += scaleFactorWidth * this.mButtonPullOutFrame.width;
-			this.mPullOutMenuFrame.x += scaleFactorWidth * this.mButtonPullOutFrame.width;
+			//this.mButtonPullOutFrame.x += scaleFactorWidth * this.mButtonPullOutFrame.width; // NEED TO FIX
+			//this.mPullOutMenuFrame.x += scaleFactorWidth * this.mButtonPullOutFrame.width; // NEED TO FIX
 
 			this.mButtonPullOutMissionFrame.y = Math.max(0, Math.min(param2 - this.mButtonPullOutMissionFrame.height));
 			this.mPullOutMissionFrame.y = Math.max(0, Math.min(param2 - this.mPullOutMenuFrame.height / 2 + this.mButtonPullOutMissionFrame.height));
