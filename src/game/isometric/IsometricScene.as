@@ -19,6 +19,7 @@
 	import game.actions.RepairPlayerInstallationAction;
 	import game.actions.RepairPlayerUnitAction;
 	import game.actions.RepairResourceBuildingAction;
+	import game.actions.RepairHospitalAction;
 	import game.actions.WalkingAction;
 	import game.battlefield.FogOfWar;
 	import game.battlefield.MapArea;
@@ -1042,7 +1043,7 @@
 			if (Boolean(param1.mCharacter) && param1.mCharacter is PlayerUnit) {
 				return true;
 			}
-			if (Boolean(param1.mObject) && (param1.mObject is ConstructionObject || param1.mObject is DecorationObject || param1.mObject is PlayerInstallationObject || param1.mObject is HFEObject || param1.mObject is HFEPlotObject || param1.mObject is ResourceBuildingObject)) {
+			if (Boolean(param1.mObject) && (param1.mObject is ConstructionObject || param1.mObject is DecorationObject || param1.mObject is PlayerInstallationObject || param1.mObject is HFEObject || param1.mObject is HFEPlotObject || param1.mObject is ResourceBuildingObject || param1.mObject is HospitalBuilding)) {
 				return true;
 			}
 			return false;
@@ -1770,6 +1771,10 @@
 						if ((_loc2_ as PlayerBuildingObject).getHealth() > 0) {
 							_loc1_.push(_loc2_);
 						}
+					} else if (!(_loc2_ is HospitalBuilding)) {
+						if ((_loc2_ as PlayerBuildingObject).getHealth() > 0) {
+							_loc1_.push(_loc2_);
+						}
 					}
 				}
 				_loc4_++;
@@ -2154,7 +2159,7 @@
 		}
 
 		private function shouldShowSelectCursorOnBuilding(param1: Renderable): Boolean {
-			return param1 is PlayerBuildingObject && (!(param1 is ConstructionObject) || (param1 as ConstructionObject).mState != PlayerBuildingObject.STATE_RUINS) && (!(param1 is ResourceBuildingObject) || (param1 as ResourceBuildingObject).mState != PlayerBuildingObject.STATE_RUINS) && (!(param1 is PermanentHFEObject) || param1 is PermanentHFEObject && PermanentHFEObject(param1).isFullHealth()) || param1 is PlayerInstallationObject || param1 is DebrisObject;
+			return param1 is PlayerBuildingObject && (!(param1 is ConstructionObject) || (param1 as ConstructionObject).mState != PlayerBuildingObject.STATE_RUINS) && (!(param1 is ResourceBuildingObject) || (param1 as ResourceBuildingObject).mState != PlayerBuildingObject.STATE_RUINS) && (!(param1 is PermanentHFEObject) || param1 is PermanentHFEObject && PermanentHFEObject(param1).isFullHealth()) && (!(param1 is HospitalBuilding) || (param1 as HospitalBuilding).mState != PlayerBuildingObject.STATE_RUINS) || param1 is PlayerInstallationObject || param1 is DebrisObject ;
 		}
 
 		private function shouldShowAttackCursorOnBuilding(param1: Renderable): Boolean {
@@ -3567,6 +3572,8 @@
 							this.mGame.queueAction(new RepairConstructionAction(_loc6_.mObject as ConstructionObject));
 						} else if (_loc6_.mObject is ResourceBuildingObject && !ResourceBuildingObject(_loc6_.mObject).isFullHealth()) {
 							this.mGame.queueAction(new RepairResourceBuildingAction(_loc6_.mObject as ResourceBuildingObject));
+						} else if (_loc6_.mObject is HospitalBuilding && !HospitalBuilding(_loc6_.mObject).isFullHealth()) {
+							this.mGame.queueAction(new RepairHospitalAction(_loc6_.mObject as HospitalBuilding));
 						} else if (_loc6_.mObject is DecorationObject && !(_loc6_.mObject is SignalObject) && !DecorationObject(_loc6_.mObject).isFullHealth()) {
 							this.mGame.queueAction(new RepairDecorationAction(_loc6_.mObject as DecorationObject));
 						} else if (_loc6_.mObject is PlayerInstallationObject && !PlayerInstallationObject(_loc6_.mObject).isFullHealth()) {
@@ -3583,7 +3590,7 @@
 					if (Boolean(_loc6_.mCharacter) && _loc6_.mCharacter is PlayerUnit) {
 						this.mGame.mHUD.openSellConfirmTextBox(_loc6_.mCharacter);
 					} else if (_loc6_.mObject) {
-						if (_loc6_.mObject is ConstructionObject || _loc6_.mObject is DecorationObject || _loc6_.mObject is PlayerInstallationObject || _loc6_.mObject is HFEObject || _loc6_.mObject is HFEPlotObject || _loc6_.mObject is ResourceBuildingObject) {
+						if (_loc6_.mObject is ConstructionObject || _loc6_.mObject is DecorationObject || _loc6_.mObject is PlayerInstallationObject || _loc6_.mObject is HFEObject || _loc6_.mObject is HFEPlotObject || _loc6_.mObject is ResourceBuildingObject || _loc6_.mObject is HospitalBuilding) {
 							this.mGame.mHUD.openSellConfirmTextBox(_loc6_.mObject);
 						} else {
 							ArmySoundManager.getInstance().playSound(ArmySoundManager.SFX_UI_ERROR);
@@ -3595,7 +3602,7 @@
 				case GameState.STATE_VISITING_NEIGHBOUR:
 					if (_loc6_.mCharacter) {
 						_loc6_.mCharacter.MousePressed(null);
-					} else if (Boolean(_loc6_.mObject) && (_loc6_.mObject is DebrisObject && _loc6_.mOwner == MapData.TILE_OWNER_FRIENDLY || _loc6_.mObject is HFEObject || _loc6_.mObject is PermanentHFEObject || _loc6_.mObject is ConstructionObject || _loc6_.mObject is ResourceBuildingObject)) {
+					} else if (Boolean(_loc6_.mObject) && (_loc6_.mObject is DebrisObject && _loc6_.mOwner == MapData.TILE_OWNER_FRIENDLY || _loc6_.mObject is HFEObject || _loc6_.mObject is PermanentHFEObject || _loc6_.mObject is ConstructionObject || _loc6_.mObject is ResourceBuildingObject || _loc6_.mObject is HospitalBuilding)) {
 						_loc6_.mObject.MousePressed(null);
 					} else if (_loc6_.mObject && _loc6_.mObject is EnemyInstallationObject && !(_loc6_.mObject as EnemyInstallationObject).hasForceField()) {
 						_loc6_.mObject.MousePressed(null);
@@ -3871,7 +3878,7 @@
 				case GameState.STATE_REPAIR_ITEM:
 					break;
 				case GameState.STATE_SELL_ITEM:
-					if (_loc4_ is ConstructionObject || _loc4_ is DecorationObject || _loc4_ is PlayerInstallationObject || _loc4_ is HFEObject || _loc4_ is HFEPlotObject || _loc4_ is ResourceBuildingObject) {
+					if (_loc4_ is ConstructionObject || _loc4_ is DecorationObject || _loc4_ is PlayerInstallationObject || _loc4_ is HFEObject || _loc4_ is HFEPlotObject || _loc4_ is ResourceBuildingObject || _loc4_ is HospitalBuilding) {
 						this.mGame.mHUD.openSellConfirmTextBox(_loc4_);
 					}
 			}
@@ -4298,6 +4305,11 @@
 					}
 				}
 				if (_loc2_ is ResourceBuildingObject) {
+					if (_loc2_.mItem.mId == param1) {
+						return true;
+					}
+				}
+				if (_loc2_ is HospitalBuilding) {
 					if (_loc2_.mItem.mId == param1) {
 						return true;
 					}

@@ -49,8 +49,8 @@
 			this.mButtonGivePerms.resizeNeeded = false;
 			this.mButtonDenyPerms = this.addButton(mClip, "Button_DenyPerms", this.tabPressed);
 			this.mButtonDenyPerms.resizeNeeded = false;
-			this.mButtonGivePerms.setText(GameState.getText("ONLINE_NEW_BUTTON_TEXT"), "Text_Title");
-			this.mButtonDenyPerms.setText(GameState.getText("ONLINE_RESUME_BUTTON_TEXT"), "Text_Title");
+			this.mButtonGivePerms.setText(GameState.getText("BUTTON_DOCUMENTS"), "Text_Title");
+			this.mButtonDenyPerms.setText(GameState.getText("BUTTON_APPFILES"), "Text_Title");
 		}
 
 		public function Activate(param1: Function): void {

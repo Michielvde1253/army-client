@@ -1,4 +1,4 @@
-package game.battlefield
+﻿package game.battlefield
 {
    import com.dchoc.graphics.DCResourceManager;
    import flash.display.DisplayObject;
@@ -211,11 +211,11 @@ package game.battlefield
          {
             return;
          }
-         var _loc5_:PlayerUnit = GameState.mInstance.mActivatedPlayerUnit;
-         if(param1.mCharacter != _loc5_)
-         {
-            return;
-         }
+         //var _loc5_:PlayerUnit = GameState.mInstance.mActivatedPlayerUnit;
+         //if(param1.mCharacter != _loc5_)
+         //{
+         //   return;
+         //}
          var _loc6_:int = param2.getTileSize().x - 1;
          var _loc7_:int = param2.getTileSize().y - 1;
          var _loc8_:int = Math.max(param1.mPosI - _loc3_,0);

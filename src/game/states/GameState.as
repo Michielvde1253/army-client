@@ -703,9 +703,9 @@
 				this.totalMemory = Number(System.totalMemory / 1024 / 1024);
 				this.updateDebugText();
 			}
-			if (!this.mInitialized || !this.mScene || mFreezeFrameOn && !this.mServer.isConnectionError() && !this.mServer.isServerCommError()) {
-				return;
-			}
+			//if (!this.mInitialized || !this.mScene || mFreezeFrameOn){ //&& !this.mServer.isConnectionError() && !this.mServer.isServerCommError()) {
+			//	return;
+			//}
 			if (!this.updateLoading()) {
 				return;
 			}
@@ -2415,7 +2415,7 @@
 			}
 			this.mScene = SceneLoader.loadFromLevelFactor(this, param1);
 			CONFIG::BUILD_FOR_MOBILE_AIR {
-				this.mZoomLevels = this.mMapData.mMapSetupData.ZoomLevels;
+				this.mZoomLevels = this.mMapData.mMapSetupData.ZoomLevelsMobile;
 			}
 			CONFIG::BUILD_FOR_AIR {
 				this.mZoomLevels = this.mMapData.mMapSetupData.ZoomLevels;
@@ -3387,6 +3387,9 @@
 			} else if (this.mObjectToBePlaced is ResourceBuildingObject) {
 				_loc7_ = ServiceIDs.BUY_AND_PLACE_BUILDING;
 				_loc8_ = "ResourceBuilding";
+			} else if (this.mObjectToBePlaced is HospitalBuilding) {
+				_loc7_ = ServiceIDs.BUY_AND_PLACE_BUILDING;
+				_loc8_ = "HospitalBuilding";
 			} else if (this.mObjectToBePlaced is PlayerUnit) {
 				_loc7_ = ServiceIDs.BUY_AND_PLACE_UNIT;
 			} else if (this.mObjectToBePlaced is DecorationObject) {
@@ -3577,7 +3580,7 @@
 			};
 			var _loc4_: String = null;
 			if (!(this.mObjectToBePlaced is HFEObject || this.mObjectToBePlaced is HFEPlotObject)) {
-				if (!(this.mObjectToBePlaced is ConstructionObject || this.mObjectToBePlaced is ResourceBuildingObject)) {
+				if (!(this.mObjectToBePlaced is ConstructionObject || this.mObjectToBePlaced is ResourceBuildingObject || this.mObjectToBePlaced is HospitalBuilding)) {
 					if (this.mObjectToBePlaced is PlayerUnit) {
 						_loc4_ = ServiceIDs.PLACE_UNIT_FROM_INVENTORY;
 					} else if (this.mObjectToBePlaced is DecorationObject) {

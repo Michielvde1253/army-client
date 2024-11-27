@@ -5,48 +5,75 @@
 	import flash.display.MovieClip;
 	import flash.display.Sprite;
 	import flash.events.Event;
-	import flash.events.MouseEvent;
 	import flash.geom.Point;
 	import game.gui.TooltipHealth;
 	import game.isometric.GridCell;
 	import game.isometric.IsometricScene;
 	import game.isometric.ObjectLoader;
 	import game.items.MapItem;
-	import game.items.ResourceBuildingItem;
-	import game.magicBox.MagicBoxTracker;
-	import game.net.Friend;
-	import game.net.ServiceIDs;
-	import game.player.GamePlayerProfile;
+	import game.items.HospitalItem;
 	import game.states.GameState;
 	import game.characters.PlayerUnit;
+	import game.utils.TimeUtils
 
 	public class HospitalBuilding extends PlayerBuildingObject {
 
 
 		private var mReadyToHeal: Boolean;
 
+		private var mTimeUntilRefill: int;
+
+		private var mCooldown: int;
+
+		private var mHealPower: int;
+		
+		public var mAttackRange:int;
+		
+		public var mPower:int;
+		
+	    public var mReadyText:String;
+	   
+	    public var mNotReadyText:String;
+
 		public function HospitalBuilding(param1: int, param2: IsometricScene, param3: MapItem, param4: Point, param5: DisplayObject = null, param6: String = null) {
 			super(param1, param2, param3, param4, param5, param6);
 			mWalkable = false;
 			mState = STATE_READY;
-			this.mReadyToHeal = true;
+			this.mReadyToHeal = false;
+			var itemStats: HospitalItem = param3 as HospitalItem
+			this.mCooldown = itemStats.mCooldown;
+			this.mHealPower = itemStats.mHealPower;
+			this.mAttackRange = itemStats.mAttackRange;
+			this.mPower = itemStats.mPower;
+			this.mReadyText = itemStats.mReadyText;
+			this.mNotReadyText = itemStats.mNotReadyText;
 		}
 
 		public function readyToHeal(): Boolean {
+			if (mHealth < mMaxHealth) {
+				return false;
+			}
 			return this.mReadyToHeal;
 		}
-	
-		public function checkNeighbours(){
-			var neighbours:Array = GameState.mInstance.searchNearbyUnits(getCell(),1,2,2, false);
-			var neighbour:PlayerUnit = null;
+
+		public function checkNeighbours() {
+			var neighbours: Array = GameState.mInstance.searchNearbyUnits(getCell(), 1, 2, 2, false);
+			var neighbour: PlayerUnit = null;
 			var i;
-			for(i in neighbours){
+			for (i in neighbours) {
 				neighbour = neighbours[i] as PlayerUnit;
-				if(neighbour.getHealth() < neighbour.mMaxHealth){
-					neighbour.healToMax();
+				if (neighbour.getHealth() < neighbour.mMaxHealth) {
+					neighbour.setHealth(Math.min(neighbour.mMaxHealth, neighbour.getHealth() + this.mHealPower));
 					this.mReadyToHeal = false;
+					this.mTimeUntilRefill = this.mCooldown * 1000;
+					this.updateGraphics(mHealth);
 				}
 			}
+		}
+
+		override public function setHealth(param1: int): void {
+			super.setHealth(param1);
+			this.updateGraphics(mHealth);
 		}
 
 		override public function graphicsLoaded(param1: Sprite): void {
@@ -56,39 +83,21 @@
 
 		override public function logicUpdate(param1: int): Boolean {
 			super.logicUpdate(param1);
-			/*
-         if(mState == STATE_PRODUCING)
-         {
-            this.setSpeedUpIconVisibility(true);
-         }
-         else
-         {
-            this.setSpeedUpIconVisibility(false);
-         }
-         switch(mState)
-         {
-            case STATE_WORKING_ON_BUILDING:
-               break;
-            case STATE_PRODUCING:
-               if(this.mGoToHireDialog)
-               {
-                  GameState.mInstance.mHUD.openHireFriendsForProductionDialog(this);
-                  this.mGoToHireDialog = false;
-               }
-         }
-         return false;
-		 */
-		 return false;
+			if (mHealth < mMaxHealth) { // Building damaged, reset timer
+				// to-do: don't reset it every frame
+				this.mReadyToHeal = false;
+				this.mTimeUntilRefill = this.mCooldown * 1000;
+			}
+			if (!this.mReadyToHeal) {
+				this.mTimeUntilRefill -= param1
+				if (this.mTimeUntilRefill <= 0) {
+					this.mReadyToHeal = true;
+					this.mTimeUntilRefill = 0;
+					this.updateGraphics(mHealth);
+				}
+			}
+			return false;
 		}
-
-		/*
-      override public function setHealth(param1:int) : void
-      {
-         mHealth = mMaxHealth;
-         var _loc2_:int = mHealth;
-         this.updateGraphics(_loc2_);
-      }
-*/
 
 		private function updateGraphics(param1: int): void {
 			var _loc3_: Sprite = null;
@@ -117,19 +126,16 @@
 				}
 			} else {
 				_loc8_ = mContainer.getChildAt(0);
-				if (param1 == 0) {
+				if (param1 == 0) { // Ruined building *congratulations!*
 					_loc3_ = _loc2_[mItem.mLoader](mItem.getIconGraphicsFile(), mItem.getIconGraphics());
 					removeSprite();
 					addSprite(_loc3_);
 				} else if (mHealth < mMaxHealth) {
-					_loc8_.gotoAndStop(3);
-				}
-				//else if(mState == STATE_PRODUCING)
-				//{
-				//   _loc8_.gotoAndStop(2);
-				//}
-				else {
-					_loc8_.gotoAndStop(1);
+					_loc8_.gotoAndStop(3); // damaged building
+				} else if (this.mReadyToHeal) {
+					_loc8_.gotoAndStop(2); // Ready to heal
+				} else {
+					_loc8_.gotoAndStop(1); // Idle
 				}
 			}
 		}
@@ -143,13 +149,13 @@
 				} else {
 					param2.setDetailsText(GameState.getText("BUILDING_STATUS_DAMAGED"));
 				}
-			} else if(this.mReadyToHeal) {
-				param2.setDetailsText(GameState.getText("BUILDING_HOSPITAL_READY"));
+			} else if (this.mReadyToHeal) {
+				param2.setDetailsText(this.mReadyText);
 			} else {
-				param2.setDetailsText(GameState.getText("BUILDING_HOSPITAL_NOT_READY"));
+				param2.setDetailsText(GameState.replaceParameters(this.mNotReadyText, [TimeUtils.getCountDownTime(this.mTimeUntilRefill)]));
 			}
 		}
-	
+
 		override public function isMovable(): Boolean {
 			if (mState == STATE_RUINS) {
 				return false;
@@ -157,264 +163,26 @@
 			return mMovable;
 		}
 
-		/*
-      override public function checkProductionState() : void
-      {
-         if(mProduction)
-         {
-            if(mProduction.isReady())
-            {
-               mState = STATE_PRODUCTION_READY;
-            }
-            else
-            {
-               mState = STATE_PRODUCING;
-            }
-         }
-         else
-         {
-            mState = STATE_READY;
-         }
-         this.updateGraphics(mHealth);
-      }
-	  */
-
-		/*
-      public function setSpeedUpIconVisibility(param1:Boolean) : void
-      {
-         if(!this.mSpeedUpIcon)
-         {
-            return;
-         }
-         var _loc2_:Point = getIconPosition();
-         this.mSpeedUpIcon.x = _loc2_.x;
-         this.mSpeedUpIcon.y = _loc2_.y;
-         if(this.mSpeedUpIcon.visible == param1)
-         {
-            return;
-         }
-         if(param1)
-         {
-            this.mSpeedUpIcon.visible = true;
-            mScene.mSceneHud.addChild(this.mSpeedUpIcon);
-         }
-         else
-         {
-            this.mSpeedUpIcon.visible = false;
-            if(this.mSpeedUpIcon.parent)
-            {
-               this.mSpeedUpIcon.parent.removeChild(this.mSpeedUpIcon);
-            }
-         }
-      }
-	  */
-
-		/*
-      override public function setProduction(param1:String) : void
-      {
-         super.setProduction(param1);
-         mState = STATE_PRODUCING;
-         var _loc2_:Object = MapItem(mItem).getCraftingObjectByID(param1);
-         var _loc3_:int = int(_loc2_.CostMoney);
-         var _loc4_:GamePlayerProfile;
-         (_loc4_ = GameState.mInstance.mPlayerProfile).addMoney(-_loc3_,MagicBoxTracker.LABEL_RESOURCE_PRODUCTION,MagicBoxTracker.paramsObj((mItem as MapItem).mType,(mItem as MapItem).mId,param1));
-         var _loc5_:GridCell = getCell();
-         var _loc6_:Object = {
-            "coord_x":_loc5_.mPosI,
-            "coord_y":_loc5_.mPosJ,
-            "item_id":mItem.mId,
-            "produces":"BuildingDrives." + param1,
-            "cost_money":_loc3_,
-            "item_type":"ResourceBuilding"
-         };
-         GameState.mInstance.mServer.serverCallServiceWithParameters(ServiceIDs.START_BUILDING_PRODUCTION,_loc6_,false);
-         if(Config.DEBUG_MODE)
-         {
-         }
-         this.updateGraphics(mHealth);
-         this.mGoToHireDialog = true;
-      }
-	  */
-
 		override public function setupFromServer(param1: Object): void {
-			var _loc2_: Array = null;
-			var _loc3_: String = null;
-			var _loc4_: String = null;
-			var _loc5_: int = 0;
 			super.setupFromServer(param1);
-			//this.resetHelpingFriends();
-			if (param1.produces != null) {
-				_loc2_ = (param1.produces as String).split(".");
-				_loc3_ = String(_loc2_[1]);
-				mProduction = new Production(MapItem(mItem), _loc3_, Production.TIME_DEFAULT, Production.TIME_DEFAULT, this);
-				mProduction.setRemainingProductionTime(param1.next_action_at);
-				//this.checkProductionState();
-				//if (_loc4_ = String(param1.helping_friend_ids)) {
-				//	this.mFriendUIDs = _loc4_.split(",");
-				//	_loc5_ = 0;
-				//	while (_loc5_ < this.mFriendUIDs.length) {
-				//		this.mFriendUIDs[_loc5_] = StringUtil.trim(this.mFriendUIDs[_loc5_]);
-				//		_loc5_++;
-				//	}
-				//}
-			}
-		}
-
-		/*
-      public function refreshHelpingFriends() : void
-      {
-      }
-      
-      private function failHelpingFriendLoader(param1:Event) : void
-      {
-         this.createDummyHelpingFriend();
-      }
-      
-      private function completeHelpingFriendLoader(param1:Event) : void
-      {
-         var event:Event = param1;
-         try
-         {
-         }
-         catch(error:Error)
-         {
-            createDummyHelpingFriend();
-            return;
-         }
-         this.createDummyHelpingFriend();
-      }
-      
-      private function sortFriends() : void
-      {
-         var _loc2_:Friend = null;
-         var _loc3_:int = 0;
-         var _loc4_:Friend = null;
-         var _loc1_:int = 0;
-         while(_loc1_ < this.mFriends.length)
-         {
-            _loc2_ = this.mFriends[_loc1_];
-            _loc3_ = this.mFriendUIDs.indexOf(_loc2_.mUserID);
-            if(_loc3_ > 0)
-            {
-               if(_loc3_ != _loc1_)
-               {
-                  _loc4_ = this.mFriends[_loc3_];
-                  this.mFriends[_loc3_] = _loc2_;
-                  this.mFriends[_loc1_] = _loc4_;
-               }
-            }
-            _loc1_++;
-         }
-      }
-      
-      private function createDummyHelpingFriend() : void
-      {
-         var _loc1_:Friend = new Friend(GameState.getText("YOUR_FRIEND"),"10","10",Config.DIR_DATA + "icons/default_avatar.png",0,0,0,0,true,null,null,false,false,false);
-         this.mFriends.push(_loc1_);
-      }
-      
-      public function getHelpingFriends() : Array
-      {
-         return this.mFriends;
-      }
-      
-      public function resetHelpingFriends() : void
-      {
-         this.mFriends = new Array();
-         this.mFriendUIDs = new Array();
-      }
-	  */
-
-		/*
-      override public function handleProductionHarvested() : void
-      {
-         this.checkProductionState();
-      }
-      
-      override public function handleProductionComplete() : void
-      {
-         this.checkProductionState();
-      }
-*/
-
-		override protected function getStateText(): String {
-			if (GameState.mInstance.mVisitingFriend) {
-				if (mState == STATE_PRODUCING) {
-					return GameState.getText("BUILDING_STATUS_PRODUCING_VISITING");
-				}
-				if (mState == STATE_PRODUCTION_READY) {
-					return GameState.getText("BUILDING_STATUS_PRODUCTION_READY_VISITING");
-				}
-				return mItem.getDescription();
-			}
-			switch (mState) {
-				case STATE_PRODUCING:
-					return GameState.getText("RESOURCE_BUILDING_STATUS_PRODUCING", [getTimeLeftCountdown()]);
-				case STATE_IDLE:
-				case STATE_READY:
-					return GameState.getText("RESOURCE_BUILDING_STATUS_IDLE");
-				case STATE_PRODUCTION_READY:
-					return GameState.getText("RESOURCE_BUILDING_STATUS_PRODUCTION_READY");
-				case STATE_BEING_HARVESTED:
-					return GameState.getText("RESOURCE_BUILDING_STATUS_BEING_HARVESTED");
-				default:
-					return super.getStateText();
+			if (param1.next_action_at != null) {
+				this.mTimeUntilRefill = param1.next_action_at * 1000
+			} else {
+				this.mTimeUntilRefill = this.mCooldown * 1000;
 			}
 		}
 
 		public function getHealCostSupplies(): int {
-			return (mItem as ResourceBuildingItem).mHealCostSupplies * (mMaxHealth - mHealth) / mMaxHealth;
+			return (mItem as HospitalItem).mHealCostSupplies * (mMaxHealth - mHealth) / mMaxHealth;
 		}
 
-		/*
-      override public function MousePressed(param1:MouseEvent) : void
-      {
-         super.MousePressed(param1);
-         this.openProductionDialog();
-      }
-  */
-
-		/*
-      public function openProductionDialog() : void
-      {
-         if(GameState.mInstance.mState != GameState.STATE_VISITING_NEIGHBOUR)
-         {
-            if(isFullHealth())
-            {
-               if(mState == STATE_READY)
-               {
-                  GameState.mInstance.mHUD.openProductionDialog(this);
-               }
-               else if(mState == STATE_PRODUCING)
-               {
-                  this.mGoToHireDialog = true;
-               }
-            }
-         }
-      }
-*/
-
-		/*
-      override public function isHarvestingOver() : Boolean
-      {
-         return super.isHarvestingOver() || mState == STATE_READY;
-      }
-	  */
+		public function getRefillTimer(): int {
+			return this.mTimeUntilRefill;
+		}
 
 		protected function ruinsLoadingFinished(param1: Event): void {
 			DCResourceManager.getInstance().removeEventListener(param1.type, this.ruinsLoadingFinished);
 			this.updateGraphics(mHealth);
-		}
-
-		override public function destroy(): void {
-			super.destroy();
-			/*
-         if(this.mSpeedUpIcon.parent)
-         {
-            this.mSpeedUpIcon.parent.removeChild(this.mSpeedUpIcon);
-         }
-         this.mSpeedUpIcon = null;
-		  */
 		}
 	}
 }

@@ -1,5 +1,41 @@
 {
     "TID": {
+        "BUILDING_HOSPITAL": {
+            "ID": "BUILDING_HOSPITAL",
+            "en": "Hospital"
+        },
+        "BUILDING_HOSPITAL_DESC": {
+            "ID": "BUILDING_HOSPITAL_DESC",
+            "en": "Heals one nearby unit with 10 HP every x hours"
+        },
+        "BUILDING_MASH": {
+            "ID": "BUILDING_MASH",
+            "en": "M.A.S.H"
+        },
+        "BUILDING_MASH_DESC": {
+            "ID": "BUILDING_MASH_DESC",
+            "en": "Heals one nearby unit with 5 HP every x hours"
+        },
+        "BUILDING_MASH_READY": {
+            "ID": "BUILDING_MASH_READY",
+            "en": "Ready to heal!\nMove a damaged unit nearby to heal"
+        },
+        "BUILDING_MASH_NOT_READY": {
+            "ID": "BUILDING_MASH_NOT_READY",
+            "en": "Our Head Healer lost the key of the front door. We'll be back soon!\nReady in %U"
+        },
+        "SHOP_BUILDING_NOT_ON_THIS_MAP": {
+            "ID": "SHOP_BUILDING_NOT_ON_THIS_MAP",
+            "en": "You cannot buy this item on this map"
+        },
+        "BUILDING_HOSPITAL_READY": {
+            "ID": "BUILDING_HOSPITAL_READY",
+            "en": "Ready to heal!\nMove a damaged unit nearby to heal"
+        },
+        "BUILDING_HOSPITAL_NOT_READY": {
+            "ID": "BUILDING_HOSPITAL_NOT_READY",
+            "en": "The healers are having a teambuilding today. Try again later!\nReady in %U"
+        },
         "HFE_AREA9TOWN1": {
             "ID": "HFE_AREA9TOWN1",
             "en": "Bergheim Farm"
@@ -12819,18 +12855,6 @@
         "BUILDING_GOLD_FACTORY_DESC": {
             "ID": "BUILDING_GOLD_FACTORY_DESC",
             "en": "Generates 3 Gold every 72 hours"
-        },
-        "SHOP_BUILDING_NOT_ON_THIS_MAP": {
-            "ID": "SHOP_BUILDING_NOT_ON_THIS_MAP",
-            "en": "You cannot buy this building on this map"
-        },
-        "BUILDING_HOSPITAL_READY": {
-            "ID": "BUILDING_HOSPITAL_READY",
-            "en": "Ready to heal!\\nMove a damaged unit nearby to heal"
-        },
-        "BUILDING_HOSPITAL_NOT_READY": {
-            "ID": "BUILDING_HOSPITAL_NOT_READY",
-            "en": "The healers are having a teambuilding today. Try again later!"
         }
     }
 }
