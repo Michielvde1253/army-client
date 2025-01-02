@@ -66,6 +66,7 @@
 			switch (param1.target) {
 				case this.mButtonGivePerms.getMovieClip():
 					Cookie.saveCookieVariable(Config.COOKIE_SETTINGS_NAME, Config.COOKIE_SETTINGS_NAME_SAVELOCATION, "documents");
+					trace("GOT YOU WTF")
 					this.buttonSavePressed(param1); // aka save progress
 					break;
 				case this.mButtonDenyPerms.getMovieClip():
@@ -89,13 +90,20 @@
 		public function buttonSavePressed(param1: MouseEvent): void {
 			CONFIG::BUILD_FOR_MOBILE_AIR {
 				// Resolve the file path
+				var file2: File = null;
 				if (Cookie.readCookieVariable(Config.COOKIE_SETTINGS_NAME, Config.COOKIE_SETTINGS_NAME_SAVELOCATION) == "documents") {
 					var file: File = File.documentsDirectory.resolvePath("ArmyAttack/savefile.txt");
+					file2 = File.applicationStorageDirectory.resolvePath("savefile.txt"); // Also save in appdata, just to be sure
 				} else {
 					var file: File = File.applicationStorageDirectory.resolvePath("savefile.txt");
 				}
 				file.addEventListener(PermissionEvent.PERMISSION_STATUS, onPermission);
 				file.requestPermission();
+				if(file2 != null){
+					trace("saved game in appdata as well")
+					file2.addEventListener(PermissionEvent.PERMISSION_STATUS, onPermission);
+					file2.requestPermission();
+				}
 			}
 		}
 

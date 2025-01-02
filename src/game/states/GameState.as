@@ -872,13 +872,17 @@
 
 		CONFIG::BUILD_FOR_MOBILE_AIR {
 			public function startSelectingFile(): void {
-				trace("saved the game")
-				var file: File = File.documentsDirectory.resolvePath("ArmyAttack/savefile.txt");
-				if (!file.exists || Cookie.readCookieVariable(Config.COOKIE_SETTINGS_NAME, Config.COOKIE_SETTINGS_NAME_SAVELOCATION) == "legacy" || Cookie.readCookieVariable(Config.COOKIE_SETTINGS_NAME, Config.COOKIE_SETTINGS_NAME_SAVELOCATION) == "") {
-					// Check if a legacy save file (from v21) exists, use if yes
-					file = File.applicationStorageDirectory.resolvePath("savefile.txt");
+				trace("the savelocation is right now:")
+				trace(Cookie.readCookieVariable(Config.COOKIE_SETTINGS_NAME, Config.COOKIE_SETTINGS_NAME_SAVELOCATION))
+				if(Config.COOKIE_SETTINGS_NAME_SAVELOCATION == "legacy" || Config.COOKIE_SETTINGS_NAME_SAVELOCATION == ""){
+					var file: File = File.applicationStorageDirectory.resolvePath("savefile.txt");
+					trace("this runs")
+				} else {
+					var file: File = File.documentsDirectory.resolvePath("ArmyAttack/savefile.txt");
+					trace("no this")
 					if (!file.exists) {
-						return
+						// Falling back to appdata file
+						var file: File = File.applicationStorageDirectory.resolvePath("savefile.txt");
 					}
 				}
 				file.addEventListener(PermissionEvent.PERMISSION_STATUS, onPermission);
@@ -2557,7 +2561,7 @@
 							// First time opening the game since v22, show permission window
 							Cookie.saveCookieVariable(Config.COOKIE_SETTINGS_NAME, Config.COOKIE_SETTINGS_NAME_SAVELOCATION, "legacy");
 							this.mHUD.openGiveFilePermissionScreen();
-							Cookie.saveCookieVariable(Config.COOKIE_SETTINGS_NAME, Config.COOKIE_SETTINGS_NAME_APPLAUNCH_V22, false);
+							Cookie.saveCookieVariable(Config.COOKIE_SETTINGS_NAME, Config.COOKIE_SETTINGS_NAME_APPLAUNCH_V22, "false");
 						} else {
 							this.mHUD.openPauseScreen();
 						}

@@ -11073,7 +11073,7 @@
       "Name": "#TID.DOOMSDAY_NAME",
       "Graphic_idle": "swf/buildings_enemy/building_enemy_secret_weapon",
       "Graphic_shoot": "swf/buildings_enemy/building_enemy_secret_weapon",
-      "Graphic_hit": "swf/buildings_enemy/building_enemy_railwaygun_nw_forcefield_hit",
+      "Graphic_hit": "swf/buildings_enemy/building_enemy_secret_weapon",
       "Graphic_destroy": "swf/effects_low/effect_explosion",
       "ObjectClass": "game.gameElements.EnemyInstallationObject",
       "Health": "200",
@@ -11101,7 +11101,7 @@
       "Name": "#TID.DOOMSDAY2_NAME",
       "Graphic_idle": "swf/buildings_enemy/building_enemy_secret_weapon",
       "Graphic_shoot": "swf/buildings_enemy/building_enemy_secret_weapon",
-      "Graphic_hit": "swf/buildings_enemy/building_enemy_railwaygun_nw_forcefield_hit",
+      "Graphic_hit": "swf/buildings_enemy/building_enemy_secret_weapon",
       "Graphic_destroy": "swf/effects_low/effect_explosion",
       "ObjectClass": "game.gameElements.EnemyInstallationObject",
       "Health": "350",
@@ -21015,11 +21015,11 @@
     },
     "7": {
       "ID": "7",
-      "Item": "#ResourceBuilding.WaterPlant"
+      "Item": "#Building.Airport"
     },
     "8": {
       "ID": "8",
-      "Item": "#Building.Airport"
+      "Item": "#ResourceBuilding.WaterPlant"
     },
     "9": {
       "ID": "9",
@@ -26747,8 +26747,8 @@
       "Type": "#ObjectiveType.Buy",
       "Parameter": "#MapArea.AreaNorthC2",
       "Goal": "1",
-      "Title": "#TID.NE_MAP_OBJ_TITLE",
-      "Description": "#TID.NE_MAP_OBJ_DESC",
+      "Title": "#TID.NORTHC_MAP_OBJ_TITLE",
+      "Description": "#TID.NORTHC_MAP_OBJ_DESC",
       "Icon": "icons/mission_icons/objective_icons/icon_objective_buy.png"
     },
     "BuyAreaNorthW2": {
@@ -26756,8 +26756,8 @@
       "Type": "#ObjectiveType.Buy",
       "Parameter": "#MapArea.AreaNorthW2",
       "Goal": "1",
-      "Title": "#TID.NE_MAP_OBJ_TITLE",
-      "Description": "#TID.NE_MAP_OBJ_DESC",
+      "Title": "#TID.NORTHW_MAP_OBJ_TITLE",
+      "Description": "#TID.NORTHW_MAP_OBJ_DESC",
       "Icon": "icons/mission_icons/objective_icons/icon_objective_buy.png"
     },
     "BuyAreaNorthE2": {
@@ -26765,8 +26765,8 @@
       "Type": "#ObjectiveType.Buy",
       "Parameter": "#MapArea.AreaNorthE2",
       "Goal": "1",
-      "Title": "#TID.NE_MAP_OBJ_TITLE",
-      "Description": "#TID.NE_MAP_OBJ_DESC",
+      "Title": "#TID.NORTHE_MAP_OBJ_TITLE",
+      "Description": "#TID.NORTHE_MAP_OBJ_DESC",
       "Icon": "icons/mission_icons/objective_icons/icon_objective_buy.png"
     },
     "BuyAreaCDesert": {

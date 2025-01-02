@@ -221,7 +221,9 @@
 			var _loc2_: Object = null;
 			this.mFireMissionItems = new Array();
 			for each(_loc2_ in GameState.mConfig.FireMission) {
-				this.mFireMissionItems.push(ItemManager.getItem(_loc2_.ID, _loc2_.Type));
+				if(_loc2_.Type == "FireMission"){ // Ignore pvp firemissions
+					this.mFireMissionItems.push(ItemManager.getItem(_loc2_.ID, _loc2_.Type));
+				}
 			}
 			if (param1) {
 				this.mPage = 0;

@@ -1,5 +1,37 @@
 {
     "TID": {
+        "NORTHW_MAP_OBJ_TITLE": {
+            "ID": "NORTHW_MAP_OBJ_TITLE",
+            "en": "Buy the map of Western Glacier"
+        },
+        "NORTHW_MAP_OBJ_DESC": {
+            "ID": "NORTHW_MAP_OBJ_DESC",
+            "en": "Go to the shop and buy the map under the Maps tab"
+        },
+        "NORTHC_MAP_OBJ_TITLE": {
+            "ID": "NORTHC_MAP_OBJ_TITLE",
+            "en": "Buy the map of Northern Midland"
+        },
+        "NORTHC_MAP_OBJ_DESC": {
+            "ID": "NORTHC_MAP_OBJ_DESC",
+            "en": "Go to the shop and buy the map under the Maps tab"
+        },
+        "NORTHE_MAP_OBJ_TITLE": {
+            "ID": "NORTHE_MAP_OBJ_TITLE",
+            "en": "Buy the map of Eastern Bergheim"
+        },
+        "NORTHE_MAP_OBJ_DESC": {
+            "ID": "NORTHE_MAP_OBJ_DESC",
+            "en": "Go to the shop and buy the map under the Maps tab"
+        },
+        "BUTTON_APPFILES": {
+            "ID": "BUTTON_APPFILES",
+            "en": "Legacy"
+        },
+        "BUTTON_DOCUMENTS": {
+            "ID": "BUTTON_DOCUMENTS",
+            "en": "Documents"
+        },
         "BUILDING_HOSPITAL": {
             "ID": "BUILDING_HOSPITAL",
             "en": "Hospital"
@@ -12618,7 +12650,7 @@
         },
         "UNIT_ROCKETEER_DESC": {
             "ID": "UNIT_ROCKETEER_DESC",
-            "en": "Go where no one has gone before!\\n Health: 6\\n Damage: 6\\n Range: 1\\n\\nSpecial:\\nFlight (passes through all obstacles).\\nElite (Completely indestructible)"
+            "en": "Go where no one has gone before!\\n\\nSpecial:\\nFlight (passes through all obstacles).\\nElite (Completely indestructible)"
         },
         "TOURNAMENT_HUNT_TANKS_NAME": {
             "ID": "TOURNAMENT_HUNT_TANKS_NAME",
