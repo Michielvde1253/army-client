@@ -10,7 +10,6 @@
 	import game.net.ServerCall;
 	import game.sound.ArmySoundManager;
 	import game.states.GameState;
-	import com.dchoc.utils.Cookie;
 	import game.utils.OfflineSave;
 	CONFIG::BUILD_FOR_MOBILE_AIR {
 		import flash.filesystem.File;
@@ -65,12 +64,12 @@
 			}
 			switch (param1.target) {
 				case this.mButtonGivePerms.getMovieClip():
-					Cookie.saveCookieVariable(Config.COOKIE_SETTINGS_NAME, Config.COOKIE_SETTINGS_NAME_SAVELOCATION, "documents");
-					trace("GOT YOU WTF")
+					GameState.mInstance.mSaveLocation = "documents";
+					this.saveSettingsSave(param1);
 					this.buttonSavePressed(param1); // aka save progress
 					break;
 				case this.mButtonDenyPerms.getMovieClip():
-					Cookie.saveCookieVariable(Config.COOKIE_SETTINGS_NAME, Config.COOKIE_SETTINGS_NAME_SAVELOCATION, "legacy");
+					GameState.mInstance.mSaveLocation = "legacy";
 					this.buttonSavePressed(param1);
 					break;
 			}
@@ -91,7 +90,7 @@
 			CONFIG::BUILD_FOR_MOBILE_AIR {
 				// Resolve the file path
 				var file2: File = null;
-				if (Cookie.readCookieVariable(Config.COOKIE_SETTINGS_NAME, Config.COOKIE_SETTINGS_NAME_SAVELOCATION) == "documents") {
+				if (GameState.mInstance.mSaveLocation == "documents") {
 					var file: File = File.documentsDirectory.resolvePath("ArmyAttack/savefile.txt");
 					file2 = File.applicationStorageDirectory.resolvePath("savefile.txt"); // Also save in appdata, just to be sure
 				} else {
@@ -127,6 +126,38 @@
 					var stream: FileStream = new FileStream();
 					stream.open(file, FileMode.WRITE);
 					stream.writeUTFBytes(JSON.stringify(savedata));
+					stream.close()
+				}
+			}
+		}
+		CONFIG::BUILD_FOR_MOBILE_AIR {
+			public function saveSettingsSave(param1: MouseEvent): void {
+				var file: File = File.applicationStorageDirectory.resolvePath("savesettings.txt");
+				file.addEventListener(PermissionEvent.PERMISSION_STATUS, onSaveSettingsSavePermission);
+				file.requestPermission();
+			}
+		}
+
+		CONFIG::BUILD_FOR_MOBILE_AIR {
+			public function onSaveSettingsSavePermission(e: PermissionEvent): void {
+				var file: File = e.target as File;
+				file.removeEventListener(PermissionEvent.PERMISSION_STATUS, onSaveSettingsSavePermission);
+				if (e.status == PermissionStatus.GRANTED) {
+
+					var data: * = {};
+					data["savelocation"] = GameState.mInstance.mSaveLocation;
+
+					// Open a file stream to write content to the file
+					var fileStream: FileStream = new FileStream();
+					fileStream.open(file, FileMode.WRITE);
+					fileStream.writeUTFBytes(data);
+					fileStream.close();
+
+					var bytearray: ByteArray = new ByteArray();
+					bytearray.writeUTF(data);
+					var stream: FileStream = new FileStream();
+					stream.open(file, FileMode.WRITE);
+					stream.writeUTFBytes(JSON.stringify(data));
 					stream.close()
 				}
 			}

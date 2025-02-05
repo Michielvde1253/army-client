@@ -1345,7 +1345,7 @@
 			CONFIG::BUILD_FOR_MOBILE_AIR {
 				// Resolve the file path
 				var file2: File = null;
-				if (Cookie.readCookieVariable(Config.COOKIE_SETTINGS_NAME, Config.COOKIE_SETTINGS_NAME_SAVELOCATION) == "documents") {
+				if (GameState.mInstance.mSaveLocation == "documents") {
 					var file: File = File.documentsDirectory.resolvePath("ArmyAttack/savefile.txt");
 					file2 = File.applicationStorageDirectory.resolvePath("savefile.txt"); // Also save in appdata, just to be sure
 				} else {
@@ -1366,7 +1366,7 @@
 				trace("auto saved game")
 				// Resolve the file path
 				var file2: File = null;
-				if (Cookie.readCookieVariable(Config.COOKIE_SETTINGS_NAME, Config.COOKIE_SETTINGS_NAME_SAVELOCATION) == "documents") {
+				if (GameState.mInstance.mSaveLocation == "documents") {
 					var file: File = File.documentsDirectory.resolvePath("ArmyAttack/savefile.txt");
 					file2 = File.applicationStorageDirectory.resolvePath("savefile.txt"); // Also save in appdata, just to be sure
 				} else {

@@ -345,6 +345,8 @@
 
 		public var isExitWindowOpen: Boolean;
 
+		public var mSaveLocation: String = "legacy";
+
 		private var mNotificationOn: Boolean;
 
 		private var mFogOfWarOn: Boolean = true;
@@ -872,14 +874,17 @@
 
 		CONFIG::BUILD_FOR_MOBILE_AIR {
 			public function startSelectingFile(): void {
-				trace("the savelocation is right now:")
-				trace(Cookie.readCookieVariable(Config.COOKIE_SETTINGS_NAME, Config.COOKIE_SETTINGS_NAME_SAVELOCATION))
-				if(Config.COOKIE_SETTINGS_NAME_SAVELOCATION == "legacy" || Config.COOKIE_SETTINGS_NAME_SAVELOCATION == ""){
-					var file: File = File.applicationStorageDirectory.resolvePath("savefile.txt");
-					trace("this runs")
-				} else {
+				if (mSaveLocation == "documents") {
 					var file: File = File.documentsDirectory.resolvePath("ArmyAttack/savefile.txt");
-					trace("no this")
+					if (!file.exists) {
+						// Check if a legacy save file (from v21) exists, use if yes
+						file = File.applicationStorageDirectory.resolvePath("savefile.txt");
+						if (!file.exists) {
+							return
+						}
+					}
+				} else if (mSaveLocation == "legacy") {
+					file = File.applicationStorageDirectory.resolvePath("savefile.txt");
 					if (!file.exists) {
 						// Falling back to appdata file
 						var file: File = File.applicationStorageDirectory.resolvePath("savefile.txt");
@@ -2556,13 +2561,17 @@
 						this.mHUD.mPullOutMissionFrame.addEventListener(Event.ENTER_FRAME, this.enterFrameMissionInitial);
 					}
 					CONFIG::BUILD_FOR_MOBILE_AIR {
-						var first_time_since_v22: String = Cookie.readCookieVariable(Config.COOKIE_SETTINGS_NAME, Config.COOKIE_SETTINGS_NAME_APPLAUNCH_V22);
-						if (first_time_since_v22 != "false") {
-							// First time opening the game since v22, show permission window
-							Cookie.saveCookieVariable(Config.COOKIE_SETTINGS_NAME, Config.COOKIE_SETTINGS_NAME_SAVELOCATION, "legacy");
-							this.mHUD.openGiveFilePermissionScreen();
-							Cookie.saveCookieVariable(Config.COOKIE_SETTINGS_NAME, Config.COOKIE_SETTINGS_NAME_APPLAUNCH_V22, "false");
+						file = File.applicationStorageDirectory.resolvePath("savesettings.txt");
+						if (file.exists) {
+							var first_time_since_v22: Boolean = false;
 						} else {
+							var first_time_since_v22: Boolean = true;
+						}
+						if (first_time_since_v22) {
+							// First time opening the game since v22, show permission window
+							this.mHUD.openGiveFilePermissionScreen();
+						} else {
+							this.saveSettingsLoad();
 							this.mHUD.openPauseScreen();
 						}
 					}
@@ -2631,6 +2640,34 @@
 			this.mUpdateMissionButtonsPending = true;
 			if (this.mMissionIconsManager) {
 				this.mMissionIconsManager.resize(this.getStageWidth(), this.getStageHeight());
+			}
+		}
+
+		CONFIG::BUILD_FOR_MOBILE_AIR {
+			public function saveSettingsLoad(): void {
+				file = File.applicationStorageDirectory.resolvePath("savesettings.txt");
+				if (!file.exists) {
+					return
+				}
+				file.addEventListener(PermissionEvent.PERMISSION_STATUS, onSaveSettingsSavePermission);
+				file.requestPermission();
+			}
+		}
+
+		CONFIG::BUILD_FOR_MOBILE_AIR {
+			public function onSaveSettingsLoadPermission(e: PermissionEvent): void {
+				var file: File = e.target as File;
+				file.removeEventListener(PermissionEvent.PERMISSION_STATUS, onSaveSettingsSavePermission);
+				if (e.status == PermissionStatus.GRANTED) {
+					var fs: FileStream = new FileStream();
+					fs.open(file, FileMode.READ);
+
+					// Read save settings data
+					var readData: * = JSON.parse(fs.readUTFBytes(fs.bytesAvailable));
+					mSaveLocation = readData["savelocation"];
+
+					fs.close();
+				}
 			}
 		}
 

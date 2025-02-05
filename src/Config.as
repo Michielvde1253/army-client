@@ -113,10 +113,6 @@
       public static const COOKIE_SETTINGS_NAME_NOTIFICATION:String = "Notification";
       
       public static const COOKIE_SETTINGS_NAME_APPLAUNCH:String = "Applaunch";
-	  
-      public static const COOKIE_SETTINGS_NAME_APPLAUNCH_V22:String = "ApplaunchSinceV22";
-	  
-      public static const COOKIE_SETTINGS_NAME_SAVELOCATION:String = "SaveLocation";
       
       public static const COOKIE_SESSION_NAME:String = "Session";
       

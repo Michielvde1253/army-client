@@ -123,10 +123,17 @@
 				this.fileRef.browse();
 			}
 			CONFIG::BUILD_FOR_MOBILE_AIR {
-				if(Config.COOKIE_SETTINGS_NAME_SAVELOCATION == "legacy" || Config.COOKIE_SETTINGS_NAME_SAVELOCATION == ""){
-					var file: File = File.applicationStorageDirectory.resolvePath("savefile.txt");
-				} else {
+				if (GameState.mInstance.mSaveLocation == "documents") {
 					var file: File = File.documentsDirectory.resolvePath("ArmyAttack/savefile.txt");
+					if (!file.exists) {
+						// Check if a legacy save file (from v21) exists, use if yes
+						file = File.applicationStorageDirectory.resolvePath("savefile.txt");
+						if (!file.exists) {
+							return
+						}
+					}
+				} else if (GameState.mInstance.mSaveLocation == "legacy") {
+					file = File.applicationStorageDirectory.resolvePath("savefile.txt");
 					if (!file.exists) {
 						// Falling back to appdata file
 						var file: File = File.applicationStorageDirectory.resolvePath("savefile.txt");
