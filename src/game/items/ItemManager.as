@@ -28,6 +28,7 @@
          addItems("BuildingDrives",createBuildingDrive);
          addItems("Building",createConstructionItem);
          addItems("ResourceBuilding",createResourceBuildingItem);
+         addItems("HospitalBuilding",createHospitalBuildingItem);
          addItems("PlayerUnit",createPlayerUnitItem);
          addItems("EnemyUnit",createEnemyUnitItem);
          addItems("EnemyAppearanceSetup",createEnemyAppearanceSetup);
@@ -152,6 +153,11 @@
       private static function createResourceBuildingItem(param1:Object) : Item
       {
          return new ResourceBuildingItem(param1);
+      }
+  
+      private static function createHospitalBuildingItem(param1:Object) : Item
+      {
+         return new HospitalItem(param1);
       }
       
       private static function createDecorationItem(param1:Object) : Item

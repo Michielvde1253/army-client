@@ -354,6 +354,10 @@
 			this.mUpdateHintHealth = true;
 			this.mUpdateHintPower = true;
 		}
+	
+		public function setUpdateHintPower(param1: Boolean): void {
+			this.mUpdateHintPower = param1;
+		}
 
 		protected function updateHintHealth(): void {
 			var _loc4_: MovieClip = null;

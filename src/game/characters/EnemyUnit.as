@@ -318,6 +318,7 @@
 			var _loc2_: Sprite = GameState.mInstance.mScene.mSceneHud;
 			if (this.mReactionStateCounter <= 3) {
 				this.showActivationIcon(true);
+
 				if (this.mActivationIconState != ACTIVATION_IN_TOP_3) {
 					this.changeActivationIcon("icon_status_urgent_enemy");
 					this.mActivationIconState = ACTIVATION_IN_TOP_3;
@@ -371,6 +372,7 @@
 				if (this.mActivationIconState != ACTIVATION_NONE) {
 					this.mActivationIconState = ACTIVATION_NONE;
 				}
+
 			}
 		}
 
@@ -387,6 +389,7 @@
 					this.mActivationIcon.removeEventListener(MouseEvent.CLICK, this.centerOnUnit);
 				}
 			}
+
 		}
 
 		private function centerOnUnit(param1: MouseEvent = null): void {
@@ -398,36 +401,65 @@
 		}
 
 		public function unSetActivationIcon(): void {
+
 			this.showActivationIcon(false);
 			this.showOffScreenArrowIcon(false);
 			if (this.mActivationIcon) {
 				this.mActivationIconState = ACTIVATION_NONE;
 			}
+
 		}
 
 		private function changeActivationIcon(param1: String): void {
+
 			if (this.mActivationIcon) {
-				this.mActivationIcon.removeEventListener(Event.ENTER_FRAME, this.removeActionIcon);
-				if (this.mActivationIcon.parent) {
-					this.mActivationIcon.parent.removeChild(this.mActivationIcon);
-				}
+				//this.mActivationIcon.addEventListener(Event.ENTER_FRAME, this.removeActionIcon);
+				//if (this.mActivationIcon.parent) {
+				//	this.mActivationIcon.parent.removeChild(this.mActivationIcon);
+				//}
 			}
 			var _loc2_: Class = DCResourceManager.getInstance().getSWFClass(Config.SWF_INTERFACE_NAME, param1);
-			this.mActivationIcon = new _loc2_();
+			//this.mActivationIcon = new _loc2_();
+			var _loc8_: MovieClip = null;
+			var _loc3_: int = 0;
+			var _loc4_: MovieClip = null;
+			var _loc5_: MovieClip = null;
+			if (!mAnimationController) {
+				return;
+			}
+							_loc8_ = mAnimationController.getCurrentAnimation();
+				_loc3_ = 0;
+				while (_loc3_ < _loc8_.numChildren) {
+					if (_loc5_ = (_loc4_ = _loc8_.getChildAt(_loc3_) as MovieClip).getChildByName("Hint_Health_Friendly_Attention") as MovieClip) {
+						_loc5_.visible = true;
+						this.mActivationIcon = _loc5_
+						this.mActivationIcon.addEventListener(Event.ENTER_FRAME, this.removeActionIcon);
+					}
+					if (_loc5_ = (_loc4_ = _loc8_.getChildAt(_loc3_) as MovieClip).getChildByName("Hint_Health_Friendly") as MovieClip) {
+						_loc5_.visible = true;
+					}
+					_loc3_++;
+				}
+		    
+		    trace("created new activation icon")
 			this.showOffScreenArrowIcon(true);
+
 		}
 
 		private function removeActionIcon(param1: Event): void {
+
 			if (this.mActivationIcon) {
 				if (this.mActivationIcon.currentFrame == this.mActivationIcon.totalFrames) {
-					if (this.mActivationIcon.parent) {
-						this.mActivationIcon.parent.removeChild(this.mActivationIcon);
-					}
-					this.mActivationIcon.stop();
-					this.mActivationIcon.removeEventListener(Event.ENTER_FRAME, this.removeActionIcon);
-					this.mActivationIcon = null;
+					//if (this.mActivationIcon.parent) {
+					//	this.mActivationIcon.parent.removeChild(this.mActivationIcon);
+					//}
+					//this.mActivationIcon.stop();
+					//this.mActivationIcon.removeEventListener(Event.ENTER_FRAME, this.removeActionIcon);
+					//this.mActivationIcon = null;
+				    //trace("removed activation icon")
 				}
 			}
+
 		}
 
 		public function reloadAvatar(param1: String, param2: Array): void {}
@@ -887,7 +919,6 @@
 		}
 
 		public function showActivationIcon(param1: Boolean): void {
-			// Is called Hint_Health_Friendly so we can recycle the scripts from player units.
 			var _loc2_: MovieClip = null;
 			var _loc3_: int = 0;
 			var _loc4_: MovieClip = null;
@@ -900,35 +931,14 @@
 				_loc2_ = mAnimationController.getCurrentAnimation();
 				_loc3_ = 0;
 				while (_loc3_ < _loc2_.numChildren) {
-					if (_loc5_ = (_loc4_ = _loc2_.getChildAt(_loc3_) as MovieClip).getChildByName("Hint_Health_Friendly") as MovieClip) {
-						_loc5_.visible = false;
-					}
 					if (_loc5_ = (_loc4_ = _loc2_.getChildAt(_loc3_) as MovieClip).getChildByName("Hint_Health_Friendly_Attention") as MovieClip) {
-						_loc5_.visible = true;
-						_loc5_.gotoAndStop("end");
+						if (param1 != _loc5_.visible) {
+							_loc5_.visible = param1;
+						}
 					}
 					_loc3_++;
 				}
 			}
-
-
-			/*
-			if (this.mActivationIconVisible == -1 || this.mActivationIconVisible == 1 != param1) {
-				this.mActivationIconVisible = param1 ? 1 : 0;
-				_loc2_ = mAnimationController.getCurrentAnimation();
-				_loc3_ = 0;
-				while (_loc3_ < _loc2_.numChildren) {
-					if (_loc5_ = (_loc4_ = _loc2_.getChildAt(_loc3_) as MovieClip).getChildByName("Hint_Health_Friendly") as MovieClip) {
-						_loc5_.visible = !param1;
-					}
-					if (_loc5_ = (_loc4_ = _loc2_.getChildAt(_loc3_) as MovieClip).getChildByName("Hint_Health_Friendly_Attention") as MovieClip) {
-						_loc5_.visible = param1;
-						_loc5_.gotoAndStop("end");
-					}
-					_loc3_++;
-				}
-			}
-		*/
 		}
 
 		public function getActivationTimeInMinutes(): int {

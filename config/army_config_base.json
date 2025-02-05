@@ -5,7 +5,7 @@
       "Width": "70",
       "Height": "70",
       "ZoomLevels": "70, 100",
-      "ZoomLevelsMobile": "100, 160",
+      "ZoomLevelsMobile": "120, 180",
       "MarginX": "186",
       "MarginY": "93",
       "DefaultCellX": "52",
@@ -25,7 +25,7 @@
       "Width": "20",
       "Height": "20",
       "ZoomLevels": "70, 100",
-      "ZoomLevelsMobile": "100, 160",
+      "ZoomLevelsMobile": "120, 180",
       "MarginX": "186",
       "MarginY": "93",
       "DefaultCellX": "10",
@@ -42,7 +42,7 @@
       "Width": "71",
       "Height": "73",
       "ZoomLevels": "70, 100",
-      "ZoomLevelsMobile": "100, 160",
+      "ZoomLevelsMobile": "120, 180",
       "MarginX": "186",
       "MarginY": "93",
       "DefaultCellX": "55",
@@ -62,7 +62,7 @@
       "OutOfResourceText": "#TID.POP_UP_WATER_DESC",
       "OutOfResourceFeed": "#FeedObjects.RequestWater",
       "OutOfResourcePopupClassName": "popup_ask_water",
-      "UnlockMission": "#Mission.AREA_SE_WP_outro8"
+      "UnlockMission": "#Mission.AREA_SE_AIRPORT_C1_outro5"
     },
     "pvp_map_1_4valleys_11x11": {
       "ID": "pvp_map_1_4valleys_11x11",
@@ -420,60 +420,63 @@
       "ImageUrl": "cash_icon.png",
       "DescriptionSecondary": "#TID.AREA_NE_DESC_SECONDARY"
     },
-    "AreaNorthW": {
-      "ID": "AreaNorthW",
+    "AreaNorthW2": {
+      "ID": "AreaNorthW2",
       "MapID": "Home",
       "Type": "Area",
       "Name": "#TID.AREANORTHW_NAME",
       "Description": "#TID.AREANORTHW_DESC",
-      "IconGraphics": "icons/shop_icons/icon_expansion_03.png",
+      "IconGraphics": "icons/shop_icons/icon_expansion_10.png",
       "AreaX": "36",
       "AreaY": "26",
       "AreaWidth": "11",
       "AreaHeight": "10",
+      "RequiredMission": "#Mission.MAP_LOCK_NW2",
       "RequiredLevel": "0",
       "RequiredAllies": "0",
-      "CostMoney": "50000",
-      "CostIntel": "30",
-      "CostUnlock": "50",
+      "CostMoney": "150000",
+      "CostIntel": "90",
+      "CostUnlock": "90",
       "ImageUrl": "cash_icon.png",
       "DescriptionSecondary": "#TID.AREANORTHW_DESC"
     },
-    "AreaNorthC": {
-      "ID": "AreaNorthC",
+    "AreaNorthC2": {
+      "ID": "AreaNorthC2",
       "MapID": "Home",
       "Type": "Area",
       "Name": "#TID.AREANORTHC_NAME",
       "Description": "#TID.AREANORTHC_DESC",
-      "IconGraphics": "icons/shop_icons/icon_expansion_03.png",
+      "IconGraphics": "icons/shop_icons/icon_expansion_11.png",
       "AreaX": "47",
       "AreaY": "26",
       "AreaWidth": "11",
       "AreaHeight": "10",
+      "RequiredMission": "#Mission.MAP_LOCK_NC2",
       "RequiredLevel": "0",
       "RequiredAllies": "0",
-      "CostMoney": "50000",
-      "CostIntel": "30",
-      "CostUnlock": "50",
+      "CostMoney": "300000",
+      "CostIntel": "120",
+      "CostUnlock": "120",
       "ImageUrl": "cash_icon.png",
       "DescriptionSecondary": "#TID.AREANORTHC_DESC"
     },
-    "AreaNorthE": {
-      "ID": "AreaNorthE",
+    "AreaNorthE2": {
+      "ID": "AreaNorthE2",
       "MapID": "Home",
       "Type": "Area",
       "Name": "#TID.AREANORTHE_NAME",
       "Description": "#TID.AREANORTHE_DESC",
-      "IconGraphics": "icons/shop_icons/icon_expansion_03.png",
+      "IconGraphics": "icons/shop_icons/icon_expansion_12.png",
       "AreaX": "58",
       "AreaY": "26",
       "AreaWidth": "11",
       "AreaHeight": "10",
+      "RequiredMission": "#Mission.MAP_LOCK_NE2",
       "RequiredLevel": "0",
       "RequiredAllies": "0",
-      "CostMoney": "50000",
-      "CostIntel": "30",
-      "CostUnlock": "50",
+      "CostMoney": "500000",
+      "CostIntel": "150",
+      "CostUnlock": "150",
       "ImageUrl": "cash_icon.png",
       "DescriptionSecondary": "#TID.AREANORTHE_DESC"
     },
@@ -3311,6 +3314,14 @@
       "MapType": "#MapType.Grassland",
       "GraphicsFriendly": "swf/new_backgroud_01/Bg_GoodTile_01, swf/new_backgroud_01/Bg_GoodTile_02",
       "GraphicsEnemy": "swf/new_backgroud_01/Bg_BadTile_01, swf/new_backgroud_01/Bg_BadTile_02"
+    },
+    "39": {
+      "ID": "39",
+      "Description": "Grasslands_02",
+      "Passability": "#Passability.Land",
+      "MapType": "#MapType.Grassland",
+      "GraphicsFriendly": "swf/new_backgroud_01/Bg_GoodTileSnow_01",
+      "GraphicsEnemy": "swf/new_backgroud_01/Bg_BadTileSnow_01"
     },
     "99": {
       "ID": "99",
@@ -7921,6 +7932,32 @@
       "KillRewardEnergy": "30",
       "Crafting": "#HFEDrives.Town1,#HFEDrives.Town2,#HFEDrives.Town3"
     },
+    "NCTown": {
+      "ID": "NCTown",
+      "Type": "PermanentHFE",
+      "Name": "#TID.HFE_AREA9TOWN1",
+      "Description": "#TID.HFE_AREA9TOWN1_DESC",
+      "Graphics": "swf/buildings_common_civilian_low/Bg_GoodVillage_01",
+      "CloudedGraphics": "swf/buildings_common_civilian_low/Bg_GoodTown_01_clouds",
+      "GraphicsLoader": "InnerMovieClip",
+      "ObjectClass": "game.gameElements.PermanentHFEObject",
+      "DimX": "2",
+      "DimY": "2",
+      "DimZ": "1",
+      "SightRange": "2",
+      "Health": "12",
+      "HitRewardXP": "1",
+      "HitRewardMoney": "5",
+      "HitRewardSupplies": "0",
+      "HitRewardMaterial": "0",
+      "HitRewardEnergy": "15",
+      "KillRewardXP": "2",
+      "KillRewardMoney": "100",
+      "KillRewardSupplies": "0",
+      "KillRewardMaterial": "0",
+      "KillRewardEnergy": "30",
+      "Crafting": "#HFEDrives.Town1,#HFEDrives.Town2,#HFEDrives.Town3"
+    },
     "Dvillage": {
       "ID": "Dvillage",
       "Type": "PermanentHFE",
@@ -9408,6 +9445,155 @@
       "PickupCostSupplies": "2000",
       "WeaponType": "explosion",
       "MovementType": "normal",
+      "PvPCostSupplies": "190",
+      "MaxAmount": "2",
+      "AvailableInMaps": "Home"
+    },
+    "EliteJuggernaut": {
+      "ID": "EliteJuggernaut",
+      "Type": "Armor",
+      "Name": "#TID.UNIT_PREMIUM_ELITEJUGGERNAUT",
+      "Description": "#TID.UNIT_PREMIUM_ELITEJUGGERNAUT_DESC",
+      "IconGraphics": "icons/shop_icons/icon_units_jugg.png",
+      "Graphic_idle": "swf/units_player_late/good_jugg_idle",
+      "Graphic_move": "swf/units_player_late/good_jugg_moving",
+      "Graphic_aim": "swf/units_player_late/good_jugg_aim",
+      "Graphic_shoot": "swf/units_player_late/good_jugg_fire",
+      "Graphic_hit": "swf/units_player_late/good_jugg_hit",
+      "Graphic_die": "swf/units_player_late/good_jugg_dead",
+      "Graphic_aim_up": "swf/units_player_late/good_jugg_aim_ne",
+      "Graphic_shoot_up": "swf/units_player_late/good_jugg_fire_ne",
+      "Graphic_move_up": "swf/units_player_late/good_jugg_moving_ne",
+      "Graphic_explosion": "swf/effects_low/effect_explosion",
+      "ObjectClass": "game.characters.PlayerUnit",
+      "RequiredLevel": "1",
+      "RequiredAllies": "0",
+      "CostMoney": "0",
+      "CostSupplies": "0",
+      "CostPremium": "399",
+      "Health": "25",
+      "Damage": "5",
+      "AttackRange": "2",
+      "SightRange": "4",
+      "MovementRange": "3",
+      "PvpMovementRange": "2",
+      "MaxHealTime": "0",
+      "HealCostEnergy": "0",
+      "HealCostSupplies": "4000",
+      "ReviveCostSupplies": "0",
+      "HealRewardMoney": "0",
+      "HealRewardXP": "5",
+      "HealRewardEnergy": "20",
+      "DimX": "1",
+      "DimY": "1",
+      "DimZ": "1",
+      "DisbandRewardMoney": "3500",
+      "MovementRewardXP": "1",
+      "MovementRewardEnergy": "20",
+      "CostUnlock": "1",
+      "ImageUrl": "cash_icon.png",
+      "PassableGroups": "#Passability.Land",
+      "PickupCostSupplies": "2000",
+      "WeaponType": "explosion",
+      "MovementType": "normal",
+      "PvPCostSupplies": "190"
+    },
+    "BlackFox": {
+      "ID": "BlackFox",
+      "Type": "Infantry",
+      "Name": "#TID.UNIT_BLACK_FOX",
+      "Description": "#TID.UNIT_BLACK_FOX_DESC",
+      "IconGraphics": "icons/shop_icons/icon_units_premium_sniper.png",
+      "Graphic_idle": "swf/units_player_start_low/good_black_fox_idle",
+      "Graphic_move": "swf/units_player_start_low/good_sniper_moving",
+      "Graphic_aim": "swf/units_player_start_low/good_sniper_aim",
+      "Graphic_shoot": "swf/units_player_start_low/good_sniper_fire",
+      "Graphic_hit": "swf/units_player_start_low/good_sniper_hit",
+      "Graphic_die": "swf/units_player_start_low/good_infantry_dead",
+      "Graphic_aim_up": "swf/units_player_start_low/good_sniper_aim_ne",
+      "Graphic_shoot_up": "swf/units_player_start_low/good_sniper_fire_ne",
+      "Graphic_move_up": "swf/units_player_start_low/good_sniper_moving_ne",
+      "Graphic_explosion": "swf/effects_low/effect_explosion",
+      "ObjectClass": "game.characters.PlayerUnit",
+      "PassableGroups": "#Passability.Land",
+      "RequiredLevel": "1",
+      "RequiredAllies": "0",
+      "CostMoney": "0",
+      "CostSupplies": "0",
+      "CostPremium": "99",
+      "Health": "12",
+      "Damage": "5",
+      "AttackRange": "1",
+      "SightRange": "5",
+      "MovementRange": "5",
+      "PvpMovementRange": "3",
+      "MaxHealTime": "0",
+      "HealCostEnergy": "0",
+      "HealCostSupplies": "500",
+      "ReviveCostSupplies": "0",
+      "HealRewardMoney": "0",
+      "HealRewardXP": "5",
+      "HealRewardEnergy": "20",
+      "DimX": "1",
+      "DimY": "1",
+      "DimZ": "1",
+      "DisbandRewardMoney": "1800",
+      "MovementRewardXP": "1",
+      "MovementRewardEnergy": "20",
+      "CostUnlock": "1",
+      "ImageUrl": "cash_icon.png",
+      "PickupCostSupplies": "700",
+      "WeaponType": "bullet",
+      "MovementType": "stealth",
+      "PvPCostSupplies": "110"
+    },
+    "EliteRocketeer": {
+      "ID": "EliteRocketeer",
+      "Type": "Infantry",
+      "Name": "#TID.UNIT_ROCKETEER_TITLE",
+      "Description": "#TID.UNIT_ROCKETEER_DESC",
+      "IconGraphics": "icons/shop_icons/icon_units_rocketeer.png",
+      "Graphic_idle": "swf/units_player_late/elite_rocketeer_idle",
+      "Graphic_move": "swf/units_player_late/elite_rocketeer_moving",
+      "Graphic_aim": "swf/units_player_late/elite_rocketeer_aim",
+      "Graphic_shoot": "swf/units_player_late/elite_rocketeer_fire",
+      "Graphic_hit": "swf/units_player_late/elite_rocketeer_hit",
+      "Graphic_die": "swf/units_player_late/elite_rocketeer_dead",
+      "Graphic_aim_up": "swf/units_player_late/elite_rocketeer_aim_ne",
+      "Graphic_shoot_up": "swf/units_player_late/elite_rocketeer_fire_ne",
+      "Graphic_move_up": "swf/units_player_late/elite_rocketeer_moving_ne",
+      "Graphic_explosion": "swf/effects_low/effect_explosion",
+      "ObjectClass": "game.characters.PlayerUnit",
+      "RequiredLevel": "1",
+      "RequiredAllies": "0",
+      "CostMoney": "0",
+      "CostSupplies": "0",
+      "CostPremium": "99",
+      "Health": "6",
+      "Damage": "6",
+      "AttackRange": "1",
+      "SightRange": "4",
+      "MovementRange": "5",
+      "PvpMovementRange": "2",
+      "MaxHealTime": "0",
+      "HealCostEnergy": "0",
+      "HealCostSupplies": "900",
+      "ReviveCostSupplies": "0",
+      "HealRewardMoney": "0",
+      "HealRewardXP": "5",
+      "HealRewardEnergy": "20",
+      "DimX": "1",
+      "DimY": "1",
+      "DimZ": "1",
+      "DisbandRewardMoney": "3500",
+      "MovementRewardXP": "1",
+      "MovementRewardEnergy": "20",
+      "CostUnlock": "1",
+      "ImageUrl": "cash_icon.png",
+      "PassableGroups": "#Passability.Land",
+      "PickupCostSupplies": "2000",
+      "WeaponType": "explosion",
+      "MovementType": "stealth",
       "PvPCostSupplies": "190"
     }
   },
@@ -9772,6 +9958,51 @@
       "CostUnlock": "12",
       "ImageUrl": "cash_icon.png",
       "AvailableInMaps": "Home,Desert"
+    },
+    "GoldFactory": {
+      "ID": "GoldFactory",
+      "Type": "Building",
+      "Name": "#TID.BUILDING_GOLD_FACTORY",
+      "Description": "#TID.BUILDING_GOLD_FACTORY_DESC",
+      "IconGraphics": "icons/shop_icons/icon_buildings_gold_factory.png",
+      "Graphics": "swf/buildings_player_start_low/gold_factory",
+      "ConstructionSiteGraphics": "construction_site_hq",
+      "GraphicsLoader": "InnerMovieClip",
+      "ObjectClass": "game.gameElements.ConstructionObject",
+      "RequiredLevel": "0",
+      "RequiredAllies": "0",
+      "CostMoney": "2000",
+      "CostSupplies": "0",
+      "CostPremium": "0",
+      "BuildSteps": "0",
+      "MaterialPerStep": "0",
+      "XPPerStep": "3",
+      "Ingredients": "",
+      "DimX": "3",
+      "DimY": "3",
+      "DimZ": "1",
+      "RewardMoney": "50",
+      "RewardXp": "0",
+      "RewardSupplies": "0",
+      "RewardPremium": "3",
+      "RewardMaterial": "0",
+      "RewardEnergy": "100",
+      "Time": "1",
+      "SpoilTime": "0",
+      "Health": "10",
+      "SightRange": "2",
+      "DisbandRewardMoney": "200",
+      "UnitCapIncrementInfantry": "0",
+      "UnitCapIncrementArmor": "0",
+      "UnitCapIncrementArtillery": "0",
+      "HealCostEnergy": "0",
+      "HealCostSupplies": "100",
+      "ReviveCostSupplies": "0",
+      "HealRewardMoney": "0",
+      "HealRewardXP": "1",
+      "HealRewardEnergy": "110",
+      "CostUnlock": "1",
+      "ImageUrl": "cash_icon.png"
     }
   },
   "ResourceBuilding": {
@@ -9814,7 +10045,112 @@
       "RewardEnergy": "0",
       "Time": "0",
       "AvailableInMaps": "Home",
-      "RequiredFriends": "6"
+      "RequiredFriends": "6",
+      "RequiredMission": "#Mission.AREA_SE_WP_HIDDEN"
+    }
+  },
+  "HospitalBuilding": {
+    "Mash": {
+      "ID": "Mash",
+      "Type": "HospitalBuilding",
+      "Name": "#TID.BUILDING_MASH",
+      "Description": "#TID.BUILDING_MASH_DESC",
+      "IconGraphics": "icons/shop_icons/icon_buildings_mash.png",
+      "Graphics": "swf/buildings_player_start_low/mash",
+      "ConstructionSiteGraphics": "construction_site_hq",
+      "GraphicsLoader": "InnerMovieClip",
+      "ObjectClass": "game.gameElements.HospitalBuilding",
+      "RequiredLevel": "0",
+      "RequiredAllies": "0",
+      "CostMoney": "75000",
+      "CostSupplies": "0",
+      "CostPremium": "0",
+      "BuildSteps": "0",
+      "MaterialPerStep": "0",
+      "XPPerStep": "3",
+      "Ingredients": "",
+      "DimX": "2",
+      "DimY": "2",
+      "DimZ": "1",
+      "RewardMoney": "50",
+      "RewardXp": "0",
+      "RewardSupplies": "0",
+      "RewardPremium": "3",
+      "RewardMaterial": "0",
+      "RewardEnergy": "100",
+      "Time": "1",
+      "SpoilTime": "0",
+      "Health": "10",
+      "SightRange": "2",
+      "DisbandRewardMoney": "200",
+      "UnitCapIncrementInfantry": "0",
+      "UnitCapIncrementArmor": "0",
+      "UnitCapIncrementArtillery": "0",
+      "HealCostEnergy": "0",
+      "HealCostSupplies": "100",
+      "ReviveCostSupplies": "0",
+      "HealRewardMoney": "0",
+      "HealRewardXP": "1",
+      "HealRewardEnergy": "110",
+      "CostUnlock": "1",
+      "ImageUrl": "cash_icon.png",
+      "CooldownTime": 18000,
+      "HealPower": 5,
+      "AttackRange": 1,
+      "MaxAmount": 3,
+      "DescriptionReady": "#TID.BUILDING_MASH_READY",
+      "DescriptionNotReady": "#TID.BUILDING_MASH_NOT_READY"
+    },
+    "Hospital": {
+      "ID": "Hospital",
+      "Type": "HospitalBuilding",
+      "Name": "#TID.BUILDING_HOSPITAL",
+      "Description": "#TID.BUILDING_HOSPITAL_DESC",
+      "IconGraphics": "icons/shop_icons/icon_buildings_hospital.png",
+      "Graphics": "swf/buildings_player_start_low/hospital",
+      "ConstructionSiteGraphics": "construction_site_hq",
+      "GraphicsLoader": "InnerMovieClip",
+      "ObjectClass": "game.gameElements.HospitalBuilding",
+      "RequiredLevel": "0",
+      "RequiredAllies": "0",
+      "CostMoney": "0",
+      "CostSupplies": "0",
+      "CostPremium": "99",
+      "BuildSteps": "0",
+      "MaterialPerStep": "0",
+      "XPPerStep": "3",
+      "Ingredients": "",
+      "DimX": "2",
+      "DimY": "2",
+      "DimZ": "1",
+      "RewardMoney": "50",
+      "RewardXp": "0",
+      "RewardSupplies": "0",
+      "RewardPremium": "3",
+      "RewardMaterial": "0",
+      "RewardEnergy": "100",
+      "Time": "1",
+      "SpoilTime": "0",
+      "Health": "10",
+      "SightRange": "2",
+      "DisbandRewardMoney": "200",
+      "UnitCapIncrementInfantry": "0",
+      "UnitCapIncrementArmor": "0",
+      "UnitCapIncrementArtillery": "0",
+      "HealCostEnergy": "0",
+      "HealCostSupplies": "100",
+      "ReviveCostSupplies": "0",
+      "HealRewardMoney": "0",
+      "HealRewardXP": "1",
+      "HealRewardEnergy": "110",
+      "CostUnlock": "1",
+      "ImageUrl": "cash_icon.png",
+      "CooldownTime": 21600,
+      "HealPower": 10,
+      "AttackRange": 1,
+      "MaxAmount": 2,
+      "DescriptionReady": "#TID.BUILDING_HOSPITAL_READY",
+      "DescriptionNotReady": "#TID.BUILDING_HOSPITAL_NOT_READY"
     }
   },
   "BuildingIngredient": {
@@ -10034,6 +10370,26 @@
       "CostSupplies": "0",
       "CostPremium": "0",
       "Time": "960",
+      "SpoilTime": "0",
+      "HireCostPremium": "5"
+    },
+    "Gold": {
+      "ID": "Gold",
+      "Type": "BuildingDrive",
+      "Name": "#TID.BUILDING_DRIVE_WATER_1",
+      "Description": "#TID.BUILDING_DRIVE_WATER_1_DESC",
+      "Graphics": "icons/shop_icons/icon_water_pack_01.png",
+      "RewardWater": "0",
+      "RewardXp": "0",
+      "RewardMoney": "0",
+      "RewardPremium": "3",
+      "RewardSupplies": "0",
+      "RewardEnergy": "0",
+      "PlantRewardXP": "0",
+      "CostMoney": "75",
+      "CostSupplies": "0",
+      "CostPremium": "0",
+      "Time": "4320",
       "SpoilTime": "0",
       "HireCostPremium": "5"
     }
@@ -10493,6 +10849,35 @@
       "KillRewardEnergy": "35",
       "KillRewardMaterial": "0"
     },
+    "BeaconHQ": {
+      "ID": "BeaconHQ",
+      "Type": "EnemyInstallation",
+      "Name": "#TID.MOUSEOVER_ENEMY_BEACON_HQ",
+      "Graphic_idle": "swf/buildings_enemy/enemy_building_beacon_hq, swf/buildings_enemy/enemy_building_beacon_hq_desert",
+      "Graphic_shoot": "swf/buildings_enemy/enemy_building_beacon_hq_fire, swf/buildings_enemy/enemy_building_beacon_hq_desert_fire",
+      "Graphic_hit": "swf/buildings_enemy/enemy_building_beacon_hq, swf/buildings_enemy/enemy_building_beacon_hq_desert",
+      "Graphic_destroy": "swf/effects_low/effect_explosion",
+      "ObjectClass": "game.gameElements.EnemyInstallationObject",
+      "Health": "500",
+      "Damage": "3",
+      "AttackRange": "2",
+      "ReactionTime": "0",
+      "ProtectorMission": "#Mission.AREA_NE2",
+      "DimX": "3",
+      "DimY": "3",
+      "DimZ": "1",
+      "Walkable": "No",
+      "HitRewardXP": "1",
+      "HitRewardMoney": "50",
+      "HitRewardSupplies": "0",
+      "HitRewardEnergy": "5",
+      "HitRewardMaterial": "0",
+      "KillRewardXP": "150",
+      "KillRewardMoney": "1000",
+      "KillRewardSupplies": "0",
+      "KillRewardEnergy": "35",
+      "KillRewardMaterial": "0"
+    },
     "BfortN": {
       "ID": "BfortN",
       "Type": "EnemyInstallation",
@@ -10626,6 +11011,34 @@
       "KillRewardEnergy": "20",
       "KillRewardMaterial": "0"
     },
+    "PowerGenerator2": {
+      "ID": "PowerGenerator2",
+      "Type": "EnemyInstallation",
+      "Name": "#TID.GEN_TITLE",
+      "Graphic_idle": "swf/buildings_enemy/building_enemy_factory, swf/buildings_enemy/building_enemy_factory_desert",
+      "Graphic_shoot": "swf/buildings_enemy/building_enemy_factory, swf/buildings_enemy/building_enemy_factory_desert",
+      "Graphic_hit": "swf/buildings_enemy/building_enemy_factory, swf/buildings_enemy/building_enemy_factory_desert",
+      "Graphic_destroy": "swf/effects_low/effect_explosion",
+      "ObjectClass": "game.gameElements.EnemyInstallationObject",
+      "Health": "250",
+      "Damage": "0",
+      "AttackRange": "0",
+      "ReactionTime": "0",
+      "DimX": "3",
+      "DimY": "2",
+      "DimZ": "1",
+      "Walkable": "No",
+      "HitRewardXP": "1",
+      "HitRewardMoney": "5",
+      "HitRewardSupplies": "0",
+      "HitRewardEnergy": "5",
+      "HitRewardMaterial": "0",
+      "KillRewardXP": "100",
+      "KillRewardMoney": "500",
+      "KillRewardSupplies": "0",
+      "KillRewardEnergy": "20",
+      "KillRewardMaterial": "0"
+    },
     "Vilesnest": {
       "ID": "Vilesnest",
       "Type": "EnemyInstallation",
@@ -10660,7 +11073,7 @@
       "Name": "#TID.DOOMSDAY_NAME",
       "Graphic_idle": "swf/buildings_enemy/building_enemy_secret_weapon",
       "Graphic_shoot": "swf/buildings_enemy/building_enemy_secret_weapon",
-      "Graphic_hit": "swf/buildings_enemy/building_enemy_railwaygun_nw_forcefield_hit",
+      "Graphic_hit": "swf/buildings_enemy/building_enemy_secret_weapon",
       "Graphic_destroy": "swf/effects_low/effect_explosion",
       "ObjectClass": "game.gameElements.EnemyInstallationObject",
       "Health": "200",
@@ -10681,6 +11094,64 @@
       "KillRewardSupplies": "0",
       "KillRewardEnergy": "35",
       "KillRewardMaterial": "0"
+    },
+    "DoomsDay2": {
+      "ID": "DoomsDay2",
+      "Type": "EnemyInstallation",
+      "Name": "#TID.DOOMSDAY2_NAME",
+      "Graphic_idle": "swf/buildings_enemy/building_enemy_secret_weapon",
+      "Graphic_shoot": "swf/buildings_enemy/building_enemy_secret_weapon",
+      "Graphic_hit": "swf/buildings_enemy/building_enemy_secret_weapon",
+      "Graphic_destroy": "swf/effects_low/effect_explosion",
+      "ObjectClass": "game.gameElements.EnemyInstallationObject",
+      "Health": "350",
+      "Damage": "0",
+      "AttackRange": "0",
+      "ReactionTime": "0",
+      "DimX": "3",
+      "DimY": "3",
+      "DimZ": "1",
+      "Walkable": "No",
+      "HitRewardXP": "1",
+      "HitRewardMoney": "50",
+      "HitRewardSupplies": "0",
+      "HitRewardEnergy": "5",
+      "HitRewardMaterial": "0",
+      "KillRewardXP": "150",
+      "KillRewardMoney": "1000",
+      "KillRewardSupplies": "0",
+      "KillRewardEnergy": "35",
+      "KillRewardMaterial": "0"
+    },
+    "Prison": {
+      "ID": "Prison",
+      "Type": "EnemyInstallation",
+      "Name": "#TID.PRISON_NAME",
+      "Graphic_idle": "swf/buildings_enemy/building_enemy_prison",
+      "Graphic_shoot": "swf/buildings_enemy/building_enemy_prison_fire",
+      "Graphic_hit": "swf/buildings_enemy/building_enemy_prison",
+      "Graphic_destroy": "swf/effects_low/effect_explosion",
+      "ObjectClass": "game.gameElements.EnemyInstallationObject",
+      "Health": "100",
+      "Damage": "3",
+      "AttackRange": "1",
+      "ReactionTime": "0",
+      "DimX": "2",
+      "DimY": "2",
+      "DimZ": "1",
+      "Walkable": "No",
+      "HitRewardXP": "1",
+      "HitRewardMoney": "50",
+      "HitRewardSupplies": "0",
+      "HitRewardEnergy": "5",
+      "HitRewardMaterial": "0",
+      "KillRewardXP": "150",
+      "KillRewardMoney": "1000",
+      "KillRewardSupplies": "0",
+      "KillRewardEnergy": "35",
+      "KillRewardMaterial": "0",
+      "Item0": "#PlayerUnit.SpecialForces",
+      "OccurItem0": "L0: 100%"
     },
     "DDTurretLeft": {
       "ID": "DDTurretLeft",
@@ -11176,6 +11647,50 @@
       "Item7": "#Ingredient.Wiring",
       "OccurItem7": "L0: 0%"
     },
+    "BaseSC": {
+      "ID": "BaseSC",
+      "Type": "EnemyInstallation",
+      "Name": "#TID.MOUSEOVER_ENEMY_COMMAND_BUNKER2",
+      "Graphic_idle": "swf/buildings_enemy/building_enemy_commbunker, swf/buildings_enemy/building_enemy_commbunker_desert",
+      "Graphic_shoot": "swf/buildings_enemy/building_enemy_commbunker_fire, swf/buildings_enemy/building_enemy_commbunker_desert_fire",
+      "Graphic_hit": "swf/buildings_enemy/building_enemy_commbunker, swf/buildings_enemy/building_enemy_commbunker_desert",
+      "Graphic_destroy": "swf/effects_low/effect_explosion",
+      "ObjectClass": "game.gameElements.EnemyInstallationObject",
+      "Health": "200",
+      "Damage": "1",
+      "AttackRange": "1",
+      "ReactionTime": "0",
+      "DimX": "3",
+      "DimY": "3",
+      "DimZ": "1",
+      "Walkable": "No",
+      "HitRewardXP": "1",
+      "HitRewardMoney": "50",
+      "HitRewardSupplies": "0",
+      "HitRewardEnergy": "5",
+      "HitRewardMaterial": "0",
+      "KillRewardXP": "200",
+      "KillRewardMoney": "1000",
+      "KillRewardSupplies": "0",
+      "KillRewardEnergy": "20",
+      "KillRewardMaterial": "0",
+      "Item0": "#Ingredient.HardHat",
+      "OccurItem0": "L0: 0%",
+      "Item1": "#Ingredient.CinderBlock",
+      "OccurItem1": "L0: 0%",
+      "Item2": "#Ingredient.Lumber",
+      "OccurItem2": "L0: 0%",
+      "Item3": "#Intel.Intel",
+      "OccurItem3": "L0: 0%",
+      "Item4": "#Intel.Intel",
+      "OccurItem4": "L0: 0%",
+      "Item5": "#Intel.Intel",
+      "OccurItem5": "L0: 100%",
+      "Item6": "#Ingredient.Rebars",
+      "OccurItem6": "L0: 0%",
+      "Item7": "#Ingredient.Wiring",
+      "OccurItem7": "L0: 0%"
+    },
     "BaseSW": {
       "ID": "BaseSW",
       "Type": "EnemyInstallation",
@@ -11186,6 +11701,34 @@
       "Graphic_destroy": "swf/effects_low/effect_explosion",
       "ObjectClass": "game.gameElements.EnemyInstallationObject",
       "Health": "65",
+      "Damage": "0",
+      "AttackRange": "0",
+      "ReactionTime": "0",
+      "DimX": "3",
+      "DimY": "3",
+      "DimZ": "1",
+      "Walkable": "No",
+      "HitRewardXP": "1",
+      "HitRewardMoney": "50",
+      "HitRewardSupplies": "0",
+      "HitRewardEnergy": "5",
+      "HitRewardMaterial": "0",
+      "KillRewardXP": "150",
+      "KillRewardMoney": "1000",
+      "KillRewardSupplies": "0",
+      "KillRewardEnergy": "35",
+      "KillRewardMaterial": "0"
+    },
+    "BasePrison": {
+      "ID": "BasePrison",
+      "Type": "EnemyInstallation",
+      "Name": "#TID.MOUSEOVER_ENEMY_SECRET_POLICE_HQ2",
+      "Graphic_idle": "swf/buildings_enemy/building_enemy_secretpolice, swf/buildings_enemy/building_enemy_secretpolice_desert",
+      "Graphic_shoot": "swf/buildings_enemy/building_enemy_secretpolice_fire, swf/buildings_enemy/building_enemy_secretpolice_desert_fire",
+      "Graphic_hit": "swf/buildings_enemy/building_enemy_secretpolice, swf/buildings_enemy/building_enemy_secretpolice_desert",
+      "Graphic_destroy": "swf/effects_low/effect_explosion",
+      "ObjectClass": "game.gameElements.EnemyInstallationObject",
+      "Health": "200",
       "Damage": "0",
       "AttackRange": "0",
       "ReactionTime": "0",
@@ -12017,6 +12560,78 @@
       "KillRewardSupplies": "0",
       "KillRewardEnergy": "0",
       "KillRewardMaterial": "0"
+    },
+    "DroidBayPolar": {
+      "ID": "DroidBayPolar",
+      "Type": "EnemyInstallation",
+      "Name": "#TID.MOUSEOVER_DROID_STATION",
+      "Graphic_idle": "swf/buildings_enemy/enemy_droidstation_polar",
+      "Graphic_shoot": "swf/buildings_enemy/building_enemy_railwaygun_ramp_east",
+      "Graphic_hit": "swf/buildings_enemy/building_enemy_railwaygun_ramp_east_forcefield_hit",
+      "Graphic_destroy": "swf/effects_low/effect_explosion",
+      "Graphic_ready_for_action": "swf/buildings_enemy/building_enemy_railwaygun_ramp_east_ready",
+      "Graphic_action": "swf/buildings_enemy/building_enemy_railwaygun_ramp_east_spawn",
+      "Graphic_noaction": "swf/buildings_enemy/building_enemy_railwaygun_ramp_east_nospawn",
+      "ObjectClass": "game.gameElements.EnemyInstallationObject",
+      "Health": "60",
+      "Damage": "0",
+      "AttackRange": "0",
+      "ReactionTime": "0",
+      "ReactionTurns": "3",
+      "SpawnEnemy": "#EnemyUnit.Droid",
+      "SpawnTile": "8",
+      "DimX": "1",
+      "DimY": "1",
+      "DimZ": "1",
+      "Walkable": "No",
+      "HitRewardXP": "1",
+      "HitRewardMoney": "5",
+      "HitRewardSupplies": "0",
+      "HitRewardEnergy": "5",
+      "HitRewardMaterial": "0",
+      "KillRewardXP": "100",
+      "KillRewardMoney": "150",
+      "KillRewardSupplies": "0",
+      "KillRewardEnergy": "20",
+      "KillRewardMaterial": "0",
+      "Item0": "#Ingredient.SteelPlates",
+      "OccurItem0": "L0: 100%"
+    },
+    "LandingZone": {
+      "ID": "LandingZone",
+      "Type": "EnemyInstallation",
+      "Name": "#TID.MOUSEOVER_LANDING_ZONE",
+      "Graphic_idle": "swf/buildings_enemy/enemy_landing_zone_01",
+      "Graphic_shoot": "swf/buildings_enemy/enemy_landing_zone_01",
+      "Graphic_hit": "swf/buildings_enemy/enemy_landing_zone_01",
+      "Graphic_destroy": "swf/effects_low/effect_explosion",
+      "Graphic_ready_for_action": "swf/buildings_enemy/enemy_landing_zone_01",
+      "Graphic_action": "swf/buildings_enemy/enemy_landing_zone_02",
+      "Graphic_noaction": "swf/buildings_enemy/enemy_landing_zone_01",
+      "ObjectClass": "game.gameElements.EnemyInstallationObject",
+      "Health": "200",
+      "Damage": "0",
+      "AttackRange": "0",
+      "ReactionTime": "0",
+      "ReactionTurns": "3",
+      "SpawnEnemy": "#EnemyUnit.Bulldozer",
+      "SpawnTile": "8",
+      "DimX": "1",
+      "DimY": "1",
+      "DimZ": "1",
+      "Walkable": "No",
+      "HitRewardXP": "1",
+      "HitRewardMoney": "5",
+      "HitRewardSupplies": "0",
+      "HitRewardEnergy": "5",
+      "HitRewardMaterial": "0",
+      "KillRewardXP": "100",
+      "KillRewardMoney": "150",
+      "KillRewardSupplies": "0",
+      "KillRewardEnergy": "20",
+      "KillRewardMaterial": "0",
+      "Item0": "#Ingredient.SteelPlates",
+      "OccurItem0": "L0: 100%"
     }
   },
   "Timers": {
@@ -12275,25 +12890,25 @@
       "PassableGroups": "#Passability.Land",
       "KillRewardItem": "#ItemDrop.Rebars, #ItemDrop.Intel, #ItemDrop.HardHat2, #ItemDrop.CinderBlock2, #ItemDrop.Lumber2",
       "Item0": "#Ingredient.HardHat",
-      "OccurItem0": "L0: 20%, L5: 5%, L10: 2%",
+      "OccurItem0": "L0: 15%",
       "Item1": "#Ingredient.CinderBlock",
-      "OccurItem1": "L0: 20%, L5: 5%, L10: 2%",
+      "OccurItem1": "L0: 15%",
       "Item2": "#Ingredient.Lumber",
-      "OccurItem2": "L0: 20%, L5: 5%, L10: 2%",
+      "OccurItem2": "L0: 15%",
       "Item3": "#Ingredient.Rebars",
-      "OccurItem3": "L0: 20%, L7: 5%, L10: 2%",
+      "OccurItem3": "L0: 15%",
       "Item4": "#Intel.Intel",
-      "OccurItem4": "L0: 10%, L4: 10%, L7: 5%, L10: 2%",
+      "OccurItem4": "L0: 0%",
       "Item5": "#Collectible.ScoutBinoculars",
-      "OccurItem5": "L0: 0%, L6: 15%, L17: 12%, L30: 10%",
+      "OccurItem5": "L0: 10%",
       "Item6": "#Collectible.ScoutTacticalMap",
-      "OccurItem6": "L0: 0%, L6: 15%, L17: 12%, L30: 10%",
+      "OccurItem6": "L0: 10%",
       "Item7": "#Collectible.ScoutFieldRadio",
-      "OccurItem7": "L0: 0%, L6: 10%, L17: 8%, L30: 6%",
+      "OccurItem7": "L0: 10%",
       "Item8": "#Collectible.ScoutCanteen",
-      "OccurItem8": "L0: 0%, L6: 5%, L17: 4%, L30: 3%",
+      "OccurItem8": "L0: 0%",
       "Item9": "#Collectible.ScoutCamo",
-      "OccurItem9": "L0: 0%, L6: 5%, L17: 4%, L30: 3%",
+      "OccurItem9": "L0: 0%",
       "Item10": "#Ingredient.PilotHelmet",
       "OccurItem10": "L0: 0%",
       "Item11": "#Ingredient.ArtilleryTubes",
@@ -12345,25 +12960,25 @@
       "PassableGroups": "#Passability.Land",
       "KillRewardItem": "#ItemDrop.Wiring, #ItemDrop.Rebars, #ItemDrop.Intel, #ItemDrop.HardHat2, #ItemDrop.CinderBlock2, #ItemDrop.Lumber2",
       "Item0": "#Ingredient.HardHat",
-      "OccurItem0": "L0: 5%",
+      "OccurItem0": "L0: 15%",
       "Item1": "#Ingredient.CinderBlock",
-      "OccurItem1": "L0: 5%",
+      "OccurItem1": "L0: 15%",
       "Item2": "#Intel.Intel",
-      "OccurItem2": "L0: 10%, L14: 5%",
+      "OccurItem2": "L0: 10%",
       "Item3": "#Ingredient.Rebars",
-      "OccurItem3": "L0: 20%, L7: 10%, L14: 5%",
+      "OccurItem3": "L0: 15%",
       "Item4": "#Ingredient.Wiring",
-      "OccurItem4": "L0: 10%, L7: 5%, L13: 5%",
+      "OccurItem4": "L0: 15%",
       "Item5": "#Collectible.InfantryCombatBoots",
-      "OccurItem5": "L0: 0%, L6: 15%, L17: 12%, L30: 10%",
+      "OccurItem5": "L0: 0%",
       "Item6": "#Collectible.InfantryDogTags",
-      "OccurItem6": "L0: 0%, L6: 15%, L17: 12%, L30: 10%",
+      "OccurItem6": "L0: 10%",
       "Item7": "#Collectible.InfantryManpower",
-      "OccurItem7": "L0: 0%, L6: 10%, L17: 8%, L30: 6%",
+      "OccurItem7": "L0: 10%",
       "Item8": "#Collectible.InfantryMRE",
-      "OccurItem8": "L0: 0%, L6: 5%, L17: 4%, L30: 3%",
+      "OccurItem8": "L0: 0%",
       "Item9": "#Collectible.InfantrySergeantHat",
-      "OccurItem9": "L0: 0%, L6: 5%, L17: 4%, L30: 3%",
+      "OccurItem9": "L0: 0%",
       "Item10": "#Ingredient.PilotHelmet",
       "OccurItem10": "L0: 0%",
       "Item11": "#Ingredient.ArtilleryTubes",
@@ -12415,27 +13030,27 @@
       "PassableGroups": "#Passability.Land",
       "KillRewardItem": "#ItemDrop.Rebars, #ItemDrop.CommandoKnife, #ItemDrop.Intel",
       "Item0": "#Ingredient.CommandoKnife",
-      "OccurItem0": "L0: 20%, L19: 10%",
+      "OccurItem0": "L0: 40%",
       "Item1": "#Ingredient.CinderBlock",
       "OccurItem1": "L0: 0%",
       "Item2": "#Intel.Intel",
-      "OccurItem2": "L0: 5%",
+      "OccurItem2": "L0: 10%",
       "Item3": "#Ingredient.Rebars",
-      "OccurItem3": "L0: 10%",
+      "OccurItem3": "L0: 0%",
       "Item4": "#Ingredient.Wiring",
       "OccurItem4": "L0: 0%",
       "Item5": "#Collectible.StormTroopAmmoCrate",
-      "OccurItem5": "L0: 0%, L6: 15%, L17: 12%, L30: 10%",
+      "OccurItem5": "L0: 20%",
       "Item6": "#Collectible.StormTroopBalaclava",
-      "OccurItem6": "L0: 0%, L6: 15%, L17: 12%, L30: 10%",
+      "OccurItem6": "L0: 0%",
       "Item7": "#Collectible.StormTroopBeret",
-      "OccurItem7": "L0: 0%, L6: 10%, L17: 8%, L30: 6%",
+      "OccurItem7": "L0: 0%",
       "Item8": "#Collectible.StormTroopCombatKnife",
-      "OccurItem8": "L0: 0%, L6: 5%, L17: 4%, L30: 3%",
+      "OccurItem8": "L0: 0%",
       "Item9": "#Collectible.StormTroopSupressor",
-      "OccurItem9": "L0: 0%, L6: 5%, L17: 4%, L30: 3%",
+      "OccurItem9": "L0: 0%",
       "Item10": "#Ingredient.PilotHelmet",
-      "OccurItem10": "L0: 1%",
+      "OccurItem10": "L0: 20%",
       "Item11": "#Ingredient.ArtilleryTubes",
       "OccurItem11": "L0: 0%",
       "Item12": "#Ingredient.ArtilleryTubes",
@@ -12485,27 +13100,27 @@
       "PassableGroups": "#Passability.Land",
       "KillRewardItem": "#ItemDrop.Rebars, #ItemDrop.Wiring, #ItemDrop.Intel, #ItemDrop.HardHat2, #ItemDrop.CinderBlock2, #ItemDrop.Lumber2",
       "Item0": "#Ingredient.HardHat",
-      "OccurItem0": "L0: 5%",
+      "OccurItem0": "L0: 15%",
       "Item1": "#Ingredient.CinderBlock",
-      "OccurItem1": "L0: 5%",
+      "OccurItem1": "L0: 15%",
       "Item2": "#Ingredient.Lumber",
-      "OccurItem2": "L0: 5%",
+      "OccurItem2": "L0: 15%",
       "Item3": "#Intel.Intel",
-      "OccurItem3": "L0: 5%",
+      "OccurItem3": "L0: 0%",
       "Item4": "#Ingredient.Wiring",
-      "OccurItem4": "L0: 30%, L7: 20%, L14: 5%",
+      "OccurItem4": "L0: 15%",
       "Item5": "#Collectible.APCAmmoShells",
-      "OccurItem5": "L0: 0%, L6: 15%, L17: 12%, L30: 10%",
+      "OccurItem5": "L0: 10%",
       "Item6": "#Collectible.APCGasCanister",
-      "OccurItem6": "L0: 0%, L6: 15%, L17: 12%, L30: 10%",
+      "OccurItem6": "L0: 10%",
       "Item7": "#Collectible.APCDuctTape",
-      "OccurItem7": "L0: 0%, L6: 10%, L17: 8%, L30: 6%",
+      "OccurItem7": "L0: 10%",
       "Item8": "#Collectible.APCBlueprints",
-      "OccurItem8": "L0: 0%, L6: 5%, L17: 4%, L30: 3%",
+      "OccurItem8": "L0: 0%",
       "Item9": "#Collectible.APCTires",
-      "OccurItem9": "L0: 0%, L6: 5%, L17: 4%, L30: 3%",
+      "OccurItem9": "L0: 0%",
       "Item10": "#Ingredient.PilotHelmet",
-      "OccurItem10": "L0: 0%, L10: 10%, L15: 0%",
+      "OccurItem10": "L0: 0%",
       "Item11": "#Ingredient.ArtilleryTubes",
       "OccurItem11": "L0: 0%",
       "Item12": "#Ingredient.ArtilleryTubes",
@@ -12537,6 +13152,76 @@
       "ReactionTime": "305",
       "MovementRange": "2",
       "MaxHealTime": "180",
+      "DimX": "1",
+      "DimY": "1",
+      "DimZ": "1",
+      "HitRewardXP": "2",
+      "HitRewardMoney": "30",
+      "HitRewardSupplies": "0",
+      "HitRewardEnergy": "10",
+      "HitRewardMaterial": "0",
+      "KillRewardXP": "10",
+      "KillRewardMoney": "400",
+      "KillRewardSupplies": "0",
+      "KillRewardEnergy": "20",
+      "KillRewardMaterial": "0",
+      "WeaponType": "explosion",
+      "MovementType": "normal",
+      "PassableGroups": "#Passability.Land",
+      "KillRewardItem": "#ItemDrop.Wiring, #ItemDrop.SteelPlates, #ItemDrop.Intel",
+      "Item0": "#Ingredient.SteelPlates",
+      "OccurItem0": "L0: 40%",
+      "Item1": "#Ingredient.CinderBlock",
+      "OccurItem1": "L0: 0%",
+      "Item2": "#Intel.Intel",
+      "OccurItem2": "L0: 0%",
+      "Item3": "#Ingredient.Rebars",
+      "OccurItem3": "L0: 0%",
+      "Item4": "#Ingredient.Wiring",
+      "OccurItem4": "L0: 0%",
+      "Item5": "#Collectible.BattleTankArmorPlates",
+      "OccurItem5": "L0: 15%",
+      "Item6": "#Collectible.BattleTankBlueprints",
+      "OccurItem6": "L0: 15%",
+      "Item7": "#Collectible.BattleTankBrokenTrack",
+      "OccurItem7": "L0: 15%",
+      "Item8": "#Collectible.BattleTankDriverGoggles",
+      "OccurItem8": "L0: 0%",
+      "Item9": "#Collectible.BattleTankHeatAmmunition",
+      "OccurItem9": "L0: 0%",
+      "Item10": "#Ingredient.PilotHelmet",
+      "OccurItem10": "L0: 5%",
+      "Item11": "#Ingredient.ArtilleryTubes",
+      "OccurItem11": "L0: 0%",
+      "Item12": "#Ingredient.ArtilleryTubes",
+      "OccurItem12": "L0: 0%",
+      "Item13": "#Ingredient.ArtilleryTubes",
+      "OccurItem13": "L0: 0%",
+      "Item14": "#Ingredient.ArtilleryTubes",
+      "OccurItem14": "L0: 0%"
+    },
+    "PremiumTank": {
+      "ID": "PremiumTank",
+      "Type": "EnemyUnit",
+      "Name": "#TID.MOUSEOVER_ENEMY_PREMIUMTANK",
+      "Graphic_idle": "swf/units_enemy_start_low/enemy_premium_tank_idle",
+      "Graphic_move": "swf/units_enemy_start_low/enemy_premium_tank_moving",
+      "Graphic_aim": "swf/units_enemy_start_low/enemy_premium_tank_aim",
+      "Graphic_shoot": "swf/units_enemy_start_low/enemy_premium_tank_fire",
+      "Graphic_hit": "swf/units_enemy_start_low/enemy_premium_tank_hit",
+      "Graphic_die": "swf/effects_low/effect_explosion",
+      "Graphic_aim_up": "swf/units_enemy_start_low/enemy_premium_tank_aim_ne",
+      "Graphic_shoot_up": "swf/units_enemy_start_low/enemy_premium_tank_fire_ne",
+      "Graphic_move_up": "swf/units_enemy_start_low/enemy_premium_tank_moving_ne",
+      "Graphic_air_drop": "swf/units_enemy_late_low/enemy_super_tank_airdrop",
+      "ObjectClass": "game.characters.EnemyUnit",
+      "CloudShadow": "icons/enemy_cloud_shadows/cloud_shadow_battle_tank.png",
+      "Health": "45",
+      "Damage": "8",
+      "AttackRange": "1",
+      "ReactionTime": "305",
+      "MovementRange": "5",
+      "MaxHealTime": "0",
       "DimX": "1",
       "DimY": "1",
       "DimZ": "1",
@@ -12626,27 +13311,27 @@
       "KillRewardItem": "#ItemDrop.ArtilleryTubes, #ItemDrop.Intel",
       "ProjectileClass": "ArtilleryRound",
       "Item0": "#Ingredient.ArtilleryTubes",
-      "OccurItem0": "L0: 0%, L7: 20%, L10: 15%, L19: 10%",
+      "OccurItem0": "L0: 40%",
       "Item1": "#Ingredient.BlackBox",
-      "OccurItem1": "L0: 0%, L15: 5%",
+      "OccurItem1": "L0: 0%",
       "Item2": "#Intel.Intel",
-      "OccurItem2": "L0: 5%",
+      "OccurItem2": "L0: 0%",
       "Item3": "#Ingredient.Rebars",
       "OccurItem3": "L0: 0%",
       "Item4": "#Ingredient.Wiring",
       "OccurItem4": "L0: 0%",
       "Item5": "#Collectible.ArtilleryAmmo",
-      "OccurItem5": "L0: 0%, L6: 15%, L17: 12%, L30: 10%",
+      "OccurItem5": "L0: 20%",
       "Item6": "#Collectible.ArtilleryFireMission",
-      "OccurItem6": "L0: 0%, L6: 15%, L17: 12%, L30: 10%",
+      "OccurItem6": "L0: 20%",
       "Item7": "#Collectible.ArtilleryMortarBasePlate",
-      "OccurItem7": "L0: 0%, L6: 10%, L17: 8%, L30: 6%",
+      "OccurItem7": "L0: 0%",
       "Item8": "#Collectible.ArtilleryRangefinder",
-      "OccurItem8": "L0: 0%, L6: 5%, L17: 4%, L30: 3%",
+      "OccurItem8": "L0: 0%",
       "Item9": "#Collectible.ArtillerySmokeMarker",
-      "OccurItem9": "L0: 0%, L6: 5%, L17: 4%, L30: 3%",
+      "OccurItem9": "L0: 0%",
       "Item10": "#Ingredient.PilotHelmet",
-      "OccurItem10": "L0: 0%",
+      "OccurItem10": "L0: 10%",
       "Item11": "#Ingredient.HardHat",
       "OccurItem11": "L0: 0%",
       "Item12": "#Ingredient.HardHat",
@@ -12697,27 +13382,27 @@
       "KillRewardItem": "#ItemDrop.ArtilleryTubes, #ItemDrop.BlackBox, #ItemDrop.Intel",
       "ProjectileClass": "Missile",
       "Item0": "#Ingredient.ArtilleryTubes",
-      "OccurItem0": "L0: 10%",
+      "OccurItem0": "L0: 0%",
       "Item1": "#Ingredient.BlackBox",
-      "OccurItem1": "L0: 15%",
+      "OccurItem1": "L0: 35%",
       "Item2": "#Intel.Intel",
-      "OccurItem2": "L10: 5%",
+      "OccurItem2": "L0: 0%",
       "Item3": "#Ingredient.Rebars",
       "OccurItem3": "L0: 0%",
       "Item4": "#Ingredient.Wiring",
       "OccurItem4": "L0: 0%",
       "Item5": "#Collectible.RocketBatteryHeadphones",
-      "OccurItem5": "L0: 0%, L6: 15%, L17: 12%, L30: 10%",
+      "OccurItem5": "L0: 15%",
       "Item6": "#Collectible.RocketBatteryRadar",
-      "OccurItem6": "L0: 0%, L6: 15%, L17: 12%, L30: 10%",
+      "OccurItem6": "L0: 15%",
       "Item7": "#Collectible.RocketBatteryRockets",
-      "OccurItem7": "L0: 0%, L6: 10%, L17: 8%, L30: 6%",
+      "OccurItem7": "L0: 15%",
       "Item8": "#Collectible.RocketBatterySatelliteDish",
-      "OccurItem8": "L0: 0%, L6: 5%, L17: 4%, L30: 3%",
+      "OccurItem8": "L0: 0%",
       "Item9": "#Collectible.RocketBatteryShockAndAwe",
-      "OccurItem9": "L0: 0%, L6: 5%, L17: 4%, L30: 3%",
+      "OccurItem9": "L0: 0%",
       "Item10": "#Ingredient.PilotHelmet",
-      "OccurItem10": "L0: 0%, L10: 10%, L15: 0%",
+      "OccurItem10": "L0: 10%",
       "Item11": "#Ingredient.HardHat",
       "OccurItem11": "L0: 0%",
       "Item12": "#Ingredient.HardHat",
@@ -12767,17 +13452,17 @@
       "PassableGroups": "#Passability.Land, #Passability.Shore, #Passability.Mountain, #Passability.Sea",
       "KillRewardItem": "#ItemDrop.Rebars, #ItemDrop.CommandoKnife, #ItemDrop.Intel",
       "Item0": "#Ingredient.CommandoKnife",
-      "OccurItem0": "L0: 1%",
+      "OccurItem0": "L0: 40%",
       "Item1": "#Collectible.ScoutBinoculars",
-      "OccurItem1": "L0: 0%",
+      "OccurItem1": "L0: 10%",
       "Item2": "#Intel.Intel",
-      "OccurItem2": "L0: 5%",
+      "OccurItem2": "L0: 10%",
       "Item3": "#Ingredient.Rebars",
-      "OccurItem3": "L0: 5%",
+      "OccurItem3": "L0: 0%",
       "Item4": "#Ingredient.SteelPlates",
-      "OccurItem4": "L0: 10%",
+      "OccurItem4": "L0: 0%",
       "Item5": "#Collectible.APCGasCanister",
-      "OccurItem5": "L0: 0%",
+      "OccurItem5": "L0: 10%",
       "Item6": "#Collectible.StormTroopBalaclava",
       "OccurItem6": "L0: 0%",
       "Item7": "#Collectible.StormTroopBeret",
@@ -12787,7 +13472,7 @@
       "Item9": "#Collectible.StormTroopSupressor",
       "OccurItem9": "L0: 0%",
       "Item10": "#Ingredient.PilotHelmet",
-      "OccurItem10": "L0: 0%",
+      "OccurItem10": "L0: 20%",
       "Item11": "#Ingredient.ArtilleryTubes",
       "OccurItem11": "L0: 0%",
       "Item12": "#Ingredient.ArtilleryTubes",
@@ -12838,16 +13523,16 @@
       "KillRewardItem": "#ItemDrop.Rebars, #ItemDrop.CommandoKnife, #ItemDrop.Intel",
       "Item0": "#Collectible.StormTroopCombatKnife",
       "OccurItem0": "L0: 10%",
-      "Item1": "#Collectible.ArtilleryRangefinder",
-      "OccurItem1": "L10: 0%",
+      "Item1": "#Ingredient.CommandoKnife",
+      "OccurItem1": "L0: 40%",
       "Item2": "#Intel.Intel",
       "OccurItem2": "L0: 0%",
       "Item3": "#Ingredient.Rebars",
-      "OccurItem3": "L0: 5%",
+      "OccurItem3": "L0: 0%",
       "Item4": "#Collectible.RocketBatteryRockets",
       "OccurItem4": "L0: 10%",
       "Item5": "#Collectible.APCGasCanister",
-      "OccurItem5": "L0: 0%",
+      "OccurItem5": "L0: 10%",
       "Item6": "#Collectible.StormTroopBalaclava",
       "OccurItem6": "L0: 0%",
       "Item7": "#Collectible.StormTroopBeret",
@@ -12857,7 +13542,7 @@
       "Item9": "#Collectible.StormTroopSupressor",
       "OccurItem9": "L0: 0%",
       "Item10": "#Ingredient.PilotHelmet",
-      "OccurItem10": "L0: 0%",
+      "OccurItem10": "L0: 20%",
       "Item11": "#Ingredient.ArtilleryTubes",
       "OccurItem11": "L0: 0%",
       "Item12": "#Ingredient.ArtilleryTubes",
@@ -12907,17 +13592,17 @@
       "PassableGroups": "#Passability.Land",
       "KillRewardItem": "#ItemDrop.Rebars, #ItemDrop.CommandoKnife, #ItemDrop.Intel",
       "Item0": "#Ingredient.HardHat",
-      "OccurItem0": "L0: 1%",
+      "OccurItem0": "L0: 20%",
       "Item1": "#Ingredient.Lumber",
-      "OccurItem1": "L0: 15%",
+      "OccurItem1": "L0: 20%",
       "Item2": "#Intel.Intel",
       "OccurItem2": "L0: 0%",
       "Item3": "#Ingredient.Rebars",
-      "OccurItem3": "L0: 5%",
+      "OccurItem3": "L0: 20%",
       "Item4": "#Ingredient.Wiring",
-      "OccurItem4": "L0: 10%",
+      "OccurItem4": "L0: 20%",
       "Item5": "#Collectible.APCGasCanister",
-      "OccurItem5": "L0: 0%",
+      "OccurItem5": "L0: 10%",
       "Item6": "#Collectible.StormTroopBalaclava",
       "OccurItem6": "L0: 0%",
       "Item7": "#Collectible.StormTroopBeret",
@@ -12976,36 +13661,28 @@
       "MovementType": "normal",
       "PassableGroups": "#Passability.Land",
       "KillRewardItem": "#ItemDrop.BlackBox, #ItemDrop.Intel",
-      "Item0": "#Ingredient.SteelPlates",
-      "OccurItem0": "L0: 20%",
-      "Item1": "#Intel.Intel",
-      "OccurItem1": "L10: 5%",
-      "Item2": "#Ingredient.Wiring",
-      "OccurItem2": "L0: 5%",
-      "Item3": "#Ingredient.Rebars",
-      "OccurItem3": "L0: 5%",
-      "Item4": "#Ingredient.Wiring",
+      "Item0": "#Ingredient.ArtilleryTubes",
+      "OccurItem0": "L0: 10%",
+      "Item1": "#Ingredient.CommandoKnife",
+      "OccurItem1": "L0: 10%",
+      "Item2": "#Ingredient.SteelPlates",
+      "OccurItem2": "L0: 10%",
+      "Item3": "#Ingredient.BlackBox",
+      "OccurItem3": "L0: 10%",
+      "Item4": "#Ingredient.PilotHelmet",
       "OccurItem4": "L0: 10%",
-      "Item5": "#Collectible.APCGasCanister",
-      "OccurItem5": "L0: 0%",
-      "Item6": "#Collectible.StormTroopBalaclava",
-      "OccurItem6": "L0: 0%",
-      "Item7": "#Collectible.StormTroopBeret",
-      "OccurItem7": "L0: 0%",
-      "Item8": "#Collectible.StormTroopCombatKnife",
-      "OccurItem8": "L0: 0%",
-      "Item9": "#Collectible.StormTroopSupressor",
-      "OccurItem9": "L0: 0%",
-      "Item10": "#Ingredient.PilotHelmet",
-      "OccurItem10": "L0: 0%",
-      "Item11": "#Ingredient.ArtilleryTubes",
-      "OccurItem11": "L0: 0%",
-      "Item12": "#Ingredient.ArtilleryTubes",
-      "OccurItem12": "L0: 0%",
-      "Item13": "#Ingredient.ArtilleryTubes",
-      "OccurItem13": "L0: 0%",
-      "Item14": "#Ingredient.ArtilleryTubes",
-      "OccurItem14": "L0: 0%"
+      "Item5": "#Ingredient.Lumber",
+      "OccurItem5": "L0: 5%",
+      "Item6": "#Ingredient.CinderBlock",
+      "OccurItem6": "L0: 5%",
+      "Item7": "#Ingredient.HardHat",
+      "OccurItem7": "L0: 5%",
+      "Item8": "#Ingredient.Wiring",
+      "OccurItem8": "L0: 5%",
+      "Item9": "#Ingredient.Rebars",
+      "OccurItem9": "L0: 5%",
+      "Item10": "#Intel.Intel",
+      "OccurItem10": "L0: 25%"
     },
     "Bulldozer": {
       "ID": "Bulldozer",
@@ -13048,27 +13725,27 @@
       "KillRewardItem": "#ItemDrop.Wiring, #ItemDrop.SteelPlates, #ItemDrop.Intel",
       "PermanentDestroyArray": "#PlayerInstallation.Pillbox, #PlayerInstallation.SniperNest, #PlayerInstallation.LogBunker, #PlayerInstallation.MortarPit, #PlayerInstallation.GuardPost",
       "Item0": "#Ingredient.SteelPlates",
-      "OccurItem0": "L0: 30%, L14: 20%",
+      "OccurItem0": "L0: 30%",
       "Item1": "#Ingredient.CinderBlock",
       "OccurItem1": "L0: 0%",
       "Item2": "#Intel.Intel",
-      "OccurItem2": "L0: 5%",
+      "OccurItem2": "L0: 20%",
       "Item3": "#Ingredient.Rebars",
       "OccurItem3": "L0: 0%",
       "Item4": "#Ingredient.Wiring",
       "OccurItem4": "L0: 0%",
       "Item5": "#Collectible.BattleTankArmorPlates",
-      "OccurItem5": "L0: 0%, L6: 15%, L17: 12%, L30: 10%",
+      "OccurItem5": "L0: 10%",
       "Item6": "#Collectible.BattleTankBlueprints",
-      "OccurItem6": "L0: 0%, L6: 15%, L17: 12%, L30: 10%",
+      "OccurItem6": "L0: 10%",
       "Item7": "#Collectible.BattleTankBrokenTrack",
-      "OccurItem7": "L0: 0%, L6: 10%, L17: 8%, L30: 6%",
+      "OccurItem7": "L0: 10%",
       "Item8": "#Collectible.BattleTankDriverGoggles",
-      "OccurItem8": "L0: 0%, L6: 5%, L17: 4%, L30: 3%",
+      "OccurItem8": "L0: 0%",
       "Item9": "#Collectible.BattleTankHeatAmmunition",
-      "OccurItem9": "L0: 0%, L6: 5%, L17: 4%, L30: 3%",
-      "Item10": "#Ingredient.ArtilleryTubes",
-      "OccurItem10": "L0: 0%",
+      "OccurItem9": "L0: 0%",
+      "Item10": "#Ingredient.PilotHelmet",
+      "OccurItem10": "L0: 10%",
       "Item11": "#Ingredient.ArtilleryTubes",
       "OccurItem11": "L0: 0%",
       "Item12": "#Ingredient.ArtilleryTubes",
@@ -14754,7 +15431,7 @@
       "Type": "Resource",
       "Name": "#TID.PREMIUM",
       "Description": "#TID.PREMIUM",
-      "IconGraphics": "icons/resources/resource_icon_credits.png"
+      "IconGraphics": "icons/resources/newresource_icon_credits.png"
     },
     "Money": {
       "ID": "Money",
@@ -14980,8 +15657,8 @@
       "Type": "BuyGold",
       "Name": "#TID.GOLD_XS",
       "Description": "#TID.GOLD_XS_DESC",
-      "IconGraphics": "icons/shop_icons/icon_gold.png",
-      "CostPremium": "1.99",
+      "IconGraphics": "icons/shop_icons/icon_gold1.png",
+      "CostPremium": "0.01",
       "GoldGain": "20",
       "ImageUrl": "icon_dollar.png",
       "DescriptionSecondary": "#TID.GOLD_XS_DESC_SECONDARY"
@@ -14991,8 +15668,8 @@
       "Type": "BuyGold",
       "Name": "#TID.GOLD_SMALL",
       "Description": "#TID.GOLD_SMALL_DESC",
-      "IconGraphics": "icons/shop_icons/icon_gold.png",
-      "CostPremium": "4.99",
+      "IconGraphics": "icons/shop_icons/icon_gold2.png",
+      "CostPremium": "0.01",
       "GoldGain": "55",
       "ImageUrl": "icon_dollar.png",
       "DescriptionSecondary": "#TID.GOLD_SMALL_DESC_SECONDARY"
@@ -15002,8 +15679,8 @@
       "Type": "BuyGold",
       "Name": "#TID.GOLD_MEDIUM",
       "Description": "#TID.GOLD_MEDIUM_DESC",
-      "IconGraphics": "icons/shop_icons/icon_goldbag.png",
-      "CostPremium": "9.99",
+      "IconGraphics": "icons/shop_icons/icon_gold3.png",
+      "CostPremium": "0.01",
       "GoldGain": "115",
       "ImageUrl": "icon_dollar.png",
       "DescriptionSecondary": "#TID.GOLD_MEDIUM_DESC_SECONDARY"
@@ -15013,8 +15690,8 @@
       "Type": "BuyGold",
       "Name": "#TID.GOLD_LARGE",
       "Description": "#TID.GOLD_LARGE_DESC",
-      "IconGraphics": "icons/shop_icons/icon_goldbag.png",
-      "CostPremium": "24.99",
+      "IconGraphics": "icons/shop_icons/icon_gold4.png",
+      "CostPremium": "0.01",
       "GoldGain": "300",
       "ImageUrl": "icon_dollar.png",
       "DescriptionSecondary": "#TID.GOLD_LARGE_DESC_SECONDARY"
@@ -15024,8 +15701,8 @@
       "Type": "BuyGold",
       "Name": "#TID.GOLD_XL",
       "Description": "#TID.GOLD_XL_DESC",
-      "IconGraphics": "icons/shop_icons/icon_stackofgold.png",
-      "CostPremium": "49.99",
+      "IconGraphics": "icons/shop_icons/icon_gold5.png",
+      "CostPremium": "0.01",
       "GoldGain": "650",
       "ImageUrl": "icon_dollar.png",
       "DescriptionSecondary": "#TID.GOLD_XL_DESC_SECONDARY"
@@ -15035,8 +15712,8 @@
       "Type": "BuyGold",
       "Name": "#TID.GOLD_XXL",
       "Description": "#TID.GOLD_XXL_DESC",
-      "IconGraphics": "icons/shop_icons/icon_stackofgold.png",
-      "CostPremium": "99.99",
+      "IconGraphics": "icons/shop_icons/icon_gold6.png",
+      "CostPremium": "0.01",
       "GoldGain": "1500",
       "ImageUrl": "icon_dollar.png",
       "DescriptionSecondary": "#TID.GOLD_XXL_DESC_SECONDARY"
@@ -15049,7 +15726,7 @@
       "Name": "#TID.CASH_XS",
       "Description": "#TID.CASH_XS_DESC",
       "IconGraphics": "icons/shop_icons/icon_cash.png",
-      "CostPremium": "1.99",
+      "CostPremium": "0.01",
       "CashGain": "3900",
       "ImageUrl": "icon_dollar.png",
       "DescriptionSecondary": "#TID.CASH_XS_DESC_SECONDARY"
@@ -15060,7 +15737,7 @@
       "Name": "#TID.CASH_SMALL",
       "Description": "#TID.CASH_SMALL_DESC",
       "IconGraphics": "icons/shop_icons/icon_cash.png",
-      "CostPremium": "4.99",
+      "CostPremium": "0.01",
       "CashGain": "10000",
       "ImageUrl": "icon_dollar.png",
       "DescriptionSecondary": "#TID.CASH_SMALL_DESC_SECONDARY"
@@ -15071,7 +15748,7 @@
       "Name": "#TID.CASH_MEDIUM",
       "Description": "#TID.CASH_MEDIUM_DESC",
       "IconGraphics": "icons/shop_icons/icon_cashbag.png",
-      "CostPremium": "9.99",
+      "CostPremium": "0.01",
       "CashGain": "21000",
       "ImageUrl": "icon_dollar.png",
       "DescriptionSecondary": "#TID.CASH_MEDIUM_DESC_SECONDARY"
@@ -15082,7 +15759,7 @@
       "Name": "#TID.CASH_LARGE",
       "Description": "#TID.CASH_LARGE_DESC",
       "IconGraphics": "icons/shop_icons/icon_cashbag.png",
-      "CostPremium": "24.99",
+      "CostPremium": "0.01",
       "CashGain": "55000",
       "ImageUrl": "icon_dollar.png",
       "DescriptionSecondary": "#TID.CASH_LARGE_DESC_SECONDARY"
@@ -15093,7 +15770,7 @@
       "Name": "#TID.CASH_XL",
       "Description": "#TID.CASH_XL_DESC",
       "IconGraphics": "icons/shop_icons/icon_pileofcash.png",
-      "CostPremium": "49.99",
+      "CostPremium": "0.01",
       "CashGain": "120000",
       "ImageUrl": "icon_dollar.png",
       "DescriptionSecondary": "#TID.CASH_XL_DESC_SECONDARY"
@@ -15104,7 +15781,7 @@
       "Name": "#TID.CASH_XXL",
       "Description": "#TID.CASH_XXL_DESC",
       "IconGraphics": "icons/shop_icons/icon_pileofcash.png",
-      "CostPremium": "99.99",
+      "CostPremium": "0.01",
       "CashGain": "270000",
       "ImageUrl": "icon_dollar.png",
       "DescriptionSecondary": "#TID.CASH_XXL_DESC_SECONDARY"
@@ -20297,6 +20974,14 @@
     "11": {
       "ID": "11",
       "Item": "#PlayerUnit.EliteLandKreuzer"
+    },
+    "12": {
+      "ID": "12",
+      "Item": "#PlayerUnit.EliteRocketeer"
+    },
+    "13": {
+      "ID": "13",
+      "Item": "#PlayerUnit.EliteJuggernaut"
     }
   },
   "ShopBuilding": {
@@ -20330,11 +21015,23 @@
     },
     "7": {
       "ID": "7",
-      "Item": "#ResourceBuilding.WaterPlant"
+      "Item": "#Building.Airport"
     },
     "8": {
       "ID": "8",
-      "Item": "#Building.Airport"
+      "Item": "#ResourceBuilding.WaterPlant"
+    },
+    "9": {
+      "ID": "9",
+      "Item": "#Building.GoldFactory"
+    },
+    "10": {
+      "ID": "10",
+      "Item": "#HospitalBuilding.Mash"
+    },
+    "11": {
+      "ID": "11",
+      "Item": "#HospitalBuilding.Hospital"
     }
   },
   "ShopPacks": {
@@ -20462,10 +21159,22 @@
     },
     "8": {
       "ID": "8",
-      "Item": "#MapArea.DesertM"
+      "Item": "#MapArea.AreaNorthW2"
     },
     "9": {
       "ID": "9",
+      "Item": "#MapArea.AreaNorthC2"
+    },
+    "10": {
+      "ID": "10",
+      "Item": "#MapArea.AreaNorthE2"
+    },
+    "11": {
+      "ID": "11",
+      "Item": "#MapArea.DesertM"
+    },
+    "12": {
+      "ID": "12",
       "Item": "#MapArea.DesertN"
     }
   },
@@ -23327,6 +24036,30 @@
       "RequiredMissions": "#Mission.AREA_N_C1",
       "Objectives": "#Objective.MAP_BUY_NE_MILESTONE"
     },
+    "MAP_LOCK_NW2": {
+      "ID": "MAP_LOCK_NW2",
+      "Type": "#MissionType.Hidden",
+      "MapId": "Home",
+      "Name": "#TID.NW2_C1_TITLE2",
+      "RequiredMissions": "#Mission.AREA_N_C2",
+      "Objectives": "#Objective.MAP_BUY_NW2_MILESTONE"
+    },
+    "MAP_LOCK_NC2": {
+      "ID": "MAP_LOCK_NC2",
+      "Type": "#MissionType.Hidden",
+      "MapId": "Home",
+      "Name": "#TID.NC2_C1_TITLE2",
+      "RequiredMissions": "#Mission.AREA_NW",
+      "Objectives": "#Objective.MAP_BUY_NC2_MILESTONE"
+    },
+    "MAP_LOCK_NE2": {
+      "ID": "MAP_LOCK_NE2",
+      "Type": "#MissionType.Hidden",
+      "MapId": "Home",
+      "Name": "#TID.NE2_C1_TITLE2",
+      "RequiredMissions": "#Mission.AREA_NC, #Mission.AREA_NC2",
+      "Objectives": "#Objective.MAP_BUY_NE2_MILESTONE"
+    },
     "BUY_NE_MAP": {
       "ID": "BUY_NE_MAP",
       "Type": "#MissionType.Normal",
@@ -23347,6 +24080,500 @@
       "RequiredMissions": "#Mission.BUY_NE_MAP",
       "Objectives": "#Objective.NE_SETUP_MILESTONE",
       "SetupGroup": "AreaNE"
+    },
+    "BUY_NORTHC2": {
+      "ID": "BUY_NORTHC2",
+      "Type": "#MissionType.Normal",
+      "MapId": "Home",
+      "Name": "#TID.BUY_NORTHC_MAP_TITLE",
+      "Description": "#TID.BUY_NORTHC_MAP_DESC",
+      "CompletionText": "#TID.BUY_NORTHC_MAP_COMPL",
+      "Icon": "icons/mission_icons/icon_mission_civ_buy.png",
+      "RequiredMissions": "#Mission.AREA_N_C1",
+      "Objectives": "#Objective.BuyAreaNorthC2",
+      "RewardMoney": "300",
+      "RewardXP": "60"
+    },
+    "SETUP_NORTHC2": {
+      "ID": "SETUP_NORTHC2",
+      "Type": "#MissionType.Hidden",
+      "MapId": "Home",
+      "RequiredMissions": "#Mission.BUY_NORTHC2",
+      "Objectives": "#Objective.NE_SETUP_MILESTONE",
+      "SetupGroup": "AreaNorthC"
+    },
+    "INTRO_NC2_1": {
+      "ID": "INTRO_NC2_1",
+      "Type": "#MissionType.ModalDialog",
+      "MapId": "Home",
+      "Name": "#TID.CHAR_MUTTON",
+      "Description": "#TID.INTRO_NC2_DIALOG_1",
+      "RequiredMissions": "#Mission.BUY_NORTHC2",
+      "Objectives": "#Objective.OK",
+      "Narrator": "#Character.Mutton"
+    },
+    "INTRO_NC2_2": {
+      "ID": "INTRO_NC2_2",
+      "Type": "#MissionType.ModalDialog",
+      "MapId": "Home",
+      "Name": "#TID.CHAR_VALIANT",
+      "Description": "#TID.INTRO_NC2_DIALOG_2",
+      "RequiredMissions": "#Mission.INTRO_NC2_1",
+      "Objectives": "#Objective.OK",
+      "Narrator": "#Character.Valiant"
+    },
+    "INTRO_NC2_3": {
+      "ID": "INTRO_NC2_3",
+      "Type": "#MissionType.ModalDialog",
+      "MapId": "Home",
+      "Name": "#TID.CHAR_MUTTON",
+      "Description": "#TID.INTRO_NC2_DIALOG_3",
+      "RequiredMissions": "#Mission.INTRO_NC2_2",
+      "Objectives": "#Objective.OK",
+      "Narrator": "#Character.Mutton"
+    },
+    "AREA_NC": {
+      "ID": "AREA_NC",
+      "Type": "#MissionType.Campaign",
+      "MapId": "Home",
+      "Name": "#TID.NC2_C1_TITLE",
+      "Description": "#TID.NC2_C1_DESC",
+      "Icon": "icons/mission_icons/icon_mission_campaign.png",
+      "RequiredMissions": "#Mission.INTRO_NC2_3",
+      "Objectives": "#Objective.NC_C1_NEW1, #Objective.NC_C1_NEW2, #Objective.NC_C1_NEW3, #Objective.NC_C1_NEW4",
+      "RewardMoney": "10000",
+      "RewardXP": "300"
+    },
+    "OUTRO_NC_1": {
+      "ID": "OUTRO_NC_1",
+      "Type": "#MissionType.ModalDialog",
+      "MapId": "Home",
+      "Name": "#TID.CHAR_PATRUS_PRAVUS",
+      "Description": "#TID.OUTRO_NC2_DIALOG_1",
+      "RequiredMissions": "#Mission.AREA_NC",
+      "Objectives": "#Objective.OK",
+      "Narrator": "#Character.PatrusPravus"
+    },
+    "OUTRO_NC_2": {
+      "ID": "OUTRO_NC_2",
+      "Type": "#MissionType.ModalDialog",
+      "MapId": "Home",
+      "Name": "#TID.CHAR_SUPERVILLAN",
+      "Description": "#TID.OUTRO_NC2_DIALOG_2",
+      "RequiredMissions": "#Mission.OUTRO_NC_1",
+      "Objectives": "#Objective.OK",
+      "Narrator": "#Character.Supervillan"
+    },
+    "AREA_NC2": {
+      "ID": "AREA_NC2",
+      "Type": "#MissionType.Campaign",
+      "MapId": "Home",
+      "Name": "#TID.NC2_C2_TITLE",
+      "Description": "#TID.NC2_C2_DESC",
+      "Icon": "icons/mission_icons/icon_mission_campaign.png",
+      "RequiredMissions": "#Mission.INTRO_NC2_3",
+      "Objectives": "#Objective.NC_C1_NEW5, #Objective.NC_C1_NEW6, #Objective.NC_C1_NEW7, #Objective.NC_C1_NEW8",
+      "RewardMoney": "5000",
+      "RewardXP": "300"
+    },
+    "OUTRO_NC_3": {
+      "ID": "OUTRO_NC_3",
+      "Type": "#MissionType.ModalDialog",
+      "MapId": "Home",
+      "Name": "#TID.CHAR_SUPERVILLAN",
+      "Description": "#TID.OUTRO_NC2_DIALOG_3",
+      "RequiredMissions": "#Mission.AREA_NC2",
+      "Objectives": "#Objective.OK",
+      "Narrator": "#Character.Supervillan"
+    },
+    "OUTRO_NC_4": {
+      "ID": "OUTRO_NC_4",
+      "Type": "#MissionType.ModalDialog",
+      "MapId": "Home",
+      "Name": "#TID.CHAR_VETERAN",
+      "Description": "#TID.OUTRO_NC2_DIALOG_4",
+      "RequiredMissions": "#Mission.OUTRO_NC_3",
+      "Objectives": "#Objective.OK",
+      "Narrator": "#Character.VeteranBlue"
+    },
+    "OUTRO_NC_5": {
+      "ID": "OUTRO_NC_5",
+      "Type": "#MissionType.ModalDialog",
+      "MapId": "Home",
+      "Name": "#TID.CHAR_MUTTON",
+      "Description": "#TID.OUTRO_NC2_DIALOG_5",
+      "RequiredMissions": "#Mission.OUTRO_NC_4, #Mission.OUTRO_NC_2",
+      "Objectives": "#Objective.OK",
+      "Narrator": "#Character.Mutton"
+    },
+    "AREA_NC_S1": {
+      "ID": "AREA_NC_S1",
+      "Type": "#MissionType.Normal",
+      "MapId": "Home",
+      "Name": "#TID.NC2_C3_TITLE",
+      "Description": "#TID.NC2_C3_DESC",
+      "CompletionText": "#TID.NW_MISSION_COMPL",
+      "Icon": "icons/mission_icons/icon_mission_combat_buildings.png",
+      "RequiredMissions": "#Mission.INTRO_NC2_3",
+      "Objectives": "#Objective.NC_C1_NEW9, #Objective.NC_C1_NEW10",
+      "RewardMoney": "500",
+      "RewardXP": "60"
+    },
+    "AREA_NC_S2": {
+      "ID": "AREA_NC_S2",
+      "Type": "#MissionType.Normal",
+      "MapId": "Home",
+      "Name": "#TID.NC2_C4_TITLE",
+      "Description": "#TID.NC2_C4_DESC",
+      "CompletionText": "#TID.NW_MISSION_COMPL",
+      "Icon": "icons/mission_icons/icon_mission_civ_buy.png",
+      "RequiredMissions": "#Mission.INTRO_NC2_3",
+      "Objectives": "#Objective.NC_C1_NEW11, #Objective.NC_C1_NEW12, #Objective.NC_C1_NEW13",
+      "RewardMoney": "500",
+      "RewardXP": "60",
+      "EnemySpawning": "#MissionEnemySpawning.PavlusSquad2"
+    },
+    "AREA_NC_S3": {
+      "ID": "AREA_NC_S3",
+      "Type": "#MissionType.Normal",
+      "MapId": "Home",
+      "Name": "#TID.NC2_C5_TITLE",
+      "Description": "#TID.NC2_C5_DESC",
+      "CompletionText": "#TID.NW_MISSION_COMPL",
+      "Icon": "icons/mission_icons/icon_mission_civ_repair.png",
+      "RequiredMissions": "#Mission.AREA_NC_S1",
+      "Objectives": "#Objective.NC_C1_NEW14, #Objective.NC_C1_NEW15",
+      "RewardMoney": "500",
+      "RewardXP": "60",
+      "EnemySpawning": "#MissionEnemySpawning.PavlusSquad3"
+    },
+    "BUY_NORTHW2": {
+      "ID": "BUY_NORTHW2",
+      "Type": "#MissionType.Normal",
+      "MapId": "Home",
+      "Name": "#TID.BUY_NORTHW_MAP_TITLE",
+      "Description": "#TID.BUY_NORTHW_MAP_DESC",
+      "CompletionText": "#TID.BUY_NORTHW_MAP_COMPL",
+      "Icon": "icons/mission_icons/icon_mission_civ_buy.png",
+      "RequiredMissions": "#Mission.AREA_N_C1",
+      "Objectives": "#Objective.BuyAreaNorthW2",
+      "RewardMoney": "300",
+      "RewardXP": "60"
+    },
+    "SETUP_NORTHW2": {
+      "ID": "SETUP_NORTHW2",
+      "Type": "#MissionType.Hidden",
+      "MapId": "Home",
+      "RequiredMissions": "#Mission.BUY_NORTHW2",
+      "Objectives": "#Objective.NE_SETUP_MILESTONE",
+      "SetupGroup": "AreaNorthW"
+    },
+    "INTRO_NW2_1": {
+      "ID": "INTRO_NW2_1",
+      "Type": "#MissionType.ModalDialog",
+      "MapId": "Home",
+      "Name": "#TID.CHAR_VETERAN",
+      "Description": "#TID.INTRO_NW2_DIALOG_1",
+      "RequiredMissions": "#Mission.BUY_NORTHW2",
+      "Objectives": "#Objective.OK",
+      "Narrator": "#Character.VeteranBlue"
+    },
+    "INTRO_NW2_2": {
+      "ID": "INTRO_NW2_2",
+      "Type": "#MissionType.ModalDialog",
+      "MapId": "Home",
+      "Name": "#TID.CHAR_BLACKFOX",
+      "Description": "#TID.INTRO_NW2_DIALOG_2",
+      "RequiredMissions": "#Mission.INTRO_NW2_1",
+      "Objectives": "#Objective.OK",
+      "Narrator": "#Character.BlackFox"
+    },
+    "INTRO_NW2_3": {
+      "ID": "INTRO_NW2_3",
+      "Type": "#MissionType.ModalDialog",
+      "MapId": "Home",
+      "Name": "#TID.CHAR_MUTTON",
+      "Description": "#TID.INTRO_NW2_DIALOG_3",
+      "RequiredMissions": "#Mission.INTRO_NW2_2",
+      "Objectives": "#Objective.OK",
+      "Narrator": "#Character.Mutton"
+    },
+    "AREA_NW": {
+      "ID": "AREA_NW",
+      "Type": "#MissionType.Campaign",
+      "MapId": "Home",
+      "Name": "#TID.NW2_C1_TITLE",
+      "Description": "#TID.NW2_C1_DESC",
+      "Icon": "icons/mission_icons/icon_mission_campaign.png",
+      "RequiredMissions": "#Mission.INTRO_NW2_3",
+      "Objectives": "#Objective.NW_C1_NEW1, #Objective.NW_C1_NEW2, #Objective.NW_C1_NEW3, #Objective.NW_C1_NEW4, #Objective.NW_C1_NEW5",
+      "RewardMoney": "5000",
+      "RewardXP": "200"
+    },
+    "OUTRO_NW2_1": {
+      "ID": "OUTRO_NW2_1",
+      "Type": "#MissionType.ModalDialog",
+      "MapId": "Home",
+      "Name": "#TID.CHAR_PATRUS_PRAVUS",
+      "Description": "#TID.OUTRO_NW2_DIALOG_1",
+      "RequiredMissions": "#Mission.AREA_NW",
+      "Objectives": "#Objective.OK",
+      "Narrator": "#Character.PatrusPravus"
+    },
+    "OUTRO_NW2_2": {
+      "ID": "OUTRO_NW2_2",
+      "Type": "#MissionType.ModalDialog",
+      "MapId": "Home",
+      "Name": "#TID.CHAR_SUPERVILLAN",
+      "Description": "#TID.OUTRO_NW2_DIALOG_2",
+      "RequiredMissions": "#Mission.OUTRO_NW2_1",
+      "Objectives": "#Objective.OK",
+      "Narrator": "#Character.Supervillan"
+    },
+    "OUTRO_NW2_3": {
+      "ID": "OUTRO_NW2_3",
+      "Type": "#MissionType.ModalDialog",
+      "MapId": "Home",
+      "Name": "#TID.CHAR_MUTTON",
+      "Description": "#TID.OUTRO_NW2_DIALOG_3",
+      "RequiredMissions": "#Mission.OUTRO_NW2_2",
+      "Objectives": "#Objective.OK",
+      "Narrator": "#Character.Mutton"
+    },
+    "AREA_NW_S1": {
+      "ID": "AREA_NW_S1",
+      "Type": "#MissionType.Normal",
+      "MapId": "Home",
+      "Name": "#TID.NW2_C2_TITLE",
+      "Description": "#TID.NW2_C2_DESC",
+      "CompletionText": "#TID.NW_MISSION_COMPL",
+      "Icon": "icons/mission_icons/icon_mission_combat_buildings.png",
+      "RequiredMissions": "#Mission.INTRO_NW2_3",
+      "Objectives": "#Objective.NW_C1_NEW6, #Objective.NW_C1_NEW7",
+      "RewardMoney": "500",
+      "RewardXP": "60"
+    },
+    "AREA_NW_S2": {
+      "ID": "AREA_NW_S2",
+      "Type": "#MissionType.Normal",
+      "MapId": "Home",
+      "Name": "#TID.NW2_C3_TITLE",
+      "Description": "#TID.NW2_C3_DESC",
+      "CompletionText": "#TID.NW_MISSION_COMPL2",
+      "Icon": "icons/mission_icons/icon_mission_combat_propaganda.png",
+      "RequiredMissions": "#Mission.INTRO_NW2_3",
+      "Objectives": "#Objective.NW_C1_NEW8",
+      "RewardMoney": "500",
+      "RewardXP": "60"
+    },
+    "AREA_NW_S3": {
+      "ID": "AREA_NW_S3",
+      "Type": "#MissionType.Normal",
+      "MapId": "Home",
+      "Name": "#TID.NW2_C4_TITLE",
+      "Description": "#TID.NW2_C4_DESC",
+      "CompletionText": "#TID.NW_MISSION_COMPL3",
+      "Icon": "icons/mission_icons/icon_mission_civ_resources.png",
+      "RequiredMissions": "#Mission.AREA_NW_S1",
+      "Objectives": "#Objective.NW_C1_NEW9",
+      "RewardMoney": "500",
+      "RewardXP": "60",
+      "EnemySpawning": "#MissionEnemySpawning.PavlusSquad"
+    },
+    "BUY_NORTHE2": {
+      "ID": "BUY_NORTHE2",
+      "Type": "#MissionType.Normal",
+      "MapId": "Home",
+      "Name": "#TID.BUY_NE_MAP_TITLE",
+      "Description": "#TID.BUY_NE_MAP_DESC",
+      "CompletionText": "#TID.BUY_NE_MAP_COMPL",
+      "Icon": "icons/mission_icons/icon_mission_civ_buy.png",
+      "RequiredMissions": "#Mission.AREA_N_C1",
+      "Objectives": "#Objective.BuyAreaNorthE2",
+      "RewardMoney": "300",
+      "RewardXP": "60"
+    },
+    "SETUP_NORTHE2": {
+      "ID": "SETUP_NORTHE2",
+      "Type": "#MissionType.Hidden",
+      "MapId": "Home",
+      "RequiredMissions": "#Mission.BUY_NORTHE2",
+      "Objectives": "#Objective.NE_SETUP_MILESTONE",
+      "SetupGroup": "AreaNorthE"
+    },
+    "INTRO_NE2_1": {
+      "ID": "INTRO_NE2_1",
+      "Type": "#MissionType.ModalDialog",
+      "MapId": "Home",
+      "Name": "#TID.CHAR_BLACKFOX",
+      "Description": "#TID.INTRO_NE2_DIALOG_1",
+      "RequiredMissions": "#Mission.BUY_NORTHE2",
+      "Objectives": "#Objective.OK",
+      "Narrator": "#Character.BlackFox"
+    },
+    "INTRO_NE2_2": {
+      "ID": "INTRO_NE2_2",
+      "Type": "#MissionType.ModalDialog",
+      "MapId": "Home",
+      "Name": "#TID.CHAR_VETERAN",
+      "Description": "#TID.INTRO_NE2_DIALOG_2",
+      "RequiredMissions": "#Mission.INTRO_NE2_1",
+      "Objectives": "#Objective.OK",
+      "Narrator": "#Character.VeteranBlue"
+    },
+    "INTRO_NE2_3": {
+      "ID": "INTRO_NE2_3",
+      "Type": "#MissionType.ModalDialog",
+      "MapId": "Home",
+      "Name": "#TID.CHAR_MUTTON",
+      "Description": "#TID.INTRO_NE2_DIALOG_3",
+      "RequiredMissions": "#Mission.INTRO_NE2_2",
+      "Objectives": "#Objective.OK",
+      "Narrator": "#Character.Mutton"
+    },
+    "AREA_NE2": {
+      "ID": "AREA_NE2",
+      "Type": "#MissionType.Campaign",
+      "MapId": "Home",
+      "Name": "#TID.NE2_C1_TITLE",
+      "Description": "#TID.NE2_C1_DESC",
+      "Icon": "icons/mission_icons/icon_mission_campaign.png",
+      "RequiredMissions": "#Mission.INTRO_NE2_3",
+      "Objectives": "#Objective.NE_C1_NEW1, #Objective.NE_C1_NEW2, #Objective.NE_C1_NEW3, #Objective.NE_C1_NEW4, #Objective.NE_C1_NEW5",
+      "RewardMoney": "10000",
+      "RewardXP": "400",
+      "EnemySpawning": "#MissionEnemySpawning.PavlusSquad4"
+    },
+    "OUTRO_NE2_1": {
+      "ID": "OUTRO_NE2_1",
+      "Type": "#MissionType.ModalDialog",
+      "MapId": "Home",
+      "Name": "#TID.CHAR_PATRUS_PRAVUS",
+      "Description": "#TID.OUTRO_NE2_DIALOG_1",
+      "RequiredMissions": "#Mission.AREA_NE2",
+      "Objectives": "#Objective.OK",
+      "Narrator": "#Character.PatrusPravus"
+    },
+    "OUTRO_NE2_2": {
+      "ID": "OUTRO_NE2_2",
+      "Type": "#MissionType.ModalDialog",
+      "MapId": "Home",
+      "Name": "#TID.CHAR_SUPERVILLAN",
+      "Description": "#TID.OUTRO_NE2_DIALOG_2",
+      "RequiredMissions": "#Mission.OUTRO_NE2_1",
+      "Objectives": "#Objective.OK",
+      "Narrator": "#Character.Valiant"
+    },
+    "OUTRO_NE2_3": {
+      "ID": "OUTRO_NE2_3",
+      "Type": "#MissionType.ModalDialog",
+      "MapId": "Home",
+      "Name": "#TID.CHAR_VETERAN",
+      "Description": "#TID.OUTRO_NE2_DIALOG_3",
+      "RequiredMissions": "#Mission.OUTRO_NE2_2",
+      "Objectives": "#Objective.OK",
+      "Narrator": "#Character.VeteranBlue"
+    },
+    "AREA_NE3": {
+      "ID": "AREA_NE3",
+      "Type": "#MissionType.Campaign",
+      "MapId": "Home",
+      "Name": "#TID.NE3_C1_TITLE",
+      "Description": "#TID.NE3_C1_DESC",
+      "Icon": "icons/mission_icons/icon_mission_campaign.png",
+      "RequiredMissions": "#Mission.AREA_NE2",
+      "Objectives": "#Objective.NE_C1_NEW6, #Objective.NE_C1_NEW7, #Objective.NE_C1_NEW8, #Objective.NE_C1_NEW9, #Objective.NE_C1_NEW10",
+      "RewardMoney": "20000",
+      "RewardXP": "400"
+    },
+    "OUTRO_NE2_4": {
+      "ID": "OUTRO_NE2_4",
+      "Type": "#MissionType.ModalDialog",
+      "MapId": "Home",
+      "Name": "#TID.CHAR_SUPERVILLAN",
+      "Description": "#TID.OUTRO_NE2_DIALOG_4",
+      "RequiredMissions": "#Mission.AREA_NE3",
+      "Objectives": "#Objective.OK",
+      "Narrator": "#Character.Supervillan"
+    },
+    "OUTRO_NE2_5": {
+      "ID": "OUTRO_NE2_5",
+      "Type": "#MissionType.ModalDialog",
+      "MapId": "Home",
+      "Name": "#TID.CHAR_PATRUS_PRAVUS",
+      "Description": "#TID.OUTRO_NE2_DIALOG_5",
+      "RequiredMissions": "#Mission.OUTRO_NE2_4",
+      "Objectives": "#Objective.OK",
+      "Narrator": "#Character.PatrusPravus"
+    },
+    "OUTRO_NE2_6": {
+      "ID": "OUTRO_NE2_6",
+      "Type": "#MissionType.ModalDialog",
+      "MapId": "Home",
+      "Name": "#TID.CHAR_PRESIDENT",
+      "Description": "#TID.OUTRO_NE2_DIALOG_6",
+      "RequiredMissions": "#Mission.OUTRO_NE2_5",
+      "Objectives": "#Objective.OK",
+      "Narrator": "#Character.President"
+    },
+    "OUTRO_NE2_7": {
+      "ID": "OUTRO_NE2_7",
+      "Type": "#MissionType.ModalDialog",
+      "MapId": "Home",
+      "Name": "#TID.CHAR_VETERAN",
+      "Description": "#TID.OUTRO_NE2_DIALOG_7",
+      "RequiredMissions": "#Mission.OUTRO_NE2_6",
+      "Objectives": "#Objective.OK",
+      "Narrator": "#Character.VeteranBlue"
+    },
+    "OUTRO_NE2_8": {
+      "ID": "OUTRO_NE2_8",
+      "Type": "#MissionType.ModalDialog",
+      "MapId": "Home",
+      "Name": "#TID.CHAR_MUTTON",
+      "Description": "#TID.OUTRO_NE2_DIALOG_8",
+      "RequiredMissions": "#Mission.OUTRO_NE2_7",
+      "Objectives": "#Objective.OK",
+      "Narrator": "#Character.Mutton"
+    },
+    "AREA_NE_S1": {
+      "ID": "AREA_NE_S1",
+      "Type": "#MissionType.Normal",
+      "MapId": "Home",
+      "Name": "#TID.NE2_C2_TITLE",
+      "Description": "#TID.NE2_C2_DESC",
+      "Icon": "icons/mission_icons/icon_mission_civ_resources.png",
+      "RequiredMissions": "#Mission.AREA_NE2",
+      "Objectives": "#Objective.NE_C1_NEW11, #Objective.NE_C1_NEW12, #Objective.NE_C1_NEW13",
+      "RewardMoney": "500",
+      "RewardXP": "60",
+      "EnemySpawning": "#MissionEnemySpawning.PavlusSquad7"
+    },
+    "AREA_NE_S2": {
+      "ID": "AREA_NE_S2",
+      "Type": "#MissionType.Normal",
+      "MapId": "Home",
+      "Name": "#TID.NE2_C3_TITLE",
+      "Description": "#TID.NE2_C3_DESC",
+      "Icon": "icons/mission_icons/icon_mission_clear.png",
+      "RequiredMissions": "#Mission.INTRO_NE2_3",
+      "Objectives": "#Objective.NE_C1_NEW14, #Objective.NE_C1_NEW15",
+      "RewardMoney": "500",
+      "RewardXP": "60",
+      "EnemySpawning": "#MissionEnemySpawning.PavlusSquad5"
+    },
+    "AREA_NE_S3": {
+      "ID": "AREA_NE_S3",
+      "Type": "#MissionType.Normal",
+      "MapId": "Home",
+      "Name": "#TID.NE2_C4_TITLE",
+      "Description": "#TID.NE2_C4_DESC",
+      "Icon": "icons/mission_icons/icon_mission_combat_terrain.png",
+      "RequiredMissions": "#Mission.INTRO_NE2_3",
+      "Objectives": "#Objective.NE_C1_NEW16, #Objective.NE_C1_NEW17",
+      "RewardMoney": "500",
+      "RewardXP": "60",
+      "EnemySpawning": "#MissionEnemySpawning.PavlusSquad6"
     },
     "AREA_N_C2": {
       "ID": "AREA_N_C2",
@@ -24992,6 +26219,34 @@
     "MiddleHorde2": {
       "ID": "MiddleHorde2",
       "EnemyUnits": "#EnemyUnit.Artillery, #EnemyUnit.APC, #EnemyUnit.Artillery, #EnemyUnit.RocketBattery, #EnemyUnit.Artillery, #EnemyUnit.Artillery, #EnemyUnit.Artillery, #EnemyUnit.Artillery, #EnemyUnit.Artillery, #EnemyUnit.Artillery, #EnemyUnit.RocketBattery, #EnemyUnit.RocketBattery, #EnemyUnit.RocketBattery, #EnemyUnit.StormTroop, #EnemyUnit.StormTroop, #EnemyUnit.Scout, #EnemyUnit.APC, #EnemyUnit.Infantry, #EnemyUnit.APC, #EnemyUnit.Infantry, #EnemyUnit.StormTroop, #EnemyUnit.Infantry, #EnemyUnit.APC, #EnemyUnit.Artillery, #EnemyUnit.Artillery, #EnemyUnit.RocketBattery, #EnemyUnit.RocketBattery, #EnemyUnit.APC, #EnemyUnit.Scout, #EnemyUnit.Infantry, #EnemyUnit.APC, #EnemyUnit.Infantry, #EnemyUnit.Artillery, #EnemyUnit.APC, #EnemyUnit.Infantry, #EnemyUnit.RocketBattery, #EnemyUnit.RocketBattery, #EnemyUnit.Scout"
+    },
+    "PavlusSquad": {
+      "ID": "PavlusSquad",
+      "EnemyUnits": "#EnemyUnit.Armor, #EnemyUnit.Armor, #EnemyUnit.Armor, #EnemyUnit.Armor, #EnemyUnit.RocketBattery, #EnemyUnit.RocketBattery, #EnemyUnit.RocketBattery, #EnemyUnit.PremiumTank"
+    },
+    "PavlusSquad2": {
+      "ID": "PavlusSquad2",
+      "EnemyUnits": "#EnemyUnit.Bulldozer, #EnemyUnit.Bulldozer, #EnemyUnit.Bulldozer, #EnemyUnit.Bulldozer, #EnemyUnit.RocketBattery, #EnemyUnit.RocketBattery, #EnemyUnit.RocketBattery, #EnemyUnit.EliteWarfly, #EnemyUnit.EliteWarfly, #EnemyUnit.PremiumTank"
+    },
+    "PavlusSquad3": {
+      "ID": "PavlusSquad3",
+      "EnemyUnits": "#EnemyUnit.Armor, #EnemyUnit.Armor, #EnemyUnit.Armor, #EnemyUnit.Bulldozer, #EnemyUnit.Bulldozer, #EnemyUnit.Bulldozer, #EnemyUnit.RocketBattery, #EnemyUnit.RocketBattery, #EnemyUnit.RocketBattery, #EnemyUnit.RocketBattery, #EnemyUnit.PremiumTank, #EnemyUnit.PremiumTank"
+    },
+    "PavlusSquad4": {
+      "ID": "PavlusSquad4",
+      "EnemyUnits": "#EnemyUnit.PremiumTank, #EnemyUnit.PremiumTank, #EnemyUnit.PremiumTank, #EnemyUnit.PremiumTank, #EnemyUnit.PremiumTank, #EnemyUnit.PremiumTank, #EnemyUnit.PremiumTank, #EnemyUnit.PremiumTank, #EnemyUnit.Bulldozer, #EnemyUnit.Bulldozer, #EnemyUnit.Bulldozer, #EnemyUnit.Bulldozer, #EnemyUnit.RocketBattery, #EnemyUnit.RocketBattery, #EnemyUnit.RocketBattery, #EnemyUnit.RocketBattery"
+    },
+    "PavlusSquad5": {
+      "ID": "PavlusSquad5",
+      "EnemyUnits": "#EnemyUnit.Armor, #EnemyUnit.Bulldozer, #EnemyUnit.Bulldozer, #EnemyUnit.Bulldozer, #EnemyUnit.Bulldozer, #EnemyUnit.Bulldozer, #EnemyUnit.Bulldozer, #EnemyUnit.Bulldozer, #EnemyUnit.Bulldozer, #EnemyUnit.Armor, #EnemyUnit.PremiumTank, #EnemyUnit.PremiumTank, #EnemyUnit.PremiumTank, #EnemyUnit.PremiumTank, #EnemyUnit.RocketBattery, #EnemyUnit.RocketBattery, #EnemyUnit.EliteWarfly, #EnemyUnit.EliteWarfly, #EnemyUnit.EliteWarfly"
+    },
+    "PavlusSquad6": {
+      "ID": "PavlusSquad6",
+      "EnemyUnits": "#EnemyUnit.Armor, #EnemyUnit.Bulldozer, #EnemyUnit.Bulldozer, #EnemyUnit.Bulldozer, #EnemyUnit.Bulldozer, #EnemyUnit.Bulldozer, #EnemyUnit.Bulldozer, #EnemyUnit.Bulldozer, #EnemyUnit.Bulldozer, #EnemyUnit.Armor, #EnemyUnit.PremiumTank, #EnemyUnit.PremiumTank, #EnemyUnit.PremiumTank, #EnemyUnit.PremiumTank, #EnemyUnit.RocketBattery, #EnemyUnit.RocketBattery, #EnemyUnit.EliteWarfly, #EnemyUnit.EliteWarfly, #EnemyUnit.EliteWarfly"
+    },
+    "PavlusSquad7": {
+      "ID": "PavlusSquad7",
+      "EnemyUnits": "#EnemyUnit.Armor, #EnemyUnit.Bulldozer, #EnemyUnit.Bulldozer, #EnemyUnit.Bulldozer, #EnemyUnit.Bulldozer, #EnemyUnit.Bulldozer, #EnemyUnit.Bulldozer, #EnemyUnit.Bulldozer, #EnemyUnit.Bulldozer, #EnemyUnit.Armor, #EnemyUnit.PremiumTank, #EnemyUnit.PremiumTank, #EnemyUnit.PremiumTank, #EnemyUnit.PremiumTank, #EnemyUnit.RocketBattery, #EnemyUnit.RocketBattery, #EnemyUnit.EliteWarfly, #EnemyUnit.EliteWarfly, #EnemyUnit.EliteWarfly"
     }
   },
   "Character": {
@@ -25155,6 +26410,98 @@
     "EAC1_Fortress": {
       "ID": "EAC1_Fortress",
       "CompletionText": "#Character.Greedy, #TID.CAMPAIGN_E_1_MISSION_COMPLETION_4"
+    },
+    "NW_C1_NEW1": {
+      "ID": "NW_C1_NEW1",
+      "CompletionText": "#Character.PatrusPravus, #TID.CAMPAIGN_NW_1_MISSION_COMPLETION_1"
+    },
+    "NW_C1_NEW2": {
+      "ID": "NW_C1_NEW2",
+      "CompletionText": "#Character.Supervillan, #TID.CAMPAIGN_NW_1_MISSION_COMPLETION_2"
+    },
+    "NW_C1_NEW3": {
+      "ID": "NW_C1_NEW3",
+      "CompletionText": "#Character.PatrusPravus, #TID.CAMPAIGN_NW_1_MISSION_COMPLETION_3"
+    },
+    "NW_C1_NEW4": {
+      "ID": "NW_C1_NEW4",
+      "CompletionText": "#Character.Supervillan, #TID.CAMPAIGN_NW_1_MISSION_COMPLETION_4"
+    },
+    "NW_C1_NEW5": {
+      "ID": "NW_C1_NEW5",
+      "CompletionText": "#Character.Supervillan, #TID.CAMPAIGN_NW_1_MISSION_COMPLETION_5"
+    },
+    "NC_C1_NEW1": {
+      "ID": "NC_C1_NEW1",
+      "CompletionText": "#Character.PatrusPravus, #TID.CAMPAIGN_NC_1_MISSION_COMPLETION_1"
+    },
+    "NC_C1_NEW2": {
+      "ID": "NC_C1_NEW2",
+      "CompletionText": "#Character.Supervillan, #TID.CAMPAIGN_NC_1_MISSION_COMPLETION_2"
+    },
+    "NC_C1_NEW3": {
+      "ID": "NC_C1_NEW3",
+      "CompletionText": "#Character.PatrusPravus, #TID.CAMPAIGN_NC_1_MISSION_COMPLETION_3"
+    },
+    "NC_C1_NEW4": {
+      "ID": "NC_C1_NEW4",
+      "CompletionText": "#Character.PatrusPravus, #TID.CAMPAIGN_NC_1_MISSION_COMPLETION_4"
+    },
+    "NC_C1_NEW5": {
+      "ID": "NC_C1_NEW5",
+      "CompletionText": "#Character.PatrusPravus, #TID.CAMPAIGN_NC_1_MISSION_COMPLETION_5"
+    },
+    "NC_C1_NEW6": {
+      "ID": "NC_C1_NEW6",
+      "CompletionText": "#Character.Supervillan, #TID.CAMPAIGN_NC_1_MISSION_COMPLETION_6"
+    },
+    "NC_C1_NEW7": {
+      "ID": "NC_C1_NEW7",
+      "CompletionText": "#Character.Supervillan, #TID.CAMPAIGN_NC_1_MISSION_COMPLETION_7"
+    },
+    "NC_C1_NEW8": {
+      "ID": "NC_C1_NEW8",
+      "CompletionText": "#Character.Supervillan, #TID.CAMPAIGN_NC_1_MISSION_COMPLETION_8"
+    },
+    "NE_C1_NEW1": {
+      "ID": "NE_C1_NEW1",
+      "CompletionText": "#Character.Supervillan, #TID.CAMPAIGN_NE_1_MISSION_COMPLETION_1"
+    },
+    "NE_C1_NEW2": {
+      "ID": "NE_C1_NEW2",
+      "CompletionText": "#Character.Supervillan, #TID.CAMPAIGN_NE_1_MISSION_COMPLETION_2"
+    },
+    "NE_C1_NEW3": {
+      "ID": "NE_C1_NEW3",
+      "CompletionText": "#Character.Supervillan, #TID.CAMPAIGN_NE_1_MISSION_COMPLETION_3"
+    },
+    "NE_C1_NEW4": {
+      "ID": "NE_C1_NEW4",
+      "CompletionText": "#Character.PatrusPravus, #TID.CAMPAIGN_NE_1_MISSION_COMPLETION_4"
+    },
+    "NE_C1_NEW5": {
+      "ID": "NE_C1_NEW5",
+      "CompletionText": "#Character.Supervillan, #TID.CAMPAIGN_NE_1_MISSION_COMPLETION_5"
+    },
+    "NE_C1_NEW6": {
+      "ID": "NE_C1_NEW6",
+      "CompletionText": "#Character.Supervillan, #TID.CAMPAIGN_NE_1_MISSION_COMPLETION_6"
+    },
+    "NE_C1_NEW7": {
+      "ID": "NE_C1_NEW7",
+      "CompletionText": "#Character.Supervillan, #TID.CAMPAIGN_NE_1_MISSION_COMPLETION_7"
+    },
+    "NE_C1_NEW8": {
+      "ID": "NE_C1_NEW8",
+      "CompletionText": "#Character.Supervillan, #TID.CAMPAIGN_NE_1_MISSION_COMPLETION_8"
+    },
+    "NE_C1_NEW9": {
+      "ID": "NE_C1_NEW9",
+      "CompletionText": "#Character.PatrusPravus, #TID.CAMPAIGN_NE_1_MISSION_COMPLETION_9"
+    },
+    "NE_C1_NEW10": {
+      "ID": "NE_C1_NEW10",
+      "CompletionText": "#Character.Supervillan, #TID.CAMPAIGN_NE_1_MISSION_COMPLETION_10"
     }
   },
   "Tutorial": {
@@ -25270,6 +26617,21 @@
       "Type": "#ObjectiveType.Milestone",
       "Goal": "0"
     },
+    "MAP_BUY_NE2_MILESTONE": {
+      "ID": "MAP_BUY_NE2_MILESTONE",
+      "Type": "#ObjectiveType.Milestone",
+      "Goal": "0"
+    },
+    "MAP_BUY_NC2_MILESTONE": {
+      "ID": "MAP_BUY_NC2_MILESTONE",
+      "Type": "#ObjectiveType.Milestone",
+      "Goal": "0"
+    },
+    "MAP_BUY_NW2_MILESTONE": {
+      "ID": "MAP_BUY_NW2_MILESTONE",
+      "Type": "#ObjectiveType.Milestone",
+      "Goal": "0"
+    },
     "NW_SETUP_MILESTONE": {
       "ID": "NW_SETUP_MILESTONE",
       "Type": "#ObjectiveType.Milestone",
@@ -25378,6 +26740,33 @@
       "Goal": "1",
       "Title": "#TID.NE_MAP_OBJ_TITLE",
       "Description": "#TID.NE_MAP_OBJ_DESC",
+      "Icon": "icons/mission_icons/objective_icons/icon_objective_buy.png"
+    },
+    "BuyAreaNorthC2": {
+      "ID": "BuyAreaNorthC2",
+      "Type": "#ObjectiveType.Buy",
+      "Parameter": "#MapArea.AreaNorthC2",
+      "Goal": "1",
+      "Title": "#TID.NORTHC_MAP_OBJ_TITLE",
+      "Description": "#TID.NORTHC_MAP_OBJ_DESC",
+      "Icon": "icons/mission_icons/objective_icons/icon_objective_buy.png"
+    },
+    "BuyAreaNorthW2": {
+      "ID": "BuyAreaNorthW2",
+      "Type": "#ObjectiveType.Buy",
+      "Parameter": "#MapArea.AreaNorthW2",
+      "Goal": "1",
+      "Title": "#TID.NORTHW_MAP_OBJ_TITLE",
+      "Description": "#TID.NORTHW_MAP_OBJ_DESC",
+      "Icon": "icons/mission_icons/objective_icons/icon_objective_buy.png"
+    },
+    "BuyAreaNorthE2": {
+      "ID": "BuyAreaNorthE2",
+      "Type": "#ObjectiveType.Buy",
+      "Parameter": "#MapArea.AreaNorthE2",
+      "Goal": "1",
+      "Title": "#TID.NORTHE_MAP_OBJ_TITLE",
+      "Description": "#TID.NORTHE_MAP_OBJ_DESC",
       "Icon": "icons/mission_icons/objective_icons/icon_objective_buy.png"
     },
     "BuyAreaCDesert": {
@@ -26260,7 +27649,7 @@
       "Goal": "1",
       "Title": "#TID.MISSION_CAMPAIGN_SE_1_OBJECTIVE_4",
       "Description": "#TID.MISSION_CAMPAIGN_SE_1_OBJECTIVE_4",
-      "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_battle_fortress.png",
+      "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_comm_bunker.png",
       "CostFinish": "0"
     },
     "SEAPC_BUY_airport": {
@@ -27064,6 +28453,416 @@
       "Title": "#TID.NC_BAY_OBC_2_TITLE",
       "Description": "#TID.NC_BAY_OBC_2_DESC",
       "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_mega_weapon.png",
+      "CostFinish": "0"
+    },
+    "NW_C1_NEW1": {
+      "ID": "NW_C1_NEW1",
+      "Type": "#ObjectiveType.Destroy",
+      "Parameter": "#EnemyUnit.PremiumTank",
+      "Goal": "5",
+      "Title": "#TID.NW2_C1_OBJC_1_TITLE",
+      "Description": "#TID.NW2_C1_OBJC_1_DESC",
+      "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_premium_tank.png",
+      "CostFinish": "0"
+    },
+    "NW_C1_NEW2": {
+      "ID": "NW_C1_NEW2",
+      "Type": "#ObjectiveType.Destroy",
+      "Parameter": "#EnemyInstallation.Prison",
+      "Goal": "4",
+      "Title": "#TID.NW2_C1_OBJC_2_TITLE",
+      "Description": "#TID.NW2_C1_OBJC_2_DESC",
+      "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_prison.png",
+      "CostFinish": "0"
+    },
+    "NW_C1_NEW3": {
+      "ID": "NW_C1_NEW3",
+      "Type": "#ObjectiveType.DestroyTarget",
+      "Coordinates": "43_28",
+      "Parameter": "#EnemyInstallation.BasePrison",
+      "Goal": "1",
+      "Title": "#TID.NW2_C1_OBJC_3_TITLE",
+      "Description": "#TID.NW2_C1_OBJC_3_DESC",
+      "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_secret_police.png",
+      "CostFinish": "0"
+    },
+    "NW_C1_NEW4": {
+      "ID": "NW_C1_NEW4",
+      "Type": "#ObjectiveType.Conquer",
+      "Goal": "60",
+      "Title": "#TID.NW2_C1_OBJC_4_TITLE",
+      "Description": "#TID.NW2_C1_OBJC_4_DESC",
+      "Icon": "icons/mission_icons/objective_icons/icon_objective_control.png",
+      "CostFinish": "0"
+    },
+    "NW_C1_NEW5": {
+      "ID": "NW_C1_NEW5",
+      "Type": "#ObjectiveType.Destroy",
+      "Parameter": "#EnemyUnit",
+      "Goal": "30",
+      "Title": "#TID.NW2_C1_OBJC_5_TITLE",
+      "Description": "#TID.NW2_C1_OBJC_5_DESC",
+      "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy.png",
+      "CostFinish": "0"
+    },
+    "NW_C1_NEW6": {
+      "ID": "NW_C1_NEW6",
+      "Type": "#ObjectiveType.Destroy",
+      "Parameter": "#EnemyInstallation.Bunker",
+      "Goal": "5",
+      "Title": "#TID.NW2_C1_OBJC_6_TITLE",
+      "Description": "#TID.NW2_C1_OBJC_6_DESC",
+      "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_bunker.png",
+      "CostFinish": "0"
+    },
+    "NW_C1_NEW7": {
+      "ID": "NW_C1_NEW7",
+      "Type": "#ObjectiveType.Destroy",
+      "Parameter": "#EnemyInstallation.GuardStation",
+      "Goal": "5",
+      "Title": "#TID.NW2_C1_OBJC_7_TITLE",
+      "Description": "#TID.NW2_C1_OBJC_7_DESC",
+      "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_guard_tower.png",
+      "CostFinish": "0"
+    },
+    "NW_C1_NEW8": {
+      "ID": "NW_C1_NEW8",
+      "Type": "#ObjectiveType.Destroy",
+      "Parameter": "#EnemyInstallation.Propaganda",
+      "Goal": "4",
+      "Title": "#TID.NW2_C1_OBJC_8_TITLE",
+      "Description": "#TID.NW2_C1_OBJC_8_DESC",
+      "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_propaganda_tower.png",
+      "CostFinish": "0"
+    },
+    "NW_C1_NEW9": {
+      "ID": "NW_C1_NEW9",
+      "Type": "#ObjectiveType.Destroy",
+      "Parameter": "#EnemyInstallation.FuelDump",
+      "Goal": "12",
+      "Title": "#TID.NW2_C1_OBJC_9_TITLE",
+      "Description": "#TID.NW2_C1_OBJC_9_DESC",
+      "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_fuel_dump.png",
+      "CostFinish": "0"
+    },
+    "NC_C1_NEW1": {
+      "ID": "NC_C1_NEW1",
+      "Type": "#ObjectiveType.Destroy",
+      "Parameter": "#EnemyInstallation.DoomsDay2",
+      "Goal": "1",
+      "Title": "#TID.NC2_C1_OBJC_1_TITLE",
+      "Description": "#TID.NC2_C1_OBJC_1_DESC",
+      "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_doomsday_desert.png",
+      "CostFinish": "0"
+    },
+    "NC_C1_NEW2": {
+      "ID": "NC_C1_NEW2",
+      "Type": "#ObjectiveType.Destroy",
+      "Parameter": "#EnemyInstallation.BaseSC",
+      "Goal": "1",
+      "Title": "#TID.NC2_C1_OBJC_2_TITLE",
+      "Description": "#TID.NC2_C1_OBJC_2_DESC",
+      "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_comm_bunker.png",
+      "CostFinish": "0"
+    },
+    "NC_C1_NEW3": {
+      "ID": "NC_C1_NEW3",
+      "Type": "#ObjectiveType.Destroy",
+      "Parameter": "#EnemyInstallation.DDTurretRight",
+      "Goal": "8",
+      "Title": "#TID.NC2_C1_OBJC_3_TITLE",
+      "Description": "#TID.NC2_C1_OBJC_3_DESC",
+      "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_towerright.png",
+      "CostFinish": "0"
+    },
+    "NC_C1_NEW4": {
+      "ID": "NC_C1_NEW4",
+      "Type": "#ObjectiveType.Destroy",
+      "Parameter": "#EnemyInstallation.DDTurretLeft",
+      "Goal": "7",
+      "Title": "#TID.NC2_C1_OBJC_4_TITLE",
+      "Description": "#TID.NC2_C1_OBJC_4_DESC",
+      "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_towerleft.png",
+      "CostFinish": "0"
+    },
+    "NC_C1_NEW5": {
+      "ID": "NC_C1_NEW5",
+      "Type": "#ObjectiveType.Destroy",
+      "Parameter": "#EnemyUnit.PremiumTank",
+      "Goal": "6",
+      "Title": "#TID.NC2_C1_OBJC_5_TITLE",
+      "Description": "#TID.NC2_C1_OBJC_5_DESC",
+      "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_premium_tank.png",
+      "CostFinish": "0"
+    },
+    "NC_C1_NEW6": {
+      "ID": "NC_C1_NEW6",
+      "Type": "#ObjectiveType.Destroy",
+      "Parameter": "#EnemyUnit.Bulldozer",
+      "Goal": "11",
+      "Title": "#TID.NC2_C1_OBJC_6_TITLE",
+      "Description": "#TID.NC2_C1_OBJC_6_DESC",
+      "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_bulldozer.png",
+      "CostFinish": "0"
+    },
+    "NC_C1_NEW7": {
+      "ID": "NC_C1_NEW7",
+      "Type": "#ObjectiveType.Destroy",
+      "Parameter": "#EnemyUnit.RocketBattery",
+      "Goal": "13",
+      "Title": "#TID.NC2_C1_OBJC_7_TITLE",
+      "Description": "#TID.NC2_C1_OBJC_7_DESC",
+      "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_rocket_battery.png",
+      "CostFinish": "0"
+    },
+    "NC_C1_NEW8": {
+      "ID": "NC_C1_NEW8",
+      "Type": "#ObjectiveType.Destroy",
+      "Parameter": "#EnemyInstallation.GuardStation",
+      "Goal": "6",
+      "Title": "#TID.NC2_C1_OBJC_8_TITLE",
+      "Description": "#TID.NC2_C1_OBJC_8_DESC",
+      "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_guard_tower.png",
+      "CostFinish": "0"
+    },
+    "NC_C1_NEW9": {
+      "ID": "NC_C1_NEW9",
+      "Type": "#ObjectiveType.Destroy",
+      "Parameter": "#EnemyInstallation.GuardStation",
+      "Goal": "5",
+      "Title": "#TID.NC2_C1_OBJC_9_TITLE",
+      "Description": "#TID.NC2_C1_OBJC_9_DESC",
+      "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_guard_tower.png",
+      "CostFinish": "0"
+    },
+    "NC_C1_NEW10": {
+      "ID": "NC_C1_NEW10",
+      "Type": "#ObjectiveType.Destroy",
+      "Parameter": "#EnemyInstallation.Bunker",
+      "Goal": "6",
+      "Title": "#TID.NC2_C1_OBJC_10_TITLE",
+      "Description": "#TID.NC2_C1_OBJC_10_DESC",
+      "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_bunker.png",
+      "CostFinish": "0"
+    },
+    "NC_C1_NEW11": {
+      "ID": "NC_C1_NEW11",
+      "Type": "#ObjectiveType.Buy",
+      "Parameter": "#PlayerInstallation.SniperNest",
+      "Goal": "3",
+      "Title": "#TID.NC2_C1_OBJC_11_TITLE",
+      "Description": "#TID.NC2_C1_OBJC_11_DESC",
+      "Icon": "icons/mission_icons/objective_icons/icon_objective_defense_sniper_nest.png",
+      "CostFinish": "0"
+    },
+    "NC_C1_NEW12": {
+      "ID": "NC_C1_NEW12",
+      "Type": "#ObjectiveType.Buy",
+      "Parameter": "#PlayerInstallation.GuardPost",
+      "Goal": "5",
+      "Title": "#TID.NC2_C1_OBJC_12_TITLE",
+      "Description": "#TID.NC2_C1_OBJC_12_DESC",
+      "Icon": "icons/mission_icons/objective_icons/icon_objective_defense_guard_tower.png",
+      "CostFinish": "0"
+    },
+    "NC_C1_NEW13": {
+      "ID": "NC_C1_NEW13",
+      "Type": "#ObjectiveType.Buy",
+      "Parameter": "#PlayerUnit",
+      "Goal": "2",
+      "Title": "#TID.NC2_C1_OBJC_13_TITLE",
+      "Description": "#TID.NC2_C1_OBJC_13_DESC",
+      "Icon": "icons/mission_icons/objective_icons/icon_objective_buy.png",
+      "CostFinish": "0"
+    },
+    "NC_C1_NEW14": {
+      "ID": "NC_C1_NEW14",
+      "Type": "#ObjectiveType.Repair",
+      "Parameter": "#PlayerUnit",
+      "Goal": "5",
+      "Title": "#TID.NC2_C1_OBJC_14_TITLE",
+      "Description": "#TID.NC2_C1_OBJC_14_DESC",
+      "Icon": "icons/mission_icons/objective_icons/icon_objective_repair.png",
+      "CostFinish": "0"
+    },
+    "NC_C1_NEW15": {
+      "ID": "NC_C1_NEW15",
+      "Type": "#ObjectiveType.Collect",
+      "Parameter": "#HomeFrontEffort",
+      "Goal": "10",
+      "Title": "#TID.NC2_C1_OBJC_15_TITLE",
+      "Description": "#TID.NC2_C1_OBJC_15_DESC",
+      "Icon": "icons/mission_icons/objective_icons/icon_objective_supplies.png",
+      "CostFinish": "0"
+    },
+    "NE_C1_NEW1": {
+      "ID": "NE_C1_NEW1",
+      "Type": "#ObjectiveType.Destroy",
+      "Parameter": "#EnemyInstallation.PowerGenerator2",
+      "Goal": "1",
+      "Title": "#TID.NE2_C1_OBJC_1_TITLE",
+      "Description": "#TID.NE2_C1_OBJC_1_DESC",
+      "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_power_generator.png",
+      "CostFinish": "0"
+    },
+    "NE_C1_NEW2": {
+      "ID": "NE_C1_NEW2",
+      "Type": "#ObjectiveType.Recapture",
+      "Parameter": "#PermanentHFE.NCTown",
+      "Goal": "1",
+      "Title": "#TID.NE2_C1_OBJC_2_TITLE",
+      "Description": "#TID.NE2_C1_OBJC_2_DESC",
+      "Icon": "icons/mission_icons/objective_icons/icon_objective_recapture_city.png",
+      "CostFinish": "0"
+    },
+    "NE_C1_NEW3": {
+      "ID": "NE_C1_NEW3",
+      "Type": "#ObjectiveType.Destroy",
+      "Parameter": "#EnemyUnit",
+      "Goal": "35",
+      "Title": "#TID.NE2_C1_OBJC_3_TITLE",
+      "Description": "#TID.NE2_C1_OBJC_3_DESC",
+      "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy.png",
+      "CostFinish": "0"
+    },
+    "NE_C1_NEW4": {
+      "ID": "NE_C1_NEW4",
+      "Type": "#ObjectiveType.Destroy",
+      "Parameter": "#EnemyInstallation.DDTurretLeft",
+      "Goal": "3",
+      "Title": "#TID.NE2_C1_OBJC_4_TITLE",
+      "Description": "#TID.NE2_C1_OBJC_4_DESC",
+      "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_towerleft.png",
+      "CostFinish": "0"
+    },
+    "NE_C1_NEW5": {
+      "ID": "NE_C1_NEW5",
+      "Type": "#ObjectiveType.Buy",
+      "Parameter": "#PlayerInstallation.SniperNest",
+      "Goal": "6",
+      "Title": "#TID.NE2_C1_OBJC_5_TITLE",
+      "Description": "#TID.NE2_C1_OBJC_5_DESC",
+      "Icon": "icons/mission_icons/objective_icons/icon_objective_defense_sniper_nest.png",
+      "CostFinish": "0"
+    },
+    "NE_C1_NEW6": {
+      "ID": "NE_C1_NEW6",
+      "Type": "#ObjectiveType.Destroy",
+      "Parameter": "#EnemyInstallation.BeaconHQ",
+      "Goal": "1",
+      "Title": "#TID.NE2_C1_OBJC_6_TITLE",
+      "Description": "#TID.NE2_C1_OBJC_6_DESC",
+      "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_mainbase.png",
+      "CostFinish": "0"
+    },
+    "NE_C1_NEW7": {
+      "ID": "NE_C1_NEW7",
+      "Type": "#ObjectiveType.DestroyWithMultiple",
+      "Parameter": "#EnemyUnit",
+      "Goal": "20",
+      "Title": "#TID.NE2_C1_OBJC_7_TITLE",
+      "Description": "#TID.NE2_C1_OBJC_7_DESC",
+      "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_with_multiple.png",
+      "CostFinish": "0"
+    },
+    "NE_C1_NEW8": {
+      "ID": "NE_C1_NEW8",
+      "Type": "#ObjectiveType.Repair",
+      "Parameter": "#PlayerUnit",
+      "Goal": "8",
+      "Title": "#TID.NE2_C1_OBJC_8_TITLE",
+      "Description": "#TID.NE2_C1_OBJC_8_DESC",
+      "Icon": "icons/mission_icons/objective_icons/icon_objective_repair.png",
+      "CostFinish": "0"
+    },
+    "NE_C1_NEW9": {
+      "ID": "NE_C1_NEW9",
+      "Type": "#ObjectiveType.Destroy",
+      "Parameter": "#EnemyUnit.PremiumTank",
+      "Goal": "10",
+      "Title": "#TID.NE2_C1_OBJC_9_TITLE",
+      "Description": "#TID.NE2_C1_OBJC_9_DESC",
+      "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_premium_tank.png",
+      "CostFinish": "0"
+    },
+    "NE_C1_NEW10": {
+      "ID": "NE_C1_NEW10",
+      "Type": "#ObjectiveType.Destroy",
+      "Parameter": "#EnemyUnit.Bulldozer",
+      "Goal": "15",
+      "Title": "#TID.NE2_C1_OBJC_10_TITLE",
+      "Description": "#TID.NE2_C1_OBJC_10_DESC",
+      "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_bulldozer.png",
+      "CostFinish": "0"
+    },
+    "NE_C1_NEW11": {
+      "ID": "NE_C1_NEW11",
+      "Type": "#ObjectiveType.StartProducing",
+      "Parameter": "#PermanentHFE.NCTown",
+      "Goal": "1",
+      "Title": "#TID.NE2_C1_OBJC_11_TITLE",
+      "Description": "#TID.NE2_C1_OBJC_11_DESC",
+      "Icon": "icons/mission_icons/objective_icons/icon_objective_city_action.png",
+      "CostFinish": "0"
+    },
+    "NE_C1_NEW12": {
+      "ID": "NE_C1_NEW12",
+      "Type": "#ObjectiveType.Buy",
+      "Parameter": "#Deco.Vault",
+      "Goal": "3",
+      "Title": "#TID.NE2_C1_OBJC_12_TITLE",
+      "Description": "#TID.NE2_C1_OBJC_12_DESC",
+      "Icon": "icons/mission_icons/objective_icons/icon_objective_storage_undercover_vault.png",
+      "CostFinish": "0"
+    },
+    "NE_C1_NEW13": {
+      "ID": "NE_C1_NEW13",
+      "Type": "#ObjectiveType.Buy",
+      "Parameter": "#HomeFrontEffort.Plot",
+      "Goal": "10",
+      "Title": "#TID.NE2_C1_OBJC_13_TITLE",
+      "Description": "#TID.NE2_C1_OBJC_13_DESC",
+      "Icon": "icons/mission_icons/objective_icons/icon_objective_supplies_drop_zone.png",
+      "CostFinish": "0"
+    },
+    "NE_C1_NEW14": {
+      "ID": "NE_C1_NEW14",
+      "Type": "#ObjectiveType.Clear",
+      "Parameter": "#Debris",
+      "Goal": "5",
+      "Title": "#TID.NE2_C1_OBJC_14_TITLE",
+      "Description": "#TID.NE2_C1_OBJC_14_DESC",
+      "Icon": "icons/mission_icons/objective_icons/icon_objective_clear_debris.png",
+      "CostFinish": "0"
+    },
+    "NE_C1_NEW15": {
+      "ID": "NE_C1_NEW15",
+      "Type": "#ObjectiveType.Repair",
+      "Parameter": "#PlayerUnit",
+      "Goal": "5",
+      "Title": "#TID.NE2_C1_OBJC_15_TITLE",
+      "Description": "#TID.NE2_C1_OBJC_15_DESC",
+      "Icon": "icons/mission_icons/objective_icons/icon_objective_repair.png",
+      "CostFinish": "0"
+    },
+    "NE_C1_NEW16": {
+      "ID": "NE_C1_NEW16",
+      "Type": "#ObjectiveType.DestroyWithMultiple",
+      "Parameter": "#EnemyUnit",
+      "Goal": "15",
+      "Title": "#TID.NE2_C1_OBJC_16_TITLE",
+      "Description": "#TID.NE2_C1_OBJC_16_DESC",
+      "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_with_multiple.png",
+      "CostFinish": "0"
+    },
+    "NE_C1_NEW17": {
+      "ID": "NE_C1_NEW17",
+      "Type": "#ObjectiveType.KillWith",
+      "Parameter": "#FireMission.Napalm",
+      "Goal": "1",
+      "Title": "#TID.NE2_C1_OBJC_17_TITLE",
+      "Description": "#TID.NE2_C1_OBJC_17_DESC",
+      "Icon": "icons/mission_icons/objective_icons/icon_objective_fire_call_napalm.png",
       "CostFinish": "0"
     },
     "D_S_Barricade": {
@@ -35127,6 +36926,1588 @@
       "Item": "#PlayerUnit.Infantry",
       "AreaX": "53",
       "AreaY": "68"
+    },
+    "NC_01": {
+      "ID": "NC_01",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyInstallation.DoomsDay2",
+      "AreaX": "48",
+      "AreaY": "28"
+    },
+    "NC_02": {
+      "ID": "NC_02",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyInstallation.BaseSC",
+      "AreaX": "54",
+      "AreaY": "28"
+    },
+    "NC_03": {
+      "ID": "NC_03",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyInstallation.GuardStation",
+      "AreaX": "47",
+      "AreaY": "28"
+    },
+    "NC_04": {
+      "ID": "NC_04",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyInstallation.GuardStation",
+      "AreaX": "47",
+      "AreaY": "30"
+    },
+    "NC_05": {
+      "ID": "NC_05",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyInstallation.GuardStation",
+      "AreaX": "57",
+      "AreaY": "28"
+    },
+    "NC_06": {
+      "ID": "NC_06",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyInstallation.GuardStation",
+      "AreaX": "57",
+      "AreaY": "30"
+    },
+    "NC_07": {
+      "ID": "NC_07",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyInstallation.DDTurretRight",
+      "AreaX": "47",
+      "AreaY": "27"
+    },
+    "NC_08": {
+      "ID": "NC_08",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyInstallation.DDTurretRight",
+      "AreaX": "49",
+      "AreaY": "27"
+    },
+    "NC_09": {
+      "ID": "NC_09",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyInstallation.DDTurretRight",
+      "AreaX": "51",
+      "AreaY": "27"
+    },
+    "NC_10": {
+      "ID": "NC_10",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyInstallation.DDTurretRight",
+      "AreaX": "47",
+      "AreaY": "31"
+    },
+    "NC_11": {
+      "ID": "NC_11",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyInstallation.DDTurretRight",
+      "AreaX": "49",
+      "AreaY": "31"
+    },
+    "NC_12": {
+      "ID": "NC_12",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyInstallation.DDTurretRight",
+      "AreaX": "51",
+      "AreaY": "31"
+    },
+    "NC_13": {
+      "ID": "NC_13",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyInstallation.DDTurretRight",
+      "AreaX": "52",
+      "AreaY": "29"
+    },
+    "NC_14": {
+      "ID": "NC_14",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyInstallation.DDTurretLeft",
+      "AreaX": "53",
+      "AreaY": "31"
+    },
+    "NC_15": {
+      "ID": "NC_15",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyInstallation.DDTurretLeft",
+      "AreaX": "55",
+      "AreaY": "31"
+    },
+    "NC_16": {
+      "ID": "NC_16",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyInstallation.DDTurretLeft",
+      "AreaX": "57",
+      "AreaY": "31"
+    },
+    "NC_17": {
+      "ID": "NC_17",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyInstallation.DDTurretLeft",
+      "AreaX": "57",
+      "AreaY": "29"
+    },
+    "NC_18": {
+      "ID": "NC_18",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyInstallation.DDTurretLeft",
+      "AreaX": "57",
+      "AreaY": "27"
+    },
+    "NC_19": {
+      "ID": "NC_19",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyInstallation.DDTurretLeft",
+      "AreaX": "55",
+      "AreaY": "27"
+    },
+    "NC_20": {
+      "ID": "NC_20",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyInstallation.DDTurretLeft",
+      "AreaX": "53",
+      "AreaY": "27"
+    },
+    "NC_21": {
+      "ID": "NC_21",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyInstallation.GuardStation",
+      "AreaX": "56",
+      "AreaY": "32"
+    },
+    "NC_22": {
+      "ID": "NC_22",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyInstallation.GuardStation",
+      "AreaX": "54",
+      "AreaY": "32"
+    },
+    "NC_23": {
+      "ID": "NC_23",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyInstallation.GuardStation",
+      "AreaX": "52",
+      "AreaY": "32"
+    },
+    "NC_24": {
+      "ID": "NC_24",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyInstallation.GuardStation",
+      "AreaX": "50",
+      "AreaY": "32"
+    },
+    "NC_25": {
+      "ID": "NC_25",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyInstallation.GuardStation",
+      "AreaX": "48",
+      "AreaY": "32"
+    },
+    "NC_26": {
+      "ID": "NC_26",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyInstallation.Bunker",
+      "AreaX": "47",
+      "AreaY": "33"
+    },
+    "NC_27": {
+      "ID": "NC_27",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyInstallation.Bunker",
+      "AreaX": "49",
+      "AreaY": "33"
+    },
+    "NC_28": {
+      "ID": "NC_28",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyInstallation.Bunker",
+      "AreaX": "51",
+      "AreaY": "33"
+    },
+    "NC_29": {
+      "ID": "NC_29",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyInstallation.Bunker",
+      "AreaX": "53",
+      "AreaY": "33"
+    },
+    "NC_30": {
+      "ID": "NC_30",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyInstallation.Bunker",
+      "AreaX": "55",
+      "AreaY": "33"
+    },
+    "NC_31": {
+      "ID": "NC_31",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyInstallation.Bunker",
+      "AreaX": "57",
+      "AreaY": "33"
+    },
+    "NC_32": {
+      "ID": "NC_32",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyInstallation.DDTurretRight",
+      "AreaX": "47",
+      "AreaY": "29"
+    },
+    "NC_33": {
+      "ID": "NC_33",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyInstallation.GuardStation",
+      "AreaX": "52",
+      "AreaY": "26"
+    },
+    "NC_34": {
+      "ID": "NC_34",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyUnit.Armor",
+      "AreaX": "47",
+      "AreaY": "34"
+    },
+    "NC_35": {
+      "ID": "NC_35",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyUnit.Armor",
+      "AreaX": "48",
+      "AreaY": "34"
+    },
+    "NC_36": {
+      "ID": "NC_36",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyUnit.Bulldozer",
+      "AreaX": "49",
+      "AreaY": "34"
+    },
+    "NC_37": {
+      "ID": "NC_37",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyUnit.Armor",
+      "AreaX": "50",
+      "AreaY": "34"
+    },
+    "NC_38": {
+      "ID": "NC_38",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyUnit.Armor",
+      "AreaX": "51",
+      "AreaY": "34"
+    },
+    "NC_39": {
+      "ID": "NC_39",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyUnit.Bulldozer",
+      "AreaX": "52",
+      "AreaY": "34"
+    },
+    "NC_40": {
+      "ID": "NC_40",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyUnit.Armor",
+      "AreaX": "53",
+      "AreaY": "34"
+    },
+    "NC_44": {
+      "ID": "NC_44",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyUnit.Armor",
+      "AreaX": "54",
+      "AreaY": "34"
+    },
+    "NC_41": {
+      "ID": "NC_41",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyUnit.Bulldozer",
+      "AreaX": "55",
+      "AreaY": "34"
+    },
+    "NC_42": {
+      "ID": "NC_42",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyUnit.Armor",
+      "AreaX": "56",
+      "AreaY": "34"
+    },
+    "NC_45": {
+      "ID": "NC_45",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyUnit.Armor",
+      "AreaX": "57",
+      "AreaY": "34"
+    },
+    "NC_46": {
+      "ID": "NC_46",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyUnit.RocketBattery",
+      "AreaX": "48",
+      "AreaY": "33"
+    },
+    "NC_47": {
+      "ID": "NC_47",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyUnit.RocketBattery",
+      "AreaX": "50",
+      "AreaY": "33"
+    },
+    "NC_48": {
+      "ID": "NC_48",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyUnit.RocketBattery",
+      "AreaX": "52",
+      "AreaY": "33"
+    },
+    "NC_49": {
+      "ID": "NC_49",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyUnit.RocketBattery",
+      "AreaX": "54",
+      "AreaY": "33"
+    },
+    "NC_50": {
+      "ID": "NC_50",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyUnit.RocketBattery",
+      "AreaX": "56",
+      "AreaY": "33"
+    },
+    "NC_51": {
+      "ID": "NC_51",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyUnit.EliteWarfly",
+      "AreaX": "47",
+      "AreaY": "32"
+    },
+    "NC_52": {
+      "ID": "NC_52",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyUnit.EliteWarfly",
+      "AreaX": "49",
+      "AreaY": "32"
+    },
+    "NC_53": {
+      "ID": "NC_53",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyUnit.StormTroop",
+      "AreaX": "51",
+      "AreaY": "32"
+    },
+    "NC_54": {
+      "ID": "NC_54",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyUnit.StormTroop",
+      "AreaX": "53",
+      "AreaY": "32"
+    },
+    "NC_55": {
+      "ID": "NC_55",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyUnit.EliteWarfly",
+      "AreaX": "55",
+      "AreaY": "32"
+    },
+    "NC_56": {
+      "ID": "NC_56",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyUnit.EliteWarfly",
+      "AreaX": "57",
+      "AreaY": "32"
+    },
+    "NC_57": {
+      "ID": "NC_57",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyUnit.Bulldozer",
+      "AreaX": "48",
+      "AreaY": "31"
+    },
+    "NC_58": {
+      "ID": "NC_58",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyUnit.PremiumTank",
+      "AreaX": "50",
+      "AreaY": "31"
+    },
+    "NC_59": {
+      "ID": "NC_59",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyUnit.Bulldozer",
+      "AreaX": "52",
+      "AreaY": "31"
+    },
+    "NC_60": {
+      "ID": "NC_60",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyUnit.PremiumTank",
+      "AreaX": "54",
+      "AreaY": "31"
+    },
+    "NC_61": {
+      "ID": "NC_61",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyUnit.Bulldozer",
+      "AreaX": "56",
+      "AreaY": "31"
+    },
+    "NC_62": {
+      "ID": "NC_62",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyUnit.RocketBattery",
+      "AreaX": "53",
+      "AreaY": "30"
+    },
+    "NC_63": {
+      "ID": "NC_63",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyUnit.RocketBattery",
+      "AreaX": "52",
+      "AreaY": "30"
+    },
+    "NC_64": {
+      "ID": "NC_64",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyUnit.RocketBattery",
+      "AreaX": "51",
+      "AreaY": "30"
+    },
+    "NC_65": {
+      "ID": "NC_65",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyUnit.RocketBattery",
+      "AreaX": "53",
+      "AreaY": "28"
+    },
+    "NC_66": {
+      "ID": "NC_66",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyUnit.RocketBattery",
+      "AreaX": "52",
+      "AreaY": "28"
+    },
+    "NC_67": {
+      "ID": "NC_67",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyUnit.RocketBattery",
+      "AreaX": "51",
+      "AreaY": "28"
+    },
+    "NC_68": {
+      "ID": "NC_68",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyUnit.Bulldozer",
+      "AreaX": "56",
+      "AreaY": "27"
+    },
+    "NC_69": {
+      "ID": "NC_69",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyUnit.Bulldozer",
+      "AreaX": "54",
+      "AreaY": "27"
+    },
+    "NC_70": {
+      "ID": "NC_70",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyUnit.Bulldozer",
+      "AreaX": "52",
+      "AreaY": "27"
+    },
+    "NC_71": {
+      "ID": "NC_71",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyUnit.Bulldozer",
+      "AreaX": "50",
+      "AreaY": "27"
+    },
+    "NC_72": {
+      "ID": "NC_72",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyUnit.Bulldozer",
+      "AreaX": "48",
+      "AreaY": "27"
+    },
+    "NC_73": {
+      "ID": "NC_73",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyUnit.RocketBattery",
+      "AreaX": "55",
+      "AreaY": "26"
+    },
+    "NC_74": {
+      "ID": "NC_74",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyUnit.RocketBattery",
+      "AreaX": "54",
+      "AreaY": "26"
+    },
+    "NC_75": {
+      "ID": "NC_75",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyUnit.PremiumTank",
+      "AreaX": "53",
+      "AreaY": "26"
+    },
+    "NC_76": {
+      "ID": "NC_76",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyUnit.PremiumTank",
+      "AreaX": "51",
+      "AreaY": "26"
+    },
+    "NC_77": {
+      "ID": "NC_77",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyUnit.PremiumTank",
+      "AreaX": "51",
+      "AreaY": "29"
+    },
+    "NC_78": {
+      "ID": "NC_78",
+      "Group": "AreaNorthC",
+      "Item": "#EnemyUnit.PremiumTank",
+      "AreaX": "53",
+      "AreaY": "29"
+    },
+    "NW_01": {
+      "ID": "NC_01",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.Prison",
+      "AreaX": "37",
+      "AreaY": "27"
+    },
+    "NW_02": {
+      "ID": "NC_02",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.Prison",
+      "AreaX": "40",
+      "AreaY": "27"
+    },
+    "NW_03": {
+      "ID": "NC_03",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.Prison",
+      "AreaX": "37",
+      "AreaY": "30"
+    },
+    "NW_04": {
+      "ID": "NC_04",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.Prison",
+      "AreaX": "40",
+      "AreaY": "30"
+    },
+    "NW_05": {
+      "ID": "NC_05",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.FuelDump",
+      "AreaX": "37",
+      "AreaY": "26"
+    },
+    "NW_06": {
+      "ID": "NC_06",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.FuelDump",
+      "AreaX": "38",
+      "AreaY": "26"
+    },
+    "NW_07": {
+      "ID": "NC_07",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.FuelDump",
+      "AreaX": "39",
+      "AreaY": "26"
+    },
+    "NW_08": {
+      "ID": "NC_08",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.FuelDump",
+      "AreaX": "40",
+      "AreaY": "26"
+    },
+    "NW_09": {
+      "ID": "NC_09",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.FuelDump",
+      "AreaX": "41",
+      "AreaY": "26"
+    },
+    "NW_10": {
+      "ID": "NC_10",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.FuelDump",
+      "AreaX": "42",
+      "AreaY": "26"
+    },
+    "NW_11": {
+      "ID": "NC_11",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.FuelDump",
+      "AreaX": "43",
+      "AreaY": "26"
+    },
+    "NW_12": {
+      "ID": "NC_12",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.FuelDump",
+      "AreaX": "44",
+      "AreaY": "26"
+    },
+    "NW_13": {
+      "ID": "NC_13",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.Propaganda",
+      "AreaX": "39",
+      "AreaY": "27"
+    },
+    "NW_14": {
+      "ID": "NC_14",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.GuardStation",
+      "AreaX": "43",
+      "AreaY": "27"
+    },
+    "NW_15": {
+      "ID": "NC_15",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.FuelDump",
+      "AreaX": "44",
+      "AreaY": "27"
+    },
+    "NW_16": {
+      "ID": "NC_16",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.FuelDump",
+      "AreaX": "42",
+      "AreaY": "28"
+    },
+    "NW_17": {
+      "ID": "NC_17",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.BasePrison",
+      "AreaX": "43",
+      "AreaY": "28"
+    },
+    "NW_18": {
+      "ID": "NC_18",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.Barricade",
+      "AreaX": "46",
+      "AreaY": "27"
+    },
+    "NW_19": {
+      "ID": "NC_19",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.FuelDump",
+      "AreaX": "39",
+      "AreaY": "28"
+    },
+    "NW_20": {
+      "ID": "NC_20",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.FuelDump",
+      "AreaX": "36",
+      "AreaY": "28"
+    },
+    "NW_21": {
+      "ID": "NC_21",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.Bunker",
+      "AreaX": "36",
+      "AreaY": "29"
+    },
+    "NW_22": {
+      "ID": "NC_22",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.Bunker",
+      "AreaX": "38",
+      "AreaY": "29"
+    },
+    "NW_23": {
+      "ID": "NC_23",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.Bunker",
+      "AreaX": "40",
+      "AreaY": "29"
+    },
+    "NW_24": {
+      "ID": "NC_24",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.Bunker",
+      "AreaX": "42",
+      "AreaY": "29"
+    },
+    "NW_25": {
+      "ID": "NC_25",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.Propaganda",
+      "AreaX": "41",
+      "AreaY": "29"
+    },
+    "NW_26": {
+      "ID": "NC_26",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.GuardStation",
+      "AreaX": "39",
+      "AreaY": "29"
+    },
+    "NW_27": {
+      "ID": "NC_27",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.Propaganda",
+      "AreaX": "37",
+      "AreaY": "29"
+    },
+    "NW_28": {
+      "ID": "NC_28",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.FuelDump",
+      "AreaX": "36",
+      "AreaY": "30"
+    },
+    "NW_29": {
+      "ID": "NC_29",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.Bunker",
+      "AreaX": "39",
+      "AreaY": "30"
+    },
+    "NW_30": {
+      "ID": "NC_30",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.FuelDump",
+      "AreaX": "42",
+      "AreaY": "30"
+    },
+    "NW_31": {
+      "ID": "NC_31",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.Propaganda",
+      "AreaX": "39",
+      "AreaY": "31"
+    },
+    "NW_32": {
+      "ID": "NC_32",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.GuardStation",
+      "AreaX": "43",
+      "AreaY": "31"
+    },
+    "NW_33": {
+      "ID": "NC_33",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.GuardStation",
+      "AreaX": "45",
+      "AreaY": "31"
+    },
+    "NW_34": {
+      "ID": "NC_34",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.GuardStation",
+      "AreaX": "36",
+      "AreaY": "32"
+    },
+    "NW_35": {
+      "ID": "NC_35",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.GuardStation",
+      "AreaX": "38",
+      "AreaY": "32"
+    },
+    "NW_36": {
+      "ID": "NC_36",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.GuardStation",
+      "AreaX": "40",
+      "AreaY": "32"
+    },
+    "NW_37": {
+      "ID": "NC_37",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.GuardStation",
+      "AreaX": "42",
+      "AreaY": "32"
+    },
+    "NW_38": {
+      "ID": "NC_38",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.GuardStation",
+      "AreaX": "44",
+      "AreaY": "32"
+    },
+    "NW_39": {
+      "ID": "NC_39",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.Bunker",
+      "AreaX": "37",
+      "AreaY": "33"
+    },
+    "NW_40": {
+      "ID": "NC_40",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.Bunker",
+      "AreaX": "39",
+      "AreaY": "33"
+    },
+    "NW_41": {
+      "ID": "NC_41",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.Bunker",
+      "AreaX": "41",
+      "AreaY": "33"
+    },
+    "NW_42": {
+      "ID": "NC_42",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.Bunker",
+      "AreaX": "43",
+      "AreaY": "33"
+    },
+    "NW_43": {
+      "ID": "NC_43",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.Bunker",
+      "AreaX": "45",
+      "AreaY": "33"
+    },
+    "NW_44": {
+      "ID": "NC_44",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.Barricade",
+      "AreaX": "36",
+      "AreaY": "34"
+    },
+    "NW_45": {
+      "ID": "NC_45",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.Barricade",
+      "AreaX": "38",
+      "AreaY": "34"
+    },
+    "NW_46": {
+      "ID": "NC_46",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.Barricade",
+      "AreaX": "40",
+      "AreaY": "34"
+    },
+    "NW_47": {
+      "ID": "NC_47",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.Barricade",
+      "AreaX": "45",
+      "AreaY": "34"
+    },
+    "NW_49": {
+      "ID": "NC_49",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.Barricade",
+      "AreaX": "46",
+      "AreaY": "33"
+    },
+    "NW_50": {
+      "ID": "NC_50",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.Mines",
+      "AreaX": "46",
+      "AreaY": "32"
+    },
+    "NW_51": {
+      "ID": "NC_51",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.Mines",
+      "AreaX": "46",
+      "AreaY": "30"
+    },
+    "NW_52": {
+      "ID": "NC_52",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.Mines",
+      "AreaX": "46",
+      "AreaY": "28"
+    },
+    "NW_53": {
+      "ID": "NC_53",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.Barricade",
+      "AreaX": "46",
+      "AreaY": "31"
+    },
+    "NW_54": {
+      "ID": "NC_54",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyInstallation.Barricade",
+      "AreaX": "46",
+      "AreaY": "29"
+    },
+    "NW_55": {
+      "ID": "NC_55",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyUnit.EliteWarfly",
+      "AreaX": "36",
+      "AreaY": "27"
+    },
+    "NW_56": {
+      "ID": "NC_56",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyUnit.EliteWarfly",
+      "AreaX": "42",
+      "AreaY": "27"
+    },
+    "NW_57": {
+      "ID": "NC_57",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyUnit.PremiumTank",
+      "AreaX": "36",
+      "AreaY": "31"
+    },
+    "NW_58": {
+      "ID": "NC_58",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyUnit.PremiumTank",
+      "AreaX": "37",
+      "AreaY": "32"
+    },
+    "NW_59": {
+      "ID": "NC_59",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyUnit.RocketBattery",
+      "AreaX": "39",
+      "AreaY": "32"
+    },
+    "NW_60": {
+      "ID": "NC_60",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyUnit.PremiumTank",
+      "AreaX": "41",
+      "AreaY": "32"
+    },
+    "NW_61": {
+      "ID": "NC_61",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyUnit.PremiumTank",
+      "AreaX": "42",
+      "AreaY": "31"
+    },
+    "NW_62": {
+      "ID": "NC_62",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyUnit.PremiumTank",
+      "AreaX": "43",
+      "AreaY": "32"
+    },
+    "NW_63": {
+      "ID": "NC_63",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyUnit.RocketBattery",
+      "AreaX": "45",
+      "AreaY": "32"
+    },
+    "NW_64": {
+      "ID": "NC_64",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyUnit.RocketBattery",
+      "AreaX": "44",
+      "AreaY": "31"
+    },
+    "NW_65": {
+      "ID": "NC_65",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyUnit.Bulldozer",
+      "AreaX": "36",
+      "AreaY": "33"
+    },
+    "NW_66": {
+      "ID": "NC_66",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyUnit.RocketBattery",
+      "AreaX": "38",
+      "AreaY": "33"
+    },
+    "NW_67": {
+      "ID": "NC_67",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyUnit.Bulldozer",
+      "AreaX": "40",
+      "AreaY": "33"
+    },
+    "NW_68": {
+      "ID": "NC_68",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyUnit.RocketBattery",
+      "AreaX": "42",
+      "AreaY": "33"
+    },
+    "NW_69": {
+      "ID": "NC_69",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyUnit.Bulldozer",
+      "AreaX": "44",
+      "AreaY": "33"
+    },
+    "NW_70": {
+      "ID": "NC_70",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyUnit.EliteWarfly",
+      "AreaX": "37",
+      "AreaY": "34"
+    },
+    "NW_71": {
+      "ID": "NC_71",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyUnit.EliteWarfly",
+      "AreaX": "39",
+      "AreaY": "34"
+    },
+    "NW_72": {
+      "ID": "NC_72",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyUnit.EliteWarfly",
+      "AreaX": "41",
+      "AreaY": "34"
+    },
+    "NW_73": {
+      "ID": "NC_73",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyUnit.EliteWarfly",
+      "AreaX": "44",
+      "AreaY": "34"
+    },
+    "NW_74": {
+      "ID": "NC_74",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyUnit.Armor",
+      "AreaX": "36",
+      "AreaY": "35"
+    },
+    "NW_75": {
+      "ID": "NC_75",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyUnit.Bulldozer",
+      "AreaX": "37",
+      "AreaY": "35"
+    },
+    "NW_76": {
+      "ID": "NC_76",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyUnit.Armor",
+      "AreaX": "38",
+      "AreaY": "35"
+    },
+    "NW_77": {
+      "ID": "NC_77",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyUnit.Bulldozer",
+      "AreaX": "39",
+      "AreaY": "35"
+    },
+    "NW_78": {
+      "ID": "NC_78",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyUnit.Armor",
+      "AreaX": "40",
+      "AreaY": "35"
+    },
+    "NW_79": {
+      "ID": "NC_79",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyUnit.Armor",
+      "AreaX": "43",
+      "AreaY": "35"
+    },
+    "NW_80": {
+      "ID": "NC_80",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyUnit.Bulldozer",
+      "AreaX": "44",
+      "AreaY": "35"
+    },
+    "NW_81": {
+      "ID": "NC_81",
+      "Group": "AreaNorthW",
+      "Item": "#EnemyUnit.Armor",
+      "AreaX": "45",
+      "AreaY": "35"
+    },
+    "NE_01": {
+      "ID": "NE_01",
+      "Group": "AreaNorthE",
+      "Item": "#PermanentHFE.NCTown",
+      "AreaX": "67",
+      "AreaY": "32"
+    },
+    "NE_02": {
+      "ID": "NE_02",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyUnit.Bulldozer",
+      "AreaX": "66",
+      "AreaY": "35"
+    },
+    "NE_03": {
+      "ID": "NE_03",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyUnit.Bulldozer",
+      "AreaX": "67",
+      "AreaY": "35"
+    },
+    "NE_04": {
+      "ID": "NE_04",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyUnit.Bulldozer",
+      "AreaX": "68",
+      "AreaY": "35"
+    },
+    "NE_05": {
+      "ID": "NE_05",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyUnit.Armor",
+      "AreaX": "62",
+      "AreaY": "35"
+    },
+    "NE_06": {
+      "ID": "NE_06",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyUnit.Armor",
+      "AreaX": "61",
+      "AreaY": "35"
+    },
+    "NE_07": {
+      "ID": "NE_07",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyUnit.Armor",
+      "AreaX": "60",
+      "AreaY": "35"
+    },
+    "NE_08": {
+      "ID": "NE_08",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyUnit.RocketBattery",
+      "AreaX": "59",
+      "AreaY": "34"
+    },
+    "NE_09": {
+      "ID": "NE_09",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyUnit.RocketBattery",
+      "AreaX": "60",
+      "AreaY": "34"
+    },
+    "NE_10": {
+      "ID": "NE_10",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyUnit.PremiumTank",
+      "AreaX": "61",
+      "AreaY": "34"
+    },
+    "NE_11": {
+      "ID": "NE_11",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyUnit.RocketBattery",
+      "AreaX": "62",
+      "AreaY": "34"
+    },
+    "NE_12": {
+      "ID": "NE_12",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyUnit.RocketBattery",
+      "AreaX": "63",
+      "AreaY": "34"
+    },
+    "NE_13": {
+      "ID": "NE_13",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyInstallation.GuardStation",
+      "AreaX": "64",
+      "AreaY": "34"
+    },
+    "NE_14": {
+      "ID": "NE_14",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyInstallation.Barricade",
+      "AreaX": "58",
+      "AreaY": "33"
+    },
+    "NE_15": {
+      "ID": "NE_15",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyInstallation.Barricade",
+      "AreaX": "58",
+      "AreaY": "31"
+    },
+    "NE_16": {
+      "ID": "NE_16",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyInstallation.Barricade",
+      "AreaX": "58",
+      "AreaY": "29"
+    },
+    "NE_17": {
+      "ID": "NE_17",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyInstallation.Barricade",
+      "AreaX": "58",
+      "AreaY": "27"
+    },
+    "NE_18": {
+      "ID": "NE_18",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyInstallation.Bunker",
+      "AreaX": "58",
+      "AreaY": "32"
+    },
+    "NE_19": {
+      "ID": "NE_19",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyInstallation.Bunker",
+      "AreaX": "58",
+      "AreaY": "30"
+    },
+    "NE_20": {
+      "ID": "NE_20",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyInstallation.Bunker",
+      "AreaX": "58",
+      "AreaY": "28"
+    },
+    "NE_21": {
+      "ID": "NE_21",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyUnit.EliteWarfly",
+      "AreaX": "59",
+      "AreaY": "33"
+    },
+    "NE_22": {
+      "ID": "NE_22",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyUnit.EliteWarfly",
+      "AreaX": "60",
+      "AreaY": "33"
+    },
+    "NE_23": {
+      "ID": "NE_23",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyUnit.EliteWarfly",
+      "AreaX": "59",
+      "AreaY": "32"
+    },
+    "NE_24": {
+      "ID": "NE_24",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyUnit.PremiumTank",
+      "AreaX": "60",
+      "AreaY": "32"
+    },
+    "NE_25": {
+      "ID": "NE_25",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyUnit.EliteWarfly",
+      "AreaX": "62",
+      "AreaY": "33"
+    },
+    "NE_26": {
+      "ID": "NE_26",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyUnit.EliteWarfly",
+      "AreaX": "63",
+      "AreaY": "33"
+    },
+    "NE_27": {
+      "ID": "NE_27",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyUnit.PremiumTank",
+      "AreaX": "62",
+      "AreaY": "32"
+    },
+    "NE_28": {
+      "ID": "NE_28",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyUnit.EliteWarfly",
+      "AreaX": "63",
+      "AreaY": "32"
+    },
+    "NE_29": {
+      "ID": "NE_29",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyInstallation.Sniper",
+      "AreaX": "64",
+      "AreaY": "33"
+    },
+    "NE_30": {
+      "ID": "NE_30",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyInstallation.GuardStation",
+      "AreaX": "65",
+      "AreaY": "32"
+    },
+    "NE_31": {
+      "ID": "NE_31",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyInstallation.Sniper",
+      "AreaX": "66",
+      "AreaY": "33"
+    },
+    "NE_32": {
+      "ID": "NE_32",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyInstallation.PowerGenerator2",
+      "AreaX": "65",
+      "AreaY": "27"
+    },
+    "NE_33": {
+      "ID": "NE_33",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyInstallation.DDTurretLeft",
+      "AreaX": "64",
+      "AreaY": "26"
+    },
+    "NE_34": {
+      "ID": "NE_34",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyInstallation.DDTurretLeft",
+      "AreaX": "64",
+      "AreaY": "28"
+    },
+    "NE_35": {
+      "ID": "NE_35",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyInstallation.DDTurretLeft",
+      "AreaX": "64",
+      "AreaY": "30"
+    },
+    "NE_36": {
+      "ID": "NE_36",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyUnit.PremiumTank",
+      "AreaX": "64",
+      "AreaY": "27"
+    },
+    "NE_37": {
+      "ID": "NE_37",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyUnit.PremiumTank",
+      "AreaX": "64",
+      "AreaY": "29"
+    },
+    "NE_38": {
+      "ID": "NE_38",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyUnit.PremiumTank",
+      "AreaX": "68",
+      "AreaY": "28"
+    },
+    "NE_39": {
+      "ID": "NE_39",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyUnit.Armor",
+      "AreaX": "68",
+      "AreaY": "29"
+    },
+    "NE_40": {
+      "ID": "NE_40",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyUnit.RocketBattery",
+      "AreaX": "67",
+      "AreaY": "29"
+    },
+    "NE_41": {
+      "ID": "NE_41",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyUnit.Armor",
+      "AreaX": "66",
+      "AreaY": "29"
+    },
+    "NE_42": {
+      "ID": "NE_42",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyUnit.RocketBattery",
+      "AreaX": "65",
+      "AreaY": "29"
+    },
+    "NE_43": {
+      "ID": "NE_43",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyUnit.RocketBattery",
+      "AreaX": "65",
+      "AreaY": "30"
+    },
+    "NE_44": {
+      "ID": "NE_44",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyUnit.RocketBattery",
+      "AreaX": "65",
+      "AreaY": "31"
+    },
+    "NE_45": {
+      "ID": "NE_45",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyUnit.PremiumTank",
+      "AreaX": "68",
+      "AreaY": "31"
+    },
+    "NE_46": {
+      "ID": "NE_46",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyUnit.PremiumTank",
+      "AreaX": "67",
+      "AreaY": "30"
+    },
+    "NE_47": {
+      "ID": "NE_47",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyUnit.Bulldozer",
+      "AreaX": "68",
+      "AreaY": "30"
+    },
+    "NE_48": {
+      "ID": "NE_48",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyUnit.Bulldozer",
+      "AreaX": "67",
+      "AreaY": "31"
+    },
+    "NE_49": {
+      "ID": "NE_49",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyInstallation.FuelDump",
+      "AreaX": "66",
+      "AreaY": "30"
+    },
+    "NE_50": {
+      "ID": "NE_50",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyInstallation.FuelDump",
+      "AreaX": "66",
+      "AreaY": "32"
+    },
+    "NE_51": {
+      "ID": "NE_51",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyInstallation.FuelDump",
+      "AreaX": "66",
+      "AreaY": "31"
+    },
+    "NE_52": {
+      "ID": "NE_52",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyInstallation.BeaconHQ",
+      "AreaX": "60",
+      "AreaY": "27"
+    },
+    "NE_61": {
+      "ID": "NE_61",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyInstallation.GuardStation",
+      "AreaX": "59",
+      "AreaY": "26"
+    },
+    "NE_62": {
+      "ID": "NE_62",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyUnit.Bulldozer",
+      "AreaX": "60",
+      "AreaY": "26"
+    },
+    "NE_63": {
+      "ID": "NE_63",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyUnit.Bulldozer",
+      "AreaX": "61",
+      "AreaY": "26"
+    },
+    "NE_64": {
+      "ID": "NE_64",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyUnit.Bulldozer",
+      "AreaX": "62",
+      "AreaY": "26"
+    },
+    "NE_65": {
+      "ID": "NE_65",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyUnit.Bulldozer",
+      "AreaX": "63",
+      "AreaY": "26"
+    },
+    "NE_66": {
+      "ID": "NE_66",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyUnit.RocketBattery",
+      "AreaX": "59",
+      "AreaY": "27"
+    },
+    "NE_67": {
+      "ID": "NE_67",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyUnit.RocketBattery",
+      "AreaX": "59",
+      "AreaY": "28"
+    },
+    "NE_68": {
+      "ID": "NE_68",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyUnit.PremiumTank",
+      "AreaX": "59",
+      "AreaY": "29"
+    },
+    "NE_69": {
+      "ID": "NE_69",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyInstallation.Bunker",
+      "AreaX": "60",
+      "AreaY": "30"
+    },
+    "NE_70": {
+      "ID": "NE_70",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyInstallation.Barricade",
+      "AreaX": "61",
+      "AreaY": "30"
+    },
+    "NE_71": {
+      "ID": "NE_71",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyInstallation.Bunker",
+      "AreaX": "62",
+      "AreaY": "30"
+    },
+    "NE_72": {
+      "ID": "NE_72",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyUnit.Armor",
+      "AreaX": "60",
+      "AreaY": "31"
+    },
+    "NE_73": {
+      "ID": "NE_73",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyUnit.Armor",
+      "AreaX": "61",
+      "AreaY": "31"
+    },
+    "NE_74": {
+      "ID": "NE_74",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyUnit.Armor",
+      "AreaX": "62",
+      "AreaY": "31"
+    },
+    "NE_75": {
+      "ID": "NE_75",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyUnit.EliteWarfly",
+      "AreaX": "63",
+      "AreaY": "29"
+    },
+    "NE_76": {
+      "ID": "NE_76",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyUnit.EliteWarfly",
+      "AreaX": "63",
+      "AreaY": "28"
+    },
+    "NE_77": {
+      "ID": "NE_77",
+      "Group": "AreaNorthE",
+      "Item": "#EnemyUnit.EliteWarfly",
+      "AreaX": "63",
+      "AreaY": "30"
     }
   }
 }

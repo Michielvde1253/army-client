@@ -50,6 +50,10 @@
       public static const TYPE_SNIPER:String = "Sniper";
 	  
       public static const TYPE_ELITE_LANDKREUZER:String = "EliteLandKreuzer";
+	  
+      public static const TYPE_ELITE_ROCKETEER:String = "EliteRocketeer";
+	  
+      public static const TYPE_ELITE_JUGGERNAUT:String = "EliteJuggernaut";
       
       public static const UNIT_LEVEL_RECRUIT:int = 0;
       
@@ -141,7 +145,7 @@
          this.mSelectLongSounds = ArmySoundManager.SC_EMPTY;
          mAttackSoundsSecondary = ArmySoundManager.SC_ENM_ATTACK_SECONDARY;
          var _loc1_:String = mItem.mId;
-         if(_loc1_ == PlayerUnit.TYPE_INFANTRY || _loc1_ == PlayerUnit.TYPE_ELITE_INFANTRY || _loc1_ == PlayerUnit.TYPE_SNIPER)
+         if(_loc1_ == PlayerUnit.TYPE_INFANTRY || _loc1_ == PlayerUnit.TYPE_ELITE_INFANTRY || _loc1_ == PlayerUnit.TYPE_SNIPER || _loc1_ == PlayerUnit.TYPE_ELITE_ROCKETEER)
          {
             mMoveSounds = ArmySoundManager.SC_GENERAL_INFANTRY_MOVING;
             this.mSelectSounds = ArmySoundManager.SC_FRN_INF_SELECT_SHORT;
@@ -164,7 +168,7 @@
             mAttackSounds = ArmySoundManager.SC_FRN_APC_ATTACK;
             mMoveSounds = ArmySoundManager.SC_APC_MOVING;
          }
-         else if(_loc1_ == PlayerUnit.TYPE_BATTLETANK || _loc1_ == PlayerUnit.TYPE_ELITE_TANK || _loc1_ == PlayerUnit.TYPE_ELITE_LANDKREUZER)
+         else if(_loc1_ == PlayerUnit.TYPE_BATTLETANK || _loc1_ == PlayerUnit.TYPE_ELITE_TANK || _loc1_ == PlayerUnit.TYPE_ELITE_LANDKREUZER || _loc1_ == PlayerUnit.TYPE_ELITE_JUGGERNAUT)
          {
             this.mSelectSounds = ArmySoundManager.SC_FRN_TANK_SELECT_SHORT;
             this.mSelectLongSounds = ArmySoundManager.SC_FRN_TANK_SELECT_LONG;

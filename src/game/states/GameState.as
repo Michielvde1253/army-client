@@ -49,6 +49,7 @@
 	import game.gameElements.PermanentHFEObject;
 	import game.gameElements.PlayerBuildingObject;
 	import game.gameElements.PlayerInstallationObject;
+	import game.gameElements.HospitalBuilding;
 	import game.gameElements.Production;
 	import game.gameElements.ResourceBuildingObject;
 	import game.gameElements.SignalObject;
@@ -702,9 +703,9 @@
 				this.totalMemory = Number(System.totalMemory / 1024 / 1024);
 				this.updateDebugText();
 			}
-			if (!this.mInitialized || !this.mScene || mFreezeFrameOn && !this.mServer.isConnectionError() && !this.mServer.isServerCommError()) {
-				return;
-			}
+			//if (!this.mInitialized || !this.mScene || mFreezeFrameOn){ //&& !this.mServer.isConnectionError() && !this.mServer.isServerCommError()) {
+			//	return;
+			//}
 			if (!this.updateLoading()) {
 				return;
 			}
@@ -871,13 +872,17 @@
 
 		CONFIG::BUILD_FOR_MOBILE_AIR {
 			public function startSelectingFile(): void {
-				trace("saved the game")
-				var file: File = File.documentsDirectory.resolvePath("ArmyAttack/savefile.txt");
-				if (!file.exists || Cookie.readCookieVariable(Config.COOKIE_SETTINGS_NAME, Config.COOKIE_SETTINGS_NAME_SAVELOCATION) == "legacy" || Cookie.readCookieVariable(Config.COOKIE_SETTINGS_NAME, Config.COOKIE_SETTINGS_NAME_SAVELOCATION) == "") {
-					// Check if a legacy save file (from v21) exists, use if yes
-					file = File.applicationStorageDirectory.resolvePath("savefile.txt");
+				trace("the savelocation is right now:")
+				trace(Cookie.readCookieVariable(Config.COOKIE_SETTINGS_NAME, Config.COOKIE_SETTINGS_NAME_SAVELOCATION))
+				if(Config.COOKIE_SETTINGS_NAME_SAVELOCATION == "legacy" || Config.COOKIE_SETTINGS_NAME_SAVELOCATION == ""){
+					var file: File = File.applicationStorageDirectory.resolvePath("savefile.txt");
+					trace("this runs")
+				} else {
+					var file: File = File.documentsDirectory.resolvePath("ArmyAttack/savefile.txt");
+					trace("no this")
 					if (!file.exists) {
-						return
+						// Falling back to appdata file
+						var file: File = File.applicationStorageDirectory.resolvePath("savefile.txt");
 					}
 				}
 				file.addEventListener(PermissionEvent.PERMISSION_STATUS, onPermission);
@@ -1216,6 +1221,10 @@
 								}
 							}
 						}
+					}
+				} else if(_loc2_ is HospitalBuilding){
+					if (HospitalBuilding(_loc2_).readyToHeal()) {
+						HospitalBuilding(_loc2_).checkNeighbours();
 					}
 				}
 			}
@@ -1767,6 +1776,19 @@
 			}
 			return _loc2_;
 		}
+	
+	/*
+	thanks chatgpt!
+	
+	
+	public function searchNearbyUnits(
+    centerCell: GridCell,
+    range: int,
+    heightExtension: int = 1,
+    widthExtension: int = 1,
+    includeEnemies: Boolean = true
+	): Array
+	*/
 
 		public function searchNearbyUnits(param1: GridCell, param2: int, param3: int = 1, param4: int = 1, param5: Boolean = true): Array {
 			var _loc8_: int = 0;
@@ -2397,7 +2419,7 @@
 			}
 			this.mScene = SceneLoader.loadFromLevelFactor(this, param1);
 			CONFIG::BUILD_FOR_MOBILE_AIR {
-				this.mZoomLevels = this.mMapData.mMapSetupData.ZoomLevels;
+				this.mZoomLevels = this.mMapData.mMapSetupData.ZoomLevelsMobile;
 			}
 			CONFIG::BUILD_FOR_AIR {
 				this.mZoomLevels = this.mMapData.mMapSetupData.ZoomLevels;
@@ -2539,7 +2561,7 @@
 							// First time opening the game since v22, show permission window
 							Cookie.saveCookieVariable(Config.COOKIE_SETTINGS_NAME, Config.COOKIE_SETTINGS_NAME_SAVELOCATION, "legacy");
 							this.mHUD.openGiveFilePermissionScreen();
-							Cookie.saveCookieVariable(Config.COOKIE_SETTINGS_NAME, Config.COOKIE_SETTINGS_NAME_APPLAUNCH_V22, false);
+							Cookie.saveCookieVariable(Config.COOKIE_SETTINGS_NAME, Config.COOKIE_SETTINGS_NAME_APPLAUNCH_V22, "false");
 						} else {
 							this.mHUD.openPauseScreen();
 						}
@@ -3369,6 +3391,9 @@
 			} else if (this.mObjectToBePlaced is ResourceBuildingObject) {
 				_loc7_ = ServiceIDs.BUY_AND_PLACE_BUILDING;
 				_loc8_ = "ResourceBuilding";
+			} else if (this.mObjectToBePlaced is HospitalBuilding) {
+				_loc7_ = ServiceIDs.BUY_AND_PLACE_BUILDING;
+				_loc8_ = "HospitalBuilding";
 			} else if (this.mObjectToBePlaced is PlayerUnit) {
 				_loc7_ = ServiceIDs.BUY_AND_PLACE_UNIT;
 			} else if (this.mObjectToBePlaced is DecorationObject) {
@@ -3559,7 +3584,7 @@
 			};
 			var _loc4_: String = null;
 			if (!(this.mObjectToBePlaced is HFEObject || this.mObjectToBePlaced is HFEPlotObject)) {
-				if (!(this.mObjectToBePlaced is ConstructionObject || this.mObjectToBePlaced is ResourceBuildingObject)) {
+				if (!(this.mObjectToBePlaced is ConstructionObject || this.mObjectToBePlaced is ResourceBuildingObject || this.mObjectToBePlaced is HospitalBuilding)) {
 					if (this.mObjectToBePlaced is PlayerUnit) {
 						_loc4_ = ServiceIDs.PLACE_UNIT_FROM_INVENTORY;
 					} else if (this.mObjectToBePlaced is DecorationObject) {

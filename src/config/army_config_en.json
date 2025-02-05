@@ -1,5 +1,73 @@
 {
     "TID": {
+        "NORTHW_MAP_OBJ_TITLE": {
+            "ID": "NORTHW_MAP_OBJ_TITLE",
+            "en": "Buy the map of Western Glacier"
+        },
+        "NORTHW_MAP_OBJ_DESC": {
+            "ID": "NORTHW_MAP_OBJ_DESC",
+            "en": "Go to the shop and buy the map under the Maps tab"
+        },
+        "NORTHC_MAP_OBJ_TITLE": {
+            "ID": "NORTHC_MAP_OBJ_TITLE",
+            "en": "Buy the map of Northern Midland"
+        },
+        "NORTHC_MAP_OBJ_DESC": {
+            "ID": "NORTHC_MAP_OBJ_DESC",
+            "en": "Go to the shop and buy the map under the Maps tab"
+        },
+        "NORTHE_MAP_OBJ_TITLE": {
+            "ID": "NORTHE_MAP_OBJ_TITLE",
+            "en": "Buy the map of Eastern Bergheim"
+        },
+        "NORTHE_MAP_OBJ_DESC": {
+            "ID": "NORTHE_MAP_OBJ_DESC",
+            "en": "Go to the shop and buy the map under the Maps tab"
+        },
+        "BUTTON_APPFILES": {
+            "ID": "BUTTON_APPFILES",
+            "en": "Legacy"
+        },
+        "BUTTON_DOCUMENTS": {
+            "ID": "BUTTON_DOCUMENTS",
+            "en": "Documents"
+        },
+        "BUILDING_HOSPITAL": {
+            "ID": "BUILDING_HOSPITAL",
+            "en": "Hospital"
+        },
+        "BUILDING_HOSPITAL_DESC": {
+            "ID": "BUILDING_HOSPITAL_DESC",
+            "en": "Heals one nearby unit with 10 HP every x hours"
+        },
+        "BUILDING_MASH": {
+            "ID": "BUILDING_MASH",
+            "en": "M.A.S.H"
+        },
+        "BUILDING_MASH_DESC": {
+            "ID": "BUILDING_MASH_DESC",
+            "en": "Heals one nearby unit with 5 HP every x hours"
+        },
+        "BUILDING_MASH_READY": {
+            "ID": "BUILDING_MASH_READY",
+            "en": "Ready to heal!\nMove a damaged unit nearby to heal"
+        },
+        "BUILDING_MASH_NOT_READY": {
+            "ID": "BUILDING_MASH_NOT_READY",
+            "en": "Our Head Healer lost the key of the front door. We'll be back soon!\nReady in %U"
+        },
+        "SHOP_BUILDING_NOT_ON_THIS_MAP": {
+            "ID": "SHOP_BUILDING_NOT_ON_THIS_MAP",
+            "en": "You cannot buy this item on this map"
+        },
+        "BUILDING_HOSPITAL_READY": {
+            "ID": "BUILDING_HOSPITAL_READY",
+            "en": "Ready to heal!\nMove a damaged unit nearby to heal"
+        },
+        "BUILDING_HOSPITAL_NOT_READY": {
+            "ID": "BUILDING_HOSPITAL_NOT_READY",
+            "en": "The healers are having a teambuilding today. Try again later!\nReady in %U"
+        },
         "HFE_AREA9TOWN1": {
             "ID": "HFE_AREA9TOWN1",
             "en": "Bergheim Farm"
@@ -12582,7 +12650,7 @@
         },
         "UNIT_ROCKETEER_DESC": {
             "ID": "UNIT_ROCKETEER_DESC",
-            "en": "Go where no one has gone before!\\n Health: 6\\n Damage: 6\\n Range: 1\\n\\nSpecial:\\nFlight (passes through all obstacles).\\nElite (Completely indestructible)"
+            "en": "Go where no one has gone before!\\n\\nSpecial:\\nFlight (passes through all obstacles).\\nElite (Completely indestructible)"
         },
         "TOURNAMENT_HUNT_TANKS_NAME": {
             "ID": "TOURNAMENT_HUNT_TANKS_NAME",
@@ -12819,10 +12887,6 @@
         "BUILDING_GOLD_FACTORY_DESC": {
             "ID": "BUILDING_GOLD_FACTORY_DESC",
             "en": "Generates 3 Gold every 72 hours"
-        },
-        "SHOP_BUILDING_NOT_ON_THIS_MAP": {
-            "ID": "SHOP_BUILDING_NOT_ON_THIS_MAP",
-            "en": "You cannot buy this building on this map"
         }
     }
 }

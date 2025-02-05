@@ -93,6 +93,24 @@
 			doOpeningTransition();
 		}
 
+		CONFIG::BUILD_FOR_MOBILE_AIR {
+			override public function scaleToScreen(): void {
+				// Calculate the scaling factors based on the clip's dimensions
+				var scaleXFactor: Number = GameState.mInstance.getStageWidth() / mClip.width;
+				var scaleYFactor: Number = GameState.mInstance.getStageHeight() / mClip.height;
+
+				// Add a small buffer to prevent rounding issues (adjust value if necessary)
+				scaleXFactor += 0.05;
+				scaleYFactor += 0.05;
+
+				var scaleFactor: Number = Math.max(scaleXFactor, scaleYFactor)
+
+				// Apply the scaling factors to stretch across both axes
+				mClip.scaleX = scaleFactor;
+				mClip.scaleY = scaleFactor;
+			}
+		}
+
 		public function startSelectingFile(): void {
 			CONFIG::BUILD_FOR_AIR {
 				var file: File = new File();
@@ -105,13 +123,13 @@
 				this.fileRef.browse();
 			}
 			CONFIG::BUILD_FOR_MOBILE_AIR {
-				trace("did i save the game")
-				var file: File = File.documentsDirectory.resolvePath("ArmyAttack/savefile.txt");
-				if (!file.exists || Cookie.readCookieVariable(Config.COOKIE_SETTINGS_NAME, Config.COOKIE_SETTINGS_NAME_SAVELOCATION) == "legacy") {
-					// Check if a legacy save file (from v21) exists, use if yes
-					file = File.applicationStorageDirectory.resolvePath("savefile.txt");
+				if(Config.COOKIE_SETTINGS_NAME_SAVELOCATION == "legacy" || Config.COOKIE_SETTINGS_NAME_SAVELOCATION == ""){
+					var file: File = File.applicationStorageDirectory.resolvePath("savefile.txt");
+				} else {
+					var file: File = File.documentsDirectory.resolvePath("ArmyAttack/savefile.txt");
 					if (!file.exists) {
-						return
+						// Falling back to appdata file
+						var file: File = File.applicationStorageDirectory.resolvePath("savefile.txt");
 					}
 				}
 				file.addEventListener(PermissionEvent.PERMISSION_STATUS, onPermission);
