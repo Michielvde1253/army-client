@@ -886,8 +886,7 @@
 				} else if (mSaveLocation == "legacy") {
 					file = File.applicationStorageDirectory.resolvePath("savefile.txt");
 					if (!file.exists) {
-						// Falling back to appdata file
-						var file: File = File.applicationStorageDirectory.resolvePath("savefile.txt");
+						return
 					}
 				}
 				file.addEventListener(PermissionEvent.PERMISSION_STATUS, onPermission);
@@ -2561,7 +2560,7 @@
 						this.mHUD.mPullOutMissionFrame.addEventListener(Event.ENTER_FRAME, this.enterFrameMissionInitial);
 					}
 					CONFIG::BUILD_FOR_MOBILE_AIR {
-						file = File.applicationStorageDirectory.resolvePath("savesettings.txt");
+						var file:File = File.applicationStorageDirectory.resolvePath("savesettings.txt");
 						if (file.exists) {
 							var first_time_since_v22: Boolean = false;
 						} else {
@@ -2645,11 +2644,11 @@
 
 		CONFIG::BUILD_FOR_MOBILE_AIR {
 			public function saveSettingsLoad(): void {
-				file = File.applicationStorageDirectory.resolvePath("savesettings.txt");
+				var file:File = File.applicationStorageDirectory.resolvePath("savesettings.txt");
 				if (!file.exists) {
 					return
 				}
-				file.addEventListener(PermissionEvent.PERMISSION_STATUS, onSaveSettingsSavePermission);
+				file.addEventListener(PermissionEvent.PERMISSION_STATUS, onSaveSettingsLoadPermission);
 				file.requestPermission();
 			}
 		}
@@ -2657,7 +2656,7 @@
 		CONFIG::BUILD_FOR_MOBILE_AIR {
 			public function onSaveSettingsLoadPermission(e: PermissionEvent): void {
 				var file: File = e.target as File;
-				file.removeEventListener(PermissionEvent.PERMISSION_STATUS, onSaveSettingsSavePermission);
+				file.removeEventListener(PermissionEvent.PERMISSION_STATUS, onSaveSettingsLoadPermission);
 				if (e.status == PermissionStatus.GRANTED) {
 					var fs: FileStream = new FileStream();
 					fs.open(file, FileMode.READ);

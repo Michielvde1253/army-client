@@ -135,8 +135,7 @@
 				} else if (GameState.mInstance.mSaveLocation == "legacy") {
 					file = File.applicationStorageDirectory.resolvePath("savefile.txt");
 					if (!file.exists) {
-						// Falling back to appdata file
-						var file: File = File.applicationStorageDirectory.resolvePath("savefile.txt");
+						return
 					}
 				}
 				file.addEventListener(PermissionEvent.PERMISSION_STATUS, onPermission);
