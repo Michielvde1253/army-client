@@ -9314,7 +9314,7 @@
       "MovementRewardEnergy": "10",
       "CostUnlock": "1",
       "ImageUrl": "cash_icon.png",
-      "ProjectileClass": "bullet",
+      "ProjectileClass": "Missile",
       "PickupCostSupplies": "1600",
       "WeaponType": "explosion",
       "MovementType": "normal",
