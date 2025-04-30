@@ -1,4 +1,4 @@
-package game.isometric.pathfinding
+﻿package game.isometric.pathfinding
 {
    import flash.geom.Point;
    import game.battlefield.MapData;

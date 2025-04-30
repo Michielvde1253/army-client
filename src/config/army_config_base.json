@@ -62,7 +62,7 @@
       "OutOfResourceText": "#TID.POP_UP_WATER_DESC",
       "OutOfResourceFeed": "#FeedObjects.RequestWater",
       "OutOfResourcePopupClassName": "popup_ask_water",
-      "UnlockMission": "#Mission.AREA_SE_AIRPORT_C1_outro5"
+      "UnlockMission": "#Mission.AREA_SE_WP_intro8"
     },
     "pvp_map_1_4valleys_11x11": {
       "ID": "pvp_map_1_4valleys_11x11",
@@ -435,7 +435,7 @@
       "RequiredLevel": "0",
       "RequiredAllies": "0",
       "CostMoney": "150000",
-      "CostIntel": "90",
+      "CostIntel": "50",
       "CostUnlock": "90",
       "ImageUrl": "cash_icon.png",
       "DescriptionSecondary": "#TID.AREANORTHW_DESC"
@@ -454,8 +454,8 @@
       "RequiredMission": "#Mission.MAP_LOCK_NC2",
       "RequiredLevel": "0",
       "RequiredAllies": "0",
-      "CostMoney": "300000",
-      "CostIntel": "120",
+      "CostMoney": "200000",
+      "CostIntel": "60",
       "CostUnlock": "120",
       "ImageUrl": "cash_icon.png",
       "DescriptionSecondary": "#TID.AREANORTHC_DESC"
@@ -474,11 +474,31 @@
       "RequiredMission": "#Mission.MAP_LOCK_NE2",
       "RequiredLevel": "0",
       "RequiredAllies": "0",
-      "CostMoney": "500000",
-      "CostIntel": "150",
+      "CostMoney": "300000",
+      "CostIntel": "70",
       "CostUnlock": "150",
       "ImageUrl": "cash_icon.png",
       "DescriptionSecondary": "#TID.AREANORTHE_DESC"
+    },
+    "AreaTopExtender": {
+      "ID": "AreaTopExtender",
+      "MapID": "Home",
+      "Type": "Area",
+      "Name": "#TID.TOP_EXTENDER",
+      "Description": "#TID.TOP_EXTENDER_DESC",
+      "IconGraphics": "icons/shop_icons/icon_expansion_11.png",
+      "AreaX": "36",
+      "AreaY": "23",
+      "AreaWidth": "33",
+      "AreaHeight": "1",
+      "RequiredMission": "#Mission.MAP_LOCK_NE2",
+      "RequiredLevel": "0",
+      "RequiredAllies": "0",
+      "CostMoney": "1000000",
+      "CostIntel": "100",
+      "CostUnlock": "150",
+      "ImageUrl": "cash_icon.png",
+      "DescriptionSecondary": "#TID.TOP_EXTENDER_DESC"
     },
     "DesertS": {
       "ID": "DesertS",
@@ -3514,32 +3534,32 @@
       "Description": "Coast_NW_inside",
       "Passability": "#Passability.Shore",
       "MapType": "#MapType.Desert",
-      "GraphicsFriendly": "swf/new_backgroud_01/Bg_CoastTile_nw_inside_01, swf/new_backgroud_01/Bg_CoastTile_nw_inside_02, swf/new_backgroud_01/Bg_CoastTile_nw_inside_03, swf/new_backgroud_01/Bg_CoastTile_nw_inside_04, swf/new_backgroud_01/Bg_CoastTile_nw_inside_05, swf/new_backgroud_01/Bg_CoastTile_nw_inside_06, swf/new_backgroud_01/Bg_CoastTile_nw_inside_07, swf/new_backgroud_01/Bg_CoastTile_nw_inside_08, swf/new_backgroud_01/Bg_CoastTile_nw_inside_09, swf/new_backgroud_01/Bg_CoastTile_nw_inside_10, swf/new_backgroud_01/Bg_CoastTile_nw_inside_11, swf/new_backgroud_01/Bg_CoastTile_nw_inside_12, swf/new_backgroud_01/Bg_CoastTile_nw_inside_13",
-      "GraphicsEnemy": "swf/new_backgroud_01/Bg_CoastTile_nw_inside_01, swf/new_backgroud_01/Bg_CoastTile_nw_inside_02, swf/new_backgroud_01/Bg_CoastTile_nw_inside_03, swf/new_backgroud_01/Bg_CoastTile_nw_inside_04, swf/new_backgroud_01/Bg_CoastTile_nw_inside_05, swf/new_backgroud_01/Bg_CoastTile_nw_inside_06, swf/new_backgroud_01/Bg_CoastTile_nw_inside_07, swf/new_backgroud_01/Bg_CoastTile_nw_inside_08, swf/new_backgroud_01/Bg_CoastTile_nw_inside_09, swf/new_backgroud_01/Bg_CoastTile_nw_inside_10, swf/new_backgroud_01/Bg_CoastTile_nw_inside_11, swf/new_backgroud_01/Bg_CoastTile_nw_inside_12, swf/new_backgroud_01/Bg_CoastTile_nw_inside_13"
+      "GraphicsFriendly": "swf/new_backgroud_01/Bg_CoastTile_nw_inside_01, swf/new_backgroud_01/Bg_CoastTile_nw_inside_02, swf/new_backgroud_01/Bg_CoastTile_nw_inside_03, swf/new_backgroud_01/Bg_CoastTile_nw_inside_04, swf/new_backgroud_01/Bg_CoastTile_nw_inside_05, swf/new_backgroud_01/Bg_CoastTile_nw_inside_06, swf/new_backgroud_01/Bg_CoastTile_nw_inside_07, swf/new_backgroud_01/Bg_CoastTile_nw_inside_08, swf/new_backgroud_01/Bg_CoastTile_nw_inside_09, swf/new_backgroud_01/Bg_CoastTile_nw_inside_10, swf/new_backgroud_01/Bg_CoastTile_nw_inside_12, swf/new_backgroud_01/Bg_CoastTile_nw_inside_11, swf/new_backgroud_01/Bg_CoastTile_nw_inside_13",
+      "GraphicsEnemy": "swf/new_backgroud_01/Bg_CoastTile_nw_inside_01, swf/new_backgroud_01/Bg_CoastTile_nw_inside_02, swf/new_backgroud_01/Bg_CoastTile_nw_inside_03, swf/new_backgroud_01/Bg_CoastTile_nw_inside_04, swf/new_backgroud_01/Bg_CoastTile_nw_inside_05, swf/new_backgroud_01/Bg_CoastTile_nw_inside_06, swf/new_backgroud_01/Bg_CoastTile_nw_inside_07, swf/new_backgroud_01/Bg_CoastTile_nw_inside_08, swf/new_backgroud_01/Bg_CoastTile_nw_inside_09, swf/new_backgroud_01/Bg_CoastTile_nw_inside_10, swf/new_backgroud_01/Bg_CoastTile_nw_inside_12, swf/new_backgroud_01/Bg_CoastTile_nw_inside_11, swf/new_backgroud_01/Bg_CoastTile_nw_inside_13"
     },
     "119": {
       "ID": "119",
       "Description": "Coast_NE_inside",
       "Passability": "#Passability.Shore",
       "MapType": "#MapType.Desert",
-      "GraphicsFriendly": "swf/new_backgroud_01/Bg_CoastTile_ne_inside_01, swf/new_backgroud_01/Bg_CoastTile_ne_inside_02, swf/new_backgroud_01/Bg_CoastTile_ne_inside_03, swf/new_backgroud_01/Bg_CoastTile_ne_inside_04, swf/new_backgroud_01/Bg_CoastTile_ne_inside_05, swf/new_backgroud_01/Bg_CoastTile_ne_inside_06, swf/new_backgroud_01/Bg_CoastTile_ne_inside_07, swf/new_backgroud_01/Bg_CoastTile_ne_inside_08, swf/new_backgroud_01/Bg_CoastTile_ne_inside_09, swf/new_backgroud_01/Bg_CoastTile_ne_inside_10, swf/new_backgroud_01/Bg_CoastTile_ne_inside_11, swf/new_backgroud_01/Bg_CoastTile_ne_inside_12, swf/new_backgroud_01/Bg_CoastTile_ne_inside_13",
-      "GraphicsEnemy": "swf/new_backgroud_01/Bg_CoastTile_ne_inside_01, swf/new_backgroud_01/Bg_CoastTile_ne_inside_02, swf/new_backgroud_01/Bg_CoastTile_ne_inside_03, swf/new_backgroud_01/Bg_CoastTile_ne_inside_04, swf/new_backgroud_01/Bg_CoastTile_ne_inside_05, swf/new_backgroud_01/Bg_CoastTile_ne_inside_06, swf/new_backgroud_01/Bg_CoastTile_ne_inside_07, swf/new_backgroud_01/Bg_CoastTile_ne_inside_08, swf/new_backgroud_01/Bg_CoastTile_ne_inside_09, swf/new_backgroud_01/Bg_CoastTile_ne_inside_10, swf/new_backgroud_01/Bg_CoastTile_ne_inside_11, swf/new_backgroud_01/Bg_CoastTile_ne_inside_12, swf/new_backgroud_01/Bg_CoastTile_ne_inside_13"
+      "GraphicsFriendly": "swf/new_backgroud_01/Bg_CoastTile_ne_inside_01, swf/new_backgroud_01/Bg_CoastTile_ne_inside_02, swf/new_backgroud_01/Bg_CoastTile_ne_inside_03, swf/new_backgroud_01/Bg_CoastTile_ne_inside_04, swf/new_backgroud_01/Bg_CoastTile_ne_inside_05, swf/new_backgroud_01/Bg_CoastTile_ne_inside_06, swf/new_backgroud_01/Bg_CoastTile_ne_inside_07, swf/new_backgroud_01/Bg_CoastTile_ne_inside_08, swf/new_backgroud_01/Bg_CoastTile_ne_inside_09, swf/new_backgroud_01/Bg_CoastTile_ne_inside_10, swf/new_backgroud_01/Bg_CoastTile_ne_inside_12, swf/new_backgroud_01/Bg_CoastTile_ne_inside_11, swf/new_backgroud_01/Bg_CoastTile_ne_inside_13",
+      "GraphicsEnemy": "swf/new_backgroud_01/Bg_CoastTile_ne_inside_01, swf/new_backgroud_01/Bg_CoastTile_ne_inside_02, swf/new_backgroud_01/Bg_CoastTile_ne_inside_03, swf/new_backgroud_01/Bg_CoastTile_ne_inside_04, swf/new_backgroud_01/Bg_CoastTile_ne_inside_05, swf/new_backgroud_01/Bg_CoastTile_ne_inside_06, swf/new_backgroud_01/Bg_CoastTile_ne_inside_07, swf/new_backgroud_01/Bg_CoastTile_ne_inside_08, swf/new_backgroud_01/Bg_CoastTile_ne_inside_09, swf/new_backgroud_01/Bg_CoastTile_ne_inside_10, swf/new_backgroud_01/Bg_CoastTile_ne_inside_12, swf/new_backgroud_01/Bg_CoastTile_ne_inside_11, swf/new_backgroud_01/Bg_CoastTile_ne_inside_13"
     },
     "120": {
       "ID": "120",
       "Description": "Coast_SW_inside",
       "Passability": "#Passability.Shore",
       "MapType": "#MapType.Desert",
-      "GraphicsFriendly": "swf/new_backgroud_01/Bg_CoastTile_sw_inside_01, swf/new_backgroud_01/Bg_CoastTile_sw_inside_02, swf/new_backgroud_01/Bg_CoastTile_sw_inside_03, swf/new_backgroud_01/Bg_CoastTile_sw_inside_04, swf/new_backgroud_01/Bg_CoastTile_sw_inside_05, swf/new_backgroud_01/Bg_CoastTile_sw_inside_06, swf/new_backgroud_01/Bg_CoastTile_sw_inside_07, swf/new_backgroud_01/Bg_CoastTile_sw_inside_08, swf/new_backgroud_01/Bg_CoastTile_sw_inside_09, swf/new_backgroud_01/Bg_CoastTile_sw_inside_10, swf/new_backgroud_01/Bg_CoastTile_sw_inside_11, swf/new_backgroud_01/Bg_CoastTile_sw_inside_12, swf/new_backgroud_01/Bg_CoastTile_sw_inside_13",
-      "GraphicsEnemy": "swf/new_backgroud_01/Bg_CoastTile_sw_inside_01, swf/new_backgroud_01/Bg_CoastTile_sw_inside_02, swf/new_backgroud_01/Bg_CoastTile_sw_inside_03, swf/new_backgroud_01/Bg_CoastTile_sw_inside_04, swf/new_backgroud_01/Bg_CoastTile_sw_inside_05, swf/new_backgroud_01/Bg_CoastTile_sw_inside_06, swf/new_backgroud_01/Bg_CoastTile_sw_inside_07, swf/new_backgroud_01/Bg_CoastTile_sw_inside_08, swf/new_backgroud_01/Bg_CoastTile_sw_inside_09, swf/new_backgroud_01/Bg_CoastTile_sw_inside_10, swf/new_backgroud_01/Bg_CoastTile_sw_inside_11, swf/new_backgroud_01/Bg_CoastTile_sw_inside_12, swf/new_backgroud_01/Bg_CoastTile_sw_inside_13"
+      "GraphicsFriendly": "swf/new_backgroud_01/Bg_CoastTile_sw_inside_01, swf/new_backgroud_01/Bg_CoastTile_sw_inside_02, swf/new_backgroud_01/Bg_CoastTile_sw_inside_03, swf/new_backgroud_01/Bg_CoastTile_sw_inside_04, swf/new_backgroud_01/Bg_CoastTile_sw_inside_05, swf/new_backgroud_01/Bg_CoastTile_sw_inside_06, swf/new_backgroud_01/Bg_CoastTile_sw_inside_07, swf/new_backgroud_01/Bg_CoastTile_sw_inside_08, swf/new_backgroud_01/Bg_CoastTile_sw_inside_09, swf/new_backgroud_01/Bg_CoastTile_sw_inside_10, swf/new_backgroud_01/Bg_CoastTile_sw_inside_12, swf/new_backgroud_01/Bg_CoastTile_sw_inside_11, swf/new_backgroud_01/Bg_CoastTile_sw_inside_13",
+      "GraphicsEnemy": "swf/new_backgroud_01/Bg_CoastTile_sw_inside_01, swf/new_backgroud_01/Bg_CoastTile_sw_inside_02, swf/new_backgroud_01/Bg_CoastTile_sw_inside_03, swf/new_backgroud_01/Bg_CoastTile_sw_inside_04, swf/new_backgroud_01/Bg_CoastTile_sw_inside_05, swf/new_backgroud_01/Bg_CoastTile_sw_inside_06, swf/new_backgroud_01/Bg_CoastTile_sw_inside_07, swf/new_backgroud_01/Bg_CoastTile_sw_inside_08, swf/new_backgroud_01/Bg_CoastTile_sw_inside_09, swf/new_backgroud_01/Bg_CoastTile_sw_inside_10, swf/new_backgroud_01/Bg_CoastTile_sw_inside_12, swf/new_backgroud_01/Bg_CoastTile_sw_inside_11, swf/new_backgroud_01/Bg_CoastTile_sw_inside_13"
     },
     "121": {
       "ID": "121",
       "Description": "Coast_SE_inside",
       "Passability": "#Passability.Shore",
       "MapType": "#MapType.Desert",
-      "GraphicsFriendly": "swf/new_backgroud_01/Bg_CoastTile_se_inside_01, swf/new_backgroud_01/Bg_CoastTile_se_inside_02, swf/new_backgroud_01/Bg_CoastTile_se_inside_03, swf/new_backgroud_01/Bg_CoastTile_se_inside_04, swf/new_backgroud_01/Bg_CoastTile_se_inside_05, swf/new_backgroud_01/Bg_CoastTile_se_inside_06, swf/new_backgroud_01/Bg_CoastTile_se_inside_07, swf/new_backgroud_01/Bg_CoastTile_se_inside_08, swf/new_backgroud_01/Bg_CoastTile_se_inside_09, swf/new_backgroud_01/Bg_CoastTile_se_inside_10, swf/new_backgroud_01/Bg_CoastTile_se_inside_11, swf/new_backgroud_01/Bg_CoastTile_se_inside_12, swf/new_backgroud_01/Bg_CoastTile_se_inside_13",
-      "GraphicsEnemy": "swf/new_backgroud_01/Bg_CoastTile_se_inside_01, swf/new_backgroud_01/Bg_CoastTile_se_inside_02, swf/new_backgroud_01/Bg_CoastTile_se_inside_03, swf/new_backgroud_01/Bg_CoastTile_se_inside_04, swf/new_backgroud_01/Bg_CoastTile_se_inside_05, swf/new_backgroud_01/Bg_CoastTile_se_inside_06, swf/new_backgroud_01/Bg_CoastTile_se_inside_07, swf/new_backgroud_01/Bg_CoastTile_se_inside_08, swf/new_backgroud_01/Bg_CoastTile_se_inside_09, swf/new_backgroud_01/Bg_CoastTile_se_inside_10, swf/new_backgroud_01/Bg_CoastTile_se_inside_11, swf/new_backgroud_01/Bg_CoastTile_se_inside_12, swf/new_backgroud_01/Bg_CoastTile_se_inside_13"
+      "GraphicsFriendly": "swf/new_backgroud_01/Bg_CoastTile_se_inside_01, swf/new_backgroud_01/Bg_CoastTile_se_inside_02, swf/new_backgroud_01/Bg_CoastTile_se_inside_03, swf/new_backgroud_01/Bg_CoastTile_se_inside_04, swf/new_backgroud_01/Bg_CoastTile_se_inside_05, swf/new_backgroud_01/Bg_CoastTile_se_inside_06, swf/new_backgroud_01/Bg_CoastTile_se_inside_07, swf/new_backgroud_01/Bg_CoastTile_se_inside_08, swf/new_backgroud_01/Bg_CoastTile_se_inside_09, swf/new_backgroud_01/Bg_CoastTile_se_inside_10, swf/new_backgroud_01/Bg_CoastTile_se_inside_12, swf/new_backgroud_01/Bg_CoastTile_se_inside_11, swf/new_backgroud_01/Bg_CoastTile_se_inside_13",
+      "GraphicsEnemy": "swf/new_backgroud_01/Bg_CoastTile_se_inside_01, swf/new_backgroud_01/Bg_CoastTile_se_inside_02, swf/new_backgroud_01/Bg_CoastTile_se_inside_03, swf/new_backgroud_01/Bg_CoastTile_se_inside_04, swf/new_backgroud_01/Bg_CoastTile_se_inside_05, swf/new_backgroud_01/Bg_CoastTile_se_inside_06, swf/new_backgroud_01/Bg_CoastTile_se_inside_07, swf/new_backgroud_01/Bg_CoastTile_se_inside_08, swf/new_backgroud_01/Bg_CoastTile_se_inside_09, swf/new_backgroud_01/Bg_CoastTile_se_inside_10, swf/new_backgroud_01/Bg_CoastTile_se_inside_12, swf/new_backgroud_01/Bg_CoastTile_se_inside_11, swf/new_backgroud_01/Bg_CoastTile_se_inside_13"
     },
     "122": {
       "ID": "122",
@@ -8633,9 +8653,9 @@
       "Graphics": "explosion_doomsday",
       "RequiredRank": "6",
       "CostSupplies": "0",
-      "DimX": "3",
-      "DimY": "3",
-      "Damage": "6",
+      "DimX": "6",
+      "DimY": "6",
+      "Damage": "60",
       "RechargeTime": "0",
       "RequiredCollection": "#FireMissionItemSets.Set3",
       "RequiredCollectionAmount": "1",
@@ -9590,7 +9610,7 @@
       "MovementRewardEnergy": "20",
       "CostUnlock": "1",
       "ImageUrl": "cash_icon.png",
-      "PassableGroups": "#Passability.Land",
+      "PassableGroups": "#Passability.Land, #Passability.Mountain, #Passability.Shore, #Passability.Sea",
       "PickupCostSupplies": "2000",
       "WeaponType": "explosion",
       "MovementType": "stealth",
@@ -9926,7 +9946,7 @@
       "RequiredLevel": "0",
       "RequiredAllies": "0",
       "RequiredMission": "#Mission.AREA_SE_HIDDEN_AP",
-      "CostMoney": "1000",
+      "CostMoney": "10000",
       "CostSupplies": "0",
       "CostPremium": "0",
       "BuildSteps": "4",
@@ -9945,7 +9965,7 @@
       "SpoilTime": "0",
       "Health": "50",
       "SightRange": "4",
-      "DisbandRewardMoney": "100",
+      "DisbandRewardMoney": "1000",
       "UnitCapIncrementInfantry": "0",
       "UnitCapIncrementArmor": "0",
       "UnitCapIncrementArtillery": "0",
@@ -9971,7 +9991,7 @@
       "ObjectClass": "game.gameElements.ConstructionObject",
       "RequiredLevel": "0",
       "RequiredAllies": "0",
-      "CostMoney": "2000",
+      "CostMoney": "25000",
       "CostSupplies": "0",
       "CostPremium": "0",
       "BuildSteps": "0",
@@ -9991,7 +10011,7 @@
       "SpoilTime": "0",
       "Health": "10",
       "SightRange": "2",
-      "DisbandRewardMoney": "200",
+      "DisbandRewardMoney": "2500",
       "UnitCapIncrementInfantry": "0",
       "UnitCapIncrementArmor": "0",
       "UnitCapIncrementArtillery": "0",
@@ -10019,7 +10039,7 @@
       "MaxAmount": "1",
       "RequiredLevel": "0",
       "RequiredAllies": "0",
-      "CostMoney": "500",
+      "CostMoney": "2500",
       "CostSupplies": "0",
       "CostPremium": "0",
       "DimX": "2",
@@ -10312,7 +10332,7 @@
     "Airport4": {
       "ID": "Airport4",
       "Type": "#Ingredient.PilotHelmet",
-      "Amount": "10"
+      "Amount": "5"
     }
   },
   "BuildingDrives": {
@@ -11159,7 +11179,7 @@
       "Name": "#TID.DOOMSDAY_DEF_6",
       "Graphic_idle": "swf/buildings_enemy/building_enemy_structure_06_idle",
       "Graphic_shoot": "swf/buildings_enemy/building_enemy_structure_06",
-      "Graphic_hit": "swf/buildings_enemy/building_enemy_structure_06",
+      "Graphic_hit": "swf/buildings_enemy/building_enemy_structure_06_idle",
       "Graphic_destroy": "swf/effects_low/effect_explosion",
       "ObjectClass": "game.gameElements.EnemyInstallationObject",
       "Health": "15",
@@ -11204,7 +11224,7 @@
       "Name": "#TID.DOOMSDAY_DEF_4",
       "Graphic_idle": "swf/buildings_enemy/building_enemy_structure_04_idle",
       "Graphic_shoot": "swf/buildings_enemy/building_enemy_structure_04",
-      "Graphic_hit": "swf/buildings_enemy/building_enemy_structure_04",
+      "Graphic_hit": "swf/buildings_enemy/building_enemy_structure_04_idle",
       "Graphic_destroy": "swf/effects_low/effect_explosion",
       "ObjectClass": "game.gameElements.EnemyInstallationObject",
       "Health": "15",
@@ -24049,7 +24069,7 @@
       "Type": "#MissionType.Hidden",
       "MapId": "Home",
       "Name": "#TID.NC2_C1_TITLE2",
-      "RequiredMissions": "#Mission.AREA_NW",
+      "RequiredMissions": "#Mission.AREA_NW2",
       "Objectives": "#Objective.MAP_BUY_NC2_MILESTONE"
     },
     "MAP_LOCK_NE2": {
@@ -24089,7 +24109,7 @@
       "Description": "#TID.BUY_NORTHC_MAP_DESC",
       "CompletionText": "#TID.BUY_NORTHC_MAP_COMPL",
       "Icon": "icons/mission_icons/icon_mission_civ_buy.png",
-      "RequiredMissions": "#Mission.AREA_N_C1",
+      "RequiredMissions": "#Mission.AREA_NW2",
       "Objectives": "#Objective.BuyAreaNorthC2",
       "RewardMoney": "300",
       "RewardXP": "60"
@@ -24140,7 +24160,7 @@
       "Description": "#TID.NC2_C1_DESC",
       "Icon": "icons/mission_icons/icon_mission_campaign.png",
       "RequiredMissions": "#Mission.INTRO_NC2_3",
-      "Objectives": "#Objective.NC_C1_NEW1, #Objective.NC_C1_NEW2, #Objective.NC_C1_NEW3, #Objective.NC_C1_NEW4",
+      "Objectives": "#Objective.FC_C1_DOOMSDAY, #Objective.FC_C1_BASESC, #Objective.FC_C1_DDTURRETR, #Objective.FC_C1_DDTURRETL",
       "RewardMoney": "10000",
       "RewardXP": "300"
     },
@@ -24172,7 +24192,7 @@
       "Description": "#TID.NC2_C2_DESC",
       "Icon": "icons/mission_icons/icon_mission_campaign.png",
       "RequiredMissions": "#Mission.INTRO_NC2_3",
-      "Objectives": "#Objective.NC_C1_NEW5, #Objective.NC_C1_NEW6, #Objective.NC_C1_NEW7, #Objective.NC_C1_NEW8",
+      "Objectives": "#Objective.FC_C1_PREMIUM_TANK, #Objective.FC_C1_BULLDOZER, #Objective.FC_C1_ROCKET, #Objective.FC_C1_GUARDSTATION1",
       "RewardMoney": "5000",
       "RewardXP": "300"
     },
@@ -24215,9 +24235,18 @@
       "CompletionText": "#TID.NW_MISSION_COMPL",
       "Icon": "icons/mission_icons/icon_mission_combat_buildings.png",
       "RequiredMissions": "#Mission.INTRO_NC2_3",
-      "Objectives": "#Objective.NC_C1_NEW9, #Objective.NC_C1_NEW10",
+      "Objectives": "#Objective.FC_C1_GUARDSTATION2, #Objective.FC_C1_BUNKER",
       "RewardMoney": "500",
       "RewardXP": "60"
+    },
+    "AREA_NC_S1_SPAWN": {
+      "ID": "AREA_NC_S2_SPAWN",
+      "Type": "#MissionType.Hidden",
+      "MapId": "Home",
+      "RequiredMissions": "#Mission.AREA_NC_S1",
+      "EnemySpawning": "#MissionEnemySpawning.PavlusSquad3",
+      "RewardMoney": "0",
+      "RewardXP": "0"
     },
     "AREA_NC_S2": {
       "ID": "AREA_NC_S2",
@@ -24228,10 +24257,18 @@
       "CompletionText": "#TID.NW_MISSION_COMPL",
       "Icon": "icons/mission_icons/icon_mission_civ_buy.png",
       "RequiredMissions": "#Mission.INTRO_NC2_3",
-      "Objectives": "#Objective.NC_C1_NEW11, #Objective.NC_C1_NEW12, #Objective.NC_C1_NEW13",
+      "Objectives": "#Objective.FC_C1_BUYSNIPERNEST, #Objective.FC_C1_BUYGUARDPOST, #Objective.FC_C1_BUYUNIT",
       "RewardMoney": "500",
-      "RewardXP": "60",
-      "EnemySpawning": "#MissionEnemySpawning.PavlusSquad2"
+      "RewardXP": "60"
+    },
+    "AREA_NC_S2_SPAWN": {
+      "ID": "AREA_NC_S2_SPAWN",
+      "Type": "#MissionType.Hidden",
+      "MapId": "Home",
+      "RequiredMissions": "#Mission.AREA_NC_S2",
+      "EnemySpawning": "#MissionEnemySpawning.PavlusSquad2",
+      "RewardMoney": "0",
+      "RewardXP": "0"
     },
     "AREA_NC_S3": {
       "ID": "AREA_NC_S3",
@@ -24242,10 +24279,9 @@
       "CompletionText": "#TID.NW_MISSION_COMPL",
       "Icon": "icons/mission_icons/icon_mission_civ_repair.png",
       "RequiredMissions": "#Mission.AREA_NC_S1",
-      "Objectives": "#Objective.NC_C1_NEW14, #Objective.NC_C1_NEW15",
+      "Objectives": "#Objective.FC_C1_REPAIR, #Objective.FC_C1_COLLECT",
       "RewardMoney": "500",
-      "RewardXP": "60",
-      "EnemySpawning": "#MissionEnemySpawning.PavlusSquad3"
+      "RewardXP": "60"
     },
     "BUY_NORTHW2": {
       "ID": "BUY_NORTHW2",
@@ -24298,15 +24334,15 @@
       "Objectives": "#Objective.OK",
       "Narrator": "#Character.Mutton"
     },
-    "AREA_NW": {
-      "ID": "AREA_NW",
+    "AREA_NW2": {
+      "ID": "AREA_NW2",
       "Type": "#MissionType.Campaign",
       "MapId": "Home",
       "Name": "#TID.NW2_C1_TITLE",
       "Description": "#TID.NW2_C1_DESC",
       "Icon": "icons/mission_icons/icon_mission_campaign.png",
       "RequiredMissions": "#Mission.INTRO_NW2_3",
-      "Objectives": "#Objective.NW_C1_NEW1, #Objective.NW_C1_NEW2, #Objective.NW_C1_NEW3, #Objective.NW_C1_NEW4, #Objective.NW_C1_NEW5",
+      "Objectives": "#Objective.FW_C1_PREMIUM_TANK, #Objective.FW_C1_PRISON, #Objective.FW_C1_HQ, #Objective.FW_C1_CONQUER, #Objective.FW_C1_DESTROY_UNIT",
       "RewardMoney": "5000",
       "RewardXP": "200"
     },
@@ -24316,7 +24352,7 @@
       "MapId": "Home",
       "Name": "#TID.CHAR_PATRUS_PRAVUS",
       "Description": "#TID.OUTRO_NW2_DIALOG_1",
-      "RequiredMissions": "#Mission.AREA_NW",
+      "RequiredMissions": "#Mission.AREA_NW2",
       "Objectives": "#Objective.OK",
       "Narrator": "#Character.PatrusPravus"
     },
@@ -24349,7 +24385,7 @@
       "CompletionText": "#TID.NW_MISSION_COMPL",
       "Icon": "icons/mission_icons/icon_mission_combat_buildings.png",
       "RequiredMissions": "#Mission.INTRO_NW2_3",
-      "Objectives": "#Objective.NW_C1_NEW6, #Objective.NW_C1_NEW7",
+      "Objectives": "#Objective.FW_C1_BUNKER, #Objective.FW_C1_GUARDSTATION",
       "RewardMoney": "500",
       "RewardXP": "60"
     },
@@ -24362,7 +24398,7 @@
       "CompletionText": "#TID.NW_MISSION_COMPL2",
       "Icon": "icons/mission_icons/icon_mission_combat_propaganda.png",
       "RequiredMissions": "#Mission.INTRO_NW2_3",
-      "Objectives": "#Objective.NW_C1_NEW8",
+      "Objectives": "#Objective.FW_C1_PROPAGANDA",
       "RewardMoney": "500",
       "RewardXP": "60"
     },
@@ -24375,7 +24411,7 @@
       "CompletionText": "#TID.NW_MISSION_COMPL3",
       "Icon": "icons/mission_icons/icon_mission_civ_resources.png",
       "RequiredMissions": "#Mission.AREA_NW_S1",
-      "Objectives": "#Objective.NW_C1_NEW9",
+      "Objectives": "#Objective.FW_C1_FUELDUMP",
       "RewardMoney": "500",
       "RewardXP": "60",
       "EnemySpawning": "#MissionEnemySpawning.PavlusSquad"
@@ -24388,7 +24424,7 @@
       "Description": "#TID.BUY_NE_MAP_DESC",
       "CompletionText": "#TID.BUY_NE_MAP_COMPL",
       "Icon": "icons/mission_icons/icon_mission_civ_buy.png",
-      "RequiredMissions": "#Mission.AREA_N_C1",
+      "RequiredMissions": "#Mission.AREA_NC",
       "Objectives": "#Objective.BuyAreaNorthE2",
       "RewardMoney": "300",
       "RewardXP": "60"
@@ -24439,10 +24475,18 @@
       "Description": "#TID.NE2_C1_DESC",
       "Icon": "icons/mission_icons/icon_mission_campaign.png",
       "RequiredMissions": "#Mission.INTRO_NE2_3",
-      "Objectives": "#Objective.NE_C1_NEW1, #Objective.NE_C1_NEW2, #Objective.NE_C1_NEW3, #Objective.NE_C1_NEW4, #Objective.NE_C1_NEW5",
+      "Objectives": "#Objective.FE_C1_POWERGENERATOR, #Objective.FE_C1_CAPTURE_TOWN, #Objective.FE_C1_DESTROY_UNIT, #Objective.FE_C1_DDTURRETL, #Objective.FE_C1_BUYSNIPERNEST",
       "RewardMoney": "10000",
-      "RewardXP": "400",
-      "EnemySpawning": "#MissionEnemySpawning.PavlusSquad4"
+      "RewardXP": "400"
+    },
+    "AREA_NE2_SPAWN": {
+      "ID": "AREA_NE2_SPAWN",
+      "Type": "#MissionType.Hidden",
+      "MapId": "Home",
+      "RequiredMissions": "#Mission.AREA_NE2",
+      "EnemySpawning": "#MissionEnemySpawning.PavlusSquad4",
+      "RewardMoney": "0",
+      "RewardXP": "0"
     },
     "OUTRO_NE2_1": {
       "ID": "OUTRO_NE2_1",
@@ -24482,7 +24526,7 @@
       "Description": "#TID.NE3_C1_DESC",
       "Icon": "icons/mission_icons/icon_mission_campaign.png",
       "RequiredMissions": "#Mission.AREA_NE2",
-      "Objectives": "#Objective.NE_C1_NEW6, #Objective.NE_C1_NEW7, #Objective.NE_C1_NEW8, #Objective.NE_C1_NEW9, #Objective.NE_C1_NEW10",
+      "Objectives": "#Objective.FE_C1_DESTROYHQ, #Objective.FE_C1_DESTROY_UNIT_MULTI1, #Objective.FE_C1_REPAIR_UNIT1, #Objective.FE_C1_PREMIUM_TANK, #Objective.FE_C1_BULLDOZER",
       "RewardMoney": "20000",
       "RewardXP": "400"
     },
@@ -24544,10 +24588,18 @@
       "Description": "#TID.NE2_C2_DESC",
       "Icon": "icons/mission_icons/icon_mission_civ_resources.png",
       "RequiredMissions": "#Mission.AREA_NE2",
-      "Objectives": "#Objective.NE_C1_NEW11, #Objective.NE_C1_NEW12, #Objective.NE_C1_NEW13",
+      "Objectives": "#Objective.FE_C1_TOWN_PRODUCE, #Objective.FE_C1_BUY_VAULT, #Objective.FE_C1_BUY_PLOT",
       "RewardMoney": "500",
-      "RewardXP": "60",
-      "EnemySpawning": "#MissionEnemySpawning.PavlusSquad7"
+      "RewardXP": "60"
+    },
+    "AREA_NE_S1_SPAWN": {
+      "ID": "AREA_NE_S1_SPAWN",
+      "Type": "#MissionType.Hidden",
+      "MapId": "Home",
+      "RequiredMissions": "#Mission.AREA_NE_S1",
+      "EnemySpawning": "#MissionEnemySpawning.PavlusSquad7",
+      "RewardMoney": "0",
+      "RewardXP": "0"
     },
     "AREA_NE_S2": {
       "ID": "AREA_NE_S2",
@@ -24557,10 +24609,18 @@
       "Description": "#TID.NE2_C3_DESC",
       "Icon": "icons/mission_icons/icon_mission_clear.png",
       "RequiredMissions": "#Mission.INTRO_NE2_3",
-      "Objectives": "#Objective.NE_C1_NEW14, #Objective.NE_C1_NEW15",
+      "Objectives": "#Objective.FE_C1_DEBRIS, #Objective.FE_C1_REPAIR_UNIT2",
       "RewardMoney": "500",
-      "RewardXP": "60",
-      "EnemySpawning": "#MissionEnemySpawning.PavlusSquad5"
+      "RewardXP": "60"
+    },
+    "AREA_NE_S2_SPAWN": {
+      "ID": "AREA_NE_S2_SPAWN",
+      "Type": "#MissionType.Hidden",
+      "MapId": "Home",
+      "RequiredMissions": "#Mission.AREA_NE_S2",
+      "EnemySpawning": "#MissionEnemySpawning.PavlusSquad5",
+      "RewardMoney": "0",
+      "RewardXP": "0"
     },
     "AREA_NE_S3": {
       "ID": "AREA_NE_S3",
@@ -24570,10 +24630,18 @@
       "Description": "#TID.NE2_C4_DESC",
       "Icon": "icons/mission_icons/icon_mission_combat_terrain.png",
       "RequiredMissions": "#Mission.INTRO_NE2_3",
-      "Objectives": "#Objective.NE_C1_NEW16, #Objective.NE_C1_NEW17",
+      "Objectives": "#Objective.FE_C1_DESTROY_UNIT_MULTI2, #Objective.FE_C1_NAPALM",
       "RewardMoney": "500",
-      "RewardXP": "60",
-      "EnemySpawning": "#MissionEnemySpawning.PavlusSquad6"
+      "RewardXP": "60"
+    },
+    "AREA_NE_S3_SPAWN": {
+      "ID": "AREA_NE_S3_SPAWN",
+      "Type": "#MissionType.Hidden",
+      "MapId": "Home",
+      "RequiredMissions": "#Mission.AREA_NE_S3",
+      "EnemySpawning": "#MissionEnemySpawning.PavlusSquad6",
+      "RewardMoney": "0",
+      "RewardXP": "0"
     },
     "AREA_N_C2": {
       "ID": "AREA_N_C2",
@@ -26411,96 +26479,96 @@
       "ID": "EAC1_Fortress",
       "CompletionText": "#Character.Greedy, #TID.CAMPAIGN_E_1_MISSION_COMPLETION_4"
     },
-    "NW_C1_NEW1": {
-      "ID": "NW_C1_NEW1",
+    "FW_C1_PREMIUM_TANK": {
+      "ID": "FW_C1_PREMIUM_TANK",
       "CompletionText": "#Character.PatrusPravus, #TID.CAMPAIGN_NW_1_MISSION_COMPLETION_1"
     },
-    "NW_C1_NEW2": {
-      "ID": "NW_C1_NEW2",
+    "FW_C1_PRISON": {
+      "ID": "FW_C1_PRISON",
       "CompletionText": "#Character.Supervillan, #TID.CAMPAIGN_NW_1_MISSION_COMPLETION_2"
     },
-    "NW_C1_NEW3": {
-      "ID": "NW_C1_NEW3",
+    "FW_C1_HQ": {
+      "ID": "FW_C1_HQ",
       "CompletionText": "#Character.PatrusPravus, #TID.CAMPAIGN_NW_1_MISSION_COMPLETION_3"
     },
-    "NW_C1_NEW4": {
-      "ID": "NW_C1_NEW4",
+    "FW_C1_CONQUER": {
+      "ID": "FW_C1_CONQUER",
       "CompletionText": "#Character.Supervillan, #TID.CAMPAIGN_NW_1_MISSION_COMPLETION_4"
     },
-    "NW_C1_NEW5": {
-      "ID": "NW_C1_NEW5",
+    "FW_C1_DESTROY_UNIT": {
+      "ID": "FW_C1_DESTROY_UNIT",
       "CompletionText": "#Character.Supervillan, #TID.CAMPAIGN_NW_1_MISSION_COMPLETION_5"
     },
-    "NC_C1_NEW1": {
-      "ID": "NC_C1_NEW1",
+    "FC_C1_DOOMSDAY1": {
+      "ID": "FC_C1_DOOMSDAY1",
       "CompletionText": "#Character.PatrusPravus, #TID.CAMPAIGN_NC_1_MISSION_COMPLETION_1"
     },
-    "NC_C1_NEW2": {
-      "ID": "NC_C1_NEW2",
+    "FC_C1_BASESC": {
+      "ID": "FC_C1_BASESC",
       "CompletionText": "#Character.Supervillan, #TID.CAMPAIGN_NC_1_MISSION_COMPLETION_2"
     },
-    "NC_C1_NEW3": {
-      "ID": "NC_C1_NEW3",
+    "FC_C1_DDTURRETR": {
+      "ID": "FC_C1_DDTURRETR",
       "CompletionText": "#Character.PatrusPravus, #TID.CAMPAIGN_NC_1_MISSION_COMPLETION_3"
     },
-    "NC_C1_NEW4": {
-      "ID": "NC_C1_NEW4",
+    "FC_C1_DDTURRETL": {
+      "ID": "FC_C1_DDTURRETL",
       "CompletionText": "#Character.PatrusPravus, #TID.CAMPAIGN_NC_1_MISSION_COMPLETION_4"
     },
-    "NC_C1_NEW5": {
-      "ID": "NC_C1_NEW5",
+    "FC_C1_PREMIUM_TANK": {
+      "ID": "FC_C1_PREMIUM_TANK",
       "CompletionText": "#Character.PatrusPravus, #TID.CAMPAIGN_NC_1_MISSION_COMPLETION_5"
     },
-    "NC_C1_NEW6": {
-      "ID": "NC_C1_NEW6",
+    "FC_C1_BULLDOZER": {
+      "ID": "FC_C1_BULLDOZER",
       "CompletionText": "#Character.Supervillan, #TID.CAMPAIGN_NC_1_MISSION_COMPLETION_6"
     },
-    "NC_C1_NEW7": {
-      "ID": "NC_C1_NEW7",
+    "FC_C1_ROCKET": {
+      "ID": "FC_C1_ROCKET",
       "CompletionText": "#Character.Supervillan, #TID.CAMPAIGN_NC_1_MISSION_COMPLETION_7"
     },
-    "NC_C1_NEW8": {
-      "ID": "NC_C1_NEW8",
+    "FC_C1_GUARDSTATION1": {
+      "ID": "FC_C1_GUARDSTATION1",
       "CompletionText": "#Character.Supervillan, #TID.CAMPAIGN_NC_1_MISSION_COMPLETION_8"
     },
-    "NE_C1_NEW1": {
-      "ID": "NE_C1_NEW1",
+    "FE_C1_POWERGENERATOR": {
+      "ID": "FE_C1_POWERGENERATOR",
       "CompletionText": "#Character.Supervillan, #TID.CAMPAIGN_NE_1_MISSION_COMPLETION_1"
     },
-    "NE_C1_NEW2": {
-      "ID": "NE_C1_NEW2",
+    "FE_C1_CAPTURE_TOWN": {
+      "ID": "FE_C1_CAPTURE_TOWN",
       "CompletionText": "#Character.Supervillan, #TID.CAMPAIGN_NE_1_MISSION_COMPLETION_2"
     },
-    "NE_C1_NEW3": {
-      "ID": "NE_C1_NEW3",
+    "FE_C1_DESTROY_UNIT": {
+      "ID": "FE_C1_DESTROY_UNIT",
       "CompletionText": "#Character.Supervillan, #TID.CAMPAIGN_NE_1_MISSION_COMPLETION_3"
     },
-    "NE_C1_NEW4": {
-      "ID": "NE_C1_NEW4",
+    "FE_C1_DDTURRETL": {
+      "ID": "FE_C1_DDTURRETL",
       "CompletionText": "#Character.PatrusPravus, #TID.CAMPAIGN_NE_1_MISSION_COMPLETION_4"
     },
-    "NE_C1_NEW5": {
-      "ID": "NE_C1_NEW5",
+    "FE_C1_BUYSNIPERNEST": {
+      "ID": "FE_C1_BUYSNIPERNEST",
       "CompletionText": "#Character.Supervillan, #TID.CAMPAIGN_NE_1_MISSION_COMPLETION_5"
     },
-    "NE_C1_NEW6": {
-      "ID": "NE_C1_NEW6",
+    "FE_C1_DESTROYHQ": {
+      "ID": "FE_C1_DESTROYHQ",
       "CompletionText": "#Character.Supervillan, #TID.CAMPAIGN_NE_1_MISSION_COMPLETION_6"
     },
-    "NE_C1_NEW7": {
-      "ID": "NE_C1_NEW7",
+    "FE_C1_DESTROY_UNIT_MULTI1": {
+      "ID": "FE_C1_DESTROY_UNIT_MULTI1",
       "CompletionText": "#Character.Supervillan, #TID.CAMPAIGN_NE_1_MISSION_COMPLETION_7"
     },
-    "NE_C1_NEW8": {
-      "ID": "NE_C1_NEW8",
+    "FE_C1_REPAIR_UNIT1": {
+      "ID": "FE_C1_REPAIR_UNIT1",
       "CompletionText": "#Character.Supervillan, #TID.CAMPAIGN_NE_1_MISSION_COMPLETION_8"
     },
-    "NE_C1_NEW9": {
-      "ID": "NE_C1_NEW9",
+    "FE_C1_PREMIUM_TANK": {
+      "ID": "FE_C1_PREMIUM_TANK",
       "CompletionText": "#Character.PatrusPravus, #TID.CAMPAIGN_NE_1_MISSION_COMPLETION_9"
     },
-    "NE_C1_NEW10": {
-      "ID": "NE_C1_NEW10",
+    "FE_C1_BULLDOZER": {
+      "ID": "FE_C1_BULLDOZER",
       "CompletionText": "#Character.Supervillan, #TID.CAMPAIGN_NE_1_MISSION_COMPLETION_10"
     }
   },
@@ -28455,8 +28523,8 @@
       "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_mega_weapon.png",
       "CostFinish": "0"
     },
-    "NW_C1_NEW1": {
-      "ID": "NW_C1_NEW1",
+    "FW_C1_PREMIUM_TANK": {
+      "ID": "FW_C1_PREMIUM_TANK",
       "Type": "#ObjectiveType.Destroy",
       "Parameter": "#EnemyUnit.PremiumTank",
       "Goal": "5",
@@ -28465,8 +28533,8 @@
       "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_premium_tank.png",
       "CostFinish": "0"
     },
-    "NW_C1_NEW2": {
-      "ID": "NW_C1_NEW2",
+    "FW_C1_PRISON": {
+      "ID": "FW_C1_PRISON",
       "Type": "#ObjectiveType.Destroy",
       "Parameter": "#EnemyInstallation.Prison",
       "Goal": "4",
@@ -28475,8 +28543,8 @@
       "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_prison.png",
       "CostFinish": "0"
     },
-    "NW_C1_NEW3": {
-      "ID": "NW_C1_NEW3",
+    "FW_C1_HQ": {
+      "ID": "FW_C1_HQ",
       "Type": "#ObjectiveType.DestroyTarget",
       "Coordinates": "43_28",
       "Parameter": "#EnemyInstallation.BasePrison",
@@ -28486,8 +28554,8 @@
       "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_secret_police.png",
       "CostFinish": "0"
     },
-    "NW_C1_NEW4": {
-      "ID": "NW_C1_NEW4",
+    "FW_C1_CONQUER": {
+      "ID": "FW_C1_CONQUER",
       "Type": "#ObjectiveType.Conquer",
       "Goal": "60",
       "Title": "#TID.NW2_C1_OBJC_4_TITLE",
@@ -28495,8 +28563,8 @@
       "Icon": "icons/mission_icons/objective_icons/icon_objective_control.png",
       "CostFinish": "0"
     },
-    "NW_C1_NEW5": {
-      "ID": "NW_C1_NEW5",
+    "FW_C1_DESTROY_UNIT": {
+      "ID": "FW_C1_DESTROY_UNIT",
       "Type": "#ObjectiveType.Destroy",
       "Parameter": "#EnemyUnit",
       "Goal": "30",
@@ -28505,8 +28573,8 @@
       "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy.png",
       "CostFinish": "0"
     },
-    "NW_C1_NEW6": {
-      "ID": "NW_C1_NEW6",
+    "FW_C1_BUNKER": {
+      "ID": "FW_C1_BUNKER",
       "Type": "#ObjectiveType.Destroy",
       "Parameter": "#EnemyInstallation.Bunker",
       "Goal": "5",
@@ -28515,8 +28583,8 @@
       "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_bunker.png",
       "CostFinish": "0"
     },
-    "NW_C1_NEW7": {
-      "ID": "NW_C1_NEW7",
+    "FW_C1_GUARDSTATION": {
+      "ID": "FW_C1_GUARDSTATION",
       "Type": "#ObjectiveType.Destroy",
       "Parameter": "#EnemyInstallation.GuardStation",
       "Goal": "5",
@@ -28525,8 +28593,8 @@
       "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_guard_tower.png",
       "CostFinish": "0"
     },
-    "NW_C1_NEW8": {
-      "ID": "NW_C1_NEW8",
+    "FW_C1_PROPAGANDA": {
+      "ID": "FW_C1_PROPAGANDA",
       "Type": "#ObjectiveType.Destroy",
       "Parameter": "#EnemyInstallation.Propaganda",
       "Goal": "4",
@@ -28535,8 +28603,8 @@
       "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_propaganda_tower.png",
       "CostFinish": "0"
     },
-    "NW_C1_NEW9": {
-      "ID": "NW_C1_NEW9",
+    "FW_C1_FUELDUMP": {
+      "ID": "FW_C1_FUELDUMP",
       "Type": "#ObjectiveType.Destroy",
       "Parameter": "#EnemyInstallation.FuelDump",
       "Goal": "12",
@@ -28545,8 +28613,8 @@
       "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_fuel_dump.png",
       "CostFinish": "0"
     },
-    "NC_C1_NEW1": {
-      "ID": "NC_C1_NEW1",
+    "FC_C1_DOOMSDAY": {
+      "ID": "FC_C1_DOOMSDAY",
       "Type": "#ObjectiveType.Destroy",
       "Parameter": "#EnemyInstallation.DoomsDay2",
       "Goal": "1",
@@ -28555,8 +28623,8 @@
       "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_doomsday_desert.png",
       "CostFinish": "0"
     },
-    "NC_C1_NEW2": {
-      "ID": "NC_C1_NEW2",
+    "FC_C1_BASESC": {
+      "ID": "FC_C1_BASESC",
       "Type": "#ObjectiveType.Destroy",
       "Parameter": "#EnemyInstallation.BaseSC",
       "Goal": "1",
@@ -28565,8 +28633,8 @@
       "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_comm_bunker.png",
       "CostFinish": "0"
     },
-    "NC_C1_NEW3": {
-      "ID": "NC_C1_NEW3",
+    "FC_C1_DDTURRETR": {
+      "ID": "FC_C1_DDTURRETR",
       "Type": "#ObjectiveType.Destroy",
       "Parameter": "#EnemyInstallation.DDTurretRight",
       "Goal": "8",
@@ -28575,8 +28643,8 @@
       "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_towerright.png",
       "CostFinish": "0"
     },
-    "NC_C1_NEW4": {
-      "ID": "NC_C1_NEW4",
+    "FC_C1_DDTURRETL": {
+      "ID": "FC_C1_DDTURRETL",
       "Type": "#ObjectiveType.Destroy",
       "Parameter": "#EnemyInstallation.DDTurretLeft",
       "Goal": "7",
@@ -28585,8 +28653,8 @@
       "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_towerleft.png",
       "CostFinish": "0"
     },
-    "NC_C1_NEW5": {
-      "ID": "NC_C1_NEW5",
+    "FC_C1_PREMIUM_TANK": {
+      "ID": "FC_C1_PREMIUM_TANK",
       "Type": "#ObjectiveType.Destroy",
       "Parameter": "#EnemyUnit.PremiumTank",
       "Goal": "6",
@@ -28595,8 +28663,8 @@
       "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_premium_tank.png",
       "CostFinish": "0"
     },
-    "NC_C1_NEW6": {
-      "ID": "NC_C1_NEW6",
+    "FC_C1_BULLDOZER": {
+      "ID": "FC_C1_BULLDOZER",
       "Type": "#ObjectiveType.Destroy",
       "Parameter": "#EnemyUnit.Bulldozer",
       "Goal": "11",
@@ -28605,8 +28673,8 @@
       "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_bulldozer.png",
       "CostFinish": "0"
     },
-    "NC_C1_NEW7": {
-      "ID": "NC_C1_NEW7",
+    "FC_C1_ROCKET": {
+      "ID": "FC_C1_ROCKET",
       "Type": "#ObjectiveType.Destroy",
       "Parameter": "#EnemyUnit.RocketBattery",
       "Goal": "13",
@@ -28615,8 +28683,8 @@
       "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_rocket_battery.png",
       "CostFinish": "0"
     },
-    "NC_C1_NEW8": {
-      "ID": "NC_C1_NEW8",
+    "FC_C1_GUARDSTATION1": {
+      "ID": "FC_C1_GUARDSTATION1",
       "Type": "#ObjectiveType.Destroy",
       "Parameter": "#EnemyInstallation.GuardStation",
       "Goal": "6",
@@ -28625,8 +28693,8 @@
       "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_guard_tower.png",
       "CostFinish": "0"
     },
-    "NC_C1_NEW9": {
-      "ID": "NC_C1_NEW9",
+    "FC_C1_GUARDSTATION2": {
+      "ID": "FC_C1_GUARDSTATION2",
       "Type": "#ObjectiveType.Destroy",
       "Parameter": "#EnemyInstallation.GuardStation",
       "Goal": "5",
@@ -28635,8 +28703,8 @@
       "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_guard_tower.png",
       "CostFinish": "0"
     },
-    "NC_C1_NEW10": {
-      "ID": "NC_C1_NEW10",
+    "FC_C1_BUNKER": {
+      "ID": "FC_C1_BUNKER",
       "Type": "#ObjectiveType.Destroy",
       "Parameter": "#EnemyInstallation.Bunker",
       "Goal": "6",
@@ -28645,8 +28713,8 @@
       "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_bunker.png",
       "CostFinish": "0"
     },
-    "NC_C1_NEW11": {
-      "ID": "NC_C1_NEW11",
+    "FC_C1_BUYSNIPERNEST": {
+      "ID": "FC_C1_BUYSNIPERNEST",
       "Type": "#ObjectiveType.Buy",
       "Parameter": "#PlayerInstallation.SniperNest",
       "Goal": "3",
@@ -28655,8 +28723,8 @@
       "Icon": "icons/mission_icons/objective_icons/icon_objective_defense_sniper_nest.png",
       "CostFinish": "0"
     },
-    "NC_C1_NEW12": {
-      "ID": "NC_C1_NEW12",
+    "FC_C1_BUYGUARDPOST": {
+      "ID": "FC_C1_BUYGUARDPOST",
       "Type": "#ObjectiveType.Buy",
       "Parameter": "#PlayerInstallation.GuardPost",
       "Goal": "5",
@@ -28665,8 +28733,8 @@
       "Icon": "icons/mission_icons/objective_icons/icon_objective_defense_guard_tower.png",
       "CostFinish": "0"
     },
-    "NC_C1_NEW13": {
-      "ID": "NC_C1_NEW13",
+    "FC_C1_BUYUNIT": {
+      "ID": "FC_C1_BUYUNIT",
       "Type": "#ObjectiveType.Buy",
       "Parameter": "#PlayerUnit",
       "Goal": "2",
@@ -28675,8 +28743,8 @@
       "Icon": "icons/mission_icons/objective_icons/icon_objective_buy.png",
       "CostFinish": "0"
     },
-    "NC_C1_NEW14": {
-      "ID": "NC_C1_NEW14",
+    "FC_C1_REPAIR": {
+      "ID": "FC_C1_REPAIR",
       "Type": "#ObjectiveType.Repair",
       "Parameter": "#PlayerUnit",
       "Goal": "5",
@@ -28685,8 +28753,8 @@
       "Icon": "icons/mission_icons/objective_icons/icon_objective_repair.png",
       "CostFinish": "0"
     },
-    "NC_C1_NEW15": {
-      "ID": "NC_C1_NEW15",
+    "FC_C1_COLLECT": {
+      "ID": "FC_C1_COLLECT",
       "Type": "#ObjectiveType.Collect",
       "Parameter": "#HomeFrontEffort",
       "Goal": "10",
@@ -28695,8 +28763,8 @@
       "Icon": "icons/mission_icons/objective_icons/icon_objective_supplies.png",
       "CostFinish": "0"
     },
-    "NE_C1_NEW1": {
-      "ID": "NE_C1_NEW1",
+    "FE_C1_POWERGENERATOR": {
+      "ID": "FE_C1_POWERGENERATOR",
       "Type": "#ObjectiveType.Destroy",
       "Parameter": "#EnemyInstallation.PowerGenerator2",
       "Goal": "1",
@@ -28705,8 +28773,8 @@
       "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_power_generator.png",
       "CostFinish": "0"
     },
-    "NE_C1_NEW2": {
-      "ID": "NE_C1_NEW2",
+    "FE_C1_CAPTURE_TOWN": {
+      "ID": "FE_C1_CAPTURE_TOWN",
       "Type": "#ObjectiveType.Recapture",
       "Parameter": "#PermanentHFE.NCTown",
       "Goal": "1",
@@ -28715,8 +28783,8 @@
       "Icon": "icons/mission_icons/objective_icons/icon_objective_recapture_city.png",
       "CostFinish": "0"
     },
-    "NE_C1_NEW3": {
-      "ID": "NE_C1_NEW3",
+    "FE_C1_DESTROY_UNIT": {
+      "ID": "FE_C1_DESTROY_UNIT",
       "Type": "#ObjectiveType.Destroy",
       "Parameter": "#EnemyUnit",
       "Goal": "35",
@@ -28725,8 +28793,8 @@
       "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy.png",
       "CostFinish": "0"
     },
-    "NE_C1_NEW4": {
-      "ID": "NE_C1_NEW4",
+    "FE_C1_DDTURRETL": {
+      "ID": "FE_C1_DDTURRETL",
       "Type": "#ObjectiveType.Destroy",
       "Parameter": "#EnemyInstallation.DDTurretLeft",
       "Goal": "3",
@@ -28735,8 +28803,8 @@
       "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_towerleft.png",
       "CostFinish": "0"
     },
-    "NE_C1_NEW5": {
-      "ID": "NE_C1_NEW5",
+    "FE_C1_BUYSNIPERNEST": {
+      "ID": "FE_C1_BUYSNIPERNEST",
       "Type": "#ObjectiveType.Buy",
       "Parameter": "#PlayerInstallation.SniperNest",
       "Goal": "6",
@@ -28745,8 +28813,8 @@
       "Icon": "icons/mission_icons/objective_icons/icon_objective_defense_sniper_nest.png",
       "CostFinish": "0"
     },
-    "NE_C1_NEW6": {
-      "ID": "NE_C1_NEW6",
+    "FE_C1_DESTROYHQ": {
+      "ID": "FE_C1_DESTROYHQ",
       "Type": "#ObjectiveType.Destroy",
       "Parameter": "#EnemyInstallation.BeaconHQ",
       "Goal": "1",
@@ -28755,8 +28823,8 @@
       "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_mainbase.png",
       "CostFinish": "0"
     },
-    "NE_C1_NEW7": {
-      "ID": "NE_C1_NEW7",
+    "FE_C1_DESTROY_UNIT_MULTI1": {
+      "ID": "FE_C1_DESTROY_UNIT_MULTI1",
       "Type": "#ObjectiveType.DestroyWithMultiple",
       "Parameter": "#EnemyUnit",
       "Goal": "20",
@@ -28765,8 +28833,8 @@
       "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_with_multiple.png",
       "CostFinish": "0"
     },
-    "NE_C1_NEW8": {
-      "ID": "NE_C1_NEW8",
+    "FE_C1_REPAIR_UNIT1": {
+      "ID": "FE_C1_REPAIR_UNIT1",
       "Type": "#ObjectiveType.Repair",
       "Parameter": "#PlayerUnit",
       "Goal": "8",
@@ -28775,8 +28843,8 @@
       "Icon": "icons/mission_icons/objective_icons/icon_objective_repair.png",
       "CostFinish": "0"
     },
-    "NE_C1_NEW9": {
-      "ID": "NE_C1_NEW9",
+    "FE_C1_PREMIUM_TANK": {
+      "ID": "FE_C1_PREMIUM_TANK",
       "Type": "#ObjectiveType.Destroy",
       "Parameter": "#EnemyUnit.PremiumTank",
       "Goal": "10",
@@ -28785,8 +28853,8 @@
       "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_premium_tank.png",
       "CostFinish": "0"
     },
-    "NE_C1_NEW10": {
-      "ID": "NE_C1_NEW10",
+    "FE_C1_BULLDOZER": {
+      "ID": "FE_C1_BULLDOZER",
       "Type": "#ObjectiveType.Destroy",
       "Parameter": "#EnemyUnit.Bulldozer",
       "Goal": "15",
@@ -28795,8 +28863,8 @@
       "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_bulldozer.png",
       "CostFinish": "0"
     },
-    "NE_C1_NEW11": {
-      "ID": "NE_C1_NEW11",
+    "FE_C1_TOWN_PRODUCE": {
+      "ID": "FE_C1_TOWN_PRODUCE",
       "Type": "#ObjectiveType.StartProducing",
       "Parameter": "#PermanentHFE.NCTown",
       "Goal": "1",
@@ -28805,8 +28873,8 @@
       "Icon": "icons/mission_icons/objective_icons/icon_objective_city_action.png",
       "CostFinish": "0"
     },
-    "NE_C1_NEW12": {
-      "ID": "NE_C1_NEW12",
+    "FE_C1_BUY_VAULT": {
+      "ID": "FE_C1_BUY_VAULT",
       "Type": "#ObjectiveType.Buy",
       "Parameter": "#Deco.Vault",
       "Goal": "3",
@@ -28815,8 +28883,8 @@
       "Icon": "icons/mission_icons/objective_icons/icon_objective_storage_undercover_vault.png",
       "CostFinish": "0"
     },
-    "NE_C1_NEW13": {
-      "ID": "NE_C1_NEW13",
+    "FE_C1_BUY_PLOT": {
+      "ID": "FE_C1_BUY_PLOT",
       "Type": "#ObjectiveType.Buy",
       "Parameter": "#HomeFrontEffort.Plot",
       "Goal": "10",
@@ -28825,8 +28893,8 @@
       "Icon": "icons/mission_icons/objective_icons/icon_objective_supplies_drop_zone.png",
       "CostFinish": "0"
     },
-    "NE_C1_NEW14": {
-      "ID": "NE_C1_NEW14",
+    "FE_C1_DEBRIS": {
+      "ID": "FE_C1_DEBRIS",
       "Type": "#ObjectiveType.Clear",
       "Parameter": "#Debris",
       "Goal": "5",
@@ -28835,8 +28903,8 @@
       "Icon": "icons/mission_icons/objective_icons/icon_objective_clear_debris.png",
       "CostFinish": "0"
     },
-    "NE_C1_NEW15": {
-      "ID": "NE_C1_NEW15",
+    "FE_C1_REPAIR_UNIT2": {
+      "ID": "FE_C1_REPAIR_UNIT2",
       "Type": "#ObjectiveType.Repair",
       "Parameter": "#PlayerUnit",
       "Goal": "5",
@@ -28845,8 +28913,8 @@
       "Icon": "icons/mission_icons/objective_icons/icon_objective_repair.png",
       "CostFinish": "0"
     },
-    "NE_C1_NEW16": {
-      "ID": "NE_C1_NEW16",
+    "FE_C1_DESTROY_UNIT_MULTI2": {
+      "ID": "FE_C1_DESTROY_UNIT_MULTI2",
       "Type": "#ObjectiveType.DestroyWithMultiple",
       "Parameter": "#EnemyUnit",
       "Goal": "15",
@@ -28855,8 +28923,8 @@
       "Icon": "icons/mission_icons/objective_icons/icon_objective_destroy_with_multiple.png",
       "CostFinish": "0"
     },
-    "NE_C1_NEW17": {
-      "ID": "NE_C1_NEW17",
+    "FE_C1_NAPALM": {
+      "ID": "FE_C1_NAPALM",
       "Type": "#ObjectiveType.KillWith",
       "Parameter": "#FireMission.Napalm",
       "Goal": "1",

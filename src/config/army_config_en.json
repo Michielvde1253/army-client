@@ -1,5 +1,13 @@
 {
     "TID": {
+        "TOP_EXTENDER": {
+            "ID": "TOP_EXTENDER",
+            "en": "Game End"
+        },
+        "TOP_EXTENDER_DESC": {
+            "ID": "TOP_EXTENDER_DESC",
+            "en": "You beat the game, this is just here to extent the top a bit."
+        },
         "NORTHW_MAP_OBJ_TITLE": {
             "ID": "NORTHW_MAP_OBJ_TITLE",
             "en": "Buy the map of Western Glacier"
@@ -12650,7 +12658,7 @@
         },
         "UNIT_ROCKETEER_DESC": {
             "ID": "UNIT_ROCKETEER_DESC",
-            "en": "Go where no one has gone before!\\n\\nSpecial:\\nFlight (passes through all obstacles).\\nElite (Completely indestructible)"
+            "en": "To boldly go where no one has gone before!\\nSpecial: Flying\\n(moves past all obstacles)"
         },
         "TOURNAMENT_HUNT_TANKS_NAME": {
             "ID": "TOURNAMENT_HUNT_TANKS_NAME",
