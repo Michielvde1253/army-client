@@ -58,23 +58,25 @@
 		}
 
 		private function tabPressed(param1: MouseEvent): void {
-			var fileRef: * = undefined;
-			if (ArmySoundManager.getInstance().isSfxOn()) {
-				ArmySoundManager.getInstance().playSound(ArmySoundManager.SFX_UI_CLICK);
+			CONFIG::BUILD_FOR_MOBILE_AIR {
+				var fileRef: * = undefined;
+				if (ArmySoundManager.getInstance().isSfxOn()) {
+					ArmySoundManager.getInstance().playSound(ArmySoundManager.SFX_UI_CLICK);
+				}
+				switch (param1.target) {
+					case this.mButtonGivePerms.getMovieClip():
+						GameState.mInstance.mSaveLocation = "documents";
+						this.saveSettingsSave(param1);
+						this.buttonSavePressed(param1); // aka save progress
+						break;
+					case this.mButtonDenyPerms.getMovieClip():
+						GameState.mInstance.mSaveLocation = "legacy";
+						this.buttonSavePressed(param1);
+						break;
+				}
+				mDoneCallback((this as Object).constructor);
+				GameState.mInstance.mHUD.openPauseScreen();
 			}
-			switch (param1.target) {
-				case this.mButtonGivePerms.getMovieClip():
-					GameState.mInstance.mSaveLocation = "documents";
-					this.saveSettingsSave(param1);
-					this.buttonSavePressed(param1); // aka save progress
-					break;
-				case this.mButtonDenyPerms.getMovieClip():
-					GameState.mInstance.mSaveLocation = "legacy";
-					this.buttonSavePressed(param1);
-					break;
-			}
-			mDoneCallback((this as Object).constructor);
-			GameState.mInstance.mHUD.openPauseScreen();
 		}
 
 		private function addButton(param1: MovieClip, param2: String, param3: Function): ArmyButton {
@@ -98,7 +100,7 @@
 				}
 				file.addEventListener(PermissionEvent.PERMISSION_STATUS, onPermission);
 				file.requestPermission();
-				if(file2 != null){
+				if (file2 != null) {
 					trace("saved game in appdata as well")
 					file2.addEventListener(PermissionEvent.PERMISSION_STATUS, onPermission);
 					file2.requestPermission();

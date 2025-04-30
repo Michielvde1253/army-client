@@ -573,7 +573,7 @@
 				var saveversion: int = int(savedata["saveversion"]);
 				savedata = fixOldSave(savedata, saveversion);
 
-				// Decrease timers
+				// Decrease timers (worst piece of code ever, forgive me xD)
 				var minus_rechargetime: int = 0;
 				var energy_to_give: int = 0;
 				var time_needed_for_energy: int = 0;
