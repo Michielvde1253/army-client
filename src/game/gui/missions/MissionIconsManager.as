@@ -146,10 +146,6 @@
                if(_loc7_ == -1 && (_loc6_.mType == Mission.TYPE_NORMAL || _loc6_.mType == Mission.TYPE_STORY || _loc6_.mType == Mission.TYPE_TIP || _loc6_.mType == Mission.TYPE_CAMPAIGN))
                {
 				  if (_loc6_.mMapId == map_id){
-					trace("Hi, this is Michiel attempting to fix an annoying issue.");
-					trace("First of all, the map id we're on is " + map_id);
-					trace("Secondly, the map id the mission should appear on is " + _loc6_.mMapId);
-					trace("The mission's ID actually is ")
 					this.mMissionList.push(_loc6_);
 				  }
                }
@@ -167,7 +163,7 @@
          this.mMissionList.sort(sortMissions);
          if(this.mMissionList.length > NUMBER_OF_MISSION_BUTTONS)
          {
-            _loc2_--;
+            //_loc2_--; ?????????????????????????????????
             this.mMissionStackButton.setText(String(this.mMissionList.length - _loc2_),"Header");
             (_loc9_ = (_loc8_ = this.mParentClip.getChildByName("pullout_mission_frame") as MovieClip).getChildByName("pullout_mission") as MovieClip).addChild(this.mMissionStackFrame);
          }
