@@ -89,7 +89,6 @@
 		}
 
 		private function usePressed(param1: MouseEvent): void {
-			trace("usePressed")
 			if (this.mItem is ResourceItem || this.mItem is CollectibleItem) {
 				InventoryDialog(this.mDialog).refresh()
 			}

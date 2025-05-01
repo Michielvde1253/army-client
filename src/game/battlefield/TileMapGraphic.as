@@ -315,25 +315,12 @@
          var _loc5_:Number = _loc2_.getCameraX();
          var _loc6_:Number = _loc2_.getCameraY();
          var _loc7_:Number = _loc1_.mContainer.scaleX;
-		 trace(_loc7_)
          var _loc8_:int = Math.max(0,_loc5_ - _loc3_ / 2 / _loc7_) / _loc1_.mGridDimX;
          var _loc9_:int = Math.max(0,_loc6_ - _loc4_ / 2 / _loc7_) / _loc1_.mGridDimY;
          var _loc10_:int = Math.min(_loc1_.mSizeX * _loc1_.mGridDimX,_loc5_ + _loc3_ / 2 / _loc7_ + _loc1_.mGridDimX) / _loc1_.mGridDimX;
          //var _loc10_:int = (_loc5_ + _loc3_ / 2 / _loc7_ + _loc1_.mGridDimX) / _loc1_.mGridDimX;
          var _loc11_:int = Math.min(_loc1_.mSizeY * _loc1_.mGridDimY,_loc6_ + _loc4_ / 2 / _loc7_ + _loc1_.mGridDimY) / _loc1_.mGridDimY;
          //var _loc11_:int = (_loc6_ + _loc4_ / 2 / _loc7_ + _loc1_.mGridDimY) / _loc1_.mGridDimY;
-		 trace("loc8:")
-		 trace(_loc8_)
-		 trace("loc9:")
-		 trace(_loc9_)
-		 trace("loc10 MIN:")
-		 trace((_loc1_.mSizeX * _loc1_.mGridDimX) / _loc1_.mGridDimX)
-		 trace("loc10 MAX:")
-		 trace(_loc10_)
-		 trace("loc11 MIN:")
-		 trace((_loc1_.mSizeY * _loc1_.mGridDimY) / _loc1_.mGridDimY)
-		 trace("loc11 MAX:")
-		 trace(_loc11_)
          return new Rectangle(_loc8_,_loc9_,_loc10_ - _loc8_,_loc11_ - _loc9_);
       }
       

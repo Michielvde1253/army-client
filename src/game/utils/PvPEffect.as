@@ -69,8 +69,6 @@
             _loc2_ = "power_up_air_support_1_effect";
          }
 		 */
-		 trace("Clip name:")
-		 trace(mEffectClipName)
          if(mEffectClipName != "")
          {
             _loc3_ = _loc1_.getSWFClass("swf/pvp_effects",mEffectClipName);

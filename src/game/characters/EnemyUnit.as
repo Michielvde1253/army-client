@@ -441,7 +441,6 @@
 					_loc3_++;
 				}
 		    
-		    trace("created new activation icon")
 			this.showOffScreenArrowIcon(true);
 
 		}

@@ -196,7 +196,6 @@
 				}
 			}
 			_loc6_ = _loc5_.get(_loc8_);
-			trace("wtf is this: " + _loc6_);
 			this.mGridWidth = _loc7_.Width;
 			this.mGridHeight = _loc7_.Height;
 			if (FeatureTuner.LOAD_TILE_MAP_CSV) {

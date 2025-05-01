@@ -87,7 +87,6 @@
   
 	  private function attackClicked(param1:MouseEvent) : void
       {
-		  trace("but does this work???");
          (this.mDialog as PvPMatchUpDialog).attackPlayer(this.mOpponent);
       }
       

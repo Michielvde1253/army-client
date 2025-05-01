@@ -10119,8 +10119,7 @@
       "AttackRange": 1,
       "MaxAmount": 3,
       "DescriptionReady": "#TID.BUILDING_MASH_READY",
-      "DescriptionNotReady": "#TID.BUILDING_MASH_NOT_READY",
-      "RequiredMission": "#Mission.AREA_SE_WP_HIDDEN"
+      "DescriptionNotReady": "#TID.BUILDING_MASH_NOT_READY"
     },
     "Hospital": {
       "ID": "Hospital",

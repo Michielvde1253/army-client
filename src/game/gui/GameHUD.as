@@ -431,7 +431,7 @@
 			if (this.mVisitingNeighbor) {
 				_loc4_ = _loc2_.getSocialXpForThisLevel();
 				_loc5_ = _loc2_.getSocialXpForNextLevel();
-				trace("this.mNeighborActionsBar.setTargetValues(_loc2_.mNeighborActionsLeft,_loc2_.mMaxNeighborActions);")
+				//this.mNeighborActionsBar.setTargetValues(_loc2_.mNeighborActionsLeft,_loc2_.mMaxNeighborActions);
 			} else {
 				_loc6_ = _loc2_.mEnergy;
 				_loc7_ = _loc2_.mMaxEnergy;
@@ -600,11 +600,11 @@
 			this.mSupplyFrame = this.mIngameHUDClip.getChildByName("Supplies") as MovieClip;
 			this.mSuppliersBar = new BigHudBar(this.mSupplyFrame, true);
 			this.mButtonAddSupply = this.addButton(this.mSupplyFrame, "button_add_supplies", this.suppliesPressed);
-			trace("this.mNeighborActionsFrame = this.mIngameHUDClip.getChildByName('Visitor_Energy') as MovieClip;");
-			trace("this.mNeighborActionsFrame.visible = false;");
-			trace("this.mNeighborActionsBar = new BigHudBar(thi.mNeighborActionsFrame,true);");
-			trace("this.mNeighborName = (this.mNeighborActionsFrame.getChildByName('Owners_Card') as MovieClip).getChildByName('Text_Owner') as TextField;");
-			trace("LocalizationUtils.replaceFont(this.mNeighborName);");
+			//this.mNeighborActionsFrame = this.mIngameHUDClip.getChildByName('Visitor_Energy') as MovieClip;"
+			//this.mNeighborActionsFrame.visible = false;"
+			//this.mNeighborActionsBar = new BigHudBar(thi.mNeighborActionsFrame,true);"
+			//this.mNeighborName = (this.mNeighborActionsFrame.getChildByName('Owners_Card') as MovieClip).getChildByName('Text_Owner') as TextField;"
+			//LocalizationUtils.replaceFont(this.mNeighborName);"
 			this.mEnergyTimerText = new AutoTextField(this.mEnergyFrame.getChildByName("Text_Status") as TextField);
 			this.mButtonAddEnergy = this.addButton(this.mEnergyFrame, "button_add_energy", this.ButtonAddEnergyPressed);
 			this.mXpFrame = this.mIngameHUDClip.getChildByName("Experience") as MovieClip;
@@ -1330,7 +1330,7 @@
 		}
 
 		public function buttonSavePressed(param1: MouseEvent): void {
-			trace("saved game")
+			trace("[MichiDebug] Saved game")
 			CONFIG::BUILD_FOR_AIR {
 				var file: File = new File();
 				file.addEventListener(PermissionEvent.PERMISSION_STATUS, onPermission);
@@ -1354,7 +1354,6 @@
 				file.addEventListener(PermissionEvent.PERMISSION_STATUS, onPermission);
 				file.requestPermission();
 				if(file2 != null){
-					trace("saved game in appdata as well")
 					file2.addEventListener(PermissionEvent.PERMISSION_STATUS, onPermission);
 					file2.requestPermission();
 				}
@@ -1363,7 +1362,7 @@
 
 		CONFIG::BUILD_FOR_MOBILE_AIR {
 			public function autoSaveGame(param1: TimerEvent): void {
-				trace("auto saved game")
+				trace("[MichiDebug] Auto-saved game")
 				// Resolve the file path
 				var file2: File = null;
 				if (GameState.mInstance.mSaveLocation == "documents") {
@@ -1375,7 +1374,6 @@
 				file.addEventListener(PermissionEvent.PERMISSION_STATUS, onPermission);
 				file.requestPermission();
 				if(file2 != null){
-					trace("saved game in appdata as well")
 					file2.addEventListener(PermissionEvent.PERMISSION_STATUS, onPermission);
 					file2.requestPermission();
 				}
@@ -1563,7 +1561,6 @@
 		}
 
 		public function openPvPCombatSetupDialog(): void {
-			trace("sure")
 			this.openDialogIfResourceLoaded("swf/popups_pvp", PvPCombatSetupDialog, [this.closeDialog, this.openPvPMatchUpDialog, this.mGame.startPvP]);
 		}
 
@@ -2059,7 +2056,7 @@
 			}
 			_loc1_.push(this.mXpFrame.getChildByName("HitBox_Xp"));
 			_loc1_.push(this.mXpFrame.getChildByName("HitBox_Level"));
-			trace("_loc1_.push(this.mNeighborActionsFrame.getChildByName('HitBox_Visitor_Energy'));");
+			//_loc1_.push(this.mNeighborActionsFrame.getChildByName('HitBox_Visitor_Energy'));
 			_loc1_.push(this.mEnergyFrame.getChildByName("HitBox_Energy"));
 			_loc1_.push(this.mIngameHUDClip.getChildByName("Supplies"));
 			_loc1_.push(this.mResourceFrame.getChildByName("Button_Cash"));
@@ -2270,7 +2267,7 @@
 		public function setVisitingNeighbor(param1: Boolean): void {
 			this.mEnergyFrame.visible = !param1;
 			this.mXpFrame.visible = !param1;
-			trace("this.mNeighborActionsFrame.visible = param1;");
+			//this.mNeighborActionsFrame.visible = param1;"
 			this.mRankIcon = null;
 			if (param1) {
 				this.mButtonBackHome.setVisible(true);

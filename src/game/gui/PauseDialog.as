@@ -181,7 +181,6 @@
 		}
 		CONFIG::NOT_BUILD_FOR_AIR {
 			public function onComplete(evt: Event): void {
-				trace(this.fileRef.data)
 				var savedata2: * = JSON.parse(this.fileRef.data.toString());
 				loadProgress(savedata2);
 			}

@@ -612,8 +612,6 @@
 			try {
 				var _loc2_: int = this.getStageHeight();
 				var _loc3_: int = this.getStageWidth();
-				trace(_loc2_);
-				trace(_loc3_)
 				this.getHud().resize(_loc3_, _loc2_);
 				if (this.mMissionIconsManager) {
 					this.mMissionIconsManager.resize(_loc3_, _loc2_);
@@ -730,7 +728,6 @@
 						this.mIntroScrollTime += param1;
 						_loc8_ = _loc6_;
 						this.mScene.mCamera.moveTo(_loc5_, _loc7_);
-						trace("just here")
 						++this.mIntroStep;
 					} else if (this.mIntroStep == 1) {
 						_loc9_ = int(mConfig.Tutorial.PlayerUnit.Unit.AreaX);
@@ -993,7 +990,7 @@
 		}
 
 		private function restoreNotificationSettings(): void {
-			trace("DISABLED AS NOTIFICATIONS HAVE BEEN REPLACED WITH FOG OF WAR IN SETTINGS");
+			// DISABLED AS NOTIFICATIONS HAVE BEEN REPLACED WITH FOG OF WAR IN SETTINGS
 			var _loc1_: String = Cookie.readCookieVariable(Config.COOKIE_SETTINGS_NAME, Config.COOKIE_SETTINGS_NAME_NOTIFICATION);
 			if (_loc1_ == "false") {
 				this.setNotificationOn(false);
@@ -1437,7 +1434,6 @@
 		}
 
 		private function setCameraToActivatedCharacter(param1: Boolean = false): void {
-			trace("no here")
 			if (!this.mActivatedPlayerUnit) {
 				return;
 			}
@@ -3235,7 +3231,6 @@
 
 		public function executeSwitchMap(param1: String, param2: Friend = null, param3: Boolean = false): void {
 			OfflineSave.saveOldMap();
-			trace("volgende lijn")
 			var _loc4_: Object = null;
 			if ((this.mVisitingFriend == param2 || this.mVisitingFriend == null && param2 == null) && param1 == this.mCurrentMapId) {
 				return;

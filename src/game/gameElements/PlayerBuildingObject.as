@@ -435,9 +435,6 @@
 			_loc2_.moveCameraToSeeRenderable(this);
 			if (!this.mInQueueForAction) {
 				if (this.isFullHealth()) {
-					trace("object id:")
-					trace(this.mItem)
-					trace(this.mItem.mType)
 					if (_loc2_.mState == GameState.STATE_VISITING_NEIGHBOUR) {
 						if (mNeighborActionAvailable && this is HFEObject) {
 							if (this.mState == STATE_PRODUCING) {

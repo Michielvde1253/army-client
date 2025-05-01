@@ -481,7 +481,6 @@
 						}
 					}
 				} else if (this.mGame.mState == GameState.STATE_PLACE_FIRE_MISSION) {
-					trace("not editing lmao")
 					//this.mFireMissionBeingUsed = this.mGame.mState.mFireMisssionToBePlaced;
 					if (FeatureTuner.USE_MOUSE_FOR_PLACE_ITEMS) {
 						this.fireActive(param1)

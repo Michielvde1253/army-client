@@ -313,13 +313,9 @@
       
       public function attackPlayer(param1:PvPOpponent) : void
       {
-		 trace("DOES IT?????????")
          this.closeDialog();
-		 trace("bruh c'mon")
          GameState.mInstance.mPvPMatch.mOpponent = param1;
-		 trace("yes pls")
          this.mCombatSetupCallBack();
-		 trace("JUST DO IT")
       }
       
       public function updateOpponents() : void

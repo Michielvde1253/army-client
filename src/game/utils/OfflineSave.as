@@ -331,10 +331,7 @@
 
 				all_missions = MissionManager.getMissions();
 				for (j in all_missions) {
-					trace(all_missions[j]["mId"]);
-					trace(all_missions[j]["mState"]);
 					missionobj = {};
-					trace(JSON.stringify(missionsave))
 					if (all_missions[j]["mState"] == 1) {
 						missionobj["mission_id"] = all_missions[j]["mId"];
 						objectives = all_missions[j].getObjectives();
@@ -374,7 +371,6 @@
 			}
 
 			public static function switchMap(): void {
-				trace("start switching map")
 				var map_id: String = GameState.mInstance.mCurrentMapId;
 				GameState.mInstance.mLoadingStatesOver = false;
 				GameState.mInstance.mCurrentMapGraphicsId = Math.max(GameState.GRAPHICS_MAP_ID_LIST.indexOf(map_id), 0);
@@ -492,9 +488,7 @@
 				for (i in all_missions) {
 					var mission: * = MissionManager.getMission(all_missions[i]["mission_id"]);
 					if (mission) {
-						trace(mission.mMapId);
 						if (mission.mMapId == map_id) {
-							trace(all_missions[i]["mission_id"]);
 							selectedMissions.push(all_missions[i]);
 						}
 					}
@@ -548,7 +542,6 @@
 
 				fakedata["allies"] = new Array(); // Unused
 
-				trace(JSON.stringify(GameState.mPvPOpponentsConfig))
 				var possible_opponents: Array = GameState.mPvPOpponentsConfig["pvp_opponents"];
 				fakedata["possible_opponents"] = possible_opponents;
 
@@ -637,7 +630,6 @@
 				fakedata["pvp_data"] = savedata["profile"]["pvp_data"];
 				fakedata["allies"] = new Array(); // Unused
 
-				trace(JSON.stringify(GameState.mPvPOpponentsConfig))
 				var possible_opponents: Array = GameState.mPvPOpponentsConfig["pvp_opponents"];
 				fakedata["possible_opponents"] = possible_opponents;
 

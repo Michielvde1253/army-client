@@ -69,8 +69,6 @@
 					}
 				}
 			}
-			trace("hier")
-			trace(this.mAvailableInMaps)
 		}
 
 		public function hasRequiredBuilding(): Boolean {
@@ -116,7 +114,6 @@
 		}
 
 		public function canBeBuiltOnThisMap(): Boolean {
-			trace(this.mAvailableInMaps)
 			if (this.mAvailableInMaps == null) {
 				return true;
 			}

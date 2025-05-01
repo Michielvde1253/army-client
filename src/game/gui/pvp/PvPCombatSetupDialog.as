@@ -90,7 +90,6 @@
       
       public function PvPCombatSetupDialog()
       {
-		 trace("first point 1");
          var _loc4_:TextField = null;
          var _loc5_:AutoTextField = null;
          var _loc10_:MovieClip = null;
@@ -101,9 +100,7 @@
          this.mOpponentUnitPanels = new Array();
          this.mOpponentUnits = new Array();
          var _loc1_:Class = DCResourceManager.getInstance().getSWFClass("swf/popups_pvp","popup_pvp_armies");
-		 trace("first point 2");
          super(new _loc1_(),true);
-		 trace("first point 3");
          this.mButtonCancel = Utils.createBasicButton(mClip,"Button_Cancel",this.closeClicked);
          this.mPlayerArmy = mClip.getChildByName("Player_Army") as MovieClip;
          this.mPlayerCard = this.mPlayerArmy.getChildByName("Player_Card") as MovieClip;
@@ -114,7 +111,6 @@
          this.mButtonBack = Utils.createBasicButton(_loc2_,"Button_Back",this.backClicked);
          this.mButtonFight = Utils.createBasicButton(_loc2_,"Button_Fight",this.fightClicked);
          this.mButtonBuy = Utils.createBasicButton(_loc2_,"Button_Buy",this.buyClicked);
-		 trace("first point 4");
          var _loc3_:Friend = FriendsCollection.smFriends.GetThePlayer();
          (_loc4_ = this.mPlayerCard.getChildByName("Text_Name") as TextField).text = _loc3_.mName;
          this.mHeader = new StylizedHeaderClip(mClip.getChildByName("Header") as MovieClip);
@@ -127,13 +123,11 @@
          (_loc4_ = _loc2_.getChildByName("Text_Button_Back") as TextField).text = GameState.getText("PVP_SETUP_BACK");
          (_loc4_ = _loc2_.getChildByName("Text_Button_Fight") as TextField).text = GameState.getText("PVP_SETUP_FIGHT");
          (_loc4_ = _loc2_.getChildByName("Text_Button_Buy") as TextField).text = GameState.getText("PVP_SETUP_SHOP");
-		 trace("first point 5");
          var _loc6_:Sprite = this.mPlayerCard.getChildByName("Thumb") as Sprite;
          if(_loc3_ && _loc3_.mPicID != null && _loc3_.mPicID != "")
          {
             IconLoader.addIconPicture(_loc6_,_loc3_.mPicID);
          }
-	     trace("first point 6");
          this.removeChildClip(this.mPlayerArmy,"Button_Scroll_Up");
          this.removeChildClip(this.mPlayerArmy,"Button_Scroll_Down");
          this.removeChildClip(this.mPlayerArmy,"Scrollbar");
@@ -143,34 +137,26 @@
          this.mButtonSelectionScrollUp = Utils.createBasicButton(this.mPlayerArmy,"Selection_Scroll_Up",this.selectionUpClicked);
          this.mButtonSelectionScrollDown = Utils.createBasicButton(this.mPlayerArmy,"Selection_Scroll_Down",this.selectionDownClicked);
          var _loc7_:int = 0;
-	     trace("first point 7");
          while(_loc7_ < UNIT_PANEL_COUNT)
          {
-			trace(_loc7_);
             _loc10_ = this.mPlayerArmy.getChildByName("Army_Slot_0" + (_loc7_ + 1)) as MovieClip;
-			trace("ok?");
             this.mUnitPanels[_loc7_] = new PvPUnitPanel(_loc10_,this.mPlayerArmy,this);
             _loc7_++;
          }
          var _loc8_:int = 0;
-	     trace("first point 8");
          while(_loc8_ < SELECTED_UNIT_PANEL_COUNT)
          {
-			trace(_loc8_);
             _loc10_ = this.mPlayerArmy.getChildByName("Army_Slot_Empty_0" + (_loc8_ + 1)) as MovieClip;
-			trace("ok??");
             this.mSelectedUnitPanels[_loc8_] = new PvPSelectedUnitPanel(_loc10_,this.mPlayerArmy,this);
             _loc8_++;
          }
          var _loc9_:int = 0;
-	     trace("first point 9");
          while(_loc9_ < OPPONENT_UNIT_PANEL_COUNT)
          {
             _loc10_ = this.mOpponentArmy.getChildByName("Army_Slot_Opponent_Active_0" + (_loc9_ + 1)) as MovieClip;
             this.mOpponentUnitPanels[_loc9_] = new PvPOpponentUnitPanel(_loc10_,this.mOpponentArmy);
             _loc9_++;
          }
-	     trace("first point 10");
       }
       
       private function removeChildClip(param1:DisplayObjectContainer, param2:String) : void
@@ -184,7 +170,6 @@
       
       public function Activate(param1:Function, param2:Function, param3:Function) : void
       {
-		 trace("point 1");
          var _loc7_:TextField = null;
          var _loc10_:String = null;
          var _loc11_:Item = null;
@@ -198,28 +183,24 @@
          var _loc4_:PvPOpponent = GameState.mInstance.mPvPMatch.mOpponent;
          this.mOpponentUnits = GameState.mInstance.mPvPMatch.mOpponentUnits;
          var _loc5_:GamePlayerProfile = GameState.mInstance.mPlayerProfile;
-		 trace("point 2");
          var _loc6_:MovieClip;
          (_loc7_ = (_loc6_ = this.mPlayerCard.getChildByName("Rank_Icon") as MovieClip).getChildByName("Text_PvP_Rank") as TextField).text = _loc5_.mBadassLevel.toString();
          (_loc7_ = this.mPlayerCard.getChildByName("Text_Rank") as TextField).text = _loc5_.getBadassName();
          (_loc7_ = this.mOpponentCard.getChildByName("Text_Rank") as TextField).text = _loc4_.getBadassName();
          (_loc7_ = this.mOpponentCard.getChildByName("Text_Name") as TextField).text = _loc4_.mName;
          var _loc8_:Sprite = this.mOpponentCard.getChildByName("Thumb") as Sprite;
-		 trace("point 3");
          if(_loc4_ && _loc4_.mPicID != null && _loc4_.mPicID != "")
          {
             IconLoader.addIconPicture(_loc8_,_loc4_.mPicID);
          }
          (_loc7_ = (_loc6_ = this.mOpponentCard.getChildByName("Rank_Icon") as MovieClip).getChildByName("Text_PvP_Rank") as TextField).text = _loc4_.mBadassLevel.toString();
          (_loc7_ = this.mInfoPanel.getChildByName("Text_Cost_Energy") as TextField).text = GameState.mConfig.PlayerStartValues.Default.PvPCostEnergy;
-         trace("point 4");
 		 if(_loc5_.mEnergy < GameState.mConfig.PlayerStartValues.Default.PvPCostEnergy)
          {
             _loc7_.filters = INSUFFICIENT_RESOURCES_FILTER;
             _loc7_.transform.colorTransform = INSUFFICIENT_RESOURCES_MOD;
          }
          var _loc9_:Object = _loc5_.mGlobalUnitCounts;
-	     trace("point 5");
          for(_loc10_ in _loc9_)
          {
             if(_loc9_[_loc10_] != null && _loc9_[_loc10_] > 0)
@@ -228,14 +209,12 @@
                this.mPlayerUnits.push(_loc13_);
             }
          }
-	     trace("point 6");
          this.mPlayerUnits.sort(this.sortUnits);
          for each(_loc11_ in this.mPlayerUnits)
          {
             this.mPlayerUnitCounts.push(_loc9_[_loc11_.mId]);
          }
          _loc12_ = 0;
-	     trace("point 7");
          while(_loc12_ < OPPONENT_UNIT_PANEL_COUNT)
          {
             _loc14_ = PvPOpponentUnitPanel(this.mOpponentUnitPanels[_loc12_]);
@@ -250,7 +229,6 @@
             }
             _loc12_++;
          }
-	     trace("point 8");
          if(smSelectedUnits == null)
          {
             smSelectedUnits = new Array();
@@ -264,14 +242,10 @@
                _loc15_++;
             }
          }
-		 trace("point 9");
          this.updateWinRewards();
-		 trace("point 10");
          this.updateChanceToWin();
-	     trace("point 11");
          this.refresh();
          doOpeningTransition();
-	     trace("point 12");
       }
       
       private function sortUnits(param1:PlayerUnitItem, param2:PlayerUnitItem) : Number

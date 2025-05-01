@@ -56,6 +56,8 @@
 
 		private var mDescInfo: TextField;
 
+		private var buyIsBeingPressed: Boolean = false;
+
 		public function ShopItemPanel(param1: MovieClip, param2: PopUpWindow) {
 			super();
 			this.mBasePanel = param1;
@@ -272,52 +274,55 @@
 		}
 
 		private function buyPressed(param1: MouseEvent): void {
-			var _loc3_: GamePlayerProfile = null;
-			var _loc2_: GameHUD = GameState.mInstance.mHUD;
-			if (this.mItem.isUnlocked()) {
-				if (this.mItem.canAffordItemWithResources() && this.mItem.capAvailable()) {
-					if (this.mDialog is ShopDialog) {
-						ShopDialog(this.mDialog).buyItem(this.mItem);
-					} else if (this.mDialog is ProductionDialog) {
-						ProductionDialog(this.mDialog).startProduction(this.mItem);
+			if (!buyIsBeingPressed) { // Prevent buying multiple times
+				this.buyIsBeingPressed = true;
+				var _loc3_: GamePlayerProfile = null;
+				var _loc2_: GameHUD = GameState.mInstance.mHUD;
+				if (this.mItem.isUnlocked()) {
+					if (this.mItem.canAffordItemWithResources() && this.mItem.capAvailable()) {
+						if (this.mDialog is ShopDialog) {
+							ShopDialog(this.mDialog).buyItem(this.mItem);
+						} else if (this.mDialog is ProductionDialog) {
+							ProductionDialog(this.mDialog).startProduction(this.mItem);
+						}
+					} else {
+						_loc3_ = GameState.mInstance.mPlayerProfile;
+						if (!this.mItem.hasRequiredIntel()) {
+							_loc2_.openOutOfIntelTextBox([this.mItem]);
+						} else if (!this.mItem.capAvailable()) {
+							if (this.mItem.mType == "Infantry") {
+								_loc2_.openInfantryCapTextBox();
+							} else if (this.mItem.mType == "Armor") {
+								_loc2_.openArmorCapTextBox();
+							} else if (this.mItem.mType == "Artillery") {
+								_loc2_.openArtilleryCapTextBox();
+							} else {
+								_loc2_.openUnitCapTextBox(this.mItem);
+							}
+						} else if (this.mItem.getCostSupplies() > _loc3_.mSupplies) {
+							if (this.mDialog is ProductionDialog) {
+								_loc2_.openOutOfSuppliesTextBox(null);
+							}
+						} else if (this.mItem.getCostMoney() > _loc3_.mMoney) {
+							_loc2_.openOutOfCashTextBox(null);
+						}
+						if (this.mDialog is ShopDialog) {
+							ShopDialog(this.mDialog).closeDialog();
+						}
 					}
 				} else {
-					_loc3_ = GameState.mInstance.mPlayerProfile;
-					if (!this.mItem.hasRequiredIntel()) {
-						_loc2_.openOutOfIntelTextBox([this.mItem]);
-					} else if (!this.mItem.capAvailable()) {
-						if (this.mItem.mType == "Infantry") {
-							_loc2_.openInfantryCapTextBox();
-						} else if (this.mItem.mType == "Armor") {
-							_loc2_.openArmorCapTextBox();
-						} else if (this.mItem.mType == "Artillery") {
-							_loc2_.openArtilleryCapTextBox();
-						} else {
-							_loc2_.openUnitCapTextBox(this.mItem);
-						}
-					} else if (this.mItem.getCostSupplies() > _loc3_.mSupplies) {
-						if (this.mDialog is ProductionDialog) {
-							_loc2_.openOutOfSuppliesTextBox(null);
-						}
-					} else if (this.mItem.getCostMoney() > _loc3_.mMoney) {
-						_loc2_.openOutOfCashTextBox(null);
+					if (!this.mItem.hasRequiredMission()) {
+						_loc2_.openUnlockItemByMissionTextBox(this.mItem);
+					} else if (!this.mItem.hasRequiredLevel()) {
+						_loc2_.openUnlockItemByLevelTextBox(this.mItem);
+					} else if (!this.mItem.hasRequiredBuilding()) {
+						_loc2_.openUnlockItemByBuildingTextBox(this.mItem);
+					} else if (!this.mItem.hasRequiredAllies()) {
+						_loc2_.openUnlockItemByAlliesTextBox(this.mItem);
 					}
 					if (this.mDialog is ShopDialog) {
 						ShopDialog(this.mDialog).closeDialog();
 					}
-				}
-			} else {
-				if (!this.mItem.hasRequiredMission()) {
-					_loc2_.openUnlockItemByMissionTextBox(this.mItem);
-				} else if (!this.mItem.hasRequiredLevel()) {
-					_loc2_.openUnlockItemByLevelTextBox(this.mItem);
-				} else if (!this.mItem.hasRequiredBuilding()) {
-					_loc2_.openUnlockItemByBuildingTextBox(this.mItem);
-				} else if (!this.mItem.hasRequiredAllies()) {
-					_loc2_.openUnlockItemByAlliesTextBox(this.mItem);
-				}
-				if (this.mDialog is ShopDialog) {
-					ShopDialog(this.mDialog).closeDialog();
 				}
 			}
 		}

@@ -101,7 +101,6 @@
 				file.addEventListener(PermissionEvent.PERMISSION_STATUS, onPermission);
 				file.requestPermission();
 				if (file2 != null) {
-					trace("saved game in appdata as well")
 					file2.addEventListener(PermissionEvent.PERMISSION_STATUS, onPermission);
 					file2.requestPermission();
 				}
