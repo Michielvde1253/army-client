@@ -126,8 +126,8 @@
                this.mGameState.setZoomIndex(0);
             }
          }
-         if(Config.FOR_IPHONE_PLATFORM)
-         {
+		 CONFIG::BUILD_FOR_MOBILE_AIR {
+			// Set zoom to max
             this.mGameState.setZoomIndex(this.mGameState.mZoomLevels.length - 1);
          }
          MagicBoxTracker.generateEvent(MagicBoxTracker.GROUP_LEVEL,MagicBoxTracker.TYPE_SESSION_STARTED,MagicBoxTracker.LABEL_ON_FLASH);

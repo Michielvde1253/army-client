@@ -78,6 +78,12 @@
          this.refresh();
          doOpeningTransition();
       }
+
+      /*
+      override public function scaleToScreen(): void {
+         // use default
+      }
+      */
       
       private function getItems() : Array
       {

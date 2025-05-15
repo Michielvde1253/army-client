@@ -45,6 +45,7 @@
 			return this.mCloseTransitionName;
 		}
 
+		/*
 		CONFIG::BUILD_FOR_MOBILE_AIR {
 			public function scaleToScreen(): void {
 				// Get the current stage width and height
@@ -65,6 +66,7 @@
 				mClip.scaleY = scaleFactor;
 			}
 		}
+		*/
 
 		public function alignToScreen(): void {
 			x = GameState.mInstance.getStageWidth() / 2;

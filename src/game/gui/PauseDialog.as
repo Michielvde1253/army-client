@@ -93,6 +93,7 @@
 			doOpeningTransition();
 		}
 
+		/*
 		CONFIG::BUILD_FOR_MOBILE_AIR {
 			override public function scaleToScreen(): void {
 				// Calculate the scaling factors based on the clip's dimensions
@@ -110,6 +111,7 @@
 				mClip.scaleY = scaleFactor;
 			}
 		}
+	*/
 
 		public function startSelectingFile(): void {
 			CONFIG::BUILD_FOR_AIR {

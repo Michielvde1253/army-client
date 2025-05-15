@@ -7,7 +7,7 @@
       "ZoomLevels": "70, 100",
       "ZoomLevelsMobile": "120, 180",
       "MarginX": "186",
-      "MarginY": "93",
+      "MarginY": "300",
       "DefaultCellX": "52",
       "DefaultCellY": "59",
       "FriendlyTerrainVisionRange": "1",
@@ -479,26 +479,6 @@
       "CostUnlock": "150",
       "ImageUrl": "cash_icon.png",
       "DescriptionSecondary": "#TID.AREANORTHE_DESC"
-    },
-    "AreaTopExtender": {
-      "ID": "AreaTopExtender",
-      "MapID": "Home",
-      "Type": "Area",
-      "Name": "#TID.TOP_EXTENDER",
-      "Description": "#TID.TOP_EXTENDER_DESC",
-      "IconGraphics": "icons/shop_icons/icon_expansion_11.png",
-      "AreaX": "36",
-      "AreaY": "23",
-      "AreaWidth": "33",
-      "AreaHeight": "1",
-      "RequiredMission": "#Mission.MAP_LOCK_NE2",
-      "RequiredLevel": "0",
-      "RequiredAllies": "0",
-      "CostMoney": "1000000",
-      "CostIntel": "100",
-      "CostUnlock": "150",
-      "ImageUrl": "cash_icon.png",
-      "DescriptionSecondary": "#TID.TOP_EXTENDER_DESC"
     },
     "DesertS": {
       "ID": "DesertS",
@@ -8653,9 +8633,9 @@
       "Graphics": "explosion_doomsday",
       "RequiredRank": "6",
       "CostSupplies": "0",
-      "DimX": "6",
-      "DimY": "6",
-      "Damage": "60",
+      "DimX": "3",
+      "DimY": "3",
+      "Damage": "6",
       "RechargeTime": "0",
       "RequiredCollection": "#FireMissionItemSets.Set3",
       "RequiredCollectionAmount": "1",
@@ -10004,10 +9984,10 @@
       "RewardMoney": "50",
       "RewardXp": "0",
       "RewardSupplies": "0",
-      "RewardPremium": "3",
+      "RewardPremium": "5",
       "RewardMaterial": "0",
       "RewardEnergy": "100",
-      "Time": "1",
+      "Time": "60",
       "SpoilTime": "0",
       "Health": "10",
       "SightRange": "2",
@@ -10488,7 +10468,7 @@
       "Type": "EnemyInstallation",
       "Name": "#TID.MOUSEOVER_ENEMY_SNIPER",
       "Graphic_idle": "swf/desert_buildings_enemy/building_enemy_sniper_nest",
-      "Graphic_shoot": "swf/desert_buildings_enemy/building_enemy_sniper_nest",
+      "Graphic_shoot": "swf/desert_buildings_enemy/building_enemy_sniper_nest_fire",
       "Graphic_hit": "swf/desert_buildings_enemy/building_enemy_sniper_nest",
       "Graphic_destroy": "swf/effects_low/effect_explosion",
       "ObjectClass": "game.gameElements.EnemyInstallationObject",
@@ -12710,99 +12690,87 @@
   "SpawnLevels": {
     "0": {
       "ID": "0",
-      "ActivationTime": "60",
+      "ActivationTime": "0",
       "EnemyAmount": "2",
-      "EnemyUnits": "#EnemyUnit.Scout, #EnemyUnit.Infantry, #EnemyUnit.SupplyTruck",
-      "EnemyUnitsP": "40, 40, 20",
-      "SpawnAmountPerArea": "3"
+      "EnemyUnits": "#EnemyUnit.Scout, #EnemyUnit.Infantry",
+      "SpawnAmountPerArea": "2"
     },
     "5": {
       "ID": "5",
-      "ActivationTime": "60",
+      "ActivationTime": "0",
       "EnemyAmount": "3",
-      "EnemyUnits": "#EnemyUnit.Scout, #EnemyUnit.Infantry, #EnemyUnit.APC, #EnemyUnit.SupplyTruck",
-      "EnemyUnitsP": "25, 40, 10, 25",
+      "EnemyUnits": "#EnemyUnit.Scout, #EnemyUnit.Infantry, #EnemyUnit.APC",
       "SpawnAmountPerArea": "3"
     },
     "10": {
       "ID": "10",
-      "ActivationTime": "90",
-      "EnemyAmount": "3",
-      "EnemyUnits": "#EnemyUnit.Scout, #EnemyUnit.Infantry, #EnemyUnit.APC, #EnemyUnit.Warfly, #EnemyUnit.SupplyTruck",
-      "EnemyUnitsP": "30, 35, 10, 5, 20",
-      "SpawnAmountPerArea": "3"
-    },
-    "13": {
-      "ID": "13",
-      "ActivationTime": "90",
+      "ActivationTime": "0",
       "EnemyAmount": "4",
-      "EnemyUnits": "#EnemyUnit.Scout, #EnemyUnit.Infantry, #EnemyUnit.APC, #EnemyUnit.Artillery, #EnemyUnit.Warfly, #EnemyUnit.SupplyTruck",
-      "EnemyUnitsP": "15, 30, 20, 10, 10, 15",
-      "SpawnAmountPerArea": "3"
+      "EnemyUnits": "#EnemyUnit.Scout, #EnemyUnit.Infantry, #EnemyUnit.APC, #EnemyUnit.Artillery",
+      "SpawnAmountPerArea": "4"
     },
-    "17": {
-      "ID": "17",
-      "ActivationTime": "60",
+    "15": {
+      "ID": "15",
+      "ActivationTime": "0",
       "EnemyAmount": "5",
-      "EnemyUnits": "#EnemyUnit.Scout, #EnemyUnit.Infantry, #EnemyUnit.APC, #EnemyUnit.Artillery, #EnemyUnit.Warfly, #EnemyUnit.SupplyTruck",
-      "EnemyUnitsP": "20, 20, 15, 15, 15, 15",
-      "SpawnAmountPerArea": "3"
+      "EnemyUnits": "#EnemyUnit.Scout, #EnemyUnit.Infantry, #EnemyUnit.APC, #EnemyUnit.Artillery, #EnemyUnit.StormTroop",
+      "SpawnAmountPerArea": "5"
     },
     "20": {
       "ID": "20",
-      "ActivationTime": "60",
-      "EnemyAmount": "5",
-      "EnemyUnits": "#EnemyUnit.Scout, #EnemyUnit.Infantry, #EnemyUnit.APC, #EnemyUnit.StormTroop, #EnemyUnit.Artillery,  #EnemyUnit.RocketBattery, #EnemyUnit.Armor, #EnemyUnit.Warfly, #EnemyUnit.SupplyTruck",
-      "EnemyUnitsP": "15, 20, 15, 3, 10, 4, 3, 15, 15",
-      "SpawnAmountPerArea": "4"
+      "ActivationTime": "0",
+      "EnemyAmount": "6",
+      "EnemyUnits": "#EnemyUnit.Scout, #EnemyUnit.Infantry, #EnemyUnit.APC, #EnemyUnit.Artillery, #EnemyUnit.StormTroop, #EnemyUnit.Warfly",
+      "SpawnAmountPerArea": "6"
     },
-    "23": {
-      "ID": "23",
-      "ActivationTime": "60",
-      "EnemyAmount": "5",
-      "EnemyUnits": "#EnemyUnit.Scout, #EnemyUnit.Infantry, #EnemyUnit.APC, #EnemyUnit.StormTroop, #EnemyUnit.Artillery,  #EnemyUnit.RocketBattery, #EnemyUnit.Armor, #EnemyUnit.Warfly, #EnemyUnit.SupplyTruck",
-      "EnemyUnitsP": "10, 20, 20, 5, 10, 5, 5, 15, 10",
-      "SpawnAmountPerArea": "5"
+    "25": {
+      "ID": "25",
+      "ActivationTime": "0",
+      "EnemyAmount": "7",
+      "EnemyUnits": "#EnemyUnit.Scout, #EnemyUnit.Infantry, #EnemyUnit.APC, #EnemyUnit.Artillery, #EnemyUnit.StormTroop, #EnemyUnit.Warfly, #EnemyUnit.Armor",
+      "SpawnAmountPerArea": "7"
     },
     "30": {
       "ID": "30",
-      "ActivationTime": "30",
-      "EnemyAmount": "6",
-      "EnemyUnits": "#EnemyUnit.Scout, #EnemyUnit.Infantry, #EnemyUnit.APC, #EnemyUnit.StormTroop, #EnemyUnit.Artillery,  #EnemyUnit.RocketBattery, #EnemyUnit.Armor, #EnemyUnit.SupplyTruck",
-      "EnemyUnitsP": "5, 10, 20, 20, 15, 15, 10, 5",
-      "SpawnAmountPerArea": "6"
+      "ActivationTime": "0",
+      "EnemyAmount": "8",
+      "EnemyUnits": "#EnemyUnit.Scout, #EnemyUnit.Infantry, #EnemyUnit.APC, #EnemyUnit.Artillery, #EnemyUnit.StormTroop, #EnemyUnit.Warfly, #EnemyUnit.Armor, #EnemyUnit.RocketBattery",
+      "SpawnAmountPerArea": "8"
+    },
+    "35": {
+      "ID": "35",
+      "ActivationTime": "0",
+      "EnemyAmount": "9",
+      "EnemyUnits": "#EnemyUnit.Scout, #EnemyUnit.Infantry, #EnemyUnit.APC, #EnemyUnit.Artillery, #EnemyUnit.StormTroop, #EnemyUnit.Warfly, #EnemyUnit.Armor, #EnemyUnit.RocketBattery, #EnemyUnit.SupplyTruck",
+      "SpawnAmountPerArea": "9"
     },
     "40": {
       "ID": "40",
-      "ActivationTime": "20",
-      "EnemyAmount": "7",
-      "EnemyUnits": "#EnemyUnit.Scout, #EnemyUnit.Infantry, #EnemyUnit.APC, #EnemyUnit.StormTroop, #EnemyUnit.Artillery,  #EnemyUnit.RocketBattery, #EnemyUnit.Armor, #EnemyUnit.EliteWarfly, #EnemyUnit.SupplyTruck",
-      "EnemyUnitsP": "10, 15, 15, 15, 15, 15, 10, 2, 3",
-      "SpawnAmountPerArea": "7"
+      "ActivationTime": "0",
+      "EnemyAmount": "10",
+      "EnemyUnits": "#EnemyUnit.Scout, #EnemyUnit.Infantry, #EnemyUnit.APC, #EnemyUnit.Artillery, #EnemyUnit.StormTroop, #EnemyUnit.Warfly, #EnemyUnit.Armor, #EnemyUnit.RocketBattery, #EnemyUnit.SupplyTruck, #EnemyUnit.Droid",
+      "SpawnAmountPerArea": "10"
+    },
+    "45": {
+      "ID": "45",
+      "ActivationTime": "0",
+      "EnemyAmount": "11",
+      "EnemyUnits": "#EnemyUnit.Scout, #EnemyUnit.Infantry, #EnemyUnit.APC, #EnemyUnit.Artillery, #EnemyUnit.StormTroop, #EnemyUnit.Warfly, #EnemyUnit.Armor, #EnemyUnit.RocketBattery, #EnemyUnit.SupplyTruck, #EnemyUnit.Droid, #EnemyUnit.EliteWarfly",
+      "SpawnAmountPerArea": "11"
     },
     "50": {
       "ID": "50",
-      "ActivationTime": "20",
-      "EnemyAmount": "8",
-      "EnemyUnits": "#EnemyUnit.Scout, #EnemyUnit.Infantry, #EnemyUnit.APC, #EnemyUnit.StormTroop, #EnemyUnit.Artillery,  #EnemyUnit.RocketBattery, #EnemyUnit.Armor, #EnemyUnit.EliteWarfly, #EnemyUnit.SupplyTruck",
-      "EnemyUnitsP": "5, 10, 10, 25, 15, 15, 15, 3, 2",
-      "SpawnAmountPerArea": "7"
+      "ActivationTime": "0",
+      "EnemyAmount": "12",
+      "EnemyUnits": "#EnemyUnit.Scout, #EnemyUnit.Infantry, #EnemyUnit.APC, #EnemyUnit.Artillery, #EnemyUnit.StormTroop, #EnemyUnit.Warfly, #EnemyUnit.Armor, #EnemyUnit.RocketBattery, #EnemyUnit.SupplyTruck, #EnemyUnit.Droid, #EnemyUnit.EliteWarfly, #EnemyUnit.Bulldozer",
+      "SpawnAmountPerArea": "12"
     },
-    "60": {
-      "ID": "60",
-      "ActivationTime": "20",
-      "EnemyAmount": "9",
-      "EnemyUnits": "#EnemyUnit.Scout, #EnemyUnit.Infantry, #EnemyUnit.APC, #EnemyUnit.StormTroop, #EnemyUnit.Artillery,  #EnemyUnit.RocketBattery, #EnemyUnit.Armor, #EnemyUnit.EliteWarfly, #EnemyUnit.SupplyTruck",
-      "EnemyUnitsP": "5, 10, 10, 25, 15, 15, 15, 4, 1",
-      "SpawnAmountPerArea": "8"
-    },
-    "70": {
-      "ID": "70",
-      "ActivationTime": "20",
-      "EnemyAmount": "9",
-      "EnemyUnits": "#EnemyUnit.Scout, #EnemyUnit.Infantry, #EnemyUnit.APC, #EnemyUnit.StormTroop, #EnemyUnit.Artillery,  #EnemyUnit.RocketBattery, #EnemyUnit.Armor, #EnemyUnit.EliteWarfly, #EnemyUnit.SupplyTruck",
-      "EnemyUnitsP": "4, 10, 10, 25, 15, 15, 15, 5, 1",
-      "SpawnAmountPerArea": "9"
+    "55": {
+      "ID": "55",
+      "ActivationTime": "0",
+      "EnemyAmount": "13",
+      "EnemyUnits": "#EnemyUnit.Scout, #EnemyUnit.Infantry, #EnemyUnit.APC, #EnemyUnit.Artillery, #EnemyUnit.StormTroop, #EnemyUnit.Warfly, #EnemyUnit.Armor, #EnemyUnit.RocketBattery, #EnemyUnit.SupplyTruck, #EnemyUnit.Droid, #EnemyUnit.EliteWarfly, #EnemyUnit.Bulldozer, #EnemyUnit.PremiumTank",
+      "SpawnAmountPerArea": "13"
     }
   },
   "Debris": {
@@ -24607,6 +24575,7 @@
       "MapId": "Home",
       "Name": "#TID.NE2_C3_TITLE",
       "Description": "#TID.NE2_C3_DESC",
+      "CompletionText": "#TID.NE2_C3_COMPL",
       "Icon": "icons/mission_icons/icon_mission_clear.png",
       "RequiredMissions": "#Mission.INTRO_NE2_3",
       "Objectives": "#Objective.FE_C1_DEBRIS, #Objective.FE_C1_REPAIR_UNIT2",

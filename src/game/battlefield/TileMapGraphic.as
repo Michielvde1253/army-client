@@ -880,6 +880,7 @@
                   }
                }
                this.drawClouds(_loc7_,_loc8_,_loc5_);
+			   this.drawBorderEdges(_loc7_,_loc8_);
                _loc8_++;
             }
             _loc7_++;
@@ -887,17 +888,17 @@
          this.mTargetBitmap = this.mFieldBmp;
          this.mTargetBitmapArray = this.mFieldBmpArray;
          this.mTargetMovieClip = this.mFieldMovieClip;
-         _loc7_ = param1;
-         while(_loc7_ < param3)
-         {
-            _loc8_ = param2;
-            while(_loc8_ < param4)
-            {
-               this.drawBorderEdges(_loc7_,_loc8_);
-               _loc8_++;
-            }
-            _loc7_++;
-         }
+         //_loc7_ = param1;
+         //while(_loc7_ < param3)
+         //{
+         //   _loc8_ = param2;
+         //   while(_loc8_ < param4)
+         //   {
+         //      this.drawBorderEdges(_loc7_,_loc8_);
+         //      _loc8_++;
+         //   }
+         //   _loc7_++;
+         //}
          if(GameState.needToUpdatePermanentHFE)
          {
             this.updatePermanentHFEs();

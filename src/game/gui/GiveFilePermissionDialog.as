@@ -68,6 +68,8 @@
 						GameState.mInstance.mSaveLocation = "documents";
 						this.saveSettingsSave(param1);
 						this.buttonSavePressed(param1); // aka save progress
+						this.buttonSavePressed(param1); // twice as giving permission ruins the saving
+						this.saveSettingsSave(param1);
 						break;
 					case this.mButtonDenyPerms.getMovieClip():
 						GameState.mInstance.mSaveLocation = "legacy";

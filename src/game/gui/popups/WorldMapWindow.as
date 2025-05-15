@@ -84,6 +84,7 @@
 			MissionManager.increaseCounter("OpenMap", null, 1);
 		}
 
+		/*
 		CONFIG::BUILD_FOR_MOBILE_AIR {
 			override public function scaleToScreen(): void {
 				// Get the current stage width and height
@@ -104,6 +105,7 @@
 				mClip.scaleY = scaleFactor;
 			}
 		}
+		*/
 
 		private function setupIcon(param1: MovieClip): void {
 			param1.setMouseEnabled(false);

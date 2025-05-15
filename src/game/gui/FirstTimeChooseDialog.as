@@ -54,6 +54,7 @@
 			doOpeningTransition();
 		}
 
+		/*
 		CONFIG::BUILD_FOR_MOBILE_AIR {
 			override public function scaleToScreen(): void {
 				// Calculate the scaling factors based on the clip's dimensions
@@ -69,6 +70,7 @@
 				mClip.scaleY = scaleYFactor;
 			}
 		}
+	*/
 
 
 		private function tabPressed(param1: MouseEvent): void {

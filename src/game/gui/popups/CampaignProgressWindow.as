@@ -72,6 +72,7 @@
 			}
 		}
 
+		/*
 		CONFIG::BUILD_FOR_MOBILE_AIR {
 			override public function scaleToScreen(): void {
 				// Get the current stage width and height
@@ -92,6 +93,7 @@
 				mClip.scaleY = scaleFactor;
 			}
 		}
+		*/
 
 		private function installCharacter(): Boolean {
 			var _loc2_: MovieClip = null;

@@ -74,6 +74,8 @@
       public static const USE_ZOOM_IN_OUT:Boolean = true;
       
       public static const USE_MOUSE_FOR_PLACE_ITEMS:Boolean = true;
+	  
+      public static const USE_HINT_HEALTH:Boolean = true;
        
       
       public function FeatureTuner()

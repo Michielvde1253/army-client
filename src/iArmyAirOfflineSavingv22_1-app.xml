@@ -16,7 +16,7 @@
 	<text xml:lang="ja">Japanese App name goes here</text>
 	</name>
 -->
-<application xmlns="http://ns.adobe.com/air/application/50.2">
+<application xmlns="http://ns.adobe.com/air/application/51.2">
   <id>iArmyAirOfflineSavingv221</id>
   <versionNumber>1.0.0</versionNumber>
   <versionLabel/>
@@ -29,13 +29,21 @@
     <systemChrome>standard</systemChrome>
     <transparent>false</transparent>
     <visible>true</visible>
-    <fullScreen>false</fullScreen>
-    <aspectRatio>portrait</aspectRatio>
-    <renderMode>cpu</renderMode>
-  </initialWindow>
+    <fullScreen>true</fullScreen>
+    <aspectRatio>landscape</aspectRatio>
+    <renderMode>auto</renderMode>
+    <autoOrients>false</autoOrients></initialWindow>
   <icon/>
   <customUpdateUI>false</customUpdateUI>
   <allowBrowserInvocation>false</allowBrowserInvocation>
+
+
+  <android>
+    <manifestAdditions><![CDATA[<manifest>
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+<uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"/>
+</manifest>]]></manifestAdditions>
+  </android>
   
   
   
@@ -54,6 +62,63 @@
   
   
   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <iPhone>
+    <InfoAdditions><![CDATA[
+  <key>UIDeviceFamily</key>
+  <array>
+    <string>1</string>
+    <string>2</string>
+  </array>
+]]></InfoAdditions>
+    <requestedDisplayResolution>standard</requestedDisplayResolution>
+  </iPhone>
   
   
   

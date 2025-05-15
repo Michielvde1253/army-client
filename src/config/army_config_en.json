@@ -624,6 +624,10 @@
             "ID": "NE2_C3_DESC",
             "en": "Clear this new land from the mess"
         },
+        "NE2_C3_COMPL": {
+            "ID": "NE2_C3_COMPL",
+            "en": "Good job! That rubbish won't disturb us anymore."
+        },
         "NE2_C4_TITLE": {
             "ID": "NE2_C4_TITLE",
             "en": "Invansion..?"

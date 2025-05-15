@@ -82,6 +82,7 @@
 			}
 		}
 
+		/*
 		CONFIG::BUILD_FOR_MOBILE_AIR {
 			override public function scaleToScreen(): void {
 				var stageWidth: Number = GameState.mInstance.getStageWidth();
@@ -98,6 +99,7 @@
 				mClip.scaleY = scaleFactor;
 			}
 		}
+	*/
 
 		private function installCharacter(): void {
 			if (Boolean(this.mCharacter) && Boolean(this.mCharacter.parent)) {

@@ -101,6 +101,7 @@
 			doOpeningTransition();
 		}
 
+		/*
 		CONFIG::BUILD_FOR_MOBILE_AIR {
 			override public function scaleToScreen(): void {
 				// Get the current stage width and height
@@ -121,6 +122,7 @@
 				mClip.scaleY = scaleFactor;
 			}
 		}
+		*/
 
 		public function initFireSlot(): void {
 			this.mButtonLaunch = Utils.createBasicButton(mClip as DisplayObjectContainer, "button_launch_enabled", this.launchPressed);

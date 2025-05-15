@@ -36,17 +36,21 @@
 				if (param2 == null) {
 					_loc4_ = new param1();
 					_loc4_.alignToScreen();
+					/*
 					CONFIG::BUILD_FOR_MOBILE_AIR {
 						_loc4_.scaleToScreen();
 					}
+					*/
 					mPopups[_loc3_] = _loc4_;
 					trace("[PopUpManager] Created new popup: " + param1);
 				} else {
 					_loc5_ = new param1(param2);
 					_loc5_.alignToScreen();
+					/*
 					CONFIG::BUILD_FOR_MOBILE_AIR {
 						_loc5_.scaleToScreen();
 					}
+					*/
 					mPopups[_loc3_] = _loc5_;
 					trace("[PopUpManager] Created new popup with parameters: " + param1);
 				}

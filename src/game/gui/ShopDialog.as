@@ -205,6 +205,12 @@
          }
          doOpeningTransition();
       }
+
+	  /*
+      override public function scaleToScreen(): void {
+         // use default
+      }
+	  */
       
       public function activateShopTabButtons() : void
       {
