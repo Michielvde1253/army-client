@@ -9971,9 +9971,9 @@
       "ObjectClass": "game.gameElements.ConstructionObject",
       "RequiredLevel": "0",
       "RequiredAllies": "0",
-      "CostMoney": "25000",
+      "CostMoney": "0",
       "CostSupplies": "0",
-      "CostPremium": "0",
+      "CostPremium": "99",
       "BuildSteps": "0",
       "MaterialPerStep": "0",
       "XPPerStep": "3",
@@ -9984,10 +9984,10 @@
       "RewardMoney": "50",
       "RewardXp": "0",
       "RewardSupplies": "0",
-      "RewardPremium": "5",
+      "RewardPremium": "3",
       "RewardMaterial": "0",
       "RewardEnergy": "100",
-      "Time": "60",
+      "Time": "480",
       "SpoilTime": "0",
       "Health": "10",
       "SightRange": "2",
@@ -10002,7 +10002,8 @@
       "HealRewardXP": "1",
       "HealRewardEnergy": "110",
       "CostUnlock": "1",
-      "ImageUrl": "cash_icon.png"
+      "ImageUrl": "cash_icon.png",
+      "MaxAmount": "3"
     }
   },
   "ResourceBuilding": {
@@ -10062,7 +10063,7 @@
       "ObjectClass": "game.gameElements.HospitalBuilding",
       "RequiredLevel": "0",
       "RequiredAllies": "0",
-      "CostMoney": "75000",
+      "CostMoney": "15000",
       "CostSupplies": "0",
       "CostPremium": "0",
       "BuildSteps": "0",
@@ -10072,13 +10073,13 @@
       "DimX": "2",
       "DimY": "2",
       "DimZ": "1",
-      "RewardMoney": "50",
+      "RewardMoney": "0",
       "RewardXp": "0",
       "RewardSupplies": "0",
-      "RewardPremium": "3",
+      "RewardPremium": "0",
       "RewardMaterial": "0",
       "RewardEnergy": "100",
-      "Time": "1",
+      "Time": "300",
       "SpoilTime": "0",
       "Health": "10",
       "SightRange": "2",
@@ -10123,13 +10124,13 @@
       "DimX": "2",
       "DimY": "2",
       "DimZ": "1",
-      "RewardMoney": "50",
+      "RewardMoney": "0",
       "RewardXp": "0",
       "RewardSupplies": "0",
-      "RewardPremium": "3",
+      "RewardPremium": "0",
       "RewardMaterial": "0",
       "RewardEnergy": "100",
-      "Time": "1",
+      "Time": "360",
       "SpoilTime": "0",
       "Health": "10",
       "SightRange": "2",
@@ -12690,84 +12691,84 @@
   "SpawnLevels": {
     "0": {
       "ID": "0",
-      "ActivationTime": "0",
+      "ActivationTime": "50",
       "EnemyAmount": "2",
       "EnemyUnits": "#EnemyUnit.Scout, #EnemyUnit.Infantry",
-      "SpawnAmountPerArea": "2"
+      "SpawnAmountPerArea": "200"
     },
     "5": {
       "ID": "5",
-      "ActivationTime": "0",
+      "ActivationTime": "50",
       "EnemyAmount": "3",
       "EnemyUnits": "#EnemyUnit.Scout, #EnemyUnit.Infantry, #EnemyUnit.APC",
       "SpawnAmountPerArea": "3"
     },
     "10": {
       "ID": "10",
-      "ActivationTime": "0",
+      "ActivationTime": "45",
       "EnemyAmount": "4",
       "EnemyUnits": "#EnemyUnit.Scout, #EnemyUnit.Infantry, #EnemyUnit.APC, #EnemyUnit.Artillery",
       "SpawnAmountPerArea": "4"
     },
     "15": {
       "ID": "15",
-      "ActivationTime": "0",
+      "ActivationTime": "45",
       "EnemyAmount": "5",
       "EnemyUnits": "#EnemyUnit.Scout, #EnemyUnit.Infantry, #EnemyUnit.APC, #EnemyUnit.Artillery, #EnemyUnit.StormTroop",
       "SpawnAmountPerArea": "5"
     },
     "20": {
       "ID": "20",
-      "ActivationTime": "0",
+      "ActivationTime": "40",
       "EnemyAmount": "6",
       "EnemyUnits": "#EnemyUnit.Scout, #EnemyUnit.Infantry, #EnemyUnit.APC, #EnemyUnit.Artillery, #EnemyUnit.StormTroop, #EnemyUnit.Warfly",
       "SpawnAmountPerArea": "6"
     },
     "25": {
       "ID": "25",
-      "ActivationTime": "0",
+      "ActivationTime": "40",
       "EnemyAmount": "7",
       "EnemyUnits": "#EnemyUnit.Scout, #EnemyUnit.Infantry, #EnemyUnit.APC, #EnemyUnit.Artillery, #EnemyUnit.StormTroop, #EnemyUnit.Warfly, #EnemyUnit.Armor",
       "SpawnAmountPerArea": "7"
     },
     "30": {
       "ID": "30",
-      "ActivationTime": "0",
+      "ActivationTime": "35",
       "EnemyAmount": "8",
       "EnemyUnits": "#EnemyUnit.Scout, #EnemyUnit.Infantry, #EnemyUnit.APC, #EnemyUnit.Artillery, #EnemyUnit.StormTroop, #EnemyUnit.Warfly, #EnemyUnit.Armor, #EnemyUnit.RocketBattery",
       "SpawnAmountPerArea": "8"
     },
     "35": {
       "ID": "35",
-      "ActivationTime": "0",
+      "ActivationTime": "35",
       "EnemyAmount": "9",
       "EnemyUnits": "#EnemyUnit.Scout, #EnemyUnit.Infantry, #EnemyUnit.APC, #EnemyUnit.Artillery, #EnemyUnit.StormTroop, #EnemyUnit.Warfly, #EnemyUnit.Armor, #EnemyUnit.RocketBattery, #EnemyUnit.SupplyTruck",
       "SpawnAmountPerArea": "9"
     },
     "40": {
       "ID": "40",
-      "ActivationTime": "0",
+      "ActivationTime": "30",
       "EnemyAmount": "10",
       "EnemyUnits": "#EnemyUnit.Scout, #EnemyUnit.Infantry, #EnemyUnit.APC, #EnemyUnit.Artillery, #EnemyUnit.StormTroop, #EnemyUnit.Warfly, #EnemyUnit.Armor, #EnemyUnit.RocketBattery, #EnemyUnit.SupplyTruck, #EnemyUnit.Droid",
       "SpawnAmountPerArea": "10"
     },
     "45": {
       "ID": "45",
-      "ActivationTime": "0",
+      "ActivationTime": "30",
       "EnemyAmount": "11",
       "EnemyUnits": "#EnemyUnit.Scout, #EnemyUnit.Infantry, #EnemyUnit.APC, #EnemyUnit.Artillery, #EnemyUnit.StormTroop, #EnemyUnit.Warfly, #EnemyUnit.Armor, #EnemyUnit.RocketBattery, #EnemyUnit.SupplyTruck, #EnemyUnit.Droid, #EnemyUnit.EliteWarfly",
       "SpawnAmountPerArea": "11"
     },
     "50": {
       "ID": "50",
-      "ActivationTime": "0",
+      "ActivationTime": "25",
       "EnemyAmount": "12",
       "EnemyUnits": "#EnemyUnit.Scout, #EnemyUnit.Infantry, #EnemyUnit.APC, #EnemyUnit.Artillery, #EnemyUnit.StormTroop, #EnemyUnit.Warfly, #EnemyUnit.Armor, #EnemyUnit.RocketBattery, #EnemyUnit.SupplyTruck, #EnemyUnit.Droid, #EnemyUnit.EliteWarfly, #EnemyUnit.Bulldozer",
       "SpawnAmountPerArea": "12"
     },
     "55": {
       "ID": "55",
-      "ActivationTime": "0",
+      "ActivationTime": "25",
       "EnemyAmount": "13",
       "EnemyUnits": "#EnemyUnit.Scout, #EnemyUnit.Infantry, #EnemyUnit.APC, #EnemyUnit.Artillery, #EnemyUnit.StormTroop, #EnemyUnit.Warfly, #EnemyUnit.Armor, #EnemyUnit.RocketBattery, #EnemyUnit.SupplyTruck, #EnemyUnit.Droid, #EnemyUnit.EliteWarfly, #EnemyUnit.Bulldozer, #EnemyUnit.PremiumTank",
       "SpawnAmountPerArea": "13"
@@ -13203,7 +13204,7 @@
       "Graphic_move_up": "swf/units_enemy_start_low/enemy_premium_tank_moving_ne",
       "Graphic_air_drop": "swf/units_enemy_late_low/enemy_super_tank_airdrop",
       "ObjectClass": "game.characters.EnemyUnit",
-      "CloudShadow": "icons/enemy_cloud_shadows/cloud_shadow_battle_tank.png",
+      "CloudShadow": "icons/enemy_cloud_shadows/cloud_shadow_premium_tank.png",
       "Health": "45",
       "Damage": "8",
       "AttackRange": "1",

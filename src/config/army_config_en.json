@@ -1,5 +1,9 @@
 {
     "TID": {
+        "NE2_C3_COMPL": {
+            "ID": "NE2_C3_COMPL",
+            "en": "Good job! That rubbish won't disturb us anymore."
+        },
         "TOP_EXTENDER": {
             "ID": "TOP_EXTENDER",
             "en": "Game End"
@@ -46,7 +50,7 @@
         },
         "BUILDING_HOSPITAL_DESC": {
             "ID": "BUILDING_HOSPITAL_DESC",
-            "en": "Heals one nearby unit with 10 HP every x hours"
+            "en": "Heals one nearby unit with 10 HP every 6 hours"
         },
         "BUILDING_MASH": {
             "ID": "BUILDING_MASH",
@@ -54,7 +58,7 @@
         },
         "BUILDING_MASH_DESC": {
             "ID": "BUILDING_MASH_DESC",
-            "en": "Heals one nearby unit with 5 HP every x hours"
+            "en": "Heals one nearby unit with 5 HP every 5 hours"
         },
         "BUILDING_MASH_READY": {
             "ID": "BUILDING_MASH_READY",
@@ -302,15 +306,15 @@
         },
         "INTRO_NC2_DIALOG_1": {
             "ID": "INTRO_NC2_DIALOG_1",
-            "en": "Pravus in on something once again. We have to stop him!"
+            "en": "Pravus is in on something once again. We have to stop him!"
         },
         "INTRO_NC2_DIALOG_2": {
             "ID": "INTRO_NC2_DIALOG_2",
-            "en": "Soldiers are ready to whatever Crimson have prepared for us!"
+            "en": "Soldiers are ready to take on whatever Crimson has prepared for us!"
         },
         "INTRO_NC2_DIALOG_3": {
             "ID": "INTRO_NC2_DIALOG_3",
-            "en": "Stop making of this secret weapon before its too late Commander!"
+            "en": "Stop the making of this secret weapon before its too late, Commander!"
         },
         "NC2_C1_TITLE": {
             "ID": "NC2_C1_TITLE",
@@ -498,7 +502,7 @@
         },
         "INTRO_NE2_DIALOG_1": {
             "ID": "INTRO_NE2_DIALOG_1",
-            "en": "So this is it...final battle on Homeland?"
+            "en": "So this is it... the final battle on Homeland?"
         },
         "INTRO_NE2_DIALOG_2": {
             "ID": "INTRO_NE2_DIALOG_2",
@@ -624,10 +628,6 @@
             "ID": "NE2_C3_DESC",
             "en": "Clear this new land from the mess"
         },
-        "NE2_C3_COMPL": {
-            "ID": "NE2_C3_COMPL",
-            "en": "Good job! That rubbish won't disturb us anymore."
-        },
         "NE2_C4_TITLE": {
             "ID": "NE2_C4_TITLE",
             "en": "Invansion..?"
@@ -690,7 +690,7 @@
         },
         "NE2_C1_OBJC_17_DESC": {
             "ID": "NE2_C1_OBJC_17_DESC",
-            "en": "Send Napalm Strike"
+            "en": "Kill enemy units with a Napalm firecall"
         },
         "CAMPAIGN_NW_1_MISSION_COMPLETION_1": {
             "ID": "CAMPAIGN_NW_1_MISSION_COMPLETION_1",
@@ -698,11 +698,11 @@
         },
         "CAMPAIGN_NW_1_MISSION_COMPLETION_2": {
             "ID": "CAMPAIGN_NW_1_MISSION_COMPLETION_2",
-            "en": "Well well well..you succefully rescued your units. Less pointless thing for us to take care of."
+            "en": "Well well well... you successfully rescued your units. Less pointless things for us to take care of."
         },
         "CAMPAIGN_NW_1_MISSION_COMPLETION_3": {
             "ID": "CAMPAIGN_NW_1_MISSION_COMPLETION_3",
-            "en": "Aaaaa leave me alone! My previous base, there were some very important documents!"
+            "en": "Aaaaa leave me alone! My precious base, there were some very important documents!"
         },
         "CAMPAIGN_NW_1_MISSION_COMPLETION_4": {
             "ID": "CAMPAIGN_NW_1_MISSION_COMPLETION_4",
@@ -738,7 +738,7 @@
         },
         "CAMPAIGN_NC_1_MISSION_COMPLETION_7": {
             "ID": "CAMPAIGN_NC_1_MISSION_COMPLETION_7",
-            "en": "We should invest resourses in another artillery...these one are starting to be, not so useful."
+            "en": "We should invest resources in another artillery...these ones are starting to be not so useful."
         },
         "CAMPAIGN_NC_1_MISSION_COMPLETION_8": {
             "ID": "CAMPAIGN_NC_1_MISSION_COMPLETION_8",
@@ -746,19 +746,19 @@
         },
         "CAMPAIGN_NE_1_MISSION_COMPLETION_1": {
             "ID": "CAMPAIGN_NE_1_MISSION_COMPLETION_1",
-            "en": "PRAVUS! Don't you dare to fail again, Generator is down, protect my base!"
+            "en": "PRAVUS! Don't you dare fail again, the generator is down. Protect my base!"
         },
         "CAMPAIGN_NE_1_MISSION_COMPLETION_2": {
             "ID": "CAMPAIGN_NE_1_MISSION_COMPLETION_2",
-            "en": "Good luck restoring these people lives. They served as good."
+            "en": "Good luck restoring these people's lives. They served us well."
         },
         "CAMPAIGN_NE_1_MISSION_COMPLETION_3": {
             "ID": "CAMPAIGN_NE_1_MISSION_COMPLETION_3",
-            "en": "What a pity...they served as well. Call another ones!"
+            "en": "What a pity...they served us well. Call different ones!"
         },
         "CAMPAIGN_NE_1_MISSION_COMPLETION_4": {
             "ID": "CAMPAIGN_NE_1_MISSION_COMPLETION_4",
-            "en": "Next time you will see my children again, it wont be so easy to go through.."
+            "en": "Next time you see my children again, they won't be so easy to get through."
         },
         "CAMPAIGN_NE_1_MISSION_COMPLETION_5": {
             "ID": "CAMPAIGN_NE_1_MISSION_COMPLETION_5",
@@ -786,27 +786,27 @@
         },
         "OUTRO_NW2_DIALOG_1": {
             "ID": "OUTRO_NW2_DIALOG_1",
-            "en": "Welcome to new lands. We hope you enjoyed it here...we wont go easy on you, definitely not after what you ruined, again!!"
+            "en": "Welcome to new lands. We hope you enjoy it here... we wont go easy on you. Especially not after what you ruined......AGAIN!!!"
         },
         "OUTRO_NW2_DIALOG_2": {
             "ID": "OUTRO_NW2_DIALOG_2",
-            "en": "Stop this nonsense Pravus. Get back to work, we have lot to do here."
+            "en": "Stop this nonsense Pravus. Get back to work, we have a lot to do here."
         },
         "OUTRO_NW2_DIALOG_3": {
             "ID": "OUTRO_NW2_DIALOG_3",
-            "en": "I have bad feeling about this Commander. These two are making something bad ...prepare yourself and go to Northern Midlands!"
+            "en": "I have a bad feeling about this Commander. These two are making something bad ...prepare yourself and go to Northern Midlands!"
         },
         "OUTRO_NC2_DIALOG_1": {
             "ID": "OUTRO_NC2_DIALOG_1",
-            "en": "Just wait! You might stop this project, but there will be another! There is ALWAYS ANOTHER!."
+            "en": "Just wait! You might stop this project, but there will be another! There is ALWAYS ANOTHER!"
         },
         "OUTRO_NC2_DIALOG_2": {
             "ID": "OUTRO_NC2_DIALOG_2",
-            "en": "Can your experiment be success atleast once?"
+            "en": "Can your experiments be successful at least ONCE?!"
         },
         "OUTRO_NC2_DIALOG_3": {
             "ID": "OUTRO_NC2_DIALOG_3",
-            "en": "You really think this casualities are mean something to us? We have plenty more, we won't stop!"
+            "en": "You really think these casualties mean something to us? We have plenty more, we won't stop!"
         },
         "OUTRO_NC2_DIALOG_4": {
             "ID": "OUTRO_NC2_DIALOG_4",
@@ -814,7 +814,7 @@
         },
         "OUTRO_NC2_DIALOG_5": {
             "ID": "OUTRO_NC2_DIALOG_5",
-            "en": "Prepare your man for hopefully last big battle. Eastern Bergheim is waiting for us!"
+            "en": "Prepare your man for hopefully one last big battle. Eastern Bergheim is waiting for us!"
         },
         "OUTRO_NE2_DIALOG_1": {
             "ID": "OUTRO_NE2_DIALOG_1",
@@ -826,7 +826,7 @@
         },
         "OUTRO_NE2_DIALOG_3": {
             "ID": "OUTRO_NE2_DIALOG_3",
-            "en": "Great work Commander, get ready for massive battle, they won't go easy on us now when that damn Fortress has shields down!"
+            "en": "Great work Commander, get ready for a massive battle, they won't go easy on us now when that damn Fortress has its shields down!"
         },
         "OUTRO_NE2_DIALOG_4": {
             "ID": "OUTRO_NE2_DIALOG_4",
@@ -12662,7 +12662,7 @@
         },
         "UNIT_ROCKETEER_DESC": {
             "ID": "UNIT_ROCKETEER_DESC",
-            "en": "To boldly go where no one has gone before!\\nSpecial: Flying\\n(moves past all obstacles)"
+            "en": "Go where no one has gone before!\\n\\nSpecial:\\nFlight (passes through all obstacles).\\nElite (Completely indestructible)"
         },
         "TOURNAMENT_HUNT_TANKS_NAME": {
             "ID": "TOURNAMENT_HUNT_TANKS_NAME",
@@ -12898,7 +12898,7 @@
         },
         "BUILDING_GOLD_FACTORY_DESC": {
             "ID": "BUILDING_GOLD_FACTORY_DESC",
-            "en": "Generates 3 Gold every 72 hours"
+            "en": "Generates 3 Gold every 8 hours"
         }
     }
 }

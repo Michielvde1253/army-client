@@ -2126,7 +2126,7 @@
 			}
 			this.mSpawnEnemyTimer += param1;
 			var _loc2_: Object = mConfig.SpawnLevels[this.mPlayerProfile.mSpawnEnemyLevel] as Object;
-			if (this.mSpawnEnemyTimer >= _loc2_.ActivationTime * 60 * 1000) {
+			while (this.mSpawnEnemyTimer >= _loc2_.ActivationTime * 60 * 1000) {
 				_loc3_ = this.mPlayerProfile.mInventory.getAreas(true).length / 2 * _loc2_.SpawnAmountPerArea;
 				if ((_loc4_ = int(this.mScene.getEnemyUnits().length)) < _loc3_) {
 					_loc5_ = new Array();
@@ -2144,6 +2144,7 @@
 		}
 
 		public function spawnNewEnemies(param1: Array, param2: int, param3: Array = null): void {
+			trace("spawning new enemies");
 			var _loc7_: int = 0;
 			var _loc11_: int = 0;
 			var _loc12_: GridCell = null;
@@ -2165,6 +2166,7 @@
 						_loc7_ = _loc6_ - this.mMapData.mGridWidth;
 						_loc12_ = _loc4_[_loc7_];
 						if (_loc7_ > 0) {
+							/*
 							if (_loc12_.mWalkable) {
 								if (!_loc12_.mCharacterComingToThisTile) {
 									if (!_loc12_.mCharacter) {
@@ -2173,6 +2175,10 @@
 										}
 									}
 								}
+							}
+							*/
+							if (this.isTileSuitableForEnemySpawning(_loc4_[_loc7_], true)) {
+								_loc5_.push(_loc4_[_loc7_]);
 							}
 						}
 					}
@@ -2683,6 +2689,7 @@
 
 		public function setSpawnTimer(): void {
 			this.mSpawnEnemyTimer = this.mPlayerProfile.mSecsSinceLastEnemySpawn * 1000;
+			trace(this.mSpawnEnemyTimer);
 		}
 
 		public function initPlayerProfile(param1: ServerCall): void {

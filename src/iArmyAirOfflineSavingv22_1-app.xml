@@ -17,12 +17,12 @@
 	</name>
 -->
 <application xmlns="http://ns.adobe.com/air/application/51.2">
-  <id>iArmyAirOfflineSavingv221</id>
-  <versionNumber>1.0.0</versionNumber>
+  <id>army.attack</id>
+  <versionNumber>22</versionNumber>
   <versionLabel/>
-  <filename>iArmyAirOfflineSavingv22_1</filename>
+  <filename>Army Attack</filename>
   <description/>
-  <name>iArmyAirOfflineSavingv22_1</name>
+  <name>Army Attack</name>
   <copyright/>
   <initialWindow>
     <content>iArmyAirOfflineSavingv22_1.swf</content>
@@ -32,8 +32,14 @@
     <fullScreen>true</fullScreen>
     <aspectRatio>landscape</aspectRatio>
     <renderMode>auto</renderMode>
-    <autoOrients>false</autoOrients></initialWindow>
-  <icon/>
+    <autoOrients>false</autoOrients>
+    <maximizable>true</maximizable>
+    <minimizable>true</minimizable>
+    <resizable>true</resizable>
+  </initialWindow>
+  <icon>
+    <image48x48>AppIconsForPublish/icon48.png</image48x48>
+  </icon>
   <customUpdateUI>false</customUpdateUI>
   <allowBrowserInvocation>false</allowBrowserInvocation>
 
@@ -119,6 +125,55 @@
 ]]></InfoAdditions>
     <requestedDisplayResolution>standard</requestedDisplayResolution>
   </iPhone>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   

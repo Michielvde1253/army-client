@@ -113,6 +113,8 @@
 
 		private var mUpdateHintHealth: Boolean;
 
+		private var mUpdateHintPower: Boolean;
+
 		private var mSafetyTimer: int;
 
 		private var mBooster: BoosterItem;
@@ -126,8 +128,6 @@
 		private var mTextFXTimer: int;
 
 		private var mTextFXQueue: Array;
-
-		private var hint_health_child: int = -1;
 
 		public function IsometricCharacter(param1: int, param2: IsometricScene, param3: MapItem, param4: String = null) {
 			this.mWalkingPath = new Array();
@@ -352,26 +352,14 @@
 		override protected function updateAnimation(param1: Boolean, param2: Boolean): void {
 			super.updateAnimation(param1, param2);
 			this.mUpdateHintHealth = true;
+			this.mUpdateHintPower = true;
+		}
+	
+		public function setUpdateHintPower(param1: Boolean): void {
+			this.mUpdateHintPower = param1;
 		}
 
 		protected function updateHintHealth(): void {
-			if (!FeatureTuner.USE_HINT_HEALTH) {
-				var _loc2_: MovieClip = mAnimationController.getCurrentAnimation();
-				var _loc3_: int = 0;
-				var _loc4_: MovieClip = null;
-				var _loc5_: MovieClip = null;
-				while (_loc3_ < _loc2_.numChildren) {
-					_loc4_ = _loc2_.getChildAt(_loc3_) as MovieClip;
-					if (_loc5_ = _loc4_.getChildByName("Hint_Health_Friendly") as MovieClip) {
-						_loc4_.removeChild(_loc5_);
-						break;
-					}
-					_loc3_++;
-				}
-				return;
-			}
-
-
 			var _loc4_: MovieClip = null;
 			var _loc5_: MovieClip = null;
 			var _loc6_: MovieClip = null;
@@ -381,52 +369,59 @@
 			}
 			this.mUpdateHintHealth = false;
 			var _loc2_: MovieClip = mAnimationController.getCurrentAnimation();
+			var _loc3_: int = 0;
+			while (_loc3_ < _loc2_.numChildren) {
+				if (_loc5_ = (_loc4_ = _loc2_.getChildAt(_loc3_) as MovieClip).getChildByName("Hint_Health_Friendly") as MovieClip) {
+					if (_loc5_.visible) {
+						_loc6_ = _loc5_.getChildByName("Hint_Health_Friendly") as MovieClip;
+						var textfield_health: TextField = _loc6_.getChildByName("Text_Value") as TextField;
+						textfield_health.text = String(this.getHealth()) + "/" + String(this.mMaxHealth)
 
-			if (this.hint_health_child != -1) {
-				_loc4_ = _loc2_.getChildAt(_loc3_) as MovieClip;
-				if (_loc5_ = _loc4_.getChildByName("Hint_Health_Friendly") as MovieClip) {
-
-				} else {
-					this.hint_health_child = -1;
-				}
-			}
-			if (this.hint_health_child == -1) {
-				var _loc3_: int = 0;
-				while (_loc3_ < _loc2_.numChildren) {
-					_loc4_ = _loc2_.getChildAt(_loc3_) as MovieClip;
-					if (_loc5_ = _loc4_.getChildByName("Hint_Health_Friendly") as MovieClip) {
-						this.hint_health_child = _loc3_;
-						break
 					}
-					_loc3_++;
 				}
+				if (_loc5_ = (_loc4_ = _loc2_.getChildAt(_loc3_) as MovieClip).getChildByName("Hint_Health_Friendly_Attention") as MovieClip) {
+					if (_loc5_.visible) {
+						_loc6_ = _loc5_.getChildByName("Hint_Friendly") as MovieClip;
+						if (_loc6_) {
+							_loc7_ = _loc6_.getChildByName("Hint_Health_Friendly") as MovieClip;
+							var textfield_health: TextField = _loc7_.getChildByName("Text_Value") as TextField;
+							textfield_health.text = String(this.getHealth()) + "/" + String(this.mMaxHealth)
+						}
+
+					}
+				}
+				_loc3_++;
 			}
-			// Hint_Health_Friendly
-			// health
-			_loc6_ = _loc5_.getChildByName("Hint_Health_Friendly") as MovieClip;
-			var textfield_health: TextField = _loc6_.getChildByName("Text_Value") as TextField;
-			textfield_health.text = String(this.getHealth()) + "/" + String(this.mMaxHealth)
+		}
 
-			// power
-			_loc6_ = _loc5_.getChildByName("Badge_Fire_Power") as MovieClip;
-			_loc6_.gotoAndStop(this.getPower())
-			var textfield_power: TextField = _loc5_.getChildByName("Text_Power_Value") as TextField;
-			textfield_power.text = "x" + String(this.getPower());
-
-			// Hint_Health_Friendly_Attention
-			if (_loc5_ = _loc4_.getChildByName("Hint_Health_Friendly_Attention") as MovieClip) {
-				if (_loc6_ = _loc5_.getChildByName("Hint_Friendly") as MovieClip) {
-					// health
-					_loc7_ = _loc6_.getChildByName("Hint_Health_Friendly") as MovieClip;
-					var textfield_health: TextField = _loc7_.getChildByName("Text_Value") as TextField;
-					textfield_health.text = String(this.getHealth()) + "/" + String(this.mMaxHealth)
-
-					// power
-					_loc7_ = _loc6_.getChildByName("Badge_Fire_Power") as MovieClip;
-					_loc7_.gotoAndStop(this.getPower())
-					var textfield_power: TextField = _loc6_.getChildByName("Text_Power_Value") as TextField;
+		protected function updateHintPower(): void {
+			var _loc4_: MovieClip = null;
+			var _loc5_: MovieClip = null;
+			var _loc6_: MovieClip = null;
+			var _loc7_: MovieClip = null;
+			if (!mAnimationController) {
+				return;
+			}
+			this.mUpdateHintPower = false;
+			var _loc2_: MovieClip = mAnimationController.getCurrentAnimation();
+			var _loc3_: int = 0;
+			while (_loc3_ < _loc2_.numChildren) {
+				if (_loc5_ = (_loc4_ = _loc2_.getChildAt(_loc3_) as MovieClip).getChildByName("Hint_Health_Friendly") as MovieClip) {
+					_loc6_ = _loc5_.getChildByName("Badge_Fire_Power") as MovieClip;
+					_loc6_.gotoAndStop(this.getPower())
+					var textfield_power: TextField = _loc5_.getChildByName("Text_Power_Value") as TextField;
 					textfield_power.text = "x" + String(this.getPower());
 				}
+				if (_loc5_ = (_loc4_ = _loc2_.getChildAt(_loc3_) as MovieClip).getChildByName("Hint_Health_Friendly_Attention") as MovieClip) {
+					_loc6_ = _loc5_.getChildByName("Hint_Friendly") as MovieClip;
+					if (_loc6_) {
+						_loc7_ = _loc6_.getChildByName("Badge_Fire_Power") as MovieClip;
+						_loc7_.gotoAndStop(this.getPower())
+						var textfield_power: TextField = _loc6_.getChildByName("Text_Power_Value") as TextField;
+						textfield_power.text = "x" + String(this.getPower());
+					}
+				}
+				_loc3_++;
 			}
 		}
 
@@ -515,6 +510,9 @@
 			var _loc3_: MovieClip = null;
 			if (this.mUpdateHintHealth) {
 				this.updateHintHealth();
+			}
+			if (this.mUpdateHintPower) {
+				this.updateHintPower();
 			}
 			if (this.mState == STATE_DYING) {
 				this.updateDying(param1);

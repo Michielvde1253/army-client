@@ -413,14 +413,13 @@
 		private function changeActivationIcon(param1: String): void {
 
 			if (this.mActivationIcon) {
-				this.mActivationIcon.addEventListener(Event.ENTER_FRAME, this.removeActionIcon);
-				if (this.mActivationIcon.parent) {
-					this.mActivationIcon.parent.removeChild(this.mActivationIcon);
-				}
+				//this.mActivationIcon.addEventListener(Event.ENTER_FRAME, this.removeActionIcon);
+				//if (this.mActivationIcon.parent) {
+				//	this.mActivationIcon.parent.removeChild(this.mActivationIcon);
+				//}
 			}
 			var _loc2_: Class = DCResourceManager.getInstance().getSWFClass(Config.SWF_INTERFACE_NAME, param1);
-			this.mActivationIcon = new _loc2_();
-			/*
+			//this.mActivationIcon = new _loc2_();
 			var _loc8_: MovieClip = null;
 			var _loc3_: int = 0;
 			var _loc4_: MovieClip = null;
@@ -428,7 +427,7 @@
 			if (!mAnimationController) {
 				return;
 			}
-				_loc8_ = mAnimationController.getCurrentAnimation();
+							_loc8_ = mAnimationController.getCurrentAnimation();
 				_loc3_ = 0;
 				while (_loc3_ < _loc8_.numChildren) {
 					if (_loc5_ = (_loc4_ = _loc8_.getChildAt(_loc3_) as MovieClip).getChildByName("Hint_Health_Friendly_Attention") as MovieClip) {
@@ -441,7 +440,7 @@
 					}
 					_loc3_++;
 				}
-		    */
+		    
 			this.showOffScreenArrowIcon(true);
 
 		}
