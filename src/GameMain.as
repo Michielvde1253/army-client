@@ -15,7 +15,7 @@
 	import game.states.GameState;
 	import game.states.StateMachine;
 	CONFIG::USE_DISCORD_RPC {
-		import fi.joniaromaa.adobeair.discordrpc.*;
+		import fi.joniaromaa.adobeair.discordrpc.DiscordRpc;
 	}
 	public class GameMain extends Sprite {
 
@@ -43,6 +43,9 @@
 		private var messages_big: Array = [];
 
 		public function GameMain() {
+			this.RPC = {};
+			this.messages = [];
+			this.messages_big = [];
 			super();
 			this.runUnitTests();
 			this.mStateMachine = new StateMachine(this);
@@ -200,21 +203,30 @@
 				this.messages.push("Chilling on ")
 				this.messages.push("Sleeping on ")
 				this.messages.push("Fighting on ")
-				this.messages.push("Sitting on ")
 				this.messages.push("Attacking on ")
-				this.messages.push("Driving on ")
 				this.messages.push("Killing tanks on ")
 				this.messages.push("Shooting rockets on ")
-				this.messages.push("Bullying Tubmann on ");
+				this.messages.push("Bullying Tubman on ");
+				this.messages.push("Oops I hit my own ")
+				this.messages.push("Stalking a Scout on ")
+				this.messages.push("Cleaning Debris on ");
 
 				this.messages_big.push("Destroying the Crimson Empire")
 				this.messages_big.push("AYO THEY ADDED DESERT (hype)")
-				this.messages_big.push("Has 10.000.000 Gold")
+				this.messages_big.push("Bought 10.000.000 Gold")
 				this.messages_big.push("'Where did my water pack go????'")
 				this.messages_big.push("Playing the game in portrait mode")
 				this.messages_big.push("NOOOO I forgot to save the game :(")
 				this.messages_big.push("Playing a silly Facebook game")
 				this.messages_big.push("Almost out of energy :(")
+				this.messages_big.push("wait do they have a new version???")
+				this.messages_big.push("OMG ARMY ATTACK I LOVED THIS GAME")
+				this.messages_big.push("AAAAAAATTTTTTAAAAAAACK!!!!!!!!!")
+				this.messages_big.push("Digital Chocolate = noobs")
+				this.messages_big.push("Going crazy on Army Attack music")
+				this.messages_big.push("rip i ran out of energy :(")
+				this.messages_big.push("ayo does this game still exist???")
+				this.messages_big.push("ABSOLUTELY NOT playing AA Reborn.")
 
 				this.discordRpc.init("1232767781611634760");
 				this.RPC.StartTime = epoch;

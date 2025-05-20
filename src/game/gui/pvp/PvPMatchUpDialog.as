@@ -1,4 +1,4 @@
-package game.gui.pvp
+﻿package game.gui.pvp
 {
    import com.dchoc.graphics.DCResourceManager;
    import flash.display.MovieClip;
@@ -21,16 +21,17 @@ package game.gui.pvp
    
    public class PvPMatchUpDialog extends PopUpWindow
    {
+	  // Allies + recent tab have been hidden, refer to earlier version for the original code
       
-      private static const PANEL_COUNT:int = 3;
+      private static const PANEL_COUNT:int = 1;
       
       private static const TAB_BUTTON_SPACING:int = 3;
       
-      private static const TAB_ALLIES:int = 0;
+      //private static const TAB_ALLIES:int = 0;
       
-      private static const TAB_PLAYERS:int = 1;
+      private static const TAB_PLAYERS:int = 0;
       
-      private static const TAB_RECENT:int = 2;
+      //private static const TAB_RECENT:int = 2;
        
       
       private var mButtonCancel:ArmyButton;
@@ -97,7 +98,7 @@ package game.gui.pvp
          while(_loc4_ <= 5)
          {
             _loc7_ = Utils.createResizingButtonSelected(mClip,"PvP_Tab_0" + _loc4_,this.tabButtonPressed);
-            if(_loc4_ <= 3)
+            if(_loc4_ <= 1)
             {
                _loc7_.setPool(this.mTabButtons);
                _loc7_.setAllowDeselection(false);
@@ -115,9 +116,9 @@ package game.gui.pvp
          }
          this.mButtonLeaderboard = Utils.createResizingIconButton(this.mStatus,"Button_Leaderboard",null);
          this.mButtonLeaderboard.setVisible(false);
-         (this.mTabButtons[0] as ResizingButtonSelected).setText(GameState.getText("PVP_ALLIES"));
-         (this.mTabButtons[1] as ResizingButtonSelected).setText(GameState.getText("PVP_PLAYER"));
-         (this.mTabButtons[2] as ResizingButtonSelected).setText(GameState.getText("PVP_RECENT"));
+         //(this.mTabButtons[0] as ResizingButtonSelected).setText(GameState.getText("PVP_ALLIES"));
+         (this.mTabButtons[0] as ResizingButtonSelected).setText(GameState.getText("PVP_PLAYER"));
+         //(this.mTabButtons[2] as ResizingButtonSelected).setText(GameState.getText("PVP_RECENT"));
          (this.mTabButtons[0] as ResizingButtonSelected).select();
          var _loc6_:int = 0;
          while(_loc6_ < PANEL_COUNT)
@@ -151,13 +152,13 @@ package game.gui.pvp
             _loc6_++;
          }
          this.mAllTabs = new Array();
-         this.mAllTabs.push(FriendsCollection.smFriends.getPlayingFriendsExcludingTutor());
+         //this.mAllTabs.push(FriendsCollection.smFriends.getPlayingFriendsExcludingTutor());
          this.mAllTabs.push(PvPOpponentCollection.smCollection.mOpponents);
          this.mAllTabs.push(PvPOpponentCollection.smCollection.mRecentAttacks);
-         (this.mAllTabs[TAB_ALLIES] as Array).sort(this.sortOpponents);
+         //(this.mAllTabs[TAB_ALLIES] as Array).sort(this.sortOpponents);
          (this.mAllTabs[TAB_PLAYERS] as Array).sort(this.sortOpponents);
-         (this.mAllTabs[TAB_RECENT] as Array).sort(this.sortOpponents);
-         this.setTab(TAB_ALLIES);
+         //(this.mAllTabs[TAB_RECENT] as Array).sort(this.sortOpponents);
+         this.setTab(TAB_PLAYERS);
          doOpeningTransition();
       }
       
@@ -241,7 +242,7 @@ package game.gui.pvp
             if((_loc4_ = _loc2_ + _loc1_) < this.mCurrentTab.length)
             {
                _loc3_.show();
-               _loc3_.setData(this.mCurrentTab[_loc4_],this.mTab == TAB_RECENT);
+               _loc3_.setData(this.mCurrentTab[_loc4_],false);
             }
             else
             {

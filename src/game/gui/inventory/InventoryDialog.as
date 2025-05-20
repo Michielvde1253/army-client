@@ -1,4 +1,4 @@
-package game.gui.inventory
+﻿package game.gui.inventory
 {
    import com.dchoc.graphics.DCResourceManager;
    import flash.display.MovieClip;
@@ -78,6 +78,12 @@ package game.gui.inventory
          this.refresh();
          doOpeningTransition();
       }
+
+      /*
+      override public function scaleToScreen(): void {
+         // use default
+      }
+      */
       
       private function getItems() : Array
       {

@@ -169,9 +169,6 @@
             {
                if(_loc4_.increaseCounter(param1,param2,param3))
                {
-				  trace("Current map id:");
-		          trace(GameState.mInstance.mCurrentMapId);
-			      trace(_loc4_.mId)
                   GameState.mInstance.checkMissionProgress();
                   checkCompletedMissions();
                }

@@ -1,4 +1,4 @@
-package game.isometric.camera
+﻿package game.isometric.camera
 {
    import com.dchoc.utils.Cookie;
    import flash.geom.Point;
@@ -87,7 +87,7 @@ package game.isometric.camera
          this.mSpeed = param1;
       }
       
-      public function update(param1:Number) : void
+      public function update(param1:Number = 0) : void
       {
          if(Math.abs(this.mCameraX - this.mTargetX) < 0.5)
          {

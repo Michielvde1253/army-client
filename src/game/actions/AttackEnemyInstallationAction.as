@@ -1,4 +1,4 @@
-package game.actions
+﻿package game.actions
 {
    import game.characters.AnimationController;
    import game.gameElements.EnemyInstallationObject;
@@ -272,7 +272,9 @@ package game.actions
          var _loc3_:GamePlayerProfile = _loc1_.mPlayerProfile;
          var _loc4_:int = this.getCombinedDamage();
          var _loc5_:EnemyInstallationObject;
-         var _loc6_:Boolean = (_loc5_ = mTarget as EnemyInstallationObject).getHealth() > 0 && _loc5_.getHealth() - _loc4_ <= 0;
+         //var _loc6_:Boolean = (_loc5_ = mTarget as EnemyInstallationObject).getHealth() > 0 && _loc5_.getHealth() - _loc4_ <= 0;
+		 // Why checking if initial health > 0?
+		 var _loc6_:Boolean = (_loc5_ = mTarget as EnemyInstallationObject).getHealth() - _loc4_ <= 0;
          var _loc7_:EnemyInstallationItem;
          var _loc8_:int = (_loc7_ = _loc5_.mItem as EnemyInstallationItem).mHitRewardXP;
          var _loc9_:int = _loc7_.mHitRewardMoney;

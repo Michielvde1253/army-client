@@ -49,6 +49,7 @@
 	import game.gameElements.PermanentHFEObject;
 	import game.gameElements.PlayerBuildingObject;
 	import game.gameElements.PlayerInstallationObject;
+	import game.gameElements.HospitalBuilding;
 	import game.gameElements.Production;
 	import game.gameElements.ResourceBuildingObject;
 	import game.gameElements.SignalObject;
@@ -109,6 +110,8 @@
 
 		public static var mObjectCounter: int = 0;
 
+		public static var mOnlineSaving: Boolean = false;
+
 		private static const CHEAT_CODE: String = "HAXXOR";
 
 		private static var smCheatCodeString: String = "";
@@ -122,6 +125,8 @@
 		private static var smDebugCodeString: String = "";
 
 		public static var mConfig: Object;
+
+		public static var mPvPOpponentsConfig: Object;
 
 		public static var mFreezeFrameOn: Boolean;
 
@@ -340,9 +345,13 @@
 
 		public var isExitWindowOpen: Boolean;
 
+		public var mSaveLocation: String = "legacy";
+
 		private var mNotificationOn: Boolean;
 
 		private var mFogOfWarOn: Boolean = true;
+
+		private var mAnimationsOn: Boolean = true;
 
 		private const TOTAL_NOTIFICATIONS: int = 2;
 
@@ -603,8 +612,6 @@
 			try {
 				var _loc2_: int = this.getStageHeight();
 				var _loc3_: int = this.getStageWidth();
-				trace(_loc2_);
-				trace(_loc3_)
 				this.getHud().resize(_loc3_, _loc2_);
 				if (this.mMissionIconsManager) {
 					this.mMissionIconsManager.resize(_loc3_, _loc2_);
@@ -696,9 +703,9 @@
 				this.totalMemory = Number(System.totalMemory / 1024 / 1024);
 				this.updateDebugText();
 			}
-			if (!this.mInitialized || !this.mScene || mFreezeFrameOn && !this.mServer.isConnectionError() && !this.mServer.isServerCommError()) {
-				return;
-			}
+			//if (!this.mInitialized || !this.mScene || mFreezeFrameOn){ //&& !this.mServer.isConnectionError() && !this.mServer.isServerCommError()) {
+			//	return;
+			//}
 			if (!this.updateLoading()) {
 				return;
 			}
@@ -864,12 +871,23 @@
 
 		CONFIG::BUILD_FOR_MOBILE_AIR {
 			public function startSelectingFile(): void {
-
-				var file: File = File.applicationStorageDirectory.resolvePath("savefile.txt");
-				if (file.exists) {
-					file.addEventListener(PermissionEvent.PERMISSION_STATUS, onPermission);
-					file.requestPermission();
+				if (mSaveLocation == "documents") {
+					var file: File = File.documentsDirectory.resolvePath("ArmyAttack/savefile.txt");
+					if (!file.exists) {
+						// Check if a legacy save file (from v21) exists, use if yes
+						file = File.applicationStorageDirectory.resolvePath("savefile.txt");
+						if (!file.exists) {
+							return
+						}
+					}
+				} else if (mSaveLocation == "legacy") {
+					file = File.applicationStorageDirectory.resolvePath("savefile.txt");
+					if (!file.exists) {
+						return
+					}
 				}
+				file.addEventListener(PermissionEvent.PERMISSION_STATUS, onPermission);
+				file.requestPermission();
 			}
 		}
 
@@ -972,7 +990,7 @@
 		}
 
 		private function restoreNotificationSettings(): void {
-			trace("DISABLED AS NOTIFICATIONS HAVE BEEN REPLACED WITH FOG OF WAR IN SETTINGS");
+			// DISABLED AS NOTIFICATIONS HAVE BEEN REPLACED WITH FOG OF WAR IN SETTINGS
 			var _loc1_: String = Cookie.readCookieVariable(Config.COOKIE_SETTINGS_NAME, Config.COOKIE_SETTINGS_NAME_NOTIFICATION);
 			if (_loc1_ == "false") {
 				this.setNotificationOn(false);
@@ -1205,6 +1223,10 @@
 							}
 						}
 					}
+				} else if(_loc2_ is HospitalBuilding){
+					if (HospitalBuilding(_loc2_).readyToHeal()) {
+						HospitalBuilding(_loc2_).checkNeighbours();
+					}
 				}
 			}
 			if (this.mState != STATE_PVP) {
@@ -1232,8 +1254,43 @@
 			if (FeatureTuner.USE_PVP_MATCH) {
 				if (this.mPlayerProfile.mGlobalUnitCounts == null) {
 					this.startLoading();
-					this.mServer.serverCallService(ServiceIDs.GET_PVP_DATA, true);
-					if (Config.DEBUG_MODE) {}
+					//this.mServer.serverCallService(ServiceIDs.GET_PVP_DATA, true);
+					/*
+					var fakedata:* = {};
+				
+					var pvp_data:* = {};
+					pvp_data["score"] = 0;
+					pvp_data["wins"] = 0;
+					fakedata["pvp_data"] = pvp_data;
+
+					fakedata["allies"] = new Array();
+				
+				
+					var possible_opponents:Array = [];
+				    var test_opponent:* = {};
+					test_opponent["facebook_id"] = "1";
+				    test_opponent["player_name"] = "Scary Chris";
+					test_opponent["score"] = 0;
+					test_opponent["level"] = 1;
+					test_opponent["wins"] = 0;
+				    test_opponent["avatar"] = "scary_chris.png"; // Loads from the data/avatars folder, empty string = default avatar
+					possible_opponents.push(test_opponent)
+					fakedata["possible_opponents"] = possible_opponents
+				
+					fakedata["recent_attacks"] = new Array();
+				
+					var player_unit_count:Array = [];
+				    var player_unit:* = {};
+					player_unit["item_id"] = "Infantry";
+					player_unit["item_count"] = 4;
+					player_unit_count.push(player_unit)
+					fakedata["player_unit_count"] = player_unit_count;
+					*/
+
+					//this.mPlayerProfile.setupPvPData(fakedata);
+					//this.mPlayerProfile.setupGlobalUnitCounts(fakedata);
+
+					this.openPvPMatchUpDialog();
 				} else if (this.getHud()) {
 					if (this.mPvPMatch.mOpponent) {
 						this.openPvPCombatSetupDialog();
@@ -1719,6 +1776,19 @@
 			}
 			return _loc2_;
 		}
+	
+	/*
+	thanks chatgpt!
+	
+	
+	public function searchNearbyUnits(
+    centerCell: GridCell,
+    range: int,
+    heightExtension: int = 1,
+    widthExtension: int = 1,
+    includeEnemies: Boolean = true
+	): Array
+	*/
 
 		public function searchNearbyUnits(param1: GridCell, param2: int, param3: int = 1, param4: int = 1, param5: Boolean = true): Array {
 			var _loc8_: int = 0;
@@ -2056,7 +2126,7 @@
 			}
 			this.mSpawnEnemyTimer += param1;
 			var _loc2_: Object = mConfig.SpawnLevels[this.mPlayerProfile.mSpawnEnemyLevel] as Object;
-			if (this.mSpawnEnemyTimer >= _loc2_.ActivationTime * 60 * 1000) {
+			while (this.mSpawnEnemyTimer >= _loc2_.ActivationTime * 60 * 1000) {
 				_loc3_ = this.mPlayerProfile.mInventory.getAreas(true).length / 2 * _loc2_.SpawnAmountPerArea;
 				if ((_loc4_ = int(this.mScene.getEnemyUnits().length)) < _loc3_) {
 					_loc5_ = new Array();
@@ -2074,6 +2144,7 @@
 		}
 
 		public function spawnNewEnemies(param1: Array, param2: int, param3: Array = null): void {
+			trace("spawning new enemies");
 			var _loc7_: int = 0;
 			var _loc11_: int = 0;
 			var _loc12_: GridCell = null;
@@ -2095,6 +2166,7 @@
 						_loc7_ = _loc6_ - this.mMapData.mGridWidth;
 						_loc12_ = _loc4_[_loc7_];
 						if (_loc7_ > 0) {
+							/*
 							if (_loc12_.mWalkable) {
 								if (!_loc12_.mCharacterComingToThisTile) {
 									if (!_loc12_.mCharacter) {
@@ -2103,6 +2175,10 @@
 										}
 									}
 								}
+							}
+							*/
+							if (this.isTileSuitableForEnemySpawning(_loc4_[_loc7_], true)) {
+								_loc5_.push(_loc4_[_loc7_]);
 							}
 						}
 					}
@@ -2329,6 +2405,7 @@
 			var _loc2_: String = null;
 			var _loc1_: DCResourceManager = DCResourceManager.getInstance();
 			mConfig = new Object();
+			mPvPOpponentsConfig = new Object();
 			var _loc3_: int = int(AssetManager.JSON_FILES_TO_LOAD.length);
 			var _loc4_: int = 0;
 			while (_loc4_ < _loc3_) {
@@ -2338,6 +2415,7 @@
 			}
 			var _loc5_: String = "army_config_" + Config.smLanguageCode;
 			JsonParser.parseFile(mConfig, _loc1_.get(_loc5_));
+			mPvPOpponentsConfig = JSON.parse(_loc1_.get("army_config_pvp_opponents"));
 			JsonParser.link(mConfig, Config.smLanguageCode);
 		}
 
@@ -2483,8 +2561,35 @@
 						this.mHUD.mPullOutMissionMenuState = this.mHUD.STATE_MISSIONS_MENU_OPEN;
 						this.mHUD.mPullOutMissionFrame.addEventListener(Event.ENTER_FRAME, this.enterFrameMissionInitial);
 					}
-					this.mHUD.openPauseScreen();
+					CONFIG::BUILD_FOR_MOBILE_AIR {
+						var file:File = File.applicationStorageDirectory.resolvePath("savesettings.txt");
+						if (file.exists) {
+							var first_time_since_v22: Boolean = false;
+						} else {
+							var first_time_since_v22: Boolean = true;
+						}
+						if (first_time_since_v22) {
+							// First time opening the game since v22, show permission window
+							this.mHUD.openGiveFilePermissionScreen();
+						} else {
+							this.saveSettingsLoad();
+							this.mHUD.openPauseScreen();
+						}
+					}
+					CONFIG::BUILD_FOR_AIR {
+						this.mHUD.openPauseScreen();
+					}
+					CONFIG::NOT_BUILD_FOR_AIR {
+						this.mHUD.openPauseScreen();
+					}
 				}
+			}
+			// Restore animation settings
+			var animationsOn: String = Cookie.readCookieVariable(Config.COOKIE_SETTINGS_NAME, Config.COOKIE_SETTINGS_NAME_ANIMATION);
+			if (animationsOn == "false") {
+				this.mAnimationsOn = false;
+			} else {
+				this.mAnimationsOn = true;
 			}
 			if (Config.OFFLINE_MODE) {
 				i = 0;
@@ -2525,6 +2630,9 @@
 				FriendsCollection.smFriends.GetFriend(this.mServer.getUid()).mPicID = "http://profile.ak.fbcdn.net/hprofile-ak-snc4/hs475.snc4/49862_708382760_1095_q.jpg";
 				this.addGeneralBragg();
 				FriendsCollection.smFriends.AddToScreen();
+
+
+				OfflineSave.startEmptyPvPProgress();
 			}
 			this.logicUpdate(0);
 			this.getHud().setZoomIndicator(this.mZoomIndex);
@@ -2533,6 +2641,34 @@
 			this.mUpdateMissionButtonsPending = true;
 			if (this.mMissionIconsManager) {
 				this.mMissionIconsManager.resize(this.getStageWidth(), this.getStageHeight());
+			}
+		}
+
+		CONFIG::BUILD_FOR_MOBILE_AIR {
+			public function saveSettingsLoad(): void {
+				var file:File = File.applicationStorageDirectory.resolvePath("savesettings.txt");
+				if (!file.exists) {
+					return
+				}
+				file.addEventListener(PermissionEvent.PERMISSION_STATUS, onSaveSettingsLoadPermission);
+				file.requestPermission();
+			}
+		}
+
+		CONFIG::BUILD_FOR_MOBILE_AIR {
+			public function onSaveSettingsLoadPermission(e: PermissionEvent): void {
+				var file: File = e.target as File;
+				file.removeEventListener(PermissionEvent.PERMISSION_STATUS, onSaveSettingsLoadPermission);
+				if (e.status == PermissionStatus.GRANTED) {
+					var fs: FileStream = new FileStream();
+					fs.open(file, FileMode.READ);
+
+					// Read save settings data
+					var readData: * = JSON.parse(fs.readUTFBytes(fs.bytesAvailable));
+					mSaveLocation = readData["savelocation"];
+
+					fs.close();
+				}
 			}
 		}
 
@@ -2553,6 +2689,7 @@
 
 		public function setSpawnTimer(): void {
 			this.mSpawnEnemyTimer = this.mPlayerProfile.mSecsSinceLastEnemySpawn * 1000;
+			trace(this.mSpawnEnemyTimer);
 		}
 
 		public function initPlayerProfile(param1: ServerCall): void {
@@ -2778,10 +2915,16 @@
 						"attack_units": _loc2_,
 						"defensive_units": _loc3_
 					};
-					this.mServer.serverCallServiceWithParameters(ServiceIDs.START_PVP_MATCH, _loc4_, true);
+					// Modified for offline game
+					//this.mServer.serverCallServiceWithParameters(ServiceIDs.START_PVP_MATCH, _loc4_, true);
+					var fakeservercall: * = new ServerCall(ServiceIDs.START_PVP_MATCH, null, null, null);
+					fakeservercall["mData"] = {
+						"timestamp": 0
+					}
+					as Object;
 					this.mPlayerProfile.addEnergy(-this.mPvPMatch.mEnergyCost, false);
 					this.mPlayerProfile.addSupplies(-this.mPvPMatch.mSupplyCost);
-					if (Config.DEBUG_MODE) {}
+					this.handleStartPvPMatch(fakeservercall);
 				}
 			}
 		}
@@ -2954,7 +3097,9 @@
 					break;
 				case 35:
 					if (Config.CHEAT_ALLOWED) {
-						this.startPvP();
+						//this.startPvP();
+						// don't forget to disable cheat lol
+						this.openPvPMatchUpDialog();
 					}
 					break;
 				case 33:
@@ -3093,7 +3238,6 @@
 
 		public function executeSwitchMap(param1: String, param2: Friend = null, param3: Boolean = false): void {
 			OfflineSave.saveOldMap();
-			trace("volgende lijn")
 			var _loc4_: Object = null;
 			if ((this.mVisitingFriend == param2 || this.mVisitingFriend == null && param2 == null) && param1 == this.mCurrentMapId) {
 				return;
@@ -3285,6 +3429,9 @@
 			} else if (this.mObjectToBePlaced is ResourceBuildingObject) {
 				_loc7_ = ServiceIDs.BUY_AND_PLACE_BUILDING;
 				_loc8_ = "ResourceBuilding";
+			} else if (this.mObjectToBePlaced is HospitalBuilding) {
+				_loc7_ = ServiceIDs.BUY_AND_PLACE_BUILDING;
+				_loc8_ = "HospitalBuilding";
 			} else if (this.mObjectToBePlaced is PlayerUnit) {
 				_loc7_ = ServiceIDs.BUY_AND_PLACE_UNIT;
 			} else if (this.mObjectToBePlaced is DecorationObject) {
@@ -3475,7 +3622,7 @@
 			};
 			var _loc4_: String = null;
 			if (!(this.mObjectToBePlaced is HFEObject || this.mObjectToBePlaced is HFEPlotObject)) {
-				if (!(this.mObjectToBePlaced is ConstructionObject || this.mObjectToBePlaced is ResourceBuildingObject)) {
+				if (!(this.mObjectToBePlaced is ConstructionObject || this.mObjectToBePlaced is ResourceBuildingObject || this.mObjectToBePlaced is HospitalBuilding)) {
 					if (this.mObjectToBePlaced is PlayerUnit) {
 						_loc4_ = ServiceIDs.PLACE_UNIT_FROM_INVENTORY;
 					} else if (this.mObjectToBePlaced is DecorationObject) {
@@ -4244,7 +4391,18 @@
 
 		public function setFogOfWarOn(param1: Boolean): void {
 			this.mFogOfWarOn = param1;
-			trace("Doin- a little challenge: most inefficient way to reload the game lmao");
+			// Doin- a little challenge: most inefficient way to reload the game lmao
+		}
+
+		public function isFogOfWarOn(): Boolean {
+			return this.mFogOfWarOn;
+		}
+
+		public function setAnimations(param1: Boolean): void {
+			this.mAnimationsOn = param1;
+			Cookie.saveCookieVariable(Config.COOKIE_SETTINGS_NAME, Config.COOKIE_SETTINGS_NAME_ANIMATION, param1);
+			// We're doing the same challenge as above xD
+			// Need to look for a better way
 			var savedata: * = this.mHUD.generateSaveJson();
 			(PopUpManager.getPopUp(PauseDialog) as PauseDialog).loadProgress(savedata);
 			(PopUpManager.getPopUp(SettingsDialogClass) as SettingsDialogClass).closeSettingsAuto();
@@ -4252,8 +4410,8 @@
 			this.mScene.mCamera.moveTo(this.mScene.mCamera.getCameraX() + 1, this.mScene.mCamera.getCameraY() + 1);
 		}
 
-		public function isFogOfWarOn(): Boolean {
-			return this.mFogOfWarOn;
+		public function isAnimationsOn(): Boolean {
+			return this.mAnimationsOn;
 		}
 	}
 }

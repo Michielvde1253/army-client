@@ -1017,7 +1017,7 @@
             {
                if(_loc3_ is PlayerUnit)
                {
-                  ++this.mUnitCounts[Number(_loc3_.mItem.mType)];
+                  this.mUnitCounts[_loc3_.mItem.mType] += 1;
                }
             }
          }
@@ -1185,7 +1185,7 @@
          _loc3_ = new Array();
          for each(_loc4_ in param1.possible_opponents)
          {
-            PvPOpponentCollection.smCollection.addOpponent(_loc4_.facebook_id,_loc4_.score,_loc4_.level,_loc4_.wins);
+            PvPOpponentCollection.smCollection.addOpponent(_loc4_.facebook_id,_loc4_.score,_loc4_.level,_loc4_.wins, _loc4_.player_name, _loc4_.avatar);
             _loc3_.push(_loc4_.facebook_id);
          }
          for each(_loc5_ in param1.recent_attacks)

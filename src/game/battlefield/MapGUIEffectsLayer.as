@@ -1,4 +1,4 @@
-package game.battlefield
+﻿package game.battlefield
 {
    import com.dchoc.graphics.DCResourceManager;
    import flash.display.DisplayObject;
@@ -211,6 +211,7 @@ package game.battlefield
          {
             return;
          }
+		 // had this commented but don't remember why xD
          var _loc5_:PlayerUnit = GameState.mInstance.mActivatedPlayerUnit;
          if(param1.mCharacter != _loc5_)
          {

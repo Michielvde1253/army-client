@@ -1,4 +1,4 @@
-package game.utils
+﻿package game.utils
 {
    import com.dchoc.graphics.DCResourceManager;
    import flash.display.MovieClip;
@@ -21,12 +21,14 @@ package game.utils
       public static const EFFECT_TYPE_HIT_LIGHTNING:int = 5;
       
       public static const EFFECT_TYPE_LIGHTNING_BUBBLE:int = 6;
+	   
+	  public static const EFFECT_TYPE_POWER_UP:int = 7;
       
-      public static const EFFECT_TYPE_POWER_UP_HEALTH_PACK:int = 7;
+      //public static const EFFECT_TYPE_POWER_UP_HEALTH_PACK:int = 7;
       
-      public static const EFFECT_TYPE_POWER_UP_PARATROOPER:int = 8;
+      //public static const EFFECT_TYPE_POWER_UP_PARATROOPER:int = 8;
       
-      public static const EFFECT_TYPE_POWER_UP_AIR_SUPPORT:int = 9;
+      //public static const EFFECT_TYPE_POWER_UP_AIR_SUPPORT:int = 9;
        
       
       private var mActiveEffects:Array;
@@ -50,7 +52,7 @@ package game.utils
          return GameState.mConfig.GraphicSetup.Shooting.Length;
       }
       
-      public function startEffect(param1:IsometricScene, param2:MovieClip, param3:int, param4:int, param5:int) : Boolean
+      public function startEffect(param1:IsometricScene, param2:MovieClip, param3:int, param4:int, param5:int, effectClipName:String = "") : Boolean
       {
          var _loc6_:int = 0;
          var _loc10_:FadeEffect = null;
@@ -97,13 +99,14 @@ package game.utils
                   return false;
                }
                break;
-            case EFFECT_TYPE_POWER_UP_HEALTH_PACK:
-            case EFFECT_TYPE_POWER_UP_PARATROOPER:
-            case EFFECT_TYPE_POWER_UP_AIR_SUPPORT:
+            //case EFFECT_TYPE_POWER_UP_HEALTH_PACK:
+            //case EFFECT_TYPE_POWER_UP_PARATROOPER:
+            //case EFFECT_TYPE_POWER_UP_AIR_SUPPORT:
+		    case EFFECT_TYPE_POWER_UP:
                _loc11_ = "swf/pvp_effects";
                if(_loc9_.isLoaded(_loc11_))
                {
-                  (_loc13_ = new PvPEffect()).start(param2,param3);
+                  (_loc13_ = new PvPEffect()).start(param2,param3,effectClipName);
                   _loc8_ = _loc13_;
                }
                else if(!_loc9_.isAddedToLoadingList(_loc11_))

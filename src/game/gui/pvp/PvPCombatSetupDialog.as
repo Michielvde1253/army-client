@@ -1,4 +1,4 @@
-package game.gui.pvp
+﻿package game.gui.pvp
 {
    import com.dchoc.graphics.DCResourceManager;
    import flash.display.DisplayObjectContainer;
@@ -24,6 +24,7 @@ package game.gui.pvp
    import game.net.PvPOpponentCollection;
    import game.player.GamePlayerProfile;
    import game.states.GameState;
+   import game.environment.EnvEffectManager;
    
    public class PvPCombatSetupDialog extends PopUpWindow
    {
@@ -147,7 +148,7 @@ package game.gui.pvp
          {
             _loc10_ = this.mPlayerArmy.getChildByName("Army_Slot_Empty_0" + (_loc8_ + 1)) as MovieClip;
             this.mSelectedUnitPanels[_loc8_] = new PvPSelectedUnitPanel(_loc10_,this.mPlayerArmy,this);
-            _loc7_++;
+            _loc8_++;
          }
          var _loc9_:int = 0;
          while(_loc9_ < OPPONENT_UNIT_PANEL_COUNT)
@@ -194,7 +195,7 @@ package game.gui.pvp
          }
          (_loc7_ = (_loc6_ = this.mOpponentCard.getChildByName("Rank_Icon") as MovieClip).getChildByName("Text_PvP_Rank") as TextField).text = _loc4_.mBadassLevel.toString();
          (_loc7_ = this.mInfoPanel.getChildByName("Text_Cost_Energy") as TextField).text = GameState.mConfig.PlayerStartValues.Default.PvPCostEnergy;
-         if(_loc5_.mEnergy < GameState.mConfig.PlayerStartValues.Default.PvPCostEnergy)
+		 if(_loc5_.mEnergy < GameState.mConfig.PlayerStartValues.Default.PvPCostEnergy)
          {
             _loc7_.filters = INSUFFICIENT_RESOURCES_FILTER;
             _loc7_.transform.colorTransform = INSUFFICIENT_RESOURCES_MOD;
@@ -294,6 +295,8 @@ package game.gui.pvp
                _loc5_.mSupplyCost = _loc3_;
                PvPOpponentCollection.smCollection.removeRecentAttack(_loc5_.mOpponent.mFacebookID);
                this.closeDialog();
+			   EnvEffectManager.destroy();
+			   GameState.mInstance.mScene.mFog.destroy();
                this.mStartPvPCallback();
             }
          }

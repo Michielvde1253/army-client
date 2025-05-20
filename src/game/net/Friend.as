@@ -1,4 +1,4 @@
-package game.net
+﻿package game.net
 {
    import com.dchoc.graphics.DCResourceManager;
    import flash.display.Sprite;
@@ -37,7 +37,7 @@ package game.net
       
       public function Friend(param1:String, param2:String, param3:String, param4:String, param5:int, param6:int, param7:int, param8:int, param9:Boolean, param10:Object, param11:String, param12:Boolean, param13:Boolean, param14:Boolean)
       {
-         super(param3,0,1,0);
+         super(param3,0,1,0, "test", "test");
          mName = param1;
          this.mUserID = param2;
          this.mXp = param5;

@@ -24,7 +24,7 @@
 	import game.sound.ArmySoundManager;
 	import game.states.GameState;
 	import game.utils.OfflineSave;
-	//import NativeAlert
+	import com.dchoc.utils.Cookie;
 
 	public class PauseDialog extends PopUpWindow {
 
@@ -77,10 +77,10 @@
 				this.mButtonHelp.setText(GameState.getText("HELP_BUTTON_TEXT"), "Text_Title");
 				this.mButtonLoad.setText(GameState.getText("LOAD_BUTTON_TEXT"), "Text_Title");
 				this.updatePlayResumeButton();
-				
+
 				//var nativeAlert:NativeAlert = new NativeAlert();
 				//nativeAlert.alert("Hello there!");
-				
+
 				// MOBILE: we do not support loading external files and instead use the default save file.
 				CONFIG::BUILD_FOR_MOBILE_AIR {
 					this.mButtonLoad.setVisible(false);
@@ -92,6 +92,26 @@
 			mDoneCallback = param1;
 			doOpeningTransition();
 		}
+
+		/*
+		CONFIG::BUILD_FOR_MOBILE_AIR {
+			override public function scaleToScreen(): void {
+				// Calculate the scaling factors based on the clip's dimensions
+				var scaleXFactor: Number = GameState.mInstance.getStageWidth() / mClip.width;
+				var scaleYFactor: Number = GameState.mInstance.getStageHeight() / mClip.height;
+
+				// Add a small buffer to prevent rounding issues (adjust value if necessary)
+				scaleXFactor += 0.05;
+				scaleYFactor += 0.05;
+
+				var scaleFactor: Number = Math.max(scaleXFactor, scaleYFactor)
+
+				// Apply the scaling factors to stretch across both axes
+				mClip.scaleX = scaleFactor;
+				mClip.scaleY = scaleFactor;
+			}
+		}
+	*/
 
 		public function startSelectingFile(): void {
 			CONFIG::BUILD_FOR_AIR {
@@ -105,11 +125,23 @@
 				this.fileRef.browse();
 			}
 			CONFIG::BUILD_FOR_MOBILE_AIR {
-				var file: File = File.applicationStorageDirectory.resolvePath("savefile.txt");
-				if (file.exists) {
-					file.addEventListener(PermissionEvent.PERMISSION_STATUS, onPermission);
-					file.requestPermission();
+				if (GameState.mInstance.mSaveLocation == "documents") {
+					var file: File = File.documentsDirectory.resolvePath("ArmyAttack/savefile.txt");
+					if (!file.exists) {
+						// Check if a legacy save file (from v21) exists, use if yes
+						file = File.applicationStorageDirectory.resolvePath("savefile.txt");
+						if (!file.exists) {
+							return
+						}
+					}
+				} else if (GameState.mInstance.mSaveLocation == "legacy") {
+					file = File.applicationStorageDirectory.resolvePath("savefile.txt");
+					if (!file.exists) {
+						return
+					}
 				}
+				file.addEventListener(PermissionEvent.PERMISSION_STATUS, onPermission);
+				file.requestPermission();
 			}
 		}
 		CONFIG::BUILD_FOR_AIR {
@@ -151,7 +183,6 @@
 		}
 		CONFIG::NOT_BUILD_FOR_AIR {
 			public function onComplete(evt: Event): void {
-				trace(this.fileRef.data)
 				var savedata2: * = JSON.parse(this.fileRef.data.toString());
 				loadProgress(savedata2);
 			}

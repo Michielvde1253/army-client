@@ -48,6 +48,7 @@
 	import game.gui.popups.CharacterDialoqueWindow;
 	import game.gui.popups.CollectionTradedWindow;
 	import game.gui.popups.ConfirmRedeploymentWindow;
+	import game.gui.popups.ConfirmRestartTutorialWindow;
 	import game.gui.popups.ConfirmSellingWindow;
 	import game.gui.popups.CorpseMarkerWindow;
 	import game.gui.popups.DailyRewardWindow;
@@ -58,6 +59,8 @@
 	import game.gui.popups.HiddenErrorWindow;
 	import game.gui.popups.ImmediateSuppliesWindow;
 	import game.gui.popups.InfantryCapFullWindow;
+	import game.gui.popups.ArmorCapFullWindow;
+	import game.gui.popups.ArtilleryCapFullWindow;
 	import game.gui.popups.IntroWindow;
 	import game.gui.popups.InviteFriendsWindow;
 	import game.gui.popups.LevelUpWindow;
@@ -119,6 +122,7 @@
 	import game.states.GameState;
 	import game.utils.TimeUtils;
 	import game.utils.OfflineSave;
+	import com.dchoc.utils.Cookie;
 
 	public class GameHUD extends MovieClip implements HUDInterface {
 
@@ -242,6 +246,8 @@
 		private var mButtonPowerup: ArmyButton;
 
 		private var mButtonMap: ArmyButton;
+
+		private var mButtonPvp: ArmyButton;
 
 		private var mBackHomeY: int;
 
@@ -425,7 +431,7 @@
 			if (this.mVisitingNeighbor) {
 				_loc4_ = _loc2_.getSocialXpForThisLevel();
 				_loc5_ = _loc2_.getSocialXpForNextLevel();
-				trace("this.mNeighborActionsBar.setTargetValues(_loc2_.mNeighborActionsLeft,_loc2_.mMaxNeighborActions);")
+				//this.mNeighborActionsBar.setTargetValues(_loc2_.mNeighborActionsLeft,_loc2_.mMaxNeighborActions);
 			} else {
 				_loc6_ = _loc2_.mEnergy;
 				_loc7_ = _loc2_.mMaxEnergy;
@@ -550,14 +556,14 @@
 		public function createHUD(): void {
 			DCButton.TRIGGER_AT_MOUSE_UP = true;
 			CONFIG::BUILD_FOR_MOBILE_AIR {
-				var _loc1_: Class = DCResourceManager.getInstance().getSWFClass(Config.SWF_INTERFACE_NAME, "hud_new_top_mobile");
-				var _loc2_: Class = DCResourceManager.getInstance().getSWFClass(Config.SWF_INTERFACE_NAME, "hud_new_bottom_mobile");
-			}
-					CONFIG::BUILD_FOR_AIR {
 				var _loc1_: Class = DCResourceManager.getInstance().getSWFClass(Config.SWF_INTERFACE_NAME, "hud_new_top");
 				var _loc2_: Class = DCResourceManager.getInstance().getSWFClass(Config.SWF_INTERFACE_NAME, "hud_new_bottom");
 			}
-					CONFIG::NOT_BUILD_FOR_AIR {
+			CONFIG::BUILD_FOR_AIR {
+				var _loc1_: Class = DCResourceManager.getInstance().getSWFClass(Config.SWF_INTERFACE_NAME, "hud_new_top");
+				var _loc2_: Class = DCResourceManager.getInstance().getSWFClass(Config.SWF_INTERFACE_NAME, "hud_new_bottom");
+			}
+			CONFIG::NOT_BUILD_FOR_AIR {
 				var _loc1_: Class = DCResourceManager.getInstance().getSWFClass(Config.SWF_INTERFACE_NAME, "hud_new_top");
 				var _loc2_: Class = DCResourceManager.getInstance().getSWFClass(Config.SWF_INTERFACE_NAME, "hud_new_bottom");
 			}
@@ -577,6 +583,8 @@
 			this.mHudButtonShop = Utils.createBasicButton(this.mIngameHUDClip_BOTTOM, "Button_shop", this.buttonShopPressed);
 			this.mHudButtonSave = Utils.createBasicButton(this.mIngameHUDClip_BOTTOM, "Button_save", this.buttonSavePressed);
 			this.mButtonMap = Utils.createBasicButton(this.mIngameHUDClip_BOTTOM, 'Button_Map', this.buttonMapPressed);
+			this.mButtonPvp = Utils.createBasicButton(this.mIngameHUDClip_BOTTOM, 'Button_Pvp', this.buttonPvpPressed);
+			this.mButtonPvp.setVisible(false); // Disable pvp button for now
 
 
 			this.mRightPlaceButtonClip = this.mIngameHUDClip.getChildByName("right_button") as MovieClip;
@@ -592,11 +600,11 @@
 			this.mSupplyFrame = this.mIngameHUDClip.getChildByName("Supplies") as MovieClip;
 			this.mSuppliersBar = new BigHudBar(this.mSupplyFrame, true);
 			this.mButtonAddSupply = this.addButton(this.mSupplyFrame, "button_add_supplies", this.suppliesPressed);
-			trace("this.mNeighborActionsFrame = this.mIngameHUDClip.getChildByName('Visitor_Energy') as MovieClip;");
-			trace("this.mNeighborActionsFrame.visible = false;");
-			trace("this.mNeighborActionsBar = new BigHudBar(thi.mNeighborActionsFrame,true);");
-			trace("this.mNeighborName = (this.mNeighborActionsFrame.getChildByName('Owners_Card') as MovieClip).getChildByName('Text_Owner') as TextField;");
-			trace("LocalizationUtils.replaceFont(this.mNeighborName);");
+			//this.mNeighborActionsFrame = this.mIngameHUDClip.getChildByName('Visitor_Energy') as MovieClip;"
+			//this.mNeighborActionsFrame.visible = false;"
+			//this.mNeighborActionsBar = new BigHudBar(thi.mNeighborActionsFrame,true);"
+			//this.mNeighborName = (this.mNeighborActionsFrame.getChildByName('Owners_Card') as MovieClip).getChildByName('Text_Owner') as TextField;"
+			//LocalizationUtils.replaceFont(this.mNeighborName);"
 			this.mEnergyTimerText = new AutoTextField(this.mEnergyFrame.getChildByName("Text_Status") as TextField);
 			this.mButtonAddEnergy = this.addButton(this.mEnergyFrame, "button_add_energy", this.ButtonAddEnergyPressed);
 			this.mXpFrame = this.mIngameHUDClip.getChildByName("Experience") as MovieClip;
@@ -819,7 +827,7 @@
 			var _loc2_: MovieClip = this.mIngameHUDClip.getChildByName(param1) as MovieClip;
 			this.mIngameHUDClip.removeChild(_loc2_);
 		}
-
+		// This is the alignment test code for the resize function.
 		/*
       public function resize(param1:int, param2:int) : void
       {
@@ -885,67 +893,245 @@
          }
       }
       */
-		public function resize(param1: int, param2: int): void {
-			var _loc7_: PopUpWindow = null;
-			var _loc3_: int = Math.max(param1 - this.GAME_HUD_WIDTH, 0);
-			var _loc4_: int = Math.max(param2 - 750, 0);
-			var _loc5_: Number = 0;
-			var _loc6_: int = this.mResourceFrame.width + 2;
 
-			_loc5_ = _loc6_ >> 3;
+		CONFIG::BUILD_FOR_MOBILE_AIR { // MOBILE
+			// This is the scaling code for the resize function.
+			public function resize(param1: int, param2: int): void {
+				var _loc7_: PopUpWindow = null;
+				var _loc3_: int = Math.max(param1 - this.GAME_HUD_WIDTH, 0);
+				var _loc4_: int = Math.max(param2 - 750, 0);
+				var _loc5_: Number = 0;
+				var _loc6_: int = this.mResourceFrame.width + 2;
 
-			// Ensure mIngameHUDClip stays within bounds
-			this.mIngameHUDClip.x = _loc3_ / 2;
-			this.mIngameHUDClip.y = _loc4_;
+				_loc5_ = _loc6_ >> 3;
 
-			// Ensure mPullOutMissionFrame and other frames stay within bounds
-			this.mPullOutMissionFrame.x = 0;
-			this.mButtonPullOutMissionFrame.x = Math.max(0, Math.min(param1 - this.mButtonPullOutMissionFrame.width, this.mButtonPullOutMissionFrame.x - _loc3_ / 2));
-			this.mButtonPullOutFrame.x = Math.max(0, param1 - this.mButtonPullOutFrame.width);
-			this.mPullOutMenuFrame.x = param1;
+				// Ensure mIngameHUDClip stays within bounds
+				this.mIngameHUDClip.x = 0;
+				this.mIngameHUDClip.y = 0; // Keep the top bar at the top of the screen.
+				
+				// CALCULATING SCALE FACTOR
 
-			this.mButtonPullOutMissionFrame.y = Math.max(0, Math.min(param2 - this.mButtonPullOutMissionFrame.height));
-			this.mPullOutMissionFrame.y = Math.max(0, Math.min(param2 - this.mPullOutMenuFrame.height / 2 + this.mButtonPullOutMissionFrame.height));
-			this.mButtonPullOutFrame.y = Math.max(0, Math.min(param2 - this.mButtonPullOutFrame.height));
-			this.mPullOutMenuFrame.y = Math.max(0, Math.min(param2 - this.mPullOutMenuFrame.height));
+				// Scale only the top bar elements based on the stage width (param1)
+				var scaleFactorWidth: Number = (param1 + 10) / this.GAME_HUD_WIDTH;
+				// Scale the height based on the percentage increase from the original height
+				var scaleFactorHeight: Number = (param2 + 150) / 680; // Assuming 680 is the original height
+				
+				var scaleFactor:Number = Math.min(scaleFactorWidth, scaleFactorHeight) // Ensure there is no distortion
 
-			this.mHudButtonShop.setY(Math.max(0, Math.min(param2 - this.mHudButtonShop.getHeight())) + 3);
-			this.mHudButtonSave.setY(Math.max(0, Math.min(param2 - this.mHudButtonSave.getHeight())) + 3);
-			this.mButtonMap.setY(Math.max(0, Math.min(param2 - this.mButtonMap.getHeight())) + 3);
+				// APPLYING SCALE FACTOR
 
+				// Scale top bar elements based on the percentage increase from the original width and height
+				this.mIngameHUDClip.scaleX = scaleFactor;
+				this.mIngameHUDClip.scaleY = scaleFactor;
 
-			if (!this.keyCoordinates) {
-				this.keyCoordinates = new Array();
-				this.keyCoordinates.push(new Point(this.mResourceFrame.x, this.mResourceFrame.y));
-				this.keyCoordinates.push(new Point(this.mEnergyFrame.x, this.mEnergyFrame.y));
-				this.keyCoordinates.push(new Point(this.mXpFrame.x, this.mXpFrame.y));
-				this.keyCoordinates.push(new Point(this.mSupplyFrame.x, this.mSupplyFrame.y));
-			}
+				// Scale the bottom bar elements based on the percentage increase from the original width and height
+				this.mButtonPullOutMissionFrame.scaleX = scaleFactor;
+				this.mButtonPullOutMissionFrame.scaleY = scaleFactor;
+				this.mButtonPullOutFrame.scaleX = scaleFactor;
+				this.mButtonPullOutFrame.scaleY = scaleFactor;
+				this.mPullOutMissionFrame.scaleX = scaleFactor;
+				this.mPullOutMissionFrame.scaleY = scaleFactor;
+				this.mPullOutMenuFrame.scaleX = scaleFactor;
+				this.mPullOutMenuFrame.scaleY = scaleFactor;
+				
+				// POSITION ELEMENTS
+				
+				// Center the top bar
+				this.mIngameHUDClip.x = Math.max(0,(param1 - this.mIngameHUDClip.width) / 2);
+	
+				// Ensure mIngameHUDClip_BOTTOM stays within bounds
+				this.mIngameHUDClip_BOTTOM.x = 0;
+				// Keep the bottom bar at the bottom of the screen by setting the y position to the new height - the old height
+				this.mIngameHUDClip_BOTTOM.y = Math.min(0,param2 - 750);		
 
-			// Ensure key frames stay within bounds
-			this.mResourceFrame.y = -_loc4_ + (this.keyCoordinates[0] as Point).y;
-			this.mEnergyFrame.y = -_loc4_ + (this.keyCoordinates[1] as Point).y;
-			this.mXpFrame.y = -_loc4_ + (this.keyCoordinates[2] as Point).y;
-			this.mSupplyFrame.y = -_loc4_ + (this.keyCoordinates[3] as Point).y;
-			//this.mNeighborActionsFrame.y = -_loc4_ + (this.keyCoordinates[1] as Point).y;
+				this.mPullOutMissionFrame.x = 0;
+				this.mButtonPullOutMissionFrame.x = 0;
+				this.mButtonPullOutFrame.x = Math.max(0, param1 - this.mButtonPullOutFrame.width);
+				this.mPullOutMenuFrame.x = param1;
 
-			// Ensure mToolBox stays within bounds
-			this.TOOLBOX_BOTTOM_X = this.mButtonPullOutFrame.x + (this.mToolBox.width << 1);
-			this.TOOLBOX_TOP_X = this.mButtonPullOutFrame.x;
-			this.mToolBox.x = this.TOOLBOX_BOTTOM_X;
-			this.mToolBox.y = this.mButtonPullOutFrame.y - (this.mToolBox.height >> 1);
+				this.mButtonPullOutMissionFrame.y = param2 - this.mButtonPullOutMissionFrame.height;
+				this.mPullOutMissionFrame.y = param2 - this.mButtonPullOutMissionFrame.height;//Math.max(0, Math.min(param2 + 750 - this.mPullOutMenuFrame.height));
+				this.mButtonPullOutFrame.y = param2 - this.mButtonPullOutFrame.height; //Math.max(0, Math.min(param2 + 750 - this.mButtonPullOutFrame.height));
+				this.mPullOutMenuFrame.y = param2 - this.mPullOutMenuFrame.height; //Math.max(0, Math.min(param2 - this.mPullOutMenuFrame.height));
 
-			var _loc8_: Array = null;
-			var _loc9_: * = (_loc8_ = PopUpManager.getPopups()).length;
-			var _loc10_: int = 0;
+				this.mHudButtonShop.setX(this.mButtonPullOutMissionFrame.x + this.mButtonPullOutMissionFrame.width + 20);
+				this.mHudButtonSave.setX(this.mHudButtonShop.getX() + this.mHudButtonShop.getWidth());
+				this.mButtonMap.setX(this.mHudButtonSave.getX() + this.mHudButtonSave.getWidth());
+				this.mButtonPvp.setX(this.mButtonMap.getX() + this.mButtonMap.getWidth());
 
-			while (_loc10_ < _loc9_) {
-				if (_loc7_ = _loc8_[_loc10_] as PopUpWindow) {
-					if (_loc7_.parent) {
-						_loc7_.alignToScreen();
-					}
+				this.mHudButtonShop.setY(Math.max(0, Math.min(param2 - this.mHudButtonShop.getHeight())) + 3);
+				this.mHudButtonSave.setY(Math.max(0, Math.min(param2 - this.mHudButtonSave.getHeight())) + 3);
+				this.mButtonMap.setY(Math.max(0, Math.min(param2 - this.mButtonMap.getHeight())) + 3);
+				this.mButtonPvp.setY(Math.max(0, Math.min(param2 - this.mButtonPvp.getHeight())) + 3);
+
+				if (!this.keyCoordinates) {
+					this.keyCoordinates = new Array();
+					this.keyCoordinates.push(new Point(this.mResourceFrame.x, this.mResourceFrame.y));
+					this.keyCoordinates.push(new Point(this.mEnergyFrame.x, this.mEnergyFrame.y));
+					this.keyCoordinates.push(new Point(this.mXpFrame.x, this.mXpFrame.y));
+					this.keyCoordinates.push(new Point(this.mSupplyFrame.x, this.mSupplyFrame.y));
 				}
-				_loc10_++;
+
+				this.TOOLBOX_BOTTOM_X = this.mButtonPullOutFrame.x + (this.mToolBox.width << 1);
+				this.TOOLBOX_TOP_X = this.mButtonPullOutFrame.x;
+				this.mToolBox.x = this.TOOLBOX_BOTTOM_X;
+				this.mToolBox.y = this.mButtonPullOutFrame.y - (this.mToolBox.height >> 1);
+
+				
+			// THE TOOLBOX IS JUST THE BOX NOT THE GEAR AND STUFF INSIDE
+			// Position the toolbox on the right side of the screen
+			//this.TOOLBOX_BOTTOM_X = param1 - this.mToolBox.width;
+			//this.TOOLBOX_TOP_X = param1 - this.mButtonPullOutFrame.width;
+			//this.mToolBox.x = param1 - (4 * this.mToolBox.width);
+			//this.mToolBox.y = this.mButtonPullOutFrame.y - (this.mToolBox.height >> 1) - 200;
+			
+
+				var _loc8_: Array = null;
+				var _loc9_: * = (_loc8_ = PopUpManager.getPopups()).length;
+				var _loc10_: int = 0;
+
+				while (_loc10_ < _loc9_) {
+					if (_loc7_ = _loc8_[_loc10_] as PopUpWindow) {
+						if (_loc7_.parent) {
+							_loc7_.alignToScreen();
+						}
+					}
+					_loc10_++;
+				}
+			}
+		}
+
+		CONFIG::BUILD_FOR_AIR { // DESKTOP
+			public function resize(param1: int, param2: int): void {
+				var _loc7_: PopUpWindow = null;
+				var _loc3_: int = Math.max(param1 - this.GAME_HUD_WIDTH, 0);
+				var _loc4_: int = Math.max(param2 - 750, 0);
+				var _loc5_: Number = 0;
+				var _loc6_: int = this.mResourceFrame.width + 2;
+
+				_loc5_ = _loc6_ >> 3;
+
+				// Ensure mIngameHUDClip stays within bounds
+				this.mIngameHUDClip.x = _loc3_ / 2;
+				this.mIngameHUDClip.y = _loc4_;
+
+				// Ensure mPullOutMissionFrame and other frames stay within bounds
+				this.mPullOutMissionFrame.x = 0;
+				this.mButtonPullOutMissionFrame.x = Math.max(0, Math.min(param1 - this.mButtonPullOutMissionFrame.width, this.mButtonPullOutMissionFrame.x - _loc3_ / 2));
+				this.mButtonPullOutFrame.x = Math.max(0, param1 - this.mButtonPullOutFrame.width);
+				this.mPullOutMenuFrame.x = param1;
+
+				this.mButtonPullOutMissionFrame.y = Math.max(0, Math.min(param2 - this.mButtonPullOutMissionFrame.height));
+				this.mPullOutMissionFrame.y = Math.max(0, Math.min(param2 - this.mPullOutMenuFrame.height / 2 + this.mButtonPullOutMissionFrame.height));
+				this.mButtonPullOutFrame.y = Math.max(0, Math.min(param2 - this.mButtonPullOutFrame.height));
+				this.mPullOutMenuFrame.y = Math.max(0, Math.min(param2 - this.mPullOutMenuFrame.height));
+
+				this.mHudButtonShop.setY(Math.max(0, Math.min(param2 - this.mHudButtonShop.getHeight())) + 3);
+				this.mHudButtonSave.setY(Math.max(0, Math.min(param2 - this.mHudButtonSave.getHeight())) + 3);
+				this.mButtonMap.setY(Math.max(0, Math.min(param2 - this.mButtonMap.getHeight())) + 3);
+				this.mButtonPvp.setY(Math.max(0, Math.min(param2 - this.mButtonPvp.getHeight())) + 3);
+
+
+				if (!this.keyCoordinates) {
+					this.keyCoordinates = new Array();
+					this.keyCoordinates.push(new Point(this.mResourceFrame.x, this.mResourceFrame.y));
+					this.keyCoordinates.push(new Point(this.mEnergyFrame.x, this.mEnergyFrame.y));
+					this.keyCoordinates.push(new Point(this.mXpFrame.x, this.mXpFrame.y));
+					this.keyCoordinates.push(new Point(this.mSupplyFrame.x, this.mSupplyFrame.y));
+				}
+
+				// Ensure key frames stay within bounds
+				this.mResourceFrame.y = -_loc4_ + (this.keyCoordinates[0] as Point).y;
+				this.mEnergyFrame.y = -_loc4_ + (this.keyCoordinates[1] as Point).y;
+				this.mXpFrame.y = -_loc4_ + (this.keyCoordinates[2] as Point).y;
+				this.mSupplyFrame.y = -_loc4_ + (this.keyCoordinates[3] as Point).y;
+				//this.mNeighborActionsFrame.y = -_loc4_ + (this.keyCoordinates[1] as Point).y;
+
+				// Ensure mToolBox stays within bounds
+				this.TOOLBOX_BOTTOM_X = this.mButtonPullOutFrame.x + (this.mToolBox.width << 1);
+				this.TOOLBOX_TOP_X = this.mButtonPullOutFrame.x;
+				this.mToolBox.x = this.TOOLBOX_BOTTOM_X;
+				this.mToolBox.y = this.mButtonPullOutFrame.y - (this.mToolBox.height >> 1);
+
+				var _loc8_: Array = null;
+				var _loc9_: * = (_loc8_ = PopUpManager.getPopups()).length;
+				var _loc10_: int = 0;
+
+				while (_loc10_ < _loc9_) {
+					if (_loc7_ = _loc8_[_loc10_] as PopUpWindow) {
+						if (_loc7_.parent) {
+							_loc7_.alignToScreen();
+						}
+					}
+					_loc10_++;
+				}
+			}
+		}
+
+		CONFIG::NOT_BUILD_FOR_AIR { // BROWSER (exact copy of desktop code, stupid Animate)
+			public function resize(param1: int, param2: int): void {
+				var _loc7_: PopUpWindow = null;
+				var _loc3_: int = Math.max(param1 - this.GAME_HUD_WIDTH, 0);
+				var _loc4_: int = Math.max(param2 - 750, 0);
+				var _loc5_: Number = 0;
+				var _loc6_: int = this.mResourceFrame.width + 2;
+
+				_loc5_ = _loc6_ >> 3;
+
+				// Ensure mIngameHUDClip stays within bounds
+				this.mIngameHUDClip.x = _loc3_ / 2;
+				this.mIngameHUDClip.y = _loc4_;
+
+				// Ensure mPullOutMissionFrame and other frames stay within bounds
+				this.mPullOutMissionFrame.x = 0;
+				this.mButtonPullOutMissionFrame.x = Math.max(0, Math.min(param1 - this.mButtonPullOutMissionFrame.width, this.mButtonPullOutMissionFrame.x - _loc3_ / 2));
+				this.mButtonPullOutFrame.x = Math.max(0, param1 - this.mButtonPullOutFrame.width);
+				this.mPullOutMenuFrame.x = param1;
+
+				this.mButtonPullOutMissionFrame.y = Math.max(0, Math.min(param2 - this.mButtonPullOutMissionFrame.height));
+				this.mPullOutMissionFrame.y = Math.max(0, Math.min(param2 - this.mPullOutMenuFrame.height / 2 + this.mButtonPullOutMissionFrame.height));
+				this.mButtonPullOutFrame.y = Math.max(0, Math.min(param2 - this.mButtonPullOutFrame.height));
+				this.mPullOutMenuFrame.y = Math.max(0, Math.min(param2 - this.mPullOutMenuFrame.height));
+
+				this.mHudButtonShop.setY(Math.max(0, Math.min(param2 - this.mHudButtonShop.getHeight())) + 3);
+				this.mHudButtonSave.setY(Math.max(0, Math.min(param2 - this.mHudButtonSave.getHeight())) + 3);
+				this.mButtonMap.setY(Math.max(0, Math.min(param2 - this.mButtonMap.getHeight())) + 3);
+				this.mButtonPvp.setY(Math.max(0, Math.min(param2 - this.mButtonPvp.getHeight())) + 3);
+
+
+				if (!this.keyCoordinates) {
+					this.keyCoordinates = new Array();
+					this.keyCoordinates.push(new Point(this.mResourceFrame.x, this.mResourceFrame.y));
+					this.keyCoordinates.push(new Point(this.mEnergyFrame.x, this.mEnergyFrame.y));
+					this.keyCoordinates.push(new Point(this.mXpFrame.x, this.mXpFrame.y));
+					this.keyCoordinates.push(new Point(this.mSupplyFrame.x, this.mSupplyFrame.y));
+				}
+
+				// Ensure key frames stay within bounds
+				this.mResourceFrame.y = -_loc4_ + (this.keyCoordinates[0] as Point).y;
+				this.mEnergyFrame.y = -_loc4_ + (this.keyCoordinates[1] as Point).y;
+				this.mXpFrame.y = -_loc4_ + (this.keyCoordinates[2] as Point).y;
+				this.mSupplyFrame.y = -_loc4_ + (this.keyCoordinates[3] as Point).y;
+				//this.mNeighborActionsFrame.y = -_loc4_ + (this.keyCoordinates[1] as Point).y;
+
+				// Ensure mToolBox stays within bounds
+				this.TOOLBOX_BOTTOM_X = this.mButtonPullOutFrame.x + (this.mToolBox.width << 1);
+				this.TOOLBOX_TOP_X = this.mButtonPullOutFrame.x;
+				this.mToolBox.x = this.TOOLBOX_BOTTOM_X;
+				this.mToolBox.y = this.mButtonPullOutFrame.y - (this.mToolBox.height >> 1);
+
+				var _loc8_: Array = null;
+				var _loc9_: * = (_loc8_ = PopUpManager.getPopups()).length;
+				var _loc10_: int = 0;
+
+				while (_loc10_ < _loc9_) {
+					if (_loc7_ = _loc8_[_loc10_] as PopUpWindow) {
+						if (_loc7_.parent) {
+							_loc7_.alignToScreen();
+						}
+					}
+					_loc10_++;
+				}
 			}
 		}
 
@@ -1135,11 +1321,6 @@
 			this.openInventoryDialog();
 		}
 
-		private function buttonPvPPressed(param1: MouseEvent): void {
-			if (!MissionManager.isTutorialCompleted()) {
-				return;
-			}
-		}
 
 		public function triggerShopOpening(param1: String, param2: String = "normal"): void {
 			if (MissionManager.mBuildingNeedtoOpen) {
@@ -1163,6 +1344,7 @@
 		}
 
 		public function buttonSavePressed(param1: MouseEvent): void {
+			trace("[MichiDebug] Saved game")
 			CONFIG::BUILD_FOR_AIR {
 				var file: File = new File();
 				file.addEventListener(PermissionEvent.PERMISSION_STATUS, onPermission);
@@ -1176,18 +1358,39 @@
 			}
 			CONFIG::BUILD_FOR_MOBILE_AIR {
 				// Resolve the file path
-				var file: File = File.applicationStorageDirectory.resolvePath("savefile.txt");
+				var file2: File = null;
+				if (GameState.mInstance.mSaveLocation == "documents") {
+					var file: File = File.documentsDirectory.resolvePath("ArmyAttack/savefile.txt");
+					file2 = File.applicationStorageDirectory.resolvePath("savefile.txt"); // Also save in appdata, just to be sure
+				} else {
+					var file: File = File.applicationStorageDirectory.resolvePath("savefile.txt");
+				}
 				file.addEventListener(PermissionEvent.PERMISSION_STATUS, onPermission);
 				file.requestPermission();
+				if(file2 != null){
+					file2.addEventListener(PermissionEvent.PERMISSION_STATUS, onPermission);
+					file2.requestPermission();
+				}
 			}
 		}
 
 		CONFIG::BUILD_FOR_MOBILE_AIR {
 			public function autoSaveGame(param1: TimerEvent): void {
+				trace("[MichiDebug] Auto-saved game")
 				// Resolve the file path
-				var file: File = File.applicationStorageDirectory.resolvePath("savefile.txt");
+				var file2: File = null;
+				if (GameState.mInstance.mSaveLocation == "documents") {
+					var file: File = File.documentsDirectory.resolvePath("ArmyAttack/savefile.txt");
+					file2 = File.applicationStorageDirectory.resolvePath("savefile.txt"); // Also save in appdata, just to be sure
+				} else {
+					var file: File = File.applicationStorageDirectory.resolvePath("savefile.txt");
+				}
 				file.addEventListener(PermissionEvent.PERMISSION_STATUS, onPermission);
 				file.requestPermission();
+				if(file2 != null){
+					file2.addEventListener(PermissionEvent.PERMISSION_STATUS, onPermission);
+					file2.requestPermission();
+				}
 			}
 		}
 
@@ -1310,6 +1513,23 @@
 			this.mFileBeingLoaded = null;
 		}
 
+		public function openFirstTimeChooseScreen(): void {
+			if (ArmySoundManager.getInstance().isMusicOn()) {
+				if (Config.RESTART_STATUS == -1 && PauseDialog.mPauseScreenPreviousState == PauseDialog.STATE_UNDEFINED) {
+					ArmySoundManager.getInstance().playSound(ArmySoundManager.MUSIC_HOME, 1, 0, -1);
+				}
+			}
+			this.openDialogIfResourceLoaded(Config.SWF_MAIN_MENU_NAME, FirstTimeChooseDialog, [this.closeDialog]);
+			this.cancelTools();
+			this.mFileBeingLoaded = null;
+		}
+
+		public function openGiveFilePermissionScreen(): void {
+			this.openDialogIfResourceLoaded(Config.SWF_MAIN_MENU_NAME, GiveFilePermissionDialog, [this.closeDialog]);
+			this.cancelTools();
+			this.mFileBeingLoaded = null;
+		}
+
 		public function openHelpScreen(): void {
 			PauseDialog.mPauseScreenState = PauseDialog.STATE_HELP_CLICK;
 			this.openDialogIfResourceLoaded(Config.SWF_MAIN_MENU_NAME, HelpDialogClass, [this.closeDialog]);
@@ -1386,6 +1606,11 @@
 			this.mGame.cancelAllPlayerActions();
 		}
 
+		public function openRestartTutorialConfirmationTextBox(): void {
+			this.openDialog(ConfirmRestartTutorialWindow, [this.closeDialog], null, true);
+			this.mGame.cancelAllPlayerActions();
+		}
+
 		public function openOutOfSuppliesTextBox(param1: Array): void {
 			this.openDialogIfResourceLoaded(Config.SWF_POPUPS_WARNINGS_NAME, OutOfSuppliesWindow, [this.closeDialog, this.triggerShopOpening, this.openAskSuppliesTextBox, param1]);
 			this.mGame.cancelAllPlayerActions();
@@ -1443,6 +1668,16 @@
 
 		public function openInfantryCapTextBox(): void {
 			this.openDialogIfResourceLoaded(Config.SWF_POPUPS_WARNINGS_NAME, InfantryCapFullWindow, [this.closeDialog]);
+			this.mGame.cancelAllPlayerActions();
+		}
+
+		public function openArmorCapTextBox(): void {
+			this.openDialogIfResourceLoaded(Config.SWF_POPUPS_WARNINGS_NAME, ArmorCapFullWindow, [this.closeDialog]);
+			this.mGame.cancelAllPlayerActions();
+		}
+
+		public function openArtilleryCapTextBox(): void {
+			this.openDialogIfResourceLoaded(Config.SWF_POPUPS_WARNINGS_NAME, ArtilleryCapFullWindow, [this.closeDialog]);
 			this.mGame.cancelAllPlayerActions();
 		}
 
@@ -1810,6 +2045,7 @@
 				smTooltipTIDLinkage["Button_Toggle"] = GameState.getText("TOOLTIP_HUD_TOOLBOX_OPEN_CLOSE_BUTTON");
 				smTooltipTIDLinkage["Button_Powerup"] = GameState.getText("HUD_FIRECALL_TOOLTIP");
 				smTooltipTIDLinkage["Button_Map"] = GameState.getText("HUD_MAP_TOOLTIP");
+				smTooltipTIDLinkage["Button_Pvp"] = GameState.getText("TOOLTIP_HUD_PVP");
 				smTooltipTIDLinkage["Button_Tool"] = GameState.getText("TOOLTIP_HUD_REPAIR_TOOL_BUTTON");
 				smTooltipTIDLinkage["Button_Shop"] = GameState.getText("TOOLTIP_HUD_SHOP_BUTTON");
 				smTooltipTIDLinkage["Button_Save"] = GameState.getText("TOOLTIP_HUD_SHOP_BUTTON");
@@ -1834,7 +2070,7 @@
 			}
 			_loc1_.push(this.mXpFrame.getChildByName("HitBox_Xp"));
 			_loc1_.push(this.mXpFrame.getChildByName("HitBox_Level"));
-			trace("_loc1_.push(this.mNeighborActionsFrame.getChildByName('HitBox_Visitor_Energy'));");
+			//_loc1_.push(this.mNeighborActionsFrame.getChildByName('HitBox_Visitor_Energy'));
 			_loc1_.push(this.mEnergyFrame.getChildByName("HitBox_Energy"));
 			_loc1_.push(this.mIngameHUDClip.getChildByName("Supplies"));
 			_loc1_.push(this.mResourceFrame.getChildByName("Button_Cash"));
@@ -1849,6 +2085,7 @@
 			_loc1_.push(this.mPullOutMenu.getChildByName("Button_save"));
 			_loc1_.push(this.mPullOutMenu.getChildByName("Button_social"));
 			_loc1_.push(this.mPullOutMenu.getChildByName("Button_Map"));
+			_loc1_.push(this.mPullOutMenu.getChildByName("Button_Pvp"));
 			_loc1_.push(this.mPullOutMenu.getChildByName("Button_settings"));
 			_loc1_.push(this.mButtonPullOutFrame.getChildByName("button_heal"));
 			_loc1_.push(this.mButtonPullOutFrame.getChildByName("button_pullout_tools"));
@@ -1863,6 +2100,7 @@
 				}
 				_loc4_++;
 			}
+
 			this.mHudTooltip = new TooltipHUD(100, 500, true);
 			this.mIngameHUDClip.addChild(this.mHudTooltip);
 			this.mFriendlyTooltip = new TooltipHealth(TooltipHealth.TYPE_DEFAULT, 120, 200, true);
@@ -1873,6 +2111,37 @@
 			this.mEnemyBuildingTooltip = new TooltipHealth(TooltipHealth.TYPE_ENEMY_BUILDING, 120, 200, true);
 			this.mBuildingWaterPlantTooltip = new TooltipHealth(TooltipHealth.TYPE_BUILDING_WATERPLANT, 120, 200, true);
 			this.mInfoTooltip = new TooltipHealth(TooltipHealth.TYPE_INFO, 120, 200, true);
+
+
+			CONFIG::BUILD_FOR_MOBILE_AIR {
+				// Get the current stage width and height
+				var stageWidth: Number = GameState.mInstance.getStageWidth();
+
+				// Define the target size relative to the provided percentages
+				var targetWidth: Number = stageWidth * 0.05;
+				var targetHeight: Number = (targetWidth / 120);
+
+				// Scale all the tooltips to the target width
+				this.mFriendlyTooltip.scaleX = targetWidth / 120;
+				this.mDetailsTooltip.scaleX = targetWidth / 120;
+				this.mEnemyTooltip.scaleX = targetWidth / 120;
+				this.mBuildingTooltip.scaleX = targetWidth / 120;
+				this.mAttackTooltip.scaleX = targetWidth / 120;
+				this.mEnemyBuildingTooltip.scaleX = targetWidth / 120;
+				this.mBuildingWaterPlantTooltip.scaleX = targetWidth / 120;
+				this.mInfoTooltip.scaleX = targetWidth / 120;
+
+				// Scale all the tooltips to the target height
+				this.mFriendlyTooltip.scaleY = targetHeight;
+				this.mDetailsTooltip.scaleY = targetHeight;
+				this.mEnemyTooltip.scaleY = targetHeight;
+				this.mBuildingTooltip.scaleY = targetHeight;
+				this.mAttackTooltip.scaleY = targetHeight;
+				this.mEnemyBuildingTooltip.scaleY = targetHeight;
+				this.mBuildingWaterPlantTooltip.scaleY = targetHeight;
+				this.mInfoTooltip.scaleY = targetHeight;
+			}
+
 		}
 
 		public function showObjectTooltip(param1: Renderable, param2: int = 0): void {
@@ -2012,7 +2281,7 @@
 		public function setVisitingNeighbor(param1: Boolean): void {
 			this.mEnergyFrame.visible = !param1;
 			this.mXpFrame.visible = !param1;
-			trace("this.mNeighborActionsFrame.visible = param1;");
+			//this.mNeighborActionsFrame.visible = param1;"
 			this.mRankIcon = null;
 			if (param1) {
 				this.mButtonBackHome.setVisible(true);
@@ -2024,8 +2293,9 @@
 				this.mHudButtonShop.setEnabled(false);
 				this.mHudButtonSave.setEnabled(false);
 				this.mButtonMap.setEnabled(false);
+				this.mButtonPvp.setEnabled(false);
 				this.mButtonPowerup.setEnabled(false);
-				trace("this.mNeighborName.text = this.mGame.mVisitingFriend.getFirstName();");
+				// this.mNeighborName.text = this.mGame.mVisitingFriend.getFirstName();
 			} else {
 				this.mButtonPowerup.setEnabled(true);
 			}
@@ -2152,6 +2422,13 @@
 
 		private function buttonMapPressed(param1: MouseEvent): void {
 			this.openDialogIfResourceLoaded("swf/map", WorldMapWindow, [this.closeDialog]);
+		}
+
+		private function buttonPvpPressed(param1: MouseEvent): void {
+			if (!MissionManager.isTutorialCompleted()) {
+				return;
+			}
+			GameState.mInstance.openPvPMatchUpDialog();
 		}
 
 		public function updateMapButtonEnablation(): void {

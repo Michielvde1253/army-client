@@ -96,17 +96,19 @@
       
       public static const CHECK_FOR_MISPLACED_DEBRIS:Boolean = true;
 	  
-      public static const MOBILE_MODE:Boolean = false;
+      public static const MOBILE_MODE:Boolean = false; // SHOULD NOT BE USED
 	  
-      public static const USE_DISCORD_RPC:Boolean = false;
+      public static const USE_DISCORD_RPC:Boolean = false; // SHOULD NOT BE USED
 	  
-      public static const BUILD_WITH_AIR:Boolean = false;
+      public static const BUILD_WITH_AIR:Boolean = false; // SHOULD NOT BE USED
       
       public static const COOKIE_SETTINGS_NAME:String = "Settings";
       
       public static const COOKIE_SETTINGS_NAME_MUSIC:String = "Music";
       
       public static const COOKIE_SETTINGS_NAME_SFX:String = "Sfx";
+	  
+      public static const COOKIE_SETTINGS_NAME_ANIMATION:String = "Animation";
       
       public static const COOKIE_SETTINGS_NAME_NOTIFICATION:String = "Notification";
       

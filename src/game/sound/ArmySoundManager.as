@@ -1,4 +1,4 @@
-package game.sound
+﻿package game.sound
 {
    import com.dchoc.utils.Cookie;
    import flash.events.Event;

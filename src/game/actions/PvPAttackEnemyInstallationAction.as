@@ -1,4 +1,4 @@
-package game.actions
+﻿package game.actions
 {
    import game.characters.AnimationController;
    import game.gameElements.EnemyInstallationObject;
@@ -165,11 +165,15 @@ package game.actions
          {
             return;
          }
-         if(mTarget == null || !mTarget.isAlive() || Boolean((mTarget as EnemyInstallationObject).mCurrentAction))
+         if(mTarget == null || !mTarget.isAlive() || Boolean((mTarget as EnemyInstallationObject).mCurrentAction) || GameState.mInstance.mPvPMatch.mActionsLeft == 0 || !GameState.mInstance.mPvPMatch.mPlayerTurn) // Ducktape fix, player turn shouldn't be checked here.
          {
             skip();
             return;
          }
+		 /*
+		 Energy and map resources in pvp mode??? Guessing this is not needed.
+	 
+	 
          if(GameState.mInstance.mPlayerProfile.mEnergy <= 0)
          {
             GameState.mInstance.mHUD.openOutOfEnergyWindow();
@@ -182,6 +186,7 @@ package game.actions
             skip();
             return;
          }
+		 */
          mCharacterActors = GameState.mInstance.searchAttackablePlayerUnits(mTarget as EnemyInstallationObject);
          _loc1_ = false;
          _loc2_ = 0;

@@ -315,25 +315,12 @@
          var _loc5_:Number = _loc2_.getCameraX();
          var _loc6_:Number = _loc2_.getCameraY();
          var _loc7_:Number = _loc1_.mContainer.scaleX;
-		 trace(_loc7_)
          var _loc8_:int = Math.max(0,_loc5_ - _loc3_ / 2 / _loc7_) / _loc1_.mGridDimX;
          var _loc9_:int = Math.max(0,_loc6_ - _loc4_ / 2 / _loc7_) / _loc1_.mGridDimY;
          var _loc10_:int = Math.min(_loc1_.mSizeX * _loc1_.mGridDimX,_loc5_ + _loc3_ / 2 / _loc7_ + _loc1_.mGridDimX) / _loc1_.mGridDimX;
          //var _loc10_:int = (_loc5_ + _loc3_ / 2 / _loc7_ + _loc1_.mGridDimX) / _loc1_.mGridDimX;
          var _loc11_:int = Math.min(_loc1_.mSizeY * _loc1_.mGridDimY,_loc6_ + _loc4_ / 2 / _loc7_ + _loc1_.mGridDimY) / _loc1_.mGridDimY;
          //var _loc11_:int = (_loc6_ + _loc4_ / 2 / _loc7_ + _loc1_.mGridDimY) / _loc1_.mGridDimY;
-		 trace("loc8:")
-		 trace(_loc8_)
-		 trace("loc9:")
-		 trace(_loc9_)
-		 trace("loc10 MIN:")
-		 trace((_loc1_.mSizeX * _loc1_.mGridDimX) / _loc1_.mGridDimX)
-		 trace("loc10 MAX:")
-		 trace(_loc10_)
-		 trace("loc11 MIN:")
-		 trace((_loc1_.mSizeY * _loc1_.mGridDimY) / _loc1_.mGridDimY)
-		 trace("loc11 MAX:")
-		 trace(_loc11_)
          return new Rectangle(_loc8_,_loc9_,_loc10_ - _loc8_,_loc11_ - _loc9_);
       }
       
@@ -516,8 +503,8 @@
                   _loc8_ += this.mScene.mGridDimX * 2;
                   _loc9_++;
                }
-               this.mWaveContainer.x = this.mScene.mGridDimY * this.mScene.mSizeY;
-               this.mWaveContainer.y = _loc4_.left * this.mScene.mGridDimX;
+               this.mWaveContainer.y = this.mScene.mGridDimY * this.mScene.mSizeY;
+               this.mWaveContainer.x = _loc4_.left * this.mScene.mGridDimX;
             }
          }
       }
@@ -641,6 +628,10 @@
       
       private function drawBorderEdges(param1:int, param2:int) : void
       {
+         if(GameState.mInstance.mState == GameState.STATE_PVP) // No border edges in pvp
+         {
+            return;
+         }		  
          var _loc5_:* = false;
          var _loc6_:* = false;
          var _loc3_:int = this.mScene.getCellAt(param1,param2).mBorderEdgeBits;
@@ -889,6 +880,7 @@
                   }
                }
                this.drawClouds(_loc7_,_loc8_,_loc5_);
+			   this.drawBorderEdges(_loc7_,_loc8_);
                _loc8_++;
             }
             _loc7_++;
@@ -896,17 +888,17 @@
          this.mTargetBitmap = this.mFieldBmp;
          this.mTargetBitmapArray = this.mFieldBmpArray;
          this.mTargetMovieClip = this.mFieldMovieClip;
-         _loc7_ = param1;
-         while(_loc7_ < param3)
-         {
-            _loc8_ = param2;
-            while(_loc8_ < param4)
-            {
-               this.drawBorderEdges(_loc7_,_loc8_);
-               _loc8_++;
-            }
-            _loc7_++;
-         }
+         //_loc7_ = param1;
+         //while(_loc7_ < param3)
+         //{
+         //   _loc8_ = param2;
+         //   while(_loc8_ < param4)
+         //   {
+         //      this.drawBorderEdges(_loc7_,_loc8_);
+         //      _loc8_++;
+         //   }
+         //   _loc7_++;
+         //}
          if(GameState.needToUpdatePermanentHFE)
          {
             this.updatePermanentHFEs();

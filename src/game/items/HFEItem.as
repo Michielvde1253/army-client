@@ -1,4 +1,4 @@
-package game.items
+﻿package game.items
 {
    import flash.display.MovieClip;
    import game.states.GameState;
@@ -10,6 +10,8 @@ package game.items
       public var mPlantRewardXP:int;
       
       public var mHarvestAnimation:String;
+	   
+	  public var mHarvestSound:String;
       
       public var mRewardXP:int;
       
@@ -31,6 +33,7 @@ package game.items
          this.mRewardMaterial = param1.RewardMaterial;
          this.mRewardEnergy = param1.RewardEnergy;
          this.mHarvestAnimation = param1.HarvestAnimation;
+		 this.mHarvestSound = param1.HarvestSound;
       }
       
       override public function getDescription() : String

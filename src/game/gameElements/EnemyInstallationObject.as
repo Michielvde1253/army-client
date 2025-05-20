@@ -1,4 +1,4 @@
-package game.gameElements
+﻿package game.gameElements
 {
    import flash.display.MovieClip;
    import flash.events.MouseEvent;
@@ -591,13 +591,15 @@ package game.gameElements
       {
          var _loc2_:int = this.mHealth;
          this.mHealth = Math.max(0,param1);
-         if(this.mHealth != _loc2_)
-         {
+	     // Fix defences staying at 0 HP
+		 // Not sure what this check was meant for, so it might break something
+         //if(this.mHealth != _loc2_)
+         //{
             if(this.mHealth == 0)
             {
                this.remove();
             }
-         }
+         //}
       }
       
       public function getPower() : int

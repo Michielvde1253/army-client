@@ -1,4 +1,4 @@
-package game.gui.pvp
+﻿package game.gui.pvp
 {
    import flash.display.MovieClip;
    import flash.display.Sprite;

@@ -1,4 +1,4 @@
-package game.gui
+﻿package game.gui
 {
    import com.dchoc.GUI.DCButton;
    import flash.display.MovieClip;
@@ -516,7 +516,11 @@ package game.gui
             if(this.mItem.mType == "Infantry")
             {
                _loc3_.openInfantryCapTextBox();
-            }
+            } else if(this.mItem.mType == "Armor"){
+				_loc3_.openArmorCapTextBox();
+            } else if(this.mItem.mType == "Artillery"){
+				_loc3_.openArtilleryCapTextBox();
+			}
             else
             {
                _loc3_.openUnitCapTextBox(this.mItem);

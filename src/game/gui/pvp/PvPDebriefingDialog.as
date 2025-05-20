@@ -1,4 +1,4 @@
-package game.gui.pvp
+﻿package game.gui.pvp
 {
    import com.dchoc.graphics.DCResourceManager;
    import flash.display.MovieClip;
@@ -71,7 +71,7 @@ package game.gui.pvp
          this.mButtonBrag.setEnabled(true);
          mDoneCallback = param1;
          this.mMatchUpCallback = param2;
-         this.mPlayer = new PvPOpponent(GameState.mInstance.mPlayerProfile.mUid,GameState.mInstance.mPlayerProfile.mBadassXp,GameState.mInstance.mPlayerProfile.mBadassLevel,GameState.mInstance.mPlayerProfile.mBadassWins);
+         this.mPlayer = new PvPOpponent(GameState.mInstance.mPlayerProfile.mUid,GameState.mInstance.mPlayerProfile.mBadassXp,GameState.mInstance.mPlayerProfile.mBadassLevel,GameState.mInstance.mPlayerProfile.mBadassWins, "", "");
          this.setCard(this.mPlayerCard,this.mPlayer);
          this.mOpponent = GameState.mInstance.mPvPMatch.mOpponent;
          this.setCard(this.mOpponentCard,this.mOpponent);

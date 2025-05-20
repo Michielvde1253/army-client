@@ -1,4 +1,4 @@
-package game.items
+﻿package game.items
 {
    import flash.display.MovieClip;
    import game.states.GameState;
@@ -7,12 +7,15 @@ package game.items
    {
        
       
-      public var mAvailableInMaps:Array;
+      //public var mAvailableInMaps:Array;
       
       public function ResourceBuildingItem(param1:Object)
       {
          super(param1);
          mCrafting = param1.Crafting;
+		 /*
+		 Unused, now checked in ShopItem so that it also works for other buildings.
+		  
          var _loc2_:String = String(param1.AvailableInMaps);
          if(_loc2_)
          {
@@ -29,8 +32,12 @@ package game.items
          {
             this.mAvailableInMaps = null;
          }
+		 */
       }
       
+	  /*
+	  Unused, now checked in ShopItem so that it also works for other buildings.
+  
       override public function canBeBuiltOnThisMap() : Boolean
       {
          var _loc1_:String = GameState.mInstance.mCurrentMapId;
@@ -41,6 +48,8 @@ package game.items
       {
          return super.isUnlocked() && this.canBeBuiltOnThisMap();
       }
+  
+	  */
       
       override public function getIconMovieClip() : MovieClip
       {
@@ -52,10 +61,14 @@ package game.items
          return _loc1_;
       }
       
+	  /*
+	  Unused, is now checked in ShopItem with the MaxAmount parameter.
+	  
       override public function isAlreadyAdded() : Boolean
       {
          var _loc1_:GameState = GameState.mInstance;
          return _loc1_.mScene.buildingExists(mId);
       }
+	  */
    }
 }

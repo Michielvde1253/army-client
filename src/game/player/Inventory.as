@@ -1,4 +1,4 @@
-package game.player
+﻿package game.player
 {
    import game.battlefield.MapData;
    import game.gameElements.EnemyInstallationObject;
@@ -183,15 +183,12 @@ package game.player
          if(this.mInventoryChangedForGetAreas || !this.mCurrentMapAreas)
          {
             _loc2_ = GameState.mInstance.mCurrentMapId;
-            trace(_loc2_);
             _loc3_ = new Array();
             _loc4_ = 0;
-            trace(this.mInventory.Area.length);
             while(_loc4_ < this.mInventory.Area.length)
             {
                if(_loc5_ = this.mInventory.Area[_loc4_])
                {
-                  trace(_loc5_.mMapId);
                   if(_loc5_.mMapId == _loc2_)
                   {
                      _loc3_.push(_loc5_);
@@ -334,12 +331,9 @@ package game.player
          var invtype:Array = [];
          var item:Item = null;
          var amount:int = 0;
-         trace(savedata);
          for(i in savedata["mInventory"])
          {
-            trace(i);
             invtype = savedata["mInventory"][i];
-            trace(invtype);
             j = 0;
             while(j < invtype.length)
             {

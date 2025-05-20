@@ -11,6 +11,7 @@
 	import game.net.ServerCall;
 	import game.net.ServiceIDs;
 	import game.sound.ArmySoundManager;
+	import com.dchoc.utils.Cookie;
 
 	public class GameLoadingFirst extends LoadingFirst {
 
@@ -39,6 +40,10 @@
 			_loc3_ = "army_config_" + Config.smLanguageCode;
 			_loc1_.load(Config.DIR_CONFIG + _loc3_ + ".json", _loc3_);
 			mResourcesToLoad.push(_loc3_);
+
+			_loc1_.load(Config.DIR_CONFIG + "army_config_pvp_opponents.json", "army_config_pvp_opponents");
+			mResourcesToLoad.push("army_config_pvp_opponents");		
+		
 			if (FeatureTuner.LOAD_TILE_MAP_CSV) {
 				for each(_loc6_ in AssetManager.CVS_FILES_TO_LOAD) {
 					_loc1_.load(Config.DIR_CONFIG + _loc6_ + ".csv", _loc6_);
@@ -57,6 +62,9 @@
 				mLoadingClip.mouseEnabled = true;
 				mLoadingClip.mouseChildren = true;
 			}
+		
+			// Start camera at default position until save file is loaded
+			Cookie.saveCookieVariable(Config.COOKIE_SESSION_NAME,Config.COOKIE_SESSION_NAME_CAM_POS + "_Home","");
 		}
 
 		override public function logicUpdate(param1: int): void {

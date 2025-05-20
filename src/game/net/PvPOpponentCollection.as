@@ -1,4 +1,4 @@
-package game.net
+﻿package game.net
 {
    public class PvPOpponentCollection
    {
@@ -23,16 +23,16 @@ package game.net
          this.mFBIDToRecentAttack = new Array();
       }
       
-      public function addOpponent(param1:String, param2:int, param3:int, param4:int) : void
+      public function addOpponent(param1:String, param2:int, param3:int, param4:int, param5:String, param6:String) : void
       {
-         var _loc5_:PvPOpponent = new PvPOpponent(param1,param2,param3,param4);
+         var _loc5_:PvPOpponent = new PvPOpponent(param1,param2,param3,param4,param5,param6);
          this.mOpponents.push(_loc5_);
          this.mFBIDToOpponent[param1] = _loc5_;
       }
       
       public function addRecentAttack(param1:String, param2:int, param3:int, param4:int) : void
       {
-         var _loc5_:PvPOpponent = new PvPOpponent(param1,param2,param3,param4);
+         var _loc5_:PvPOpponent = new PvPOpponent(param1,param2,param3,param4,"test","test");
          this.mRecentAttacks.push(_loc5_);
          this.mFBIDToRecentAttack[param1] = _loc5_;
       }

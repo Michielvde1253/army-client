@@ -20,6 +20,8 @@
       public var Button_save:MovieClip;
       
       public var Button_Map:MovieClip;
+	   
+	  public var Button_Pvp:MovieClip;
 
       public function hud_new_bottom()
       {
