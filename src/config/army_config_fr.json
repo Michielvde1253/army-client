@@ -2010,7 +2010,7 @@
         },
         "BUILDING_TESTSITE_DESC": {
             "ID": "BUILDING_TESTSITE_DESC",
-            "fr": "Débloque la batterie de roquettes\\n+2 unités d'artillerie"
+            "fr": "Débloque la batterie de roquettes\\n+3 unités d'artillerie"
         },
         "UNLOCK_BOOTCAMP": {
             "ID": "UNLOCK_BOOTCAMP",
@@ -12662,7 +12662,7 @@
         },
         "UNIT_ROCKETEER_DESC": {
             "ID": "UNIT_ROCKETEER_DESC",
-            "fr": "Allez là où personne n'est allé auparavant !\\n\\nSpécial :\\nVol (traverse tous les obstacles).\\nÉlite (complètement indestructible)"
+            "fr": "Allez là où personne n'est allé auparavant !\\nSpécial : Vol\\n(traverse tous les obstacles)."
         },
         "TOURNAMENT_HUNT_TANKS_NAME": {
             "ID": "TOURNAMENT_HUNT_TANKS_NAME",

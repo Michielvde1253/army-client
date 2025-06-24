@@ -2,39 +2,39 @@
     "TID": {
         "NE2_C3_COMPL": {
             "ID": "NE2_C3_COMPL",
-            "es": "Good job! That rubbish won't disturb us anymore."
+            "es": "Buen trabajo! Esa porquería no nos molestará más."
         },
         "TOP_EXTENDER": {
             "ID": "TOP_EXTENDER",
-            "es": "Game End"
+            "es": "Juego terminado"
         },
         "TOP_EXTENDER_DESC": {
             "ID": "TOP_EXTENDER_DESC",
-            "es": "You beat the game, this is just here to extent the top a bit."
+            "es": "Ganaste el juego, esto es solo para extenderlo un poco más"
         },
         "NORTHW_MAP_OBJ_TITLE": {
             "ID": "NORTHW_MAP_OBJ_TITLE",
-            "es": "Buy the map of Western Glacier"
+            "es": "Comprar el mapa del Glaciar Occidental"
         },
         "NORTHW_MAP_OBJ_DESC": {
             "ID": "NORTHW_MAP_OBJ_DESC",
-            "es": "Go to the shop and buy the map under the Maps tab"
+            "es": "Ve a la tienda y compra el mapa, en la pestaña de mapas"
         },
         "NORTHC_MAP_OBJ_TITLE": {
             "ID": "NORTHC_MAP_OBJ_TITLE",
-            "es": "Buy the map of Northern Midland"
+            "es": "Comprar el mapa del Norte de Midland"
         },
         "NORTHC_MAP_OBJ_DESC": {
             "ID": "NORTHC_MAP_OBJ_DESC",
-            "es": "Go to the shop and buy the map under the Maps tab"
+            "es": "Ve a la tienda y compra el mapa bajo la pestaña de mapas"
         },
         "NORTHE_MAP_OBJ_TITLE": {
             "ID": "NORTHE_MAP_OBJ_TITLE",
-            "es": "Buy the map of Eastern Bergheim"
+            "es": "Comprar el mapa de Bergheim Oriental"
         },
         "NORTHE_MAP_OBJ_DESC": {
             "ID": "NORTHE_MAP_OBJ_DESC",
-            "es": "Go to the shop and buy the map under the Maps tab"
+            "es": "Ve a la tienda y compra el mapa bajo la pestaña de mapas"
         },
         "BUTTON_APPFILES": {
             "ID": "BUTTON_APPFILES",
@@ -42,7 +42,7 @@
         },
         "BUTTON_DOCUMENTS": {
             "ID": "BUTTON_DOCUMENTS",
-            "es": "Documents"
+            "es": "Documentos"
         },
         "BUILDING_HOSPITAL": {
             "ID": "BUILDING_HOSPITAL",
@@ -50,91 +50,91 @@
         },
         "BUILDING_HOSPITAL_DESC": {
             "ID": "BUILDING_HOSPITAL_DESC",
-            "es": "Heals one nearby unit with 10 HP every 6 hours"
+            "es": "Cura una unidad cercana con 10 PV cada 6 horas"
         },
         "BUILDING_MASH": {
             "ID": "BUILDING_MASH",
-            "es": "M.A.S.H"
+            "es": "H.Q.M.E (Hospital Quirúrgico Móvil del Ejército)"
         },
         "BUILDING_MASH_DESC": {
             "ID": "BUILDING_MASH_DESC",
-            "es": "Heals one nearby unit with 5 HP every 5 hours"
+            "es": "Cura una unidad cercana con 5 PV cada 5 horas"
         },
         "BUILDING_MASH_READY": {
             "ID": "BUILDING_MASH_READY",
-            "es": "Ready to heal!\nMove a damaged unit nearby to heal"
+            "es": "Listo para curar! acerca una unidad dañada para curarla"
         },
         "BUILDING_MASH_NOT_READY": {
             "ID": "BUILDING_MASH_NOT_READY",
-            "es": "Our Head Healer lost the key of the front door. We'll be back soon!\nReady in %U"
+            "es": "Nuestro médico líder perdió la llave de la puerta frontal. Volveremos pronto.\nListo en $U"
         },
         "SHOP_BUILDING_NOT_ON_THIS_MAP": {
             "ID": "SHOP_BUILDING_NOT_ON_THIS_MAP",
-            "es": "You cannot buy this item on this map"
+            "es": "No puedes comprar este item en este mapa"
         },
         "BUILDING_HOSPITAL_READY": {
             "ID": "BUILDING_HOSPITAL_READY",
-            "es": "Ready to heal!\nMove a damaged unit nearby to heal"
+            "es": "Listo para curar! acerca una unidad dañada para curarla"
         },
         "BUILDING_HOSPITAL_NOT_READY": {
             "ID": "BUILDING_HOSPITAL_NOT_READY",
-            "es": "The healers are having a teambuilding today. Try again later!\nReady in %U"
+            "es": "Los médicos estan construyendo en equipo hoy, intenta mas tarde! \nListo en $U"
         },
         "HFE_AREA9TOWN1": {
             "ID": "HFE_AREA9TOWN1",
-            "es": "Bergheim Farm"
+            "es": "Granja Bergheim"
         },
         "HFE_AREA9TOWN1_DESC": {
             "ID": "HFE_AREA9TOWN1_DESC",
-            "es": "Farmland village produces esential resourses for nearby villages and towns.\\n\\nSupport civilians with Supplies and they will reward you with money!"
+            "es": "La aldea Tierra Fértil produce recursos esenciales para las aldeas y pueblos cercanos.\\n\\napoya a los civiles con suministros y te recompensarán con platita!"
         },
         "BUILDING_SUPPLIESFACTORY": {
             "ID": "BUILDING_SUPPLIESFACTORY",
-            "es": "Supplies Factory"
+            "es": "Suministros de la Fabrica "
         },
         "BUILDING_SUPPLIESFACTORY_DESC": {
             "ID": "BUILDING_SUPPLIESFACTORY_DESC",
-            "es": "Produces Supplies"
+            "es": "Produce Suministros"
         },
         "UNIT_PREMIUM_ELITEJUGGERNAUT": {
             "ID": "UNIT_PREMIUM_ELITEJUGGERNAUT",
-            "es": "Elite Juggernaut"
+            "es": "Élite Juggernaut"
         },
         "UNIT_PREMIUM_ELITEJUGGERNAUT_DESC": {
             "ID": "UNIT_PREMIUM_ELITEJUGGERNAUT_DESC",
-            "es": "One Tank, One Desire!\\nSpecial:\\nCan't be fully destroyed"
+            "es": "Un tanque, un deseo!\\nespecial: no puede ser destruido."
         },
         "UNIT_BLACK_FOX": {
             "ID": "UNIT_BLACK_FOX",
-            "es": "Black Fox"
+            "es": "Zorro Negro"
         },
         "MOUSEOVER_ENEMY_PREMIUMTANK": {
             "ID": "MOUSEOVER_ENEMY_PREMIUMTANK",
-            "es": "Premium Tank"
+            "es": "Tanque Premium"
         },
         "MOUSEOVER_ENEMY_SECRET_POLICE_HQ2": {
             "ID": "MOUSEOVER_ENEMY_SECRET_POLICE_HQ2",
-            "es": "Pravus Secret HQ"
+            "es": "CG secreto de Pravus"
         },
         "MOUSEOVER_ENEMY_BEACON_HQ": {
             "ID": "MOUSEOVER_ENEMY_BEACON_HQ",
-            "es": "Viceroy Vile Secret Fortress Z1"
+            "es": "Fortaleza Secreta Z1 de Viceroy Vile"
         },
         "MOUSEOVER_ENEMY_COMMAND_BUNKER2": {
             "ID": "MOUSEOVER_ENEMY_COMMAND_BUNKER2",
-            "es": "Viceroy Vile Central Bunker"
+            "es": "Bunker Central de Viceroy Vile"
         },
         "DOOMSDAY2_NAME": {
             "ID": "DOOMSDAY2_NAME",
-            "es": "Doomsday Secret Device - Hound Project"
+            "es": "Dispositivo Secreto del fin del mundo, Proyecto Sabueso"
         },
         "PRISON_NAME": {
             "ID": "PRISON_NAME",
-            "es": "High Security Prison"
+            "es": "Prisión de Alta Seguridad"
         },
         "NW2_MAP_OBJ_TITLE": {
             "ID": "NW2_MAP_OBJ_TITLE",
-            "es": "Buy the map of Western Glacier"
+            "es": "Comprar el mapa del Glaciar Occidental"
         },
         "NW2_MAP_OBJ_DESC": {
             "ID": "NW2_MAP_OBJ_DESC",
@@ -142,335 +142,335 @@
         },
         "BUY_NORTHW_MAP_TITLE": {
             "ID": "BUY_NORTHW_MAP_TITLE",
-            "es": "War never ends"
+            "es": "La guerra nunca termina"
         },
         "BUY_NORTHW_MAP_DESC": {
             "ID": "BUY_NORTHW_MAP_DESC",
-            "es": "Go to the shop and buy the map to the Northern Midland"
+            "es": "Ve a la tienda y Compra el mapa del Norte de Midland"
         },
         "BUY_NORTHW_MAP_COMPL": {
             "ID": "BUY_NORTHW_MAP_COMPL",
-            "es": "Welcome to the new lands. Secure these prisoners from Crimson Empire!"
+            "es": "Bienvenido a las nuevas tierras. Asegura a estos prisioneros del Imperio Carmesí"
         },
         "INTRO_NW2_DIALOG_1": {
             "ID": "INTRO_NW2_DIALOG_1",
-            "es": "So..Crimson Empire have some interesting new toys. Must be new, I never saw anything like that during my spy mission..."
+            "es": "Entonces..el Imperio Carmesí tiene interesantes juguetes nuevos. Debes ser nuevo, nunca he visto algo así durante mi espionaje."
         },
         "INTRO_NW2_DIALOG_2": {
             "ID": "INTRO_NW2_DIALOG_2",
-            "es": "We have to secure these prisoners Commander!"
+            "es": "Tenemos que asegurar a esos prisioneros comandante!"
         },
         "INTRO_NW2_DIALOG_3": {
             "ID": "INTRO_NW2_DIALOG_3",
-            "es": "Well looks like there is another big battle ahead. Be careful Commander, Crimson is not going easy on us here!"
+            "es": "Parece que hay otra gran batalla por delante. cuidado comandante, el Carmesí no nos lo dejará fácil!"
         },
         "NW2_C1_TITLE": {
             "ID": "NW2_C1_TITLE",
-            "es": "Forgotten Nightmares"
+            "es": "Pesadillas Olvidadas"
         },
         "NW2_C1_TITLE2": {
             "ID": "NW2_C1_TITLE2",
-            "es": "Railgun"
+            "es": "Cañón de riel"
         },
         "NW2_C1_DESC": {
             "ID": "NW2_C1_DESC",
-            "es": "Crimson has some interesting returning toys. Rescue prisoners on your way, and secure this area!"
+            "es": "El Carmesí tiene interesantes juguetes de regreso. Rescata prisioneros en tu camino y asegura el área."
         },
         "NW2_C1_OBJC_1_TITLE": {
             "ID": "NW2_C1_OBJC_1_TITLE",
-            "es": "Destroy enemy Premium Tanks"
+            "es": "Destruye tanques premium enemigos"
         },
         "NW2_C1_OBJC_1_DESC": {
             "ID": "NW2_C1_OBJC_1_DESC",
-            "es": "Destroy these Premium Tanks before its too late"
+            "es": "Destruye esos tanques premium antes que sea tarde!"
         },
         "NW2_C1_OBJC_2_TITLE": {
             "ID": "NW2_C1_OBJC_2_TITLE",
-            "es": "Destroy enemy prisons"
+            "es": "Destruye prisiones enemigas"
         },
         "NW2_C1_OBJC_2_DESC": {
             "ID": "NW2_C1_OBJC_2_DESC",
-            "es": "Rescue prisoners from Crimson Empire"
+            "es": "Rescata prisioneros del Imperio Carmesí"
         },
         "NW2_C1_OBJC_3_TITLE": {
             "ID": "NW2_C1_OBJC_3_TITLE",
-            "es": "Destroy Pravus Secret HQ"
+            "es": "Destruye el CG secreto de Pravus"
         },
         "NW2_C1_OBJC_3_DESC": {
             "ID": "NW2_C1_OBJC_3_DESC",
-            "es": "Destroy Pravus Secret HQ"
+            "es": "Destruye el CG secreto de Pravus"
         },
         "NW2_C1_OBJC_4_TITLE": {
             "ID": "NW2_C1_OBJC_4_TITLE",
-            "es": "Capture enemy tiles"
+            "es": "Capturar casillas enemigas"
         },
         "NW2_C1_OBJC_4_DESC": {
             "ID": "NW2_C1_OBJC_4_DESC",
-            "es": "Capture enemy tiles"
+            "es": "Capturar casillas enemigas"
         },
         "NW2_C1_OBJC_5_TITLE": {
             "ID": "NW2_C1_OBJC_5_TITLE",
-            "es": "Destroy enemy units"
+            "es": "Destruir unidades enemigas"
         },
         "NW2_C1_OBJC_5_DESC": {
             "ID": "NW2_C1_OBJC_5_DESC",
-            "es": "Destroy enemy untis around the area"
+            "es": "Destruir unidades enemigas alrededor del área"
         },
         "NW2_C2_TITLE": {
             "ID": "NW2_C2_TITLE",
-            "es": "Clear Defense Line"
+            "es": "Despeja la línea de defensa"
         },
         "NW2_C2_DESC": {
             "ID": "NW2_C2_DESC",
-            "es": "There are lots of Crimson defenses. Clear them!"
+            "es": "Hay muchas defensas carmesíes, elimínalas!"
         },
         "NW2_C3_TITLE": {
             "ID": "NW2_C3_TITLE",
-            "es": "Propaganda Issues"
+            "es": "Asuntos Propagandísticos"
         },
         "NW2_C3_DESC": {
             "ID": "NW2_C3_DESC",
-            "es": "Destroy these Propaganda towers around the area."
+            "es": "Destruye las torres de propaganda alrededor del área"
         },
         "NW2_C4_TITLE": {
             "ID": "NW2_C4_TITLE",
-            "es": "Supplies sabotage!"
+            "es": "Sabotaje de suministros!"
         },
         "NW2_C4_DESC": {
             "ID": "NW2_C4_DESC",
-            "es": "Crimson Empire has lots of supplies here. Get it!"
+            "es": "El Imperio Carmesí tiene muchos suministros ahí, robalos!"
         },
         "NW2_C1_OBJC_6_TITLE": {
             "ID": "NW2_C1_OBJC_6_TITLE",
-            "es": "Destroy enemy Bunkers"
+            "es": "Destruye búnkeres enemigos"
         },
         "NW2_C1_OBJC_6_DESC": {
             "ID": "NW2_C1_OBJC_6_DESC",
-            "es": "Destroy enemy Bunkers"
+            "es": "Destruye búnkeres enemigos"
         },
         "NW2_C1_OBJC_7_TITLE": {
             "ID": "NW2_C1_OBJC_7_TITLE",
-            "es": "Destroy enemy Guard Stations"
+            "es": "Destruye Estaciones de Guardia enemigas"
         },
         "NW2_C1_OBJC_7_DESC": {
             "ID": "NW2_C1_OBJC_7_DESC",
-            "es": "Destroy enemy Guard Stations"
+            "es": "Destruye Estaciones de Guardia enemigas"
         },
         "NW2_C1_OBJC_8_TITLE": {
             "ID": "NW2_C1_OBJC_8_TITLE",
-            "es": "Destroy Propaganda Towers"
+            "es": "Destruye Torres de Propaganda"
         },
         "NW2_C1_OBJC_8_DESC": {
             "ID": "NW2_C1_OBJC_8_DESC",
-            "es": "Destroy Propaganda Towers"
+            "es": "Destruye Torres de Propaganda"
         },
         "NW2_C1_OBJC_9_TITLE": {
             "ID": "NW2_C1_OBJC_9_TITLE",
-            "es": "Destroy Fuel Dumps"
+            "es": "Destruye Depósitos de combustible!"
         },
         "NW2_C1_OBJC_9_DESC": {
             "ID": "NW2_C1_OBJC_9_DESC",
-            "es": "Destroy Fuel Dumps to disturb the enemy supply"
+            "es": "Destruye depósitos de suministros para interrumpir el flujo de suministros enemigo"
         },
         "NW_MISSION_COMPL": {
             "ID": "NW_MISSION_COMPL",
-            "es": "Well done Commander! First defense line is cleared, push forward!"
+            "es": "Bien hecho comandante! Primer línea de defensa despejada, sigue presionando!"
         },
         "NW_MISSION_COMPL2": {
             "ID": "NW_MISSION_COMPL2",
-            "es": "Well done Commander! No more annoying calls from these towers."
+            "es": "Bien hecho comandante! No más llamadas molestas de esas torres"
         },
         "NW_MISSION_COMPL3": {
             "ID": "NW_MISSION_COMPL3",
-            "es": "Well done Commander! We will need these precious supplies in our army."
+            "es": "Bien hecho comandante! Necesitaremos estos suministros en nuestro ejército"
         },
         "NC2_MAP_OBJ_TITLE": {
             "ID": "NC2_MAP_OBJ_TITLE",
-            "es": "Buy the map of Northern Midland"
+            "es": "Compra el mapa de Midland del Norte"
         },
         "NC2_MAP_OBJ_DESC": {
             "ID": "NC2_MAP_OBJ_DESC",
-            "es": "Go to the shop and buy the map under the Maps tab"
+            "es": "Ve a la tienda y compra el mapa bajo la pestaña de mapas"
         },
         "BUY_NORTHC_MAP_TITLE": {
             "ID": "BUY_NORTHC_MAP_TITLE",
-            "es": "War never ends"
+            "es": "La guerra nunca termina"
         },
         "BUY_NORTHC_MAP_DESC": {
             "ID": "BUY_NORTHC_MAP_DESC",
-            "es": "Go to the shop and buy the map to the Northern Midland"
+            "es": "Ve a la tienda y compra el mapa de Midland del Norte"
         },
         "BUY_NORTHC_MAP_COMPL": {
             "ID": "BUY_NORTHC_MAP_COMPL",
-            "es": "Pravus is making another secret weapon. Destroy it as soon as possible Commander!"
+            "es": "Pravus esta haciendo otra arma secreta. Destruyela en cuanto puedas comandante!"
         },
         "INTRO_NC2_DIALOG_1": {
             "ID": "INTRO_NC2_DIALOG_1",
-            "es": "Pravus is in on something once again. We have to stop him!"
+            "es": "Pravis esta haciendo cosas raras otra vez. Hay que detenerlo!"
         },
         "INTRO_NC2_DIALOG_2": {
             "ID": "INTRO_NC2_DIALOG_2",
-            "es": "Soldiers are ready to take on whatever Crimson has prepared for us!"
+            "es": "Los soldados están listos para destruir lo que sea que el Carmesí haya preparado!"
         },
         "INTRO_NC2_DIALOG_3": {
             "ID": "INTRO_NC2_DIALOG_3",
-            "es": "Stop the making of this secret weapon before its too late, Commander!"
+            "es": "Detén la creación del arma secreta antes que sea tarde!"
         },
         "NC2_C1_TITLE": {
             "ID": "NC2_C1_TITLE",
-            "es": "Midland Secret Warfare I"
+            "es": "Guerra secreta en Midland I"
         },
         "NC2_C1_DESC": {
             "ID": "NC2_C1_DESC",
-            "es": "Pravus is making another secret project. Stop Crimson forces before it's to late!"
+            "es": "Pravus esta haciendo otro proyecto secreto. Detén las fuerzas carmesí antes que sea tarde!"
         },
         "NC2_C2_TITLE": {
             "ID": "NC2_C2_TITLE",
-            "es": "Midland Secret Warfare II"
+            "es": "Guerra secreta en Midland II"
         },
         "NC2_C2_DESC": {
             "ID": "NC2_C2_DESC",
-            "es": "Pravus is making another secret project. Stop Crimson forces before it's to late!"
+            "es": "Pravus esta haciendo otro proyecto secreto. Detén las fuerzas carmesí antes que sea tarde!"
         },
         "NC2_C1_TITLE2": {
             "ID": "NC2_C1_TITLE2",
-            "es": "Forgotten Nightmares"
+            "es": "Pesadillas Olvidadas"
         },
         "NC2_C1_OBJC_1_TITLE": {
             "ID": "NC2_C1_OBJC_1_TITLE",
-            "es": "Destroy enemy Doomsday Secret Device - Hound Project"
+            "es": "Destruye el dispositivo secreto del fin del mundo - Proyecto Sabueso"
         },
         "NC2_C1_OBJC_1_DESC": {
             "ID": "NC2_C1_OBJC_1_DESC",
-            "es": "Destroy this device before Pravus finish his project"
+            "es": "Destruye este dispositivo antes que Pravus termine el proyecto"
         },
         "NC2_C1_OBJC_2_TITLE": {
             "ID": "NC2_C1_OBJC_2_TITLE",
-            "es": "Destroy Viceroy Vile Central Bunker"
+            "es": "Destruye el Búnker Central de Viceroy Vile"
         },
         "NC2_C1_OBJC_2_DESC": {
             "ID": "NC2_C1_OBJC_2_DESC",
-            "es": "Destroy enemy Viceroy Vile Central Bunker"
+            "es": "Destruye el Búnker Central de Viceroy Vile"
         },
         "NC2_C1_OBJC_3_TITLE": {
             "ID": "NC2_C1_OBJC_3_TITLE",
-            "es": "Destroy Turrets around Doomsday Device"
+            "es": "Destruye las torretas alrededor del dispositivo del fin del mundo"
         },
         "NC2_C1_OBJC_3_DESC": {
             "ID": "NC2_C1_OBJC_3_DESC",
-            "es": "Destroy Turrets guarding Doomsday Secret Device"
+            "es": "Destruye las torretas custodiando el dispositivo secreto del fin del mundo"
         },
         "NC2_C1_OBJC_4_TITLE": {
             "ID": "NC2_C1_OBJC_4_TITLE",
-            "es": "Destroy Turrets around Central Bunker"
+            "es": "Destruye las torretas alrededor del Búnker Central"
         },
         "NC2_C1_OBJC_4_DESC": {
             "ID": "NC2_C1_OBJC_4_DESC",
-            "es": "Destroy Turrets guarding Central Bunker"
+            "es": "Destruye las torretas custodiando el Búnker Central"
         },
         "NC2_C1_OBJC_5_TITLE": {
             "ID": "NC2_C1_OBJC_5_TITLE",
-            "es": "Destroy enemy Premium Tanks"
+            "es": "Destruye tanques premium enemigos"
         },
         "NC2_C1_OBJC_5_DESC": {
             "ID": "NC2_C1_OBJC_5_DESC",
-            "es": "Destroy enemy Premium Tanks"
+            "es": "Destruye tanques premium enemigos"
         },
         "NC2_C1_OBJC_6_TITLE": {
             "ID": "NC2_C1_OBJC_6_TITLE",
-            "es": "Destroy enemy Bulldozers"
+            "es": "Destruye los Excavadores enemigos"
         },
         "NC2_C1_OBJC_6_DESC": {
             "ID": "NC2_C1_OBJC_6_DESC",
-            "es": "Destroy enemy Bulldozers"
+            "es": "Destruye los Excavadores enemigos"
         },
         "NC2_C1_OBJC_7_TITLE": {
             "ID": "NC2_C1_OBJC_7_TITLE",
-            "es": "Destroy enemy Rocket Batteries"
+            "es": "Destruye las baterías de cohetes enemigas"
         },
         "NC2_C1_OBJC_7_DESC": {
             "ID": "NC2_C1_OBJC_7_DESC",
-            "es": "Destroy enemy Rocket Batteries"
+            "es": "Destruye las baterías de cohetes enemigas"
         },
         "NC2_C1_OBJC_8_TITLE": {
             "ID": "NC2_C1_OBJC_8_TITLE",
-            "es": "Destroy enemy Guard Stations"
+            "es": "Destruye las Estaciones de Guardia enemigas"
         },
         "NC2_C1_OBJC_8_DESC": {
             "ID": "NC2_C1_OBJC_8_DESC",
-            "es": "Destroy enemy Guard Stations"
+            "es": "Destruye las Estaciones de Guardia enemigas"
         },
         "NC2_C3_TITLE": {
             "ID": "NC2_C3_TITLE",
-            "es": "Another defense line!"
+            "es": "Otra línea de defensa!"
         },
         "NC2_C3_DESC": {
             "ID": "NC2_C3_DESC",
-            "es": "Go throught this defense line to progress futher!"
+            "es": "Atraviesa la línea de defensa para progresar!"
         },
         "NC2_C4_TITLE": {
             "ID": "NC2_C4_TITLE",
-            "es": "Defense Line Preparation"
+            "es": "Preparación de línea de defensa"
         },
         "NC2_C4_DESC": {
             "ID": "NC2_C4_DESC",
-            "es": "Something is coming. Prepare defenses around the area!"
+            "es": "Algo viene. prepara defensas alrededor del área!"
         },
         "NC2_C5_TITLE": {
             "ID": "NC2_C5_TITLE",
-            "es": "War casualties"
+            "es": "Victimas de guerra"
         },
         "NC2_C5_DESC": {
             "ID": "NC2_C5_DESC",
-            "es": "Help your units to survive this battle."
+            "es": "Ayuda a tus unidades a sobrevivir"
         },
         "NC2_C1_OBJC_9_TITLE": {
             "ID": "NC2_C1_OBJC_9_TITLE",
-            "es": "Destroy enemy Guard Stations"
+            "es": "Destruye las estaciones de guardia enemigas"
         },
         "NC2_C1_OBJC_9_DESC": {
             "ID": "NC2_C1_OBJC_9_DESC",
-            "es": "Destroy enemy Guard Stations"
+            "es": "Destruye las estaciones de guardia enemigas"
         },
         "NC2_C1_OBJC_10_TITLE": {
             "ID": "NC2_C1_OBJC_10_TITLE",
-            "es": "Destroy enemy Bunkers"
+            "es": "Destruye búnkeres enemigos"
         },
         "NC2_C1_OBJC_10_DESC": {
             "ID": "NC2_C1_OBJC_10_DESC",
-            "es": "Destroy enemy Bunkers"
+            "es": "Destruye búnkeres enemigos"
         },
         "NC2_C1_OBJC_11_TITLE": {
             "ID": "NC2_C1_OBJC_11_TITLE",
-            "es": "Build Sniper Nests"
+            "es": "Construye nidos de francotirador"
         },
         "NC2_C1_OBJC_11_DESC": {
             "ID": "NC2_C1_OBJC_11_DESC",
-            "es": "Build Sniper Nests"
+            "es": "Construye nidos de francotirador"
         },
         "NC2_C1_OBJC_12_TITLE": {
             "ID": "NC2_C1_OBJC_12_TITLE",
-            "es": "Build Watchtowers"
+            "es": "Construye torres de vigilancia"
         },
         "NC2_C1_OBJC_12_DESC": {
             "ID": "NC2_C1_OBJC_12_DESC",
-            "es": "Build Watchtowers"
+            "es": "Construye torres de vigilancia"
         },
         "NC2_C1_OBJC_13_TITLE": {
             "ID": "NC2_C1_OBJC_13_TITLE",
-            "es": "Buy few units"
+            "es": "Compra unidades"
         },
         "NC2_C1_OBJC_13_DESC": {
             "ID": "NC2_C1_OBJC_13_DESC",
-            "es": "Buy few units from the shop"
+            "es": "Compra unidades desde la tienda"
         },
         "NC2_C1_OBJC_14_TITLE": {
             "ID": "NC2_C1_OBJC_14_TITLE",
-            "es": "Repair Units"
+            "es": "Repara o cura unidades"
         },
         "NC2_C1_OBJC_14_DESC": {
             "ID": "NC2_C1_OBJC_14_DESC",
-            "es": "Repair Units"
+            "es": "Repara o cura unidades"
         },
         "NC2_C1_OBJC_15_TITLE": {
             "ID": "NC2_C1_OBJC_15_TITLE",
@@ -674,31 +674,31 @@
         },
         "NE2_C1_OBJC_15_DESC": {
             "ID": "NE2_C1_OBJC_15_DESC",
-            "es": "Repair Units"
+            "es": "Repara o cura unidades"
         },
         "NE2_C1_OBJC_16_TITLE": {
             "ID": "NE2_C1_OBJC_16_TITLE",
-            "es": "Destroy enemy units with 2+ units"
+            "es": "Destruye unidades con 2 o más unidades"
         },
         "NE2_C1_OBJC_16_DESC": {
             "ID": "NE2_C1_OBJC_16_DESC",
-            "es": "Destroy enemy units with 2+ units"
+            "es": "Destruye unidades con 2 o más unidades"
         },
         "NE2_C1_OBJC_17_TITLE": {
             "ID": "NE2_C1_OBJC_17_TITLE",
-            "es": "Send Napalm Strike"
+            "es": "Envía ataques napalm"
         },
         "NE2_C1_OBJC_17_DESC": {
             "ID": "NE2_C1_OBJC_17_DESC",
-            "es": "Kill enemy units with a Napalm firecall"
+            "es": "Mata unidades enemigas con un ataque napalm"
         },
         "CAMPAIGN_NW_1_MISSION_COMPLETION_1": {
             "ID": "CAMPAIGN_NW_1_MISSION_COMPLETION_1",
-            "es": "My precious Tanks! Argh, who cares, there are plenty more on the way!"
+            "es": "Mis preciosos tanques! al carajo, hay muchos más en camino!"
         },
         "CAMPAIGN_NW_1_MISSION_COMPLETION_2": {
             "ID": "CAMPAIGN_NW_1_MISSION_COMPLETION_2",
-            "es": "Well well well... you successfully rescued your units. Less pointless things for us to take care of."
+            "es": "vaya vaya vaya...rescataste tus unidades. menos inútiles que cuidar."
         },
         "CAMPAIGN_NW_1_MISSION_COMPLETION_3": {
             "ID": "CAMPAIGN_NW_1_MISSION_COMPLETION_3",
@@ -842,7 +842,7 @@
         },
         "OUTRO_NE2_DIALOG_7": {
             "ID": "OUTRO_NE2_DIALOG_7",
-            "es": "Be careful Ms. President...we have to have eyes open. I have bed feeling that they are right. This won't be last time seeing them on Homeland..."
+            "es": "Be careful Ms. President...we have to keep our eyes open. I have bad feeling that they are right. This won't be the last time seeing them on Homeland..."
         },
         "OUTRO_NE2_DIALOG_8": {
             "ID": "OUTRO_NE2_DIALOG_8",
@@ -2010,7 +2010,7 @@
         },
         "BUILDING_TESTSITE_DESC": {
             "ID": "BUILDING_TESTSITE_DESC",
-            "es": "Desbloquea la batería de misiles\\nObtienes 2 unidades de artillería adicionales"
+            "es": "Desbloquea la batería de misiles\\nObtienes 3 unidades de artillería adicionales"
         },
         "UNLOCK_BOOTCAMP": {
             "ID": "UNLOCK_BOOTCAMP",
@@ -12662,7 +12662,7 @@
         },
         "UNIT_ROCKETEER_DESC": {
             "ID": "UNIT_ROCKETEER_DESC",
-            "es": "Go where no one has gone before!\\n\\nSpecial:\\nFlight (passes through all obstacles).\\nElite (Completely indestructible)"
+            "es": "To boldly go where no one has gone before!\\nSpecial: Flying\\n(moves past all obstacles)"
         },
         "TOURNAMENT_HUNT_TANKS_NAME": {
             "ID": "TOURNAMENT_HUNT_TANKS_NAME",

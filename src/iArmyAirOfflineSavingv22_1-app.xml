@@ -18,7 +18,7 @@
 -->
 <application xmlns="http://ns.adobe.com/air/application/51.2">
   <id>army.attack</id>
-  <versionNumber>22</versionNumber>
+  <versionNumber>22.1</versionNumber>
   <versionLabel/>
   <filename>Army Attack</filename>
   <description/>
@@ -125,6 +125,17 @@
 ]]></InfoAdditions>
     <requestedDisplayResolution>standard</requestedDisplayResolution>
   </iPhone>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   

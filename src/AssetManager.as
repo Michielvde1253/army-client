@@ -37,7 +37,7 @@
       
       public static const JSON_FILES_TO_LOAD:Array = ["army_config_base"];
       
-      public static const CVS_FILES_TO_LOAD:Array = ["tile_map","map_2", "tile_map_desert", "pvp_map_1_4valleys_11x11"];
+      public static const CVS_FILES_TO_LOAD:Array = ["tile_map","map_2", "tile_map_desert", "pvp_map_1_4valleys_11x11", "tile_map3"];
       
       private static var instance:AssetManager;
        

@@ -2166,7 +2166,6 @@
 						_loc7_ = _loc6_ - this.mMapData.mGridWidth;
 						_loc12_ = _loc4_[_loc7_];
 						if (_loc7_ > 0) {
-							/*
 							if (_loc12_.mWalkable) {
 								if (!_loc12_.mCharacterComingToThisTile) {
 									if (!_loc12_.mCharacter) {
@@ -2176,10 +2175,9 @@
 									}
 								}
 							}
-							*/
-							if (this.isTileSuitableForEnemySpawning(_loc4_[_loc7_], true)) {
-								_loc5_.push(_loc4_[_loc7_]);
-							}
+							//if (this.isTileSuitableForEnemySpawning(_loc4_[_loc7_], true)) {
+							//	_loc5_.push(_loc4_[_loc7_]);
+							//}
 						}
 					}
 					_loc11_++;

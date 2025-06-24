@@ -13,7 +13,7 @@ def transform_json_to_tid(input_file, output_file):
     tid_data = {
         key: {
             "ID": key,
-            "en": value
+            "es": value
         }
         for key, value in data.items()
     }
@@ -28,4 +28,4 @@ def transform_json_to_tid(input_file, output_file):
 
 # Example usage
 if __name__ == "__main__":
-    transform_json_to_tid(os.path.join(p, "fr.json"), os.path.join(p ,"army_config_fr.json"))
+    transform_json_to_tid(os.path.join(p, "es.json"), os.path.join(p ,"army_config_es.json"))

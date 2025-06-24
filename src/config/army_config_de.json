@@ -842,7 +842,7 @@
         },
         "OUTRO_NE2_DIALOG_7": {
             "ID": "OUTRO_NE2_DIALOG_7",
-            "de": "Be careful Ms. President...we have to have eyes open. I have bed feeling that they are right. This won't be last time seeing them on Homeland..."
+            "de": "Be careful Ms. President...we have to keep our eyes open. I have bad feeling that they are right. This won't be the last time seeing them on Homeland..."
         },
         "OUTRO_NE2_DIALOG_8": {
             "ID": "OUTRO_NE2_DIALOG_8",
@@ -2010,7 +2010,7 @@
         },
         "BUILDING_TESTSITE_DESC": {
             "ID": "BUILDING_TESTSITE_DESC",
-            "de": "Schaltet Raketenbatterie frei\\n2 zusätzliche Infanterie-Einheiten"
+            "de": "Schaltet Raketenbatterie frei\\n3 zusätzliche Infanterie-Einheiten"
         },
         "UNLOCK_BOOTCAMP": {
             "ID": "UNLOCK_BOOTCAMP",
@@ -12662,7 +12662,7 @@
         },
         "UNIT_ROCKETEER_DESC": {
             "ID": "UNIT_ROCKETEER_DESC",
-            "de": "Go where no one has gone before!\\n\\nSpecial:\\nFlight (passes through all obstacles).\\nElite (Completely indestructible)"
+            "de": "To boldly go where no one has gone before!\\nSpecial: Flying\\n(moves past all obstacles)"
         },
         "TOURNAMENT_HUNT_TANKS_NAME": {
             "ID": "TOURNAMENT_HUNT_TANKS_NAME",
