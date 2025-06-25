@@ -2158,7 +2158,7 @@
 		}
 
 		private function shouldShowSelectCursorOnBuilding(param1: Renderable): Boolean {
-			return param1 is PlayerBuildingObject && (!(param1 is ConstructionObject) || (param1 as ConstructionObject).mState != PlayerBuildingObject.STATE_RUINS) && (!(param1 is ResourceBuildingObject) || (param1 as ResourceBuildingObject).mState != PlayerBuildingObject.STATE_RUINS) && (!(param1 is PermanentHFEObject) || param1 is PermanentHFEObject && PermanentHFEObject(param1).isFullHealth()) && (!(param1 is HospitalBuilding) || (param1 as HospitalBuilding).mState != PlayerBuildingObject.STATE_RUINS) || param1 is PlayerInstallationObject || param1 is DebrisObject ;
+			return param1 is PlayerBuildingObject && (!(param1 is ConstructionObject) || (param1 as ConstructionObject).mState != PlayerBuildingObject.STATE_RUINS) && (!(param1 is ResourceBuildingObject) || (param1 as ResourceBuildingObject).mState != PlayerBuildingObject.STATE_RUINS) && (!(param1 is PermanentHFEObject) || param1 is PermanentHFEObject && PermanentHFEObject(param1).isFullHealth()) && (!(param1 is HospitalBuilding) || (param1 as HospitalBuilding).mState != PlayerBuildingObject.STATE_RUINS) || param1 is PlayerInstallationObject || param1 is DebrisObject;
 		}
 
 		private function shouldShowAttackCursorOnBuilding(param1: Renderable): Boolean {
@@ -2715,6 +2715,7 @@
 			var _loc6_: int = 0;
 			var _loc2_: int = this.mContainer.scaleX * -this.mCamera.getCameraX() + this.mGame.getStageWidth() / 2;
 			var _loc3_: int = this.mContainer.scaleY * -this.mCamera.getCameraY() + this.mGame.getStageHeight() / 2;
+			/*
 			if (this.mContainer.x != _loc2_) {
 				_loc5_ = int(this.mSoundMakers.length);
 				_loc6_ = 0;
@@ -2725,6 +2726,7 @@
 					_loc6_++;
 				}
 			}
+			*/
 			if (this.mContainer.x != _loc2_ || this.mContainer.y != _loc3_) {
 				this.mContainer.x = _loc2_;
 				this.mContainer.y = _loc3_;
@@ -2732,7 +2734,9 @@
 				this.mSceneHud.y = _loc3_;
 				this.mTilemapGraphic.updateTilemap();
 			}
-			this.mCamera.update();
+			if (FeatureTuner.USE_CAMERA_TRANSITION) {
+				this.mCamera.update();
+			}
 		}
 
 		public function areaDamage(param1: Number, param2: Number, param3: int, param4: Number): void {

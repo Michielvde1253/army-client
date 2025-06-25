@@ -119,9 +119,9 @@
 			var deltaTime: int = param1;
 			this.mGameTime += deltaTime;
 			server = this.gameState.mServer;
-			if (server) {
-				server.update();
-			}
+			//if (server) {
+			//	server.update();
+			//}
 			if (Config.USE_LOGIC_UPDATE_TRY_CATCH && !this.mLogicError) {
 				try {
 					this.mStateMachine.logicUpdate(deltaTime);

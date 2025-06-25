@@ -391,6 +391,8 @@
 
 		private var mFrictionlessGiftID: String;
 
+		private var logicCallsCounter: int = 0;
+
 		public function GameState(param1: StateMachine) {
 			this.mRootNode = new Sprite();
 			this.mSavedResponses = new Object();
@@ -597,6 +599,7 @@
 		}
 
 		public function reactToFullscreen(param1: Event = null): void {
+			trace("react to fullscreen");
 			this.windowSizeChanged();
 			try {
 				this.mMapData.mUpdateRequired = true;
@@ -694,6 +697,7 @@
 			var _loc23_: Mission = null;
 			var _loc24_: int = 0;
 			var _loc2_: Boolean = true;
+			this.logicCallsCounter = (this.logicCallsCounter + 1) % 10;
 			if (smCheatCodeTyped) {
 				updateGlobalTimer();
 			} else {
@@ -703,7 +707,7 @@
 				this.totalMemory = Number(System.totalMemory / 1024 / 1024);
 				this.updateDebugText();
 			}
-			//if (!this.mInitialized || !this.mScene || mFreezeFrameOn){ //&& !this.mServer.isConnectionError() && !this.mServer.isServerCommError()) {
+			//if (!this.mInitialized || !this.mScene || mFreezeFrameOn) { //&& !this.mServer.isConnectionError() && !this.mServer.isServerCommError()) {
 			//	return;
 			//}
 			if (!this.updateLoading()) {
@@ -713,10 +717,14 @@
 				return;
 			}
 			param1 = Math.min(param1, 40);
-			MissionManager.update();
+			if (this.logicCallsCounter == 0) {
+				MissionManager.update();
+			}
 			switch (this.mState) {
 				case STATE_PLAY:
-					this.updateSpawnLevelsTimer(smGlobalDeltaTime);
+					//if (this.logicCallsCounter == 0) {
+						this.updateSpawnLevelsTimer(smGlobalDeltaTime);
+					//}
 					break;
 				case STATE_INTRO:
 					if (this.mIntroStep == 0) {
@@ -756,7 +764,9 @@
 						}
 					}
 			}
-			this.getHud().logicUpdate(param1);
+			if (this.logicCallsCounter == 0) {
+				this.getHud().logicUpdate(param1);
+			}
 			if (PopUpManager.isModalPopupActive()) {
 				return;
 			}
@@ -1223,7 +1233,7 @@
 							}
 						}
 					}
-				} else if(_loc2_ is HospitalBuilding){
+				} else if (_loc2_ is HospitalBuilding) {
 					if (HospitalBuilding(_loc2_).readyToHeal()) {
 						HospitalBuilding(_loc2_).checkNeighbours();
 					}
@@ -1776,8 +1786,8 @@
 			}
 			return _loc2_;
 		}
-	
-	/*
+
+		/*
 	thanks chatgpt!
 	
 	
@@ -2126,6 +2136,9 @@
 			}
 			this.mSpawnEnemyTimer += param1;
 			var _loc2_: Object = mConfig.SpawnLevels[this.mPlayerProfile.mSpawnEnemyLevel] as Object;
+			if(this.mSpawnEnemyTimer < _loc2_.ActivationTime * 60 * 1000){
+				return;
+			}
 			while (this.mSpawnEnemyTimer >= _loc2_.ActivationTime * 60 * 1000) {
 				_loc3_ = this.mPlayerProfile.mInventory.getAreas(true).length / 2 * _loc2_.SpawnAmountPerArea;
 				if ((_loc4_ = int(this.mScene.getEnemyUnits().length)) < _loc3_) {
@@ -2560,7 +2573,7 @@
 						this.mHUD.mPullOutMissionFrame.addEventListener(Event.ENTER_FRAME, this.enterFrameMissionInitial);
 					}
 					CONFIG::BUILD_FOR_MOBILE_AIR {
-						var file:File = File.applicationStorageDirectory.resolvePath("savesettings.txt");
+						var file: File = File.applicationStorageDirectory.resolvePath("savesettings.txt");
 						if (file.exists) {
 							var first_time_since_v22: Boolean = false;
 						} else {
@@ -2644,7 +2657,7 @@
 
 		CONFIG::BUILD_FOR_MOBILE_AIR {
 			public function saveSettingsLoad(): void {
-				var file:File = File.applicationStorageDirectory.resolvePath("savesettings.txt");
+				var file: File = File.applicationStorageDirectory.resolvePath("savesettings.txt");
 				if (!file.exists) {
 					return
 				}

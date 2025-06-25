@@ -48,7 +48,7 @@
       
       public static var USE_LOGIC_UPDATE_TRY_CATCH:Boolean = false;
       
-      public static var DEBUG_MODE:Boolean = true;
+      public static var DEBUG_MODE:Boolean = false;
       
       public static var DEBUG_MISSIONS:Boolean = false;
       

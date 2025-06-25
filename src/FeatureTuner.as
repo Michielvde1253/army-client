@@ -3,7 +3,7 @@
    public class FeatureTuner
    {
       
-      private static const DROP_ALL_OPTIONAL_FEATURES:Boolean = false;
+      private static const DROP_ALL_OPTIONAL_FEATURES:Boolean = true;
       
       public static const USE_RIVER_TILE_EFFECTS:Boolean = !DROP_ALL_OPTIONAL_FEATURES;
       
@@ -41,13 +41,13 @@
       
       public static const USE_LOW_SWF:Boolean = true;
       
-      public static const USE_HARVEST_ANIMATION:Boolean = true;
+      public static const USE_HARVEST_ANIMATION:Boolean = !DROP_ALL_OPTIONAL_FEATURES;
       
       public static const USE_FIRE_CALL_EFFECTS:Boolean = !DROP_ALL_OPTIONAL_FEATURES && !USE_LOW_SWF;
       
       public static const LOAD_TILE_MAP_CSV:Boolean = true;
       
-      public static const USE_CAMERA_TRANSITION:Boolean = true;
+      public static const USE_CAMERA_TRANSITION:Boolean = !DROP_ALL_OPTIONAL_FEATURES;
       
       public static const USE_LIVE_BUILD_PRODUCTION:Boolean = Config.USE_LIVE_BUILD;
       
@@ -76,6 +76,10 @@
       public static const USE_MOUSE_FOR_PLACE_ITEMS:Boolean = true;
 	  
       public static const USE_HINT_HEALTH:Boolean = true;
+	  
+	  public static const USE_BORDER_TILES:Boolean = !DROP_ALL_OPTIONAL_FEATURES;
+	  
+	  public static const USE_TRANSITION_TILES:Boolean = !DROP_ALL_OPTIONAL_FEATURES;
        
       
       public function FeatureTuner()
