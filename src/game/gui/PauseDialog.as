@@ -93,7 +93,6 @@
 			doOpeningTransition();
 		}
 
-		/*
 		CONFIG::BUILD_FOR_MOBILE_AIR {
 			override public function scaleToScreen(): void {
 				// Calculate the scaling factors based on the clip's dimensions
@@ -111,7 +110,24 @@
 				mClip.scaleY = scaleFactor;
 			}
 		}
-	*/
+
+		CONFIG::NOT_BUILD_FOR_AIR {
+			override public function scaleToScreen(): void {
+				// Calculate the scaling factors based on the clip's dimensions
+				var scaleXFactor: Number = GameState.mInstance.getStageWidth() / mClip.width;
+				var scaleYFactor: Number = GameState.mInstance.getStageHeight() / mClip.height;
+
+				// Add a small buffer to prevent rounding issues (adjust value if necessary)
+				scaleXFactor += 0.05;
+				scaleYFactor += 0.05;
+
+				var scaleFactor: Number = Math.max(scaleXFactor, scaleYFactor)
+
+				// Apply the scaling factors to stretch across both axes
+				mClip.scaleX = scaleFactor;
+				mClip.scaleY = scaleFactor;
+			}
+		}
 
 		public function startSelectingFile(): void {
 			CONFIG::BUILD_FOR_AIR {

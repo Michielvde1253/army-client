@@ -746,7 +746,7 @@
 						}
 					}
 					this.drawClouds(_loc7_, _loc8_, _loc5_);
-					//this.drawBorderEdges(_loc7_,_loc8_);
+					this.drawBorderEdges(_loc7_,_loc8_);
 					_loc8_++;
 				}
 				_loc7_++;

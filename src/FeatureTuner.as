@@ -3,7 +3,7 @@
    public class FeatureTuner
    {
       
-      private static const DROP_ALL_OPTIONAL_FEATURES:Boolean = true;
+      private static const DROP_ALL_OPTIONAL_FEATURES:Boolean = false;
       
       public static const USE_RIVER_TILE_EFFECTS:Boolean = !DROP_ALL_OPTIONAL_FEATURES;
       
