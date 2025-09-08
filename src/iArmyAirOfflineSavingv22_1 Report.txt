@@ -3,11 +3,11 @@
 
 Frame #    Framebytes    Totaal aantal bytes    Scène
 -------    ----------    -------------------    -----
-      1      13765017               13765017    Scene 1(Exportframe AS 3.0-klassen)
+      1      13765066               13765066    Scene 1(Exportframe AS 3.0-klassen)
 
 Scène      Vormbytes     Tekstbytes    ActionScript-bytes
 -------    ----------    ----------    ------------------
-Scene 1             0             0               1853977
+Scene 1             0             0               1851560
 
 Symbool                                      Vormbytes     Tekstbytes    ActionScript-bytes
 -----------------------------------------    ----------    ----------    ------------------
@@ -414,7 +414,7 @@ Symbol 3843                                           0             0           
 pvp_good_premium_special_forces_aim_ne                0             0                     0
 Symbol 6646                                           0             0                     0
 pvp_good_premium_special_forces_fire                  0             0                     0
-Symbol 6626                                         485             0                     0
+Symbol 6626                                         486             0                     0
 pvp_good_premium_special_forces_fire_ne               0             0                     0
 Symbol 5584                                         539             0                     0
 pvp_good_premium_special_forces_hit                   0             0                     0
@@ -562,7 +562,7 @@ supply_delivery_heli_propellor1                      68             0           
 supply_delivery_heli_propellor                       68             0                     0
 Symbol 2                                             58             0                     0
 Symbol 3                                              0             0                     0
-Symbol 5                                             90             0                     0
+Symbol 5                                             91             0                     0
 Symbol 7                                              0             0                     0
 Symbol 8                                            109             0                     0
 Symbol 9                                              0             0                     0
@@ -577,7 +577,7 @@ Symbol 19                                             0           150           
 Symbol 20                                             0             0                     0
 Symbol 21                                             0             0                     0
 Symbol 22                                            44             0                     0
-Symbol 26                                          3419             0                     0
+Symbol 26                                          3420             0                     0
 Symbol 28                                             0             0                     0
 Symbol 34                                             0             0                     0
 Symbol 35                                             0             0                     0
@@ -588,7 +588,7 @@ Symbol 43                                             0             0           
 Symbol 44                                             0             0                     0
 Symbol 45                                           209             0                     0
 Symbol 47                                           209             0                     0
-Symbol 48                                           345             0                     0
+Symbol 48                                           346             0                     0
 Symbol 49                                             0           600                     0
 Symbol 50                                             0           454                     0
 Symbol 52                                            51             0                     0
@@ -1253,7 +1253,7 @@ Symbol 1376                                         214             0           
 Symbol 1377                                         225             0                     0
 Symbol 1378                                         239             0                     0
 Symbol 1379                                          39             0                     0
-Symbol 1386                                         986             0                     0
+Symbol 1386                                         987             0                     0
 Symbol 1387                                           0             0                     0
 Symbol 1388                                          65             0                     0
 Symbol 1389                                           0             0                     0
@@ -1352,7 +1352,7 @@ Symbol 1564                                          38             0           
 Symbol 1567                                          38             0                     0
 Symbol 1568                                           0             0                     0
 Symbol 1570                                           0           157                     0
-Symbol 1572                                          61             0                     0
+Symbol 1572                                           0             0                     0
 Symbol 1574                                           0             0                     0
 Symbol 1582                                          38             0                     0
 Symbol 1585                                          37             0                     0
@@ -1564,7 +1564,7 @@ Symbol 1968                                          85             0           
 Symbol 1969                                           0             0                     0
 Symbol 1970                                           0             0                     0
 Symbol 1972                                          39             0                     0
-Symbol 1975                                         294             0                     0
+Symbol 1975                                         295             0                     0
 Symbol 1976                                          47             0                     0
 Symbol 1977                                           0             0                     0
 Symbol 1978                                           0             0                     0
@@ -1611,8 +1611,8 @@ Symbol 2050                                           0           153           
 Symbol 2055                                         647           596                     0
 Symbol 2056                                           0           396                     0
 Symbol 4451                                         306             0                     0
-Symbol 4446                                         257             0                     0
-Symbol 4449                                         261             0                     0
+Symbol 4446                                         261             0                     0
+Symbol 4449                                         259             0                     0
 Symbol 2058                                          68             0                     0
 Symbol 2059                                           0             0                     0
 Symbol 2060                                           0             0                     0
@@ -3377,7 +3377,7 @@ Symbol 5101                                           0             0           
 Symbol 5105                                          30             0                     0
 Symbol 5107                                          99             0                     0
 Symbol 5114                                          39             0                     0
-Symbol 5115                                         177           453                     0
+Symbol 5115                                         178           453                     0
 Symbol 5120                                          38             0                     0
 Symbol 5121                                           0           285                     0
 Symbol 5125                                         258             0                     0
@@ -3588,7 +3588,7 @@ Symbol 5472                                           0             0           
 Symbol 5476                                           0             0                     0
 Symbol 5477                                           0             0                     0
 Symbol 5478                                           0             0                     0
-Symbol 5481                                         272             0                     0
+Symbol 5481                                         273             0                     0
 Symbol 5482                                           0             0                     0
 Symbol 5485                                          82             0                     0
 Symbol 5488                                          39             0                     0
@@ -3756,7 +3756,7 @@ Symbol 5765                                          95             0           
 Symbol 5768                                           0           612                     0
 Symbol 5770                                          78             0                     0
 Symbol 5773                                           0           608                     0
-Symbol 5775                                         262             0                     0
+Symbol 5775                                         259             0                     0
 Symbol 5776                                           0           612                     0
 Symbol 5777                                           0           608                     0
 Symbol 5779                                        2137             0                     0
@@ -4449,17 +4449,17 @@ Getweende vormen: 3684 bytes
 
 Naam lettertype              Bytes         Tekens
 -------------------------    ----------    ------
-TimesNewRomanPSMT                  2257    46BDGT_cdegilo
+TimesNewRomanPSMT                  2258    46BDGT_cdegilo
 Arial-Black                          28    
 BerlinSansFBDemi-Bold Vet          5783     '()123?EIPRSU_abcdefgiklmnoprstuy 
 ArialMT                           10182     !"'(),-./12:ABCDEFGIKLMNOPRSTUWYabcdefghiklmnopqrstuvwy 
-Impacted                          81885     !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁłŃńŅņŇňŉŊŋŌōŎŏŐőŒœŔŕŖŗŘřŚśŜŝŞşŠšŢţŤťŦŧŨũŪūŬŭŮůŰűŲųŴŵŶŷŸŹźŻżŽžſƒǺǻǼǽǾǿˆˇˉ˘˙˚˛˜˝;΄΅Ά·ΈΉΊΌΎΏΐΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩΪΫάέήίΰαβγδεζηθικλμνξοπρςστυφχψωϊϋόύώЁЂЃЄЅІЇЈЉЊЋЌЎЏАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюяёђѓєѕіїјљњћќўџҐґẀẁẂẃẄẅỲỳ–—―‗‘’‚‛“”„†‡•…‰′″‹›‼‾⁄ⁿ₣₤₧℅ℓ№™Ω℮⅛⅜⅝⅞←↑→↓↔↕∂∏∑∕√∞∟∩∫≠≡≤≥─│┌┐└┘├┤┬┴┼═║╒╓╔╕╖╗╘╙╚╛╜╝╞╟╠╡╢╣╤╥╦╧╨╩╪╫╬▄█▌▒▓■□▲▼○●♀♂♠♣♥♪
+Impacted                          81886     !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁłŃńŅņŇňŉŊŋŌōŎŏŐőŒœŔŕŖŗŘřŚśŜŝŞşŠšŢţŤťŦŧŨũŪūŬŭŮůŰűŲųŴŵŶŷŸŹźŻżŽžſƒǺǻǼǽǾǿˆˇˉ˘˙˚˛˜˝;΄΅Ά·ΈΉΊΌΎΏΐΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩΪΫάέήίΰαβγδεζηθικλμνξοπρςστυφχψωϊϋόύώЁЂЃЄЅІЇЈЉЊЋЌЎЏАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюяёђѓєѕіїјљњћќўџҐґẀẁẂẃẄẅỲỳ–—―‗‘’‚‛“”„†‡•…‰′″‹›‼‾⁄ⁿ₣₤₧℅ℓ№™Ω℮⅛⅜⅝⅞←↑→↓↔↕∂∏∑∕√∞∟∩∫≠≡≤≥─│┌┐└┘├┤┬┴┼═║╒╓╔╕╖╗╘╙╚╛╜╝╞╟╠╡╢╣╤╥╦╧╨╩╪╫╬▄█▌▒▓■□▲▼○●♀♂♠♣♥♪
 Impact                            48241     !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁłŃńŅņŇňŉŊŋŌōŎŏŐőŒœŔŕŖŗŘřŚśŜŝŞşŠšŢţŤťŦŧŨũŪūŬŭŮůŰűŲųŴŵŶŷŸŹźŻżŽžſƒǺǻǼǽǾǿȘșȚțˆ˜–—―‗‘’‚‛“”„†‡•…‰′″‹›‼‾⁄₣₤₧€℅ℓ№™Ω℮⅛⅜⅝⅞
-Arial-BoldMT Vet                  81903     !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁłŃńŅņŇňŉŊŋŌōŎŏŐőŒœŔŕŖŗŘřŚśŜŝŞşŠšŢţŤťŦŧŨũŪūŬŭŮůŰűŲųŴŵŶŷŸŹźŻżŽžſƀƁƂƃƄƅƆƇƈƉƊƋƌƍƎƏƐƑƒƓƔƕƖƗƘƙƚƛƜƝƞƟƠơƢƣƤƥƦƧƨƩƪƫƬƭƮƯưƱƲƳƴƵƶƷƸƹƺƻƼƽƾƿǀǁǂǃǄǅǆǇǈǉǊǋǌǍǎǏǐǑǒǓǔǕǖǗǘǙǚǛǜǝǞǟǠǡǢǣǤǥǦǧǨǩǪǫǬǭǮǯǰǱǲǳǴǵǶǷǸǹǺǻǼǽǾǿȀȁȂȃȄȅȆȇȈȉȊȋȌȍȎȏȐȑȒȓȔȕȖȗȘșȚțȜȝȞȟȠȡȢȣȤȥȦȧȨȩȪȫȬȭȮȯȰȱȲȳȴȵȶȷȸȹȺȻȼȽȾȿɀɁɂɃɄɅɆɇɈɉɊɋɌɍɎɏˆ˜           ​‌‍‎‏‒–—―‖‗‘’‚‛“”„‟†‡•…‪‫‬‭‮ ‰′″‴‹›‼‾⁄⁞⁪⁫⁬⁭⁮⁯₠₡₢₣₤₥₦₧₨₩₪₫€₭₮₯₰₱₲₳₴₵₸₹℅ℓ№℗™Ω℮⅍ⅎ⅓⅔⅛⅜⅝⅞
+Arial-BoldMT Vet                  81904     !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁłŃńŅņŇňŉŊŋŌōŎŏŐőŒœŔŕŖŗŘřŚśŜŝŞşŠšŢţŤťŦŧŨũŪūŬŭŮůŰűŲųŴŵŶŷŸŹźŻżŽžſƀƁƂƃƄƅƆƇƈƉƊƋƌƍƎƏƐƑƒƓƔƕƖƗƘƙƚƛƜƝƞƟƠơƢƣƤƥƦƧƨƩƪƫƬƭƮƯưƱƲƳƴƵƶƷƸƹƺƻƼƽƾƿǀǁǂǃǄǅǆǇǈǉǊǋǌǍǎǏǐǑǒǓǔǕǖǗǘǙǚǛǜǝǞǟǠǡǢǣǤǥǦǧǨǩǪǫǬǭǮǯǰǱǲǳǴǵǶǷǸǹǺǻǼǽǾǿȀȁȂȃȄȅȆȇȈȉȊȋȌȍȎȏȐȑȒȓȔȕȖȗȘșȚțȜȝȞȟȠȡȢȣȤȥȦȧȨȩȪȫȬȭȮȯȰȱȲȳȴȵȶȷȸȹȺȻȼȽȾȿɀɁɂɃɄɅɆɇɈɉɊɋɌɍɎɏˆ˜           ​‌‍‎‏‒–—―‖‗‘’‚‛“”„‟†‡•…‪‫‬‭‮ ‰′″‴‹›‼‾⁄⁞⁪⁫⁬⁭⁮⁯₠₡₢₣₤₥₦₧₨₩₪₫€₭₮₯₰₱₲₳₴₵₸₹℅ℓ№℗™Ω℮⅍ⅎ⅓⅔⅛⅜⅝⅞
 
 ActionScript-bytes    Locatie
 ------------------    -------
-           1853977    Scene 1:Frame 1
+           1851560    Scene 1:Frame 1
 
 Bitmap                   Gecomprimeerd    Origineel     Compressie
 ---------------------    -------------    ----------    ----------
@@ -4473,7 +4473,7 @@ bitmap6965.png                   15873         66700    Zonder verlies
 bitmap6889.png                     773          3844    Zonder verlies
 bitmap6968.png                    1501         13200    Zonder verlies
 bitmap129.png                     6788         26220    Zonder verlies
-bitmap6971.png                   16818         64400    Zonder verlies
+bitmap6971.png                   16819         64400    Zonder verlies
 bitmap6973.png                    1466         13664    Zonder verlies
 bitmap134.png                     7727         27448    Zonder verlies
 bitmap6976.png                   17997         69000    Zonder verlies
@@ -4484,7 +4484,7 @@ bitmap6982.png                    1344         12528    Zonder verlies
 bitmap141.png                     9821         34668    Zonder verlies
 bitmap99.png                      9173        102400    Zonder verlies
 bitmap237.png                     3751         73984    Zonder verlies
-bitmap6953.png                   15327        109824    Zonder verlies
+bitmap6953.png                   15358        109824    Zonder verlies
 bitmap6956.png                    1888         14976    Zonder verlies
 bitmap6959.png                    6328         27232    Zonder verlies
 bitmap6945.png                     644          8736    Zonder verlies
@@ -4503,10 +4503,10 @@ bitmap6907.png                     847          6660    Zonder verlies
 bitmap6909.png                    3249         42336    Zonder verlies
 bitmap6911.png                     836          6660    Zonder verlies
 bitmap6913.png                    8070         41064    Zonder verlies
-bitmap6898.png                   14543         57856    Zonder verlies
+bitmap6898.png                   14544         57856    Zonder verlies
 bitmap6894.png                   11101         62100    Zonder verlies
 bitmap6900.png                   15408         57856    Zonder verlies
-bitmap6895.png                   11915         61560    Zonder verlies
+bitmap6895.png                   11916         61560    Zonder verlies
 bitmap6901.png                   15283         57856    Zonder verlies
 bitmap6896.png                   13382         67280    Zonder verlies
 bitmap6899.png                   14260         57856    Zonder verlies
@@ -4559,8 +4559,8 @@ bitmap1024.png                    3230        629652    Zonder verlies
 bitmap3016.png                    2835         11368    Zonder verlies
 bitmap4637.png                    4006         20448    Zonder verlies
 bitmap1156.png                   11173       1042608    Zonder verlies
-bitmap6681.jpg                   36997        508800    Geïmporteerde JPEG
-bitmap557.png                     5573         26220    Zonder verlies
+bitmap6681.jpg                   36998        508800    Geïmporteerde JPEG
+bitmap557.png                     5574         26220    Zonder verlies
 bitmap264.png                      457          5016    Zonder verlies
 bitmap1073.png                    3810         67276    Zonder verlies
 bitmap1074.png                    1167         12064    Zonder verlies
@@ -4577,7 +4577,7 @@ bitmap6657.png                    4285         20160    Zonder verlies
 bitmap4071.png                    1857         11136    Zonder verlies
 bitmap4073.png                    1778         11136    Zonder verlies
 bitmap4075.png                    1858         11136    Zonder verlies
-bitmap4077.png                    1819         11136    Zonder verlies
+bitmap4077.png                    1820         11136    Zonder verlies
 bitmap476.png                     1059          5120    Zonder verlies
 bitmap467.png                     2516         11136    Zonder verlies
 bitmap469.png                      620          5740    Zonder verlies
@@ -4594,7 +4594,7 @@ bitmap4844.png                   10849         70840    Zonder verlies
 bitmap4847.png                    1288          4032    Zonder verlies
 bitmap4850.png                   10661         76368    Zonder verlies
 bitmap4854.png                    1287          2484    Zonder verlies
-bitmap4858.png                   10669         65484    Zonder verlies
+bitmap4858.png                   10670         65484    Zonder verlies
 bitmap4861.png                   10722         77056    Zonder verlies
 bitmap439.png                     3999         16560    Zonder verlies
 bitmap442.png                     4032         16560    Zonder verlies
@@ -4607,12 +4607,12 @@ bitmap3129.png                   10010         96944    Zonder verlies
 bitmap1829.png                   14706        100724    Zonder verlies
 bitmap3976.png                    1278         12144    Zonder verlies
 bitmap3975.png                    1343         12648    Zonder verlies
-bitmap3974.png                    7097         40128    Zonder verlies
+bitmap3974.png                    7098         40128    Zonder verlies
 bitmap6593.png                    3632         34056    Zonder verlies
 bitmap6596.png                    5323         34056    Zonder verlies
 bitmap6599.png                    5320         34056    Zonder verlies
 bitmap6602.png                    6099         34056    Zonder verlies
-bitmap972.png                    15089         81732    Zonder verlies
+bitmap972.png                    15090         81732    Zonder verlies
 bitmap976.png                      836          6336    Zonder verlies
 bitmap977.png                     2143         19096    Zonder verlies
 bitmap980.png                     5311         59920    Zonder verlies
@@ -4640,17 +4640,17 @@ bitmap1293.png                   16879         75072    JPEG-kwaliteit=80
 bitmap6549.png                   30432        218040    JPEG-kwaliteit=80
 bitmap1298.png                    1931         31212    JPEG-kwaliteit=80
 bitmap1300.png                    2110         31212    JPEG-kwaliteit=80
-bitmap1302.png                    1273         12528    JPEG-kwaliteit=80
+bitmap1302.png                    1274         12528    JPEG-kwaliteit=80
 bitmap1304.png                    1123          9964    JPEG-kwaliteit=80
 bitmap1306.png                    1112          9588    JPEG-kwaliteit=80
-bitmap1314.png                   17557         88740    JPEG-kwaliteit=80
+bitmap1314.png                   17558         88740    JPEG-kwaliteit=80
 bitmap6094.png                   29532        219936    JPEG-kwaliteit=80
 bitmap795.png                     4403         35952    JPEG-kwaliteit=80
 bitmap797.png                     4510         35952    JPEG-kwaliteit=80
 bitmap799.png                     4371         35952    JPEG-kwaliteit=80
 bitmap801.png                     4335         35952    JPEG-kwaliteit=80
 bitmap803.png                     4439         35952    JPEG-kwaliteit=80
-bitmap805.png                     4424         35952    JPEG-kwaliteit=80
+bitmap805.png                     4425         35952    JPEG-kwaliteit=80
 bitmap807.png                     4474         35952    JPEG-kwaliteit=80
 bitmap809.png                     4311         35952    JPEG-kwaliteit=80
 bitmap811.png                     4424         35952    JPEG-kwaliteit=80
@@ -4669,7 +4669,7 @@ bitmap6507.png                   10782         32760    Zonder verlies
 bitmap6508.png                    4613         44608    Zonder verlies
 bitmap2653.png                    2701         36864    JPEG-kwaliteit=80
 bitmap2654.jpg                    1236         36864    Geïmporteerde JPEG
-bitmap1173.png                    2769          9384    Zonder verlies
+bitmap1173.png                    2770          9384    Zonder verlies
 bitmap1172.png                    2697          9180    Zonder verlies
 bitmap1174.png                   18996        388104    JPEG-kwaliteit=80
 bitmap1177.png                   25098        417280    JPEG-kwaliteit=80
@@ -4683,18 +4683,18 @@ bitmap1182.png                    7918        178840    JPEG-kwaliteit=80
 bitmap3111.png                    1289         10660    JPEG-kwaliteit=80
 bitmap1181.png                    1814          3528    Zonder verlies
 bitmap1189.png                    3747         36828    JPEG-kwaliteit=80
-bitmap1188.png                    5027         48032    JPEG-kwaliteit=80
+bitmap1188.png                    5028         48032    JPEG-kwaliteit=80
 bitmap1183.png                    2552         26108    JPEG-kwaliteit=80
 bitmap1180.png                    5494         17168    Zonder verlies
 bitmap1185.png                    3980         19008    Zonder verlies
-bitmap6502.png                   10891        245520    JPEG-kwaliteit=80
+bitmap6502.png                   10892        245520    JPEG-kwaliteit=80
 bitmap6490.png                   11171        207932    JPEG-kwaliteit=80
 bitmap6483.png                    2266         50600    JPEG-kwaliteit=80
 bitmap2446.png                    2072         10260    Zonder verlies
 bitmap6479.png                   14920         37632    Zonder verlies
 bitmap6474.png                    5889         23664    Zonder verlies
-Bitmap 1413-kopie                29599        834120    JPEG-kwaliteit=80
-bitmap2123.png                   40530        557280    JPEG-kwaliteit=80
+Bitmap 1413-kopie                29600        834120    JPEG-kwaliteit=80
+bitmap2123.png                   40531        557280    JPEG-kwaliteit=80
 bitmap6099.png                      98          2376    Zonder verlies
 bitmap6463.jpg                   20889        508800    Geïmporteerde JPEG
 bitmap6450.png                    2474         11136    Zonder verlies
@@ -4705,7 +4705,7 @@ bitmap242.png                      352          2700    Zonder verlies
 bitmap250.png                      638          5148    Zonder verlies
 bitmap248.png                      619          7040    Zonder verlies
 bitmap247.png                      264          1680    Zonder verlies
-bitmap1264.png                    4680         35904    Zonder verlies
+bitmap1264.png                    4681         35904    Zonder verlies
 bitmap243.png                     3504         20368    Zonder verlies
 bitmap239.png                    10902         55000    Zonder verlies
 bitmap240.png                     4487         43500    Zonder verlies
@@ -4730,11 +4730,11 @@ bitmap6371.png                   13593         35432    Zonder verlies
 bitmap6273.png                    1241          3600    Zonder verlies
 bitmap4113.png                    2989        906440    Zonder verlies
 bitmap6353.png                    1998        146496    Zonder verlies
-bitmap6358.png                    2621        152724    Zonder verlies
+bitmap6358.png                    2622        152724    Zonder verlies
 bitmap6359.png                   19379       1594608    Zonder verlies
 bitmap6326.png                   11579         36864    Zonder verlies
 bitmap6317.png                   27030        198432    JPEG-kwaliteit=80
-bitmap2309.png                   25735        196736    JPEG-kwaliteit=80
+bitmap2309.png                   25736        196736    JPEG-kwaliteit=80
 bitmap6320.png                   12496        116820    Zonder verlies
 bitmap6308.jpg                   24939        508800    Geïmporteerde JPEG
 bitmap6302.png                    2727         22176    JPEG-kwaliteit=80
@@ -4750,7 +4750,7 @@ bitmap98.png                      6938         52000    Zonder verlies
 bitmap97.png                      2078         50976    Zonder verlies
 bitmap111.png                     1757         50976    Zonder verlies
 bitmap2259.png                    4007         16320    Zonder verlies
-bitmap1222.png                   11864         55000    Zonder verlies
+bitmap1222.png                   11865         55000    Zonder verlies
 bitmap738.png                     4195         43500    Zonder verlies
 bitmap1228.png                    1536         10368    Zonder verlies
 bitmap1224.png                    5725         31104    Zonder verlies
@@ -4776,7 +4776,7 @@ bitmap6199.png                    6859         17424    Zonder verlies
 bitmap6202.png                    5390         17424    Zonder verlies
 bitmap6205.png                    5239         18496    Zonder verlies
 bitmap5610.png                    6637         19592    Zonder verlies
-bitmap3470.png                   12245         40800    Zonder verlies
+bitmap3470.png                   12246         40800    Zonder verlies
 bitmap6123.png                     477          1296    Zonder verlies
 bitmap245.png                     4965         31104    Zonder verlies
 bitmap6130.png                   12669         44408    Zonder verlies
@@ -4785,11 +4785,11 @@ bitmap6111.png                    2090         20280    JPEG-kwaliteit=80
 bitmap2970.png                    6297         37604    Zonder verlies
 bitmap6103.png                   48712        499848    JPEG-kwaliteit=80
 bitmap5654.png                   46920        508320    JPEG-kwaliteit=80
-bitmap1783.png                    3366         14352    Zonder verlies
+bitmap1783.png                    3367         14352    Zonder verlies
 bitmap2455.png                    7079         37200    Zonder verlies
-bitmap2454.png                   10510         92976    Zonder verlies
+bitmap2454.png                   10511         92976    Zonder verlies
 bitmap103.png                     7604         52000    Zonder verlies
-bitmap696.png                     6318         36864    Zonder verlies
+bitmap696.png                     6319         36864    Zonder verlies
 bitmap697.png                    12813         36864    Zonder verlies
 bitmap6083.png                   16554         59400    Zonder verlies
 Bitmap 1410                      30181        876960    JPEG-kwaliteit=80
@@ -4811,11 +4811,11 @@ bitmap6025.png                    2265         39996    JPEG-kwaliteit=80
 bitmap6027.png                    2087         39996    JPEG-kwaliteit=80
 bitmap6029.png                    2211         38412    JPEG-kwaliteit=80
 bitmap6031.png                    2087         39200    JPEG-kwaliteit=80
-bitmap6021.png                   35270        846396    JPEG-kwaliteit=80
+bitmap6021.png                   35271        846396    JPEG-kwaliteit=80
 bitmap5590.png                    1825        159556    Zonder verlies
 bitmap704.png                     5318        567084    Zonder verlies
 bitmap2915.png                    1358         12480    Zonder verlies
-bitmap3577.png                    2149         19200    Zonder verlies
+bitmap3577.png                    2150         19200    Zonder verlies
 bitmap3574.png                    7821         44640    Zonder verlies
 bitmap2195.png                   13953         79040    Zonder verlies
 bitmap5978.jpg                   25478        508800    Geïmporteerde JPEG
@@ -4827,15 +4827,15 @@ bitmap1368.png                    3440         27160    JPEG-kwaliteit=80
 bitmap2666.png                    3087         36864    JPEG-kwaliteit=80
 bitmap670.png                      850          3404    JPEG-kwaliteit=80
 bitmap673.png                      970          5600    JPEG-kwaliteit=80
-bitmap5948.png                   31770        430336    JPEG-kwaliteit=80
+bitmap5948.png                   31771        430336    JPEG-kwaliteit=80
 bitmap5941.png                   17720        198000    JPEG-kwaliteit=80
-bitmap4290.png                    5044        541596    Zonder verlies
+bitmap4290.png                    5045        541596    Zonder verlies
 bitmap4291.png                    8581        784944    Zonder verlies
 bitmap5931.png                    1243          8112    JPEG-kwaliteit=80
 bitmap128.png                      658          8360    Zonder verlies
 bitmap133.png                      631          8360    Zonder verlies
 bitmap5749.png                     187          1656    Zonder verlies
-bitmap5743.png                   20310        238108    JPEG-kwaliteit=80
+bitmap5743.png                   20311        238108    JPEG-kwaliteit=80
 Bitmap 1412                      29608        680672    JPEG-kwaliteit=80
 bitmap1125.png                    2764         30400    JPEG-kwaliteit=80
 bitmap2181.png                   15124        364496    JPEG-kwaliteit=80
@@ -4848,7 +4848,7 @@ bitmap3330.png                    3505        123216    JPEG-kwaliteit=80
 bitmap3327.png                    3905        123216    JPEG-kwaliteit=80
 bitmap3011.png                    1211         36864    JPEG-kwaliteit=80
 bitmap1159.jpg                   27382        508800    Geïmporteerde JPEG
-bitmap2464.png                    4299         55200    JPEG-kwaliteit=80
+bitmap2464.png                    4300         55200    JPEG-kwaliteit=80
 bitmap2467.png                     964          5220    JPEG-kwaliteit=80
 bitmap2469.png                     961          4756    JPEG-kwaliteit=80
 bitmap2471.png                    1015          4816    JPEG-kwaliteit=80
@@ -4860,8 +4860,8 @@ bitmap2326.png                    3741         28560    Zonder verlies
 bitmap2327.png                    2121         12320    Zonder verlies
 bitmap2329.png                    1569         15120    Zonder verlies
 bitmap2722.png                    2479         11136    Zonder verlies
-bitmap931.png                    15879         74976    Zonder verlies
-bitmap5718.png                   20526         89872    Zonder verlies
+bitmap931.png                    15880         74976    Zonder verlies
+bitmap5718.png                   20527         89872    Zonder verlies
 bitmap4184.png                    2565         11136    Zonder verlies
 bitmap4186.png                    2307         11136    Zonder verlies
 bitmap4188.png                    2404         11136    Zonder verlies
@@ -4878,19 +4878,19 @@ bitmap2924.png                    1316          9408    Zonder verlies
 bitmap5669.png                    8598         36864    Zonder verlies
 bitmap1393.png                    5763         21888    Zonder verlies
 bitmap284.png                     5986         18432    Zonder verlies
-bitmap5674.png                    8064        990880    Zonder verlies
+bitmap5674.png                    8065        990880    Zonder verlies
 bitmap5675.png                   13537       1294920    JPEG-kwaliteit=80
 bitmap4867.png                    8269       1106700    Zonder verlies
-bitmap4866.png                    7325        794108    Zonder verlies
-bitmap5661.png                    9816         35344    Zonder verlies
-bitmap5648.png                   21350        274428    JPEG-kwaliteit=80
-bitmap5643.png                   31590         57096    Zonder verlies
+bitmap4866.png                    7326        794108    Zonder verlies
+bitmap5661.png                    9817         35344    Zonder verlies
+bitmap5648.png                   21351        274428    JPEG-kwaliteit=80
+bitmap5643.png                   31591         57096    Zonder verlies
 bitmap2239.png                   17388         70176    Zonder verlies
 bitmap2682.png                    4165         25600    Zonder verlies
 bitmap1009.png                    2776         25600    Zonder verlies
 bitmap1430.png                    1060         14300    Zonder verlies
 bitmap1432.png                    2042         15800    Zonder verlies
-bitmap1431.png                    4919         45560    Zonder verlies
+bitmap1431.png                    4920         45560    Zonder verlies
 bitmap1429.png                   15074         70176    Zonder verlies
 bitmap278.png                     4500         38400    JPEG-kwaliteit=80
 bitmap479.png                     2436         11136    Zonder verlies
@@ -4901,7 +4901,7 @@ bitmap266.png                     1148         12064    Zonder verlies
 bitmap269.png                      842         12144    Zonder verlies
 bitmap268.png                     2120         21168    Zonder verlies
 bitmap3983.png                    1766         36864    JPEG-kwaliteit=80
-bitmap2657.png                   20804        209440    JPEG-kwaliteit=80
+bitmap2657.png                   20805        209440    JPEG-kwaliteit=80
 bitmap667.png                     5493         53192    JPEG-kwaliteit=80
 bitmap3142.png                    2093         36864    JPEG-kwaliteit=80
 bitmap568.png                      498         72352    Zonder verlies
@@ -4912,7 +4912,7 @@ bitmap577.png                     1319         72352    Zonder verlies
 bitmap578.png                     1616         72352    Zonder verlies
 bitmap4283.png                    2104         72352    Zonder verlies
 bitmap4282.png                     363         72352    Zonder verlies
-bitmap5558.png                    2803         72352    JPEG-kwaliteit=80
+bitmap5558.png                    2804         72352    JPEG-kwaliteit=80
 bitmap5549.png                   29068        118932    Zonder verlies
 bitmap5545.png                    7145         36864    Zonder verlies
 bitmap354.png                     2126        123216    JPEG-kwaliteit=80
@@ -4924,41 +4924,41 @@ bitmap5528.png                      43          6724    Zonder verlies
 bitmap5530.png                     426          2500    Zonder verlies
 bitmap944.png                     2422         11136    Zonder verlies
 bitmap946.png                     3962         53500    Zonder verlies
-bitmap948.png                     2860         11136    Zonder verlies
+bitmap948.png                     2861         11136    Zonder verlies
 bitmap836.png                    10164         34112    Zonder verlies
-bitmap839.png                     1455          4712    Zonder verlies
+bitmap839.png                     1456          4712    Zonder verlies
 bitmap842.png                     6479         18224    Zonder verlies
-bitmap5514.png                    9486         34224    Zonder verlies
+bitmap5514.png                    9487         34224    Zonder verlies
 bitmap541.png                      935          6536    Zonder verlies
 bitmap5291.png                    4120          9216    Zonder verlies
 bitmap2128.png                    5949         18816    Zonder verlies
 bitmap5271.png                    7025         36864    Zonder verlies
 bitmap298.png                     7496         22656    Zonder verlies
-bitmap5501.png                    7211         36864    Zonder verlies
+bitmap5501.png                    7212         36864    Zonder verlies
 bitmap5498.png                    7153         36864    Zonder verlies
 bitmap5489.png                    9910         36864    Zonder verlies
 bitmap5483.png                    9963         36864    Zonder verlies
-bitmap5375.png                   13286         36864    Zonder verlies
-bitmap5486.png                   10470         28124    Zonder verlies
+bitmap5375.png                   13287         36864    Zonder verlies
+bitmap5486.png                   10471         28124    Zonder verlies
 bitmap3724.png                     736         12144    Zonder verlies
 bitmap3721.png                    2240         21168    Zonder verlies
 bitmap265.png                      593          4896    Zonder verlies
 bitmap5479.png                    6157         29792    Zonder verlies
-bitmap3731.png                    6853         78336    JPEG-kwaliteit=80
+bitmap3731.png                    6854         78336    JPEG-kwaliteit=80
 Bitmap 3-1.png                   11809         31360    Zonder verlies
 bitmap5466.png                    4157         21560    Zonder verlies
 bitmap5463.png                   10764         46464    Zonder verlies
 bitmap5458.png                   10820         46464    Zonder verlies
-bitmap5453.png                    6426         36888    Zonder verlies
+bitmap5453.png                    6427         36888    Zonder verlies
 bitmap5435.png                   12431         44928    Zonder verlies
 bitmap5445.jpg                     665         70560    Geïmporteerde JPEG
 bitmap5442.png                    8989         31312    Zonder verlies
 bitmap5439.png                   11637         46464    Zonder verlies
-Bitmap 7-1-1.png                 14377         48384    Zonder verlies
-bitmap3251.png                   14150        208620    JPEG-kwaliteit=80
+Bitmap 7-1-1.png                 14378         48384    Zonder verlies
+bitmap3251.png                   14151        208620    JPEG-kwaliteit=80
 bitmap3253.png                   19314        217160    JPEG-kwaliteit=80
 bitmap3255.png                   23565        230864    JPEG-kwaliteit=80
-bitmap3257.png                   31067        319676    JPEG-kwaliteit=80
+bitmap3257.png                   31068        319676    JPEG-kwaliteit=80
 bitmap5417.png                    7763        219232    JPEG-kwaliteit=80
 bitmap5418.png                    5979         53192    JPEG-kwaliteit=80
 bitmap1244.png                    1063          5600    JPEG-kwaliteit=80
@@ -4968,9 +4968,9 @@ bitmap5411.png                    4440         32592    Zonder verlies
 bitmap5408.png                   17793         74088    Zonder verlies
 bitmap5405.png                   24443         72576    Zonder verlies
 bitmap5402.png                    4902         26640    Zonder verlies
-bitmap1846.png                   46394        418748    JPEG-kwaliteit=80
-bitmap5335.png                    9162         37664    Zonder verlies
-bitmap5388.png                    8269         45200    Zonder verlies
+bitmap1846.png                   46395        418748    JPEG-kwaliteit=80
+bitmap5335.png                    9163         37664    Zonder verlies
+bitmap5388.png                    8270         45200    Zonder verlies
 bitmap5378.png                    2650         72352    Zonder verlies
 bitmap581.png                     2790         72352    JPEG-kwaliteit=80
 bitmap567.png                     1761         72352    Zonder verlies
@@ -4979,9 +4979,9 @@ bitmap5383.png                    3688         62832    JPEG-kwaliteit=80
 bitmap585.png                      877         72352    Zonder verlies
 bitmap5385.png                    7462         72352    JPEG-kwaliteit=80
 bitmap5372.png                    4312         36864    JPEG-kwaliteit=80
-bitmap5365.png                    4913        494400    Zonder verlies
+bitmap5365.png                    4914        494400    Zonder verlies
 bitmap5361.png                    3892         18688    Zonder verlies
-bitmap5358.png                   13053         61360    Zonder verlies
+bitmap5358.png                   13054         61360    Zonder verlies
 bitmap5355.png                    4204         36864    JPEG-kwaliteit=80
 bitmap5352.png                    9471         47952    Zonder verlies
 bitmap5349.png                    4975         46080    JPEG-kwaliteit=80
@@ -4992,7 +4992,7 @@ bitmap5332.png                   16998         53192    Zonder verlies
 bitmap5329.png                   17542         54168    Zonder verlies
 bitmap5326.png                   11161         37296    Zonder verlies
 bitmap2287.png                   34907        541800    JPEG-kwaliteit=80
-bitmap2288.png                    2803         25988    JPEG-kwaliteit=80
+bitmap2288.png                    2804         25988    JPEG-kwaliteit=80
 bitmap5319.png                    4371         27840    Zonder verlies
 bitmap5316.png                    4727         30544    Zonder verlies
 bitmap5164.png                    1868         36864    JPEG-kwaliteit=80
@@ -5000,7 +5000,7 @@ bitmap5310.png                    4942         41216    Zonder verlies
 bitmap5307.png                    9946         36096    Zonder verlies
 bitmap1062.png                     802          1292    Zonder verlies
 bitmap5285.png                     178          1792    Zonder verlies
-bitmap5282.png                   20696         59340    Zonder verlies
+bitmap5282.png                   20697         59340    Zonder verlies
 bitmap3674.png                    3529         14768    Zonder verlies
 bitmap1791.png                    2155         36864    JPEG-kwaliteit=80
 bitmap2904.png                    2057         36864    JPEG-kwaliteit=80
@@ -5015,7 +5015,7 @@ bitmap5225.png                    2155         10904    JPEG-kwaliteit=80
 bitmap5239.png                    2118         14628    Zonder verlies
 bitmap1982.png                    3967         25600    Zonder verlies
 bitmap5207.png                    4099         18688    Zonder verlies
-bitmap5201.png                    3986         12100    Zonder verlies
+bitmap5201.png                    3987         12100    Zonder verlies
 bitmap3683.png                     351          1680    Zonder verlies
 bitmap851.png                     2703         11136    Zonder verlies
 bitmap850.png                     2598         11136    Zonder verlies
@@ -5032,7 +5032,7 @@ bitmap5173.png                   11584         37632    Zonder verlies
 bitmap1796.jpg                   17994        508800    Geïmporteerde JPEG
 bitmap888.png                     7497         96944    Zonder verlies
 bitmap5145.png                     773          2240    JPEG-kwaliteit=80
-bitmap5147.png                    2803         41600    JPEG-kwaliteit=80
+bitmap5147.png                    2804         41600    JPEG-kwaliteit=80
 bitmap896.png                     8577         96944    Zonder verlies
 bitmap5149.png                    2612         41600    JPEG-kwaliteit=80
 bitmap5151.png                    2615         41600    JPEG-kwaliteit=80
@@ -5051,7 +5051,7 @@ bitmap5083.png                    9240         22576    Zonder verlies
 bitmap3204.png                   30294        541464    JPEG-kwaliteit=80
 bitmap5076.png                   15545         42680    Zonder verlies
 bitmap152.png                     7224         27280    Zonder verlies
-bitmap5063.png                   22074        222748    JPEG-kwaliteit=80
+bitmap5063.png                   22075        222748    JPEG-kwaliteit=80
 bitmap5048.png                    8788         38416    Zonder verlies
 bitmap5038.png                    2183         41200    JPEG-kwaliteit=80
 bitmap5040.png                    2019         38016    JPEG-kwaliteit=80
@@ -5067,15 +5067,15 @@ bitmap3713.png                    1016         72352    Zonder verlies
 bitmap402.png                     2406         24820    Zonder verlies
 bitmap401.png                     2742         27540    Zonder verlies
 bitmap400.png                     8880         56048    Zonder verlies
-bitmap4670.png                    8275         36864    Zonder verlies
+bitmap4670.png                    8276         36864    Zonder verlies
 bitmap4950.png                    4363          9216    Zonder verlies
 bitmap4981.png                    3945         16560    Zonder verlies
 bitmap4983.png                    3810         16560    Zonder verlies
-bitmap4985.png                    4077         16560    Zonder verlies
+bitmap4985.png                    4078         16560    Zonder verlies
 bitmap4987.png                    3843         16560    Zonder verlies
 bitmap4939.png                    9134         36864    Zonder verlies
 bitmap3838.png                    2587         11136    Zonder verlies
-bitmap4930.png                    2513         11136    Zonder verlies
+bitmap4930.png                    2514         11136    Zonder verlies
 bitmap4917.png                    4476         65280    JPEG-kwaliteit=80
 bitmap4907.png                    3469         27160    JPEG-kwaliteit=80
 bitmap4909.png                    3388         27720    JPEG-kwaliteit=80
@@ -5083,12 +5083,12 @@ bitmap4911.png                    3462         27720    JPEG-kwaliteit=80
 bitmap4913.png                    3454         28000    JPEG-kwaliteit=80
 bitmap413.png                     1783         11136    Zonder verlies
 bitmap2136.png                    3459         28560    JPEG-kwaliteit=80
-bitmap4810.png                    3497         29120    JPEG-kwaliteit=80
+bitmap4810.png                    3498         29120    JPEG-kwaliteit=80
 bitmap1774.png                     472          3600    Zonder verlies
 bitmap4678.png                   11753         36864    Zonder verlies
-bitmap4782.png                   28137        451328    JPEG-kwaliteit=80
+bitmap4782.png                   28138        451328    JPEG-kwaliteit=80
 bitmap4787.png                    2469         35600    JPEG-kwaliteit=80
-bitmap4703.png                    5772        886940    Zonder verlies
+bitmap4703.png                    5773        886940    Zonder verlies
 bitmap4707.png                     667        239512    Zonder verlies
 bitmap4724.png                   18268       1984696    Zonder verlies
 bitmap4738.png                     560          4284    Zonder verlies
@@ -5110,7 +5110,7 @@ bitmap425.png                     1235         12480    Zonder verlies
 bitmap4690.png                    3865         40788    JPEG-kwaliteit=80
 bitmap4681.jpg                   29432        508800    Geïmporteerde JPEG
 bitmap1821.png                    1560         11448    Zonder verlies
-bitmap1822.png                    8400         48000    Zonder verlies
+bitmap1822.png                    8401         48000    Zonder verlies
 bitmap678.png                     2368         38800    Zonder verlies
 bitmap701.png                     7401         18432    Zonder verlies
 bitmap160.png                     2714         59940    JPEG-kwaliteit=80
@@ -5124,8 +5124,8 @@ bitmap4609.jpg                   35954       3145728    Geïmporteerde JPEG
 bitmap1335.png                    8717         25232    Zonder verlies
 bitmap3026.png                   22812        362496    JPEG-kwaliteit=80
 bitmap1831.png                    1335         12648    Zonder verlies
-bitmap1832.png                    1182         12144    Zonder verlies
-bitmap1830.png                    7177         40128    Zonder verlies
+bitmap1832.png                    1183         12144    Zonder verlies
+bitmap1830.png                    7178         40128    Zonder verlies
 bitmap4591.png                   11159         36096    Zonder verlies
 bitmap1962.png                   43883        501200    JPEG-kwaliteit=80
 bitmap4543.png                   10852       1370880    Zonder verlies
@@ -5141,7 +5141,7 @@ bitmap1274.png                    2321         19200    Zonder verlies
 bitmap1276.png                    8869         44640    Zonder verlies
 bitmap4411.png                     420          2024    Zonder verlies
 bitmap4413.png                    5228         41600    Zonder verlies
-bitmap4415.png                    4913         41600    Zonder verlies
+bitmap4415.png                    4914         41600    Zonder verlies
 bitmap4417.png                    4647         41600    Zonder verlies
 bitmap4419.png                    5130         41600    Zonder verlies
 bitmap4421.png                    5043         41600    Zonder verlies
@@ -5157,12 +5157,12 @@ bitmap4326.png                     187          3024    Zonder verlies
 bitmap4330.png                    2420         56816    JPEG-kwaliteit=80
 bitmap4337.png                     164         36864    Zonder verlies
 bitmap4341.png                    9149        221832    JPEG-kwaliteit=80
-bitmap4349.png                   11881        185328    JPEG-kwaliteit=80
+bitmap4349.png                   11882        185328    JPEG-kwaliteit=80
 bitmap4352.png                    7065         91656    JPEG-kwaliteit=80
 bitmap4355.png                    1572         16120    Zonder verlies
 bitmap4358.png                    2578         10400    Zonder verlies
 bitmap4364.png                    1549          8748    Zonder verlies
-bitmap4372.png                   14150        284016    JPEG-kwaliteit=80
+bitmap4372.png                   14151        284016    JPEG-kwaliteit=80
 bitmap4378.png                    1914        491904    Zonder verlies
 bitmap4381.png                    3782         19500    Zonder verlies
 bitmap4385.png                   16894        168360    JPEG-kwaliteit=80
@@ -5173,7 +5173,7 @@ bitmap4147.png                   12181         42824    Zonder verlies
 bitmap4275.png                    2130         72352    Zonder verlies
 bitmap4285.png                    3495         72352    JPEG-kwaliteit=80
 bitmap4270.png                   10636        165980    JPEG-kwaliteit=80
-bitmap4254.png                    2513         11136    Zonder verlies
+bitmap4254.png                    2514         11136    Zonder verlies
 bitmap4256.png                    2189         11136    Zonder verlies
 bitmap4258.png                    2267         11136    Zonder verlies
 bitmap4260.png                    2189         11136    Zonder verlies
@@ -5198,7 +5198,7 @@ bitmap2491.png                    3711         33756    JPEG-kwaliteit=80
 bitmap2637.png                    8596         48000    Zonder verlies
 bitmap2639.png                    1519         11448    Zonder verlies
 bitmap4144.png                   12925         42824    Zonder verlies
-bitmap4129.png                   19775         54264    Zonder verlies
+bitmap4129.png                   19776         54264    Zonder verlies
 bitmap4107.png                    1959        146496    Zonder verlies
 bitmap4114.png                    2321        381368    Zonder verlies
 bitmap1087.png                    1166         65536    Zonder verlies
@@ -5210,11 +5210,11 @@ bitmap4125.png                    2934        152724    Zonder verlies
 bitmap4124.png                    1858        110544    Zonder verlies
 bitmap4126.png                   18135       1594608    Zonder verlies
 Bitmap 3                         12813         36864    Zonder verlies
-bitmap4080.png                   13701         36864    Zonder verlies
+bitmap4080.png                   13702         36864    Zonder verlies
 bitmap4064.png                   10247       1003924    Zonder verlies
 bitmap4059.png                   17779        281196    JPEG-kwaliteit=80
 bitmap3968.png                    2138         36864    JPEG-kwaliteit=80
-bitmap1120.png                    6574        161568    JPEG-kwaliteit=80
+bitmap1120.png                    6575        161568    JPEG-kwaliteit=80
 bitmap3290.png                    4635         36864    Zonder verlies
 bitmap4010.png                    2435        131820    JPEG-kwaliteit=80
 bitmap4012.png                    4362        131820    JPEG-kwaliteit=80
@@ -5225,12 +5225,12 @@ bitmap4021.png                    5108        131820    JPEG-kwaliteit=80
 bitmap4023.png                    5501        131820    JPEG-kwaliteit=80
 bitmap4025.png                    5931        131820    JPEG-kwaliteit=80
 bitmap4027.png                    7644        131820    JPEG-kwaliteit=80
-bitmap4029.png                    8144        131820    JPEG-kwaliteit=80
+bitmap4029.png                    8145        131820    JPEG-kwaliteit=80
 bitmap4031.png                   10412        131820    JPEG-kwaliteit=80
 bitmap4033.png                    8891        131820    JPEG-kwaliteit=80
 bitmap4035.png                    6260        131820    JPEG-kwaliteit=80
 bitmap3986.png                   16756         31304    Zonder verlies
-bitmap3971.jpg                   23246        508800    Geïmporteerde JPEG
+bitmap3971.jpg                   23247        508800    Geïmporteerde JPEG
 bitmap3777.png                    6632         18432    Zonder verlies
 bitmap3886.png                    1489          5184    Zonder verlies
 bitmap700.png                     7541         18432    Zonder verlies
@@ -5239,7 +5239,7 @@ bitmap1316.png                   30784        263144    JPEG-kwaliteit=80
 bitmap3871.png                    5167         57024    Zonder verlies
 bitmap3874.png                    2427         23328    Zonder verlies
 bitmap3864.png                    4579          9216    Zonder verlies
-bitmap3858.png                    4498          9216    Zonder verlies
+bitmap3858.png                    4499          9216    Zonder verlies
 bitmap94.png                      3190         14768    Zonder verlies
 bitmap95.png                       346          1520    Zonder verlies
 bitmap3851.png                    4515          9216    Zonder verlies
@@ -5261,16 +5261,16 @@ bitmap3798.jpg                   15681        508800    Geïmporteerde JPEG
 bitmap3780.png                    1905        178848    Zonder verlies
 Bitmap 14.png                     3227        272000    Zonder verlies
 bitmap3740.png                    4765         91728    JPEG-kwaliteit=80
-bitmap3237.png                    2621        175460    Zonder verlies
+bitmap3237.png                    2622        175460    Zonder verlies
 bitmap3699.png                    2552         72352    Zonder verlies
 bitmap3708.png                    2269         72352    JPEG-kwaliteit=80
 bitmap3712.png                    2434         72352    JPEG-kwaliteit=80
 bitmap291.png                     6594        131376    JPEG-kwaliteit=80
 bitmap3652.jpg                   38606        770000    Geïmporteerde JPEG
 bitmap3655.png                    6056         29580    Zonder verlies
-bitmap3658.png                   29188        316192    Zonder verlies
+bitmap3658.png                   29189        316192    Zonder verlies
 bitmap3661.png                    7357         21004    Zonder verlies
-bitmap3666.jpg                   42039        770000    Geïmporteerde JPEG
+bitmap3666.jpg                   42040        770000    Geïmporteerde JPEG
 bitmap3670.png                   51818        334752    Zonder verlies
 bitmap3648.png                   25882        495380    JPEG-kwaliteit=80
 bitmap926.png                     3622         20368    Zonder verlies
@@ -5284,14 +5284,14 @@ bitmap3289.png                    6671         36864    Zonder verlies
 bitmap651.png                     2384         11136    Zonder verlies
 bitmap415.png                     1706         11136    Zonder verlies
 bitmap3586.png                   34219        446208    JPEG-kwaliteit=80
-bitmap3569.png                   53532        451328    JPEG-kwaliteit=80
+bitmap3569.png                   53533        451328    JPEG-kwaliteit=80
 bitmap3536.png                    6833         53312    JPEG-kwaliteit=80
 bitmap3530.png                    9978         37224    Zonder verlies
 bitmap3493.png                   13610        245520    JPEG-kwaliteit=80
 bitmap3492.png                    5376        101232    JPEG-kwaliteit=80
 bitmap3491.png                    8787        257880    JPEG-kwaliteit=80
 bitmap3490.png                    5445         95760    JPEG-kwaliteit=80
-bitmap3494.png                   10112        348880    JPEG-kwaliteit=80
+bitmap3494.png                   10113        348880    JPEG-kwaliteit=80
 bitmap3524.png                    2913         19344    JPEG-kwaliteit=80
 bitmap3487.png                   12352         36520    Zonder verlies
 bitmap3484.png                    9111         34860    Zonder verlies
@@ -5302,16 +5302,16 @@ bitmap3384.png                    1278          6400    Zonder verlies
 bitmap3387.png                    1331          4624    Zonder verlies
 bitmap3390.png                    2089          4624    Zonder verlies
 bitmap3393.png                    2008          4624    Zonder verlies
-bitmap3089.png                    5442         35904    Zonder verlies
-bitmap3313.png                   24320        226432    JPEG-kwaliteit=80
+bitmap3089.png                    5443         35904    Zonder verlies
+bitmap3313.png                   24321        226432    JPEG-kwaliteit=80
 bitmap1726.png                    1097          6396    Zonder verlies
 bitmap1733.png                    1093          6396    Zonder verlies
 bitmap1738.png                    4221         35952    JPEG-kwaliteit=80
 bitmap1740.png                    4333         35952    JPEG-kwaliteit=80
 bitmap1742.png                    4210         35952    JPEG-kwaliteit=80
 bitmap1744.png                    4169         35952    JPEG-kwaliteit=80
-bitmap1746.png                    4259         35952    JPEG-kwaliteit=80
-bitmap1748.png                    4259         35952    JPEG-kwaliteit=80
+bitmap1746.png                    4260         35952    JPEG-kwaliteit=80
+bitmap1748.png                    4260         35952    JPEG-kwaliteit=80
 bitmap1750.png                    4309         35952    JPEG-kwaliteit=80
 bitmap1752.png                    4152         35952    JPEG-kwaliteit=80
 bitmap1754.png                    4248         35952    JPEG-kwaliteit=80
@@ -5320,29 +5320,29 @@ bitmap3232.png                   15784         40176    Zonder verlies
 bitmap2624.png                    2599         37632    JPEG-kwaliteit=80
 bitmap3200.png                   18385         37904    Zonder verlies
 bitmap3123.png                     215          4032    Zonder verlies
-Bitmap 1413                      48163       1128000    JPEG-kwaliteit=80
+Bitmap 1413                      48164       1128000    JPEG-kwaliteit=80
 bitmap3193.jpg                    4323         46652    Geïmporteerde JPEG
 bitmap3188.png                   14917        215864    JPEG-kwaliteit=80
 bitmap3176.png                   13552        183084    JPEG-kwaliteit=80
 bitmap3179.png                   12567        187480    JPEG-kwaliteit=80
 bitmap3184.png                    8987        130200    JPEG-kwaliteit=80
 bitmap3005.png                      85          9216    Zonder verlies
-bitmap2736.png                   13872        183084    JPEG-kwaliteit=80
+bitmap2736.png                   13873        183084    JPEG-kwaliteit=80
 bitmap2739.png                   13000        187480    JPEG-kwaliteit=80
 bitmap2742.png                    2638         26108    JPEG-kwaliteit=80
 bitmap3114.png                    4577         59392    JPEG-kwaliteit=80
 bitmap3079.jpg                   29630        508800    Geïmporteerde JPEG
-bitmap3071.jpg                   27101        508800    Geïmporteerde JPEG
+bitmap3071.jpg                   27102        508800    Geïmporteerde JPEG
 bitmap3008.png                     406          9216    Zonder verlies
-bitmap3024.jpg                   35844       3145728    Geïmporteerde JPEG
-bitmap3029.png                   96732       1562704    JPEG-kwaliteit=80
+bitmap3024.jpg                   35845       3145728    Geïmporteerde JPEG
+bitmap3029.png                   96733       1562704    JPEG-kwaliteit=80
 bitmap3031.png                    7280        176092    JPEG-kwaliteit=80
 bitmap3035.png                    7921        176092    JPEG-kwaliteit=80
 bitmap3038.png                    6325        176092    JPEG-kwaliteit=80
 bitmap3043.png                    6757        176092    JPEG-kwaliteit=80
 bitmap3046.png                    6078        176092    JPEG-kwaliteit=80
 bitmap3050.png                    7099        176092    JPEG-kwaliteit=80
-bitmap2963.png                   57591       1016880    JPEG-kwaliteit=80
+bitmap2963.png                   57592       1016880    JPEG-kwaliteit=80
 bitmap1862.png                    2826         40000    JPEG-kwaliteit=80
 bitmap2975.png                   11048        114972    JPEG-kwaliteit=80
 bitmap2960.png                   10436         35344    Zonder verlies
@@ -5353,13 +5353,13 @@ bitmap2931.png                    1919        159556    Zonder verlies
 bitmap2894.png                   10834         27840    Zonder verlies
 bitmap2871.png                   11586         27864    Zonder verlies
 bitmap282.png                     6279         18816    Zonder verlies
-bitmap2844.png                   10863         36864    Zonder verlies
+bitmap2844.png                   10864         36864    Zonder verlies
 bitmap2847.png                    8673         24624    Zonder verlies
-bitmap2833.png                   72560        898128    JPEG-kwaliteit=80
+bitmap2833.png                   72562        898128    JPEG-kwaliteit=80
 bitmap2836.png                     866          6396    JPEG-kwaliteit=80
 bitmap2838.png                     873          6396    JPEG-kwaliteit=80
 bitmap2822.png                   27730        191808    JPEG-kwaliteit=80
-bitmap1786.png                   28488        193536    JPEG-kwaliteit=80
+bitmap1786.png                   28489        193536    JPEG-kwaliteit=80
 bitmap2825.png                    6868        103888    Zonder verlies
 bitmap2764.png                     251           676    Zonder verlies
 bitmap2817.png                    9122         34608    Zonder verlies
@@ -5370,19 +5370,19 @@ bitmap2803.png                    9959         32864    Zonder verlies
 bitmap2761.png                      66         36864    Zonder verlies
 bitmap2743.png                    5199         48032    JPEG-kwaliteit=80
 bitmap2744.png                    8427        178840    JPEG-kwaliteit=80
-bitmap2747.png                    9537        164836    JPEG-kwaliteit=80
-bitmap2730.jpg                   14241        508800    Geïmporteerde JPEG
+bitmap2747.png                    9538        164836    JPEG-kwaliteit=80
+bitmap2730.jpg                   14242        508800    Geïmporteerde JPEG
 bitmap2709.png                   17140         59400    Zonder verlies
 bitmap2706.png                    2477         77220    JPEG-kwaliteit=80
-Bitmap 1408-kopie                70707       2498560    JPEG-kwaliteit=80
+Bitmap 1408-kopie                70708       2498560    JPEG-kwaliteit=80
 bitmap2647.png                    9579         34200    Zonder verlies
 bitmap2641.png                    7842         48000    Zonder verlies
 bitmap2643.png                    8367         48000    Zonder verlies
-Bitmap 1404                      21812        559520    JPEG-kwaliteit=80
+Bitmap 1404                      21813        559520    JPEG-kwaliteit=80
 bitmap2612.png                   14567         39960    Zonder verlies
 bitmap653.png                     2345         11136    Zonder verlies
 bitmap1010.png                    3961         25600    Zonder verlies
-bitmap2523.png                    9065        999460    Zonder verlies
+bitmap2523.png                    9066        999460    Zonder verlies
 bitmap2524.png                   11503       1235000    Zonder verlies
 bitmap2557.jpg                    2208        355260    Geïmporteerde JPEG
 bitmap2519.png                    3022         14688    Zonder verlies
@@ -5396,12 +5396,12 @@ bitmap2421.png                    7347         37664    Zonder verlies
 bitmap2495.png                   23020         66720    Zonder verlies
 bitmap2478.png                   23212         62992    Zonder verlies
 bitmap2475.png                    9386         43792    Zonder verlies
-Bitmap 1411                      61336       1712640    JPEG-kwaliteit=80
+Bitmap 1411                      61337       1712640    JPEG-kwaliteit=80
 Bitmap 1505.png                  18180        389424    JPEG-kwaliteit=80
 Bitmap 1409-kopie                32809        754560    JPEG-kwaliteit=80
 bitmap2444.png                    7265         49280    JPEG-kwaliteit=80
 bitmap2440.png                   20320         71424    Zonder verlies
-bitmap2437.png                   12870         67404    Zonder verlies
+bitmap2437.png                   12871         67404    Zonder verlies
 bitmap2240.png                    3917         16320    Zonder verlies
 bitmap2244.png                    4914         14896    Zonder verlies
 bitmap2247.png                    6421         23200    Zonder verlies
@@ -5417,7 +5417,7 @@ bitmap2367.png                    8433        742788    Zonder verlies
 bitmap2364.png                    9433         20736    Zonder verlies
 bitmap2361.png                    9465         20736    Zonder verlies
 bitmap2358.png                    7967         42560    Zonder verlies
-bitmap2355.png                    9441         20736    Zonder verlies
+bitmap2355.png                    9442         20736    Zonder verlies
 bitmap343.png                    14933         36864    Zonder verlies
 bitmap2350.png                    9354         20736    Zonder verlies
 bitmap2347.png                   13539         59736    Zonder verlies
@@ -5428,10 +5428,10 @@ bitmap2255.png                   14143         36864    Zonder verlies
 bitmap2236.png                   11835         44280    Zonder verlies
 bitmap2233.png                    1442         42840    Zonder verlies
 bitmap2223.png                   10782         35600    Zonder verlies
-bitmap2219.png                   41951        446160    JPEG-kwaliteit=80
+bitmap2219.png                   41952        446160    JPEG-kwaliteit=80
 bitmap2215.png                   12010         37632    Zonder verlies
 bitmap2210.png                    3412         62832    JPEG-kwaliteit=80
-bitmap2212.png                    4390         72352    JPEG-kwaliteit=80
+bitmap2212.png                    4391         72352    JPEG-kwaliteit=80
 bitmap2190.png                   18944        495380    JPEG-kwaliteit=80
 bitmap2175.png                   13449         36864    Zonder verlies
 bitmap2172.png                   14255         36864    Zonder verlies
@@ -5446,9 +5446,9 @@ bitmap2140.png                    2428         77220    JPEG-kwaliteit=80
 bitmap825.png                     9516         36864    Zonder verlies
 bitmap2109.png                    6515         27548    Zonder verlies
 bitmap2064.png                    9821         35344    Zonder verlies
-bitmap2061.jpg                   15276        508800    Geïmporteerde JPEG
-bitmap2057.png                    7160         81528    JPEG-kwaliteit=80
-Bitmap 1406                      46718       1466880    JPEG-kwaliteit=80
+bitmap2061.jpg                   15277        508800    Geïmporteerde JPEG
+bitmap2057.png                    7161         81528    JPEG-kwaliteit=80
+Bitmap 1406                      46719       1466880    JPEG-kwaliteit=80
 bitmap227.png                     3577         16560    Zonder verlies
 bitmap229.png                     3559         16560    Zonder verlies
 bitmap231.png                     3558         16560    Zonder verlies
@@ -5458,14 +5458,14 @@ bitmap1056.png                    2286         11136    Zonder verlies
 bitmap1998.png                    4992         50160    JPEG-kwaliteit=80
 bitmap1995.png                    5370         45760    JPEG-kwaliteit=80
 bitmap1984.png                    6716         25600    Zonder verlies
-bitmap1979.png                    8218         72372    JPEG-kwaliteit=80
+bitmap1979.png                    8219         72372    JPEG-kwaliteit=80
 bitmap1971.png                    5054         50568    JPEG-kwaliteit=80
 bitmap1947.png                    5772         44928    JPEG-kwaliteit=80
 bitmap1938.png                    5085         50800    JPEG-kwaliteit=80
 bitmap1929.png                    5050         53500    JPEG-kwaliteit=80
-bitmap1865.png                   45104       1926144    JPEG-kwaliteit=80
+bitmap1865.png                   45105       1926144    JPEG-kwaliteit=80
 bitmap1867.png                    5496        692420    Zonder verlies
-bitmap1861.png                    7894         91224    JPEG-kwaliteit=80
+bitmap1861.png                    7895         91224    JPEG-kwaliteit=80
 bitmap1840.png                   46847        423660    JPEG-kwaliteit=80
 bitmap1850.png                   21989        143256    Zonder verlies
 bitmap1849.png                   19130        114480    Zonder verlies
@@ -5498,6 +5498,7 @@ bitmap1556.png                    1964         10404    Zonder verlies
 bitmap1559.png                    3469         10404    Zonder verlies
 bitmap1562.png                    3412         10404    Zonder verlies
 bitmap1565.png                    3301         10404    Zonder verlies
+Bitmap 5                           974         37556    Zonder verlies
 bitmap1580.png                    1914          7568    Zonder verlies
 bitmap1583.png                     580          2024    Zonder verlies
 bitmap1586.png                    1809          7568    Zonder verlies
@@ -5509,10 +5510,10 @@ bitmap1622.png                    1386          4624    Zonder verlies
 bitmap1624.png                    1366          4624    Zonder verlies
 bitmap1657.png                    1154          5776    Zonder verlies
 bitmap1397.png                   20511        105028    Zonder verlies
-bitmap1390.png                    8991         35344    Zonder verlies
+bitmap1390.png                    8992         35344    Zonder verlies
 bitmap1366.png                    3485         28280    JPEG-kwaliteit=80
 bitmap1327.png                    1498         43400    Zonder verlies
-bitmap1295.png                   31184        259080    JPEG-kwaliteit=80
+bitmap1295.png                   31185        259080    JPEG-kwaliteit=80
 bitmap1242.png                    9637         65824    JPEG-kwaliteit=80
 bitmap1194.png                   14675        282504    JPEG-kwaliteit=80
 bitmap288.png                     9101         36864    Zonder verlies
@@ -5538,13 +5539,13 @@ bitmap914.png                     2440         12096    Zonder verlies
 bitmap916.png                     2098          8256    Zonder verlies
 bitmap830.png                     4603         20160    Zonder verlies
 bitmap793.png                     7491         54752    JPEG-kwaliteit=80
-bitmap782.png                    16920         36864    Zonder verlies
+bitmap782.png                    16921         36864    Zonder verlies
 bitmap776.png                     5428         25600    Zonder verlies
 bitmap484.png                     1831          8100    JPEG-kwaliteit=80
 bitmap489.png                     2497         12320    JPEG-kwaliteit=80
 bitmap491.png                     2594         12320    JPEG-kwaliteit=80
 bitmap493.png                     3001         12320    JPEG-kwaliteit=80
-bitmap495.png                     2985         12320    JPEG-kwaliteit=80
+bitmap495.png                     2986         12320    JPEG-kwaliteit=80
 bitmap497.png                     3037         12320    JPEG-kwaliteit=80
 bitmap499.png                     2581         12320    JPEG-kwaliteit=80
 bitmap501.png                     2526         12320    JPEG-kwaliteit=80
@@ -5555,28 +5556,28 @@ bitmap705.png                     9989        890960    Zonder verlies
 bitmap590.png                    11809         36864    Zonder verlies
 bitmap584.png                     3358         62832    JPEG-kwaliteit=80
 bitmap587.png                     4449         72352    JPEG-kwaliteit=80
-bitmap556.png                    14702         70176    Zonder verlies
-bitmap553.png                    20402         63784    Zonder verlies
-bitmap550.png                    10720         33488    Zonder verlies
+bitmap556.png                    14703         70176    Zonder verlies
+bitmap553.png                    20403         63784    Zonder verlies
+bitmap550.png                    10721         33488    Zonder verlies
 bitmap536.png                     2811         22176    JPEG-kwaliteit=80
 bitmap453.png                    19500         96944    Zonder verlies
 Bitmap 4-1.png                    7976         25536    Zonder verlies
-Bitmap 2                          6540         17380    Zonder verlies
+Bitmap 2                          6541         17380    Zonder verlies
 bitmap340.png                     7325         36864    Zonder verlies
 bitmap337.png                     7188         36864    Zonder verlies
-bitmap319.png                    10015         36864    Zonder verlies
+bitmap319.png                    10016         36864    Zonder verlies
 bitmap325.png                     3485         16560    Zonder verlies
 bitmap327.png                     3315         16560    Zonder verlies
 bitmap329.png                     3678         16560    Zonder verlies
 bitmap331.png                     3351         16560    Zonder verlies
 bitmap316.png                    10204         36864    Zonder verlies
 bitmap198.png                     8402        146640    Zonder verlies
-bitmap200.png                    23279        146640    Zonder verlies
-bitmap202.png                     9412        146640    Zonder verlies
+bitmap200.png                    23280        146640    Zonder verlies
+bitmap202.png                     9413        146640    Zonder verlies
 bitmap204.png                    20969        146640    Zonder verlies
-bitmap206.png                    19230        146640    Zonder verlies
+bitmap206.png                    19231        146640    Zonder verlies
 bitmap208.png                    22815        146640    Zonder verlies
-bitmap210.png                    25007        146640    Zonder verlies
+bitmap210.png                    25008        146640    Zonder verlies
 bitmap212.png                    24905        146640    Zonder verlies
 bitmap214.png                    21993        146640    Zonder verlies
 bitmap216.png                    18136        146640    Zonder verlies
@@ -5610,7 +5611,7 @@ bitmap3343.png                    6436         15184    Zonder verlies
 bitmap3347.png                    1431          3900    Zonder verlies
 bitmap4224.png                    9613         34112    Zonder verlies
 bitmap4227.png                    1416          4712    Zonder verlies
-bitmap4230.png                    5971         18224    Zonder verlies
+bitmap4230.png                    5972         18224    Zonder verlies
 bitmap5188.png                    5755         13632    Zonder verlies
 bitmap5192.png                    1261          2112    Zonder verlies
 bitmap3790.png                    2551         11136    Zonder verlies
@@ -5631,7 +5632,7 @@ bitmap1497.png                    3287         16560    Zonder verlies
 bitmap1499.png                    3136         16560    Zonder verlies
 bitmap2278.png                    3417         16560    Zonder verlies
 bitmap2280.png                    3246         16560    Zonder verlies
-bitmap2282.png                    3548         16560    Zonder verlies
+bitmap2282.png                    3549         16560    Zonder verlies
 bitmap2284.png                    3269         16560    Zonder verlies
 bitmap2985.png                    3541         20368    Zonder verlies
 bitmap2987.png                    3540         20368    Zonder verlies
@@ -5641,7 +5642,7 @@ bitmap2993.png                    3839         20368    Zonder verlies
 bitmap2995.png                    4058         20368    Zonder verlies
 bitmap2997.png                    4084         20368    Zonder verlies
 bitmap4799.png                    3055         14768    Zonder verlies
-bitmap3684.png                    3423         14768    Zonder verlies
+bitmap3684.png                    3424         14768    Zonder verlies
 bitmap4085.png                   10286         55000    Zonder verlies
 bitmap1258.png                    4375         43500    Zonder verlies
 bitmap4087.png                     322          2700    Zonder verlies
@@ -5702,7 +5703,7 @@ bitmap1151.png                    2356         11136    Zonder verlies
 bitmap1152.png                    1868          6768    Zonder verlies
 bitmap6246.png                    2101         19600    Zonder verlies
 bitmap6249.png                    4527         53352    Zonder verlies
-bitmap6253.png                    2786         22792    Zonder verlies
+bitmap6253.png                    2787         22792    Zonder verlies
 bitmap6252.png                    2188         11136    Zonder verlies
 bitmap6254.png                    3498         53500    Zonder verlies
 bitmap6256.png                    2591         11136    Zonder verlies
@@ -5714,8 +5715,9 @@ bitmap528.png                      971          5600    JPEG-kwaliteit=80
 bitmap5867.png                    6417        368460    Zonder verlies
 bitmap5869.png                    1378          9964    JPEG-kwaliteit=80
 Bitmap 1323-kopie                 2153         10904    JPEG-kwaliteit=80
+Bitmap 6                          1236         37556    Zonder verlies
 bitmap3305.png                    2525         12540    Zonder verlies
-bitmap3906.png                    2587         12540    Zonder verlies
+bitmap3906.png                    2588         12540    Zonder verlies
 Bitmap 1327                       3767        121088    JPEG-kwaliteit=80
 Bitmap 1290.png                   3535         49560    JPEG-kwaliteit=80
 Bitmap 1292.png                   3643         49560    JPEG-kwaliteit=80
@@ -5744,21 +5746,21 @@ bitmap5836.png                    5849         38416    Zonder verlies
 bitmap5849.png                    4028         97776    Zonder verlies
 bitmap5851.png                    7476         31684    Zonder verlies
 bitmap5853.png                    8350         31684    Zonder verlies
-bitmap5856.png                    5391         19044    Zonder verlies
+bitmap5856.png                    5392         19044    Zonder verlies
 bitmap5858.png                    5513         19044    Zonder verlies
 bitmap5861.png                    4785         19320    Zonder verlies
 bitmap5863.png                    5665         19320    Zonder verlies
-Bitmap hospital                  41964        611424    JPEG-kwaliteit=80
-Bitmap 7401.png                  25612         75076    Zonder verlies
+Bitmap hospital                  41965        611424    JPEG-kwaliteit=80
+Bitmap 7401.png                  25613         75076    Zonder verlies
 Bitmap 7405.png                  26844         75076    Zonder verlies
 Bitmap 7412.png                  28810         75076    Zonder verlies
-Bitmap 7413.png                  29690         75076    Zonder verlies
+Bitmap 7413.png                  29691         75076    Zonder verlies
 Bitmap 7441.png                  25309         57856    Zonder verlies
 Bitmap 7442.png                  25894         57856    Zonder verlies
-Bitmap 7443.png                  25828         57856    Zonder verlies
+Bitmap 7443.png                  25829         57856    Zonder verlies
 Bitmap 7444.png                  25733         57856    Zonder verlies
-Bitmap 7436.png                  21812         76720    Zonder verlies
-Bitmap 7450.png                  21731         57856    Zonder verlies
+Bitmap 7436.png                  21813         76720    Zonder verlies
+Bitmap 7450.png                  21732         57856    Zonder verlies
 Bitmap 7448.png                   3439         45472    Zonder verlies
 Bitmap 51.png                     9143        102400    Zonder verlies
 Bitmap 53.png                     3754         73984    Zonder verlies
@@ -5767,12 +5769,12 @@ Bitmap 7478.png                   1233         14976    Zonder verlies
 Bitmap 7482.png                   3243         27232    Zonder verlies
 Bitmap 7459.png                   2212         27000    Zonder verlies
 Bitmap 7458.png                   1823         14416    Zonder verlies
-Bitmap 7491.png                  21305         57856    Zonder verlies
-Bitmap 7365.png                  20258         80008    Zonder verlies
+Bitmap 7491.png                  21306         57856    Zonder verlies
+Bitmap 7365.png                  20259         80008    Zonder verlies
 Bitmap 7428.png                  19894         76720    Zonder verlies
 Bitmap 132.png                    3035         73984    Zonder verlies
 Bitmap 7495.png                   3848         37636    Zonder verlies
-Bitmap 1461.png                  38210        583296    JPEG-kwaliteit=80
+Bitmap 1461.png                  38211        583296    JPEG-kwaliteit=80
 Bitmap 1418                       4214         42864    JPEG-kwaliteit=80
 Bitmap 1419                       4344         42864    JPEG-kwaliteit=80
 Bitmap 7550.png                   7360         34112    Zonder verlies
@@ -5780,12 +5782,12 @@ Bitmap 7523.png                   1406          4712    Zonder verlies
 Bitmap 7551.png                   4946         18224    Zonder verlies
 Bitmap 1283.png                   4003         16320    Zonder verlies
 Bitmap 7553.png                   6619         34860    Zonder verlies
-Bitmap 7548.png                   5243         15184    Zonder verlies
+Bitmap 7548.png                   5244         15184    Zonder verlies
 Bitmap 7505.png                   1428          3900    Zonder verlies
-Bitmap 29.png                     6756         26220    Zonder verlies
-Bitmap 1294.png                   5101         14896    Zonder verlies
+Bitmap 29.png                     6757         26220    Zonder verlies
+Bitmap 1294.png                   5102         14896    Zonder verlies
 Bitmap 1298.png                   6718         23200    Zonder verlies
-Bitmap 41.png                     9037         31416    Zonder verlies
+Bitmap 41.png                     9038         31416    Zonder verlies
 Bitmap 1301.png                   4949         16920    Zonder verlies
 Bitmap 47.png                     9796         34668    Zonder verlies
 Bitmap 7549.png                   4791         13632    Zonder verlies
@@ -5795,8 +5797,8 @@ Bitmap 7513.png                    613          9408    Zonder verlies
 Bitmap 7515.png                   1279          9408    Zonder verlies
 Bitmap 7517.png                   1196          9408    Zonder verlies
 Bitmap 1260.png                   6859         52000    Zonder verlies
-Bitmap 7370.png                  16335         60928    Zonder verlies
-Bitmap 7562.png                 137870        378556    Zonder verlies
+Bitmap 7370.png                  16336         60928    Zonder verlies
+Bitmap 7562.png                 137872        378556    Zonder verlies
 Bitmap 554.png                    1338          5724    JPEG-kwaliteit=80
 Bitmap 557.png                    1213          5456    JPEG-kwaliteit=80
 Bitmap 503.png                    4871         12036    Zonder verlies
@@ -5814,13 +5816,13 @@ Bitmap 11 rock                    7333         31328    Zonder verlies
 Bitmap 12 rock                    7368         31304    Zonder verlies
 Bitmap 13 rock                    7527         29928    Zonder verlies
 Bitmap 14 rock                    7536         31328    Zonder verlies
-Bitmap 15 rock                    7376         30624    Zonder verlies
+Bitmap 15 rock                    7377         30624    Zonder verlies
 Bitmap 16 rock                    2080         29216    Zonder verlies
 Bitmap 23 rock                    7069         25600    Zonder verlies
 Bitmap 1352 rock                  2849         28896    JPEG-kwaliteit=80
-Bitmap 1353 rock                  3622         29808    JPEG-kwaliteit=80
+Bitmap 1353 rock                  3623         29808    JPEG-kwaliteit=80
 Bitmap 1354 rock                  4046         34000    JPEG-kwaliteit=80
-Bitmap 2 rock                     9395         29440    Zonder verlies
+Bitmap 2 rock                     9396         29440    Zonder verlies
 Bitmap 1356 rock                  3866         32204    JPEG-kwaliteit=80
 Bitmap 1357 rock                  4145         34744    JPEG-kwaliteit=80
 Bitmap 3 rock                     9414         29760    Zonder verlies
@@ -5835,7 +5837,7 @@ Bitmap 1234.png                   2673         78400    JPEG-kwaliteit=80
 bitmap3909.png                    3248         78336    JPEG-kwaliteit=80
 bitmap5952.png                    4364         78336    JPEG-kwaliteit=80
 Bitmap 1274                       8234         60976    JPEG-kwaliteit=80
-Bitmap 7543.png                  44891        176120    Zonder verlies
+Bitmap 7543.png                  44892        176120    Zonder verlies
 Bitmap 7574.png                    626         38808    Zonder verlies
 Bitmap 1276                       6669         37904    JPEG-kwaliteit=80
 Bitmap 1275                       6844         38316    JPEG-kwaliteit=80
@@ -5857,11 +5859,11 @@ Bitmap 1248                       8131        350464    JPEG-kwaliteit=80
 Bitmap 1246                      11156        350464    JPEG-kwaliteit=80
 Bitmap 1252                      15596        350464    JPEG-kwaliteit=80
 Bitmap 1254                       7676        350464    JPEG-kwaliteit=80
-Bitmap 1242                      19093        350464    JPEG-kwaliteit=80
+Bitmap 1242                      19094        350464    JPEG-kwaliteit=80
 Bitmap 1240                       6897        350464    JPEG-kwaliteit=80
 Bitmap 1236                       2684         28800    JPEG-kwaliteit=80
 Bitmap 1233-kopie                10294         89600    JPEG-kwaliteit=80
-Bitmap 1235                      10880         78400    JPEG-kwaliteit=80
+Bitmap 1235                      10881         78400    JPEG-kwaliteit=80
 Bitmap 7566.png                   1595         37636    Zonder verlies
 Bitmap 1296                      11749        313600    JPEG-kwaliteit=80
 Bitmap 1284                      45755        589824    JPEG-kwaliteit=80
@@ -5869,13 +5871,13 @@ Bitmap 1261-kopie                 1698         78400    JPEG-kwaliteit=80
 Bitmap 1303                       9908        313600    JPEG-kwaliteit=80
 Bitmap 1301                       8106        313600    JPEG-kwaliteit=80
 Bitmap 1266-kopie                 2989         78400    JPEG-kwaliteit=80
-Bitmap 1304                      10100        313600    JPEG-kwaliteit=80
+Bitmap 1304                      10101        313600    JPEG-kwaliteit=80
 Bitmap 1268                       4942         78400    JPEG-kwaliteit=80
 Bitmap 1264                       3893         78400    JPEG-kwaliteit=80
 Bitmap 1271                       6279         78400    JPEG-kwaliteit=80
 Bitmap 1305                       9697        313600    JPEG-kwaliteit=80
-Bitmap 1294-kopie                39921        589824    JPEG-kwaliteit=80
-Bitmap 1285                      42440        589824    JPEG-kwaliteit=80
+Bitmap 1294-kopie                39922        589824    JPEG-kwaliteit=80
+Bitmap 1285                      42441        589824    JPEG-kwaliteit=80
 Bitmap 1279                       3119         41612    JPEG-kwaliteit=80
 Bitmap 1278                       3057         41612    JPEG-kwaliteit=80
 

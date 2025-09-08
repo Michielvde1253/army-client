@@ -18,7 +18,10 @@
       "ParatroopersTriggerMission": "#Mission.AREA_W_C1",
       "Paratrooper": "#EnemyAppearanceSetup.Paratroop",
       "ParatrooperEnemyLimit": "6",
-      "SpawnBeaconTriggerMission": "#Mission.AREA_W_C1"
+      "SpawnBeaconTriggerMission": "#Mission.AREA_W_C1",
+      "UnitCapInfantry": "2",
+      "UnitCapArmor": "2",
+      "UnitCapArtillery": "2"
     },
     "Tutor": {
       "ID": "Tutor",
@@ -10760,6 +10763,7 @@
       "KillRewardEnergy": "20",
       "KillRewardMaterial": "0",
       "KillRewardItem": "#ItemDrop.CinderBlock, #ItemDrop.Lumber, #ItemDrop.HardHat",
+      "PermanentDestroyArray": "#PlayerUnit.Infantry",
       "Item0": "#Ingredient.HardHat",
       "OccurItem0": "L0: 15%",
       "Item1": "#Ingredient.CinderBlock",
@@ -10967,6 +10971,7 @@
       "KillRewardEnergy": "20",
       "KillRewardMaterial": "0",
       "KillRewardItem": "#ItemDrop.CinderBlock, #ItemDrop.Lumber, #ItemDrop.HardHat",
+      "PermanentDestroyArray": "#PlayerUnit.Infantry",
       "Item0": "#Ingredient.HardHat",
       "OccurItem0": "L0: 15%",
       "Item1": "#Ingredient.CinderBlock",
@@ -11133,7 +11138,7 @@
       "Graphic_hit": "swf/buildings_enemy/building_enemy_prison",
       "Graphic_destroy": "swf/effects_low/effect_explosion",
       "ObjectClass": "game.gameElements.EnemyInstallationObject",
-      "Health": "100",
+      "Health": "10",
       "Damage": "3",
       "AttackRange": "1",
       "ReactionTime": "0",
@@ -11151,7 +11156,7 @@
       "KillRewardSupplies": "0",
       "KillRewardEnergy": "35",
       "KillRewardMaterial": "0",
-      "Item0": "#PlayerUnit.SpecialForces",
+      "KillRewardUnit": "#PlayerUnit.SpecialForces",
       "OccurItem0": "L0: 100%"
     },
     "DDTurretLeft": {
@@ -29570,7 +29575,7 @@
     "S_1": {
       "ID": "S_1",
       "Group": "AreaS",
-      "Item": "#EnemyInstallation.Mines",
+      "Item": "#EnemyInstallation.TeslaCoil",
       "AreaX": "54",
       "AreaY": "65"
     },

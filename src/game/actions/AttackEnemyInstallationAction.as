@@ -286,6 +286,8 @@
             _loc9_ += _loc7_.mKillRewardMoney;
             _loc10_ += _loc7_.mKillRewardSupplies;
             _loc11_ += _loc7_.mKillRewardEnergy;
+			trace("Destroyed")
+			trace(_loc7_.mKillRewardUnit);
             if(_loc7_.mKillRewardUnit)
             {
                _loc2_.addRewardedPlayerUnit(ItemManager.getItem(_loc7_.mKillRewardUnit.ID,_loc7_.mKillRewardUnit.Type) as PlayerUnitItem,_loc5_.getCell());

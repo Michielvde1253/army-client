@@ -1,4 +1,4 @@
-package game.actions
+﻿package game.actions
 {
    import game.characters.AnimationController;
    import game.characters.PlayerUnit;
@@ -173,6 +173,13 @@ package game.actions
             return;
          }
          this.mPlayerUnit.reduceHealth(_loc1_);
+         if(!this.mPlayerUnit.isAlive())
+         {
+            if((mActor as EnemyInstallationObject).destroysPermanently(this.mPlayerUnit.mItem))
+            {
+               this.mPlayerUnit.destroyPermanently();
+            }
+         }
          (mActor as EnemyInstallationObject).changeReactionState(EnemyInstallationObject.REACT_STATE_ACTION_COMPLETED);
          var _loc2_:GridCell = mActor.getCell();
          var _loc3_:GridCell = this.mPlayerUnit.getCell();

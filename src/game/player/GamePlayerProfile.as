@@ -994,9 +994,17 @@
             return;
          }
          var _loc1_:* = GameState.mConfig;
-         this.mUnitCaps.Infantry = int(_loc1_.PlayerStartValues.Default.UnitCapInfantry);
-         this.mUnitCaps.Armor = int(_loc1_.PlayerStartValues.Default.UnitCapArmor);
-         this.mUnitCaps.Artillery = int(_loc1_.PlayerStartValues.Default.UnitCapArtillery);
+		 if(_loc1_.MapSetup[GameState.mInstance.mCurrentMapId].hasOwnProperty("UnitCapInfantry")){
+			 // Use map-specific values
+			 this.mUnitCaps.Infantry = int(_loc1_.MapSetup[GameState.mInstance.mCurrentMapId].UnitCapInfantry);
+			 this.mUnitCaps.Armor = int(_loc1_.MapSetup[GameState.mInstance.mCurrentMapId].UnitCapArmor);
+			 this.mUnitCaps.Artillery = int(_loc1_.MapSetup[GameState.mInstance.mCurrentMapId].UnitCapArtillery);
+		 } else {
+			 // Use default values
+			 this.mUnitCaps.Infantry = int(_loc1_.PlayerStartValues.Default.UnitCapInfantry);
+			 this.mUnitCaps.Armor = int(_loc1_.PlayerStartValues.Default.UnitCapArmor);
+			 this.mUnitCaps.Artillery = int(_loc1_.PlayerStartValues.Default.UnitCapArtillery);
+		 }
          this.mUnitCounts.Infantry = 0;
          this.mUnitCounts.Armor = 0;
          this.mUnitCounts.Artillery = 0;

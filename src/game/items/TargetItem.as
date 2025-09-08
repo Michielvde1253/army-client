@@ -1,4 +1,4 @@
-package game.items
+﻿package game.items
 {
    import game.magicBox.MagicBoxTracker;
    import game.player.GamePlayerProfile;
@@ -37,6 +37,8 @@ package game.items
       private var mCollectibleProbabilities:Array;
       
       private var mRandom:RandomGenerator;
+	  
+	  public var mPermanentDestroyArray:Array;
       
       public function TargetItem(param1:Object)
       {
@@ -63,6 +65,19 @@ package game.items
          this.mKillRewardMaterial = param1.HitRewardMaterial;
          this.mKillRewardEnergy = param1.KillRewardEnergy;
          this.mKillRewardUnit = param1.KillRewardUnit;
+         this.mPermanentDestroyArray = null;
+         if(param1.PermanentDestroyArray)
+         {
+            if(param1.PermanentDestroyArray is Array)
+            {
+               this.mPermanentDestroyArray = param1.PermanentDestroyArray;
+            }
+            else
+            {
+               this.mPermanentDestroyArray = new Array();
+               this.mPermanentDestroyArray.push(param1.PermanentDestroyArray);
+            }
+         }
          if(param1.Item0 != null)
          {
             this.mCollectibleItems = new Array();

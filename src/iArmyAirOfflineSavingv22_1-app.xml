@@ -31,7 +31,7 @@
     <visible>true</visible>
     <fullScreen>true</fullScreen>
     <aspectRatio>landscape</aspectRatio>
-    <renderMode>gpu</renderMode>
+    <renderMode>auto</renderMode>
     <autoOrients>false</autoOrients>
     <maximizable>true</maximizable>
     <minimizable>true</minimizable>
@@ -39,7 +39,7 @@
   </initialWindow>
   <icon>
     
-  </icon>
+    <image48x48>AppIconsForPublish/icon48.png</image48x48></icon>
   <customUpdateUI>false</customUpdateUI>
   <allowBrowserInvocation>false</allowBrowserInvocation>
 
@@ -126,6 +126,8 @@
 ]]></InfoAdditions>
     <requestedDisplayResolution>standard</requestedDisplayResolution>
   </iPhone>
+  
+  
   
   
   

@@ -256,6 +256,14 @@
 		private var mButtonBackHome: ArmyButton;
 
 		private var mButtonBackHomeText: TextField;
+		
+		private var mUnitCapsFrame: MovieClip;
+		
+		private var mUnitCapInfantryText: AutoTextField;
+		
+		private var mUnitCapArmorText: AutoTextField;
+		
+		private var mUnitCapArtilleryText: AutoTextField;
 
 		private var mCurrentPopup: PopUpWindow;
 
@@ -620,6 +628,10 @@
 			this.mButtonTextWater = new AutoTextField(this.mButtonFrameWater.getChildByName("Text_Amount") as TextField);
 			this.mButtonAddCash = Utils.createBasicButton(this.mButtonFrameCash, "button_add_cash", this.cashPressed);
 			this.mButtonAddPremium = Utils.createBasicButton(this.mButtonFramePremium, "button_add_gold", this.premiumPressed);
+			this.mUnitCapsFrame = this.mIngameHUDClip.getChildByName("Unit_Caps") as MovieClip;
+			//this.mUnitCapInfantryText = new AutoTextField(this.mUnitCapsFrame.getChildByName("Text_Infantry") as TextField);
+			//this.mUnitCapArmorText = new AutoTextField(this.mUnitCapsFrame.getChildByName("Text_Armor") as TextField);
+			//this.mUnitCapArtilleryText = new AutoTextField(this.mUnitCapsFrame.getChildByName("Text_Artillery") as TextField);
 
 
 			this.mToolBox = this.mIngameHUDClip_BOTTOM.getChildByName("Toolbox") as MovieClip;
